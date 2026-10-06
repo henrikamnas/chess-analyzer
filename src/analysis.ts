@@ -197,8 +197,8 @@ export async function reviewGame(
   const mean = (xs: number[]) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : 0)
   const acpl = { w: mean(cpLosses.w), b: mean(cpLosses.b) }
   const rating = {
-    w: estimateRating(acpl.w, accuracy.w, cpLosses.w.length),
-    b: estimateRating(acpl.b, accuracy.b, cpLosses.b.length),
+    w: estimateRating(acpl.w, cpLosses.w.length),
+    b: estimateRating(acpl.b, cpLosses.b.length),
   }
   return { evals, moves, accuracy, acpl, rating, counts }
 }
@@ -210,14 +210,31 @@ function centipawns(score: Score) {
 }
 
 /**
- * Rough "played like" rating for one side of one game. Blends two curves fitted to common rules of
- * thumb: ACPL ~20 ≈ 2350, ~40 ≈ 1800, ~80 ≈ 1250; accuracy ~95% ≈ 2700, ~80% ≈ 1750, ~70% ≈ 1300.
+ * Median average centipawn loss by rating, measured on 79 Chess.com rapid games (158 player-games,
+ * ratings ~100-2700, Oct 2026) reviewed with this app's engine and depth. Pairs of [ACPL, rating].
+ * Interpolating between them means a typical game at rating R maps back to about R.
  */
-export function estimateRating(acpl: number, accuracy: number, moves: number): RatingEstimate {
-  const fromAcpl = 3200 - 800 * Math.log(Math.max(acpl, 7) / 7)
-  const fromAccuracy = 400 + 2300 * Math.pow(Math.max(0, Math.min(accuracy, 100)) / 95, 3)
-  const value = Math.max(100, Math.min(3200, (fromAcpl + fromAccuracy) / 2))
-  return { value: Math.round(value / 50) * 50, reliable: moves >= 12 }
+const ACPL_BY_RATING: [number, number][] = [
+  [17, 2600],
+  [26, 2200],
+  [39, 1800],
+  [50, 1400],
+  [63, 1000],
+  [79, 600],
+  [157, 200],
+]
+
+/** Rough "played like" rating for one side of one game; single games still vary by several hundred points. */
+export function estimateRating(acpl: number, moves: number): RatingEstimate {
+  const t = ACPL_BY_RATING
+  const x = Math.log(Math.max(acpl, 1))
+  let i = t.findIndex(([a]) => Math.log(a) >= x)
+  if (i <= 0) i = i === 0 ? 1 : t.length - 1 // extrapolate from the end segments
+  const [a0, r0] = t[i - 1]
+  const [a1, r1] = t[i]
+  const r = r0 + ((x - Math.log(a0)) / (Math.log(a1) - Math.log(a0))) * (r1 - r0)
+  const value = Math.max(100, Math.min(3000, r))
+  return { value: Math.round(value / 50) * 50, reliable: moves >= 15 }
 }
 
 export function formatScore(score: Score): string {
