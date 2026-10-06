@@ -12,6 +12,7 @@ import { MoveList } from './components/MoveList'
 import { ImportPanel } from './components/ImportPanel'
 import { EngineLines } from './components/EngineLines'
 import { SummaryCard, type DeepState } from './components/SummaryCard'
+import { restoreSession, saveSession } from './session'
 import { LineBanner } from './components/LineBanner'
 
 const REVIEW_LIMITS = { depth: 16 }
@@ -67,20 +68,22 @@ interface Explaining {
 const emptyDeep: DeepState = { status: 'idle', done: 0, total: 0, startedAt: 0, elapsedMs: 0 }
 
 export default function App() {
-  const [game, setGame] = useState<Game>(emptyGame)
-  const [ply, setPly] = useState(0)
+  const [restored] = useState(restoreSession) // read once, on first render
+  const [pgn, setPgn] = useState(restored?.pgn ?? '')
+  const [game, setGame] = useState<Game>(() => restored?.game ?? emptyGame())
+  const [ply, setPly] = useState(restored?.ply ?? 0)
   const [variation, setVariation] = useState<string[]>([]) // UCI moves branching off the mainline at `ply`
   const [plan, setPlan] = useState<string[]>([]) // the full side line `variation` is a prefix of (for stepping forward)
   const [explaining, setExplaining] = useState<Explaining | null>(null)
-  const [orientation, setOrientation] = useState<'white' | 'black'>('white')
-  const [review, setReview] = useState<Review | null>(null)
+  const [orientation, setOrientation] = useState<'white' | 'black'>(restored?.orientation ?? 'white')
+  const [review, setReview] = useState<Review | null>(restored?.review ?? null)
   const [partialEvals, setPartialEvals] = useState<PositionEval[]>([])
   const [progress, setProgress] = useState<{ done: number; total: number } | null>(null)
   const [live, setLive] = useState<{ fen: string; lines: EngineLine[] } | null>(null)
-  const [showImport, setShowImport] = useState(true)
+  const [showImport, setShowImport] = useState(!restored)
   const [error, setError] = useState<string | null>(null)
-  const [tab, setTab] = useState<'summary' | 'moves'>('moves')
-  const [deep, setDeep] = useState<DeepState>(emptyDeep)
+  const [tab, setTab] = useState<'summary' | 'moves'>(restored?.review ? restored.tab : 'moves')
+  const [deep, setDeep] = useState<DeepState>(restored?.deepDone ? { ...emptyDeep, status: 'done' } : emptyDeep)
   const [liveFlavor, setLiveFlavor] = useState<EngineFlavor>(savedLiveFlavor)
   const [engineError, setEngineError] = useState<string | null>(null)
 
@@ -204,9 +207,10 @@ export default function App() {
   }
 
   const loadPgn = useCallback(
-    (pgn: string) => {
+    (text: string) => {
       try {
-        const g = parseGame(pgn)
+        const g = parseGame(text)
+        setPgn(text)
         setGame(g)
         setPly(0)
         resetLine()
@@ -220,6 +224,17 @@ export default function App() {
     },
     [startReview],
   )
+
+  // A restored game without a finished review (e.g. the tab was discarded mid-review) is reviewed again.
+  useEffect(() => {
+    // oxlint-disable-next-line react/set-state-in-effect -- starts the engine (an external system)
+    if (restored && restored.game.plies.length > 0 && !restored.review) startReview(restored.game)
+  }, [restored, startReview])
+
+  useEffect(() => {
+    if (!pgn) return
+    saveSession({ pgn, ply, orientation, tab, review, deepDone: deep.status === 'done' })
+  }, [pgn, ply, orientation, tab, review, deep.status])
 
   // --- Live engine ---------------------------------------------------------
 
@@ -377,10 +392,10 @@ export default function App() {
           <span className="logo">♞</span> Chess Analyzer
         </h1>
         <div className="actions">
-          <button onClick={() => setOrientation((o) => (o === 'white' ? 'black' : 'white'))} title="Flip board (f)">
+          <button onClick={() => setOrientation((o) => (o === 'white' ? 'black' : 'white'))} title="Flip board (f)" aria-label="Flip board">
             ⇅<span className="btn-label"> Flip</span>
           </button>
-          <button className={showImport ? 'on' : ''} onClick={() => setShowImport((s) => !s)}>
+          <button className={showImport ? 'on' : ''} onClick={() => setShowImport((s) => !s)} aria-label="Load game">
             ＋<span className="btn-label"> Load game</span>
           </button>
         </div>
