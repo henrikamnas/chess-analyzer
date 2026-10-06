@@ -66,7 +66,7 @@ export class Engine {
     this.flavor = flavor
     const file = flavor === 'lite' ? 'stockfish' : multiThreaded ? 'stockfish-full' : 'stockfish-full-single'
     // The build reads its .wasm URL from the hash; pass a versioned one so both files are cache-busted.
-    const base = `${location.origin}/engine/${file}`
+    const base = `${location.origin}${import.meta.env.BASE_URL}engine/${file}`
     this.worker = new Worker(`${base}.js?v=${ENGINE_VERSION}#${encodeURIComponent(`${base}.wasm?v=${ENGINE_VERSION}`)}`)
     const fail = (message: string) => {
       if (this.terminated) return
