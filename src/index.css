@@ -12,6 +12,7 @@
   --inaccuracy: #e6b53c;
   --mistake: #e08a2c;
   --blunder: #d9453b;
+  --line: #5aa9e6;
   --radius: 10px;
   color-scheme: dark;
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -789,4 +790,150 @@ cg-board square.last-move {
   background: var(--panel-2);
   border-radius: 6px;
   padding: 1px 8px;
+}
+
+/* ---- Side lines ---- */
+
+.board-row .cg-board-wrap {
+  border-radius: 3px;
+  transition: box-shadow 0.2s;
+}
+
+.board-row.off-game .cg-board-wrap {
+  box-shadow: 0 0 0 3px var(--line);
+}
+
+.line-banner {
+  margin-left: 28px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--line) 12%, var(--panel));
+  padding: 6px 8px;
+  min-width: 0;
+}
+
+.line-banner-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.line-tag {
+  flex: none;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--line);
+}
+
+.line-title {
+  flex: 1;
+  min-width: 0;
+  font-size: 13px;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.line-count {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.line-exit {
+  padding: 2px 8px;
+}
+
+.line-moves-row {
+  display: flex;
+  gap: 2px;
+  margin-top: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.lm {
+  flex: none;
+  background: none;
+  border: 0;
+  padding: 3px 6px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.lm.on {
+  background: var(--line);
+  color: #111;
+}
+
+.lm.on .muted {
+  color: #333;
+}
+
+.lm.ahead {
+  opacity: 0.55;
+}
+
+/* ---- Engine toggle & deep analysis ---- */
+
+.engine-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.seg {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.seg button {
+  border: 0;
+  border-radius: 0;
+  padding: 3px 10px;
+  font-size: 12px;
+  background: none;
+  color: var(--muted);
+}
+
+.seg button.on {
+  background: var(--panel-2);
+  color: var(--text);
+}
+
+.deep {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.deep.running {
+  display: block;
+}
+
+.deep .bar {
+  margin-top: 6px;
+  height: 6px;
+  background: var(--panel-2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.deep .bar div {
+  height: 100%;
+  background: var(--line);
+  transition: width 0.3s;
+}
+
+.deep.done {
+  color: var(--best);
 }

@@ -1,5 +1,5 @@
 import { Chess } from 'chess.js'
-import type { Engine, Score } from './engine'
+import type { Engine, Limits, Score } from './engine'
 
 export interface GameMeta {
   white: string
@@ -154,7 +154,7 @@ function terminalEval(fen: string): PositionEval | null {
 export async function reviewGame(
   game: Game,
   engine: Engine,
-  depth: number,
+  limits: Limits,
   onProgress: (done: number, total: number, evals: PositionEval[]) => void,
   isCancelled: () => boolean,
 ): Promise<Review | null> {
@@ -165,7 +165,7 @@ export async function reviewGame(
     const terminal = terminalEval(fen)
     if (terminal) evals.push(terminal)
     else {
-      const r = await engine.analyze(fen, depth)
+      const r = await engine.analyze(fen, limits)
       evals.push({ score: r.score, bestMove: r.bestMove, pv: r.pv })
     }
     onProgress(evals.length, fens.length, [...evals])

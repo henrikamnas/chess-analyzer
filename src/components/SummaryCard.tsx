@@ -2,15 +2,25 @@ import { useMemo } from 'react'
 import { GLYPH, type Game, type Label, type Review } from '../analysis'
 import { moveName, rating, summarizeGame } from '../explain'
 
+export interface DeepState {
+  status: 'idle' | 'running' | 'done'
+  done: number
+  total: number
+  startedAt: number // epoch ms
+  elapsedMs: number // as of the last finished position
+}
+
 interface Props {
   game: Game
   review: Review
   onSelect: (ply: number) => void
+  deep: DeepState
+  onDeep: () => void
 }
 
 const ERRORS: Label[] = ['blunder', 'mistake', 'inaccuracy']
 
-export function SummaryCard({ game, review, onSelect }: Props) {
+export function SummaryCard({ game, review, onSelect, deep, onDeep }: Props) {
   const summary = useMemo(() => summarizeGame(game, review), [game, review])
   const { meta } = game
 
@@ -46,6 +56,8 @@ export function SummaryCard({ game, review, onSelect }: Props) {
         {player('w')}
         {player('b')}
       </div>
+
+      <DeepAnalysis deep={deep} onDeep={onDeep} />
 
       {summary.paragraphs.map((p, i) => (
         <p key={i}>{p}</p>
@@ -97,5 +109,32 @@ function PhaseRow({ label, values }: { label: string; values: (number | null)[] 
         ),
       )}
     </>
+  )
+}
+
+function DeepAnalysis({ deep, onDeep }: { deep: DeepState; onDeep: () => void }) {
+  if (deep.status === 'done') {
+    return <div className="deep done">✓ Deep analysis · full Stockfish 19</div>
+  }
+  if (deep.status === 'running') {
+    const elapsed = deep.elapsedMs / 1000
+    const left = deep.done > 2 ? Math.round(((deep.total - deep.done) * elapsed) / deep.done) : null
+    return (
+      <div className="deep running">
+        <div className="muted">
+          Deep analysis… {deep.done}/{deep.total}
+          {left !== null && ` · about ${left < 90 ? `${left} s` : `${Math.round(left / 60)} min`} left`}
+        </div>
+        <div className="bar">
+          <div style={{ width: `${(deep.done / deep.total) * 100}%` }} />
+        </div>
+      </div>
+    )
+  }
+  return (
+    <div className="deep">
+      <button onClick={onDeep}>🔬 Deep analysis</button>
+      <span className="muted">Re-check every move with the full engine (takes a few minutes)</span>
+    </div>
   )
 }

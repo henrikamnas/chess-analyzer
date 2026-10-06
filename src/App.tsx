@@ -2,22 +2,32 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Chess, DEFAULT_POSITION } from 'chess.js'
 import type { DrawShape } from 'chessground/draw'
 import type { Key } from 'chessground/types'
-import { Engine, type EngineLine } from './engine'
+import { availableThreads, Engine, type EngineFlavor, type EngineLine } from './engine'
 import { GLYPH, parseGame, reviewGame, type Game, type Label, type PositionEval, type Review } from './analysis'
-import { explainMove, formatLine } from './explain'
+import { explainMove, moveName } from './explain'
 import { Board } from './components/Board'
 import { EvalBar } from './components/EvalBar'
 import { EvalGraph } from './components/EvalGraph'
 import { MoveList } from './components/MoveList'
 import { ImportPanel } from './components/ImportPanel'
 import { EngineLines } from './components/EngineLines'
-import { SummaryCard } from './components/SummaryCard'
+import { SummaryCard, type DeepState } from './components/SummaryCard'
+import { LineBanner } from './components/LineBanner'
 
-const REVIEW_DEPTH = 16
-const LIVE_DEPTH = 20
+const REVIEW_LIMITS = { depth: 16 }
+const DEEP_LIMITS = { depth: 22, movetimeMs: 3000 } // full engine; the time cap keeps hard positions bounded
+const LIVE_DEPTH = { lite: 20, full: 24 }
 const LIVE_LINES = 3
 const EXPLAIN_PLIES = 8
-const AUTOPLAY_MS = 900
+const LIVE_FLAVOR_KEY = 'chess-analyzer:live-engine'
+
+function savedLiveFlavor(): EngineFlavor {
+  try {
+    return localStorage.getItem(LIVE_FLAVOR_KEY) === 'full' ? 'full' : 'lite'
+  } catch {
+    return 'lite'
+  }
+}
 
 const LABEL_TEXT: Record<Label, string> = {
   best: 'Best move',
@@ -54,12 +64,13 @@ interface Explaining {
   kind: 'why' | 'best'
 }
 
+const emptyDeep: DeepState = { status: 'idle', done: 0, total: 0, startedAt: 0, elapsedMs: 0 }
+
 export default function App() {
   const [game, setGame] = useState<Game>(emptyGame)
   const [ply, setPly] = useState(0)
   const [variation, setVariation] = useState<string[]>([]) // UCI moves branching off the mainline at `ply`
   const [plan, setPlan] = useState<string[]>([]) // the full side line `variation` is a prefix of (for stepping forward)
-  const [autoplay, setAutoplay] = useState(false)
   const [explaining, setExplaining] = useState<Explaining | null>(null)
   const [orientation, setOrientation] = useState<'white' | 'black'>('white')
   const [review, setReview] = useState<Review | null>(null)
@@ -69,19 +80,35 @@ export default function App() {
   const [showImport, setShowImport] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [tab, setTab] = useState<'summary' | 'moves'>('moves')
+  const [deep, setDeep] = useState<DeepState>(emptyDeep)
+  const [liveFlavor, setLiveFlavor] = useState<EngineFlavor>(savedLiveFlavor)
 
   const liveEngine = useRef<Engine | null>(null)
   const reviewEngine = useRef<Engine | null>(null)
+  const deepEngine = useRef<Engine | null>(null)
   const reviewToken = useRef(0)
 
   useEffect(() => {
-    liveEngine.current = new Engine({ multiPv: LIVE_LINES })
     reviewEngine.current = new Engine()
     return () => {
-      liveEngine.current?.terminate()
       reviewEngine.current?.terminate()
+      deepEngine.current?.terminate()
     }
   }, [])
+
+  useEffect(() => {
+    const engine =
+      liveFlavor === 'full'
+        ? new Engine({ multiPv: LIVE_LINES, flavor: 'full', threads: availableThreads(), hashMb: 64 })
+        : new Engine({ multiPv: LIVE_LINES })
+    liveEngine.current = engine
+    try {
+      localStorage.setItem(LIVE_FLAVOR_KEY, liveFlavor)
+    } catch {
+      /* storage unavailable */
+    }
+    return () => engine.terminate()
+  }, [liveFlavor])
 
   // --- Positions -----------------------------------------------------------
 
@@ -101,9 +128,16 @@ export default function App() {
 
   // --- Loading & review ----------------------------------------------------
 
+  const stopDeep = () => {
+    deepEngine.current?.terminate()
+    deepEngine.current = null
+    setDeep(emptyDeep)
+  }
+
   const startReview = useCallback((g: Game) => {
     const token = ++reviewToken.current
     reviewEngine.current?.stop()
+    stopDeep()
     setReview(null)
     setPartialEvals([])
     if (g.plies.length === 0) {
@@ -114,7 +148,7 @@ export default function App() {
     void reviewGame(
       g,
       reviewEngine.current!,
-      REVIEW_DEPTH,
+      REVIEW_LIMITS,
       (done, total, evals) => {
         if (token !== reviewToken.current) return
         setProgress({ done, total })
@@ -129,10 +163,36 @@ export default function App() {
     })
   }, [])
 
+  /** Re-reviews the game with the full engine in the background, then swaps in its labels and evals. */
+  const startDeep = () => {
+    if (!review || deep.status === 'running') return
+    const token = reviewToken.current
+    const fast = review
+    const engine = new Engine({ flavor: 'full', threads: availableThreads(), hashMb: 128 })
+    deepEngine.current = engine
+    const total = game.plies.length + 1
+    setDeep({ status: 'running', done: 0, total, startedAt: Date.now(), elapsedMs: 0 })
+    void reviewGame(
+      game,
+      engine,
+      DEEP_LIMITS,
+      (done) => {
+        if (token === reviewToken.current) setDeep((d) => ({ ...d, done, elapsedMs: Date.now() - d.startedAt }))
+      },
+      () => token !== reviewToken.current || deepEngine.current !== engine,
+    ).then((r) => {
+      if (token !== reviewToken.current || deepEngine.current !== engine || !r) return
+      engine.terminate()
+      deepEngine.current = null
+      // Keep the estimated rating from the fast review: it is calibrated on fast-review numbers.
+      setReview({ ...r, acpl: fast.acpl, rating: fast.rating })
+      setDeep((d) => ({ ...d, status: 'done', done: total }))
+    })
+  }
+
   const resetLine = () => {
     setVariation([])
     setPlan([])
-    setAutoplay(false)
     setExplaining(null)
   }
 
@@ -162,10 +222,10 @@ export default function App() {
     engine.stop()
     if (gameOver) return
     const t = setTimeout(() => {
-      void engine.analyze(fen, LIVE_DEPTH, (lines) => setLive({ fen, lines }))
+      void engine.analyze(fen, { depth: LIVE_DEPTH[liveFlavor] }, (lines) => setLive({ fen, lines }))
     }, 120)
     return () => clearTimeout(t)
-  }, [fen, gameOver])
+  }, [fen, gameOver, liveFlavor])
 
   const reviewedEval = !inVariation ? (review?.evals[ply] ?? partialEvals[ply]) : undefined
   const liveLines = useMemo(() => (live?.fen === fen ? live.lines : []), [live, fen])
@@ -181,40 +241,30 @@ export default function App() {
     [game.plies.length],
   )
 
+  // While a side line is open (`plan` non-empty), stepping moves within it until you go back to the game.
   const step = useCallback(
     (d: number) => {
-      setAutoplay(false)
-      if (d > 0 && plan.length > variation.length && (variation.length > 0 || explaining)) {
-        setVariation(plan.slice(0, variation.length + 1))
-      } else if (d < 0 && variation.length) {
-        setVariation(variation.slice(0, -1))
-        if (variation.length === 1 && !explaining) setPlan([])
-      } else if (!variation.length) {
-        goTo(ply + d)
+      if (plan.length) {
+        if (d > 0 && variation.length < plan.length) setVariation(plan.slice(0, variation.length + 1))
+        else if (d < 0 && variation.length) setVariation(variation.slice(0, -1))
+        return
       }
+      goTo(ply + d)
     },
-    [plan, variation, explaining, goTo, ply],
+    [plan, variation, goTo, ply],
   )
 
-  /** Plays a side line from the given mainline ply, optionally animating it move by move. */
-  const playLine = (fromPly: number, moves: string[], animate: boolean) => {
+  /** Enters a side line from the given mainline ply, showing its first move; step through the rest. */
+  const enterLine = (fromPly: number, moves: string[]) => {
     setPly(fromPly)
     setPlan(moves)
-    setVariation(animate ? [] : moves)
-    setAutoplay(animate)
+    setVariation(moves.slice(0, 1))
   }
-
-  useEffect(() => {
-    if (!autoplay || variation.length >= plan.length) return
-    const t = setTimeout(() => setVariation(plan.slice(0, variation.length + 1)), variation.length ? AUTOPLAY_MS : 400)
-    return () => clearTimeout(t)
-  }, [autoplay, variation, plan])
 
   const onBoardMove = useCallback(
     (uci: string) => {
-      setAutoplay(false)
       // Playing the next mainline move just advances; anything else starts/extends a variation.
-      if (!variation.length && !explaining && game.plies[ply]?.uci === uci) {
+      if (!plan.length && game.plies[ply]?.uci === uci) {
         setPly(ply + 1)
         return
       }
@@ -225,13 +275,12 @@ export default function App() {
         setExplaining(null)
       }
     },
-    [variation, plan, explaining, game.plies, ply],
+    [variation, plan, game.plies, ply],
   )
 
   const onEngineLine = (moves: string[]) => {
     const next = [...variation, ...moves]
     setExplaining(null)
-    setAutoplay(false)
     setPlan(next)
     setVariation(next)
   }
@@ -263,8 +312,8 @@ export default function App() {
   const showExplanation = (kind: Explaining['kind']) => {
     if (!verdictPly || !explanation) return
     setExplaining({ ply: verdictPly, kind })
-    if (kind === 'why') playLine(verdictPly, explanation.refutation.slice(0, EXPLAIN_PLIES), true)
-    else playLine(verdictPly - 1, explanation.best.slice(0, EXPLAIN_PLIES), true)
+    if (kind === 'why') enterLine(verdictPly, explanation.refutation.slice(0, EXPLAIN_PLIES))
+    else enterLine(verdictPly - 1, explanation.best.slice(0, EXPLAIN_PLIES))
   }
 
   // --- Board annotations ---------------------------------------------------
@@ -304,7 +353,15 @@ export default function App() {
       )}
     </div>
   )
-  const canStepForward = inVariation || explaining ? plan.length > variation.length : ply < game.plies.length
+  const inLine = plan.length > 0
+  const canStepForward = inLine ? variation.length < plan.length : ply < game.plies.length
+  const canStepBack = inLine ? variation.length > 0 : ply > 0
+  const exitLine = () => goTo(explaining ? explaining.ply : ply)
+  const lineTitle = !explaining
+    ? 'Alternate line'
+    : explaining.kind === 'why'
+      ? `How ${game.plies[explaining.ply - 1].color === 'w' ? meta.black : meta.white} punishes ${moveName(game, explaining.ply - 1)}`
+      : `Better than ${moveName(game, explaining.ply - 1)}`
 
   return (
     <div className="app">
@@ -325,17 +382,29 @@ export default function App() {
       <main className="layout">
         <section className="board-col">
           {player(top)}
-          <div className="board-row">
+          <div className={`board-row ${inLine ? 'off-game' : ''}`}>
             <EvalBar score={shownScore} orientation={orientation} />
             <Board fen={fen} orientation={orientation} lastMove={lastMove} shapes={shapes} onMove={onBoardMove} />
           </div>
           {player(top === 'w' ? 'b' : 'w')}
 
+          {inLine && (
+            <LineBanner
+              title={lineTitle}
+              kind={explaining?.kind ?? 'line'}
+              fen={mainFen}
+              moves={plan}
+              current={variation.length}
+              onSelect={(n) => setVariation(plan.slice(0, n))}
+              onExit={exitLine}
+            />
+          )}
+
           <nav className="nav">
-            <button onClick={() => goTo(0)} aria-label="Start">⏮</button>
-            <button onClick={() => step(-1)} aria-label="Back">◀</button>
+            <button onClick={() => (inLine ? setVariation([]) : goTo(0))} aria-label="Start">⏮</button>
+            <button onClick={() => step(-1)} aria-label="Back" disabled={!canStepBack}>◀</button>
             <button onClick={() => step(1)} aria-label="Forward" disabled={!canStepForward}>▶</button>
-            <button onClick={() => goTo(game.plies.length)} aria-label="End">⏭</button>
+            <button onClick={() => (inLine ? setVariation(plan) : goTo(game.plies.length))} aria-label="End">⏭</button>
           </nav>
 
           <EvalGraph
@@ -388,25 +457,29 @@ export default function App() {
                         ★ Show best
                       </button>
                     )}
-                    {explaining && <button onClick={() => goTo(explaining.ply)}>↩ Back to game</button>}
                   </div>
                 </>
               )}
             </div>
           )}
 
-          {inVariation && !explaining && (
-            <div className="card variation">
-              <div className="var-moves">
-                <span className="muted">Variation:</span> {formatLine(mainFen, variation, 40)}
-              </div>
-              <button onClick={() => goTo(ply)}>↩ Back to game</button>
-            </div>
-          )}
-
           <div className="card engine">
-            <div className="engine-head muted">
-              {gameOver ? 'Game over' : liveLines[0] ? `Stockfish 19 · depth ${liveLines[0].depth}` : 'Engine thinking…'}
+            <div className="engine-head">
+              <span className="muted">
+                {gameOver ? 'Game over' : liveLines[0] ? `Stockfish 19 · depth ${liveLines[0].depth}` : 'Engine thinking…'}
+              </span>
+              <span className="seg" role="group" aria-label="Live engine">
+                <button className={liveFlavor === 'lite' ? 'on' : ''} onClick={() => setLiveFlavor('lite')} title="Small network, instant">
+                  Lite
+                </button>
+                <button
+                  className={liveFlavor === 'full' ? 'on' : ''}
+                  onClick={() => setLiveFlavor('full')}
+                  title="Full Stockfish 19 network (~99 MB download once), multi-threaded"
+                >
+                  Full
+                </button>
+              </span>
             </div>
             {liveLines.length > 0 && <EngineLines fen={fen} lines={liveLines} onPlay={onEngineLine} />}
           </div>
@@ -422,9 +495,9 @@ export default function App() {
                 </button>
               </div>
               {tab === 'summary' && review ? (
-                <SummaryCard game={game} review={review} onSelect={goTo} />
+                <SummaryCard game={game} review={review} onSelect={goTo} deep={deep} onDeep={startDeep} />
               ) : (
-                <MoveList game={game} review={review} ply={inVariation ? -1 : ply} onSelect={goTo} />
+                <MoveList game={game} review={review} ply={inLine ? -1 : ply} onSelect={goTo} />
               )}
             </div>
           )}

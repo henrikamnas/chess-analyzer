@@ -14,9 +14,29 @@ export interface EngineResult extends EngineLine {
   bestMove: string | null
 }
 
+export type EngineFlavor = 'lite' | 'full'
+
+export interface EngineOptions {
+  multiPv?: number
+  flavor?: EngineFlavor // 'lite': small network, fast to load; 'full': full network, ~99 MB download
+  threads?: number // only used by the full multi-threaded build
+  hashMb?: number
+}
+
+/** Threads to give a full engine, leaving a core for the UI. */
+export function availableThreads() {
+  return Math.max(1, Math.min(8, (navigator.hardwareConcurrency || 2) - 1))
+}
+
+/** Search limits: stop at `depth`, or after `movetimeMs` if given, whichever comes first. */
+export interface Limits {
+  depth: number
+  movetimeMs?: number
+}
+
 interface Job {
   fen: string
-  depth: number
+  limits: Limits
   onInfo?: (lines: EngineLine[]) => void
   resolve: (r: EngineResult) => void
   cancelled: boolean
@@ -29,12 +49,20 @@ export class Engine {
   private current: Job | null = null
   private queue: Job[] = []
 
-  constructor({ multiPv = 1 }: { multiPv?: number } = {}) {
-    this.worker = new Worker('/engine/stockfish.js')
+  readonly flavor: EngineFlavor
+
+  constructor({ multiPv = 1, flavor = 'lite', threads = 1, hashMb = 16 }: EngineOptions = {}) {
+    // The multi-threaded full build needs SharedArrayBuffer, i.e. a cross-origin isolated page.
+    const multiThreaded = flavor === 'full' && self.crossOriginIsolated
+    this.flavor = flavor
+    const file = flavor === 'lite' ? 'stockfish' : multiThreaded ? 'stockfish-full' : 'stockfish-full-single'
+    this.worker = new Worker(`/engine/${file}.js`)
     this.ready = new Promise((resolve) => {
       const onReady = (e: MessageEvent<string>) => {
         if (e.data === 'uciok') {
           this.worker.removeEventListener('message', onReady)
+          if (multiThreaded && threads > 1) this.worker.postMessage(`setoption name Threads value ${threads}`)
+          if (hashMb !== 16) this.worker.postMessage(`setoption name Hash value ${hashMb}`)
           if (multiPv > 1) this.worker.postMessage(`setoption name MultiPV value ${multiPv}`)
           resolve()
         }
@@ -46,9 +74,9 @@ export class Engine {
   }
 
   /** Queue an analysis. Resolves with the best line when the engine reports its best move. */
-  analyze(fen: string, depth: number, onInfo?: (lines: EngineLine[]) => void): Promise<EngineResult> {
+  analyze(fen: string, limits: Limits, onInfo?: (lines: EngineLine[]) => void): Promise<EngineResult> {
     return new Promise((resolve) => {
-      this.queue.push({ fen, depth, onInfo, resolve, cancelled: false, lines: [] })
+      this.queue.push({ fen, limits, onInfo, resolve, cancelled: false, lines: [] })
       void this.next()
     })
   }
@@ -77,7 +105,8 @@ export class Engine {
     this.current = job
     await this.ready
     this.worker.postMessage(`position fen ${job.fen}`)
-    this.worker.postMessage(`go depth ${job.depth}`)
+    const { depth, movetimeMs } = job.limits
+    this.worker.postMessage(`go depth ${depth}${movetimeMs ? ` movetime ${movetimeMs}` : ''}`)
   }
 
   private onLine(line: string) {

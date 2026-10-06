@@ -3,7 +3,7 @@
 A Lichess / Chess.com style game review that runs entirely in the browser.
 
 - Import recent games by **Lichess** or **Chess.com** username, or paste a PGN
-- **Stockfish 19** (lite WASM build, single-threaded) in Web Workers: one reviews the whole game, one gives live analysis of the current position
+- **Stockfish 19** in Web Workers: the lite build (1.6 MB) for the fast review and live analysis, and the full build (~99 MB, multi-threaded) for **Deep analysis** and the optional "Full" live engine. Multi-threading needs cross-origin isolation, which `vite.config.ts` turns on.
 - Move labels (best / good / inaccuracy / mistake / blunder) and per-side **accuracy**, both based on the change in win% ([Lichess' formula](https://lichess.org/page/accuracy))
 - Eval bar, clickable eval graph, best-move arrows, and free exploration of side lines on the board
 - Works on phones
