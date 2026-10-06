@@ -21,7 +21,15 @@ export interface EngineOptions {
   flavor?: EngineFlavor // 'lite': small network, fast to load; 'full': full network, ~99 MB download
   threads?: number // only used by the full multi-threaded build
   hashMb?: number
+  /** Called if the engine fails to load or start, with a human-readable reason. */
+  onError?: (message: string) => void
 }
+
+// Bump when the engine files or how they're served change, so browsers don't reuse stale cached copies.
+const ENGINE_VERSION = '19.0.0-2'
+
+// How long an engine may take to answer its first command; the full build is a ~99 MB download.
+const STARTUP_TIMEOUT_MS = { lite: 30_000, full: 300_000 }
 
 /** Threads to give a full engine, leaving a core for the UI. */
 export function availableThreads() {
@@ -48,18 +56,33 @@ export class Engine {
   private ready: Promise<void>
   private current: Job | null = null
   private queue: Job[] = []
+  private terminated = false
 
   readonly flavor: EngineFlavor
 
-  constructor({ multiPv = 1, flavor = 'lite', threads = 1, hashMb = 16 }: EngineOptions = {}) {
+  constructor({ multiPv = 1, flavor = 'lite', threads = 1, hashMb = 16, onError }: EngineOptions = {}) {
     // The multi-threaded full build needs SharedArrayBuffer, i.e. a cross-origin isolated page.
     const multiThreaded = flavor === 'full' && self.crossOriginIsolated
     this.flavor = flavor
     const file = flavor === 'lite' ? 'stockfish' : multiThreaded ? 'stockfish-full' : 'stockfish-full-single'
-    this.worker = new Worker(`/engine/${file}.js`)
+    // The build reads its .wasm URL from the hash; pass a versioned one so both files are cache-busted.
+    const base = `${location.origin}/engine/${file}`
+    this.worker = new Worker(`${base}.js?v=${ENGINE_VERSION}#${encodeURIComponent(`${base}.wasm?v=${ENGINE_VERSION}`)}`)
+    const fail = (message: string) => {
+      if (this.terminated) return
+      console.error(`Stockfish (${file}): ${message}`)
+      onError?.(message)
+    }
+    this.worker.addEventListener('error', (e) => fail(e.message || 'the engine worker could not be loaded'))
+    this.worker.addEventListener('messageerror', () => fail('the engine sent an unreadable message'))
+    const timeout = setTimeout(
+      () => fail(`no answer after ${STARTUP_TIMEOUT_MS[flavor] / 1000} s`),
+      STARTUP_TIMEOUT_MS[flavor],
+    )
     this.ready = new Promise((resolve) => {
       const onReady = (e: MessageEvent<string>) => {
         if (e.data === 'uciok') {
+          clearTimeout(timeout)
           this.worker.removeEventListener('message', onReady)
           if (multiThreaded && threads > 1) this.worker.postMessage(`setoption name Threads value ${threads}`)
           if (hashMb !== 16) this.worker.postMessage(`setoption name Hash value ${hashMb}`)
@@ -96,6 +119,7 @@ export class Engine {
 
   terminate() {
     this.stop()
+    this.terminated = true
     this.worker.terminate()
   }
 

@@ -82,6 +82,7 @@ export default function App() {
   const [tab, setTab] = useState<'summary' | 'moves'>('moves')
   const [deep, setDeep] = useState<DeepState>(emptyDeep)
   const [liveFlavor, setLiveFlavor] = useState<EngineFlavor>(savedLiveFlavor)
+  const [engineError, setEngineError] = useState<string | null>(null)
 
   const liveEngine = useRef<Engine | null>(null)
   const reviewEngine = useRef<Engine | null>(null)
@@ -89,7 +90,7 @@ export default function App() {
   const reviewToken = useRef(0)
 
   useEffect(() => {
-    reviewEngine.current = new Engine()
+    reviewEngine.current = new Engine({ onError: (m) => setEngineError(`Review engine failed to start: ${m}`) })
     return () => {
       reviewEngine.current?.terminate()
       deepEngine.current?.terminate()
@@ -97,10 +98,11 @@ export default function App() {
   }, [])
 
   useEffect(() => {
+    const onError = (m: string) => setEngineError(`${liveFlavor === 'full' ? 'Full' : 'Lite'} engine failed to start: ${m}`)
     const engine =
       liveFlavor === 'full'
-        ? new Engine({ multiPv: LIVE_LINES, flavor: 'full', threads: availableThreads(), hashMb: 64 })
-        : new Engine({ multiPv: LIVE_LINES })
+        ? new Engine({ multiPv: LIVE_LINES, flavor: 'full', threads: availableThreads(), hashMb: 64, onError })
+        : new Engine({ multiPv: LIVE_LINES, onError })
     liveEngine.current = engine
     try {
       localStorage.setItem(LIVE_FLAVOR_KEY, liveFlavor)
@@ -168,7 +170,12 @@ export default function App() {
     if (!review || deep.status === 'running') return
     const token = reviewToken.current
     const fast = review
-    const engine = new Engine({ flavor: 'full', threads: availableThreads(), hashMb: 128 })
+    const engine = new Engine({
+      flavor: 'full',
+      threads: availableThreads(),
+      hashMb: 128,
+      onError: (m) => setEngineError(`Deep analysis engine failed to start: ${m}`),
+    })
     deepEngine.current = engine
     const total = game.plies.length + 1
     setDeep({ status: 'running', done: 0, total, startedAt: Date.now(), elapsedMs: 0 })
@@ -360,8 +367,8 @@ export default function App() {
   const lineTitle = !explaining
     ? 'Alternate line'
     : explaining.kind === 'why'
-      ? `How ${game.plies[explaining.ply - 1].color === 'w' ? meta.black : meta.white} punishes ${moveName(game, explaining.ply - 1)}`
-      : `Better than ${moveName(game, explaining.ply - 1)}`
+      ? `${moveName(game, explaining.ply - 1)}: how ${game.plies[explaining.ply - 1].color === 'w' ? meta.black : meta.white} can punish it`
+      : `What ${game.plies[explaining.ply - 1].color === 'w' ? meta.white : meta.black} could have played instead of ${moveName(game, explaining.ply - 1)}`
 
   return (
     <div className="app">
@@ -371,10 +378,10 @@ export default function App() {
         </h1>
         <div className="actions">
           <button onClick={() => setOrientation((o) => (o === 'white' ? 'black' : 'white'))} title="Flip board (f)">
-            ⇅ Flip
+            ⇅<span className="btn-label"> Flip</span>
           </button>
           <button className={showImport ? 'on' : ''} onClick={() => setShowImport((s) => !s)}>
-            ＋ Load game
+            ＋<span className="btn-label"> Load game</span>
           </button>
         </div>
       </header>
@@ -391,6 +398,7 @@ export default function App() {
           {inLine && (
             <LineBanner
               title={lineTitle}
+              note={explaining ? explanation?.text : undefined}
               kind={explaining?.kind ?? 'line'}
               fen={mainFen}
               moves={plan}
@@ -419,6 +427,16 @@ export default function App() {
         <aside className="side-col">
           {showImport && <ImportPanel onLoad={loadPgn} />}
           {error && <p className="error">{error}</p>}
+          {engineError && (
+            <div className="card error-card">
+              <strong>Engine problem.</strong> {engineError}
+              <div className="muted">
+                {self.crossOriginIsolated ? 'Page is cross-origin isolated' : 'Page is not cross-origin isolated'} ·{' '}
+                {navigator.userAgent}
+              </div>
+              <button onClick={() => location.reload()}>Reload</button>
+            </div>
+          )}
 
           {progress && (
             <div className="card progress">

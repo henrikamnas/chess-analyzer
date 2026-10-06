@@ -829,16 +829,14 @@ cg-board square.last-move {
 }
 
 .line-title {
-  flex: 1;
-  min-width: 0;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  line-height: 1.35;
+  margin-top: 2px;
 }
 
 .line-count {
+  margin-left: auto;
   font-size: 12px;
   font-variant-numeric: tabular-nums;
 }
@@ -848,6 +846,7 @@ cg-board square.last-move {
 }
 
 .line-moves-row {
+  position: relative;
   display: flex;
   gap: 2px;
   margin-top: 4px;
@@ -936,4 +935,62 @@ cg-board square.last-move {
 
 .deep.done {
   color: var(--best);
+}
+
+.error-card {
+  border-color: var(--blunder);
+  font-size: 13px;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.error-card .muted {
+  font-size: 11px;
+  word-break: break-word;
+}
+
+.line-note {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 4px;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.line-note.expanded {
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  color: var(--text);
+}
+
+.actions button {
+  white-space: nowrap;
+}
+
+@media (max-width: 420px) {
+  .topbar {
+    padding: 8px 16px;
+  }
+  .topbar h1 {
+    font-size: 1rem;
+  }
+  .btn-label {
+    display: none;
+  }
+  .actions button {
+    font-size: 1.05rem;
+    padding: 6px 12px;
+  }
 }

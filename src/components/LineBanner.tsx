@@ -1,8 +1,9 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { pvToSan } from '../analysis'
 
 interface Props {
   title: string
+  note?: string // explanation of what the line shows; tap to expand on small screens
   kind: 'why' | 'best' | 'line'
   fen: string // position the line starts from
   moves: string[] // UCI
@@ -12,20 +13,27 @@ interface Props {
 }
 
 /** Shows that the board is off the game, in a side line, and lets you jump to any move in it. */
-export function LineBanner({ title, kind, fen, moves, current, onSelect, onExit }: Props) {
+export function LineBanner({ title, note, kind, fen, moves, current, onSelect, onExit }: Props) {
+  const [expanded, setExpanded] = useState(false)
   const sans = pvToSan(fen, moves, moves.length)
   const [, turn, , , , full] = fen.split(' ')
   let n = Number(full)
+  const row = useRef<HTMLDivElement>(null)
   const active = useRef<HTMLButtonElement>(null)
   useEffect(() => {
-    active.current?.scrollIntoView({ block: 'nearest', inline: 'nearest' })
+    // Scroll only the move row horizontally; scrollIntoView would also scroll the page.
+    const box = row.current
+    const el = active.current
+    if (!box || !el) return
+    const left = el.offsetLeft // .line-moves-row is position: relative
+    if (left < box.scrollLeft) box.scrollLeft = left - 8
+    else if (left + el.offsetWidth > box.scrollLeft + box.clientWidth) box.scrollLeft = left + el.offsetWidth - box.clientWidth + 8
   }, [current])
 
   return (
     <div className={`line-banner kind-${kind}`}>
       <div className="line-banner-head">
-        <span className="line-tag">{kind === 'line' ? 'Side line' : kind === 'why' ? 'Refutation' : 'Best line'}</span>
-        <span className="line-title">{title}</span>
+        <span className="line-tag">{kind === 'line' ? 'Side line' : kind === 'why' ? "Why it's bad" : 'Better move'}</span>
         <span className="line-count muted">
           {current}/{sans.length}
         </span>
@@ -33,7 +41,13 @@ export function LineBanner({ title, kind, fen, moves, current, onSelect, onExit 
           ✕
         </button>
       </div>
-      <div className="line-moves-row">
+      <div className="line-title">{title}</div>
+      {note && (
+        <button className={`line-note ${expanded ? 'expanded' : ''}`} onClick={() => setExpanded((e) => !e)}>
+          {note}
+        </button>
+      )}
+      <div className="line-moves-row" ref={row}>
         <button className={`lm start ${current === 0 ? 'on' : ''}`} onClick={() => onSelect(0)} title="Start of line">
           ·
         </button>
