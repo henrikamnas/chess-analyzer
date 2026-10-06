@@ -994,3 +994,58 @@ cg-board square.last-move {
     padding: 6px 12px;
   }
 }
+
+/* ---- Board coordinates ----
+ * Chessground's base CSS only has rough demo offsets for coordinates. Put them inside the board like
+ * Lichess/Chess.com: rank numbers top-left of the left column, file letters bottom-right of the bottom row,
+ * coloured to contrast with the square underneath (in both orientations).
+ * Selectors include .cg-board-wrap so they win over chessground's stylesheet, which loads after this one. */
+
+.cg-board-wrap.cg-wrap coords {
+  font-family: inherit;
+  font-size: clamp(9px, 1.2vw + 4px, 13px);
+  font-weight: 600;
+  opacity: 1;
+  line-height: 1;
+}
+
+.cg-board-wrap.cg-wrap coords.ranks {
+  left: 0;
+  top: 0;
+  width: 12.5%;
+  height: 100%;
+  align-items: stretch;
+}
+
+.cg-board-wrap.cg-wrap coords.ranks coord {
+  flex: 1 1 0;
+  transform: none;
+  padding: 0.3em 0 0 0.35em;
+}
+
+.cg-board-wrap.cg-wrap coords.files {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 12.5%;
+  align-items: flex-end;
+}
+
+.cg-board-wrap.cg-wrap coords.files coord {
+  flex: 1 1 0;
+  text-align: right;
+  padding: 0 0.35em 0.25em 0;
+}
+
+/* This board's squares are #f0d9b5 (light) and #c0ae91 (dark); white text can't contrast with the pale dark
+ * squares, so use dark brown on both, a shade darker on dark squares (~4:1 contrast each).
+ * White at the bottom: odd-numbered coords sit on dark squares (a1, a3, c1, …). Flipped, it's the reverse. */
+.cg-board-wrap.cg-wrap coords:not(.black) coord:nth-child(odd),
+.cg-board-wrap.cg-wrap coords.black coord:nth-child(even) {
+  color: #5c4730;
+}
+
+.cg-board-wrap.cg-wrap coords:not(.black) coord:nth-child(even),
+.cg-board-wrap.cg-wrap coords.black coord:nth-child(odd) {
+  color: #7a5f40;
+}
