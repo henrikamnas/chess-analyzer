@@ -69,7 +69,10 @@ function evalWords(score: Score) {
 }
 
 export interface MoveExplanation {
+  /** Why the played move was a mistake (shown with the opponent's punishing line). */
   text: string
+  /** What the better move achieves (shown with the engine's preferred line). */
+  bestText: string
   /** The opponent's best reply line after this move, starting from the position after it. */
   refutation: string[]
   /** The engine's preferred line instead of this move, starting from the position before it. */
@@ -95,31 +98,48 @@ export function explainMove(game: Game, review: Review, i: number): MoveExplanat
   const swing = `(${formatScore(before.score)} → ${formatScore(after.score)})`
   const bestSan = rv.bestSan ?? 'another move'
 
-  let text: string
   const afterMate = after.score.mate !== undefined ? after.score.mate * s : undefined
   const beforeMate = before.score.mate !== undefined ? before.score.mate * s : undefined
+  const start = s * material(new Chess(ply.fenBefore))
+  const viaRefutation = s * materialAfter(ply.fenAfter, refutation, HORIZON)
+  const viaBest = s * materialAfter(ply.fenBefore, best, HORIZON)
+  const lost = Math.round(start - viaRefutation)
+  const missed = Math.round(viaBest - start)
+  const diff = Math.round(viaBest - viaRefutation)
+  const losesMaterial = lost >= 1 && diff >= 1
+  const missesMaterial = missed >= 1 && diff >= 1
 
+  // Why the played move is bad
+  let text: string
   if (afterMate !== undefined && afterMate < 0) {
     text = `This allows ${opponent} to force mate in ${Math.abs(Math.round(afterMate))}: ${refText}.`
   } else if (beforeMate !== undefined && beforeMate > 0 && (afterMate === undefined || afterMate <= 0)) {
     text = `${mover} had a forced mate in ${Math.round(beforeMate)} starting with ${bestSan}: ${bestText}.`
+  } else if (losesMaterial) {
+    text = `This loses ${materialWords(Math.max(lost, diff))} ${swing}. ${opponent} answers ${refText}.`
+  } else if (missesMaterial) {
+    text = `This misses a chance to win ${materialWords(missed)} with ${bestSan} ${swing}: ${bestText}.`
   } else {
-    const start = s * material(new Chess(ply.fenBefore))
-    const viaRefutation = s * materialAfter(ply.fenAfter, refutation, HORIZON)
-    const viaBest = s * materialAfter(ply.fenBefore, best, HORIZON)
-    const lost = Math.round(start - viaRefutation)
-    const missed = Math.round(viaBest - start)
-    const diff = Math.round(viaBest - viaRefutation)
-
-    if (lost >= 1 && diff >= 1) {
-      text = `This loses ${materialWords(Math.max(lost, diff))} ${swing}. ${opponent} answers ${refText}.`
-    } else if (missed >= 1 && diff >= 1) {
-      text = `This misses a chance to win ${materialWords(missed)} with ${bestSan} ${swing}: ${bestText}.`
-    } else {
-      text = `The position goes from ${evalWords(before.score)} to ${evalWords(after.score)} ${swing}. ${bestSan} was stronger: ${bestText}.`
-    }
+    text = `The position goes from ${evalWords(before.score)} to ${evalWords(after.score)} ${swing}. ${bestSan} was stronger: ${bestText}.`
   }
-  return { text, refutation, best }
+
+  // What the better move achieves instead, from the mover's point of view
+  const moverWin = ply.color === 'w' ? winPercent(before.score) : 100 - winPercent(before.score)
+  const outcome = `${evalWords(before.score)} (${formatScore(before.score)}) instead of ${evalWords(after.score)} (${formatScore(after.score)}) after ${ply.san}`
+  const keeps = moverWin >= 45 ? `keeps the position ${outcome}` : `limits the damage: ${outcome}`
+  let bestNote: string
+  if (beforeMate !== undefined && beforeMate > 0) {
+    bestNote = `${bestSan} forces mate in ${Math.round(beforeMate)}: ${bestText}.`
+  } else if (missesMaterial) {
+    bestNote = `${bestSan} wins ${materialWords(missed)} and ${keeps}: ${bestText}.`
+  } else if (losesMaterial) {
+    const saves = missed <= -1 ? 'gives up less material' : 'avoids losing material'
+    bestNote = `${bestSan} ${saves} and ${keeps}: ${bestText}.`
+  } else {
+    bestNote = `${bestSan} ${keeps}: ${bestText}.`
+  }
+
+  return { text, bestText: bestNote, refutation, best }
 }
 
 // --- Whole-game summary ------------------------------------------------------

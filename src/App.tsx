@@ -413,7 +413,7 @@ export default function App() {
           {inLine && (
             <LineBanner
               title={lineTitle}
-              note={explaining ? explanation?.text : undefined}
+              note={!explaining ? undefined : explaining.kind === 'why' ? explanation?.text : explanation?.bestText}
               kind={explaining?.kind ?? 'line'}
               fen={mainFen}
               moves={plan}
