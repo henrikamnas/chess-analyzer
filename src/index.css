@@ -1190,8 +1190,11 @@ cg-board square.last-move {
 /* Engine line quality compared with the best line */
 .line-quality {
   flex: none;
-  min-width: 18px;
-  text-align: center;
+  min-width: 4.6em; /* fixed so the moves line up across lines */
+  display: inline-flex;
+  gap: 3px;
+  align-items: baseline;
+  white-space: nowrap;
   font-weight: 700;
   font-size: 12px;
 }
@@ -1209,3 +1212,8 @@ cg-board square.last-move {
 .engine-line.q-mistake .line-quality { color: var(--mistake); }
 .engine-line.q-blunder { border-left-color: var(--blunder); }
 .engine-line.q-blunder .line-quality { color: var(--blunder); }
+
+.line-cost {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
