@@ -120,6 +120,28 @@ export function lineLabels(scores: Score[], whiteToMove: boolean): Label[] {
   })
 }
 
+/** Centipawns for the side to move; mates count as huge values so they compare correctly. */
+function moverCp(score: Score, whiteToMove: boolean) {
+  const cp = score.mate !== undefined ? Math.sign(score.mate) * (100000 - Math.abs(score.mate) * 100) : score.cp
+  return whiteToMove ? cp : -cp
+}
+
+/**
+ * How much worse an engine line is than the best one, for the side to move.
+ * short: panel text ("−1.8", "=", "allows mate", "misses mate"); badge: compact arrow text ("−1.8", "#", "−#").
+ */
+export function lineCost(best: Score, line: Score, whiteToMove: boolean): { short: string; badge: string | null; long: string } {
+  const b = moverCp(best, whiteToMove)
+  const l = moverCp(line, whiteToMove)
+  const isMate = (cp: number) => Math.abs(cp) >= 50000
+  if (isMate(l) && l < 0 && !(isMate(b) && b < 0)) return { short: 'allows mate', badge: '#', long: 'This line allows a forced mate' }
+  if (isMate(b) && b > 0 && !(isMate(l) && l > 0)) return { short: 'misses mate', badge: '−#', long: 'The best line forces mate; this one does not' }
+  const diff = Math.max(0, b - l) / 100
+  if (diff < 0.05) return { short: '=', badge: null, long: 'As good as the best line' }
+  const text = `−${diff >= 10 ? Math.round(diff) : diff.toFixed(1)}`
+  return { short: `−${diff.toFixed(1)}`, badge: text, long: `${diff.toFixed(1)} pawns worse than the best line` }
+}
+
 function moveAccuracy(winLoss: number) {
   return Math.max(0, Math.min(100, 103.1668 * Math.exp(-0.04354 * winLoss) - 3.1669))
 }

@@ -3,7 +3,7 @@ import { Chess, DEFAULT_POSITION } from 'chess.js'
 import type { DrawShape } from 'chessground/draw'
 import type { Key } from 'chessground/types'
 import { availableThreads, Engine, type EngineFlavor, type EngineLine } from './engine'
-import { GLYPH, lineLabels, parseGame, REVIEW_LIMITS, reviewGame, type Game, type Label, type PositionEval, type Review } from './analysis'
+import { GLYPH, lineCost, lineLabels, parseGame, REVIEW_LIMITS, reviewGame, type Game, type Label, type PositionEval, type Review } from './analysis'
 import { explainMove, moveName } from './explain'
 import { Board } from './components/Board'
 import { EvalBar } from './components/EvalBar'
@@ -60,6 +60,22 @@ const LINE_BRUSH: Record<Label, string> = {
   inaccuracy: 'lineInaccuracy',
   mistake: 'lineMistake',
   blunder: 'lineBlunder',
+}
+
+const BADGE_COLOR: Record<Label, [string, string]> = {
+  best: ['#5fb35a', '#10200d'],
+  good: ['#7fb069', '#10200d'],
+  inaccuracy: ['#e6b53c', '#2a1f05'],
+  mistake: ['#e08a2c', '#ffffff'],
+  blunder: ['#d9453b', '#ffffff'],
+}
+
+/** A pill-shaped badge drawn on an arrow (chessground draws it in a 100×100 box the size of a square). */
+function arrowBadge(text: string, label: Label) {
+  const [bg, fg] = BADGE_COLOR[label]
+  const w = Math.min(96, 30 + text.length * 17)
+  return `<rect x="${50 - w / 2}" y="31" width="${w}" height="38" rx="19" fill="${bg}" stroke="rgba(0,0,0,.35)" stroke-width="2"/>
+<text x="50" y="58" text-anchor="middle" font-size="28" font-weight="700" font-family="system-ui, sans-serif" fill="${fg}">${text}</text>`
 }
 
 const shape = (uci: string, brush: string, lineWidth?: number): DrawShape => ({
@@ -380,7 +396,13 @@ export default function App() {
       .map((line, i) => ({ line, i }))
       .reverse()
       .forEach(({ line, i }) => {
-        if (line.pv[0]) out.push(shape(line.pv[0], LINE_BRUSH[liveLabels[i] ?? 'best'], i === 0 ? undefined : 7))
+        if (!line.pv[0]) return
+        const label = liveLabels[i] ?? 'best'
+        const arrow = shape(line.pv[0], LINE_BRUSH[label], i === 0 ? undefined : 7)
+        // Alternatives get a badge on the arrow saying how much worse they are than the best line.
+        const badge = i > 0 ? lineCost(liveLines[0].score, line.score, fen.split(' ')[1] === 'w').badge : null
+        if (badge) arrow.customSvg = { html: arrowBadge(badge, label), center: 'label' }
+        out.push(arrow)
       })
     if (verdict && !inVariation && verdictPly === ply) {
       const played = game.plies[ply - 1]
@@ -390,7 +412,7 @@ export default function App() {
       if (better && explanation) out.push(shape(better, 'paleBlue'))
     }
     return out
-  }, [liveLines, liveLabels, verdict, verdictPly, inVariation, game.plies, ply, review, explanation])
+  }, [liveLines, liveLabels, fen, verdict, verdictPly, inVariation, game.plies, ply, review, explanation])
 
   // --- Render --------------------------------------------------------------
 
