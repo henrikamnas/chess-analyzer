@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { runBatch, type BatchProgress } from '../batch'
 import type { Source, TimeClass } from '../imports'
 import { buildReport, type Insight, type PatternReport } from '../patterns'
+import { MOTIF_NAME } from '../tactics'
 import { getStoredGame, storedGamesFor, type StoredGame } from '../store'
 
 interface Props {
@@ -184,7 +185,7 @@ function BatchStatus({ progress: p, toReview }: { progress: BatchProgress; toRev
 
 function Report({ report: r, onOpen }: { report: PatternReport; onOpen: (key: string, ply: number) => void }) {
   const problems = r.insights.filter((i) => i.kind === 'problem')
-  const strengths = r.insights.filter((i) => i.kind === 'strength')
+  const others = r.insights.filter((i) => i.kind !== 'problem')
   const pct = (x: number) => `${Math.round(x * 100)}%`
   return (
     <>
@@ -213,12 +214,40 @@ function Report({ report: r, onOpen }: { report: PatternReport; onOpen: (key: st
       {problems.map((i) => (
         <InsightCard key={i.id} insight={i} onOpen={onOpen} />
       ))}
-      {strengths.map((i) => (
+      {others.map((i) => (
         <InsightCard key={i.id} insight={i} onOpen={onOpen} />
       ))}
 
+      {r.tactics.length > 0 && (
+        <div className="card">
+          <h3>Tactics</h3>
+          <p className="muted small">
+            What your opponents' best reply did after your mistakes, and what you could have played when they erred.
+          </p>
+          <table className="data-table">
+            <thead>
+              <tr>
+                <th />
+                <th>Used against you</th>
+                <th>You missed</th>
+              </tr>
+            </thead>
+            <tbody>
+              {r.tactics.map((t) => (
+                <tr key={t.motif}>
+                  <td className="cap">{MOTIF_NAME[t.motif]}</td>
+                  <td>{t.against || '–'}</td>
+                  <td>{t.missed || '–'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+
       <div className="card">
         <h3>By phase</h3>
+        <p className="muted small">Only positions that were still undecided, so won or lost endgames don't skew it.</p>
         <table className="data-table">
           <thead>
             <tr>
@@ -291,8 +320,16 @@ function Report({ report: r, onOpen }: { report: PatternReport; onOpen: (key: st
 function InsightCard({ insight: i, onOpen }: { insight: Insight; onOpen: (key: string, ply: number) => void }) {
   return (
     <div className={`card insight ${i.kind}`}>
-      <h3>{i.title}</h3>
+      <h3>
+        {i.title}
+        {i.tentative && (
+          <span className="tentative" title="Based on little data; analyze more games to confirm">
+            tentative
+          </span>
+        )}
+      </h3>
       <p>{i.body}</p>
+      <div className="evidence muted">Based on {i.evidence}</div>
       {i.examples.length > 0 && (
         <ul className="examples">
           {i.examples.map((e) => (

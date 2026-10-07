@@ -408,11 +408,9 @@ export default function App() {
       const played = game.plies[ply - 1]
       const glyph = GLYPH[verdict.label]
       if (glyph) out.push({ orig: played.uci.slice(2, 4) as Key, label: { text: glyph, fill: LABEL_COLOR[verdict.label] } })
-      const better = review?.evals[ply - 1].bestMove
-      if (better && explanation) out.push(shape(better, 'paleBlue'))
     }
     return out
-  }, [liveLines, liveLabels, fen, verdict, verdictPly, inVariation, game.plies, ply, review, explanation])
+  }, [liveLines, liveLabels, fen, verdict, verdictPly, inVariation, game.plies, ply])
 
   // --- Render --------------------------------------------------------------
 
