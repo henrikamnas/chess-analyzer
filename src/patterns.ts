@@ -1,5 +1,5 @@
 // Finds recurring mistakes across a player's reviewed games. Only the player's own moves are judged.
-import { aggregateAccuracy, parseGame, winPercent, type Game, type Label, type Review } from './analysis'
+import { aggregateAccuracy, parseGame, rateReview, winPercent, type Game, type Label, type Review } from './analysis'
 import { moveName, phaseOf, type Phase } from './explain'
 import { classifyTactic, describeTactic, PIECE_NAME, type Motif, type Tactic } from './tactics'
 import type { StoredGame } from './store'
@@ -103,7 +103,8 @@ export function buildReport(user: string, stored: StoredGame[]): PatternReport {
   for (const s of stored) {
     try {
       const me = s.white.toLowerCase() === name ? 'w' : 'b'
-      ctxs.push({ stored: s, game: parseGame(s.pgn), review: s.review, me, opponent: me === 'w' ? s.black : s.white })
+      const game = parseGame(s.pgn)
+      ctxs.push({ stored: s, game, review: rateReview(s.review, game), me, opponent: me === 'w' ? s.black : s.white })
     } catch {
       /* unparseable game: skip */
     }

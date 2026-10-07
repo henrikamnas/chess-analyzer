@@ -3,7 +3,7 @@ import { Chess, DEFAULT_POSITION } from 'chess.js'
 import type { DrawShape } from 'chessground/draw'
 import type { Key } from 'chessground/types'
 import { availableThreads, Engine, type EngineFlavor, type EngineLine } from './engine'
-import { GLYPH, lineCost, lineLabels, parseGame, REVIEW_LIMITS, reviewGame, type Game, type Label, type PositionEval, type Review } from './analysis'
+import { GLYPH, lineCost, lineLabels, parseGame, rateReview, REVIEW_LIMITS, reviewGame, type Game, type Label, type PositionEval, type Review } from './analysis'
 import { explainMove, moveName } from './explain'
 import { Board } from './components/Board'
 import { EvalBar } from './components/EvalBar'
@@ -238,9 +238,10 @@ export default function App() {
     reviewToken.current++
     reviewEngine.current?.stop()
     stopDeep()
+    const g = parseGame(stored.pgn)
     setPgn(stored.pgn)
-    setGame(parseGame(stored.pgn))
-    setReview(stored.review)
+    setGame(g)
+    setReview(rateReview(stored.review, g))
     setPartialEvals([])
     setProgress(null)
     resetLine()
@@ -423,9 +424,12 @@ export default function App() {
       {(c === 'w' ? meta.whiteElo : meta.blackElo) && <span className="elo">{c === 'w' ? meta.whiteElo : meta.blackElo}</span>}
       {review && (
         <span className="player-stats">
-          <span className="est" title={review.rating[c].reliable ? 'Estimated rating for this game' : 'Estimated rating (game too short to be reliable)'}>
+          <span
+            className="est"
+            title={`Estimated rating for this game, compared with ${review.rating[c].basis} players${review.rating[c].reliable ? '' : ' (game too short to be reliable)'}${review.rating[c].precision === 'rough' ? ' (rough: single fast games vary a lot)' : ''}`}
+          >
             ~{review.rating[c].value}
-            {!review.rating[c].reliable && '?'}
+            {(!review.rating[c].reliable || review.rating[c].precision === 'rough') && '?'}
           </span>
           <span className="acc">{review.accuracy[c].toFixed(1)}%</span>
         </span>

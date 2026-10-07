@@ -1,5 +1,5 @@
 // Reviews a player's recent games in the background with a small pool of engines, caching each review.
-import { parseGame, REVIEW_LIMITS, reviewGame } from './analysis'
+import { parseGame, REVIEW_ENGINE, REVIEW_LIMITS, reviewGame } from './analysis'
 import { Engine } from './engine'
 import { fetchGames, type Source, type TimeClass } from './imports'
 import { gameKey, getStoredGame, putStoredGame } from './store'
@@ -53,7 +53,9 @@ export function runBatch(
       p.total = games.length
       const todo: typeof games = []
       for (const g of games) {
-        if (await getStoredGame(gameKey(g))) p.cached++
+        // Reuse a cached review only if the same engine settings produced it.
+        const stored = await getStoredGame(gameKey(g))
+        if (stored && (stored.engine ?? REVIEW_ENGINE) === REVIEW_ENGINE) p.cached++
         else todo.push(g)
       }
       p.status = 'reviewing'
@@ -69,7 +71,7 @@ export function runBatch(
             const game = parseGame(summary.pgn)
             const review = await reviewGame(game, engine, REVIEW_LIMITS, () => {}, () => cancelled)
             if (!review || cancelled) return
-            await putStoredGame({ ...summary, key: gameKey(summary), review, reviewedAt: Date.now() })
+            await putStoredGame({ ...summary, key: gameKey(summary), review, reviewedAt: Date.now(), engine: REVIEW_ENGINE })
             onGameStored()
           } catch (e) {
             console.warn('Skipping game', summary.id, e)

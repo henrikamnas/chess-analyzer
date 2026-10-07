@@ -7,6 +7,7 @@ export interface StoredGame extends GameSummary {
   key: string // `${source}:${id}`
   review: Review
   reviewedAt: number
+  engine?: string // REVIEW_ENGINE that produced the review; missing on the first cached reviews (same engine)
 }
 
 const DB_NAME = 'chess-analyzer'

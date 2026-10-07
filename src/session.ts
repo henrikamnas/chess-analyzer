@@ -1,6 +1,6 @@
 // Remembers the open game and its review on this device, so a reload (e.g. a phone browser
 // discarding a background tab) brings you back to where you were without re-running the review.
-import { parseGame, type Game, type Review } from './analysis'
+import { parseGame, rateReview, type Game, type Review } from './analysis'
 
 const KEY = 'chess-analyzer:session:v1'
 
@@ -24,7 +24,7 @@ export function restoreSession(): RestoredSession | null {
     const s = JSON.parse(raw) as Session
     const game = parseGame(s.pgn)
     // Only trust a stored review that matches the game it was made for.
-    const review = s.review && s.review.evals?.length === game.plies.length + 1 ? s.review : null
+    const review = s.review && s.review.evals?.length === game.plies.length + 1 ? rateReview(s.review, game) : null
     return {
       ...s,
       game,

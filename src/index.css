@@ -1254,3 +1254,8 @@ cg-board square.last-move {
   vertical-align: -1px;
   margin-right: 4px;
 }
+
+.stat-basis {
+  font-size: 11px;
+  margin-top: 1px;
+}

@@ -7,7 +7,7 @@ A Lichess / Chess.com style game review that runs entirely in the browser.
 - Import recent games by **Lichess** or **Chess.com** username, or paste a PGN
 - **Stockfish 19** in Web Workers: the lite build (1.6 MB) for the fast review and live analysis, and the full build (~99 MB, multi-threaded) for **Deep analysis** and the optional "Full" live engine
 - Move labels (best / good / inaccuracy / mistake / blunder) and per-side **accuracy**, both based on the change in win% ([Lichess' formula](https://lichess.org/page/accuracy))
-- **Estimated rating** per player, calibrated on real Chess.com rapid games
+- **Estimated rating** per player, calibrated per site and time control (Chess.com rapid, blitz, bullet, daily; Lichess rapid, blitz, bullet) on real rated games; fast time controls are marked as rough
 - Plain-language explanations of mistakes, with "Why it's bad" / "Better move" lines to step through
 - Game summary with accuracy by phase and key moments
 - **My patterns**: reviews your recent Chess.com / Lichess games in the background and finds recurring mistakes (hanging pieces, missed chances, time trouble, thrown wins, missed mates, weak phases and openings), each with example positions to open; reviews are cached in IndexedDB

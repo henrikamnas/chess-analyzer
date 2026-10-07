@@ -39,6 +39,10 @@ export function SummaryCard({ game, review, onSelect, deep, onDeep }: Props) {
           {!est.reliable && '?'}
           {actual && <span className="muted"> · rated {actual}</span>}
         </div>
+        <div className="stat-basis muted">
+          {est.calibrated ? `vs ${est.basis} players` : `${est.basis} equivalent (no calibration for this game type)`}
+          {est.precision === 'rough' && ' · rough: single fast games vary a lot'}
+        </div>
         <div className="stat-errors">
           {ERRORS.map((l) => (
             <span key={l} className={`err-chip lbl-${l} ${review.counts[c][l] ? '' : 'zero'}`} title={l}>
