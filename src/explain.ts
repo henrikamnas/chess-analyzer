@@ -1,7 +1,9 @@
 // Plain-language explanations of individual moves and of the whole game, derived from the review.
+// All text goes through t() (i18n.ts), so it follows the selected language.
 import { Chess } from 'chess.js'
 import { aggregateAccuracy, formatScore, pvToSan, winPercent, type Game, type Label, type Review } from './analysis'
 import type { Score } from './engine'
+import { sideInText, t } from './i18n'
 
 const VALUE: Record<string, number> = { p: 1, n: 3, b: 3, r: 5, q: 9, k: 0 }
 
@@ -26,12 +28,12 @@ export function materialAfter(fen: string, line: string[], maxPlies: number) {
 }
 
 export function materialWords(n: number) {
-  if (n >= 8) return "a queen's worth of material"
-  if (n >= 5) return 'a rook'
-  if (n === 4) return 'a piece and a pawn'
-  if (n === 3) return 'a piece'
-  if (n === 2) return "two pawns' worth of material"
-  return 'a pawn'
+  if (n >= 8) return t("a queen's worth of material")
+  if (n >= 5) return t('a rook')
+  if (n === 4) return t('a piece and a pawn')
+  if (n === 3) return t('a piece')
+  if (n === 2) return t("two pawns' worth of material")
+  return t('a pawn')
 }
 
 /** "12. Nf3" / "12... Nf6" */
@@ -58,14 +60,19 @@ export function formatLine(fen: string, line: string[], max = 10) {
 }
 
 function evalWords(score: Score) {
-  if (score.mate !== undefined) return score.mate > 0 ? 'winning for White' : 'winning for Black'
+  if (score.mate !== undefined) return t('winning for {side}', { side: sideInText(score.mate > 0 ? 'w' : 'b') })
   const cp = score.cp
-  const side = cp > 0 ? 'White' : 'Black'
+  const side = sideInText(cp > 0 ? 'w' : 'b')
   const a = Math.abs(cp)
-  if (a < 50) return 'about equal'
-  if (a < 150) return `slightly better for ${side}`
-  if (a < 400) return `clearly better for ${side}`
-  return `winning for ${side}`
+  if (a < 50) return t('about equal')
+  if (a < 150) return t('slightly better for {side}', { side })
+  if (a < 400) return t('clearly better for {side}', { side })
+  return t('winning for {side}', { side })
+}
+
+/** Move label with article: "a mistake" / "ett misstag". */
+export function labelWithArticle(label: Label) {
+  return t({ best: 'a best move', good: 'a good move', inaccuracy: 'an inaccuracy', mistake: 'a mistake', blunder: 'a blunder' }[label])
 }
 
 export interface MoveExplanation {
@@ -93,10 +100,10 @@ export function explainMove(game: Game, review: Review, i: number): MoveExplanat
   const best = before.pv
   // Judge material over the same stretch of moves the text shows, so the claim matches the line.
   const HORIZON = 6
-  const refText = refutation.length ? formatLine(ply.fenAfter, refutation, HORIZON) : ''
-  const bestText = best.length ? formatLine(ply.fenBefore, best, HORIZON) : ''
+  const refLine = refutation.length ? formatLine(ply.fenAfter, refutation, HORIZON) : ''
+  const bestLine = best.length ? formatLine(ply.fenBefore, best, HORIZON) : ''
   const swing = `(${formatScore(before.score)} → ${formatScore(after.score)})`
-  const bestSan = rv.bestSan ?? 'another move'
+  const move = rv.bestSan ?? t('another move')
 
   const afterMate = after.score.mate !== undefined ? after.score.mate * s : undefined
   const beforeMate = before.score.mate !== undefined ? before.score.mate * s : undefined
@@ -112,31 +119,43 @@ export function explainMove(game: Game, review: Review, i: number): MoveExplanat
   // Why the played move is bad
   let text: string
   if (afterMate !== undefined && afterMate < 0) {
-    text = `This allows ${opponent} to force mate in ${Math.abs(Math.round(afterMate))}: ${refText}.`
+    text = t('This allows {opponent} to force mate in {n}: {line}.', { opponent, n: Math.abs(Math.round(afterMate)), line: refLine })
   } else if (beforeMate !== undefined && beforeMate > 0 && (afterMate === undefined || afterMate <= 0)) {
-    text = `${mover} had a forced mate in ${Math.round(beforeMate)} starting with ${bestSan}: ${bestText}.`
+    text = t('{mover} had a forced mate in {n} starting with {move}: {line}.', { mover, n: Math.round(beforeMate), move, line: bestLine })
   } else if (losesMaterial) {
-    text = `This loses ${materialWords(Math.max(lost, diff))} ${swing}. ${opponent} answers ${refText}.`
+    text = t('This loses {material} {swing}. {opponent} answers {line}.', { material: materialWords(Math.max(lost, diff)), swing, opponent, line: refLine })
   } else if (missesMaterial) {
-    text = `This misses a chance to win ${materialWords(missed)} with ${bestSan} ${swing}: ${bestText}.`
+    text = t('This misses a chance to win {material} with {move} {swing}: {line}.', { material: materialWords(missed), move, swing, line: bestLine })
   } else {
-    text = `The position goes from ${evalWords(before.score)} to ${evalWords(after.score)} ${swing}. ${bestSan} was stronger: ${bestText}.`
+    text = t('The position goes from {from} to {to} {swing}. {move} was stronger: {line}.', {
+      from: evalWords(before.score),
+      to: evalWords(after.score),
+      swing,
+      move,
+      line: bestLine,
+    })
   }
 
   // What the better move achieves instead, from the mover's point of view
   const moverWin = ply.color === 'w' ? winPercent(before.score) : 100 - winPercent(before.score)
-  const outcome = `${evalWords(before.score)} (${formatScore(before.score)}) instead of ${evalWords(after.score)} (${formatScore(after.score)}) after ${ply.san}`
-  const keeps = moverWin >= 45 ? `keeps the position ${outcome}` : `limits the damage: ${outcome}`
+  const outcome = t('{before} ({beforeScore}) instead of {after} ({afterScore}) after {played}', {
+    before: evalWords(before.score),
+    beforeScore: formatScore(before.score),
+    after: evalWords(after.score),
+    afterScore: formatScore(after.score),
+    played: ply.san,
+  })
+  const keeps = moverWin >= 45 ? t('keeps the position {outcome}', { outcome }) : t('limits the damage: {outcome}', { outcome })
   let bestNote: string
   if (beforeMate !== undefined && beforeMate > 0) {
-    bestNote = `${bestSan} forces mate in ${Math.round(beforeMate)}: ${bestText}.`
+    bestNote = t('{move} forces mate in {n}: {line}.', { move, n: Math.round(beforeMate), line: bestLine })
   } else if (missesMaterial) {
-    bestNote = `${bestSan} wins ${materialWords(missed)} and ${keeps}: ${bestText}.`
+    bestNote = t('{move} wins {material} and {keeps}: {line}.', { move, material: materialWords(missed), keeps, line: bestLine })
   } else if (losesMaterial) {
-    const saves = missed <= -1 ? 'gives up less material' : 'avoids losing material'
-    bestNote = `${bestSan} ${saves} and ${keeps}: ${bestText}.`
+    const saves = missed <= -1 ? t('gives up less material') : t('avoids losing material')
+    bestNote = t('{move} {saves} and {keeps}: {line}.', { move, saves, keeps, line: bestLine })
   } else {
-    bestNote = `${bestSan} ${keeps}: ${bestText}.`
+    bestNote = t('{move} {keeps}: {line}.', { move, keeps, line: bestLine })
   }
 
   return { text, bestText: bestNote, refutation, best }
@@ -154,18 +173,28 @@ export function phaseOf(fen: string, plyIndex: number): Phase {
   return 'middlegame'
 }
 
+/** Translated phase name ("opening" / "öppning"). */
+export const phaseName = (p: Phase) => t(p)
+/** Definite form ("the opening" / "öppningen"). */
+export const phaseThe = (p: Phase) => t(`the ${p}`)
+
 export interface GameSummary {
   paragraphs: string[]
   phases: { phase: Phase; w: number | null; b: number | null }[]
   moments: { ply: number; label: Label; text: string }[] // ply = 1-based index into the mainline
 }
 
-export function rating(acc: number) {
-  if (acc >= 90) return 'Excellent'
-  if (acc >= 80) return 'Good'
-  if (acc >= 65) return 'Inaccurate'
-  return 'Poor'
+export type AccuracyRating = 'excellent' | 'good' | 'inaccurate' | 'poor'
+
+/** Accuracy band (also used as a CSS class); show it with ratingName(). */
+export function rating(acc: number): AccuracyRating {
+  if (acc >= 90) return 'excellent'
+  if (acc >= 80) return 'good'
+  if (acc >= 65) return 'inaccurate'
+  return 'poor'
 }
+
+export const ratingName = (r: AccuracyRating) => t({ excellent: 'Excellent', good: 'Good', inaccurate: 'Inaccurate', poor: 'Poor' }[r])
 
 export function summarizeGame(game: Game, review: Review): GameSummary {
   const { white, black, result, opening } = game.meta
@@ -177,22 +206,21 @@ export function summarizeGame(game: Game, review: Review): GameSummary {
   const winner: 'w' | 'b' | null = result === '1-0' ? 'w' : result === '0-1' ? 'b' : null
   const other = (c: 'w' | 'b') => (c === 'w' ? 'b' : 'w')
   const pct = (c: 'w' | 'b') => `${acc[c].toFixed(0)}%`
-  const inOpening = opening ? ` in the ${opening}` : ''
+  const inOpening = opening ? t(' in the {opening}', { opening }) : ''
   if (winner) {
     const loser = other(winner)
     const verdict =
       acc[winner] >= acc[loser] - 3
-        ? `with ${pct(winner)} accuracy against ${name(loser)}'s ${pct(loser)}`
-        : `despite lower accuracy (${pct(winner)} vs ${pct(loser)})`
-    paragraphs.push(`${name(winner)} won${inOpening} ${verdict}.`)
+        ? t("with {pct} accuracy against {loser}'s {loserPct}", { pct: pct(winner), loser: name(loser), loserPct: pct(loser) })
+        : t('despite lower accuracy ({pct} vs {loserPct})', { pct: pct(winner), loserPct: pct(loser) })
+    paragraphs.push(t('{winner} won{inOpening} {verdict}.', { winner: name(winner), inOpening, verdict }))
   } else {
-    const outcome = result === '*' ? 'The game is unfinished' : 'The game was drawn'
-    paragraphs.push(`${outcome}${inOpening}. Accuracy: ${white} ${pct('w')}, ${black} ${pct('b')}.`)
+    const outcome = result === '*' ? t('The game is unfinished') : t('The game was drawn')
+    paragraphs.push(t('{outcome}{inOpening}. Accuracy: {white} {whitePct}, {black} {blackPct}.', { outcome, inOpening, white, whitePct: pct('w'), black, blackPct: pct('b') }))
   }
 
   // The story: when the winner took control for good, and the biggest swing
   const story: string[] = []
-  // When did the winner take control for good?
   const wins = review.evals.map((e) => winPercent(e.score))
   if (result === '1-0' || result === '0-1') {
     const winnerIsWhite = result === '1-0'
@@ -203,11 +231,11 @@ export function summarizeGame(game: Game, review: Review): GameSummary {
       from = i
     }
     if (from > 0 && from < wins.length - 1) {
-      story.push(`${winnerIsWhite ? white : black} took a decisive advantage after ${moveName(game, from - 1)} and never let it go.`)
+      story.push(t('{name} took a decisive advantage after {move} and never let it go.', { name: winnerIsWhite ? white : black, move: moveName(game, from - 1) }))
     } else if (from === wins.length - 1) {
-      story.push(`The game was decided by the very last move.`)
+      story.push(t('The game was decided by the very last move.'))
     } else if (from === -1) {
-      story.push(`The final position was not yet decisive, so the game was likely decided on time.`)
+      story.push(t('The final position was not yet decisive, so the game was likely decided on time.'))
     }
   }
 
@@ -219,7 +247,12 @@ export function summarizeGame(game: Game, review: Review): GameSummary {
   if (worst >= 0 && review.moves[worst].winLoss >= 10) {
     const m = review.moves[worst]
     story.push(
-      `The turning point was ${moveName(game, worst)}, a ${m.label} that cost ${name(game.plies[worst].color)} about ${Math.round(m.winLoss)}% winning chances.`,
+      t('The turning point was {move}, {label} that cost {name} about {n}% winning chances.', {
+        move: moveName(game, worst),
+        label: labelWithArticle(m.label),
+        name: name(game.plies[worst].color),
+        n: Math.round(m.winLoss),
+      }),
     )
   }
 

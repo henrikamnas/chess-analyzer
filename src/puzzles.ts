@@ -1,9 +1,10 @@
 // Practice puzzles made from the player's own reviewed games, with simple spaced repetition.
 import { Chess, type Color, type Square } from 'chess.js'
-import { formatScore, parseGame, uciToSan, winPercent, type Label } from './analysis'
+import { formatScore, parseGame, uciToSan, winPercent } from './analysis'
 import type { Score } from './engine'
-import { explainMove, moveName } from './explain'
-import { classifyTactic, describeTactic, PIECE_NAME, type Tactic } from './tactics'
+import { explainMove, labelWithArticle, moveName } from './explain'
+import { classifyTactic, describeTactic, pieceThe, type Tactic } from './tactics'
+import { t } from './i18n'
 import type { PuzzleProgress, StoredGame } from './store'
 
 export interface Puzzle {
@@ -82,7 +83,7 @@ export function buildPuzzles(user: string, stored: StoredGame[]): Puzzle[] {
         playedSan: ply.san,
         theme,
         allowed,
-        title: `${moveName(game, i).replace(/ .*/, '')} vs ${me === 'w' ? s.black : s.white}`,
+        title: t('{move} vs {opponent}', { move: moveName(game, i).replace(/ .*/, ''), opponent: me === 'w' ? s.black : s.white }),
         date: s.date,
         why: explainAnswer(game, review, i, me === 'w' ? s.black : s.white, punish),
       })
@@ -94,15 +95,19 @@ export function buildPuzzles(user: string, stored: StoredGame[]): Puzzle[] {
 /** The task shown above the board. */
 export function puzzlePrompt(p: Puzzle): string {
   return p.kind === 'punish'
-    ? `Your opponent just made a mistake. Find the move that punishes it.`
-    : `You went wrong here in the game. Find a better move.`
+    ? t('Your opponent just made a mistake. Find the move that punishes it.')
+    : t('You went wrong here in the game. Find a better move.')
 }
 
 /** Hint text for level 1 (level 2 highlights the piece, level 3 shows the move). */
 export function puzzleHint(p: Puzzle): string {
-  if (p.theme) return `Look for a ${describeTactic({ motif: p.theme.motif, piece: p.theme.piece })}.`
-  if (p.allowed) return `In the game, ${p.playedSan} allowed a ${describeTactic({ motif: p.allowed.motif, piece: p.allowed.piece })}. Look for a safer move.`
-  return 'Check every capture, check and threat for both sides first.'
+  if (p.theme) return t('Look for {tactic}.', { tactic: describeTactic({ motif: p.theme.motif, piece: p.theme.piece }) })
+  if (p.allowed)
+    return t('In the game, {played} allowed {tactic}. Look for a safer move.', {
+      played: p.playedSan,
+      tactic: describeTactic({ motif: p.allowed.motif, piece: p.allowed.piece }),
+    })
+  return t('Check every capture, check and threat for both sides first.')
 }
 
 /** Tactical puzzles first: punishing a blunder, then ones with a named tactic. */
@@ -139,7 +144,6 @@ export function moverWin(score: Score, color: 'w' | 'b') {
   return color === 'w' ? winPercent(score) : 100 - winPercent(score)
 }
 
-const LABEL_WORD: Record<Label, string> = { best: 'good move', good: 'good move', inaccuracy: 'inaccuracy', mistake: 'mistake', blunder: 'blunder' }
 const VALUE: Record<string, number> = { p: 1, n: 3, b: 3, r: 5, q: 9, k: 100 }
 
 /** What a move does on the board: what it takes, whether it checks, and which valuable pieces it newly attacks. */
@@ -155,9 +159,9 @@ function moveEffects(fen: string, uci: string): string | null {
     return null
   }
   const parts: string[] = []
-  if (m.captured) parts.push(`takes the ${PIECE_NAME[m.captured]} on ${m.to}`)
-  if (after.isCheckmate()) parts.push('gives checkmate')
-  else if (after.inCheck()) parts.push('gives check')
+  if (m.captured) parts.push(t('takes {piece} on {square}', { piece: pieceThe(m.captured), square: m.to }))
+  if (after.isCheckmate()) parts.push(t('gives checkmate'))
+  else if (after.inCheck()) parts.push(t('gives check'))
   // Pieces attacked by the moved piece that weren't attacked by it before: the threat that comes with the move
   const targets: string[] = []
   for (const row of after.board())
@@ -165,9 +169,9 @@ function moveEffects(fen: string, uci: string): string | null {
       if (!p || p.color !== opp || p.type === 'k' || p.type === 'p') continue
       const hits = after.attackers(p.square, me).includes(m.to as Square)
       const undefended = after.attackers(p.square, opp).length === 0
-      if (hits && (VALUE[p.type] > VALUE[m.piece] || undefended)) targets.push(`the ${PIECE_NAME[p.type]} on ${p.square}`)
+      if (hits && (VALUE[p.type] > VALUE[m.piece] || undefended)) targets.push(t('{piece} on {square}', { piece: pieceThe(p.type), square: p.square }))
     }
-  if (targets.length) parts.push(`attacks ${targets.slice(0, 2).join(' and ')}`)
+  if (targets.length) parts.push(t('attacks {targets}', { targets: targets.slice(0, 2).join(t(' and ')) }))
   // Discovered attacks: another of our pieces now hits a valuable target because the moved piece got out of the way
   for (const row of after.board())
     for (const p of row) {
@@ -175,13 +179,13 @@ function moveEffects(fen: string, uci: string): string | null {
       const was = new Set(before.attackers(p.square, me))
       const opened = after.attackers(p.square, me).find((sq) => sq !== m.to && !was.has(sq))
       if (opened && p.type !== 'k') {
-        parts.push(`uncovers an attack by the ${PIECE_NAME[after.get(opened)!.type]} on the ${PIECE_NAME[p.type]} on ${p.square}`)
+        parts.push(t('uncovers an attack by {attacker} on {target} on {square}', { attacker: pieceThe(after.get(opened)!.type), target: pieceThe(p.type), square: p.square }))
         break
       }
     }
   if (!parts.length) return null
   const last = parts.pop()!
-  return `${m.san} ${parts.length ? `${parts.join(', ')} and ${last}` : last}.`
+  return `${m.san} ${parts.length ? `${parts.join(', ')}${t(' and ')}${last}` : last}.`
 }
 
 /** Why the puzzle's answer works, in a few sentences built from the stored review. */
@@ -195,15 +199,15 @@ function explainAnswer(game: ReturnType<typeof parseGame>, review: StoredGame['r
     const prev = game.plies[i - 1]
     const err = review.moves[i - 1]
     const was = `${formatScore(review.evals[i - 1].score)} → ${formatScore(review.evals[i].score)}`
-    let s = `${opponent} had just played ${prev.san}, a ${LABEL_WORD[err.label]} (${was})`
-    s += err.bestSan && err.bestSan !== prev.san ? `; ${err.bestSan} was needed.` : '.'
+    let s = t('{opponent} had just played {move}, {label} ({was})', { opponent, move: prev.san, label: labelWithArticle(err.label), was })
+    s += err.bestSan && err.bestSan !== prev.san ? t('; {move} was needed.', { move: err.bestSan }) : '.'
     // Did it leave the square we capture on undefended?
     const target = best.slice(2, 4) as Square
     const victim = new Chess(ply.fenBefore).get(target)
     if (victim && victim.color === prev.color) {
       const defendedBefore = new Chess(prev.fenBefore).attackers(target, prev.color).length > 0
       const defendedNow = new Chess(ply.fenBefore).attackers(target, prev.color).length > 0
-      if (defendedBefore && !defendedNow) s += ` It left the ${PIECE_NAME[victim.type]} on ${target} undefended.`
+      if (defendedBefore && !defendedNow) s += t(' It left {piece} on {square} undefended.', { piece: pieceThe(victim.type), square: target })
     }
     out.push(s)
   }

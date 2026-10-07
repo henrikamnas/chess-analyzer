@@ -1,6 +1,7 @@
 import { Chess } from 'chess.js'
 import type { Engine, Limits, Score } from './engine'
 import type { TimeClass } from './imports'
+import { t } from './i18n'
 
 /** Engine limits for the standard review. The rating estimate is calibrated on reviews made with these. */
 export const REVIEW_LIMITS = { depth: 16 }
@@ -84,7 +85,7 @@ export interface Review {
 export interface RatingEstimate {
   value: number
   reliable: boolean // false for very short games
-  basis: string // which players it compares with, e.g. "Chess.com blitz"
+  basis: string // table it compares with, e.g. 'chesscom:blitz' (show it with basisName)
   calibrated: boolean // false when there is no table for this game type and the closest one is used instead
   precision: 'good' | 'fair' | 'rough' // how much a single game of this type says about rating
 }
@@ -164,12 +165,12 @@ export function lineCost(best: Score, line: Score, whiteToMove: boolean): { shor
   const b = moverCp(best, whiteToMove)
   const l = moverCp(line, whiteToMove)
   const isMate = (cp: number) => Math.abs(cp) >= 50000
-  if (isMate(l) && l < 0 && !(isMate(b) && b < 0)) return { short: 'allows mate', badge: '#', long: 'This line allows a forced mate' }
-  if (isMate(b) && b > 0 && !(isMate(l) && l > 0)) return { short: 'misses mate', badge: '−#', long: 'The best line forces mate; this one does not' }
+  if (isMate(l) && l < 0 && !(isMate(b) && b < 0)) return { short: t('allows mate'), badge: '#', long: t('This line allows a forced mate') }
+  if (isMate(b) && b > 0 && !(isMate(l) && l > 0)) return { short: t('misses mate'), badge: '−#', long: t('The best line forces mate; this one does not') }
   const diff = Math.max(0, b - l) / 100
-  if (diff < 0.05) return { short: '=', badge: null, long: 'As good as the best line' }
+  if (diff < 0.05) return { short: '=', badge: null, long: t('As good as the best line') }
   const text = `−${diff >= 10 ? Math.round(diff) : diff.toFixed(1)}`
-  return { short: `−${diff.toFixed(1)}`, badge: text, long: `${diff.toFixed(1)} pawns worse than the best line` }
+  return { short: `−${diff.toFixed(1)}`, badge: text, long: t('{n} pawns worse than the best line', { n: diff.toFixed(1) }) }
 }
 
 function moveAccuracy(winLoss: number) {
@@ -338,6 +339,12 @@ const TABLE_PRECISION: Record<string, 'good' | 'fair' | 'rough'> = {
 
 const PLATFORM_NAME: Record<Platform, string> = { chesscom: 'Chess.com', lichess: 'Lichess' }
 
+/** "chesscom:blitz" -> "Chess.com blitz" (time class translated). */
+export function basisName(basis: string) {
+  const [platform, timeClass] = basis.split(':')
+  return `${PLATFORM_NAME[platform as Platform] ?? platform} ${t(timeClass)}`
+}
+
 /** Closest calibrated table for game types without their own (too few games to calibrate on). */
 const TABLE_FALLBACK: Record<string, string> = {
   'lichess:classical': 'lichess:rapid',
@@ -361,7 +368,7 @@ export function estimateRating(acpl: number, moves: number, meta?: Pick<GameMeta
   return {
     value: Math.round(value / 50) * 50,
     reliable: moves >= 15,
-    basis: `${PLATFORM_NAME[used.split(':')[0] as Platform]} ${used.split(':')[1]}`,
+    basis: used,
     calibrated,
     precision: TABLE_PRECISION[used] ?? 'rough',
   }

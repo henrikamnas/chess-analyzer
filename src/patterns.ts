@@ -1,7 +1,8 @@
 // Finds recurring mistakes across a player's reviewed games. Only the player's own moves are judged.
 import { aggregateAccuracy, parseGame, rateReview, winPercent, type Game, type Label, type Review } from './analysis'
-import { moveName, phaseOf, type Phase } from './explain'
-import { classifyTactic, describeTactic, PIECE_NAME, type Motif, type Tactic } from './tactics'
+import { moveName, phaseOf, phaseThe, type Phase } from './explain'
+import { classifyTactic, describeTactic, pieceA, type Motif, type Tactic } from './tactics'
+import { sideInText, t, tn } from './i18n'
 import type { StoredGame } from './store'
 
 export interface Example {
@@ -78,7 +79,10 @@ type Ex = Example & { date: number }
 const ex = (c: GameCtx, i: number, text: string): Ex => ({
   key: c.stored.key,
   ply: i + 1,
-  title: `${moveName(c.game, i)}${c.review.moves[i].label === 'blunder' ? '??' : c.review.moves[i].label === 'mistake' ? '?' : ''} vs ${c.opponent}`,
+  title: t('{move} vs {opponent}', {
+    move: `${moveName(c.game, i)}${c.review.moves[i].label === 'blunder' ? '??' : c.review.moves[i].label === 'mistake' ? '?' : ''}`,
+    opponent: c.opponent,
+  }),
   text,
   date: c.stored.date,
 })
@@ -187,7 +191,7 @@ export function buildReport(user: string, stored: StoredGame[]): PatternReport {
         if (clk && lowThreshold !== null) {
           if (clk[i] < lowThreshold) {
             lowTimeMoves++
-            if (err) lowTimeErrors.push(ex(c, i, `${Math.round(clk[i])} s left on the clock`))
+            if (err) lowTimeErrors.push(ex(c, i, t('{n} s left on the clock', { n: Math.round(clk[i]) })))
           } else {
             normalMoves++
             if (err) normalErrors++
@@ -197,11 +201,11 @@ export function buildReport(user: string, stored: StoredGame[]): PatternReport {
 
       // What did the opponent's best reply do to you?
       if (err) {
-        const t = classifyTactic(ply.fenAfter, after.pv, me, after.score, ply.fenBefore)
+        const tac = classifyTactic(ply.fenAfter, after.pv, me, after.score, ply.fenBefore)
         // The same piece left hanging move after move counts once.
-        const repeat = t?.motif === 'hanging' && t.square === lastHangingSquare
-        lastHangingSquare = t?.motif === 'hanging' ? t.square : undefined
-        if (t && !repeat) against.push({ tactic: t, ex: ex(c, i, `Allowed a ${describeTactic(t)}`) })
+        const repeat = tac?.motif === 'hanging' && tac.square === lastHangingSquare
+        lastHangingSquare = tac?.motif === 'hanging' ? tac.square : undefined
+        if (tac && !repeat) against.push({ tactic: tac, ex: ex(c, i, t('Allowed {tactic}', { tactic: describeTactic(tac) })) })
       } else {
         lastHangingSquare = undefined
       }
@@ -211,9 +215,9 @@ export function buildReport(user: string, stored: StoredGame[]): PatternReport {
         chances++
         if (mv.winLoss < 7) taken++
         else {
-          const t = classifyTactic(ply.fenBefore, before.pv, opp, before.score)
-          const how = t && t.motif !== 'combination' ? ` (${describeTactic(t)})` : ''
-          missedTactics.push({ tactic: t, ex: ex(c, i, `${mv.bestSan} was winning${how}`) })
+          const tac = classifyTactic(ply.fenBefore, before.pv, opp, before.score)
+          const how = tac && tac.motif !== 'combination' ? ` (${describeTactic(tac)})` : ''
+          missedTactics.push({ tactic: tac, ex: ex(c, i, t('{move} was winning{how}', { move: mv.bestSan ?? '', how })) })
         }
       }
 
@@ -221,13 +225,13 @@ export function buildReport(user: string, stored: StoredGame[]): PatternReport {
       const beforeMate = before.score.mate !== undefined ? before.score.mate * s : undefined
       const afterMate = after.score.mate !== undefined ? after.score.mate * s : undefined
       if (beforeMate !== undefined && beforeMate > 0 && beforeMate <= 3 && !(afterMate !== undefined && afterMate > 0)) {
-        missedMates.push(ex(c, i, `Mate in ${Math.round(beforeMate)} with ${mv.bestSan}`))
+        missedMates.push(ex(c, i, t('Mate in {n} with {move}', { n: Math.round(beforeMate), move: mv.bestSan ?? '' })))
       }
 
       // Throwing away a won game: track the best position reached, then the move that let it go.
       peak = Math.max(peak, myWin(i))
-      if (score < 1 && peak >= 85 && mv.winLoss >= 15 && myWin(i + 1) < 65 && !thrown.some((t) => t.key === stored.key)) {
-        thrown.push(ex(c, i, `Was winning (${Math.round(peak)}%), then this`))
+      if (score < 1 && peak >= 85 && mv.winLoss >= 15 && myWin(i + 1) < 65 && !thrown.some((x) => x.key === stored.key)) {
+        thrown.push(ex(c, i, t('Was winning ({n}%), then this', { n: Math.round(peak) })))
       }
     })
     perGame.push({ date: stored.date, accuracy: review.accuracy[me], errors: gameErrors })
@@ -235,8 +239,8 @@ export function buildReport(user: string, stored: StoredGame[]): PatternReport {
 
   const insights: Insight[] = []
   const pct = (a: number, b: number) => (b ? Math.round((100 * a) / b) : 0)
-  const times = (k: number) => `${k} time${k === 1 ? '' : 's'}`
-  const evidence = (k: number) => `${times(k)} in ${n} games`
+  const times = (k: number) => tn('{n} time', '{n} times', k)
+  const evidence = (k: number) => t('{times} in {games} games', { times: times(k), games: n })
   const tentative = (k: number) => n < MIN_GAMES_CONFIDENT || k < 3
 
   // Tactics used against you, grouped
@@ -247,8 +251,8 @@ export function buildReport(user: string, stored: StoredGame[]): PatternReport {
     insights.push({
       id: 'hanging',
       kind: 'problem',
-      title: 'You leave pieces hanging',
-      body: `A piece of yours was simply taken for free, most often a ${PIECE_NAME[piece]} (${k}×). Before each move, check what your opponent can capture.`,
+      title: t('You leave pieces hanging'),
+      body: t('A piece of yours was simply taken for free, most often {piece} ({k}×). Before each move, check what your opponent can capture.', { piece: pieceA(piece), k }),
       evidence: evidence(hanging.length),
       tentative: tentative(hanging.length),
       weight: hanging.length * 0.6,
@@ -261,8 +265,8 @@ export function buildReport(user: string, stored: StoredGame[]): PatternReport {
     insights.push({
       id: 'forks',
       kind: 'problem',
-      title: 'You walk into forks',
-      body: `Your opponent attacked two of your pieces at once, mostly with a ${PIECE_NAME[piece]}. Watch for squares where one enemy piece could hit two of yours, especially king and queen.`,
+      title: t('You walk into forks'),
+      body: t('Your opponent attacked two of your pieces at once, mostly with {piece}. Watch for squares where one enemy piece could hit two of yours, especially king and queen.', { piece: pieceA(piece) }),
       evidence: evidence(forks.length),
       tentative: tentative(forks.length),
       weight: forks.length * 0.6,
@@ -274,8 +278,8 @@ export function buildReport(user: string, stored: StoredGame[]): PatternReport {
     insights.push({
       id: 'pins',
       kind: 'problem',
-      title: 'Pins and skewers cost you material',
-      body: `Pieces lined up with your king or queen got pinned or skewered by a bishop, rook or queen. Avoid leaving valuable pieces on the same line.`,
+      title: t('Pins and skewers cost you material'),
+      body: t('Pieces lined up with your king or queen got pinned or skewered by a bishop, rook or queen. Avoid leaving valuable pieces on the same line.'),
       evidence: evidence(lines.length),
       tentative: tentative(lines.length),
       weight: lines.length * 0.6,
@@ -287,8 +291,8 @@ export function buildReport(user: string, stored: StoredGame[]): PatternReport {
     insights.push({
       id: 'discovered',
       kind: 'problem',
-      title: 'Discovered attacks catch you out',
-      body: `An enemy piece moved out of the way and uncovered an attack from the piece behind it. Look at what's lined up behind your opponent's pieces, not just the pieces themselves.`,
+      title: t('Discovered attacks catch you out'),
+      body: t("An enemy piece moved out of the way and uncovered an attack from the piece behind it. Look at what's lined up behind your opponent's pieces, not just the pieces themselves."),
       evidence: evidence(disc.length),
       tentative: tentative(disc.length),
       weight: disc.length * 0.6,
@@ -301,8 +305,10 @@ export function buildReport(user: string, stored: StoredGame[]): PatternReport {
     insights.push({
       id: 'mates',
       kind: 'problem',
-      title: 'You walk into mating attacks',
-      body: `A move of yours allowed a forced mate${backRank ? `, ${backRank} of them on your back rank (give your king an escape square, e.g. a pawn move like h3)` : ''}.`,
+      title: t('You walk into mating attacks'),
+      body: backRank
+        ? t('A move of yours allowed a forced mate, {n} of them on your back rank (give your king an escape square, e.g. a pawn move like h3).', { n: backRank })
+        : t('A move of yours allowed a forced mate.'),
       evidence: evidence(mates.length),
       tentative: tentative(mates.length),
       weight: mates.length * 0.7,
@@ -316,11 +322,16 @@ export function buildReport(user: string, stored: StoredGame[]): PatternReport {
     insights.push({
       id: 'missed-chances',
       kind: 'problem',
-      title: "You don't punish your opponents' mistakes",
-      body: `Your opponent's move gave you a clearly better position ${times(chances)}; you kept the advantage ${times(taken)} (${pct(taken, chances)}%).${
-        top ? ` The win you missed was most often a ${describeTactic({ motif: top[0] })}.` : ''
-      } After every opponent move, ask what it left undefended.`,
-      evidence: `${chances - taken} missed out of ${chances} chances in ${n} games`,
+      title: t("You don't punish your opponents' mistakes"),
+      body:
+        t("Your opponent's move gave you a clearly better position {chances}; you kept the advantage {taken} ({pct}%).", {
+          chances: times(chances),
+          taken: times(taken),
+          pct: pct(taken, chances),
+        }) +
+        (top ? t(' The win you missed was most often {tactic}.', { tactic: describeTactic({ motif: top[0] }) }) : '') +
+        t(' After every opponent move, ask what it left undefended.'),
+      evidence: t('{missed} missed out of {chances} chances in {games} games', { missed: chances - taken, chances, games: n }),
       tentative: n < MIN_GAMES_CONFIDENT || chances < 5,
       weight: (chances - taken) * 0.5,
       examples: newest(missedTactics.map((m) => m.ex)),
@@ -333,9 +344,12 @@ export function buildReport(user: string, stored: StoredGame[]): PatternReport {
       insights.push({
         id: 'time',
         kind: 'problem',
-        title: 'Time trouble costs you',
-        body: `${pct(lowTimeErrors.length, closeErrors)}% of your mistakes came when you were low on time, where you err ${(lowRate / Math.max(normalRate, 0.001)).toFixed(1)}× as often as usual. Spend less time early so you have some left at the end.`,
-        evidence: `${lowTimeErrors.length} mistakes in ${lowTimeMoves} low-time moves`,
+        title: t('Time trouble costs you'),
+        body: t('{pct}% of your mistakes came when you were low on time, where you err {x}× as often as usual. Spend less time early so you have some left at the end.', {
+          pct: pct(lowTimeErrors.length, closeErrors),
+          x: (lowRate / Math.max(normalRate, 0.001)).toFixed(1),
+        }),
+        evidence: t('{errors} mistakes in {moves} low-time moves', { errors: lowTimeErrors.length, moves: lowTimeMoves }),
         tentative: lowTimeErrors.length < 4,
         weight: lowTimeErrors.length * 0.5,
         examples: newest(lowTimeErrors),
@@ -346,9 +360,9 @@ export function buildReport(user: string, stored: StoredGame[]): PatternReport {
     insights.push({
       id: 'thrown',
       kind: 'problem',
-      title: 'You let winning positions slip',
-      body: `You had a winning position and didn't win. When you're ahead, slow down: trade pieces and keep everything protected.`,
-      evidence: `${thrown.length} of ${n} games`,
+      title: t('You let winning positions slip'),
+      body: t("You had a winning position and didn't win. When you're ahead, slow down: trade pieces and keep everything protected."),
+      evidence: t('{k} of {games} games', { k: thrown.length, games: n }),
       tentative: tentative(thrown.length),
       weight: thrown.length * 0.8,
       examples: newest(thrown),
@@ -358,8 +372,8 @@ export function buildReport(user: string, stored: StoredGame[]): PatternReport {
     insights.push({
       id: 'missed-mates',
       kind: 'problem',
-      title: 'You miss checkmates',
-      body: `You had a short forced mate and didn't play it. Always look at checks first: they're the most forcing moves.`,
+      title: t('You miss checkmates'),
+      body: t("You had a short forced mate and didn't play it. Always look at checks first: they're the most forcing moves."),
       evidence: evidence(missedMates.length),
       tentative: tentative(missedMates.length),
       weight: missedMates.length * 0.6,
@@ -384,9 +398,19 @@ export function buildReport(user: string, stored: StoredGame[]): PatternReport {
       insights.push({
         id: 'phase',
         kind: 'problem',
-        title: `Most of your mistakes happen in the ${worst.phase}`,
-        body: `In positions that were still undecided, you make ${worst.errorsPer100.toFixed(1)} mistakes per 100 moves in the ${worst.phase}, against ${best.errorsPer100.toFixed(1)} in the ${best.phase}.`,
-        evidence: `${worst.moves} ${worst.phase} and ${best.moves} ${best.phase} moves`,
+        title: t('Most of your mistakes happen in {phase}', { phase: phaseThe(worst.phase) }),
+        body: t('In positions that were still undecided, you make {worst} mistakes per 100 moves in {worstPhase}, against {best} in {bestPhase}.', {
+          worst: worst.errorsPer100.toFixed(1),
+          worstPhase: phaseThe(worst.phase),
+          best: best.errorsPer100.toFixed(1),
+          bestPhase: phaseThe(best.phase),
+        }),
+        evidence: t('{worstMoves} moves in {worstPhase} and {bestMoves} in {bestPhase}', {
+          worstMoves: worst.moves,
+          worstPhase: phaseThe(worst.phase),
+          bestMoves: best.moves,
+          bestPhase: phaseThe(best.phase),
+        }),
         tentative: worst.moves < 60 || best.moves < 60,
         weight: 0.4,
         examples: [],
@@ -395,9 +419,9 @@ export function buildReport(user: string, stored: StoredGame[]): PatternReport {
     insights.push({
       id: 'strength-phase',
       kind: 'strength',
-      title: `Your ${best.phase} is your strongest phase`,
-      body: `In undecided positions: ${best.accuracy.toFixed(0)}% accuracy and ${best.errorsPer100.toFixed(1)} mistakes per 100 moves.`,
-      evidence: `${best.moves} moves`,
+      title: t('Your strongest phase is {phase}', { phase: phaseThe(best.phase) }),
+      body: t('In undecided positions: {acc}% accuracy and {errors} mistakes per 100 moves.', { acc: best.accuracy.toFixed(0), errors: best.errorsPer100.toFixed(1) }),
+      evidence: t('{n} moves', { n: best.moves }),
       tentative: best.moves < 60,
       weight: 0,
       examples: [],
@@ -413,9 +437,13 @@ export function buildReport(user: string, stored: StoredGame[]): PatternReport {
     insights.push({
       id: 'opening',
       kind: 'problem',
-      title: `${weakOpening.name} is a weak spot`,
-      body: `As ${weakOpening.color === 'w' ? 'White' : 'Black'} you scored ${Math.round(weakOpening.score * 100)}% in the ${weakOpening.name}. Worth looking up its main ideas.`,
-      evidence: `${weakOpening.games} games`,
+      title: t('{opening} is a weak spot', { opening: t(weakOpening.name) }),
+      body: t('As {color} you scored {pct}% in the {opening}. Worth looking up its main ideas.', {
+        color: sideInText(weakOpening.color),
+        pct: Math.round(weakOpening.score * 100),
+        opening: t(weakOpening.name),
+      }),
+      evidence: tn('{n} game', '{n} games', weakOpening.games),
       tentative: weakOpening.games < 5,
       weight: weakOpening.games * (0.5 - weakOpening.score),
       examples: [],
@@ -426,9 +454,9 @@ export function buildReport(user: string, stored: StoredGame[]): PatternReport {
     insights.push({
       id: 'strength-opening',
       kind: 'strength',
-      title: `You do well in the ${strongOpening.name}`,
-      body: `As ${strongOpening.color === 'w' ? 'White' : 'Black'} you scored ${Math.round(strongOpening.score * 100)}%.`,
-      evidence: `${strongOpening.games} games`,
+      title: t('You do well in the {opening}', { opening: t(strongOpening.name) }),
+      body: t('As {color} you scored {pct}%.', { color: sideInText(strongOpening.color), pct: Math.round(strongOpening.score * 100) }),
+      evidence: tn('{n} game', '{n} games', strongOpening.games),
       tentative: strongOpening.games < 5,
       weight: 0,
       examples: [],
@@ -451,9 +479,15 @@ export function buildReport(user: string, stored: StoredGame[]): PatternReport {
     insights.push({
       id: 'trend',
       kind: 'trend',
-      title: better && !worse ? "You're improving" : worse && !better ? 'Your recent games were weaker' : 'Your level is steady',
-      body: `Your last ${half} games: ${accNew.toFixed(0)}% accuracy and ${errNew.toFixed(1)} mistakes per game, against ${accOld.toFixed(0)}% and ${errOld.toFixed(1)} in the ${half} before.`,
-      evidence: `${half * 2} games`,
+      title: t(better && !worse ? "You're improving" : worse && !better ? 'Your recent games were weaker' : 'Your level is steady'),
+      body: t('Your last {half} games: {accNew}% accuracy and {errNew} mistakes per game, against {accOld}% and {errOld} in the {half} before.', {
+        half,
+        accNew: accNew.toFixed(0),
+        errNew: errNew.toFixed(1),
+        accOld: accOld.toFixed(0),
+        errOld: errOld.toFixed(1),
+      }),
+      evidence: tn('{n} game', '{n} games', half * 2),
       tentative: half < 10,
       weight: 0,
       examples: [],

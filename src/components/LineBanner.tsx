@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { pvToSan } from '../analysis'
+import { t } from '../i18n'
 
 interface Props {
   title: string
@@ -33,11 +34,11 @@ export function LineBanner({ title, note, kind, fen, moves, current, onSelect, o
   return (
     <div className={`line-banner kind-${kind}`}>
       <div className="line-banner-head">
-        <span className="line-tag">{kind === 'line' ? 'Side line' : kind === 'why' ? "Why it's bad" : 'Better move'}</span>
+        <span className="line-tag">{t(kind === 'line' ? 'Side line' : kind === 'why' ? "Why it's bad" : 'Better move')}</span>
         <span className="line-count muted">
           {current}/{sans.length}
         </span>
-        <button className="line-exit" onClick={onExit} aria-label="Back to game">
+        <button className="line-exit" onClick={onExit} aria-label={t('Back to game')}>
           ✕
         </button>
       </div>
@@ -48,7 +49,7 @@ export function LineBanner({ title, note, kind, fen, moves, current, onSelect, o
         </button>
       )}
       <div className="line-moves-row" ref={row}>
-        <button className={`lm start ${current === 0 ? 'on' : ''}`} onClick={() => onSelect(0)} title="Start of line">
+        <button className={`lm start ${current === 0 ? 'on' : ''}`} onClick={() => onSelect(0)} title={t('Start of line')}>
           ·
         </button>
         {sans.map((san, i) => {

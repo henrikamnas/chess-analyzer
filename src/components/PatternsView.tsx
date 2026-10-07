@@ -2,7 +2,9 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { runBatch, type BatchProgress } from '../batch'
 import type { Source, TimeClass } from '../imports'
 import { buildReport, type Insight, type PatternReport } from '../patterns'
-import { MOTIF_NAME } from '../tactics'
+import { motifName } from '../tactics'
+import { phaseName } from '../explain'
+import { t, tn, useLang } from '../i18n'
 import { getStoredGame, storedGamesFor, type StoredGame } from '../store'
 
 interface Props {
@@ -25,7 +27,7 @@ const CLASSES: { value: Prefs['timeClass']; label: string }[] = [
   { value: 'bullet', label: 'Bullet' },
   { value: 'classical', label: 'Classical' },
   { value: 'daily', label: 'Daily' },
-  { value: 'all', label: 'All' },
+  { value: 'all', label: 'All' }, // labels are shown through t()
 ]
 
 function loadPrefs(): Prefs {
@@ -61,11 +63,13 @@ export function PatternsView({ onOpen }: Props) {
     void reportFor(p).then(setReport)
   }, [])
 
-  // Show what's already cached for the saved player right away.
+  // Show what's already cached for the saved player right away, and rebuild it when the language
+  // changes (the insight text is generated in the current language).
+  const lang = useLang()
   useEffect(() => {
     const p = loadPrefs()
     void reportFor(p).then(setReport)
-  }, [])
+  }, [lang])
 
   useEffect(() => () => batch.current?.cancel(), [])
 
@@ -108,10 +112,9 @@ export function PatternsView({ onOpen }: Props) {
   return (
     <div className="patterns">
       <div className="card">
-        <h2>My patterns</h2>
+        <h2>{t('My patterns')}</h2>
         <p className="muted">
-          Reviews your recent games and looks for mistakes you keep making. Each game is analyzed once and kept in this
-          browser.
+          {t('Reviews your recent games and looks for mistakes you keep making. Each game is analyzed once and kept in this browser.')}
         </p>
         <form className="patterns-form" onSubmit={start}>
           <select value={prefs.source} onChange={(e) => setPrefs({ ...prefs, source: e.target.value as Source })}>
@@ -119,7 +122,7 @@ export function PatternsView({ onOpen }: Props) {
             <option value="lichess">Lichess</option>
           </select>
           <input
-            placeholder="Username"
+            placeholder={t('Username')}
             value={prefs.user}
             onChange={(e) => setPrefs({ ...prefs, user: e.target.value })}
             autoCapitalize="off"
@@ -129,24 +132,24 @@ export function PatternsView({ onOpen }: Props) {
           <select value={prefs.timeClass} onChange={(e) => setPrefs({ ...prefs, timeClass: e.target.value as Prefs['timeClass'] })}>
             {CLASSES.map((c) => (
               <option key={c.value} value={c.value}>
-                {c.label}
+                {t(c.label)}
               </option>
             ))}
           </select>
           <select value={prefs.count} onChange={(e) => setPrefs({ ...prefs, count: Number(e.target.value) })}>
             {COUNTS.map((n) => (
               <option key={n} value={n}>
-                Last {n}
+                {t('Last {n}', { n })}
               </option>
             ))}
           </select>
           {running ? (
             <button type="button" onClick={() => batch.current?.cancel()}>
-              Stop
+              {t('Stop')}
             </button>
           ) : (
             <button type="submit" className="primary">
-              Analyze my games
+              {t('Analyze my games')}
             </button>
           )}
         </form>
@@ -154,25 +157,25 @@ export function PatternsView({ onOpen }: Props) {
         {progress && <BatchStatus progress={progress} toReview={toReview} />}
       </div>
 
-      {report ? <Report report={report} onOpen={open} /> : !running && <p className="muted center">No reviewed games for this player yet.</p>}
+      {report ? <Report report={report} onOpen={open} /> : !running && <p className="muted center">{t('No reviewed games for this player yet.')}</p>}
     </div>
   )
 }
 
 function BatchStatus({ progress: p, toReview }: { progress: BatchProgress; toReview: number }) {
   if (p.status === 'error') return <p className="error">{p.error}</p>
-  if (p.status === 'fetching') return <p className="muted">Fetching games…</p>
-  if (p.status === 'cancelled') return <p className="muted">Stopped. Games reviewed so far are kept.</p>
+  if (p.status === 'fetching') return <p className="muted">{t('Fetching games…')}</p>
+  if (p.status === 'cancelled') return <p className="muted">{t('Stopped. Games reviewed so far are kept.')}</p>
   const perGame = p.done ? p.elapsedMs / p.done : null
   const left = perGame && toReview > p.done ? Math.round(((toReview - p.done) * perGame) / 1000) : null
   return (
     <div className="batch-status">
       <div className="muted">
         {p.status === 'done'
-          ? `Done: ${p.total} games (${p.done} newly reviewed, ${p.cached} from earlier).`
-          : `Reviewing ${p.done}/${toReview} new games with ${p.engines} engine${p.engines > 1 ? 's' : ''}${p.cached ? ` · ${p.cached} already reviewed` : ''}${
-              left !== null ? ` · about ${left < 90 ? `${left} s` : `${Math.round(left / 60)} min`} left` : ''
-            }`}
+          ? t('Done: {total} games ({done} newly reviewed, {cached} from earlier).', { total: p.total, done: p.done, cached: p.cached })
+          : tn('Reviewing {done}/{todo} new games with {n} engine', 'Reviewing {done}/{todo} new games with {n} engines', p.engines, { done: p.done, todo: toReview }) +
+            (p.cached ? t(' · {n} already reviewed', { n: p.cached }) : '') +
+            (left !== null ? t(' · about {time} left', { time: left < 90 ? `${left} s` : `${Math.round(left / 60)} min` }) : '')}
       </div>
       {p.status === 'reviewing' && (
         <div className="bar">
@@ -192,25 +195,25 @@ function Report({ report: r, onOpen }: { report: PatternReport; onOpen: (key: st
       <div className="card report-head">
         <div>
           <div className="big">{r.games}</div>
-          <div className="muted">games</div>
+          <div className="muted">{t('games')}</div>
         </div>
         <div>
           <div className="big">
             {r.record.w}/{r.record.d}/{r.record.l}
           </div>
-          <div className="muted">won/drawn/lost</div>
+          <div className="muted">{t('won/drawn/lost')}</div>
         </div>
         <div>
           <div className="big">{r.accuracy.toFixed(0)}%</div>
-          <div className="muted">avg accuracy</div>
+          <div className="muted">{t('avg accuracy')}</div>
         </div>
         <div>
           <div className="big">~{r.playedLike}</div>
-          <div className="muted">plays like</div>
+          <div className="muted">{t('plays like')}</div>
         </div>
       </div>
 
-      {problems.length === 0 && <p className="muted center">No recurring problems found in these games. Nice!</p>}
+      {problems.length === 0 && <p className="muted center">{t('No recurring problems found in these games. Nice!')}</p>}
       {problems.map((i) => (
         <InsightCard key={i.id} insight={i} onOpen={onOpen} />
       ))}
@@ -220,24 +223,24 @@ function Report({ report: r, onOpen }: { report: PatternReport; onOpen: (key: st
 
       {r.tactics.length > 0 && (
         <div className="card">
-          <h3>Tactics</h3>
+          <h3>{t('Tactics')}</h3>
           <p className="muted small">
-            What your opponents' best reply did after your mistakes, and what you could have played when they erred.
+            {t("What your opponents' best reply did after your mistakes, and what you could have played when they erred.")}
           </p>
           <table className="data-table">
             <thead>
               <tr>
                 <th />
-                <th>Used against you</th>
-                <th>You missed</th>
+                <th>{t('Used against you')}</th>
+                <th>{t('You missed')}</th>
               </tr>
             </thead>
             <tbody>
-              {r.tactics.map((t) => (
-                <tr key={t.motif}>
-                  <td className="cap">{MOTIF_NAME[t.motif]}</td>
-                  <td>{t.against || '–'}</td>
-                  <td>{t.missed || '–'}</td>
+              {r.tactics.map((tac) => (
+                <tr key={tac.motif}>
+                  <td className="cap">{motifName(tac.motif)}</td>
+                  <td>{tac.against || '–'}</td>
+                  <td>{tac.missed || '–'}</td>
                 </tr>
               ))}
             </tbody>
@@ -246,21 +249,21 @@ function Report({ report: r, onOpen }: { report: PatternReport; onOpen: (key: st
       )}
 
       <div className="card">
-        <h3>By phase</h3>
-        <p className="muted small">Only positions that were still undecided, so won or lost endgames don't skew it.</p>
+        <h3>{t('By phase')}</h3>
+        <p className="muted small">{t("Only positions that were still undecided, so won or lost endgames don't skew it.")}</p>
         <table className="data-table">
           <thead>
             <tr>
               <th />
-              <th>Your moves</th>
-              <th>Mistakes /100</th>
-              <th>Accuracy</th>
+              <th>{t('Your moves')}</th>
+              <th>{t('Mistakes /100')}</th>
+              <th>{t('Accuracy')}</th>
             </tr>
           </thead>
           <tbody>
             {r.phases.map((p) => (
               <tr key={p.phase}>
-                <td className="cap">{p.phase}</td>
+                <td className="cap">{phaseName(p.phase)}</td>
                 <td>{p.moves}</td>
                 <td>{p.errorsPer100.toFixed(1)}</td>
                 <td>{p.accuracy.toFixed(0)}%</td>
@@ -271,21 +274,21 @@ function Report({ report: r, onOpen }: { report: PatternReport; onOpen: (key: st
       </div>
 
       <div className="card">
-        <h3>Openings</h3>
+        <h3>{t('Openings')}</h3>
         <table className="data-table">
           <thead>
             <tr>
               <th />
-              <th>Games</th>
-              <th>Score</th>
-              <th>Accuracy</th>
+              <th>{t('Games')}</th>
+              <th>{t('Score')}</th>
+              <th>{t('Accuracy')}</th>
             </tr>
           </thead>
           <tbody>
             {r.openings.slice(0, 10).map((o) => (
               <tr key={`${o.name}|${o.color}`}>
                 <td>
-                  <span className={`swatch ${o.color}`} /> {o.name}
+                  <span className={`swatch ${o.color}`} /> {t(o.name)}
                 </td>
                 <td>{o.games}</td>
                 <td>{pct(o.score)}</td>
@@ -297,13 +300,13 @@ function Report({ report: r, onOpen }: { report: PatternReport; onOpen: (key: st
       </div>
 
       <div className="card">
-        <h3>By colour</h3>
+        <h3>{t('By colour')}</h3>
         <table className="data-table">
           <tbody>
             {(['w', 'b'] as const).map((c) => (
               <tr key={c}>
                 <td>
-                  <span className={`swatch ${c}`} /> {c === 'w' ? 'White' : 'Black'}
+                  <span className={`swatch ${c}`} /> {t(c === 'w' ? 'White' : 'Black')}
                 </td>
                 <td>{r.colors[c].games} games</td>
                 <td>{pct(r.colors[c].score)} score</td>
@@ -323,13 +326,13 @@ function InsightCard({ insight: i, onOpen }: { insight: Insight; onOpen: (key: s
       <h3>
         {i.title}
         {i.tentative && (
-          <span className="tentative" title="Based on little data; analyze more games to confirm">
-            tentative
+          <span className="tentative" title={t('Based on little data; analyze more games to confirm')}>
+            {t('tentative')}
           </span>
         )}
       </h3>
       <p>{i.body}</p>
-      <div className="evidence muted">Based on {i.evidence}</div>
+      <div className="evidence muted">{t('Based on {evidence}', { evidence: i.evidence })}</div>
       {i.examples.length > 0 && (
         <ul className="examples">
           {i.examples.map((e) => (

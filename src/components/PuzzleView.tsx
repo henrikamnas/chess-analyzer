@@ -10,7 +10,8 @@ import { buildPuzzles, moverWin, nextPuzzle, puzzleHint, puzzlePrompt, schedule,
 import { allPuzzleProgress, putPuzzleProgress, storedGamesFor, type PuzzleProgress, type StoredGame } from '../store'
 import type { Source } from '../imports'
 import { MiniBoard } from './MiniBoard'
-import { MOTIF_NAME, type Motif } from '../tactics'
+import { describeTactic, motifName, type Motif } from '../tactics'
+import { t, tn, useLang } from '../i18n'
 import { DAILY_GOAL, loadPuzzleStats, recordPuzzle } from '../puzzleStats'
 
 interface Props {
@@ -80,7 +81,13 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
     setFen(p?.fen ?? '')
   }, [])
 
-  // Load puzzles from the player's reviewed games and their repetition state, then pick the first one
+  // Load puzzles from the player's reviewed games and their repetition state, then pick the first one.
+  // Also rebuilt when the language changes (hints and explanations are generated text); the open puzzle stays.
+  const lang = useLang()
+  const currentId = useRef<string | null>(null)
+  useEffect(() => {
+    currentId.current = current?.id ?? null
+  }, [current])
   useEffect(() => {
     if (!player) return
     void Promise.all([storedGamesFor(player.user, player.source), allPuzzleProgress()]).then(([games, prog]: [StoredGame[], PuzzleProgress[]]) => {
@@ -88,9 +95,11 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
       const map = new Map(prog.map((p) => [p.id, p]))
       setPuzzles(list)
       setProgress(map)
-      start(nextPuzzle(list, map, new Set()))
+      const same = currentId.current ? list.find((p) => p.id === currentId.current) : undefined
+      if (same) setCurrent(same)
+      else start(nextPuzzle(list, map, new Set()))
     })
-  }, [player, start])
+  }, [player, start, lang])
 
   const finish = (correct: boolean) => {
     if (!current) return
@@ -141,22 +150,22 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
       setFeedback(how)
       finish(!missed && hint < 2)
     }
-    if (uci === current.best) return solved(`Correct! ${current.bestSan} is the best move.`)
+    if (uci === current.best) return solved(t('Correct! {move} is the best move.', { move: current.bestSan }))
 
     // A different move may be just as good: ask the engine.
     setPhase('checking')
-    setFeedback('Checking your move…')
+    setFeedback(t('Checking your move…'))
     const r = await engine.current!.analyze(chess.fen(), { depth: 14 })
     const loss = moverWin(current.score, current.color) - moverWin(r.score, current.color)
     if (chess.isCheckmate() || loss <= ACCEPT_LOSS) {
-      return solved(`Good move! ${move.san} works too. The engine's top choice was ${current.bestSan}.`)
+      return solved(t("Good move! {move} works too. The engine's top choice was {best}.", { move: move.san, best: current.bestSan }))
     }
     const reply = r.pv[0]
     const replySan = reply ? pvToSan(chess.fen(), [reply])[0] : null
     setMissed(true)
     setPhase('wrong')
     setReplyArrow(reply ?? null)
-    setFeedback(`Not quite. After ${move.san}, your opponent can answer ${replySan ?? 'strongly'}. Try again.`)
+    setFeedback(t('Not quite. After {move}, your opponent can answer {reply}. Try again.', { move: move.san, reply: replySan ?? t('strongly') }))
     setTimeout(() => {
       setFen(current.fen)
       setLastMove(undefined)
@@ -173,7 +182,7 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
     setFen(chess.fen())
     setLastMove(current.best)
     setPhase('revealed')
-    setFeedback(`The answer was ${current.bestSan}.`)
+    setFeedback(t('The answer was {move}.', { move: current.bestSan }))
     finish(false)
   }
 
@@ -217,24 +226,24 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
     return (
       <div className="puzzles">
         <div className="card">
-          <h2>Puzzles</h2>
-          <p>Puzzles are made from your own games. Analyze your games in My patterns first.</p>
+          <h2>{t('Puzzles')}</h2>
+          <p>{t('Puzzles are made from your own games. Analyze your games in My patterns first.')}</p>
           <button className="primary" onClick={onGoToPatterns}>
-            Go to My patterns
+            {t('Go to My patterns')}
           </button>
         </div>
       </div>
     )
   }
-  if (!puzzles) return <div className="puzzles"><p className="muted center">Loading puzzles…</p></div>
+  if (!puzzles) return <div className="puzzles"><p className="muted center">{t('Loading puzzles…')}</p></div>
   if (puzzles.length === 0) {
     return (
       <div className="puzzles">
         <div className="card">
-          <h2>Puzzles</h2>
-          <p>No puzzles yet for {player.user}. Analyze some games in My patterns, and your mistakes become puzzles here.</p>
+          <h2>{t('Puzzles')}</h2>
+          <p>{t('No puzzles yet for {user}. Analyze some games in My patterns, and your mistakes become puzzles here.', { user: player.user })}</p>
           <button className="primary" onClick={onGoToPatterns}>
-            Go to My patterns
+            {t('Go to My patterns')}
           </button>
         </div>
       </div>
@@ -251,29 +260,29 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
       <div className="puzzle-top">
         <div className="tabs puzzle-tabs">
           <button className={tab === 'train' ? 'on' : ''} onClick={() => setTab('train')}>
-            Train
+            {t('Train')}
           </button>
           <button className={tab === 'list' ? 'on' : ''} onClick={() => setTab('list')}>
-            All puzzles ({puzzles.length})
+            {t('All puzzles ({n})', { n: puzzles.length })}
           </button>
         </div>
         <div className="gamebar">
-          <div className="goal" title={`Daily goal: ${DAILY_GOAL} puzzles solved`}>
-            <div className="goal-label">{game.today >= DAILY_GOAL ? '🎯 Daily goal done!' : `Today ${game.today}/${DAILY_GOAL}`}</div>
+          <div className="goal" title={t('Daily goal: {n} puzzles solved', { n: DAILY_GOAL })}>
+            <div className="goal-label">{game.today >= DAILY_GOAL ? t('🎯 Daily goal done!') : t('Today {n}/{goal}', { n: game.today, goal: DAILY_GOAL })}</div>
             <div className="goal-bar">
               <div style={{ width: `${goalPct}%` }} />
             </div>
           </div>
-          <div className="chip" title="Days in a row with at least one solved puzzle">
-            📅 {game.streak} day{game.streak === 1 ? '' : 's'}
+          <div className="chip" title={t('Days in a row with at least one solved puzzle')}>
+            📅 {tn('{n} day', '{n} days', game.streak)}
           </div>
-          {combo >= 2 && <div className="chip hot">🔥 {combo} in a row</div>}
+          {combo >= 2 && <div className="chip hot">🔥 {t('{n} in a row', { n: combo })}</div>}
         </div>
         {stats && (
           <div className="puzzle-stats muted">
-            {stats.due} due · {stats.fresh} new · {stats.mastered} mastered
-            {session.tried > 0 && ` · this session ${session.solved}/${session.tried}`}
-            {game.bestCombo >= 3 && ` · best run ${game.bestCombo}`}
+            {t('{due} due · {fresh} new · {mastered} mastered', { due: stats.due, fresh: stats.fresh, mastered: stats.mastered })}
+            {session.tried > 0 && t(' · this session {solved}/{tried}', { solved: session.solved, tried: session.tried })}
+            {game.bestCombo >= 3 && t(' · best run {n}', { n: game.bestCombo })}
           </div>
         )}
       </div>
@@ -290,33 +299,33 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
         />
       ) : !current ? (
         <div className="card center">
-          <h2>All caught up</h2>
-          <p className="muted">No puzzles are due right now. Analyze more games to get new ones, or come back later.</p>
+          <h2>{t('All caught up')}</h2>
+          <p className="muted">{t('No puzzles are due right now. Analyze more games to get new ones, or come back later.')}</p>
           <button
             onClick={() => {
               setSkip(new Set())
               start(nextPuzzle(puzzles, progress, new Set(), Infinity))
             }}
           >
-            Practice anyway
+            {t('Practice anyway')}
           </button>
         </div>
       ) : (
         <div className="puzzle-layout">
           <div className="puzzle-board">
-            <div className={`puzzle-turn ${current.color}`}>{current.color === 'w' ? 'White' : 'Black'} to move · {current.title}</div>
+            <div className={`puzzle-turn ${current.color}`}>{t(current.color === 'w' ? 'White to move' : 'Black to move')} · {current.title}</div>
             <Board fen={fen} orientation={orientation} lastMove={lastMove} shapes={shapes} onMove={onMove} interactive={phase === 'solving'} />
           </div>
           <div className="puzzle-side">
             <div className={`card puzzle-task ${current.kind}`}>
-              <div className="puzzle-kind">{current.kind === 'punish' ? 'Punish the mistake' : 'Find a better move'}</div>
+              <div className="puzzle-kind">{t(current.kind === 'punish' ? 'Punish the mistake' : 'Find a better move')}</div>
               <p>{puzzlePrompt(current)}</p>
               {hint >= 1 && !done && <p className="hint">💡 {puzzleHint(current)}</p>}
-              {hint >= 2 && !done && <p className="hint">💡 The piece to move is highlighted.</p>}
+              {hint >= 2 && !done && <p className="hint">💡 {t('The piece to move is highlighted.')}</p>}
               {feedback && <p className={`feedback ${phase}`}>{feedback}</p>}
               {done && current.why.length > 0 && (
                 <div className="puzzle-why">
-                  <div className="puzzle-kind">Why it works</div>
+                  <div className="puzzle-kind">{t('Why it works')}</div>
                   {current.why.map((w, k) => (
                     <p key={k}>{w}</p>
                   ))}
@@ -324,8 +333,8 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
               )}
               {done && (
                 <p className="muted small">
-                  Line: {formatLine(current.fen, current.line, 8)}
-                  {` · In the game you played ${current.playedSan}.`}
+                  {t('Line: {line}', { line: formatLine(current.fen, current.line, 8) })}
+                  {t(' · In the game you played {move}.', { move: current.playedSan })}
                 </p>
               )}
               <div className="row">
@@ -333,22 +342,22 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
                   <>
                     {hint < 2 && (
                       <button onClick={() => setHint((h) => h + 1)} disabled={phase === 'checking'}>
-                        💡 Hint
+                        💡 {t('Hint')}
                       </button>
                     )}
                     <button onClick={reveal} disabled={phase === 'checking'}>
-                      Show solution
+                      {t('Show solution')}
                     </button>
-                    <button onClick={next} disabled={phase === 'checking'} title="Skip (→)">
-                      Skip ›
+                    <button onClick={next} disabled={phase === 'checking'} title={t('Skip (→)')}>
+                      {t('Skip')} ›
                     </button>
                   </>
                 ) : (
                   <>
                     <button className="primary" onClick={next}>
-                      Next puzzle
+                      {t('Next puzzle')}
                     </button>
-                    <button onClick={() => onOpenGame(current.gameKey, current.ply - 1, current.color)}>Open game</button>
+                    <button onClick={() => onOpenGame(current.gameKey, current.ply - 1, current.color)}>{t('Open game')}</button>
                   </>
                 )}
               </div>
@@ -370,35 +379,35 @@ interface ListProps {
   onPlay: (p: Puzzle) => void
 }
 
-const STATUS_LABEL: Record<Status, string> = { new: 'New', due: 'Due', solved: 'Solved', mastered: 'Mastered' }
+const STATUS_LABEL: Record<Status, string> = { new: 'New', due: 'Due', solved: 'Solved', mastered: 'Mastered' } // shown through t()
 
 function PuzzleList({ puzzles, motifs, filter, setFilter, statusOf, boxOf, onPlay }: ListProps) {
   return (
     <div className="puzzle-list-wrap">
       <div className="puzzle-filters">
         <select value={filter.kind} onChange={(e) => setFilter({ ...filter, kind: e.target.value as Filter['kind'] })}>
-          <option value="all">All types</option>
-          <option value="punish">Punish the mistake</option>
-          <option value="better">Find a better move</option>
+          <option value="all">{t('All types')}</option>
+          <option value="punish">{t('Punish the mistake')}</option>
+          <option value="better">{t('Find a better move')}</option>
         </select>
         <select value={filter.motif} onChange={(e) => setFilter({ ...filter, motif: e.target.value as Filter['motif'] })}>
-          <option value="all">All tactics</option>
+          <option value="all">{t('All tactics')}</option>
           {motifs.map((m) => (
             <option key={m} value={m}>
-              {MOTIF_NAME[m]}
+              {motifName(m)}
             </option>
           ))}
         </select>
         <select value={filter.status} onChange={(e) => setFilter({ ...filter, status: e.target.value as Filter['status'] })}>
-          <option value="all">Any status</option>
+          <option value="all">{t('Any status')}</option>
           {(Object.keys(STATUS_LABEL) as Status[]).map((st) => (
             <option key={st} value={st}>
-              {STATUS_LABEL[st]}
+              {t(STATUS_LABEL[st])}
             </option>
           ))}
         </select>
       </div>
-      {puzzles.length === 0 && <p className="muted center">No puzzles match these filters.</p>}
+      {puzzles.length === 0 && <p className="muted center">{t('No puzzles match these filters.')}</p>}
       <ul className="puzzle-list">
         {puzzles.map((p) => {
           const st = statusOf(p)
@@ -410,11 +419,11 @@ function PuzzleList({ puzzles, motifs, filter, setFilter, statusOf, boxOf, onPla
                 <MiniBoard fen={p.fen} orientation={p.color} />
                 <span className="pl-text">
                   <strong>{p.title}</strong>
-                  <span className="muted">{p.kind === 'punish' ? 'Punish the mistake' : 'Find a better move'}</span>
-                  {motif && <span className="pl-motif">{p.theme ? MOTIF_NAME[motif] : `avoid a ${MOTIF_NAME[motif]}`}</span>}
+                  <span className="muted">{t(p.kind === 'punish' ? 'Punish the mistake' : 'Find a better move')}</span>
+                  {motif && <span className="pl-motif">{p.theme ? motifName(motif) : t('avoid {tactic}', { tactic: describeTactic({ motif }) })}</span>}
                   <span className="pl-status">
-                    <span className={`st st-${st}`}>{STATUS_LABEL[st]}</span>
-                    <span className="dots" title="Mastery">
+                    <span className={`st st-${st}`}>{t(STATUS_LABEL[st])}</span>
+                    <span className="dots" title={t('Mastery')}>
                       {Array.from({ length: BOXES }, (_, i) => (i <= box ? '●' : '○')).join('')}
                     </span>
                   </span>

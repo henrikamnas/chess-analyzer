@@ -3,7 +3,7 @@ import { Chess, DEFAULT_POSITION } from 'chess.js'
 import type { DrawShape } from 'chessground/draw'
 import type { Key } from 'chessground/types'
 import { availableThreads, Engine, type EngineFlavor, type EngineLine } from './engine'
-import { GLYPH, lineCost, lineLabels, parseGame, rateReview, REVIEW_LIMITS, reviewGame, type Game, type Label, type PositionEval, type Review } from './analysis'
+import { basisName, GLYPH, lineCost, lineLabels, parseGame, rateReview, REVIEW_LIMITS, reviewGame, type Game, type Label, type PositionEval, type Review } from './analysis'
 import { explainMove, moveName } from './explain'
 import { Board } from './components/Board'
 import { EvalBar } from './components/EvalBar'
@@ -17,6 +17,7 @@ import { LineBanner } from './components/LineBanner'
 import { PatternsView } from './components/PatternsView'
 import { PuzzleView } from './components/PuzzleView'
 import { getStoredGame, type StoredGame } from './store'
+import { setLang, t, useLang } from './i18n'
 
 const DEEP_LIMITS = { depth: 22, movetimeMs: 3000 } // full engine; the time cap keeps hard positions bounded
 const LIVE_DEPTH = { lite: 20, full: 24 }
@@ -38,7 +39,7 @@ const LABEL_TEXT: Record<Label, string> = {
   inaccuracy: 'Inaccuracy',
   mistake: 'Mistake',
   blunder: 'Blunder',
-}
+} // English keys; shown through t()
 
 const LABEL_COLOR: Record<Label, string> = {
   best: '#5fb35a',
@@ -95,6 +96,7 @@ interface Explaining {
 const emptyDeep: DeepState = { status: 'idle', done: 0, total: 0, startedAt: 0, elapsedMs: 0 }
 
 export default function App() {
+  const lang = useLang()
   const [restored] = useState(restoreSession) // read once, on first render
   const [pgn, setPgn] = useState(restored?.pgn ?? '')
   const [game, setGame] = useState<Game>(() => restored?.game ?? emptyGame())
@@ -121,7 +123,7 @@ export default function App() {
   const reviewToken = useRef(0)
 
   useEffect(() => {
-    reviewEngine.current = new Engine({ onError: (m) => setEngineError(`Review engine failed to start: ${m}`) })
+    reviewEngine.current = new Engine({ onError: (m) => setEngineError(t('Review engine failed to start: {error}', { error: m })) })
     return () => {
       reviewEngine.current?.terminate()
       deepEngine.current?.terminate()
@@ -129,7 +131,7 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    const onError = (m: string) => setEngineError(`${liveFlavor === 'full' ? 'Full' : 'Lite'} engine failed to start: ${m}`)
+    const onError = (m: string) => setEngineError(t(liveFlavor === 'full' ? 'Full engine failed to start: {error}' : 'Lite engine failed to start: {error}', { error: m }))
     const engine =
       liveFlavor === 'full'
         ? new Engine({ multiPv: LIVE_LINES, flavor: 'full', threads: availableThreads(), hashMb: 64, onError })
@@ -205,7 +207,7 @@ export default function App() {
       flavor: 'full',
       threads: availableThreads(),
       hashMb: 128,
-      onError: (m) => setEngineError(`Deep analysis engine failed to start: ${m}`),
+      onError: (m) => setEngineError(t('Deep analysis engine failed to start: {error}', { error: m })),
     })
     deepEngine.current = engine
     const total = game.plies.length + 1
@@ -268,7 +270,7 @@ export default function App() {
         setTab('moves')
         startReview(g)
       } catch (e) {
-        setError(`Could not read that PGN: ${e instanceof Error ? e.message : e}`)
+        setError(t('Could not read that PGN: {error}', { error: e instanceof Error ? e.message : String(e) }))
       }
     },
     [startReview],
@@ -378,7 +380,8 @@ export default function App() {
   const verdict = verdictPly && review ? review.moves[verdictPly - 1] : undefined
   const explanation = useMemo(
     () => (verdictPly && review ? explainMove(game, review, verdictPly - 1) : null),
-    [game, review, verdictPly],
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- lang: the text is generated in the current language
+    [game, review, verdictPly, lang],
   )
 
   const showExplanation = (kind: Explaining['kind']) => {
@@ -427,7 +430,11 @@ export default function App() {
         <span className="player-stats">
           <span
             className="est"
-            title={`Estimated rating for this game, compared with ${review.rating[c].basis} players${review.rating[c].reliable ? '' : ' (game too short to be reliable)'}${review.rating[c].precision === 'rough' ? ' (rough: single fast games vary a lot)' : ''}`}
+            title={
+              t('Estimated rating for this game, compared with {basis} players', { basis: basisName(review.rating[c].basis) }) +
+              (review.rating[c].reliable ? '' : t(' (game too short to be reliable)')) +
+              (review.rating[c].precision === 'rough' ? t(' (rough: single fast games vary a lot)') : '')
+            }
           >
             ~{review.rating[c].value}
             {(!review.rating[c].reliable || review.rating[c].precision === 'rough') && '?'}
@@ -442,37 +449,52 @@ export default function App() {
   const canStepBack = inLine ? variation.length > 0 : ply > 0
   const exitLine = () => goTo(explaining ? explaining.ply : ply)
   const lineTitle = !explaining
-    ? 'Alternate line'
+    ? t('Alternate line')
     : explaining.kind === 'why'
-      ? `${moveName(game, explaining.ply - 1)}: how ${game.plies[explaining.ply - 1].color === 'w' ? meta.black : meta.white} can punish it`
-      : `What ${game.plies[explaining.ply - 1].color === 'w' ? meta.white : meta.black} could have played instead of ${moveName(game, explaining.ply - 1)}`
+      ? t('{move}: how {opponent} can punish it', {
+          move: moveName(game, explaining.ply - 1),
+          opponent: game.plies[explaining.ply - 1].color === 'w' ? meta.black : meta.white,
+        })
+      : t('What {player} could have played instead of {move}', {
+          player: game.plies[explaining.ply - 1].color === 'w' ? meta.white : meta.black,
+          move: moveName(game, explaining.ply - 1),
+        })
 
   return (
     <div className="app">
       <header className="topbar">
         <h1>
-          <span className="logo">♞</span> Chess Analyzer
+          <span className="logo">♞</span>
+          <span className="app-title"> Chess Analyzer</span>
         </h1>
         <div className="actions">
           <button
             className={view === 'puzzles' ? 'on' : ''}
             onClick={() => setView((v) => (v === 'puzzles' ? 'analyze' : 'puzzles'))}
-            aria-label="Puzzles"
+            aria-label={t('Puzzles')}
           >
-            🧩<span className="btn-label"> Puzzles</span>
+            🧩<span className="btn-label"> {t('Puzzles')}</span>
           </button>
           <button
             className={view === 'patterns' ? 'on' : ''}
             onClick={() => setView((v) => (v === 'patterns' ? 'analyze' : 'patterns'))}
-            aria-label="My patterns"
+            aria-label={t('My patterns')}
           >
-            📊<span className="btn-label"> Patterns</span>
+            📊<span className="btn-label"> {t('Patterns')}</span>
           </button>
-          <button onClick={() => setOrientation((o) => (o === 'white' ? 'black' : 'white'))} title="Flip board (f)" aria-label="Flip board">
-            ⇅<span className="btn-label"> Flip</span>
+          <button onClick={() => setOrientation((o) => (o === 'white' ? 'black' : 'white'))} title={t('Flip board (f)')} aria-label={t('Flip board')}>
+            ⇅<span className="btn-label"> {t('Flip')}</span>
           </button>
-          <button className={showImport ? 'on' : ''} onClick={() => setShowImport((s) => !s)} aria-label="Load game">
-            ＋<span className="btn-label"> Load game</span>
+          <button className={showImport ? 'on' : ''} onClick={() => setShowImport((s) => !s)} aria-label={t('Load game')}>
+            ＋<span className="btn-label"> {t('Load game')}</span>
+          </button>
+          <button
+            className="lang-btn"
+            onClick={() => setLang(lang === 'sv' ? 'en' : 'sv')}
+            title={lang === 'sv' ? 'Switch to English' : 'Byt till svenska'}
+            aria-label={lang === 'sv' ? 'Switch to English' : 'Byt till svenska'}
+          >
+            {lang === 'sv' ? 'EN' : 'SV'}
           </button>
         </div>
       </header>
@@ -512,10 +534,10 @@ export default function App() {
           )}
 
           <nav className="nav">
-            <button onClick={() => (inLine ? setVariation([]) : goTo(0))} aria-label="Start">⏮</button>
-            <button onClick={() => step(-1)} aria-label="Back" disabled={!canStepBack}>◀</button>
-            <button onClick={() => step(1)} aria-label="Forward" disabled={!canStepForward}>▶</button>
-            <button onClick={() => (inLine ? setVariation(plan) : goTo(game.plies.length))} aria-label="End">⏭</button>
+            <button onClick={() => (inLine ? setVariation([]) : goTo(0))} aria-label={t('Start')}>⏮</button>
+            <button onClick={() => step(-1)} aria-label={t('Back')} disabled={!canStepBack}>◀</button>
+            <button onClick={() => step(1)} aria-label={t('Forward')} disabled={!canStepForward}>▶</button>
+            <button onClick={() => (inLine ? setVariation(plan) : goTo(game.plies.length))} aria-label={t('End')}>⏭</button>
           </nav>
 
           <EvalGraph
@@ -532,19 +554,19 @@ export default function App() {
           {error && <p className="error">{error}</p>}
           {engineError && (
             <div className="card error-card">
-              <strong>Engine problem.</strong> {engineError}
+              <strong>{t('Engine problem.')}</strong> {engineError}
               <div className="muted">
-                {self.crossOriginIsolated ? 'Page is cross-origin isolated' : 'Page is not cross-origin isolated'} ·{' '}
+                {self.crossOriginIsolated ? t('Page is cross-origin isolated') : t('Page is not cross-origin isolated')} ·{' '}
                 {navigator.userAgent}
               </div>
-              <button onClick={() => location.reload()}>Reload</button>
+              <button onClick={() => location.reload()}>{t('Reload')}</button>
             </div>
           )}
 
           {progress && (
             <div className="card progress">
               <div className="muted">
-                Reviewing game… {progress.done}/{progress.total}
+                {t('Reviewing game… {done}/{total}', { done: progress.done, total: progress.total })}
               </div>
               <div className="bar">
                 <div style={{ width: `${(progress.done / progress.total) * 100}%` }} />
@@ -559,9 +581,9 @@ export default function App() {
                   {game.plies[verdictPly - 1].san}
                   {GLYPH[verdict.label] && <span className="glyph"> {GLYPH[verdict.label]}</span>}
                 </strong>{' '}
-                — {LABEL_TEXT[verdict.label]}
+                — {t(LABEL_TEXT[verdict.label])}
                 {!explanation && verdict.label === 'good' && verdict.bestSan && (
-                  <span className="muted"> · best was {verdict.bestSan}</span>
+                  <span className="muted"> · {t('best was {move}', { move: verdict.bestSan })}</span>
                 )}
               </div>
               {explanation && (
@@ -570,12 +592,12 @@ export default function App() {
                   <div className="row">
                     {explanation.refutation.length > 0 && (
                       <button className={explaining?.kind === 'why' ? 'on' : ''} onClick={() => showExplanation('why')}>
-                        ▶ Show why
+                        ▶ {t('Show why')}
                       </button>
                     )}
                     {explanation.best.length > 0 && (
                       <button className={explaining?.kind === 'best' ? 'on' : ''} onClick={() => showExplanation('best')}>
-                        ★ Show best
+                        ★ {t('Show best')}
                       </button>
                     )}
                   </div>
@@ -587,16 +609,16 @@ export default function App() {
           <div className="card engine">
             <div className="engine-head">
               <span className="muted">
-                {gameOver ? 'Game over' : liveLines[0] ? `Stockfish 19 · depth ${liveLines[0].depth}` : 'Engine thinking…'}
+                {gameOver ? t('Game over') : liveLines[0] ? t('Stockfish 19 · depth {depth}', { depth: liveLines[0].depth }) : t('Engine thinking…')}
               </span>
-              <span className="seg" role="group" aria-label="Live engine">
-                <button className={liveFlavor === 'lite' ? 'on' : ''} onClick={() => setLiveFlavor('lite')} title="Small network, instant">
+              <span className="seg" role="group" aria-label={t('Live engine')}>
+                <button className={liveFlavor === 'lite' ? 'on' : ''} onClick={() => setLiveFlavor('lite')} title={t('Small network, instant')}>
                   Lite
                 </button>
                 <button
                   className={liveFlavor === 'full' ? 'on' : ''}
                   onClick={() => setLiveFlavor('full')}
-                  title="Full Stockfish 19 network (~99 MB download once), multi-threaded"
+                  title={t('Full Stockfish 19 network (~99 MB download once), multi-threaded')}
                 >
                   Full
                 </button>
@@ -609,10 +631,10 @@ export default function App() {
             <div className="panel">
               <div className="tabs panel-tabs">
                 <button className={tab === 'summary' ? 'on' : ''} onClick={() => setTab('summary')} disabled={!review}>
-                  Summary
+                  {t('Summary')}
                 </button>
                 <button className={tab === 'moves' ? 'on' : ''} onClick={() => setTab('moves')}>
-                  Moves
+                  {t('Moves')}
                 </button>
               </div>
               {tab === 'summary' && review ? (

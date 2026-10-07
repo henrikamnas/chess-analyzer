@@ -1548,3 +1548,25 @@ cg-board square.last-move {
   font-size: 14px;
   line-height: 1.45;
 }
+
+/* Language switch; on narrow phones the title collapses to the logo so all header buttons fit */
+.lang-btn {
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 460px) {
+  .app-title {
+    display: none;
+  }
+  .topbar .logo {
+    font-size: 1.4rem;
+  }
+  .actions {
+    gap: 6px;
+  }
+  .actions button {
+    padding: 6px 10px;
+  }
+}

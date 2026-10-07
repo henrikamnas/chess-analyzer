@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
-import { GLYPH, type Game, type Label, type Review } from '../analysis'
-import { moveName, rating, summarizeGame } from '../explain'
+import { basisName, GLYPH, type Game, type Label, type Review } from '../analysis'
+import { moveName, phaseName, rating, ratingName, summarizeGame } from '../explain'
+import { t, useLang } from '../i18n'
 
 export interface DeepState {
   status: 'idle' | 'running' | 'done'
@@ -21,7 +22,9 @@ interface Props {
 const ERRORS: Label[] = ['blunder', 'mistake', 'inaccuracy']
 
 export function SummaryCard({ game, review, onSelect, deep, onDeep }: Props) {
-  const summary = useMemo(() => summarizeGame(game, review), [game, review])
+  const lang = useLang()
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- lang: the summary text is generated in the current language
+  const summary = useMemo(() => summarizeGame(game, review), [game, review, lang])
   const { meta } = game
 
   const player = (c: 'w' | 'b') => {
@@ -34,18 +37,20 @@ export function SummaryCard({ game, review, onSelect, deep, onDeep }: Props) {
           {c === 'w' ? meta.white : meta.black}
         </div>
         <div className="stat-acc">{review.accuracy[c].toFixed(1)}%</div>
-        <div className="stat-est" title={`Average centipawn loss ${Math.round(review.acpl[c])}`}>
-          Played like ~{est.value}
+        <div className="stat-est" title={t('Average centipawn loss {n}', { n: Math.round(review.acpl[c]) })}>
+          {t('Played like ~{n}', { n: est.value })}
           {!est.reliable && '?'}
-          {actual && <span className="muted"> · rated {actual}</span>}
+          {actual && <span className="muted"> · {t('rated {n}', { n: actual })}</span>}
         </div>
         <div className="stat-basis muted">
-          {est.calibrated ? `vs ${est.basis} players` : `${est.basis} equivalent (no calibration for this game type)`}
-          {est.precision === 'rough' && ' · rough: single fast games vary a lot'}
+          {est.calibrated
+            ? t('vs {basis} players', { basis: basisName(est.basis) })
+            : t('{basis} equivalent (no calibration for this game type)', { basis: basisName(est.basis) })}
+          {est.precision === 'rough' && t(' · rough: single fast games vary a lot')}
         </div>
         <div className="stat-errors">
           {ERRORS.map((l) => (
-            <span key={l} className={`err-chip lbl-${l} ${review.counts[c][l] ? '' : 'zero'}`} title={l}>
+            <span key={l} className={`err-chip lbl-${l} ${review.counts[c][l] ? '' : 'zero'}`} title={t(l)}>
               <span className="glyph">{GLYPH[l]}</span> {review.counts[c][l]}
             </span>
           ))}
@@ -70,16 +75,16 @@ export function SummaryCard({ game, review, onSelect, deep, onDeep }: Props) {
       <div className="phases" style={{ gridTemplateColumns: `auto repeat(${summary.phases.length}, 1fr)` }}>
         <span />
         {summary.phases.map((ph) => (
-          <span key={ph.phase} className="phase-head">{ph.phase}</span>
+          <span key={ph.phase} className="phase-head">{phaseName(ph.phase)}</span>
         ))}
         {(['w', 'b'] as const).map((c) => (
-          <PhaseRow key={c} label={c === 'w' ? 'White' : 'Black'} values={summary.phases.map((ph) => ph[c])} />
+          <PhaseRow key={c} label={t(c === 'w' ? 'White' : 'Black')} values={summary.phases.map((ph) => ph[c])} />
         ))}
       </div>
 
       {summary.moments.length > 0 && (
         <>
-          <h3>Key moments</h3>
+          <h3>{t('Key moments')}</h3>
           <ul className="moments">
             {summary.moments.map((m) => (
               <li key={m.ply}>
@@ -107,7 +112,7 @@ function PhaseRow({ label, values }: { label: string; values: (number | null)[] 
         v === null ? (
           <span key={i} className="muted">–</span>
         ) : (
-          <span key={i} className={`phase-val r-${rating(v).toLowerCase()}`} title={rating(v)}>
+          <span key={i} className={`phase-val r-${rating(v)}`} title={ratingName(rating(v))}>
             {v.toFixed(0)}
           </span>
         ),
@@ -118,7 +123,7 @@ function PhaseRow({ label, values }: { label: string; values: (number | null)[] 
 
 function DeepAnalysis({ deep, onDeep }: { deep: DeepState; onDeep: () => void }) {
   if (deep.status === 'done') {
-    return <div className="deep done">✓ Deep analysis · full Stockfish 19</div>
+    return <div className="deep done">✓ {t('Deep analysis · full Stockfish 19')}</div>
   }
   if (deep.status === 'running') {
     const elapsed = deep.elapsedMs / 1000
@@ -126,8 +131,8 @@ function DeepAnalysis({ deep, onDeep }: { deep: DeepState; onDeep: () => void })
     return (
       <div className="deep running">
         <div className="muted">
-          Deep analysis… {deep.done}/{deep.total}
-          {left !== null && ` · about ${left < 90 ? `${left} s` : `${Math.round(left / 60)} min`} left`}
+          {t('Deep analysis… {done}/{total}', { done: deep.done, total: deep.total })}
+          {left !== null && t(' · about {time} left', { time: left < 90 ? `${left} s` : `${Math.round(left / 60)} min` })}
         </div>
         <div className="bar">
           <div style={{ width: `${(deep.done / deep.total) * 100}%` }} />
@@ -137,8 +142,8 @@ function DeepAnalysis({ deep, onDeep }: { deep: DeepState; onDeep: () => void })
   }
   return (
     <div className="deep">
-      <button onClick={onDeep}>🔬 Deep analysis</button>
-      <span className="muted">Re-check every move with the full engine (takes a few minutes)</span>
+      <button onClick={onDeep}>🔬 {t('Deep analysis')}</button>
+      <span className="muted">{t('Re-check every move with the full engine (takes a few minutes)')}</span>
     </div>
   )
 }

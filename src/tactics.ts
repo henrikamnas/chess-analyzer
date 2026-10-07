@@ -2,6 +2,7 @@
 // Used both for mistakes ("you got forked") and for missed chances ("you could have forked").
 import { Chess, type Color, type PieceSymbol, type Square } from 'chess.js'
 import type { Score } from './engine'
+import { t } from './i18n'
 
 export type Motif = 'mate' | 'back-rank' | 'hanging' | 'fork' | 'pin' | 'skewer' | 'discovered' | 'combination'
 
@@ -15,7 +16,7 @@ export interface Tactic {
 const VALUE: Record<PieceSymbol, number> = { p: 1, n: 3, b: 3, r: 5, q: 9, k: 100 }
 const FILES = 'abcdefgh'
 
-export const MOTIF_NAME: Record<Motif, string> = {
+const MOTIF_EN: Record<Motif, string> = {
   mate: 'mating attack',
   'back-rank': 'back-rank mate',
   hanging: 'free piece',
@@ -25,8 +26,16 @@ export const MOTIF_NAME: Record<Motif, string> = {
   discovered: 'discovered attack',
   combination: 'combination',
 }
+const PIECE_EN: Record<PieceSymbol, string> = { p: 'pawn', n: 'knight', b: 'bishop', r: 'rook', q: 'queen', k: 'king' }
 
-export const PIECE_NAME: Record<PieceSymbol, string> = { p: 'pawn', n: 'knight', b: 'bishop', r: 'rook', q: 'queen', k: 'king' }
+/** Name of a tactic type, e.g. "fork" / "gaffel". */
+export const motifName = (m: Motif) => t(MOTIF_EN[m])
+/** Piece name: "knight" / "springare". */
+export const pieceName = (p: PieceSymbol) => t(PIECE_EN[p])
+/** Definite form: "the knight" / "springaren". */
+export const pieceThe = (p: PieceSymbol) => t(`the ${PIECE_EN[p]}`)
+/** With indefinite article: "a knight" / "en springare", "a rook" / "ett torn". */
+export const pieceA = (p: PieceSymbol) => t(`a ${PIECE_EN[p]}`)
 
 const sq = (f: number, r: number) => `${FILES[f]}${r + 1}` as Square
 const coords = (s: Square): [number, number] => [FILES.indexOf(s[0]), Number(s[1]) - 1]
@@ -164,20 +173,26 @@ export function classifyTactic(fen: string, line: string[], victim: Color, endSc
   return { motif: 'combination', piece: moved }
 }
 
-/** Short description, e.g. "knight fork on e7", "free bishop on d3", "back-rank mate". */
-export function describeTactic(t: Tactic): string {
-  const piece = t.piece ? PIECE_NAME[t.piece] : ''
-  switch (t.motif) {
+/**
+ * Short description with its article, e.g. "a knight fork on e7" / "en springargaffel på e7",
+ * "a free bishop on d3", "a back-rank mate". Articles are part of the phrase because their
+ * form depends on the noun in Swedish (en gaffel, ett spett).
+ */
+export function describeTactic(tc: Tactic): string {
+  const on = (text: string) => (tc.square ? t('{what} on {square}', { what: text, square: tc.square }) : text)
+  switch (tc.motif) {
     case 'hanging':
-      return `free ${t.target ? PIECE_NAME[t.target] : 'piece'}${t.square ? ` on ${t.square}` : ''}`
+      return on(t(`a free ${tc.target ? PIECE_EN[tc.target] : 'piece'}`))
     case 'fork':
-      return `${piece} fork${t.square ? ` on ${t.square}` : ''}`
+      return on(t(tc.piece ? `a ${PIECE_EN[tc.piece]} fork` : 'a fork'))
     case 'pin':
-    case 'skewer':
-      return `${piece} ${t.motif}${t.target ? ` of the ${PIECE_NAME[t.target]}` : ''}`
+    case 'skewer': {
+      if (!tc.piece || !tc.target) return t(`a ${tc.motif}`)
+      return t(`a {piece} ${tc.motif} of {target}`, { piece: pieceName(tc.piece), pieceThe: pieceThe(tc.piece), target: pieceThe(tc.target) })
+    }
     case 'discovered':
-      return `discovered attack${t.target ? ` on the ${PIECE_NAME[t.target]}` : ''}`
+      return tc.target ? t('a discovered attack on {target}', { target: pieceThe(tc.target) }) : t('a discovered attack')
     default:
-      return MOTIF_NAME[t.motif]
+      return t(`a ${MOTIF_EN[tc.motif]}`)
   }
 }

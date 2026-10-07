@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { fetchChessComGames, fetchLichessGames, type GameSummary } from '../imports'
+import { locale, t, useLang } from '../i18n'
 
 interface Props {
   onLoad: (pgn: string) => void
@@ -29,6 +30,7 @@ function loadPrefs(): { source: Source; user: string } {
 }
 
 export function ImportPanel({ onLoad }: Props) {
+  useLang()
   const [tab, setTab] = useState<'user' | 'pgn'>('user')
   const [prefs, setPrefs] = useState(loadPrefs)
   const [pgn, setPgn] = useState('')
@@ -62,8 +64,8 @@ export function ImportPanel({ onLoad }: Props) {
   return (
     <div className="import-panel">
       <div className="tabs">
-        <button className={tab === 'user' ? 'on' : ''} onClick={() => setTab('user')}>My games</button>
-        <button className={tab === 'pgn' ? 'on' : ''} onClick={() => setTab('pgn')}>Paste PGN</button>
+        <button className={tab === 'user' ? 'on' : ''} onClick={() => setTab('user')}>{t('My games')}</button>
+        <button className={tab === 'pgn' ? 'on' : ''} onClick={() => setTab('pgn')}>{t('Paste PGN')}</button>
       </div>
 
       {tab === 'user' ? (
@@ -74,17 +76,17 @@ export function ImportPanel({ onLoad }: Props) {
               <option value="chesscom">Chess.com</option>
             </select>
             <input
-              placeholder="Username"
+              placeholder={t('Username')}
               value={prefs.user}
               onChange={(e) => setPrefs({ ...prefs, user: e.target.value })}
               autoCapitalize="off"
               autoCorrect="off"
               spellCheck={false}
             />
-            <button type="submit" className="primary" disabled={loading}>{loading ? '…' : 'Fetch'}</button>
+            <button type="submit" className="primary" disabled={loading}>{loading ? '…' : t('Fetch')}</button>
           </form>
           {error && <p className="error">{error}</p>}
-          {games && games.length === 0 && <p className="muted">No games found.</p>}
+          {games && games.length === 0 && <p className="muted">{t('No games found.')}</p>}
           {games && games.length > 0 && (
             <ul className="game-list">
               {games.map((g) => {
@@ -105,7 +107,7 @@ export function ImportPanel({ onLoad }: Props) {
                       </span>
                       <span className="meta">
                         <span>{g.timeControl}</span>
-                        <span>{new Date(g.date).toLocaleDateString()}</span>
+                        <span>{new Date(g.date).toLocaleDateString(locale())}</span>
                       </span>
                     </button>
                   </li>
@@ -115,17 +117,20 @@ export function ImportPanel({ onLoad }: Props) {
           )}
           {!games && !error && (
             <p className="muted">
-              Enter your username to list recent games, or{' '}
-              <button className="link" onClick={() => onLoad(SAMPLE)}>try a sample game</button>.
+              {t('Enter your username to list recent games, or')}{' '}
+              <button className="link" onClick={() => onLoad(SAMPLE)}>
+                {t('try a sample game')}
+              </button>
+              .
             </p>
           )}
         </>
       ) : (
         <div className="pgn-form">
-          <textarea placeholder="Paste a PGN…" value={pgn} onChange={(e) => setPgn(e.target.value)} rows={8} spellCheck={false} />
+          <textarea placeholder={t('Paste a PGN…')} value={pgn} onChange={(e) => setPgn(e.target.value)} rows={8} spellCheck={false} />
           <div className="row">
-            <button className="primary" disabled={!pgn.trim()} onClick={() => onLoad(pgn)}>Analyze</button>
-            <button onClick={() => onLoad(SAMPLE)}>Try a sample game</button>
+            <button className="primary" disabled={!pgn.trim()} onClick={() => onLoad(pgn)}>{t('Analyze')}</button>
+            <button onClick={() => onLoad(SAMPLE)}>{t('Try a sample game')}</button>
           </div>
         </div>
       )}

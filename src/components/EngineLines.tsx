@@ -1,5 +1,6 @@
 import type { EngineLine } from '../engine'
 import { formatScore, lineCost, pvToSan, type Label } from '../analysis'
+import { t } from '../i18n'
 
 interface Props {
   fen: string
@@ -29,7 +30,7 @@ export function EngineLines({ fen, lines, labels, onPlay }: Props) {
         return (
           <div className={`engine-line q-${q}`} key={line.multipv}>
             <span className={`line-score ${isWhiteGood(line) ? 'pos' : 'neg'}`}>{formatScore(line.score)}</span>
-            <span className="line-quality" title={cost ? `${QUALITY[q].text}: ${cost.long}` : 'Best line'}>
+            <span className="line-quality" title={cost ? `${t(QUALITY[q].text)}: ${cost.long}` : t('Best line')}>
               {QUALITY[q].glyph}
               {cost && <span className="line-cost">{cost.short}</span>}
             </span>
