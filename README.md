@@ -11,6 +11,7 @@ A Lichess / Chess.com style game review that runs entirely in the browser.
 - Plain-language explanations of mistakes, with "Why it's bad" / "Better move" lines to step through
 - Game summary with accuracy by phase and key moments
 - **My patterns**: reviews your recent Chess.com / Lichess games in the background and finds recurring mistakes (hanging pieces, missed chances, time trouble, thrown wins, missed mates, weak phases and openings), each with example positions to open; reviews are cached in IndexedDB
+- **Puzzles from your own games**: positions where you missed a win or went wrong, with hints (the tactic to look for, the piece to move), engine-checked alternative answers, and spaced repetition
 - Eval bar, clickable eval graph, and multi-line engine analysis with lines and arrows coloured by how they compare with the best move; explore side lines freely on the board
 - Works on phones; the open game and its review survive reloads (stored in the browser)
 
@@ -41,6 +42,8 @@ adds them in the browser (the first visit reloads once).
 | `src/imports.ts` | Lichess and Chess.com public API clients |
 | `src/session.ts` | Remembers the open game and review across reloads |
 | `src/batch.ts`, `src/store.ts`, `src/patterns.ts` | My patterns: background batch review, IndexedDB cache, pattern detection |
+| `src/tactics.ts` | Names the tactic in an engine line (fork, pin, skewer, discovered attack, free piece, mates) |
+| `src/puzzles.ts` | Puzzles from reviewed games and their spaced-repetition schedule |
 | `src/components/` | Board (chessground), eval bar and graph, move list, engine lines, summary, side-line banner |
 
 ## License

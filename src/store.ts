@@ -12,24 +12,29 @@ export interface StoredGame extends GameSummary {
 
 const DB_NAME = 'chess-analyzer'
 const STORE = 'games'
+const PROGRESS = 'puzzleProgress'
 
 let dbPromise: Promise<IDBDatabase> | null = null
 
 function db(): Promise<IDBDatabase> {
   dbPromise ??= new Promise((resolve, reject) => {
-    const req = indexedDB.open(DB_NAME, 1)
-    req.onupgradeneeded = () => req.result.createObjectStore(STORE, { keyPath: 'key' })
+    const req = indexedDB.open(DB_NAME, 2)
+    req.onupgradeneeded = () => {
+      const d = req.result
+      if (!d.objectStoreNames.contains(STORE)) d.createObjectStore(STORE, { keyPath: 'key' })
+      if (!d.objectStoreNames.contains(PROGRESS)) d.createObjectStore(PROGRESS, { keyPath: 'id' })
+    }
     req.onsuccess = () => resolve(req.result)
     req.onerror = () => reject(req.error)
   })
   return dbPromise
 }
 
-function run<T>(mode: IDBTransactionMode, fn: (store: IDBObjectStore) => IDBRequest<T>): Promise<T> {
+function run<T>(mode: IDBTransactionMode, fn: (store: IDBObjectStore) => IDBRequest<T>, storeName = STORE): Promise<T> {
   return db().then(
     (d) =>
       new Promise<T>((resolve, reject) => {
-        const req = fn(d.transaction(STORE, mode).objectStore(STORE))
+        const req = fn(d.transaction(storeName, mode).objectStore(storeName))
         req.onsuccess = () => resolve(req.result)
         req.onerror = () => reject(req.error)
       }),
@@ -56,4 +61,22 @@ export async function storedGamesFor(user: string, source: GameSummary['source']
   return (await allStoredGames()).filter(
     (g) => g.source === source && (g.white.toLowerCase() === name || g.black.toLowerCase() === name),
   )
+}
+
+/** Spaced-repetition state for one puzzle (see puzzles.ts). */
+export interface PuzzleProgress {
+  id: string
+  box: number // 0 = new or missed; each correct solve moves it up one box
+  due: number // epoch ms when it should come back
+  attempts: number
+  solves: number
+  lastSeen: number
+}
+
+export function allPuzzleProgress() {
+  return run<PuzzleProgress[]>('readonly', (s) => s.getAll(), PROGRESS)
+}
+
+export function putPuzzleProgress(p: PuzzleProgress) {
+  return run('readwrite', (s) => s.put(p), PROGRESS)
 }

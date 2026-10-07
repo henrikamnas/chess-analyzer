@@ -14,6 +14,7 @@ interface Props {
   lastMove?: string // UCI
   shapes: DrawShape[]
   onMove: (uci: string) => void
+  interactive?: boolean // false: pieces can't be moved (default true)
 }
 
 function legalDests(chess: Chess) {
@@ -25,7 +26,7 @@ function legalDests(chess: Chess) {
   return dests
 }
 
-export function Board({ fen, orientation, lastMove, shapes, onMove }: Props) {
+export function Board({ fen, orientation, lastMove, shapes, onMove, interactive = true }: Props) {
   const el = useRef<HTMLDivElement>(null)
   const api = useRef<Api | null>(null)
   const onMoveRef = useRef(onMove)
@@ -63,7 +64,7 @@ export function Board({ fen, orientation, lastMove, shapes, onMove }: Props) {
       check: chess.inCheck(),
       lastMove: lastMove ? [lastMove.slice(0, 2) as Key, lastMove.slice(2, 4) as Key] : undefined,
       movable: {
-        color: turn,
+        color: interactive ? turn : undefined,
         dests: legalDests(chess),
         events: {
           after: (orig, dest) => {
@@ -74,7 +75,7 @@ export function Board({ fen, orientation, lastMove, shapes, onMove }: Props) {
         },
       },
     })
-  }, [fen, orientation, lastMove])
+  }, [fen, orientation, lastMove, interactive])
 
   useEffect(() => {
     api.current?.setAutoShapes(shapes)

@@ -15,7 +15,8 @@ import { SummaryCard, type DeepState } from './components/SummaryCard'
 import { restoreSession, saveSession } from './session'
 import { LineBanner } from './components/LineBanner'
 import { PatternsView } from './components/PatternsView'
-import type { StoredGame } from './store'
+import { PuzzleView } from './components/PuzzleView'
+import { getStoredGame, type StoredGame } from './store'
 
 const DEEP_LIMITS = { depth: 22, movetimeMs: 3000 } // full engine; the time cap keeps hard positions bounded
 const LIVE_DEPTH = { lite: 20, full: 24 }
@@ -109,7 +110,7 @@ export default function App() {
   const [showImport, setShowImport] = useState(!restored)
   const [error, setError] = useState<string | null>(null)
   const [tab, setTab] = useState<'summary' | 'moves'>(restored?.review ? restored.tab : 'moves')
-  const [view, setView] = useState<'analyze' | 'patterns'>('analyze')
+  const [view, setView] = useState<'analyze' | 'patterns' | 'puzzles'>('analyze')
   const [deep, setDeep] = useState<DeepState>(restored?.deepDone ? { ...emptyDeep, status: 'done' } : emptyDeep)
   const [liveFlavor, setLiveFlavor] = useState<EngineFlavor>(savedLiveFlavor)
   const [engineError, setEngineError] = useState<string | null>(null)
@@ -454,6 +455,13 @@ export default function App() {
         </h1>
         <div className="actions">
           <button
+            className={view === 'puzzles' ? 'on' : ''}
+            onClick={() => setView((v) => (v === 'puzzles' ? 'analyze' : 'puzzles'))}
+            aria-label="Puzzles"
+          >
+            🧩<span className="btn-label"> Puzzles</span>
+          </button>
+          <button
             className={view === 'patterns' ? 'on' : ''}
             onClick={() => setView((v) => (v === 'patterns' ? 'analyze' : 'patterns'))}
             aria-label="My patterns"
@@ -473,6 +481,13 @@ export default function App() {
       <div className="patterns-wrap" hidden={view !== 'patterns'}>
         <PatternsView onOpen={openReviewed} />
       </div>
+
+      {view === 'puzzles' && (
+        <PuzzleView
+          onOpenGame={(key, atPly, me) => void getStoredGame(key).then((g) => g && openReviewed(g, atPly, me))}
+          onGoToPatterns={() => setView('patterns')}
+        />
+      )}
 
       <main className="layout" hidden={view !== 'analyze'}>
         <section className="board-col">
