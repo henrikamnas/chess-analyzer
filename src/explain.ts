@@ -6,14 +6,14 @@ import type { Score } from './engine'
 const VALUE: Record<string, number> = { p: 1, n: 3, b: 3, r: 5, q: 9, k: 0 }
 
 /** Material balance in pawns, White minus Black. */
-function material(chess: Chess) {
+export function material(chess: Chess) {
   let sum = 0
   for (const row of chess.board()) for (const sq of row) if (sq) sum += (sq.color === 'w' ? 1 : -1) * VALUE[sq.type]
   return sum
 }
 
 /** Plays a UCI line and returns the material balance at its end. */
-function materialAfter(fen: string, line: string[], maxPlies: number) {
+export function materialAfter(fen: string, line: string[], maxPlies: number) {
   const chess = new Chess(fen)
   for (const uci of line.slice(0, maxPlies)) {
     try {
@@ -25,7 +25,7 @@ function materialAfter(fen: string, line: string[], maxPlies: number) {
   return material(chess)
 }
 
-function materialWords(n: number) {
+export function materialWords(n: number) {
   if (n >= 8) return "a queen's worth of material"
   if (n >= 5) return 'a rook'
   if (n === 4) return 'a piece and a pawn'
@@ -146,7 +146,7 @@ export function explainMove(game: Game, review: Review, i: number): MoveExplanat
 
 export type Phase = 'opening' | 'middlegame' | 'endgame'
 
-function phaseOf(fen: string, plyIndex: number): Phase {
+export function phaseOf(fen: string, plyIndex: number): Phase {
   let pieces = 0
   for (const row of new Chess(fen).board()) for (const sq of row) if (sq && sq.type !== 'p' && sq.type !== 'k') pieces++
   if (pieces <= 6) return 'endgame'

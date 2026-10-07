@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { Chessground } from 'chessground'
 import type { Api } from 'chessground/api'
-import type { DrawShape } from 'chessground/draw'
+import type { DrawBrushes, DrawShape } from 'chessground/draw'
 import type { Key } from 'chessground/types'
 import { Chess, SQUARES } from 'chess.js'
 import 'chessground/assets/chessground.base.css'
@@ -37,7 +37,17 @@ export function Board({ fen, orientation, lastMove, shapes, onMove }: Props) {
     api.current = Chessground(el.current!, {
       animation: { duration: 180 },
       highlight: { lastMove: true, check: true },
-      drawable: { enabled: true },
+      drawable: {
+        enabled: true,
+        // Extra arrow colours for engine lines that are worse than the best one (see LINE_BRUSH in App).
+        // Chessground deep-merges these into its default brushes, so only the additions are listed.
+        brushes: {
+          lineGood: { key: 'lg', color: '#7fb069', opacity: 0.6, lineWidth: 7 },
+          lineInaccuracy: { key: 'li', color: '#e6b53c', opacity: 0.7, lineWidth: 7 },
+          lineMistake: { key: 'lm', color: '#e08a2c', opacity: 0.75, lineWidth: 7 },
+          lineBlunder: { key: 'lb', color: '#d9453b', opacity: 0.8, lineWidth: 7 },
+        } as unknown as DrawBrushes,
+      },
       movable: { free: false, showDests: true },
     })
     return () => api.current?.destroy()

@@ -3,7 +3,7 @@ import { Chess, DEFAULT_POSITION } from 'chess.js'
 import type { DrawShape } from 'chessground/draw'
 import type { Key } from 'chessground/types'
 import { availableThreads, Engine, type EngineFlavor, type EngineLine } from './engine'
-import { GLYPH, parseGame, reviewGame, type Game, type Label, type PositionEval, type Review } from './analysis'
+import { GLYPH, lineLabels, parseGame, REVIEW_LIMITS, reviewGame, type Game, type Label, type PositionEval, type Review } from './analysis'
 import { explainMove, moveName } from './explain'
 import { Board } from './components/Board'
 import { EvalBar } from './components/EvalBar'
@@ -14,8 +14,9 @@ import { EngineLines } from './components/EngineLines'
 import { SummaryCard, type DeepState } from './components/SummaryCard'
 import { restoreSession, saveSession } from './session'
 import { LineBanner } from './components/LineBanner'
+import { PatternsView } from './components/PatternsView'
+import type { StoredGame } from './store'
 
-const REVIEW_LIMITS = { depth: 16 }
 const DEEP_LIMITS = { depth: 22, movetimeMs: 3000 } // full engine; the time cap keeps hard positions bounded
 const LIVE_DEPTH = { lite: 20, full: 24 }
 const LIVE_LINES = 3
@@ -52,6 +53,15 @@ const emptyGame = (): Game => ({
   plies: [],
 })
 
+/** Arrow brush per line quality (brushes are defined in Board). */
+const LINE_BRUSH: Record<Label, string> = {
+  best: 'paleGreen',
+  good: 'lineGood',
+  inaccuracy: 'lineInaccuracy',
+  mistake: 'lineMistake',
+  blunder: 'lineBlunder',
+}
+
 const shape = (uci: string, brush: string, lineWidth?: number): DrawShape => ({
   orig: uci.slice(0, 2) as Key,
   dest: uci.slice(2, 4) as Key,
@@ -83,6 +93,7 @@ export default function App() {
   const [showImport, setShowImport] = useState(!restored)
   const [error, setError] = useState<string | null>(null)
   const [tab, setTab] = useState<'summary' | 'moves'>(restored?.review ? restored.tab : 'moves')
+  const [view, setView] = useState<'analyze' | 'patterns'>('analyze')
   const [deep, setDeep] = useState<DeepState>(restored?.deepDone ? { ...emptyDeep, status: 'done' } : emptyDeep)
   const [liveFlavor, setLiveFlavor] = useState<EngineFlavor>(savedLiveFlavor)
   const [engineError, setEngineError] = useState<string | null>(null)
@@ -206,6 +217,26 @@ export default function App() {
     setExplaining(null)
   }
 
+  /** Opens an already-reviewed game (from My patterns) at a given move, without reviewing it again. */
+  const openReviewed = (stored: StoredGame, atPly: number, me: 'w' | 'b') => {
+    reviewToken.current++
+    reviewEngine.current?.stop()
+    stopDeep()
+    setPgn(stored.pgn)
+    setGame(parseGame(stored.pgn))
+    setReview(stored.review)
+    setPartialEvals([])
+    setProgress(null)
+    resetLine()
+    setPly(atPly)
+    setOrientation(me === 'w' ? 'white' : 'black')
+    setTab('moves')
+    setShowImport(false)
+    setError(null)
+    setView('analyze')
+    window.scrollTo(0, 0)
+  }
+
   const loadPgn = useCallback(
     (text: string) => {
       try {
@@ -252,6 +283,7 @@ export default function App() {
   const reviewedEval = !inVariation ? (review?.evals[ply] ?? partialEvals[ply]) : undefined
   const liveLines = useMemo(() => (live?.fen === fen ? live.lines : []), [live, fen])
   const shownScore = liveLines[0]?.score ?? reviewedEval?.score ?? null
+  const liveLabels = useMemo(() => lineLabels(liveLines.map((l) => l.score), fen.split(' ')[1] === 'w'), [liveLines, fen])
 
   // --- Navigation ----------------------------------------------------------
 
@@ -342,9 +374,14 @@ export default function App() {
 
   const shapes = useMemo(() => {
     const out: DrawShape[] = []
-    liveLines.forEach((line, i) => {
-      if (line.pv[0]) out.push(i === 0 ? shape(line.pv[0], 'paleGreen') : shape(line.pv[0], 'paleGrey', 6))
-    })
+    // Arrows for the engine lines, coloured by how they compare with the best line; drawn worst first so
+    // the best arrow ends up on top where they overlap.
+    liveLines
+      .map((line, i) => ({ line, i }))
+      .reverse()
+      .forEach(({ line, i }) => {
+        if (line.pv[0]) out.push(shape(line.pv[0], LINE_BRUSH[liveLabels[i] ?? 'best'], i === 0 ? undefined : 7))
+      })
     if (verdict && !inVariation && verdictPly === ply) {
       const played = game.plies[ply - 1]
       const glyph = GLYPH[verdict.label]
@@ -353,7 +390,7 @@ export default function App() {
       if (better && explanation) out.push(shape(better, 'paleBlue'))
     }
     return out
-  }, [liveLines, verdict, verdictPly, inVariation, game.plies, ply, review, explanation])
+  }, [liveLines, liveLabels, verdict, verdictPly, inVariation, game.plies, ply, review, explanation])
 
   // --- Render --------------------------------------------------------------
 
@@ -392,6 +429,13 @@ export default function App() {
           <span className="logo">♞</span> Chess Analyzer
         </h1>
         <div className="actions">
+          <button
+            className={view === 'patterns' ? 'on' : ''}
+            onClick={() => setView((v) => (v === 'patterns' ? 'analyze' : 'patterns'))}
+            aria-label="My patterns"
+          >
+            📊<span className="btn-label"> Patterns</span>
+          </button>
           <button onClick={() => setOrientation((o) => (o === 'white' ? 'black' : 'white'))} title="Flip board (f)" aria-label="Flip board">
             ⇅<span className="btn-label"> Flip</span>
           </button>
@@ -401,7 +445,12 @@ export default function App() {
         </div>
       </header>
 
-      <main className="layout">
+      {/* Kept mounted while hidden so a running batch review keeps going */}
+      <div className="patterns-wrap" hidden={view !== 'patterns'}>
+        <PatternsView onOpen={openReviewed} />
+      </div>
+
+      <main className="layout" hidden={view !== 'analyze'}>
         <section className="board-col">
           {player(top)}
           <div className={`board-row ${inLine ? 'off-game' : ''}`}>
@@ -514,7 +563,7 @@ export default function App() {
                 </button>
               </span>
             </div>
-            {liveLines.length > 0 && <EngineLines fen={fen} lines={liveLines} onPlay={onEngineLine} />}
+            {liveLines.length > 0 && <EngineLines fen={fen} lines={liveLines} labels={liveLabels} onPlay={onEngineLine} />}
           </div>
 
           {game.plies.length > 0 && (

@@ -1,6 +1,9 @@
 import { Chess } from 'chess.js'
 import type { Engine, Limits, Score } from './engine'
 
+/** Engine limits for the standard review. The rating estimate is calibrated on reviews made with these. */
+export const REVIEW_LIMITS = { depth: 16 }
+
 export interface GameMeta {
   white: string
   black: string
@@ -98,6 +101,23 @@ export function winPercent(score: Score): number {
   if (score.mate !== undefined) return score.mate > 0 ? 100 : score.mate < 0 ? 0 : 50
   const cp = Math.max(-1000, Math.min(1000, score.cp))
   return 50 + 50 * (2 / (1 + Math.exp(-0.00368208 * cp)) - 1)
+}
+
+/**
+ * How each engine line compares with the best one, as a move label: the win% the side to move gives up by
+ * choosing it instead of line 1. Line 1 is always 'best'; near-equal alternatives are 'best' too.
+ */
+export function lineLabels(scores: Score[], whiteToMove: boolean): Label[] {
+  const forMover = (sc: Score) => (whiteToMove ? winPercent(sc) : 100 - winPercent(sc))
+  const top = scores.length ? forMover(scores[0]) : 50
+  return scores.map((sc, i) => {
+    if (i === 0) return 'best'
+    const loss = Math.max(0, top - forMover(sc))
+    if (loss >= 20) return 'blunder'
+    if (loss >= 10) return 'mistake'
+    if (loss >= 5) return 'inaccuracy'
+    return loss < 2 ? 'best' : 'good'
+  })
 }
 
 function moveAccuracy(winLoss: number) {

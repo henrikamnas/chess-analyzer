@@ -120,6 +120,11 @@ export class Engine {
   terminate() {
     this.stop()
     this.terminated = true
+    // A killed worker never answers, so settle the running search here.
+    if (this.current) {
+      this.current.resolve({ multipv: 1, depth: 0, score: { cp: 0 }, pv: [], bestMove: null })
+      this.current = null
+    }
     this.worker.terminate()
   }
 
