@@ -30,7 +30,7 @@ export function materialWords(n: number) {
   if (n >= 5) return 'a rook'
   if (n === 4) return 'a piece and a pawn'
   if (n === 3) return 'a piece'
-  if (n === 2) return 'two pawns'
+  if (n === 2) return "two pawns' worth of material"
   return 'a pawn'
 }
 

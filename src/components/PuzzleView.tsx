@@ -314,10 +314,18 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
               {hint >= 1 && !done && <p className="hint">💡 {puzzleHint(current)}</p>}
               {hint >= 2 && !done && <p className="hint">💡 The piece to move is highlighted.</p>}
               {feedback && <p className={`feedback ${phase}`}>{feedback}</p>}
+              {done && current.why.length > 0 && (
+                <div className="puzzle-why">
+                  <div className="puzzle-kind">Why it works</div>
+                  {current.why.map((w, k) => (
+                    <p key={k}>{w}</p>
+                  ))}
+                </div>
+              )}
               {done && (
                 <p className="muted small">
                   Line: {formatLine(current.fen, current.line, 8)}
-                  {current.kind === 'better' && ` · In the game you played ${current.playedSan}.`}
+                  {` · In the game you played ${current.playedSan}.`}
                 </p>
               )}
               <div className="row">
