@@ -1364,3 +1364,175 @@ cg-board square.last-move {
 .feedback.checking {
   color: var(--muted);
 }
+
+/* ---- Puzzle tabs, game bar and list ---- */
+
+.puzzle-top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.puzzle-tabs {
+  margin: 0;
+}
+
+.gamebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.goal {
+  flex: 1 1 160px;
+  min-width: 0;
+}
+
+.goal-label {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.goal-bar {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--panel-2);
+  overflow: hidden;
+}
+
+.goal-bar div {
+  height: 100%;
+  background: var(--best);
+  transition: width 0.4s;
+}
+
+.chip {
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+
+.chip.hot {
+  border-color: var(--mistake);
+  color: var(--mistake);
+}
+
+.puzzle-list-wrap {
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.puzzle-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.puzzle-filters select {
+  flex: 1 1 140px;
+}
+
+.puzzle-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 8px;
+}
+
+.puzzle-list button {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  text-align: left;
+  padding: 8px;
+}
+
+.pl-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  font-size: 13px;
+}
+
+.pl-motif {
+  color: var(--inaccuracy);
+  font-size: 12px;
+}
+
+.pl-status {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 12px;
+}
+
+.st {
+  font-weight: 600;
+}
+.st-new {
+  color: var(--line);
+}
+.st-due {
+  color: var(--mistake);
+}
+.st-solved {
+  color: var(--good);
+}
+.st-mastered {
+  color: var(--best);
+}
+
+.dots {
+  letter-spacing: 1px;
+  color: var(--best);
+}
+
+.mini-board {
+  flex: none;
+  width: 112px;
+  height: 112px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.mini-sq {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.mini-sq.light {
+  background: #f0d9b5;
+}
+
+.mini-sq.dark {
+  background: #b58863;
+}
+
+.mp.w {
+  color: #fff;
+  text-shadow: 0 0 1px #000, 0 0 1px #000;
+}
+
+.mp.b {
+  color: #111;
+}
