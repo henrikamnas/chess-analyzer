@@ -25,12 +25,40 @@ const LIVE_LINES = 3
 const EXPLAIN_PLIES = 8
 const LIVE_FLAVOR_KEY = 'chess-analyzer:live-engine'
 
-function savedLiveFlavor(): EngineFlavor {
+/** Live engine setting: off saves power; the review's best line is shown instead. */
+type LiveMode = 'off' | EngineFlavor
+
+function savedLiveMode(): LiveMode {
   try {
-    return localStorage.getItem(LIVE_FLAVOR_KEY) === 'full' ? 'full' : 'lite'
+    const v = localStorage.getItem(LIVE_FLAVOR_KEY)
+    return v === 'full' || v === 'off' ? v : 'lite'
   } catch {
     return 'lite'
   }
+}
+
+/** Whether the page is visible (false when the tab is in the background or the screen is off). */
+function usePageVisible() {
+  const [visible, setVisible] = useState(() => document.visibilityState !== 'hidden')
+  useEffect(() => {
+    const on = () => setVisible(document.visibilityState !== 'hidden')
+    document.addEventListener('visibilitychange', on)
+    return () => document.removeEventListener('visibilitychange', on)
+  }, [])
+  return visible
+}
+
+/** Whether an element is at least partly on screen. */
+function useInView(ref: React.RefObject<HTMLElement | null>) {
+  const [inView, setInView] = useState(true)
+  useEffect(() => {
+    const el = ref.current
+    if (!el || typeof IntersectionObserver === 'undefined') return
+    const io = new IntersectionObserver(([e]) => setInView(e.isIntersecting), { threshold: 0.15 })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [ref])
+  return inView
 }
 
 const LABEL_TEXT: Record<Label, string> = {
@@ -114,7 +142,10 @@ export default function App() {
   const [tab, setTab] = useState<'summary' | 'moves'>(restored?.review ? restored.tab : 'moves')
   const [view, setView] = useState<'analyze' | 'patterns' | 'puzzles'>('analyze')
   const [deep, setDeep] = useState<DeepState>(restored?.deepDone ? { ...emptyDeep, status: 'done' } : emptyDeep)
-  const [liveFlavor, setLiveFlavor] = useState<EngineFlavor>(savedLiveFlavor)
+  const [liveMode, setLiveMode] = useState<LiveMode>(savedLiveMode)
+  const pageVisible = usePageVisible()
+  const boardRef = useRef<HTMLDivElement>(null)
+  const boardInView = useInView(boardRef)
   const [engineError, setEngineError] = useState<string | null>(null)
 
   const liveEngine = useRef<Engine | null>(null)
@@ -131,19 +162,23 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    const onError = (m: string) => setEngineError(t(liveFlavor === 'full' ? 'Full engine failed to start: {error}' : 'Lite engine failed to start: {error}', { error: m }))
-    const engine =
-      liveFlavor === 'full'
-        ? new Engine({ multiPv: LIVE_LINES, flavor: 'full', threads: availableThreads(), hashMb: 64, onError })
-        : new Engine({ multiPv: LIVE_LINES, onError })
-    liveEngine.current = engine
     try {
-      localStorage.setItem(LIVE_FLAVOR_KEY, liveFlavor)
+      localStorage.setItem(LIVE_FLAVOR_KEY, liveMode)
     } catch {
       /* storage unavailable */
     }
+    if (liveMode === 'off') {
+      liveEngine.current = null // no worker at all: frees its CPU and memory
+      return
+    }
+    const onError = (m: string) => setEngineError(t(liveMode === 'full' ? 'Full engine failed to start: {error}' : 'Lite engine failed to start: {error}', { error: m }))
+    const engine =
+      liveMode === 'full'
+        ? new Engine({ multiPv: LIVE_LINES, flavor: 'full', threads: availableThreads(), hashMb: 64, onError })
+        : new Engine({ multiPv: LIVE_LINES, onError })
+    liveEngine.current = engine
     return () => engine.terminate()
-  }, [liveFlavor])
+  }, [liveMode])
 
   // --- Positions -----------------------------------------------------------
 
@@ -289,19 +324,28 @@ export default function App() {
 
   // --- Live engine ---------------------------------------------------------
 
+  // The live engine only runs while someone can see the board: not in a background tab or with the screen off,
+  // not on the patterns/puzzles screens, and not while the board is scrolled out of view.
+  const liveActive = liveMode !== 'off' && pageVisible && view === 'analyze' && boardInView
   useEffect(() => {
     const engine = liveEngine.current
     if (!engine) return
     engine.stop()
-    if (gameOver) return
-    const t = setTimeout(() => {
-      void engine.analyze(fen, { depth: LIVE_DEPTH[liveFlavor] }, (lines) => setLive({ fen, lines }))
+    if (gameOver || !liveActive) return
+    const timer = setTimeout(() => {
+      void engine.analyze(fen, { depth: LIVE_DEPTH[liveMode] }, (lines) => setLive({ fen, lines }))
     }, 120)
-    return () => clearTimeout(t)
-  }, [fen, gameOver, liveFlavor])
+    return () => clearTimeout(timer)
+  }, [fen, gameOver, liveMode, liveActive])
 
   const reviewedEval = !inVariation ? (review?.evals[ply] ?? partialEvals[ply]) : undefined
-  const liveLines = useMemo(() => (live?.fen === fen ? live.lines : []), [live, fen])
+  // Live lines for this position if we have them; otherwise (engine off or paused) the review's best line.
+  const fromReview = (live?.fen !== fen || liveMode === 'off') && !!reviewedEval?.pv.length
+  const liveLines = useMemo<EngineLine[]>(() => {
+    if (live?.fen === fen && liveMode !== 'off') return live.lines
+    if (reviewedEval?.pv.length) return [{ multipv: 1, depth: REVIEW_LIMITS.depth, score: reviewedEval.score, pv: reviewedEval.pv }]
+    return []
+  }, [live, fen, liveMode, reviewedEval])
   const shownScore = liveLines[0]?.score ?? reviewedEval?.score ?? null
   const liveLabels = useMemo(() => lineLabels(liveLines.map((l) => l.score), fen.split(' ')[1] === 'w'), [liveLines, fen])
 
@@ -514,7 +558,7 @@ export default function App() {
       <main className="layout" hidden={view !== 'analyze'}>
         <section className="board-col">
           {player(top)}
-          <div className={`board-row ${inLine ? 'off-game' : ''}`}>
+          <div className={`board-row ${inLine ? 'off-game' : ''}`} ref={boardRef}>
             <EvalBar score={shownScore} orientation={orientation} />
             <Board fen={fen} orientation={orientation} lastMove={lastMove} shapes={shapes} onMove={onBoardMove} />
           </div>
@@ -609,15 +653,32 @@ export default function App() {
           <div className="card engine">
             <div className="engine-head">
               <span className="muted">
-                {gameOver ? t('Game over') : liveLines[0] ? t('Stockfish 19 · depth {depth}', { depth: liveLines[0].depth }) : t('Engine thinking…')}
+                {gameOver
+                  ? t('Game over')
+                  : liveMode === 'off'
+                    ? fromReview
+                      ? t('Live analysis off · best line from the review')
+                      : t('Live analysis off')
+                    : !liveActive
+                      ? fromReview
+                        ? t('Paused · best line from the review')
+                        : t('Paused')
+                      : fromReview
+                        ? t('Best line from the review · engine starting…')
+                        : liveLines[0]
+                          ? t('Stockfish 19 · depth {depth}', { depth: liveLines[0].depth })
+                          : t('Engine thinking…')}
               </span>
               <span className="seg" role="group" aria-label={t('Live engine')}>
-                <button className={liveFlavor === 'lite' ? 'on' : ''} onClick={() => setLiveFlavor('lite')} title={t('Small network, instant')}>
+                <button className={liveMode === 'off' ? 'on' : ''} onClick={() => setLiveMode('off')} title={t('No live analysis (saves power)')}>
+                  {t('Off')}
+                </button>
+                <button className={liveMode === 'lite' ? 'on' : ''} onClick={() => setLiveMode('lite')} title={t('Small network, instant')}>
                   Lite
                 </button>
                 <button
-                  className={liveFlavor === 'full' ? 'on' : ''}
-                  onClick={() => setLiveFlavor('full')}
+                  className={liveMode === 'full' ? 'on' : ''}
+                  onClick={() => setLiveMode('full')}
                   title={t('Full Stockfish 19 network (~99 MB download once), multi-threaded')}
                 >
                   Full

@@ -385,4 +385,13 @@ export const SV: Record<string, string> = {
   'No puzzles match these filters.': 'Inga problem matchar filtren.',
   'avoid {tactic}': 'undvik {tactic}',
   Mastery: 'Behärskning',
+
+  // ---- Live engine on/off ----
+  Off: 'Av',
+  'No live analysis (saves power)': 'Ingen liveanalys (sparar ström)',
+  'Live analysis off · best line from the review': 'Liveanalys av · bästa varianten från granskningen',
+  'Live analysis off': 'Liveanalys av',
+  Paused: 'Pausad',
+  'Paused · best line from the review': 'Pausad · bästa varianten från granskningen',
+  'Best line from the review · engine starting…': 'Bästa varianten från granskningen · motorn startar…',
 }
