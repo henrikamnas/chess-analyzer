@@ -4,6 +4,7 @@ import { Chess } from 'chess.js'
 import { aggregateAccuracy, formatScore, pvToSan, winPercent, type Game, type Label, type Review } from './analysis'
 import type { Score } from './engine'
 import { sideInText, t } from './i18n'
+import type { BookInfo } from './openings'
 
 const VALUE: Record<string, number> = { p: 1, n: 3, b: 3, r: 5, q: 9, k: 0 }
 
@@ -196,8 +197,9 @@ export function rating(acc: number): AccuracyRating {
 
 export const ratingName = (r: AccuracyRating) => t({ excellent: 'Excellent', good: 'Good', inaccurate: 'Inaccurate', poor: 'Poor' }[r])
 
-export function summarizeGame(game: Game, review: Review): GameSummary {
-  const { white, black, result, opening } = game.meta
+export function summarizeGame(game: Game, review: Review, book?: BookInfo | null): GameSummary {
+  const { white, black, result } = game.meta
+  const opening = game.meta.opening ?? book?.opening?.name
   const name = (c: 'w' | 'b') => (c === 'w' ? white : black)
   const acc = review.accuracy
   const paragraphs: string[] = []
@@ -219,8 +221,15 @@ export function summarizeGame(game: Game, review: Review): GameSummary {
     paragraphs.push(t('{outcome}{inOpening}. Accuracy: {white} {whitePct}, {black} {blackPct}.', { outcome, inOpening, white, whitePct: pct('w'), black, blackPct: pct('b') }))
   }
 
-  // The story: when the winner took control for good, and the biggest swing
+  // The story: where the game left opening theory, when the winner took control for good, and the biggest swing
   const story: string[] = []
+  if (book && book.bookPlies > 0) {
+    if (book.bookPlies >= game.plies.length) story.push(t('The whole game followed known opening theory.'))
+    else {
+      const leaver = game.plies[book.bookPlies].color
+      story.push(t('{name} left opening theory with {move}.', { name: name(leaver), move: moveName(game, book.bookPlies) }))
+    }
+  }
   const wins = review.evals.map((e) => winPercent(e.score))
   if (result === '1-0' || result === '0-1') {
     const winnerIsWhite = result === '1-0'

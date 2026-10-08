@@ -393,5 +393,8 @@ export const SV: Record<string, string> = {
   'Live analysis off': 'Liveanalys av',
   Paused: 'Pausad',
   'Paused · best line from the review': 'Pausad · bästa varianten från granskningen',
+  'Book move': 'Teoridrag',
+  'The whole game followed known opening theory.': 'Hela partiet följde känd öppningsteori.',
+  '{name} left opening theory with {move}.': '{name} lämnade öppningsteorin med {move}.',
   'Best line from the review · engine starting…': 'Bästa varianten från granskningen · motorn startar…',
 }

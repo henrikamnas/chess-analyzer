@@ -17,6 +17,7 @@ import { LineBanner } from './components/LineBanner'
 import { PatternsView } from './components/PatternsView'
 import { PuzzleView } from './components/PuzzleView'
 import { getStoredGame, type StoredGame } from './store'
+import { bookInfo, loadOpenings, type BookInfo } from './openings'
 import { setLang, t, useLang } from './i18n'
 
 const DEEP_LIMITS = { depth: 22, movetimeMs: 3000 } // full engine; the time cap keeps hard positions bounded
@@ -134,6 +135,7 @@ export default function App() {
   const [explaining, setExplaining] = useState<Explaining | null>(null)
   const [orientation, setOrientation] = useState<'white' | 'black'>(restored?.orientation ?? 'white')
   const [review, setReview] = useState<Review | null>(restored?.review ?? null)
+  const [book, setBook] = useState<{ game: Game; info: BookInfo } | null>(null)
   const [partialEvals, setPartialEvals] = useState<PositionEval[]>([])
   const [progress, setProgress] = useState<{ done: number; total: number } | null>(null)
   const [live, setLive] = useState<{ fen: string; lines: EngineLine[] } | null>(null)
@@ -420,7 +422,19 @@ export default function App() {
 
   // --- Move verdict & explanation ------------------------------------------
 
+  // Opening book for the loaded game (data loads on demand, so it arrives a moment after the game)
+  useEffect(() => {
+    let cancelled = false
+    void loadOpenings().then((db) => !cancelled && setBook({ game, info: bookInfo(game, db) }))
+    return () => {
+      cancelled = true
+    }
+  }, [game])
+  const bookNow = book?.game === game ? book.info : null
+  const bookPlies = bookNow?.bookPlies ?? 0
+
   const verdictPly = explaining ? explaining.ply : !inVariation && ply > 0 ? ply : null
+  const isBookMove = !!verdictPly && !explaining && verdictPly <= bookPlies
   const verdict = verdictPly && review ? review.moves[verdictPly - 1] : undefined
   const explanation = useMemo(
     () => (verdictPly && review ? explainMove(game, review, verdictPly - 1) : null),
@@ -453,13 +467,13 @@ export default function App() {
         if (badge) arrow.customSvg = { html: arrowBadge(badge, label), center: 'label' }
         out.push(arrow)
       })
-    if (verdict && !inVariation && verdictPly === ply) {
+    if (verdict && !inVariation && verdictPly === ply && !isBookMove) {
       const played = game.plies[ply - 1]
       const glyph = GLYPH[verdict.label]
       if (glyph) out.push({ orig: played.uci.slice(2, 4) as Key, label: { text: glyph, fill: LABEL_COLOR[verdict.label] } })
     }
     return out
-  }, [liveLines, liveLabels, fen, verdict, verdictPly, inVariation, game.plies, ply])
+  }, [liveLines, liveLabels, fen, verdict, verdictPly, inVariation, game.plies, ply, isBookMove])
 
   // --- Render --------------------------------------------------------------
 
@@ -618,7 +632,14 @@ export default function App() {
             </div>
           )}
 
-          {verdict && verdictPly && (
+          {isBookMove && verdictPly && (
+            <div className="card verdict lbl-book">
+              <strong>{game.plies[verdictPly - 1].san}</strong> <span className="glyph">📖</span> — {t('Book move')}
+              {bookNow?.openingAt[verdictPly] && <span className="muted"> · {bookNow.openingAt[verdictPly]!.name}</span>}
+            </div>
+          )}
+
+          {!isBookMove && verdict && verdictPly && (
             <div className={`card verdict lbl-${verdict.label}`}>
               <div>
                 <strong>
@@ -699,9 +720,9 @@ export default function App() {
                 </button>
               </div>
               {tab === 'summary' && review ? (
-                <SummaryCard game={game} review={review} onSelect={goTo} deep={deep} onDeep={startDeep} />
+                <SummaryCard game={game} review={review} onSelect={goTo} deep={deep} onDeep={startDeep} book={bookNow} />
               ) : (
-                <MoveList game={game} review={review} ply={inLine ? -1 : ply} onSelect={goTo} />
+                <MoveList game={game} review={review} ply={inLine ? -1 : ply} onSelect={goTo} bookPlies={bookPlies} />
               )}
             </div>
           )}

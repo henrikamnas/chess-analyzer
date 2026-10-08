@@ -1570,3 +1570,17 @@ cg-board square.last-move {
     padding: 6px 10px;
   }
 }
+
+/* Book (opening theory) moves */
+.book-glyph {
+  font-size: 11px;
+  margin-left: 2px;
+}
+
+.move.book {
+  color: var(--muted);
+}
+
+.verdict.lbl-book {
+  border-left-color: #a07b52;
+}

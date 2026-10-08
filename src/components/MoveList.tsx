@@ -6,9 +6,10 @@ interface Props {
   review: Review | null
   ply: number
   onSelect: (ply: number) => void
+  bookPlies?: number // the first N plies are book moves
 }
 
-export function MoveList({ game, review, ply, onSelect }: Props) {
+export function MoveList({ game, review, ply, onSelect, bookPlies = 0 }: Props) {
   const list = useRef<HTMLDivElement>(null)
   const active = useRef<HTMLButtonElement>(null)
   useEffect(() => {
@@ -32,14 +33,16 @@ export function MoveList({ game, review, ply, onSelect }: Props) {
   const cell = (idx?: number) => {
     if (!idx) return <span className="move empty">…</span>
     const p = game.plies[idx - 1]
-    const r = review?.moves[idx - 1]
+    const book = idx <= bookPlies
+    const r = book ? undefined : review?.moves[idx - 1]
     return (
       <button
         ref={idx === ply ? active : undefined}
-        className={`move ${idx === ply ? 'active' : ''} ${r ? `lbl-${r.label}` : ''}`}
+        className={`move ${idx === ply ? 'active' : ''} ${r ? `lbl-${r.label}` : ''} ${book ? 'book' : ''}`}
         onClick={() => onSelect(idx)}
       >
         {p.san}
+        {book && <span className="glyph book-glyph">📖</span>}
         {r && r.label !== 'best' && GLYPH[r.label] && <span className="glyph">{GLYPH[r.label]}</span>}
       </button>
     )

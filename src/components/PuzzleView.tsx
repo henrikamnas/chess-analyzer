@@ -9,6 +9,7 @@ import { formatLine } from '../explain'
 import { buildPuzzles, moverWin, nextPuzzle, puzzleHint, puzzlePrompt, schedule, type Puzzle } from '../puzzles'
 import { allPuzzleProgress, putPuzzleProgress, storedGamesFor, type PuzzleProgress, type StoredGame } from '../store'
 import type { Source } from '../imports'
+import { bookInfo, loadOpenings } from '../openings'
 import { MiniBoard } from './MiniBoard'
 import { describeTactic, motifName, type Motif } from '../tactics'
 import { t, tn, useLang } from '../i18n'
@@ -90,9 +91,9 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
   }, [current])
   useEffect(() => {
     if (!player) return
-    void Promise.all([storedGamesFor(player.user, player.source), allPuzzleProgress()]).then(([games, prog]: [StoredGame[], PuzzleProgress[]]) => {
-      const list = buildPuzzles(player.user, games)
-      const map = new Map(prog.map((p) => [p.id, p]))
+    void Promise.all([storedGamesFor(player.user, player.source), allPuzzleProgress(), loadOpenings()]).then(([games, prog, db]) => {
+      const list = buildPuzzles(player.user, games as StoredGame[], (g) => bookInfo(g, db).bookPlies)
+      const map = new Map((prog as PuzzleProgress[]).map((p) => [p.id, p]))
       setPuzzles(list)
       setProgress(map)
       const same = currentId.current ? list.find((p) => p.id === currentId.current) : undefined

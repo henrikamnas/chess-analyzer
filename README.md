@@ -7,6 +7,7 @@ A Lichess / Chess.com style game review that runs entirely in the browser.
 - Import recent games by **Lichess** or **Chess.com** username, or paste a PGN
 - **Stockfish 19** in Web Workers: the lite build (1.6 MB) for the fast review and live analysis, and the full build (~99 MB, multi-threaded) for **Deep analysis** and the optional "Full" live engine
 - Move labels (best / good / inaccuracy / mistake / blunder) and per-side **accuracy**, both based on the change in win% ([Lichess' formula](https://lichess.org/page/accuracy))
+- **Book moves** marked 📖 with the opening name, and where each game left theory (offline, from the Lichess opening dataset)
 - **Estimated rating** per player, calibrated per site and time control (Chess.com rapid, blitz, bullet, daily; Lichess rapid, blitz, bullet) on real rated games; fast time controls are marked as rough
 - Plain-language explanations of mistakes, with "Why it's bad" / "Better move" lines to step through
 - Game summary with accuracy by phase and key moments
@@ -44,6 +45,7 @@ adds them in the browser (the first visit reloads once).
 | `src/session.ts` | Remembers the open game and review across reloads |
 | `src/batch.ts`, `src/store.ts`, `src/patterns.ts` | My patterns: background batch review, IndexedDB cache, pattern detection |
 | `src/i18n.ts`, `src/sv.ts` | Translations: English text is the key, Swedish in `sv.ts`; missing entries fall back to English |
+| `src/openings.ts`, `src/data/openings.json` | Opening book: book moves and opening names; data built by `scripts/build-openings.mjs` |
 | `src/tactics.ts` | Names the tactic in an engine line (fork, pin, skewer, discovered attack, free piece, mates) |
 | `src/puzzles.ts` | Puzzles from reviewed games and their spaced-repetition schedule |
 | `src/components/` | Board (chessground), eval bar and graph, move list, engine lines, summary, side-line banner |
@@ -52,3 +54,4 @@ adds them in the browser (the first visit reloads once).
 
 GPL-3.0-or-later, see [LICENSE](LICENSE). The app bundles [Stockfish](https://github.com/official-stockfish/Stockfish)
 via [stockfish.js](https://github.com/nmrugg/stockfish.js) (GPLv3) and [chessground](https://github.com/lichess-org/chessground) (GPLv3).
+Opening names and lines come from [lichess-org/chess-openings](https://github.com/lichess-org/chess-openings) (CC0).

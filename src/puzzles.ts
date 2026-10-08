@@ -30,7 +30,8 @@ export interface Puzzle {
 const INTERVAL_DAYS = [1, 3, 7, 14, 30]
 const RETRY_MS = 10 * 60 * 1000 // a missed puzzle comes back later in the same session
 
-export function buildPuzzles(user: string, stored: StoredGame[]): Puzzle[] {
+/** `bookPliesOf` (optional) gives how many opening plies of a game were book moves; those never become puzzles. */
+export function buildPuzzles(user: string, stored: StoredGame[], bookPliesOf?: (game: ReturnType<typeof parseGame>) => number): Puzzle[] {
   const name = user.toLowerCase()
   const out: Puzzle[] = []
   for (const s of stored) {
@@ -43,11 +44,12 @@ export function buildPuzzles(user: string, stored: StoredGame[]): Puzzle[] {
     const me = s.white.toLowerCase() === name ? 'w' : 'b'
     const opp = me === 'w' ? 'b' : 'w'
     const review = s.review
+    const bookPlies = bookPliesOf?.(game) ?? 0
     const myWin = (i: number) => (me === 'w' ? winPercent(review.evals[i].score) : 100 - winPercent(review.evals[i].score))
     let lastChance: { best: string; index: number } | null = null
 
     game.plies.forEach((ply, i) => {
-      if (ply.color !== me) return
+      if (ply.color !== me || i < bookPlies) return
       const mv = review.moves[i]
       const before = review.evals[i]
       if (!before.bestMove || before.bestMove === ply.uci || !before.pv.length) return

@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { basisName, GLYPH, type Game, type Label, type Review } from '../analysis'
 import { moveName, phaseName, rating, ratingName, summarizeGame } from '../explain'
 import { t, useLang } from '../i18n'
+import type { BookInfo } from '../openings'
 
 export interface DeepState {
   status: 'idle' | 'running' | 'done'
@@ -17,14 +18,15 @@ interface Props {
   onSelect: (ply: number) => void
   deep: DeepState
   onDeep: () => void
+  book?: BookInfo | null
 }
 
 const ERRORS: Label[] = ['blunder', 'mistake', 'inaccuracy']
 
-export function SummaryCard({ game, review, onSelect, deep, onDeep }: Props) {
+export function SummaryCard({ game, review, onSelect, deep, onDeep, book }: Props) {
   const lang = useLang()
   // eslint-disable-next-line react-hooks/exhaustive-deps -- lang: the summary text is generated in the current language
-  const summary = useMemo(() => summarizeGame(game, review), [game, review, lang])
+  const summary = useMemo(() => summarizeGame(game, review, book), [game, review, book, lang])
   const { meta } = game
 
   const player = (c: 'w' | 'b') => {
