@@ -4,7 +4,7 @@ import type { DrawShape } from 'chessground/draw'
 import type { Key } from 'chessground/types'
 import { availableThreads, Engine, type EngineFlavor, type EngineLine } from './engine'
 import { basisName, GLYPH, lineCost, lineLabels, parseGame, rateReview, REVIEW_LIMITS, reviewGame, type Game, type Label, type PositionEval, type Review } from './analysis'
-import { explainMove, moveName } from './explain'
+import { explainMove, formatLine, moveName } from './explain'
 import { Board } from './components/Board'
 import { EvalBar } from './components/EvalBar'
 import { EvalGraph } from './components/EvalGraph'
@@ -398,6 +398,24 @@ export default function App() {
     [variation, plan, game.plies, ply],
   )
 
+  // Forced mate in the current position (live engine, or the review when live analysis is off/paused)
+  const mateIn = shownScore?.mate !== undefined && Math.abs(shownScore.mate) >= 1 ? Math.round(shownScore.mate) : null
+  // Mate in n takes 2n-1 plies when the mating side is to move, 2n when the defender moves first.
+  const matingSideToMove = mateIn !== null && (mateIn > 0) === (fen.split(' ')[1] === 'w')
+  const mateLine =
+    mateIn !== null && liveLines[0]?.score.mate !== undefined
+      ? liveLines[0].pv.slice(0, Math.abs(mateIn) * 2 - (matingSideToMove ? 1 : 0))
+      : []
+  // Already stepping through this mating line? Then there's nothing to show.
+  const inMateLine = mateLine.length > 0 && plan.slice(variation.length, variation.length + mateLine.length).join(' ') === mateLine.join(' ')
+  /** Step through the mating line on the board, like other side lines. */
+  const showMate = () => {
+    if (!mateLine.length) return
+    setExplaining(null)
+    setPlan([...variation, ...mateLine])
+    setVariation([...variation, mateLine[0]])
+  }
+
   const onEngineLine = (moves: string[]) => {
     const next = [...variation, ...moves]
     setExplaining(null)
@@ -577,6 +595,20 @@ export default function App() {
             <Board fen={fen} orientation={orientation} lastMove={lastMove} shapes={shapes} onMove={onBoardMove} />
           </div>
           {player(top === 'w' ? 'b' : 'w')}
+
+          {mateIn !== null && !gameOver && (
+            <div className={`mate-banner ${mateIn > 0 ? 'w' : 'b'}`}>
+              <div className="mate-text">
+                <div className="mate-title">
+                  ♚ {t('{side} has mate in {n}', { side: t(mateIn > 0 ? 'White' : 'Black'), n: Math.abs(mateIn) })}
+                </div>
+                {mateLine.length > 0 && <div className="mate-line">{formatLine(fen, mateLine, mateLine.length)}</div>}
+              </div>
+              {mateLine.length > 0 && !inMateLine && (
+                <button onClick={showMate}>▶ {t('Show mate')}</button>
+              )}
+            </div>
+          )}
 
           {inLine && (
             <LineBanner

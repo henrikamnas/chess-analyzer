@@ -394,6 +394,8 @@ export const SV: Record<string, string> = {
   Paused: 'Pausad',
   'Paused · best line from the review': 'Pausad · bästa varianten från granskningen',
   'Book move': 'Teoridrag',
+  '{side} has mate in {n}': '{side} har matt i {n}',
+  'Show mate': 'Visa matten',
   'The whole game followed known opening theory.': 'Hela partiet följde känd öppningsteori.',
   '{name} left opening theory with {move}.': '{name} lämnade öppningsteorin med {move}.',
   'Best line from the review · engine starting…': 'Bästa varianten från granskningen · motorn startar…',

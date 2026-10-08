@@ -1584,3 +1584,35 @@ cg-board square.last-move {
 .verdict.lbl-book {
   border-left-color: #a07b52;
 }
+
+/* Forced mate announcement under the board */
+.mate-banner {
+  margin-left: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--blunder);
+  background: color-mix(in srgb, var(--blunder) 14%, var(--panel));
+}
+
+.mate-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.mate-title {
+  font-weight: 700;
+}
+
+.mate-line {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 2px;
+  overflow-wrap: anywhere;
+}
+
+.mate-banner button {
+  flex: none;
+}
