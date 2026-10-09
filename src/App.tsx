@@ -26,6 +26,18 @@ const LIVE_LINES = 3
 const EXPLAIN_PLIES = 8
 const LIVE_FLAVOR_KEY = 'chess-analyzer:live-engine'
 
+/** The side the user played: their saved username from "My games" if it matches a player, else the board orientation. */
+function mySide(game: Game, orientation: 'white' | 'black'): 'w' | 'b' {
+  try {
+    const user = (JSON.parse(localStorage.getItem('chess-analyzer:import') ?? 'null')?.user ?? '').trim().toLowerCase()
+    if (user && game.meta.white.toLowerCase() === user) return 'w'
+    if (user && game.meta.black.toLowerCase() === user) return 'b'
+  } catch {
+    /* storage unavailable */
+  }
+  return orientation === 'white' ? 'w' : 'b'
+}
+
 /** Live engine setting: off saves power; the review's best line is shown instead. */
 type LiveMode = 'off' | EngineFlavor
 
@@ -774,7 +786,7 @@ export default function App() {
                 </button>
               </div>
               {tab === 'summary' && review ? (
-                <SummaryCard game={game} review={review} onSelect={goTo} deep={deep} onDeep={startDeep} book={bookNow} />
+                <SummaryCard game={game} review={review} onSelect={goTo} deep={deep} onDeep={startDeep} book={bookNow} pgn={pgn} side={mySide(game, orientation)} />
               ) : (
                 <MoveList game={game} review={review} ply={inLine ? -1 : ply} onSelect={goTo} bookPlies={bookPlies} />
               )}

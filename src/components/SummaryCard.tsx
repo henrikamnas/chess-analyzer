@@ -3,6 +3,8 @@ import { basisName, GLYPH, type Game, type Label, type Review } from '../analysi
 import { moveName, phaseName, rating, ratingName, summarizeGame } from '../explain'
 import { t, useLang } from '../i18n'
 import type { BookInfo } from '../openings'
+import type { Side } from '../aiPrompt'
+import { AskAi } from './AskAi'
 
 export interface DeepState {
   status: 'idle' | 'running' | 'done'
@@ -19,11 +21,13 @@ interface Props {
   deep: DeepState
   onDeep: () => void
   book?: BookInfo | null
+  pgn: string
+  side: Side // the side the user most likely played, preselected for "Ask an AI"
 }
 
 const ERRORS: Label[] = ['blunder', 'mistake', 'inaccuracy']
 
-export function SummaryCard({ game, review, onSelect, deep, onDeep, book }: Props) {
+export function SummaryCard({ game, review, onSelect, deep, onDeep, book, pgn, side }: Props) {
   const lang = useLang()
   // eslint-disable-next-line react-hooks/exhaustive-deps -- lang: the summary text is generated in the current language
   const summary = useMemo(() => summarizeGame(game, review, book), [game, review, book, lang])
@@ -102,6 +106,8 @@ export function SummaryCard({ game, review, onSelect, deep, onDeep, book }: Prop
           </ul>
         </>
       )}
+
+      <AskAi game={game} review={review} book={book ?? null} pgn={pgn} defaultSide={side} />
     </div>
   )
 }

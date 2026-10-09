@@ -399,4 +399,12 @@ export const SV: Record<string, string> = {
   'The whole game followed known opening theory.': 'Hela partiet följde känd öppningsteori.',
   '{name} left opening theory with {move}.': '{name} lämnade öppningsteorin med {move}.',
   'Best line from the review · engine starting…': 'Bästa varianten från granskningen · motorn startar…',
+  'Ask an AI': 'Fråga en AI',
+  'Copies the game and the engine review as a prompt you can paste into Claude, ChatGPT or any other AI chat.':
+    'Kopierar partiet och motorns granskning som en prompt du kan klistra in i Claude, ChatGPT eller någon annan AI-chatt.',
+  'I played': 'Jag spelade',
+  Neither: 'Ingen av dem',
+  'Copy for AI': 'Kopiera till AI',
+  'Copied. Paste it into:': 'Kopierat. Klistra in i:',
+  'Could not copy automatically. Select the text below and copy it:': 'Kunde inte kopiera automatiskt. Markera texten nedan och kopiera den:',
 }

@@ -11,6 +11,7 @@ A Lichess / Chess.com style game review that runs entirely in the browser.
 - **Estimated rating** per player, calibrated per site and time control (Chess.com rapid, blitz, bullet, daily; Lichess rapid, blitz, bullet) on real rated games; fast time controls are marked as rough
 - Plain-language explanations of mistakes, with "Why it's bad" / "Better move" lines to step through
 - Game summary with accuracy by phase and key moments
+- **Ask an AI**: copies the game and its engine review as a prompt for Claude, ChatGPT or any other AI chat (uses your own subscription, no API key)
 - **My patterns**: reviews your recent Chess.com / Lichess games in the background and finds recurring mistakes (hanging pieces, missed chances, time trouble, thrown wins, missed mates, weak phases and openings), each with example positions to open; reviews are cached in IndexedDB
 - **Puzzles from your own games**: positions where you missed a win or went wrong, with hints (the tactic to look for, the piece to move), engine-checked alternative answers, spaced repetition, a browsable/filterable list, and a daily goal, day streak and in-a-row combo
 - Eval bar, clickable eval graph, and multi-line engine analysis with lines and arrows coloured by how they compare with the best move; explore side lines freely on the board
@@ -46,6 +47,7 @@ adds them in the browser (the first visit reloads once).
 | `src/batch.ts`, `src/store.ts`, `src/patterns.ts` | My patterns: background batch review, IndexedDB cache, pattern detection |
 | `src/i18n.ts`, `src/sv.ts` | Translations: English text is the key, Swedish in `sv.ts`; missing entries fall back to English |
 | `src/openings.ts`, `src/data/openings.json` | Opening book: book moves and opening names; data built by `scripts/build-openings.mjs` |
+| `src/aiPrompt.ts`, `src/components/AskAi.tsx` | Ask an AI: builds the prompt (engine facts + a short answer format) and copies it |
 | `src/tactics.ts` | Names the tactic in an engine line (fork, pin, skewer, discovered attack, free piece, mates) |
 | `src/puzzles.ts` | Puzzles from reviewed games and their spaced-repetition schedule |
 | `src/components/` | Board (chessground), eval bar and graph, move list, engine lines, summary, side-line banner |
