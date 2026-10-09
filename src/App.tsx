@@ -17,7 +17,7 @@ import { LineBanner } from './components/LineBanner'
 import { PatternsView } from './components/PatternsView'
 import { PuzzleView } from './components/PuzzleView'
 import { getStoredGame, type StoredGame } from './store'
-import { bookInfo, loadOpenings, type BookInfo } from './openings'
+import { bookInfo, bookMovesInLine, followBook, loadOpenings, type BookInfo, type Db as OpeningDb } from './openings'
 import { setLang, t, useLang } from './i18n'
 
 const DEEP_LIMITS = { depth: 22, movetimeMs: 3000 } // full engine; the time cap keeps hard positions bounded
@@ -135,7 +135,7 @@ export default function App() {
   const [explaining, setExplaining] = useState<Explaining | null>(null)
   const [orientation, setOrientation] = useState<'white' | 'black'>(restored?.orientation ?? 'white')
   const [review, setReview] = useState<Review | null>(restored?.review ?? null)
-  const [book, setBook] = useState<{ game: Game; info: BookInfo } | null>(null)
+  const [book, setBook] = useState<{ game: Game; db: OpeningDb; info: BookInfo } | null>(null)
   const [partialEvals, setPartialEvals] = useState<PositionEval[]>([])
   const [progress, setProgress] = useState<{ done: number; total: number } | null>(null)
   const [live, setLive] = useState<{ fen: string; lines: EngineLine[] } | null>(null)
@@ -443,13 +443,28 @@ export default function App() {
   // Opening book for the loaded game (data loads on demand, so it arrives a moment after the game)
   useEffect(() => {
     let cancelled = false
-    void loadOpenings().then((db) => !cancelled && setBook({ game, info: bookInfo(game, db) }))
+    void loadOpenings().then((db) => !cancelled && setBook({ game, db, info: bookInfo(game, db) }))
     return () => {
       cancelled = true
     }
   }, [game])
   const bookNow = book?.game === game ? book.info : null
   const bookPlies = bookNow?.bookPlies ?? 0
+
+  // Book status of a side line played from a book position on the main line
+  const varBook = useMemo(() => {
+    if (!book || book.game !== game || !inVariation) return null
+    const mainInBook = book.info.fromStart && ply <= book.info.bookPlies
+    if (!mainInBook) return null
+    return followBook(book.db, varLine.map((v) => v.fen), book.info.openingAt[ply])
+  }, [book, game, inVariation, ply, varLine])
+  const varIsBook = !!varBook && varBook.plies === varLine.length
+  // The position on the board is reached by book moves only, so engine lines from it can be book too
+  const positionInBook = inVariation ? varIsBook : !!bookNow?.fromStart && ply <= bookPlies
+  const lineBookMoves = useMemo(
+    () => (positionInBook && book ? liveLines.map((l) => bookMovesInLine(book.db, fen, l.pv.slice(0, 10))) : undefined),
+    [positionInBook, book, liveLines, fen],
+  )
 
   const verdictPly = explaining ? explaining.ply : !inVariation && ply > 0 ? ply : null
   const isBookMove = !!verdictPly && !explaining && verdictPly <= bookPlies
@@ -671,6 +686,13 @@ export default function App() {
             </div>
           )}
 
+          {varIsBook && !explaining && (
+            <div className="card verdict lbl-book">
+              <strong>{varLine[varLine.length - 1].san}</strong> <span className="glyph">📖</span> — {t('Book move')}
+              {varBook.openingAt[varLine.length - 1] && <span className="muted"> · {varBook.openingAt[varLine.length - 1]!.name}</span>}
+            </div>
+          )}
+
           {!isBookMove && verdict && verdictPly && (
             <div className={`card verdict lbl-${verdict.label}`}>
               <div>
@@ -738,7 +760,7 @@ export default function App() {
                 </button>
               </span>
             </div>
-            {liveLines.length > 0 && <EngineLines fen={fen} lines={liveLines} labels={liveLabels} onPlay={onEngineLine} />}
+            {liveLines.length > 0 && <EngineLines fen={fen} lines={liveLines} labels={liveLabels} onPlay={onEngineLine} bookMoves={lineBookMoves} />}
           </div>
 
           {game.plies.length > 0 && (

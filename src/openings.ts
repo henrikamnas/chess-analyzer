@@ -1,5 +1,6 @@
 // Opening book: which moves of a game follow known theory, and the opening's name.
 // Data: Lichess chess-openings (CC0), compiled by scripts/build-openings.mjs and loaded on demand.
+import { Chess } from 'chess.js'
 import type { Game } from './analysis'
 import { positionHash } from './openingHash'
 
@@ -15,9 +16,11 @@ export interface BookInfo {
   openingAt: (Opening | null)[]
   /** The opening the game ended up in (deepest named position while in book). */
   opening: Opening | null
+  /** Whether the game starts from the standard position (otherwise nothing in it is book). */
+  fromStart: boolean
 }
 
-interface Db {
+export interface Db {
   book: Set<number>
   named: Map<number, Opening>
 }
@@ -51,5 +54,36 @@ export function bookInfo(game: Game, db: Db): BookInfo {
     }
     openingAt.push(current)
   })
-  return { bookPlies, openingAt, opening: current }
+  return { bookPlies, openingAt, opening: current, fromStart }
+}
+
+/**
+ * Follows a line of positions from a position that is in book: how many of them in a row stay in book, and
+ * the opening name after each of those (the deepest named position so far, starting from `opening`).
+ */
+export function followBook(db: Db, fens: string[], opening: Opening | null): { plies: number; openingAt: (Opening | null)[] } {
+  const openingAt: (Opening | null)[] = []
+  let current = opening
+  for (const fen of fens) {
+    const h = positionHash(fen)
+    if (!db.book.has(h)) break
+    current = db.named.get(h) ?? current
+    openingAt.push(current)
+  }
+  return { plies: openingAt.length, openingAt }
+}
+
+/** How many moves of an engine line (UCI) from a book position are book moves. */
+export function bookMovesInLine(db: Db, fen: string, pv: string[]): number {
+  const chess = new Chess(fen)
+  const fens: string[] = []
+  for (const uci of pv) {
+    try {
+      chess.move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] })
+    } catch {
+      break
+    }
+    fens.push(chess.fen())
+  }
+  return followBook(db, fens, null).plies
 }

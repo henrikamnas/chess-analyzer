@@ -7,6 +7,7 @@ interface Props {
   lines: EngineLine[]
   labels: Label[] // how each line compares with the best one
   onPlay: (uciMoves: string[]) => void
+  bookMoves?: number[] // per line: how many of its first moves are book moves
 }
 
 const QUALITY: Record<Label, { glyph: string; text: string }> = {
@@ -18,7 +19,7 @@ const QUALITY: Record<Label, { glyph: string; text: string }> = {
 }
 
 /** Top engine lines; tapping a move plays the line up to that move on the board. */
-export function EngineLines({ fen, lines, labels, onPlay }: Props) {
+export function EngineLines({ fen, lines, labels, onPlay, bookMoves }: Props) {
   const [, turn, , , , full] = fen.split(' ')
   return (
     <div className="engine-lines">
@@ -43,6 +44,11 @@ export function EngineLines({ fen, lines, labels, onPlay }: Props) {
                   <button key={i} className="line-move" onClick={() => onPlay(line.pv.slice(0, i + 1))}>
                     {prefix && <span className="muted">{prefix}</span>}
                     {san}
+                    {i < (bookMoves?.[li] ?? 0) && (
+                      <span className="glyph book-glyph" title={t('Book move')}>
+                        📖
+                      </span>
+                    )}
                   </button>
                 )
               })}
