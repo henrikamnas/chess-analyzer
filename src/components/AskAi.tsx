@@ -3,6 +3,7 @@ import type { Game, Review } from '../analysis'
 import { buildAiPrompt, type Side } from '../aiPrompt'
 import { t } from '../i18n'
 import type { BookInfo } from '../openings'
+import type { GreatMove } from '../greatMoves'
 
 interface Props {
   game: Game
@@ -10,6 +11,8 @@ interface Props {
   book: BookInfo | null
   pgn: string
   defaultSide: Side
+  brilliant: Set<number>
+  great: Map<number, GreatMove>
 }
 
 // Opened in a new tab after copying; the user pastes the prompt there (the prompt is too long for URL prefill).
@@ -20,13 +23,13 @@ const CHATS = [
 ]
 
 /** Copies the game and its engine review as a prompt for any chat LLM, using the user's own subscription. */
-export function AskAi({ game, review, book, pgn, defaultSide }: Props) {
+export function AskAi({ game, review, book, pgn, defaultSide, brilliant, great }: Props) {
   const [side, setSide] = useState<Side>(defaultSide)
   const [status, setStatus] = useState<'idle' | 'copied' | 'failed'>('idle')
   const [fallback, setFallback] = useState<string | null>(null)
 
   const copy = async () => {
-    const prompt = buildAiPrompt(game, review, book, side, pgn)
+    const prompt = buildAiPrompt(game, review, book, side, pgn, brilliant, great)
     try {
       await navigator.clipboard.writeText(prompt)
       setStatus('copied')

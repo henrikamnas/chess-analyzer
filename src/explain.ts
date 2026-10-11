@@ -1,7 +1,7 @@
 // Plain-language explanations of individual moves and of the whole game, derived from the review.
 // All text goes through t() (i18n.ts), so it follows the selected language.
 import { Chess } from 'chess.js'
-import { aggregateAccuracy, formatScore, pvToSan, winPercent, type Game, type Label, type Review } from './analysis'
+import { aggregateAccuracy, formatScore, pvToSan, winPercent, type Game, type GameMeta, type Label, type MoveReview, type Ply, type PositionEval, type Review } from './analysis'
 import type { Score } from './engine'
 import { sideInText, t } from './i18n'
 import type { BookInfo } from './openings'
@@ -88,15 +88,16 @@ export interface MoveExplanation {
 }
 
 export function explainMove(game: Game, review: Review, i: number): MoveExplanation | null {
-  const ply = game.plies[i]
-  const rv = review.moves[i]
+  return explainPlayed(game.meta, game.plies[i], review.moves[i], review.evals[i], review.evals[i + 1])
+}
+
+/** Explains one judged move from the evaluations before and after it (game moves and side-line moves alike). */
+export function explainPlayed(meta: GameMeta, ply: Ply, rv: MoveReview, before: PositionEval, after: PositionEval): MoveExplanation | null {
   if (!['inaccuracy', 'mistake', 'blunder'].includes(rv.label)) return null
 
-  const before = review.evals[i]
-  const after = review.evals[i + 1]
   const s = ply.color === 'w' ? 1 : -1
-  const mover = ply.color === 'w' ? game.meta.white : game.meta.black
-  const opponent = ply.color === 'w' ? game.meta.black : game.meta.white
+  const mover = ply.color === 'w' ? meta.white : meta.black
+  const opponent = ply.color === 'w' ? meta.black : meta.white
   const refutation = after.pv
   const best = before.pv
   // Judge material over the same stretch of moves the text shows, so the claim matches the line.

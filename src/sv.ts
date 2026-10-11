@@ -406,5 +406,18 @@ export const SV: Record<string, string> = {
   Neither: 'Ingen av dem',
   'Copy for AI': 'Kopiera till AI',
   'Copied. Paste it into:': 'Kopierat. Klistra in i:',
+  '{move}: how it can be punished': '{move}: hur det kan bestraffas',
+  'What could have been played instead of {move}': 'Vad som kunde ha spelats i stället för {move}',
+  'turn on live analysis to judge moves in side lines': 'slå på liveanalys för att bedöma drag i sidovarianter',
+  'checking the move…': 'kontrollerar draget…',
+  'Brilliant move': 'Briljant drag',
+  'Great move': 'Starkt drag',
+  'The only good move. The best alternative, {move} ({score}), would cost about {n}% winning chances.':
+    'Det enda bra draget. Bästa alternativet, {move} ({score}), skulle kosta ungefär {n} % i vinstchans.',
+  'Hard to spot: a quiet backward move that only shows its point when you look deeper.':
+    'Svårt att se: ett lugnt drag bakåt som visar sin poäng först när man räknar djupare.',
+  'Hard to spot: even the engine first preferred other moves; its point only shows when you look deeper.':
+    'Svårt att se: även motorn föredrog först andra drag; poängen visar sig först när man räknar djupare.',
+  'Not obvious: a quiet backward move.': 'Inte självklart: ett lugnt drag bakåt.',
   'Could not copy automatically. Select the text below and copy it:': 'Kunde inte kopiera automatiskt. Markera texten nedan och kopiera den:',
 }

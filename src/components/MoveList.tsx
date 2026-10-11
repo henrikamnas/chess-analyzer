@@ -7,9 +7,11 @@ interface Props {
   ply: number
   onSelect: (ply: number) => void
   bookPlies?: number // the first N plies are book moves
+  brilliant?: Set<number> // 0-based ply indexes of brilliant moves
+  great?: Map<number, unknown> // 0-based ply indexes of great moves (only good move)
 }
 
-export function MoveList({ game, review, ply, onSelect, bookPlies = 0 }: Props) {
+export function MoveList({ game, review, ply, onSelect, bookPlies = 0, brilliant, great }: Props) {
   const list = useRef<HTMLDivElement>(null)
   const active = useRef<HTMLButtonElement>(null)
   useEffect(() => {
@@ -35,15 +37,23 @@ export function MoveList({ game, review, ply, onSelect, bookPlies = 0 }: Props) 
     const p = game.plies[idx - 1]
     const book = idx <= bookPlies
     const r = book ? undefined : review?.moves[idx - 1]
+    const brill = !book && !!brilliant?.has(idx - 1)
+    const grt = !book && !brill && !!great?.has(idx - 1)
     return (
       <button
         ref={idx === ply ? active : undefined}
-        className={`move ${idx === ply ? 'active' : ''} ${r ? `lbl-${r.label}` : ''} ${book ? 'book' : ''}`}
+        className={`move ${idx === ply ? 'active' : ''} ${brill ? 'lbl-brilliant' : grt ? 'lbl-great' : r ? `lbl-${r.label}` : ''} ${book ? 'book' : ''}`}
         onClick={() => onSelect(idx)}
       >
         {p.san}
         {book && <span className="glyph book-glyph">📖</span>}
-        {r && r.label !== 'best' && GLYPH[r.label] && <span className="glyph">{GLYPH[r.label]}</span>}
+        {brill ? (
+          <span className="glyph">!!</span>
+        ) : grt ? (
+          <span className="glyph">!</span>
+        ) : (
+          r && r.label !== 'best' && GLYPH[r.label] && <span className="glyph">{GLYPH[r.label]}</span>
+        )}
       </button>
     )
   }

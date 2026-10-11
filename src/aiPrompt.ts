@@ -4,6 +4,7 @@
 import { aggregateAccuracy, formatScore, REVIEW_LIMITS, type Game, type Label, type Review } from './analysis'
 import { formatLine, moveName, phaseOf, type Phase } from './explain'
 import type { BookInfo } from './openings'
+import type { GreatMove } from './greatMoves'
 import { getLang } from './i18n'
 
 export type Side = 'w' | 'b' | null // the side the user played, or null when just reviewing someone's game
@@ -13,7 +14,7 @@ const ERRORS: Label[] = ['inaccuracy', 'mistake', 'blunder']
 const PLURAL: Partial<Record<Label, string>> = { inaccuracy: 'inaccuracies', mistake: 'mistakes', blunder: 'blunders' }
 const LINE_MOVES = 8 // engine lines are cut to this many moves (deeper moves are less reliable at review depth)
 
-export function buildAiPrompt(game: Game, review: Review, book: BookInfo | null, me: Side, pgn: string): string {
+export function buildAiPrompt(game: Game, review: Review, book: BookInfo | null, me: Side, pgn: string, brilliant: Set<number>, great: Map<number, GreatMove>): string {
   const { meta } = game
   const name = (c: 'w' | 'b') => (c === 'w' ? meta.white : meta.black)
   const colour = (c: 'w' | 'b') => (c === 'w' ? 'White' : 'Black')
@@ -52,7 +53,9 @@ export function buildAiPrompt(game: Game, review: Review, book: BookInfo | null,
   out.push('## Engine review summary')
   for (const c of ['w', 'b'] as const) {
     const est = review.rating[c]
-    const errors = ERRORS.map((l) => `${review.counts[c][l]} ${PLURAL[l]}`).join(', ')
+    const brilliants = [...brilliant].filter((i) => game.plies[i].color === c).length
+    const greats = [...great.keys()].filter((i) => game.plies[i].color === c).length
+    const errors = (brilliants ? `${brilliants} brilliant (!!), ` : '') + (greats ? `${greats} great (!, only good move), ` : '') + ERRORS.map((l) => `${review.counts[c][l]} ${PLURAL[l]}`).join(', ')
     out.push(
       `- ${colour(c)}: accuracy ${review.accuracy[c].toFixed(1)}%, average centipawn loss ${Math.round(review.acpl[c])}, ` +
         `${errors}; played like ~${est.value}${est.precision === 'rough' || !est.reliable ? ' (rough estimate)' : ''}`,
@@ -64,7 +67,7 @@ export function buildAiPrompt(game: Game, review: Review, book: BookInfo | null,
 
   // --- Moves
   out.push('## Moves with engine evaluation after each move')
-  out.push(movesTable(game, review, book))
+  out.push(movesTable(game, review, book, brilliant, great))
   out.push('')
 
   // --- Errors in detail
@@ -93,8 +96,10 @@ export function buildAiPrompt(game: Game, review: Review, book: BookInfo | null,
   const whose = me ? 'My' : "The game's"
   out.push(
     '## How to answer',
-    'Use exactly this format, at most about 200 words in total:',
+    'Use exactly this format, at most about 220 words in total:',
     '',
+    '**In a nutshell:** one line with your overall, human impression of the game, the way a strong player would sum it up to a friend ' +
+      '(for example "a wild tactical brawl", "a calm, very accurate game by White", "even for a long time, then one slip decided it").',
     '**The game:** one or two sentences on how it went and where it was decided.',
     `**Key mistakes:** ${whose} 3 most costly mistakes, one bullet each: the move, then one short sentence on what was missed and the idea behind the better move. At most one short line of moves per bullet.`,
     `**Work on:** at most 2 bullets, each one concrete thing to practise.`,
@@ -107,11 +112,11 @@ export function buildAiPrompt(game: Game, review: Review, book: BookInfo | null,
 }
 
 /** "12. Nf3 +0.35 | Qd2 −0.10 ?!" — one row per move number; book moves marked, errors glyphed. */
-function movesTable(game: Game, review: Review, book: BookInfo | null): string {
+function movesTable(game: Game, review: Review, book: BookInfo | null, brilliant: Set<number>, great: Map<number, GreatMove>): string {
   const GLYPH: Partial<Record<Label, string>> = { inaccuracy: '?!', mistake: '?', blunder: '??' }
   const cell = (i: number) => {
     const m = review.moves[i]
-    const tag = book && i < book.bookPlies ? ' (book)' : GLYPH[m.label] ? ` ${GLYPH[m.label]}` : ''
+    const tag = book && i < book.bookPlies ? ' (book)' : brilliant.has(i) ? ' !! (brilliant sacrifice)' : great.has(i) ? ` ! (only good move${great.get(i)!.lateFind ? ', hard to spot' : ''})` : GLYPH[m.label] ? ` ${GLYPH[m.label]}` : ''
     return `${game.plies[i].san}${tag} ${formatScore(review.evals[i + 1].score)}`
   }
   const rows: string[] = []

@@ -2,9 +2,9 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Chess, DEFAULT_POSITION } from 'chess.js'
 import type { DrawShape } from 'chessground/draw'
 import type { Key } from 'chessground/types'
-import { availableThreads, Engine, type EngineFlavor, type EngineLine } from './engine'
-import { basisName, GLYPH, lineCost, lineLabels, parseGame, rateReview, REVIEW_LIMITS, reviewGame, type Game, type Label, type PositionEval, type Review } from './analysis'
-import { explainMove, formatLine, moveName } from './explain'
+import { availableThreads, Engine, type EngineFlavor, type EngineLine, type Score } from './engine'
+import { basisName, GLYPH, judgeMove, lineCost, lineLabels, parseGame, rateReview, REVIEW_LIMITS, reviewGame, terminalEval, type Game, type Label, type MoveReview, type Ply, type PositionEval, type Review } from './analysis'
+import { explainMove, explainPlayed, formatLine, moveName, type MoveExplanation } from './explain'
 import { Board } from './components/Board'
 import { EvalBar } from './components/EvalBar'
 import { EvalGraph } from './components/EvalGraph'
@@ -17,6 +17,8 @@ import { LineBanner } from './components/LineBanner'
 import { PatternsView } from './components/PatternsView'
 import { PuzzleView } from './components/PuzzleView'
 import { getStoredGame, type StoredGame } from './store'
+import { brilliantMoves, isBrilliant } from './brilliant'
+import { findGreatMoves, greatText, judgeGreat, type GreatMove } from './greatMoves'
 import { bookInfo, bookMovesInLine, followBook, loadOpenings, type BookInfo, type Db as OpeningDb } from './openings'
 import { setLang, t, useLang } from './i18n'
 
@@ -24,7 +26,52 @@ const DEEP_LIMITS = { depth: 22, movetimeMs: 3000 } // full engine; the time cap
 const LIVE_DEPTH = { lite: 20, full: 24 }
 const LIVE_LINES = 3
 const EXPLAIN_PLIES = 8
+const MIN_JUDGE_DEPTH = 12 // live evals below this depth are too shaky to judge a side-line move with
+const EVAL_CACHE_SIZE = 400
+
+type CachedEval = PositionEval & {
+  depth: number
+  second?: { score: Score; move: string } // second-best line, to tell whether the best move was the only good one
+  bestSince?: number // depth from which the best move has stayed on top, to tell whether it was hard to find
+}
+
+/** Remembers the live engine's best line per position, so side-line moves can be judged from before/after evals. */
+function cacheEval(cache: Map<string, CachedEval>, fen: string, lines: EngineLine[]): Map<string, CachedEval> {
+  const [line, second] = lines
+  const old = cache.get(fen)
+  if (old && old.depth > line.depth) return cache
+  const next = new Map(cache)
+  next.delete(fen) // re-insert so the oldest entries are evicted first
+  next.set(fen, {
+    score: line.score,
+    bestMove: line.pv[0] ?? null,
+    pv: line.pv,
+    depth: line.depth,
+    second: second?.pv.length && second.depth === line.depth ? { score: second.score, move: second.pv[0] } : old?.second,
+    bestSince: old && old.bestMove === line.pv[0] ? Math.min(old.bestSince ?? line.depth, line.depth) : line.depth,
+  })
+  if (next.size > EVAL_CACHE_SIZE) next.delete(next.keys().next().value!)
+  return next
+}
+
+const startsWith = (line: string[], prefix: string[]) => prefix.length <= line.length && prefix.every((m, i) => line[i] === m)
 const LIVE_FLAVOR_KEY = 'chess-analyzer:live-engine'
+
+/** Why a great move was the only good one, and whether it was hard to spot. */
+function GreatNote({ great }: { great: GreatMove }) {
+  const { only, hard } = greatText(great, t)
+  return (
+    <p className="why">
+      {only}
+      {hard && (
+        <>
+          {' '}
+          <strong>{hard}</strong>
+        </>
+      )}
+    </p>
+  )
+}
 
 /** The side the user played: their saved username from "My games" if it matches a player, else the board orientation. */
 function mySide(game: Game, orientation: 'white' | 'black'): 'w' | 'b' {
@@ -81,6 +128,9 @@ const LABEL_TEXT: Record<Label, string> = {
   mistake: 'Mistake',
   blunder: 'Blunder',
 } // English keys; shown through t()
+
+const BRILLIANT_COLOR = '#1fb5a5'
+const GREAT_COLOR = '#5b9be0'
 
 const LABEL_COLOR: Record<Label, string> = {
   best: '#5fb35a',
@@ -151,6 +201,9 @@ export default function App() {
   const [partialEvals, setPartialEvals] = useState<PositionEval[]>([])
   const [progress, setProgress] = useState<{ done: number; total: number } | null>(null)
   const [live, setLive] = useState<{ fen: string; lines: EngineLine[] } | null>(null)
+  const [evalCache, setEvalCache] = useState<Map<string, CachedEval>>(() => new Map())
+  // "Show why/best" for a move played in a side line: the side line up to and including that move
+  const [varExplain, setVarExplain] = useState<{ judged: string[]; kind: 'why' | 'best' } | null>(null)
   const [showImport, setShowImport] = useState(!restored)
   const [error, setError] = useState<string | null>(null)
   const [tab, setTab] = useState<'summary' | 'moves'>(restored?.review ? restored.tab : 'moves')
@@ -336,6 +389,23 @@ export default function App() {
     saveSession({ pgn, ply, orientation, tab, review, deepDone: deep.status === 'done' })
   }, [pgn, ply, orientation, tab, review, deep.status])
 
+  // --- Great moves ---------------------------------------------------------
+  // After the review (and not while the deep analysis runs), a background engine with two lines finds the moves
+  // that were the only good one. The result is stored with the review, so it survives reloads.
+  useEffect(() => {
+    if (!review || review.great || progress || deep.status === 'running' || game.plies.length === 0) return
+    let cancelled = false
+    const engine = new Engine({ multiPv: 2, onError: () => {} }) // optional extra: fail silently
+    void findGreatMoves(game, review, engine, () => cancelled).then((great) => {
+      engine.terminate()
+      if (!cancelled && great) setReview((r) => (r === review ? { ...r, great } : r))
+    })
+    return () => {
+      cancelled = true
+      engine.terminate()
+    }
+  }, [review, game, progress, deep.status])
+
   // --- Live engine ---------------------------------------------------------
 
   // The live engine only runs while someone can see the board: not in a background tab or with the screen off,
@@ -347,7 +417,10 @@ export default function App() {
     engine.stop()
     if (gameOver || !liveActive) return
     const timer = setTimeout(() => {
-      void engine.analyze(fen, { depth: LIVE_DEPTH[liveMode] }, (lines) => setLive({ fen, lines }))
+      void engine.analyze(fen, { depth: LIVE_DEPTH[liveMode] }, (lines) => {
+        setLive({ fen, lines })
+        if (lines[0]) setEvalCache((c) => cacheEval(c, fen, lines))
+      })
     }, 120)
     return () => clearTimeout(timer)
   }, [fen, gameOver, liveMode, liveActive])
@@ -462,6 +535,13 @@ export default function App() {
   }, [game])
   const bookNow = book?.game === game ? book.info : null
   const bookPlies = bookNow?.bookPlies ?? 0
+  const brilliant = useMemo(() => (review ? brilliantMoves(game, review, bookPlies) : new Set<number>()), [game, review, bookPlies])
+  // Great moves by ply index: book moves are theory and brilliant moves already get the higher mark
+  const great = useMemo(() => {
+    const out = new Map<number, GreatMove>()
+    for (const [i, g] of Object.entries(review?.great ?? {})) if (Number(i) >= bookPlies && !brilliant.has(Number(i))) out.set(Number(i), g)
+    return out
+  }, [review, bookPlies, brilliant])
 
   // Book status of a side line played from a book position on the main line
   const varBook = useMemo(() => {
@@ -487,12 +567,96 @@ export default function App() {
     [game, review, verdictPly, lang],
   )
 
+  // --- Side-line move verdict ----------------------------------------------
+  // A move played in a side line is judged like a game move, from the live engine's evals before and after it.
+
+  const varExplainOn =
+    !!varExplain && !explaining && startsWith(plan, varExplain.kind === 'why' ? varExplain.judged : varExplain.judged.slice(0, -1))
+  const judgedLine = varExplainOn ? varExplain.judged : inVariation && !explaining ? variation : null
+  const sideVerdict = useMemo(() => {
+    if (!judgedLine?.length) return null
+    const chess = new Chess(mainFen)
+    let played: Ply | null = null
+    let prevPly: Ply | undefined
+    for (const uci of judgedLine) {
+      const fenBefore = chess.fen()
+      const m = chess.move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] })
+      prevPly = played ?? undefined
+      played = { san: m.san, uci, fenBefore, fenAfter: chess.fen(), color: m.color }
+    }
+    const evalAt = (f: string): PositionEval | null => {
+      const cached = evalCache.get(f)
+      if (cached && cached.depth >= MIN_JUDGE_DEPTH) return cached
+      if (f === mainFen && review) return review.evals[ply]
+      return terminalEval(f)
+    }
+    const before = evalAt(played!.fenBefore)
+    const after = terminalEval(played!.fenAfter) ?? evalAt(played!.fenAfter)
+    if (!before || !after) return { ply: played!, rv: null, brilliant: false, great: null, explanation: null }
+    const rv = judgeMove(played!, before, after)
+    const brill = isBrilliant(played!, rv, before, after)
+    const cached = evalCache.get(played!.fenBefore)
+    const prev = prevPly ?? (ply > 0 ? game.plies[ply - 1] : undefined)
+    const greatMove =
+      !brill && cached && cached.depth >= MIN_JUDGE_DEPTH
+        ? judgeGreat(played!, prev, { score: cached.score, move: cached.bestMove }, cached.second ?? null, cached.bestSince ?? null)
+        : null
+    return { ply: played!, rv, brilliant: brill, great: greatMove, explanation: explainPlayed(game.meta, played!, rv, before, after) }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- lang: the text is generated in the current language
+  }, [judgedLine, mainFen, evalCache, review, ply, game.meta, lang])
+
+  const showSideExplanation = (kind: 'why' | 'best') => {
+    if (!judgedLine || !sideVerdict?.explanation) return
+    const base = kind === 'why' ? judgedLine : judgedLine.slice(0, -1)
+    const line = (kind === 'why' ? sideVerdict.explanation.refutation : sideVerdict.explanation.best).slice(0, EXPLAIN_PLIES)
+    if (!line.length) return
+    setVarExplain({ judged: judgedLine, kind })
+    setPlan([...base, ...line])
+    setVariation([...base, line[0]])
+  }
+
   const showExplanation = (kind: Explaining['kind']) => {
     if (!verdictPly || !explanation) return
     setExplaining({ ply: verdictPly, kind })
     if (kind === 'why') enterLine(verdictPly, explanation.refutation.slice(0, EXPLAIN_PLIES))
     else enterLine(verdictPly - 1, explanation.best.slice(0, EXPLAIN_PLIES))
   }
+
+  // The verdict card: the game move on the board (or being explained), else the side-line move
+  const card: {
+    san: string
+    rv: MoveReview
+    brilliant: boolean
+    great: GreatMove | null
+    explanation: MoveExplanation | null
+    kind?: 'why' | 'best'
+    show: (k: 'why' | 'best') => void
+  } | null =
+    isBookMove || varIsBook
+      ? null
+      : verdict && verdictPly
+        ? {
+            san: game.plies[verdictPly - 1].san,
+            rv: verdict,
+            brilliant: brilliant.has(verdictPly - 1),
+            great: great.get(verdictPly - 1) ?? null,
+            explanation,
+            kind: explaining?.kind,
+            show: showExplanation,
+          }
+        : sideVerdict?.rv
+          ? {
+              san: sideVerdict.ply.san,
+              rv: sideVerdict.rv,
+              brilliant: sideVerdict.brilliant,
+              great: sideVerdict.great,
+              explanation: sideVerdict.explanation,
+              kind: varExplainOn ? varExplain!.kind : undefined,
+              show: showSideExplanation,
+            }
+          : null
+  // A side-line move still waiting for the engine (shown as "checking…")
+  const sidePending = !card && !varIsBook && !!sideVerdict && !sideVerdict.rv && sideVerdict.ply.fenAfter === fen
 
   // --- Board annotations ---------------------------------------------------
 
@@ -514,11 +678,17 @@ export default function App() {
       })
     if (verdict && !inVariation && verdictPly === ply && !isBookMove) {
       const played = game.plies[ply - 1]
-      const glyph = GLYPH[verdict.label]
-      if (glyph) out.push({ orig: played.uci.slice(2, 4) as Key, label: { text: glyph, fill: LABEL_COLOR[verdict.label] } })
+      const glyph = brilliant.has(ply - 1) ? '!!' : great.has(ply - 1) ? '!' : GLYPH[verdict.label]
+      const fill = brilliant.has(ply - 1) ? BRILLIANT_COLOR : great.has(ply - 1) ? GREAT_COLOR : LABEL_COLOR[verdict.label]
+      if (glyph) out.push({ orig: played.uci.slice(2, 4) as Key, label: { text: glyph, fill } })
+    }
+    if (sideVerdict?.rv && !varExplainOn && sideVerdict.ply.fenAfter === fen && !varIsBook) {
+      const glyph = sideVerdict.brilliant ? '!!' : sideVerdict.great ? '!' : GLYPH[sideVerdict.rv.label]
+      const fill = sideVerdict.brilliant ? BRILLIANT_COLOR : sideVerdict.great ? GREAT_COLOR : LABEL_COLOR[sideVerdict.rv.label]
+      if (glyph) out.push({ orig: sideVerdict.ply.uci.slice(2, 4) as Key, label: { text: glyph, fill } })
     }
     return out
-  }, [liveLines, liveLabels, fen, verdict, verdictPly, inVariation, game.plies, ply, isBookMove])
+  }, [liveLines, liveLabels, fen, verdict, verdictPly, inVariation, game.plies, ply, isBookMove, sideVerdict, varExplainOn, varIsBook, brilliant, great])
 
   // --- Render --------------------------------------------------------------
 
@@ -552,7 +722,11 @@ export default function App() {
   const canStepBack = inLine ? variation.length > 0 : ply > 0
   const exitLine = () => goTo(explaining ? explaining.ply : ply)
   const lineTitle = !explaining
-    ? t('Alternate line')
+    ? varExplainOn && sideVerdict
+      ? varExplain!.kind === 'why'
+        ? t('{move}: how it can be punished', { move: sideVerdict.ply.san })
+        : t('What could have been played instead of {move}', { move: sideVerdict.ply.san })
+      : t('Alternate line')
     : explaining.kind === 'why'
       ? t('{move}: how {opponent} can punish it', {
           move: moveName(game, explaining.ply - 1),
@@ -640,8 +814,18 @@ export default function App() {
           {inLine && (
             <LineBanner
               title={lineTitle}
-              note={!explaining ? undefined : explaining.kind === 'why' ? explanation?.text : explanation?.bestText}
-              kind={explaining?.kind ?? 'line'}
+              note={
+                explaining
+                  ? explaining.kind === 'why'
+                    ? explanation?.text
+                    : explanation?.bestText
+                  : varExplainOn
+                    ? varExplain!.kind === 'why'
+                      ? sideVerdict?.explanation?.text
+                      : sideVerdict?.explanation?.bestText
+                    : undefined
+              }
+              kind={explaining?.kind ?? (varExplainOn ? varExplain!.kind : 'line')}
               fen={mainFen}
               moves={plan}
               current={variation.length}
@@ -705,35 +889,51 @@ export default function App() {
             </div>
           )}
 
-          {!isBookMove && verdict && verdictPly && (
-            <div className={`card verdict lbl-${verdict.label}`}>
+          {card && (
+            <div className={`card verdict lbl-${card.brilliant ? 'brilliant' : card.great ? 'great' : card.rv.label}`}>
               <div>
                 <strong>
-                  {game.plies[verdictPly - 1].san}
-                  {GLYPH[verdict.label] && <span className="glyph"> {GLYPH[verdict.label]}</span>}
+                  {card.san}
+                  {card.brilliant ? (
+                    <span className="glyph"> !!</span>
+                  ) : card.great ? (
+                    <span className="glyph"> !</span>
+                  ) : (
+                    GLYPH[card.rv.label] && <span className="glyph"> {GLYPH[card.rv.label]}</span>
+                  )}
                 </strong>{' '}
-                — {t(LABEL_TEXT[verdict.label])}
-                {!explanation && verdict.label === 'good' && verdict.bestSan && (
-                  <span className="muted"> · {t('best was {move}', { move: verdict.bestSan })}</span>
+                — {card.brilliant ? t('Brilliant move') : card.great ? t('Great move') : t(LABEL_TEXT[card.rv.label])}
+                {!card.explanation && card.rv.label === 'good' && card.rv.bestSan && (
+                  <span className="muted"> · {t('best was {move}', { move: card.rv.bestSan })}</span>
                 )}
               </div>
-              {explanation && (
+              {card.great && !card.brilliant && <GreatNote great={card.great} />}
+              {card.explanation && (
                 <>
-                  <p className="why">{explanation.text}</p>
+                  <p className="why">{card.explanation.text}</p>
                   <div className="row">
-                    {explanation.refutation.length > 0 && (
-                      <button className={explaining?.kind === 'why' ? 'on' : ''} onClick={() => showExplanation('why')}>
+                    {card.explanation.refutation.length > 0 && (
+                      <button className={card.kind === 'why' ? 'on' : ''} onClick={() => card.show('why')}>
                         ▶ {t('Show why')}
                       </button>
                     )}
-                    {explanation.best.length > 0 && (
-                      <button className={explaining?.kind === 'best' ? 'on' : ''} onClick={() => showExplanation('best')}>
+                    {card.explanation.best.length > 0 && (
+                      <button className={card.kind === 'best' ? 'on' : ''} onClick={() => card.show('best')}>
                         ★ {t('Show best')}
                       </button>
                     )}
                   </div>
                 </>
               )}
+            </div>
+          )}
+
+          {sidePending && (
+            <div className="card verdict">
+              <strong>{sideVerdict!.ply.san}</strong>{' '}
+              <span className="muted">
+                — {liveMode === 'off' ? t('turn on live analysis to judge moves in side lines') : t('checking the move…')}
+              </span>
             </div>
           )}
 
@@ -786,9 +986,9 @@ export default function App() {
                 </button>
               </div>
               {tab === 'summary' && review ? (
-                <SummaryCard game={game} review={review} onSelect={goTo} deep={deep} onDeep={startDeep} book={bookNow} pgn={pgn} side={mySide(game, orientation)} />
+                <SummaryCard game={game} review={review} onSelect={goTo} deep={deep} onDeep={startDeep} book={bookNow} pgn={pgn} side={mySide(game, orientation)} brilliant={brilliant} great={great} />
               ) : (
-                <MoveList game={game} review={review} ply={inLine ? -1 : ply} onSelect={goTo} bookPlies={bookPlies} />
+                <MoveList game={game} review={review} ply={inLine ? -1 : ply} onSelect={goTo} bookPlies={bookPlies} brilliant={brilliant} great={great} />
               )}
             </div>
           )}

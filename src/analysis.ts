@@ -1,6 +1,7 @@
 import { Chess } from 'chess.js'
 import type { Engine, Limits, Score } from './engine'
 import type { TimeClass } from './imports'
+import type { GreatMove } from './greatMoves'
 import { t } from './i18n'
 
 /** Engine limits for the standard review. The rating estimate is calibrated on reviews made with these. */
@@ -80,6 +81,8 @@ export interface Review {
   acpl: { w: number; b: number } // average centipawn loss
   rating: { w: RatingEstimate; b: RatingEstimate }
   counts: { w: Record<Label, number>; b: Record<Label, number> }
+  /** Great moves (only good move), by ply index; filled in by a background pass after the review */
+  great?: Record<number, GreatMove>
 }
 
 export interface RatingEstimate {
@@ -217,7 +220,7 @@ export function pvToSan(fen: string, pv: string[], max = 10): string[] {
 }
 
 /** Evaluation for positions where the game is already over (the engine has no move to give). */
-function terminalEval(fen: string): PositionEval | null {
+export function terminalEval(fen: string): PositionEval | null {
   const chess = new Chess(fen)
   if (chess.isCheckmate()) return { score: { mate: chess.turn() === 'w' ? -0.5 : 0.5 }, bestMove: null, pv: [] }
   if (chess.isDraw() || chess.isStalemate()) return { score: { cp: 0 }, bestMove: null, pv: [] }
@@ -252,18 +255,13 @@ export async function reviewGame(
   const cpLosses: { w: number[]; b: number[] } = { w: [], b: [] }
 
   const moves = game.plies.map((ply, i) => {
-    const before = winPercent(evals[i].score)
-    const after = winPercent(evals[i + 1].score)
+    const m = judgeMove(ply, evals[i], evals[i + 1])
     const sign = ply.color === 'w' ? 1 : -1
-    const winLoss = Math.max(0, sign * (before - after))
     const playedBest = evals[i].bestMove === ply.uci
-    const label = labelFor(winLoss, playedBest)
-    const accuracy = playedBest ? 100 : moveAccuracy(winLoss)
-    counts[ply.color][label]++
-    accs[ply.color].push(accuracy)
+    counts[ply.color][m.label]++
+    accs[ply.color].push(m.accuracy)
     cpLosses[ply.color].push(playedBest ? 0 : Math.max(0, sign * (centipawns(evals[i].score) - centipawns(evals[i + 1].score))))
-    const bestSan = evals[i].bestMove ? uciToSan(ply.fenBefore, evals[i].bestMove!) : null
-    return { label, winLoss, accuracy, bestSan }
+    return m
   })
 
   const accuracy = { w: aggregateAccuracy(accs.w), b: aggregateAccuracy(accs.b) }
@@ -274,6 +272,19 @@ export async function reviewGame(
     b: estimateRating(acpl.b, cpLosses.b.length, game.meta),
   }
   return { evals, moves, accuracy, acpl, rating, counts }
+}
+
+/** Judges one move from the evaluations before and after it (used for game moves and side-line moves alike). */
+export function judgeMove(ply: Pick<Ply, 'uci' | 'color' | 'fenBefore'>, before: PositionEval, after: PositionEval): MoveReview {
+  const sign = ply.color === 'w' ? 1 : -1
+  const winLoss = Math.max(0, sign * (winPercent(before.score) - winPercent(after.score)))
+  const playedBest = before.bestMove === ply.uci
+  return {
+    label: labelFor(winLoss, playedBest),
+    winLoss,
+    accuracy: playedBest ? 100 : moveAccuracy(winLoss),
+    bestSan: before.bestMove ? uciToSan(ply.fenBefore, before.bestMove) : null,
+  }
 }
 
 /**

@@ -12,6 +12,8 @@
   --inaccuracy: #e6b53c;
   --mistake: #e08a2c;
   --blunder: #d9453b;
+  --brilliant: #1fb5a5;
+  --great: #5b9be0;
   --line: #5aa9e6;
   --radius: 10px;
   color-scheme: dark;
@@ -1644,4 +1646,26 @@ cg-board square.last-move {
   margin-top: 6px;
   font-size: 12px;
   font-family: ui-monospace, monospace;
+}
+
+/* Brilliant moves (!!) */
+.lbl-brilliant .glyph,
+.move.lbl-brilliant {
+  color: var(--brilliant);
+  font-weight: 700;
+}
+
+.verdict.lbl-brilliant {
+  border-left-color: var(--brilliant);
+}
+
+/* Great moves (!): the only good move */
+.lbl-great .glyph,
+.move.lbl-great {
+  color: var(--great);
+  font-weight: 700;
+}
+
+.verdict.lbl-great {
+  border-left-color: var(--great);
 }

@@ -4,6 +4,7 @@ import { moveName, phaseName, rating, ratingName, summarizeGame } from '../expla
 import { t, useLang } from '../i18n'
 import type { BookInfo } from '../openings'
 import type { Side } from '../aiPrompt'
+import type { GreatMove } from '../greatMoves'
 import { AskAi } from './AskAi'
 
 export interface DeepState {
@@ -23,15 +24,19 @@ interface Props {
   book?: BookInfo | null
   pgn: string
   side: Side // the side the user most likely played, preselected for "Ask an AI"
+  brilliant: Set<number> // 0-based ply indexes of brilliant moves
+  great: Map<number, GreatMove> // 0-based ply indexes of great moves (only good move)
 }
 
 const ERRORS: Label[] = ['blunder', 'mistake', 'inaccuracy']
 
-export function SummaryCard({ game, review, onSelect, deep, onDeep, book, pgn, side }: Props) {
+export function SummaryCard({ game, review, onSelect, deep, onDeep, book, pgn, side, brilliant, great }: Props) {
   const lang = useLang()
   // eslint-disable-next-line react-hooks/exhaustive-deps -- lang: the summary text is generated in the current language
   const summary = useMemo(() => summarizeGame(game, review, book), [game, review, book, lang])
   const { meta } = game
+  const brilliantCount = (c: 'w' | 'b') => [...brilliant].filter((i) => game.plies[i].color === c).length
+  const greatCount = (c: 'w' | 'b') => [...great.keys()].filter((i) => game.plies[i].color === c).length
 
   const player = (c: 'w' | 'b') => {
     const est = review.rating[c]
@@ -55,6 +60,16 @@ export function SummaryCard({ game, review, onSelect, deep, onDeep, book, pgn, s
           {est.precision === 'rough' && t(' · rough: single fast games vary a lot')}
         </div>
         <div className="stat-errors">
+          {brilliantCount(c) > 0 && (
+            <span className="err-chip lbl-brilliant" title={t('Brilliant move')}>
+              <span className="glyph">!!</span> {brilliantCount(c)}
+            </span>
+          )}
+          {greatCount(c) > 0 && (
+            <span className="err-chip lbl-great" title={t('Great move')}>
+              <span className="glyph">!</span> {greatCount(c)}
+            </span>
+          )}
           {ERRORS.map((l) => (
             <span key={l} className={`err-chip lbl-${l} ${review.counts[c][l] ? '' : 'zero'}`} title={t(l)}>
               <span className="glyph">{GLYPH[l]}</span> {review.counts[c][l]}
@@ -107,7 +122,7 @@ export function SummaryCard({ game, review, onSelect, deep, onDeep, book, pgn, s
         </>
       )}
 
-      <AskAi game={game} review={review} book={book ?? null} pgn={pgn} defaultSide={side} />
+      <AskAi game={game} review={review} book={book ?? null} pgn={pgn} defaultSide={side} brilliant={brilliant} great={great} />
     </div>
   )
 }
