@@ -617,6 +617,11 @@ cg-board square.last-move {
   line-height: 1.45;
 }
 
+.verdict .move-no {
+  font-weight: 500;
+  opacity: 0.7;
+}
+
 .verdict .row {
   flex-wrap: wrap;
 }

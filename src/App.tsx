@@ -4,7 +4,7 @@ import type { DrawShape } from 'chessground/draw'
 import type { Key } from 'chessground/types'
 import { availableThreads, Engine, type EngineFlavor, type EngineLine, type Score } from './engine'
 import { basisName, GLYPH, judgeMove, lineCost, lineLabels, parseGame, rateReview, REVIEW_LIMITS, reviewGame, terminalEval, type Game, type Label, type MoveReview, type Ply, type PositionEval, type Review } from './analysis'
-import { explainMove, explainPlayed, formatLine, moveName, type MoveExplanation } from './explain'
+import { explainMove, explainPlayed, formatLine, moveName, moveNumber, type MoveExplanation } from './explain'
 import { Board } from './components/Board'
 import { EvalBar } from './components/EvalBar'
 import { EvalGraph } from './components/EvalGraph'
@@ -624,6 +624,7 @@ export default function App() {
 
   // The verdict card: the game move on the board (or being explained), else the side-line move
   const card: {
+    num: string
     san: string
     rv: MoveReview
     brilliant: boolean
@@ -636,6 +637,7 @@ export default function App() {
       ? null
       : verdict && verdictPly
         ? {
+            num: moveNumber(game.plies[verdictPly - 1]),
             san: game.plies[verdictPly - 1].san,
             rv: verdict,
             brilliant: brilliant.has(verdictPly - 1),
@@ -646,6 +648,7 @@ export default function App() {
           }
         : sideVerdict?.rv
           ? {
+              num: moveNumber(sideVerdict.ply),
               san: sideVerdict.ply.san,
               rv: sideVerdict.rv,
               brilliant: sideVerdict.brilliant,
@@ -877,14 +880,20 @@ export default function App() {
 
           {isBookMove && verdictPly && (
             <div className="card verdict lbl-book">
-              <strong>{game.plies[verdictPly - 1].san}</strong> <span className="glyph">📖</span> — {t('Book move')}
+              <strong>{moveName(game, verdictPly - 1)}</strong> <span className="glyph">📖</span> — {t('Book move')}
               {bookNow?.openingAt[verdictPly] && <span className="muted"> · {bookNow.openingAt[verdictPly]!.name}</span>}
             </div>
           )}
 
           {varIsBook && !explaining && (
             <div className="card verdict lbl-book">
-              <strong>{varLine[varLine.length - 1].san}</strong> <span className="glyph">📖</span> — {t('Book move')}
+              <strong>
+                {(() => {
+                  const [, side, , , , n] = varLine[varLine.length - 1].fen.split(' ')
+                  return side === 'b' ? `${n}.` : `${+n - 1}...`
+                })()}{' '}
+                {varLine[varLine.length - 1].san}
+              </strong> <span className="glyph">📖</span> — {t('Book move')}
               {varBook.openingAt[varLine.length - 1] && <span className="muted"> · {varBook.openingAt[varLine.length - 1]!.name}</span>}
             </div>
           )}
@@ -893,7 +902,7 @@ export default function App() {
             <div className={`card verdict lbl-${card.brilliant ? 'brilliant' : card.great ? 'great' : card.rv.label}`}>
               <div>
                 <strong>
-                  {card.san}
+                  <span className="move-no">{card.num}</span> {card.san}
                   {card.brilliant ? (
                     <span className="glyph"> !!</span>
                   ) : card.great ? (

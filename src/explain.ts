@@ -38,10 +38,14 @@ export function materialWords(n: number) {
 }
 
 /** "12. Nf3" / "12... Nf6" */
+/** "12." for a white move, "12..." for a black one */
+export function moveNumber(p: Pick<Ply, 'fenBefore' | 'color'>) {
+  return `${p.fenBefore.split(' ')[5]}${p.color === 'w' ? '.' : '...'}`
+}
+
 export function moveName(game: Game, i: number) {
   const p = game.plies[i]
-  const n = p.fenBefore.split(' ')[5]
-  return `${n}${p.color === 'w' ? '.' : '...'} ${p.san}`
+  return `${moveNumber(p)} ${p.san}`
 }
 
 /** UCI line -> "19. Nd5 Qd8 20. Nxf6+" */
