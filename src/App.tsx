@@ -33,6 +33,8 @@ type CachedEval = PositionEval & {
   depth: number
   second?: { score: Score; move: string } // second-best line, to tell whether the best move was the only good one
   bestSince?: number // depth from which the best move has stayed on top, to tell whether it was hard to find
+  lines?: EngineLine[] // all live lines, so a move played from one of them is judged by that line's own score
+  scoreAt?: Record<number, Score> // best-line score per depth, to compare with a position searched less deeply
 }
 
 /** Remembers the live engine's best line per position, so side-line moves can be judged from before/after evals. */
@@ -49,6 +51,8 @@ function cacheEval(cache: Map<string, CachedEval>, fen: string, lines: EngineLin
     depth: line.depth,
     second: second?.pv.length && second.depth === line.depth ? { score: second.score, move: second.pv[0] } : old?.second,
     bestSince: old && old.bestMove === line.pv[0] ? Math.min(old.bestSince ?? line.depth, line.depth) : line.depth,
+    lines: lines.filter((l) => l.pv.length),
+    scoreAt: { ...old?.scoreAt, [line.depth]: line.score },
   })
   if (next.size > EVAL_CACHE_SIZE) next.delete(next.keys().next().value!)
   return next
@@ -590,12 +594,30 @@ export default function App() {
       if (f === mainFen && review) return review.evals[ply]
       return terminalEval(f)
     }
-    const before = evalAt(played!.fenBefore)
-    const after = terminalEval(played!.fenAfter) ?? evalAt(played!.fenAfter)
+    let before = evalAt(played!.fenBefore)
+    const cached = evalCache.get(played!.fenBefore)
+    const fromCache = !!cached && before === cached
+    // A move from one of the live lines is judged by that line's score: it comes from the same search as the
+    // best line, so the verdict agrees with the arrows.
+    const asLine = fromCache ? cached.lines?.find((l) => l.pv[0] === played!.uci) : undefined
+    let after =
+      terminalEval(played!.fenAfter) ??
+      (asLine ? { score: asLine.score, bestMove: asLine.pv[1] ?? null, pv: asLine.pv.slice(1) } : evalAt(played!.fenAfter))
+    // Otherwise compare the two positions at matching depths: a deep eval before the move against a shallow
+    // one after it (or the other way round) can make the engine's own best move look like a blunder.
+    const afterCached = evalCache.get(played!.fenAfter)
+    if (!asLine && fromCache && afterCached && after === afterCached) {
+      const d = Math.min(cached.depth, afterCached.depth + 1)
+      const b = cached.scoreAt?.[d]
+      const a = afterCached.scoreAt?.[d - 1]
+      if (b && a) {
+        before = { ...cached, score: b }
+        after = { ...afterCached, score: a }
+      }
+    }
     if (!before || !after) return { ply: played!, rv: null, brilliant: false, great: null, explanation: null }
     const rv = judgeMove(played!, before, after)
     const brill = isBrilliant(played!, rv, before, after)
-    const cached = evalCache.get(played!.fenBefore)
     const prev = prevPly ?? (ply > 0 ? game.plies[ply - 1] : undefined)
     const greatMove =
       !brill && cached && cached.depth >= MIN_JUDGE_DEPTH

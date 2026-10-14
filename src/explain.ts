@@ -75,6 +75,23 @@ function evalWords(score: Score) {
   return t('winning for {side}', { side })
 }
 
+/** The side an evaluation favours, or null when it's about equal (the same bands as evalWords). */
+function favoured(score: Score): 'w' | 'b' | null {
+  if (score.mate !== undefined) return score.mate > 0 ? 'w' : 'b'
+  return Math.abs(score.cp) < 50 ? null : score.cp > 0 ? 'w' : 'b'
+}
+
+/**
+ * How the evaluation changed with a move that made things worse for its mover, for when it stays in the same
+ * band ("clearly better for White" before and after), where "goes from X to X" would say nothing.
+ */
+function sameBandShift(mover: 'w' | 'b', score: Score, swing: string) {
+  const side = favoured(score)
+  if (!side) return t('The position stays about equal, but {side} loses some ground {swing}.', { side: sideInText(mover), swing })
+  if (side === mover) return t("{side}'s advantage shrinks {swing}.", { side: sideInText(side), swing })
+  return t("{side}'s advantage grows {swing}.", { side: sideInText(side), swing })
+}
+
 /** Move label with article: "a mistake" / "ett misstag". */
 export function labelWithArticle(label: Label) {
   return t({ best: 'a best move', good: 'a good move', inaccuracy: 'an inaccuracy', mistake: 'a mistake', blunder: 'a blunder' }[label])
@@ -109,6 +126,7 @@ export function explainPlayed(meta: GameMeta, ply: Ply, rv: MoveReview, before: 
   const refLine = refutation.length ? formatLine(ply.fenAfter, refutation, HORIZON) : ''
   const bestLine = best.length ? formatLine(ply.fenBefore, best, HORIZON) : ''
   const swing = `(${formatScore(before.score)} → ${formatScore(after.score)})`
+  const sameBand = evalWords(before.score) === evalWords(after.score)
   const move = rv.bestSan ?? t('another move')
 
   const afterMate = after.score.mate !== undefined ? after.score.mate * s : undefined
@@ -132,6 +150,8 @@ export function explainPlayed(meta: GameMeta, ply: Ply, rv: MoveReview, before: 
     text = t('This loses {material} {swing}. {opponent} answers {line}.', { material: materialWords(Math.max(lost, diff)), swing, opponent, line: refLine })
   } else if (missesMaterial) {
     text = t('This misses a chance to win {material} with {move} {swing}: {line}.', { material: materialWords(missed), move, swing, line: bestLine })
+  } else if (sameBand) {
+    text = `${sameBandShift(ply.color, before.score, swing)} ${t('{move} was stronger: {line}.', { move, line: bestLine })}`
   } else {
     text = t('The position goes from {from} to {to} {swing}. {move} was stronger: {line}.', {
       from: evalWords(before.score),
@@ -144,13 +164,20 @@ export function explainPlayed(meta: GameMeta, ply: Ply, rv: MoveReview, before: 
 
   // What the better move achieves instead, from the mover's point of view
   const moverWin = ply.color === 'w' ? winPercent(before.score) : 100 - winPercent(before.score)
-  const outcome = t('{before} ({beforeScore}) instead of {after} ({afterScore}) after {played}', {
-    before: evalWords(before.score),
-    beforeScore: formatScore(before.score),
-    after: evalWords(after.score),
-    afterScore: formatScore(after.score),
-    played: ply.san,
-  })
+  const outcome = sameBand
+    ? t('{before} ({beforeScore} instead of {afterScore} after {played})', {
+        before: evalWords(before.score),
+        beforeScore: formatScore(before.score),
+        afterScore: formatScore(after.score),
+        played: ply.san,
+      })
+    : t('{before} ({beforeScore}) instead of {after} ({afterScore}) after {played}', {
+        before: evalWords(before.score),
+        beforeScore: formatScore(before.score),
+        after: evalWords(after.score),
+        afterScore: formatScore(after.score),
+        played: ply.san,
+      })
   const keeps = moverWin >= 45 ? t('keeps the position {outcome}', { outcome }) : t('limits the damage: {outcome}', { outcome })
   let bestNote: string
   if (beforeMate !== undefined && beforeMate > 0) {

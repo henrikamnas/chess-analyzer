@@ -90,6 +90,11 @@ export const SV: Record<string, string> = {
   'This misses a chance to win {material} with {move} {swing}: {line}.': 'Det här missar chansen att vinna {material} med {move} {swing}: {line}.',
   'The position goes from {from} to {to} {swing}. {move} was stronger: {line}.':
     'Ställningen går från {from} till {to} {swing}. {move} var starkare: {line}.',
+  'The position stays about equal, but {side} loses some ground {swing}.': 'Ställningen är fortfarande ungefär jämn, men {side} tappar mark {swing}.',
+  "{side}'s advantage shrinks {swing}.": 'Fördelen för {side} krymper {swing}.',
+  "{side}'s advantage grows {swing}.": 'Fördelen för {side} växer {swing}.',
+  '{move} was stronger: {line}.': '{move} var starkare: {line}.',
+  '{before} ({beforeScore} instead of {afterScore} after {played})': '{before} ({beforeScore} i stället för {afterScore} efter {played})',
   '{before} ({beforeScore}) instead of {after} ({afterScore}) after {played}': '{before} ({beforeScore}) i stället för {after} ({afterScore}) efter {played}',
   'keeps the position {outcome}': 'behåller ställningen {outcome}',
   'limits the damage: {outcome}': 'begränsar skadan: {outcome}',
