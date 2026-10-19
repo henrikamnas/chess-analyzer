@@ -20,7 +20,9 @@ interface Props {
   onGoToPatterns: () => void
 }
 
-type Phase = 'solving' | 'checking' | 'wrong' | 'solved' | 'revealed'
+// 'intro': the opponent's last move is being played on the board before the puzzle starts
+type Phase = 'intro' | 'solving' | 'checking' | 'wrong' | 'solved' | 'revealed'
+const INTRO_MS = 700
 type Status = 'new' | 'due' | 'solved' | 'mastered'
 const MASTERED_BOX = 3 // repetition box from which a puzzle counts as mastered
 const BOXES = 5
@@ -65,21 +67,38 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
   const [combo, setCombo] = useState(0) // correct answers in a row this session
   const [filter, setFilter] = useState<Filter>({ kind: 'all', status: 'all', motif: 'all' })
   const engine = useRef<Engine | null>(null)
+  const introTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     engine.current = new Engine()
-    return () => engine.current?.terminate()
+    return () => {
+      engine.current?.terminate()
+      if (introTimer.current) clearTimeout(introTimer.current)
+    }
   }, [])
 
   const start = useCallback((p: Puzzle | null) => {
     setCurrent(p)
-    setPhase('solving')
     setHint(0)
     setMissed(false)
     setFeedback(null)
     setReplyArrow(null)
-    setLastMove(undefined)
-    setFen(p?.fen ?? '')
+    if (introTimer.current) clearTimeout(introTimer.current)
+    // Show the position before the opponent's move, then play it, so you see what just happened.
+    if (p?.prev) {
+      setPhase('intro')
+      setFen(p.prev.fenBefore)
+      setLastMove(undefined)
+      introTimer.current = setTimeout(() => {
+        setFen(p.fen)
+        setLastMove(p.prev!.uci)
+        setPhase('solving')
+      }, INTRO_MS)
+    } else {
+      setPhase('solving')
+      setFen(p?.fen ?? '')
+      setLastMove(undefined)
+    }
   }, [])
 
   // Load puzzles from the player's reviewed games and their repetition state, then pick the first one.
@@ -169,7 +188,7 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
     setFeedback(t('Not quite. After {move}, your opponent can answer {reply}. Try again.', { move: move.san, reply: replySan ?? t('strongly') }))
     setTimeout(() => {
       setFen(current.fen)
-      setLastMove(undefined)
+      setLastMove(current.prev?.uci)
       setReplyArrow(null)
       setPhase('solving')
     }, 1800)
@@ -321,6 +340,7 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
             <div className={`card puzzle-task ${current.kind}`}>
               <div className="puzzle-kind">{t(current.kind === 'punish' ? 'Punish the mistake' : 'Find a better move')}</div>
               <p>{puzzlePrompt(current)}</p>
+              {current.prev && <p className="muted">{t('Last move: {move}', { move: current.prev.name })}</p>}
               {hint >= 1 && !done && <p className="hint">💡 {puzzleHint(current)}</p>}
               {hint >= 2 && !done && <p className="hint">💡 {t('The piece to move is highlighted.')}</p>}
               {feedback && <p className={`feedback ${phase}`}>{feedback}</p>}

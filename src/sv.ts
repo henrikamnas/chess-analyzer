@@ -369,6 +369,7 @@ export const SV: Record<string, string> = {
   'White to move': 'Vit vid draget',
   'Black to move': 'Svart vid draget',
   'Punish the mistake': 'Straffa misstaget',
+  'Last move: {move}': 'Senaste drag: {move}',
   'Find a better move': 'Hitta ett bättre drag',
   'The piece to move is highlighted.': 'Pjäsen som ska flyttas är markerad.',
   'Why it works': 'Därför fungerar det',

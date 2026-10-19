@@ -19,6 +19,7 @@ export interface Puzzle {
   line: string[] // engine line starting with the best move
   score: Score // evaluation with best play (White's view)
   playedSan: string // what was actually played
+  prev: { uci: string; name: string; fenBefore: string } | null // the opponent's move that led to the puzzle position
   theme: Tactic | null // tactic in the best line, if any
   allowed: Tactic | null // what the played move allowed, for "better move" puzzles
   title: string // e.g. "14... vs magnus"
@@ -83,6 +84,7 @@ export function buildPuzzles(user: string, stored: StoredGame[], bookPliesOf?: (
         line: before.pv,
         score: before.score,
         playedSan: ply.san,
+        prev: i > 0 ? { uci: game.plies[i - 1].uci, name: moveName(game, i - 1), fenBefore: game.plies[i - 1].fenBefore } : null,
         theme,
         allowed,
         title: t('{move} vs {opponent}', { move: moveName(game, i).replace(/ .*/, ''), opponent: me === 'w' ? s.black : s.white }),
