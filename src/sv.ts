@@ -84,6 +84,8 @@ export const SV: Record<string, string> = {
   'a mistake': 'ett misstag',
   'a blunder': 'en blunder',
   'another move': 'ett annat drag',
+  '{a} and {b}': '{a} och {b}',
+  '{gains} for {losses}': '{gains} mot {losses}',
   'This allows {opponent} to force mate in {n}: {line}.': 'Det här låter {opponent} tvinga fram matt i {n}: {line}.',
   '{mover} had a forced mate in {n} starting with {move}: {line}.': '{mover} hade forcerad matt i {n} med {move}: {line}.',
   'This loses {material} {swing}. {opponent} answers {line}.': 'Det här förlorar {material} {swing}. {opponent} svarar {line}.',

@@ -1,10 +1,11 @@
 // Plain-language explanations of individual moves and of the whole game, derived from the review.
 // All text goes through t() (i18n.ts), so it follows the selected language.
-import { Chess } from 'chess.js'
+import { Chess, type PieceSymbol } from 'chess.js'
 import { aggregateAccuracy, formatScore, pvToSan, winPercent, type Game, type GameMeta, type Label, type MoveReview, type Ply, type PositionEval, type Review } from './analysis'
 import type { Score } from './engine'
 import { sideInText, t } from './i18n'
 import type { BookInfo } from './openings'
+import { pieceA } from './tactics'
 
 const VALUE: Record<string, number> = { p: 1, n: 3, b: 3, r: 5, q: 9, k: 0 }
 
@@ -35,6 +36,42 @@ export function materialWords(n: number) {
   if (n === 3) return t('a piece')
   if (n === 2) return t("two pawns' worth of material")
   return t('a pawn')
+}
+
+/**
+ * The trade along a line, as the side that comes out ahead sees it: "a queen for a bishop", "a rook and a pawn".
+ * Null when it doesn't add up to `net` pawns or is too messy to say in a few words (promotions, several pieces
+ * of a kind); materialWords is the fallback.
+ */
+export function tradeWords(fen: string, line: string[], maxPlies: number, gainer: 'w' | 'b', net: number): string | null {
+  const chess = new Chess(fen)
+  const taken: Record<'w' | 'b', PieceSymbol[]> = { w: [], b: [] } // pieces captured by each side
+  for (const uci of line.slice(0, maxPlies)) {
+    let m
+    try {
+      m = chess.move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] })
+    } catch {
+      break
+    }
+    if (m.promotion) return null
+    if (m.captured) taken[m.color].push(m.captured)
+  }
+  // Pieces of the same kind taken by both sides cancel out.
+  const gains = [...taken[gainer]]
+  const losses: PieceSymbol[] = []
+  for (const p of taken[gainer === 'w' ? 'b' : 'w']) {
+    const i = gains.indexOf(p)
+    if (i >= 0) gains.splice(i, 1)
+    else losses.push(p)
+  }
+  const worth = (ps: PieceSymbol[]) => ps.reduce((sum, p) => sum + VALUE[p], 0)
+  const distinct = (ps: PieceSymbol[]) => new Set(ps).size === ps.length && ps.length <= 2
+  if (!gains.length || worth(gains) - worth(losses) !== net || !distinct(gains) || !distinct(losses)) return null
+  const list = (ps: PieceSymbol[]) => {
+    const names = [...ps].sort((a, b) => VALUE[b] - VALUE[a]).map(pieceA)
+    return names.length === 2 ? t('{a} and {b}', { a: names[0], b: names[1] }) : names[0]
+  }
+  return losses.length ? t('{gains} for {losses}', { gains: list(gains), losses: list(losses) }) : list(gains)
 }
 
 /** "12. Nf3" / "12... Nf6" */
@@ -139,6 +176,10 @@ export function explainPlayed(meta: GameMeta, ply: Ply, rv: MoveReview, before: 
   const diff = Math.round(viaBest - viaRefutation)
   const losesMaterial = lost >= 1 && diff >= 1
   const missesMaterial = missed >= 1 && diff >= 1
+  const opp = ply.color === 'w' ? 'b' : 'w'
+  // Name the actual trade where we can ("a queen for a bishop"), not just its worth ("a rook").
+  const lostWords = (lost >= diff ? tradeWords(ply.fenAfter, refutation, HORIZON, opp, lost) : null) ?? materialWords(Math.max(lost, diff))
+  const missedWords = tradeWords(ply.fenBefore, best, HORIZON, ply.color, missed) ?? materialWords(missed)
 
   // Why the played move is bad
   let text: string
@@ -147,9 +188,9 @@ export function explainPlayed(meta: GameMeta, ply: Ply, rv: MoveReview, before: 
   } else if (beforeMate !== undefined && beforeMate > 0 && (afterMate === undefined || afterMate <= 0)) {
     text = t('{mover} had a forced mate in {n} starting with {move}: {line}.', { mover, n: Math.round(beforeMate), move, line: bestLine })
   } else if (losesMaterial) {
-    text = t('This loses {material} {swing}. {opponent} answers {line}.', { material: materialWords(Math.max(lost, diff)), swing, opponent, line: refLine })
+    text = t('This loses {material} {swing}. {opponent} answers {line}.', { material: lostWords, swing, opponent, line: refLine })
   } else if (missesMaterial) {
-    text = t('This misses a chance to win {material} with {move} {swing}: {line}.', { material: materialWords(missed), move, swing, line: bestLine })
+    text = t('This misses a chance to win {material} with {move} {swing}: {line}.', { material: missedWords, move, swing, line: bestLine })
   } else if (sameBand) {
     text = `${sameBandShift(ply.color, before.score, swing)} ${t('{move} was stronger: {line}.', { move, line: bestLine })}`
   } else {
@@ -183,7 +224,7 @@ export function explainPlayed(meta: GameMeta, ply: Ply, rv: MoveReview, before: 
   if (beforeMate !== undefined && beforeMate > 0) {
     bestNote = t('{move} forces mate in {n}: {line}.', { move, n: Math.round(beforeMate), line: bestLine })
   } else if (missesMaterial) {
-    bestNote = t('{move} wins {material} and {keeps}: {line}.', { move, material: materialWords(missed), keeps, line: bestLine })
+    bestNote = t('{move} wins {material} and {keeps}: {line}.', { move, material: missedWords, keeps, line: bestLine })
   } else if (losesMaterial) {
     const saves = missed <= -1 ? t('gives up less material') : t('avoids losing material')
     bestNote = t('{move} {saves} and {keeps}: {line}.', { move, saves, keeps, line: bestLine })
