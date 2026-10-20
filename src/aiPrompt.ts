@@ -1,11 +1,13 @@
 // "Ask an AI": a self-contained prompt with the game and its engine review, to paste into any chat LLM.
 // LLMs are poor at calculating chess positions, so the prompt hands them the engine's facts (evals, labels,
 // better lines) and asks them to explain and coach, not to analyse from scratch.
+import { Chess } from 'chess.js'
 import { aggregateAccuracy, formatScore, REVIEW_LIMITS, type Game, type Label, type Review } from './analysis'
 import { formatLine, moveName, phaseOf, type Phase } from './explain'
 import type { BookInfo } from './openings'
 import type { GreatMove } from './greatMoves'
 import { getLang } from './i18n'
+import type { EngineLine } from './engine'
 
 export type Side = 'w' | 'b' | null // the side the user played, or null when just reviewing someone's game
 
@@ -137,4 +139,93 @@ function accuracyByPhase(game: Game, review: Review): string | null {
     .filter((ph) => acc[ph].w.length + acc[ph].b.length > 0)
     .map((ph) => `${ph} White ${avg(acc[ph].w)} / Black ${avg(acc[ph].b)}`)
   return parts.length ? parts.join('; ') : null
+}
+
+// --- Chat about one position --------------------------------------------------
+
+export interface PositionContext {
+  game: Game // for names, ratings and the moves before the position
+  ply: number // mainline plies played before the position (where any side line branches off)
+  variation: string[] // side-line moves (SAN) played after `ply`, if any
+  fen: string
+  me: Side
+  opening: string | null // opening name at this position, if known
+  lines: EngineLine[] // engine lines in this position, best first
+  lastMove: { name: string; verdict: string; comment: string | null } | null // the move that led here, as judged
+}
+
+const PIECE_ORDER = 'kqrbnp'
+const PIECE_LETTER: Record<string, string> = { k: 'K', q: 'Q', r: 'R', b: 'B', n: 'N' }
+const PIECE_VALUE: Record<string, number> = { q: 9, r: 5, b: 3, n: 3, p: 1, k: 0 }
+
+/**
+ * A prompt to start a conversation about one position. The engine stays the source of truth for tactics and
+ * evaluations; the AI brings what the engine can't put into words (plans, structure, typical ideas, theory).
+ */
+export function buildPositionPrompt(c: PositionContext): string {
+  const { meta } = c.game
+  const chess = new Chess(c.fen)
+  const toMove = chess.turn() === 'w' ? 'White' : 'Black'
+  const moveNo = c.fen.split(' ')[5]
+  const out: string[] = []
+
+  out.push(
+    'I want to talk about a chess position with you as my coach.',
+    '',
+    '## Position',
+    `- FEN: ${c.fen}`,
+    `- ${toMove} to move (move ${moveNo}).`,
+  )
+  // A piece list, because language models often misread FEN strings.
+  let material = 0
+  for (const side of ['w', 'b'] as const) {
+    const own = chess
+      .board()
+      .flat()
+      .filter((p): p is NonNullable<typeof p> => p !== null && p.color === side)
+      .sort((a, b) => PIECE_ORDER.indexOf(a.type) - PIECE_ORDER.indexOf(b.type) || a.square.localeCompare(b.square))
+    for (const p of own) material += (side === 'w' ? 1 : -1) * PIECE_VALUE[p.type]
+    const pieces = own.filter((p) => p.type !== 'p').map((p) => PIECE_LETTER[p.type] + p.square)
+    const pawns = own.filter((p) => p.type === 'p').map((p) => p.square)
+    out.push(`- ${side === 'w' ? 'White' : 'Black'}: ${pieces.join(', ')}${pawns.length ? `; pawns on ${pawns.join(', ')}` : '; no pawns'}`)
+  }
+  out.push(material === 0 ? '- Material is equal.' : `- Material: ${material > 0 ? 'White' : 'Black'} is up ${Math.abs(material)} (pawn = 1, knight/bishop = 3, rook = 5, queen = 9).`)
+
+  // Where the position comes from
+  out.push('', '## Game')
+  const who = (col: 'w' | 'b') => {
+    const name = col === 'w' ? meta.white : meta.black
+    const elo = col === 'w' ? meta.whiteElo : meta.blackElo
+    return `${name}${elo ? ` (${elo})` : ''}`
+  }
+  if (c.game.plies.length) {
+    out.push(`- White: ${who('w')}, Black: ${who('b')}${c.me ? `. I played ${c.me === 'w' ? 'White' : 'Black'}.` : '.'}`)
+    if (meta.timeClass) out.push(`- Time control: ${meta.timeClass}`)
+  }
+  if (c.opening) out.push(`- Opening: ${c.opening}`)
+  const played = c.game.plies.slice(0, c.ply)
+  if (played.length) out.push(`- Moves so far: ${formatLine(c.game.startFen, played.map((p) => p.uci), played.length)}`)
+  if (c.variation.length) out.push(`- Then, in a side line I'm exploring (not played in the game): ${c.variation.join(' ')}`)
+  if (c.lastMove) {
+    out.push(`- The last move, ${c.lastMove.name}, was judged by the engine: ${c.lastMove.verdict}.${c.lastMove.comment ? ` ${c.lastMove.comment}` : ''}`)
+  }
+
+  // Engine facts
+  if (c.lines.length) {
+    const depth = Math.max(...c.lines.map((l) => l.depth))
+    out.push('', `## Engine (Stockfish 19, depth ${depth}), best lines from here`)
+    c.lines.forEach((l, i) => out.push(`${i + 1}. ${formatScore(l.score)}: ${formatLine(c.fen, l.pv, LINE_MOVES)}`))
+    out.push('Evaluations are from White\'s point of view (+ is good for White; "M3" means White mates in 3, "-M3" Black mates in 3).')
+  }
+
+  out.push(
+    '',
+    '## How to talk with me',
+    '- Treat the engine lines and evaluations as correct. Do not calculate your own variations or claim tactics that are not in the lines; check the piece list before saying where a piece is.',
+    "- Do bring what the engine can't say: the plans for both sides, the pawn structure, good and bad pieces, typical ideas and known theory for this kind of position, and why the engine's moves make sense in human terms.",
+    '- Keep answers short and conversational, like a coach next to the board.',
+    '',
+    `Start with 3 to 4 sentences: what is going on in this position and the main plan for ${toMove}. Then ask me what I would like to explore. Answer in ${LANGUAGE[getLang()] ?? 'English'}.`,
+  )
+  return out.join('\n')
 }

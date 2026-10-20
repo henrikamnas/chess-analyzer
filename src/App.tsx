@@ -11,6 +11,8 @@ import { EvalGraph } from './components/EvalGraph'
 import { MoveList } from './components/MoveList'
 import { ImportPanel } from './components/ImportPanel'
 import { EngineLines } from './components/EngineLines'
+import { PositionChat } from './components/PositionChat'
+import type { PositionContext } from './aiPrompt'
 import { SummaryCard, type DeepState } from './components/SummaryCard'
 import { restoreSession, saveSession } from './session'
 import { LineBanner } from './components/LineBanner'
@@ -77,8 +79,8 @@ function GreatNote({ great }: { great: GreatMove }) {
   )
 }
 
-/** The side the user played: their saved username from "My games" if it matches a player, else the board orientation. */
-function mySide(game: Game, orientation: 'white' | 'black'): 'w' | 'b' {
+/** The side the user played, if their saved username from "My games" matches a player. */
+function playedSide(game: Game): 'w' | 'b' | null {
   try {
     const user = (JSON.parse(localStorage.getItem('chess-analyzer:import') ?? 'null')?.user ?? '').trim().toLowerCase()
     if (user && game.meta.white.toLowerCase() === user) return 'w'
@@ -86,7 +88,12 @@ function mySide(game: Game, orientation: 'white' | 'black'): 'w' | 'b' {
   } catch {
     /* storage unavailable */
   }
-  return orientation === 'white' ? 'w' : 'b'
+  return null
+}
+
+/** The side the user most likely played: the username match, else the board orientation. */
+function mySide(game: Game, orientation: 'white' | 'black'): 'w' | 'b' {
+  return playedSide(game) ?? (orientation === 'white' ? 'w' : 'b')
 }
 
 /** Live engine setting: off saves power; the review's best line is shown instead. */
@@ -700,6 +707,33 @@ export default function App() {
   // A side-line move still waiting for the engine (shown as "checking…")
   const sidePending = !card && !varIsBook && !!sideVerdict && !sideVerdict.rv && sideVerdict.ply.fenAfter === fen
 
+  /** Everything about the position on the board for "Chat about this position" (built when the button is pressed). */
+  const positionContext = (): PositionContext => {
+    const at = <T,>(list: T[] | undefined, i: number) => (list?.length ? list[Math.min(i, list.length - 1)] : undefined)
+    const opening = (varBook && at(varBook.openingAt, varLine.length - 1)) || at(bookNow?.openingAt, ply) || null
+    // The move that led to the position, unless the board shows a line being explained for another move
+    const bookLast = !explaining && ((!inVariation && isBookMove) || varIsBook)
+    const lastMove = bookLast
+      ? { name: inVariation ? varLine[varLine.length - 1].san : moveName(game, ply - 1), verdict: 'a book move (known opening theory)', comment: null }
+      : card && !card.kind
+        ? {
+            name: `${card.num} ${card.san}`,
+            verdict: card.brilliant ? 'brilliant move' : card.great ? 'great move (the only good move)' : LABEL_TEXT[card.rv.label].toLowerCase(),
+            comment: card.explanation?.text ?? card.note,
+          }
+        : null
+    return {
+      game,
+      ply,
+      variation: varLine.map((v) => v.san),
+      fen,
+      me: playedSide(game),
+      opening: opening?.name ?? game.meta.opening ?? null,
+      lines: liveLines,
+      lastMove,
+    }
+  }
+
   // --- Board annotations ---------------------------------------------------
 
   const shapes = useMemo(() => {
@@ -1022,6 +1056,7 @@ export default function App() {
               </span>
             </div>
             {liveLines.length > 0 && <EngineLines fen={fen} lines={liveLines} labels={liveLabels} onPlay={onEngineLine} bookMoves={lineBookMoves} />}
+            <PositionChat context={positionContext} />
           </div>
 
           {game.plies.length > 0 && (

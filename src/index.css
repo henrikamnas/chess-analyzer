@@ -1674,3 +1674,12 @@ cg-board square.last-move {
 .verdict.lbl-great {
   border-left-color: var(--great);
 }
+
+/* "Chat about this position" under the engine lines */
+.position-chat {
+  margin-top: 10px;
+}
+
+.position-chat > button {
+  font-size: 13px;
+}
