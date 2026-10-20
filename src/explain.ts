@@ -1,11 +1,11 @@
 // Plain-language explanations of individual moves and of the whole game, derived from the review.
 // All text goes through t() (i18n.ts), so it follows the selected language.
-import { Chess, type PieceSymbol } from 'chess.js'
+import { Chess, type PieceSymbol, type Square } from 'chess.js'
 import { aggregateAccuracy, formatScore, pvToSan, winPercent, type Game, type GameMeta, type Label, type MoveReview, type Ply, type PositionEval, type Review } from './analysis'
 import type { Score } from './engine'
 import { sideInText, t } from './i18n'
 import type { BookInfo } from './openings'
-import { pieceA } from './tactics'
+import { classifyTactic, describeTactic, moveEffects, pieceA, pieceThe, type Tactic } from './tactics'
 
 const VALUE: Record<string, number> = { p: 1, n: 3, b: 3, r: 5, q: 9, k: 0 }
 
@@ -56,11 +56,11 @@ export function tradeWords(fen: string, line: string[], maxPlies: number, gainer
     if (m.promotion) return null
     if (m.captured) taken[m.color].push(m.captured)
   }
-  // Pieces of the same kind taken by both sides cancel out.
+  // Pieces of the same worth taken by both sides cancel out (a bishop for a knight is an even trade).
   const gains = [...taken[gainer]]
   const losses: PieceSymbol[] = []
   for (const p of taken[gainer === 'w' ? 'b' : 'w']) {
-    const i = gains.indexOf(p)
+    const i = gains.findIndex((g) => VALUE[g] === VALUE[p])
     if (i >= 0) gains.splice(i, 1)
     else losses.push(p)
   }
@@ -178,29 +178,69 @@ export function explainPlayed(meta: GameMeta, ply: Ply, rv: MoveReview, before: 
   const missesMaterial = missed >= 1 && diff >= 1
   const opp = ply.color === 'w' ? 'b' : 'w'
   // Name the actual trade where we can ("a queen for a bishop"), not just its worth ("a rook").
-  const lostWords = (lost >= diff ? tradeWords(ply.fenAfter, refutation, HORIZON, opp, lost) : null) ?? materialWords(Math.max(lost, diff))
+  const lostWords =
+    (lost >= diff ? tradeWords(ply.fenBefore, [ply.uci, ...refutation], HORIZON + 1, opp, lost) : null) ?? materialWords(Math.max(lost, diff))
   const missedWords = tradeWords(ply.fenBefore, best, HORIZON, ply.color, missed) ?? materialWords(missed)
+
+  // The tactic the opponent gets after this move, and the one the mover could have played instead.
+  // 'combination' only means "wins material somehow", which the material sentences already say.
+  const named = (tc: Tactic | null) => (tc && tc.motif !== 'combination' ? tc : null)
+  const allowed = refutation.length ? named(classifyTactic(ply.fenAfter, refutation, ply.color, after.score, ply.fenBefore)) : null
+  const missedTactic = best.length ? named(classifyTactic(ply.fenBefore, best, opp, before.score)) : null
+  const unguarded = refutation.length ? leftUndefended(ply, refutation[0]) : null
+  const bestDoes = best.length ? moveEffects(ply.fenBefore, best[0]) : null
+  const replyDoes = refutation.length ? moveEffects(ply.fenAfter, refutation[0]) : null
 
   // Why the played move is bad
   let text: string
   if (afterMate !== undefined && afterMate < 0) {
-    text = t('This allows {opponent} to force mate in {n}: {line}.', { opponent, n: Math.abs(Math.round(afterMate)), line: refLine })
+    text =
+      allowed?.motif === 'back-rank'
+        ? t('This allows a back-rank mate in {n}: {line}.', { n: Math.abs(Math.round(afterMate)), line: refLine })
+        : t('This allows {opponent} to force mate in {n}: {line}.', { opponent, n: Math.abs(Math.round(afterMate)), line: refLine })
   } else if (beforeMate !== undefined && beforeMate > 0 && (afterMate === undefined || afterMate <= 0)) {
     text = t('{mover} had a forced mate in {n} starting with {move}: {line}.', { mover, n: Math.round(beforeMate), move, line: bestLine })
   } else if (losesMaterial) {
-    text = t('This loses {material} {swing}. {opponent} answers {line}.', { material: lostWords, swing, opponent, line: refLine })
+    // Say how the material goes: a piece left without its defender, a tactic, or a piece left en prise.
+    const how = unguarded
+      ? t('This leaves {piece} on {square} undefended', { piece: pieceThe(unguarded.type), square: unguarded.square })
+      : allowed?.motif === 'hanging' && allowed.target && allowed.square
+        ? t('This leaves {piece} on {square} open to capture', { piece: pieceThe(allowed.target), square: allowed.square })
+        : allowed
+          ? t('This allows {tactic}', { tactic: describeTactic(allowed) })
+          : null
+    text = how
+      ? t('{how}, and {opponent} wins {material} {swing}: {line}.', { how, opponent, material: lostWords, swing, line: refLine })
+      : replyDoes
+        ? t('This loses {material} {swing}. {opponent} answers {move}, which {does}: {line}.', {
+            material: lostWords,
+            swing,
+            opponent,
+            move: replyDoes.san,
+            does: replyDoes.does,
+            line: refLine,
+          })
+        : t('This loses {material} {swing}. {opponent} answers {line}.', { material: lostWords, swing, opponent, line: refLine })
   } else if (missesMaterial) {
-    text = t('This misses a chance to win {material} with {move} {swing}: {line}.', { material: missedWords, move, swing, line: bestLine })
-  } else if (sameBand) {
-    text = `${sameBandShift(ply.color, before.score, swing)} ${t('{move} was stronger: {line}.', { move, line: bestLine })}`
+    text =
+      missedTactic && missedTactic.motif !== 'hanging'
+        ? t('This misses {tactic} with {move}, winning {material} {swing}: {line}.', {
+            tactic: describeTactic(missedTactic),
+            move,
+            material: missedWords,
+            swing,
+            line: bestLine,
+          })
+        : t('This misses a chance to win {material} with {move} {swing}: {line}.', { material: missedWords, move, swing, line: bestLine })
   } else {
-    text = t('The position goes from {from} to {to} {swing}. {move} was stronger: {line}.', {
-      from: evalWords(before.score),
-      to: evalWords(after.score),
-      swing,
-      move,
-      line: bestLine,
-    })
+    // No material at stake within the line: say how the evaluation moved, and what the better move does.
+    const shift = sameBand
+      ? sameBandShift(ply.color, before.score, swing)
+      : t('The position goes from {from} to {to} {swing}.', { from: evalWords(before.score), to: evalWords(after.score), swing })
+    const stronger = bestDoes
+      ? t('{move} was stronger, as it {does}: {line}.', { move, does: bestDoes.does, line: bestLine })
+      : t('{move} was stronger: {line}.', { move, line: bestLine })
+    text = `${shift} ${stronger}`
   }
 
   // What the better move achieves instead, from the mover's point of view
@@ -225,6 +265,7 @@ export function explainPlayed(meta: GameMeta, ply: Ply, rv: MoveReview, before: 
     bestNote = t('{move} forces mate in {n}: {line}.', { move, n: Math.round(beforeMate), line: bestLine })
   } else if (missesMaterial) {
     bestNote = t('{move} wins {material} and {keeps}: {line}.', { move, material: missedWords, keeps, line: bestLine })
+    if (bestDoes) bestNote = `${bestDoes.san} ${bestDoes.does}. ${bestNote}`
   } else if (losesMaterial) {
     const saves = missed <= -1 ? t('gives up less material') : t('avoids losing material')
     bestNote = t('{move} {saves} and {keeps}: {line}.', { move, saves, keeps, line: bestLine })
@@ -233,6 +274,62 @@ export function explainPlayed(meta: GameMeta, ply: Ply, rv: MoveReview, before: 
   }
 
   return { text, bestText: bestNote, refutation, best }
+}
+
+/**
+ * The mover's piece that the reply captures, if it was defended before the move and isn't any more:
+ * the move took away its defender (or was the defender).
+ */
+function leftUndefended(ply: Ply, reply: string): { type: PieceSymbol; square: Square } | null {
+  const square = reply.slice(2, 4) as Square
+  const now = new Chess(ply.fenAfter)
+  const victim = now.get(square)
+  if (!victim || victim.color !== ply.color) return null
+  // The piece must have stood there before the move too (otherwise it just moved to an unsafe square).
+  const was = new Chess(ply.fenBefore)
+  if (was.get(square)?.type !== victim.type) return null
+  const defendedBefore = was.attackers(square, ply.color).length > 0
+  const defendedNow = now.attackers(square, ply.color).length > 0
+  return defendedBefore && !defendedNow ? { type: victim.type, square } : null
+}
+
+/**
+ * A short note for a good or best move when there's something concrete to say: it starts a forced mate, it is
+ * a tactic, or it punishes the opponent's mistake. Null for ordinary moves (nothing worth a sentence).
+ */
+export function explainGood(
+  meta: GameMeta,
+  ply: Ply,
+  rv: MoveReview,
+  before: PositionEval,
+  after: PositionEval,
+  prev?: { uci: string; rv?: MoveReview }, // the opponent's move just before (its verdict if judged)
+): string | null {
+  if (rv.label !== 'best' && rv.label !== 'good') return null
+  const s = ply.color === 'w' ? 1 : -1
+  const opp = ply.color === 'w' ? 'b' : 'w'
+  const opponent = ply.color === 'w' ? meta.black : meta.white
+  const mate = after.score.mate !== undefined ? after.score.mate * s : undefined
+  const hadMate = before.score.mate !== undefined && before.score.mate * s > 0
+  const parts: string[] = []
+  if (mate !== undefined && mate >= 1) {
+    // Only where the mate starts; the moves after it just carry it out.
+    if (!hadMate) parts.push(t('{move} starts a forced mate in {n}.', { move: ply.san, n: Math.round(mate) }))
+  } else {
+    // Castling isn't a tactic of its own (the rook's new attacks would read as a discovered attack).
+    const tc = ply.san.startsWith('O-O') ? null : classifyTactic(ply.fenBefore, [ply.uci, ...after.pv], opp, after.score)
+    const to = ply.uci.slice(2, 4) as Square
+    const recapture = prev?.uci.slice(2, 4) === to // taking back on the square just captured on
+    if (tc?.motif === 'hanging') {
+      // "Free" only when nothing guarded it (a defended piece worth more than the capturer still wins material).
+      const guarded = new Chess(ply.fenBefore).attackers(to, opp).length > 0
+      if (!recapture && !guarded) parts.push(t('{move} takes {tactic}.', { move: ply.san, tactic: describeTactic(tc) }))
+    } else if (tc && tc.motif !== 'combination' && tc.motif !== 'mate') parts.push(t('{move} is {tactic}.', { move: ply.san, tactic: describeTactic(tc) }))
+  }
+  if (rv.label === 'best' && prev && (prev.rv?.label === 'mistake' || prev.rv?.label === 'blunder')) {
+    parts.push(t(prev.rv.label === 'blunder' ? "It punishes {opponent}'s blunder." : "It punishes {opponent}'s mistake.", { opponent }))
+  }
+  return parts.length ? parts.join(' ') : null
 }
 
 // --- Whole-game summary ------------------------------------------------------

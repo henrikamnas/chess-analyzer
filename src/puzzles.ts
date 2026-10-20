@@ -1,9 +1,9 @@
 // Practice puzzles made from the player's own reviewed games, with simple spaced repetition.
-import { Chess, type Color, type Square } from 'chess.js'
+import { Chess, type Square } from 'chess.js'
 import { formatScore, parseGame, uciToSan, winPercent } from './analysis'
 import type { Score } from './engine'
 import { explainMove, labelWithArticle, moveName } from './explain'
-import { classifyTactic, describeTactic, pieceThe, type Tactic } from './tactics'
+import { classifyTactic, describeTactic, moveEffects, pieceThe, type Tactic } from './tactics'
 import { t } from './i18n'
 import type { PuzzleProgress, StoredGame } from './store'
 
@@ -148,50 +148,6 @@ export function moverWin(score: Score, color: 'w' | 'b') {
   return color === 'w' ? winPercent(score) : 100 - winPercent(score)
 }
 
-const VALUE: Record<string, number> = { p: 1, n: 3, b: 3, r: 5, q: 9, k: 100 }
-
-/** What a move does on the board: what it takes, whether it checks, and which valuable pieces it newly attacks. */
-function moveEffects(fen: string, uci: string): string | null {
-  const before = new Chess(fen)
-  const me = before.turn()
-  const opp: Color = me === 'w' ? 'b' : 'w'
-  const after = new Chess(fen)
-  let m
-  try {
-    m = after.move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] })
-  } catch {
-    return null
-  }
-  const parts: string[] = []
-  if (m.captured) parts.push(t('takes {piece} on {square}', { piece: pieceThe(m.captured), square: m.to }))
-  if (after.isCheckmate()) parts.push(t('gives checkmate'))
-  else if (after.inCheck()) parts.push(t('gives check'))
-  // Pieces attacked by the moved piece that weren't attacked by it before: the threat that comes with the move
-  const targets: string[] = []
-  for (const row of after.board())
-    for (const p of row) {
-      if (!p || p.color !== opp || p.type === 'k' || p.type === 'p') continue
-      const hits = after.attackers(p.square, me).includes(m.to as Square)
-      const undefended = after.attackers(p.square, opp).length === 0
-      if (hits && (VALUE[p.type] > VALUE[m.piece] || undefended)) targets.push(t('{piece} on {square}', { piece: pieceThe(p.type), square: p.square }))
-    }
-  if (targets.length) parts.push(t('attacks {targets}', { targets: targets.slice(0, 2).join(t(' and ')) }))
-  // Discovered attacks: another of our pieces now hits a valuable target because the moved piece got out of the way
-  for (const row of after.board())
-    for (const p of row) {
-      if (!p || p.color !== opp || p.type === 'p' || targets.some((t) => t.endsWith(p.square))) continue
-      const was = new Set(before.attackers(p.square, me))
-      const opened = after.attackers(p.square, me).find((sq) => sq !== m.to && !was.has(sq))
-      if (opened && p.type !== 'k') {
-        parts.push(t('uncovers an attack by {attacker} on {target} on {square}', { attacker: pieceThe(after.get(opened)!.type), target: pieceThe(p.type), square: p.square }))
-        break
-      }
-    }
-  if (!parts.length) return null
-  const last = parts.pop()!
-  return `${m.san} ${parts.length ? `${parts.join(', ')}${t(' and ')}${last}` : last}.`
-}
-
 /** Why the puzzle's answer works, in a few sentences built from the stored review. */
 function explainAnswer(game: ReturnType<typeof parseGame>, review: StoredGame['review'], i: number, opponent: string, punish: boolean): string[] {
   const ply = game.plies[i]
@@ -217,7 +173,7 @@ function explainAnswer(game: ReturnType<typeof parseGame>, review: StoredGame['r
   }
 
   const effects = moveEffects(ply.fenBefore, best)
-  if (effects) out.push(effects)
+  if (effects) out.push(`${effects.san} ${effects.does}.`)
 
   // What it achieves overall, compared with the move played in the game
   const ex = explainMove(game, review, i)

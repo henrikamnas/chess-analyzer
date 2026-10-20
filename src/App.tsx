@@ -4,7 +4,7 @@ import type { DrawShape } from 'chessground/draw'
 import type { Key } from 'chessground/types'
 import { availableThreads, Engine, type EngineFlavor, type EngineLine, type Score } from './engine'
 import { basisName, GLYPH, judgeMove, lineCost, lineLabels, parseGame, rateReview, REVIEW_LIMITS, reviewGame, terminalEval, type Game, type Label, type MoveReview, type Ply, type PositionEval, type Review } from './analysis'
-import { explainMove, explainPlayed, formatLine, moveName, moveNumber, type MoveExplanation } from './explain'
+import { explainGood, explainMove, explainPlayed, formatLine, moveName, moveNumber, type MoveExplanation } from './explain'
 import { Board } from './components/Board'
 import { EvalBar } from './components/EvalBar'
 import { EvalGraph } from './components/EvalGraph'
@@ -570,6 +570,13 @@ export default function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps -- lang: the text is generated in the current language
     [game, review, verdictPly, lang],
   )
+  const goodNote = useMemo(() => {
+    if (!verdictPly || !review) return null
+    const i = verdictPly - 1
+    const prev = i > 0 ? { uci: game.plies[i - 1].uci, rv: review.moves[i - 1] } : undefined
+    return explainGood(game.meta, game.plies[i], review.moves[i], review.evals[i], review.evals[i + 1], prev)
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- lang: the text is generated in the current language
+  }, [game, review, verdictPly, lang])
 
   // --- Side-line move verdict ----------------------------------------------
   // A move played in a side line is judged like a game move, from the live engine's evals before and after it.
@@ -615,7 +622,7 @@ export default function App() {
         after = { ...afterCached, score: a }
       }
     }
-    if (!before || !after) return { ply: played!, rv: null, brilliant: false, great: null, explanation: null }
+    if (!before || !after) return { ply: played!, rv: null, brilliant: false, great: null, explanation: null, note: null }
     const rv = judgeMove(played!, before, after)
     const brill = isBrilliant(played!, rv, before, after)
     const prev = prevPly ?? (ply > 0 ? game.plies[ply - 1] : undefined)
@@ -623,7 +630,14 @@ export default function App() {
       !brill && cached && cached.depth >= MIN_JUDGE_DEPTH
         ? judgeGreat(played!, prev, { score: cached.score, move: cached.bestMove }, cached.second ?? null, cached.bestSince ?? null)
         : null
-    return { ply: played!, rv, brilliant: brill, great: greatMove, explanation: explainPlayed(game.meta, played!, rv, before, after) }
+    return {
+      ply: played!,
+      rv,
+      brilliant: brill,
+      great: greatMove,
+      explanation: explainPlayed(game.meta, played!, rv, before, after),
+      note: explainGood(game.meta, played!, rv, before, after, prev && { uci: prev.uci }),
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps -- lang: the text is generated in the current language
   }, [judgedLine, mainFen, evalCache, review, ply, game.meta, lang])
 
@@ -652,6 +666,7 @@ export default function App() {
     brilliant: boolean
     great: GreatMove | null
     explanation: MoveExplanation | null
+    note: string | null // what a good move does (a tactic, punishing a mistake), when there's no explanation
     kind?: 'why' | 'best'
     show: (k: 'why' | 'best') => void
   } | null =
@@ -665,6 +680,7 @@ export default function App() {
             brilliant: brilliant.has(verdictPly - 1),
             great: great.get(verdictPly - 1) ?? null,
             explanation,
+            note: goodNote,
             kind: explaining?.kind,
             show: showExplanation,
           }
@@ -676,6 +692,7 @@ export default function App() {
               brilliant: sideVerdict.brilliant,
               great: sideVerdict.great,
               explanation: sideVerdict.explanation,
+              note: sideVerdict.note,
               kind: varExplainOn ? varExplain!.kind : undefined,
               show: showSideExplanation,
             }
@@ -939,6 +956,7 @@ export default function App() {
                 )}
               </div>
               {card.great && !card.brilliant && <GreatNote great={card.great} />}
+              {!card.explanation && card.note && <p className="why">{card.note}</p>}
               {card.explanation && (
                 <>
                   <p className="why">{card.explanation.text}</p>
