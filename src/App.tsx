@@ -14,7 +14,8 @@ import { EngineLines } from './components/EngineLines'
 import { PositionChat } from './components/PositionChat'
 import type { PositionContext } from './aiPrompt'
 import { SummaryCard, type DeepState } from './components/SummaryCard'
-import { restoreSession, saveSession } from './session'
+import { restoreSession, saveSession, type RestoredSession } from './session'
+import { positionLinkBase, samePosition, sanToUci, takePositionLink } from './positionLink'
 import { LineBanner } from './components/LineBanner'
 import { PatternsView } from './components/PatternsView'
 import { PuzzleView } from './components/PuzzleView'
@@ -197,16 +198,42 @@ interface Explaining {
 
 const emptyDeep: DeepState = { status: 'idle', done: 0, total: 0, startedAt: 0, elapsedMs: 0 }
 
+interface OpenedLink {
+  game: Game
+  ply: number // mainline ply the line starts from
+  line: string[] // UCI
+  bad: string | null // the first move in the link that wasn't legal (the line stops before it)
+}
+
+/**
+ * What to show on load: the saved session, or a position link (from an AI chat). A link into the saved game opens
+ * that game at the position; any other link opens just the position and leaves the saved game alone.
+ */
+function startup(): { restored: RestoredSession | null; link: OpenedLink | null } {
+  const session = restoreSession()
+  const link = takePositionLink()
+  if (!link) return { restored: session, link: null }
+  const fens = session ? [session.game.startFen, ...session.game.plies.map((p) => p.fenAfter)] : []
+  const at = fens.findIndex((f) => samePosition(f, link.fen))
+  const { uci, bad } = sanToUci(link.fen, link.moves)
+  return {
+    restored: at >= 0 ? session : null,
+    link: { game: at >= 0 ? session!.game : { ...emptyGame(), startFen: link.fen }, ply: Math.max(at, 0), line: uci, bad },
+  }
+}
+
 export default function App() {
   const lang = useLang()
-  const [restored] = useState(restoreSession) // read once, on first render
+  const [{ restored, link }] = useState(startup) // read once, on first render
   const [pgn, setPgn] = useState(restored?.pgn ?? '')
-  const [game, setGame] = useState<Game>(() => restored?.game ?? emptyGame())
-  const [ply, setPly] = useState(restored?.ply ?? 0)
-  const [variation, setVariation] = useState<string[]>([]) // UCI moves branching off the mainline at `ply`
-  const [plan, setPlan] = useState<string[]>([]) // the full side line `variation` is a prefix of (for stepping forward)
+  const [game, setGame] = useState<Game>(() => link?.game ?? restored?.game ?? emptyGame())
+  const [ply, setPly] = useState(link?.ply ?? restored?.ply ?? 0)
+  const [variation, setVariation] = useState<string[]>(link?.line.slice(0, 1) ?? []) // UCI moves branching off the mainline at `ply`
+  const [plan, setPlan] = useState<string[]>(link?.line ?? []) // the full side line `variation` is a prefix of (for stepping forward)
   const [explaining, setExplaining] = useState<Explaining | null>(null)
-  const [orientation, setOrientation] = useState<'white' | 'black'>(restored?.orientation ?? 'white')
+  const [orientation, setOrientation] = useState<'white' | 'black'>(
+    restored?.orientation ?? (link && link.game.startFen.split(' ')[1] === 'b' ? 'black' : 'white'),
+  )
   const [review, setReview] = useState<Review | null>(restored?.review ?? null)
   const [book, setBook] = useState<{ game: Game; db: OpeningDb; info: BookInfo } | null>(null)
   const [partialEvals, setPartialEvals] = useState<PositionEval[]>([])
@@ -215,8 +242,10 @@ export default function App() {
   const [evalCache, setEvalCache] = useState<Map<string, CachedEval>>(() => new Map())
   // "Show why/best" for a move played in a side line: the side line up to and including that move
   const [varExplain, setVarExplain] = useState<{ judged: string[]; kind: 'why' | 'best' } | null>(null)
-  const [showImport, setShowImport] = useState(!restored)
-  const [error, setError] = useState<string | null>(null)
+  const [showImport, setShowImport] = useState(!restored && !link)
+  const [error, setError] = useState<string | null>(() =>
+    link?.bad ? t('The link has a move that is not legal here ({move}); showing the line up to it.', { move: link.bad }) : null,
+  )
   const [tab, setTab] = useState<'summary' | 'moves'>(restored?.review ? restored.tab : 'moves')
   const [view, setView] = useState<'analyze' | 'patterns' | 'puzzles'>('analyze')
   const [deep, setDeep] = useState<DeepState>(restored?.deepDone ? { ...emptyDeep, status: 'done' } : emptyDeep)
@@ -731,6 +760,7 @@ export default function App() {
       opening: opening?.name ?? game.meta.opening ?? null,
       lines: liveLines,
       lastMove,
+      link: positionLinkBase(mainFen, varLine.map((v) => v.san)),
     }
   }
 

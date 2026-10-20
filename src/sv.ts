@@ -430,6 +430,7 @@ export const SV: Record<string, string> = {
   'Copy for AI': 'Kopiera till AI',
   Cancel: 'Avbryt',
   'Chat about this position': 'Chatta om ställningen',
+  'The link has a move that is not legal here ({move}); showing the line up to it.': 'Länken har ett drag som inte är tillåtet här ({move}); visar varianten fram till det.',
   'Copied. Open a chat:': 'Kopierat. Öppna en chatt:',
   'Open a chat:': 'Öppna en chatt:',
   'If the chat opens empty, paste the prompt (it is on your clipboard).': 'Om chatten öppnas tom, klistra in texten (den ligger i urklipp).',

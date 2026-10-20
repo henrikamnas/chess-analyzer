@@ -2,7 +2,7 @@
 // LLMs are poor at calculating chess positions, so the prompt hands them the engine's facts (evals, labels,
 // better lines) and asks them to explain and coach, not to analyse from scratch.
 import { Chess } from 'chess.js'
-import { aggregateAccuracy, formatScore, REVIEW_LIMITS, type Game, type Label, type Review } from './analysis'
+import { aggregateAccuracy, formatScore, pvToSan, REVIEW_LIMITS, type Game, type Label, type Review } from './analysis'
 import { formatLine, moveName, phaseOf, type Phase } from './explain'
 import type { BookInfo } from './openings'
 import type { GreatMove } from './greatMoves'
@@ -152,6 +152,7 @@ export interface PositionContext {
   opening: string | null // opening name at this position, if known
   lines: EngineLine[] // engine lines in this position, best first
   lastMove: { name: string; verdict: string; comment: string | null } | null // the move that led here, as judged
+  link: string // opens this position on the user's board; SAN moves are appended after it, comma-separated
 }
 
 const PIECE_ORDER = 'kqrbnp'
@@ -217,6 +218,18 @@ export function buildPositionPrompt(c: PositionContext): string {
     c.lines.forEach((l, i) => out.push(`${i + 1}. ${formatScore(l.score)}: ${formatLine(c.fen, l.pv, LINE_MOVES)}`))
     out.push('Evaluations are from White\'s point of view (+ is good for White; "M3" means White mates in 3, "-M3" Black mates in 3).')
   }
+
+  // Links that show lines on the user's board, since they can't follow lines blind
+  const example = c.lines[0]?.pv.length ? pvToSan(c.fen, c.lines[0].pv, 2) : []
+  out.push(
+    '',
+    '## Show lines on my board',
+    "I find it hard to picture moves in my head, so whenever you mention a line of moves, make it a link that opens it on my analysis board. " +
+      'Take this link and append the moves in standard notation, separated by commas, with no spaces:',
+    c.link,
+    `The link text should be the moves themselves${example.length ? `, for example [${formatLine(c.fen, c.lines[0].pv, 2)}](${c.link}${example.join(',')})` : ''}. ` +
+      `Every line must start from the position above, with ${toMove}'s move; for a line that starts later, include the moves leading to it.`,
+  )
 
   out.push(
     '',
