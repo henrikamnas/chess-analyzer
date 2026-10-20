@@ -8,6 +8,7 @@ import type { BookInfo } from './openings'
 import type { GreatMove } from './greatMoves'
 import { getLang } from './i18n'
 import type { EngineLine } from './engine'
+import { positionLinkBase } from './positionLink'
 
 export type Side = 'w' | 'b' | null // the side the user played, or null when just reviewing someone's game
 
@@ -88,8 +89,24 @@ export function buildAiPrompt(game: Game, review: Review, book: BookInfo | null,
       )
       if (before.pv.length) out.push(`  - Better: ${formatLine(ply.fenBefore, before.pv, LINE_MOVES)}`)
       if (after.pv.length) out.push(`  - Engine's reply after the move played: ${formatLine(ply.fenAfter, after.pv, LINE_MOVES)}`)
+      out.push(`  - Board link (the position before ${moveName(game, i)}): ${positionLinkBase(ply.fenBefore)}`)
     }
     out.push('')
+
+    // Links that show lines on the user's board, since following lines blind is hard
+    const first = errors.find(({ i }) => review.evals[i].pv.length >= 2)
+    const example = first ? (() => {
+      const ply = game.plies[first.i]
+      const pv = review.evals[first.i].pv
+      return ` For example [${formatLine(ply.fenBefore, pv, 2)}](${positionLinkBase(ply.fenBefore)}${pvToSan(ply.fenBefore, pv, 2).join(',')}).`
+    })() : ''
+    out.push(
+      '## Show lines on my board',
+      "I find it hard to picture moves in my head, so whenever you show a line of moves for one of the errors, make it a link that opens it on my analysis board: " +
+        "take that error's board link and append the moves in standard notation, separated by commas, with no spaces, starting with the move that should have been played. " +
+        `The link text should be the moves themselves.${example}`,
+      '',
+    )
   }
 
   out.push('## PGN', '```', pgn.trim(), '```', '')
@@ -103,7 +120,7 @@ export function buildAiPrompt(game: Game, review: Review, book: BookInfo | null,
     '**In a nutshell:** one line with your overall, human impression of the game, the way a strong player would sum it up to a friend ' +
       '(for example "a wild tactical brawl", "a calm, very accurate game by White", "even for a long time, then one slip decided it").',
     '**The game:** one or two sentences on how it went and where it was decided.',
-    `**Key mistakes:** ${whose} 3 most costly mistakes, one bullet each: the move, then one short sentence on what was missed and the idea behind the better move. At most one short line of moves per bullet.`,
+    `**Key mistakes:** ${whose} 3 most costly mistakes, one bullet each: the move, then one short sentence on what was missed and the idea behind the better move. At most one short line of moves per bullet, as a board link (see above).`,
     `**Work on:** at most 2 bullets, each one concrete thing to practise.`,
     '**Done well:** one line.',
     '',

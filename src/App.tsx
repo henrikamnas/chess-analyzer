@@ -214,11 +214,17 @@ function startup(): { restored: RestoredSession | null; link: OpenedLink | null 
   const link = takePositionLink()
   if (!link) return { restored: session, link: null }
   const fens = session ? [session.game.startFen, ...session.game.plies.map((p) => p.fenAfter)] : []
-  const at = fens.findIndex((f) => samePosition(f, link.fen))
+  let at = fens.findIndex((f) => samePosition(f, link.fen))
   const { uci, bad } = sanToUci(link.fen, link.moves)
+  // Moves that were played in the game just step forward in it; the side line starts where they differ.
+  let line = uci
+  while (at >= 0 && line.length && session!.game.plies[at]?.uci === line[0]) {
+    at++
+    line = line.slice(1)
+  }
   return {
     restored: at >= 0 ? session : null,
-    link: { game: at >= 0 ? session!.game : { ...emptyGame(), startFen: link.fen }, ply: Math.max(at, 0), line: uci, bad },
+    link: { game: at >= 0 ? session!.game : { ...emptyGame(), startFen: link.fen }, ply: Math.max(at, 0), line, bad },
   }
 }
 
