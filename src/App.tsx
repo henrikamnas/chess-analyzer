@@ -909,6 +909,14 @@ export default function App() {
           </div>
           {player(top === 'w' ? 'b' : 'w')}
 
+          {/* Right under the board, above the banners that come and go, so the buttons don't move while stepping */}
+          <nav className="nav">
+            <button onClick={() => (inLine ? setVariation([]) : goTo(0))} aria-label={t('Start')}>⏮</button>
+            <button onClick={() => step(-1)} aria-label={t('Back')} disabled={!canStepBack}>◀</button>
+            <button onClick={() => step(1)} aria-label={t('Forward')} disabled={!canStepForward}>▶</button>
+            <button onClick={() => (inLine ? setVariation(plan) : goTo(game.plies.length))} aria-label={t('End')}>⏭</button>
+          </nav>
+
           {mateIn !== null && !gameOver && (
             <div className={`mate-banner ${mateIn > 0 ? 'w' : 'b'}`}>
               <div className="mate-text">
@@ -945,13 +953,6 @@ export default function App() {
               onExit={exitLine}
             />
           )}
-
-          <nav className="nav">
-            <button onClick={() => (inLine ? setVariation([]) : goTo(0))} aria-label={t('Start')}>⏮</button>
-            <button onClick={() => step(-1)} aria-label={t('Back')} disabled={!canStepBack}>◀</button>
-            <button onClick={() => step(1)} aria-label={t('Forward')} disabled={!canStepForward}>▶</button>
-            <button onClick={() => (inLine ? setVariation(plan) : goTo(game.plies.length))} aria-label={t('End')}>⏭</button>
-          </nav>
 
           <EvalGraph
             evals={review?.evals ?? partialEvals}

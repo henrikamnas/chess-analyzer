@@ -147,11 +147,25 @@ export function lineLabels(scores: Score[], whiteToMove: boolean): Label[] {
   return scores.map((sc, i) => {
     if (i === 0) return 'best'
     const loss = Math.max(0, top - forMover(sc))
-    if (loss >= 20) return 'blunder'
-    if (loss >= 10) return 'mistake'
+    const floor = allowsMate(scores[0], sc, whiteToMove ? 'w' : 'b')
+    if (loss >= 20 || floor === 'blunder') return 'blunder'
+    if (loss >= 10 || floor === 'mistake') return 'mistake'
     if (loss >= 5) return 'inaccuracy'
     return loss < 2 ? 'best' : 'good'
   })
+}
+
+/**
+ * Walking into a forced mate is never a small slip, even when the position was already bad: win% barely moves
+ * from "lost" to "mated", but the move still throws the game away. A blunder unless the mover was already
+ * hopelessly lost (then a mistake). Null when the mover could already be mated before, or isn't now.
+ */
+function allowsMate(before: Score, after: Score, mover: 'w' | 'b'): 'blunder' | 'mistake' | null {
+  const s = mover === 'w' ? 1 : -1
+  if (after.mate === undefined || after.mate * s >= 0) return null
+  if (before.mate !== undefined && before.mate * s < 0) return null
+  const moverWin = mover === 'w' ? winPercent(before) : 100 - winPercent(before)
+  return moverWin < 10 ? 'mistake' : 'blunder'
 }
 
 /** Centipawns for the side to move; mates count as huge values so they compare correctly. */
@@ -279,8 +293,10 @@ export function judgeMove(ply: Pick<Ply, 'uci' | 'color' | 'fenBefore'>, before:
   const sign = ply.color === 'w' ? 1 : -1
   const winLoss = Math.max(0, sign * (winPercent(before.score) - winPercent(after.score)))
   const playedBest = before.bestMove === ply.uci
+  const floor = playedBest ? null : allowsMate(before.score, after.score, ply.color)
+  const label = labelFor(winLoss, playedBest)
   return {
-    label: labelFor(winLoss, playedBest),
+    label: floor === 'blunder' || (floor === 'mistake' && label !== 'blunder') ? floor : label,
     winLoss,
     accuracy: playedBest ? 100 : moveAccuracy(winLoss),
     bestSan: before.bestMove ? uciToSan(ply.fenBefore, before.bestMove) : null,
@@ -288,13 +304,23 @@ export function judgeMove(ply: Pick<Ply, 'uci' | 'color' | 'fenBefore'>, before:
 }
 
 /**
- * Recomputes a stored review's rating estimates with the current tables. The estimate is derived from the
- * stored centipawn loss, so new calibrations apply to old reviews without re-analysing them.
+ * Recomputes a stored review's move labels and rating estimates with the current rules and tables, from the
+ * stored evaluations and centipawn loss, so changes apply to old reviews without re-analysing them.
  */
 export function rateReview(review: Review, game: Game): Review {
   const moves = (c: 'w' | 'b') => game.plies.filter((p) => p.color === c).length
+  const empty = (): Record<Label, number> => ({ best: 0, good: 0, inaccuracy: 0, mistake: 0, blunder: 0 })
+  const counts = { w: empty(), b: empty() }
+  const judged = review.moves.map((m, i) => {
+    const ply = game.plies[i]
+    const label = ply && review.evals[i + 1] ? judgeMove(ply, review.evals[i], review.evals[i + 1]).label : m.label
+    if (ply) counts[ply.color][label]++
+    return { ...m, label }
+  })
   return {
     ...review,
+    moves: judged,
+    counts,
     rating: {
       w: estimateRating(review.acpl.w, moves('w'), game.meta),
       b: estimateRating(review.acpl.b, moves('b'), game.meta),
