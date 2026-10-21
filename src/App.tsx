@@ -12,6 +12,7 @@ import { MoveList } from './components/MoveList'
 import { ImportPanel } from './components/ImportPanel'
 import { EngineLines } from './components/EngineLines'
 import { PositionChat } from './components/PositionChat'
+import { Captured } from './components/Captured'
 import { PlayCard, PlaySetup, type PlaySettings } from './components/PlayCard'
 import { BOT_LINES, botMove } from './bot'
 import type { PositionContext } from './aiPrompt'
@@ -869,8 +870,14 @@ export default function App() {
   const player = (c: 'w' | 'b') => (
     <div className="player">
       <span className={`swatch ${c}`} />
-      <span className="name">{c === 'w' ? meta.white : meta.black}</span>
-      {(c === 'w' ? meta.whiteElo : meta.blackElo) && <span className="elo">{c === 'w' ? meta.whiteElo : meta.blackElo}</span>}
+      {/* Name and rating, then the pieces taken: one line on wide screens, two on phones */}
+      <span className="who">
+        <span className="who-name">
+          <span className="name">{c === 'w' ? meta.white : meta.black}</span>
+          {(c === 'w' ? meta.whiteElo : meta.blackElo) && <span className="elo">{c === 'w' ? meta.whiteElo : meta.blackElo}</span>}
+        </span>
+        <Captured fen={fen} side={c} />
+      </span>
       {review && (
         <span className="player-stats">
           <span

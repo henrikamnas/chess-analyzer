@@ -244,6 +244,91 @@ cg-board square.last-move {
   color: var(--muted);
 }
 
+/* Taken pieces: the board's piece images, same kinds overlapping like on Chess.com */
+.player .who,
+.player .who-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.player .captured {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  flex-shrink: 20; /* gives way long before the name does */
+}
+
+.captured-group {
+  display: flex;
+  flex: none;
+  margin-right: 3px;
+}
+
+.captured.cg-wrap piece {
+  position: static;
+  display: block;
+  flex: none;
+  width: 17px;
+  height: 17px;
+  will-change: auto;
+}
+
+.captured.cg-wrap piece + piece {
+  margin-left: -10px;
+}
+
+/* Black pieces would vanish against the dark background */
+.captured.cg-wrap piece.black {
+  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.55));
+}
+
+@media (max-width: 600px) {
+  /* Under the name, so neither crowds the other; always as tall, so the board doesn't shift as pieces go */
+  .player .who {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .player .who-name {
+    max-width: 100%;
+  }
+
+  .player .captured {
+    min-height: 14px;
+    max-width: 100%;
+  }
+
+  .captured.cg-wrap piece {
+    width: 14px;
+    height: 14px;
+  }
+
+  .captured.cg-wrap piece + piece {
+    margin-left: -8px;
+  }
+
+  .captured-group {
+    margin-right: 1px;
+  }
+
+  .captured-lead {
+    font-size: 12px;
+  }
+}
+
+.captured-lead {
+  flex: none;
+  margin-left: 2px;
+  font-size: 13px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
 .player-stats {
   margin-left: auto;
   display: flex;
