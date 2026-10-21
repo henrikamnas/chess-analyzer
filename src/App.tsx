@@ -499,16 +499,17 @@ export default function App() {
   )
 
   // While a side line is open (`plan` non-empty), stepping moves within it until you go back to the game.
+  // Against the computer, stepping stays within that game.
   const step = useCallback(
     (d: number) => {
-      if (plan.length) {
+      if (plan.length || play) {
         if (d > 0 && variation.length < plan.length) setVariation(plan.slice(0, variation.length + 1))
         else if (d < 0 && variation.length) setVariation(variation.slice(0, -1))
         return
       }
       goTo(ply + d)
     },
-    [plan, variation, goTo, ply],
+    [plan, variation, goTo, ply, play],
   )
 
   /** Enters a side line from the given mainline ply, showing its first move; step through the rest. */
@@ -526,6 +527,13 @@ export default function App() {
         setPly(ply + 1)
         return
       }
+      // The board reports a move a moment after it's made; if the position changed in between (a quick step
+      // back), the move no longer fits and is dropped.
+      try {
+        new Chess(fen).move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] })
+      } catch {
+        return
+      }
       const next = [...variation, uci]
       setVariation(next)
       if (plan[variation.length] !== uci) {
@@ -533,7 +541,7 @@ export default function App() {
         setExplaining(null)
       }
     },
-    [variation, plan, game.plies, ply, play],
+    [variation, plan, game.plies, ply, play, fen],
   )
 
   // --- Playing against the computer ------------------------------------------
@@ -557,8 +565,10 @@ export default function App() {
     }
   }, [play])
   useEffect(() => () => botEngine.current?.terminate(), [])
+  // Looking back at earlier moves: the game waits until you're back at the latest position.
+  const playAtEnd = variation.length === plan.length
   useEffect(() => {
-    if (!play || gameOver || fen.split(' ')[1] !== play.bot) return
+    if (!play || !playAtEnd || gameOver || fen.split(' ')[1] !== play.bot) return
     botEngine.current ??= new Engine({
       multiPv: BOT_LINES,
       onError: (m) => setEngineError(t('Lite engine failed to start: {error}', { error: m })),
@@ -576,7 +586,7 @@ export default function App() {
       cancelled = true
       engine.stop()
     }
-  }, [play, fen, gameOver, game.meta])
+  }, [play, playAtEnd, fen, gameOver, game.meta])
 
   // Forced mate in the current position (live engine, or the review when live analysis is off/paused)
   const mateIn = shownScore?.mate !== undefined && Math.abs(shownScore.mate) >= 1 ? Math.round(shownScore.mate) : null
@@ -606,18 +616,17 @@ export default function App() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return
-      if (play) return // no stepping around mid-game
       if (e.key === 'ArrowLeft') step(-1)
       else if (e.key === 'ArrowRight') step(1)
-      else if (e.key === 'Home' || e.key === 'ArrowUp') goTo(0)
-      else if (e.key === 'End' || e.key === 'ArrowDown') goTo(game.plies.length)
+      else if (e.key === 'Home' || e.key === 'ArrowUp') (play ? setVariation([]) : goTo(0))
+      else if (e.key === 'End' || e.key === 'ArrowDown') (play ? setVariation(plan) : goTo(game.plies.length))
       else if (e.key === 'f') setOrientation((o) => (o === 'white' ? 'black' : 'white'))
       else return
       e.preventDefault()
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [step, goTo, game.plies.length, play])
+  }, [step, goTo, game.plies.length, play, plan])
 
   // --- Move verdict & explanation ------------------------------------------
 
@@ -881,10 +890,16 @@ export default function App() {
     </div>
   )
   const inLine = plan.length > 0
-  const canStepForward = inLine ? variation.length < plan.length : ply < game.plies.length
-  const canStepBack = inLine ? variation.length > 0 : ply > 0
+  const canStepForward = inLine || play ? variation.length < plan.length : ply < game.plies.length
+  const canStepBack = inLine || play ? variation.length > 0 : ply > 0
   const exitLine = () => goTo(explaining ? explaining.ply : ply)
   const navTo = play ? () => {} : goTo
+  const playEndFen = useMemo(() => {
+    if (!play) return fen
+    const chess = new Chess(mainFen)
+    for (const uci of plan) chess.move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] })
+    return chess.fen()
+  }, [play, fen, mainFen, plan])
   /** A player of the game and how strong they are: their rating in the game, else the review's estimate. */
   const playerInfo = (c: 'w' | 'b') => {
     const elo = Number(c === 'w' ? meta.whiteElo : meta.blackElo)
@@ -970,17 +985,17 @@ export default function App() {
               lastMove={lastMove}
               shapes={shapes}
               onMove={onBoardMove}
-              interactive={!play || fen.split(' ')[1] !== play.bot}
+              interactive={!play || (playAtEnd && fen.split(' ')[1] !== play.bot)}
             />
           </div>
           {player(top === 'w' ? 'b' : 'w')}
 
           {/* Right under the board, above the banners that come and go, so the buttons don't move while stepping */}
           <nav className="nav">
-            <button onClick={() => (inLine ? setVariation([]) : goTo(0))} aria-label={t('Start')} disabled={!!play}>⏮</button>
-            <button onClick={() => step(-1)} aria-label={t('Back')} disabled={!canStepBack || !!play}>◀</button>
-            <button onClick={() => step(1)} aria-label={t('Forward')} disabled={!canStepForward || !!play}>▶</button>
-            <button onClick={() => (inLine ? setVariation(plan) : goTo(game.plies.length))} aria-label={t('End')} disabled={!!play}>⏭</button>
+            <button onClick={() => (inLine || play ? setVariation([]) : goTo(0))} aria-label={t('Start')}>⏮</button>
+            <button onClick={() => step(-1)} aria-label={t('Back')} disabled={!canStepBack}>◀</button>
+            <button onClick={() => step(1)} aria-label={t('Forward')} disabled={!canStepForward}>▶</button>
+            <button onClick={() => (inLine || play ? setVariation(plan) : goTo(game.plies.length))} aria-label={t('End')}>⏭</button>
           </nav>
 
           {mateIn !== null && !gameOver && !play && (
@@ -1017,7 +1032,7 @@ export default function App() {
               fen={mainFen}
               moves={plan}
               current={variation.length}
-              onSelect={(n) => !play && setVariation(plan.slice(0, n))}
+              onSelect={(n) => setVariation(plan.slice(0, n))}
               onExit={exitLine}
             />
           )}
@@ -1056,7 +1071,7 @@ export default function App() {
             </div>
           )}
 
-          {play && <PlayCard play={play} fen={fen} onStop={() => setPlay(null)} />}
+          {play && <PlayCard play={play} fen={playEndFen} atEnd={playAtEnd} onResume={() => setVariation(plan)} onStop={() => setPlay(null)} />}
 
           {!play && isBookMove && verdictPly && (
             <div className="card verdict lbl-book">

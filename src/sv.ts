@@ -470,4 +470,6 @@ export const SV: Record<string, string> = {
   'Review the moves': 'Gå igenom dragen',
   'Stop and review': 'Avbryt och gå igenom',
   'Your game against the computer': 'Ditt parti mot datorn',
+  'Looking back at an earlier move. The game waits until you return.': 'Du tittar på ett tidigare drag. Partiet väntar tills du går tillbaka.',
+  'Back to the game': 'Tillbaka till partiet',
 }

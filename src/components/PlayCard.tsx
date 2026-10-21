@@ -78,8 +78,16 @@ export function PlaySetup({ defaultSide, player, onStart }: SetupProps) {
   )
 }
 
+interface CardProps {
+  play: PlaySettings
+  fen: string // the latest position of the game
+  atEnd: boolean // false while looking back at an earlier move
+  onResume: () => void
+  onStop: () => void
+}
+
 /** While playing: whose turn it is, the result when the game ends, and a button to stop and look at the moves. */
-export function PlayCard({ play, fen, onStop }: { play: PlaySettings; fen: string; onStop: () => void }) {
+export function PlayCard({ play, fen, atEnd, onResume, onStop }: CardProps) {
   const chess = new Chess(fen)
   const human = play.bot === 'w' ? 'b' : 'w'
   const result = chess.isCheckmate()
@@ -99,12 +107,21 @@ export function PlayCard({ play, fen, onStop }: { play: PlaySettings; fen: strin
         <strong>🤖 {t('Playing the computer')}</strong> <span className="muted">· {play.name}</span>
       </div>
       <p className="why">
-        {result ?? (chess.turn() === play.bot ? t('The computer is thinking…') : t('Your move.'))}
-        {!result && <span className="muted"> {t('The engine stays quiet while you play.')}</span>}
+        {!atEnd && !result
+          ? t('Looking back at an earlier move. The game waits until you return.')
+          : (result ?? (chess.turn() === play.bot ? t('The computer is thinking…') : t('Your move.')))}
+        {!result && atEnd && <span className="muted"> {t('The engine stays quiet while you play.')}</span>}
       </p>
-      <button className={result ? 'primary' : ''} onClick={onStop}>
-        {result ? t('Review the moves') : t('Stop and review')}
-      </button>
+      <div className="row">
+        {!atEnd && !result && (
+          <button className="primary" onClick={onResume}>
+            ⏭ {t('Back to the game')}
+          </button>
+        )}
+        <button className={result ? 'primary' : ''} onClick={onStop}>
+          {result ? t('Review the moves') : t('Stop and review')}
+        </button>
+      </div>
     </div>
   )
 }
