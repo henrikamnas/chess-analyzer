@@ -3,7 +3,7 @@ import { Chess, DEFAULT_POSITION } from 'chess.js'
 import type { DrawShape } from 'chessground/draw'
 import type { Key } from 'chessground/types'
 import { availableThreads, Engine, type EngineFlavor, type EngineLine, type Score } from './engine'
-import { basisName, GLYPH, judgeMove, lineCost, lineLabels, parseGame, rateReview, REVIEW_LIMITS, reviewGame, terminalEval, type Game, type Label, type MoveReview, type Ply, type PositionEval, type Review } from './analysis'
+import { basisName, GLYPH, judgeMove, lineCost, lineLabels, parseGame, rateReview, REVIEW_DEPTHS, REVIEW_LIMITS, reviewGame, terminalEval, type Game, type Label, type MoveReview, type Ply, type PositionEval, type Review } from './analysis'
 import { explainGood, explainMove, explainPlayed, formatLine, moveName, moveNumber, type MoveExplanation } from './explain'
 import { Board } from './components/Board'
 import { EvalBar } from './components/EvalBar'
@@ -29,7 +29,8 @@ import { bookInfo, bookMovesInLine, followBook, loadOpenings, type BookInfo, typ
 import { setLang, t, useLang } from './i18n'
 
 const DEEP_LIMITS = { depth: 22, movetimeMs: 3000 } // full engine; the time cap keeps hard positions bounded
-const LIVE_DEPTH = { lite: 20, full: 24 }
+const LIVE_DEPTH = { lite: 20, full: 24 } // "auto"; the user can pick one of LIVE_DEPTHS instead
+const LIVE_DEPTHS = [14, 18, 20, 24, 28, 32, 40]
 const LIVE_LINES = 3
 const EXPLAIN_PLIES = 8
 const MIN_JUDGE_DEPTH = 12 // live evals below this depth are too shaky to judge a side-line move with
@@ -66,6 +67,8 @@ function cacheEval(cache: Map<string, CachedEval>, fen: string, lines: EngineLin
 
 const startsWith = (line: string[], prefix: string[]) => prefix.length <= line.length && prefix.every((m, i) => line[i] === m)
 const LIVE_FLAVOR_KEY = 'chess-analyzer:live-engine'
+const LIVE_DEPTH_KEY = 'chess-analyzer:live-depth'
+const REVIEW_DEPTH_KEY = 'chess-analyzer:review-depth'
 
 /** Why a great move was the only good one, and whether it was hard to spot. */
 function GreatNote({ great }: { great: GreatMove }) {
@@ -109,6 +112,25 @@ function savedLiveMode(): LiveMode {
     return v === 'full' || v === 'off' ? v : 'lite'
   } catch {
     return 'lite'
+  }
+}
+
+/** A saved depth setting, if it is one of the allowed values. */
+function savedDepth(key: string, allowed: number[]): number | null {
+  try {
+    const v = Number(localStorage.getItem(key))
+    return allowed.includes(v) ? v : null
+  } catch {
+    return null
+  }
+}
+
+function saveDepth(key: string, value: number | null) {
+  try {
+    if (value === null) localStorage.removeItem(key)
+    else localStorage.setItem(key, String(value))
+  } catch {
+    /* storage unavailable */
   }
 }
 
@@ -259,6 +281,9 @@ export default function App() {
   const [view, setView] = useState<'analyze' | 'patterns' | 'puzzles'>('analyze')
   const [deep, setDeep] = useState<DeepState>(restored?.deepDone ? { ...emptyDeep, status: 'done' } : emptyDeep)
   const [liveMode, setLiveMode] = useState<LiveMode>(savedLiveMode)
+  const [liveDepth, setLiveDepth] = useState<number | null>(() => savedDepth(LIVE_DEPTH_KEY, LIVE_DEPTHS)) // null: auto
+  const [reviewDepth, setReviewDepth] = useState<number>(() => savedDepth(REVIEW_DEPTH_KEY, REVIEW_DEPTHS) ?? REVIEW_LIMITS.depth)
+  const reviewDepthRef = useRef(reviewDepth)
   const [play, setPlay] = useState<PlaySettings | null>(null) // playing on against the computer from the board position
   const pageVisible = usePageVisible()
   const boardRef = useRef<HTMLDivElement>(null)
@@ -322,8 +347,13 @@ export default function App() {
     setDeep(emptyDeep)
   }
 
-  const startReview = useCallback((g: Game) => {
+  /**
+   * Reviews a game at the chosen depth. `keepRating`: an earlier review of the same game whose rating estimate
+   * is kept: it comes from the first review, and the estimate is calibrated on standard-depth reviews.
+   */
+  const startReview = useCallback((g: Game, keepRating?: Review) => {
     const token = ++reviewToken.current
+    const depth = reviewDepthRef.current
     reviewEngine.current?.stop()
     stopDeep()
     setReview(null)
@@ -336,7 +366,7 @@ export default function App() {
     void reviewGame(
       g,
       reviewEngine.current!,
-      REVIEW_LIMITS,
+      { depth },
       (done, total, evals) => {
         if (token !== reviewToken.current) return
         setProgress({ done, total })
@@ -345,7 +375,7 @@ export default function App() {
       () => token !== reviewToken.current,
     ).then((r) => {
       if (token !== reviewToken.current || !r) return
-      setReview(r)
+      setReview(keepRating ? { ...r, acpl: keepRating.acpl, rating: keepRating.rating } : r)
       setProgress(null)
       setTab('summary')
     })
@@ -470,22 +500,22 @@ export default function App() {
     engine.stop()
     if (gameOver || !liveActive) return
     const timer = setTimeout(() => {
-      void engine.analyze(fen, { depth: LIVE_DEPTH[liveMode] }, (lines) => {
+      void engine.analyze(fen, { depth: liveDepth ?? LIVE_DEPTH[liveMode] }, (lines) => {
         setLive({ fen, lines })
         if (lines[0]) setEvalCache((c) => cacheEval(c, fen, lines))
       })
     }, 120)
     return () => clearTimeout(timer)
-  }, [fen, gameOver, liveMode, liveActive])
+  }, [fen, gameOver, liveMode, liveActive, liveDepth])
 
   const reviewedEval = !inVariation ? (review?.evals[ply] ?? partialEvals[ply]) : undefined
   // Live lines for this position if we have them; otherwise (engine off or paused) the review's best line.
   const fromReview = (live?.fen !== fen || liveMode === 'off') && !!reviewedEval?.pv.length
   const liveLines = useMemo<EngineLine[]>(() => {
     if (live?.fen === fen && liveMode !== 'off') return live.lines
-    if (reviewedEval?.pv.length) return [{ multipv: 1, depth: REVIEW_LIMITS.depth, score: reviewedEval.score, pv: reviewedEval.pv }]
+    if (reviewedEval?.pv.length) return [{ multipv: 1, depth: review?.depth ?? REVIEW_LIMITS.depth, score: reviewedEval.score, pv: reviewedEval.pv }]
     return []
-  }, [live, fen, liveMode, reviewedEval])
+  }, [live, fen, liveMode, reviewedEval, review?.depth])
   const shownScore = liveLines[0]?.score ?? reviewedEval?.score ?? null
   const liveLabels = useMemo(() => lineLabels(liveLines.map((l) => l.score), fen.split(' ')[1] === 'w'), [liveLines, fen])
 
@@ -544,6 +574,22 @@ export default function App() {
     },
     [variation, plan, game.plies, ply, play, fen],
   )
+
+  // --- Engine depth settings -------------------------------------------------
+
+  const changeLiveDepth = (d: number | null) => {
+    setLiveDepth(d)
+    saveDepth(LIVE_DEPTH_KEY, d)
+  }
+
+  /** Sets the depth for reviews and re-reviews the game on the board at it. */
+  const changeReviewDepth = (d: number) => {
+    setReviewDepth(d)
+    reviewDepthRef.current = d
+    saveDepth(REVIEW_DEPTH_KEY, d === REVIEW_LIMITS.depth ? null : d)
+    if (!game.plies.length) return
+    startReview(game, review ?? undefined)
+  }
 
   // --- Playing against the computer ------------------------------------------
 
@@ -1169,6 +1215,23 @@ export default function App() {
                           ? t('Stockfish 19 · depth {depth}', { depth: liveLines[0].depth })
                           : t('Engine thinking…')}
               </span>
+              {liveMode !== 'off' && (
+                <select
+                  className="depth-pick"
+                  value={liveDepth ?? 'auto'}
+                  onChange={(e) => changeLiveDepth(e.target.value === 'auto' ? null : Number(e.target.value))}
+                  aria-label={t('Live analysis depth')}
+                  title={t('How deep the live engine searches. Deeper is more precise but slower and uses more power.')}
+                >
+                  {/* Short labels: the header is narrow on phones, and its text already says "depth" */}
+                  <option value="auto">{t('auto')}</option>
+                  {LIVE_DEPTHS.map((d) => (
+                    <option key={d} value={d}>
+                      {d}
+                    </option>
+                  ))}
+                </select>
+              )}
               <span className="seg" role="group" aria-label={t('Live engine')}>
                 <button className={liveMode === 'off' ? 'on' : ''} onClick={() => setLiveMode('off')} title={t('No live analysis (saves power)')}>
                   {t('Off')}
@@ -1206,7 +1269,7 @@ export default function App() {
                 </button>
               </div>
               {tab === 'summary' && review ? (
-                <SummaryCard game={game} review={review} onSelect={navTo} deep={deep} onDeep={startDeep} book={bookNow} pgn={pgn} side={mySide(game, orientation)} brilliant={brilliant} great={great} />
+                <SummaryCard game={game} review={review} onSelect={navTo} deep={deep} onDeep={startDeep} reviewDepth={reviewDepth} onReviewDepth={changeReviewDepth} book={bookNow} pgn={pgn} side={mySide(game, orientation)} brilliant={brilliant} great={great} />
               ) : (
                 <MoveList game={game} review={review} ply={inLine ? -1 : ply} onSelect={navTo} bookPlies={bookPlies} brilliant={brilliant} great={great} />
               )}

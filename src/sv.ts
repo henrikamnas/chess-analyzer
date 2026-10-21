@@ -472,4 +472,14 @@ export const SV: Record<string, string> = {
   'Your game against the computer': 'Ditt parti mot datorn',
   'Looking back at an earlier move. The game waits until you return.': 'Du tittar på ett tidigare drag. Partiet väntar tills du går tillbaka.',
   'Back to the game': 'Tillbaka till partiet',
+  // ---- Engine depth ----
+  'Live analysis depth': 'Djup för liveanalys',
+  'How deep the live engine searches. Deeper is more precise but slower and uses more power.':
+    'Hur djupt liveanalysen söker. Djupare är mer exakt men långsammare och drar mer ström.',
+  auto: 'auto',
+  'Review depth': 'Analysdjup',
+  '{n} (standard)': '{n} (standard)',
+  'Faster, less precise.': 'Snabbare, mindre exakt.',
+  'More precise, slower. Rating estimates stay calibrated at depth {n}.': 'Mer exakt, långsammare. Ratinguppskattningen är kalibrerad på djup {n}.',
+  'Changing it reviews the game again.': 'Ändrar du det analyseras partiet om.',
 }

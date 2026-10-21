@@ -28,7 +28,7 @@ export function buildAiPrompt(game: Game, review: Review, book: BookInfo | null,
       ? `I played this chess game as ${colour(me)} (${name(me)}). Please act as my chess coach and review it with me.`
       : 'Please act as a chess coach and review this chess game with me.',
     '',
-    `Below is an engine review (Stockfish 19, depth ${REVIEW_LIMITS.depth}). Treat the engine data as ground truth: ` +
+    `Below is an engine review (Stockfish 19, depth ${review.depth ?? REVIEW_LIMITS.depth}). Treat the engine data as ground truth: ` +
       'do not invent your own variations or evaluations. When you show a line, use the lines given here. ' +
       'Evaluations are from White\'s point of view (+ is good for White; "M3" means White mates in 3, "-M3" Black mates in 3).',
     '',

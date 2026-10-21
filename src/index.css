@@ -1809,3 +1809,23 @@ cg-board square.last-move {
 .play-card .why {
   margin: 0;
 }
+
+.depth-pick {
+  margin-left: auto;
+  font-size: 12px;
+  padding: 2px 2px;
+}
+
+.review-depth {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.review-depth select {
+  font-size: 13px;
+  padding: 2px 4px;
+}

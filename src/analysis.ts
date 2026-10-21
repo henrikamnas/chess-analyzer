@@ -6,6 +6,8 @@ import { t } from './i18n'
 
 /** Engine limits for the standard review. The rating estimate is calibrated on reviews made with these. */
 export const REVIEW_LIMITS = { depth: 16 }
+/** Depths a single game can be reviewed at (the user's choice); REVIEW_LIMITS.depth is the standard. */
+export const REVIEW_DEPTHS = [12, 16, 20, 24]
 /** Stamp stored with cached reviews; bump it when the engine or REVIEW_LIMITS change, so they get re-reviewed. */
 export const REVIEW_ENGINE = 'sf19-lite-d16'
 
@@ -83,6 +85,7 @@ export interface Review {
   counts: { w: Record<Label, number>; b: Record<Label, number> }
   /** Great moves (only good move), by ply index; filled in by a background pass after the review */
   great?: Record<number, GreatMove>
+  depth?: number // search depth of the evals; missing on reviews from before it was stored (REVIEW_LIMITS)
 }
 
 export interface RatingEstimate {
@@ -285,7 +288,7 @@ export async function reviewGame(
     w: estimateRating(acpl.w, cpLosses.w.length, game.meta),
     b: estimateRating(acpl.b, cpLosses.b.length, game.meta),
   }
-  return { evals, moves, accuracy, acpl, rating, counts }
+  return { evals, moves, accuracy, acpl, rating, counts, depth: limits.depth }
 }
 
 /** Judges one move from the evaluations before and after it (used for game moves and side-line moves alike). */

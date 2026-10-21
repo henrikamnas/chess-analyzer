@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { basisName, GLYPH, type Game, type Label, type Review } from '../analysis'
+import { basisName, GLYPH, REVIEW_DEPTHS, REVIEW_LIMITS, type Game, type Label, type Review } from '../analysis'
 import { moveName, phaseName, rating, ratingName, summarizeGame } from '../explain'
 import { t, useLang } from '../i18n'
 import type { BookInfo } from '../openings'
@@ -21,6 +21,8 @@ interface Props {
   onSelect: (ply: number) => void
   deep: DeepState
   onDeep: () => void
+  reviewDepth: number // depth reviews run at (the user's setting)
+  onReviewDepth: (depth: number) => void // also re-reviews the game
   book?: BookInfo | null
   pgn: string
   side: Side // the side the user most likely played, preselected for "Ask an AI"
@@ -30,7 +32,7 @@ interface Props {
 
 const ERRORS: Label[] = ['blunder', 'mistake', 'inaccuracy']
 
-export function SummaryCard({ game, review, onSelect, deep, onDeep, book, pgn, side, brilliant, great }: Props) {
+export function SummaryCard({ game, review, onSelect, deep, onDeep, reviewDepth, onReviewDepth, book, pgn, side, brilliant, great }: Props) {
   const lang = useLang()
   // eslint-disable-next-line react-hooks/exhaustive-deps -- lang: the summary text is generated in the current language
   const summary = useMemo(() => summarizeGame(game, review, book), [game, review, book, lang])
@@ -88,6 +90,7 @@ export function SummaryCard({ game, review, onSelect, deep, onDeep, book, pgn, s
       </div>
 
       <DeepAnalysis deep={deep} onDeep={onDeep} />
+      <ReviewDepth depth={reviewDepth} onChange={onReviewDepth} />
 
       {summary.paragraphs.map((p, i) => (
         <p key={i}>{p}</p>
@@ -141,6 +144,32 @@ function PhaseRow({ label, values }: { label: string; values: (number | null)[] 
         ),
       )}
     </>
+  )
+}
+
+/** The depth the game is reviewed at; changing it reviews the game again. */
+function ReviewDepth({ depth, onChange }: { depth: number; onChange: (depth: number) => void }) {
+  const standard = REVIEW_LIMITS.depth
+  return (
+    <div className="review-depth">
+      <label>
+        {t('Review depth')}{' '}
+        <select value={depth} onChange={(e) => onChange(Number(e.target.value))}>
+          {REVIEW_DEPTHS.map((d) => (
+            <option key={d} value={d}>
+              {d === standard ? t('{n} (standard)', { n: d }) : d}
+            </option>
+          ))}
+        </select>
+      </label>
+      <span className="muted">
+        {depth < standard
+          ? t('Faster, less precise.')
+          : depth > standard
+            ? t('More precise, slower. Rating estimates stay calibrated at depth {n}.', { n: standard })
+            : t('Changing it reviews the game again.')}
+      </span>
+    </div>
   )
 }
 
