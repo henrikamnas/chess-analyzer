@@ -12,6 +12,8 @@ import { MoveList } from './components/MoveList'
 import { ImportPanel } from './components/ImportPanel'
 import { EngineLines } from './components/EngineLines'
 import { PositionChat } from './components/PositionChat'
+import { PlayCard, PlaySetup, type PlaySettings } from './components/PlayCard'
+import { BOT_LINES, botMove } from './bot'
 import type { PositionContext } from './aiPrompt'
 import { SummaryCard, type DeepState } from './components/SummaryCard'
 import { restoreSession, saveSession, type RestoredSession } from './session'
@@ -256,6 +258,7 @@ export default function App() {
   const [view, setView] = useState<'analyze' | 'patterns' | 'puzzles'>('analyze')
   const [deep, setDeep] = useState<DeepState>(restored?.deepDone ? { ...emptyDeep, status: 'done' } : emptyDeep)
   const [liveMode, setLiveMode] = useState<LiveMode>(savedLiveMode)
+  const [play, setPlay] = useState<PlaySettings | null>(null) // playing on against the computer from the board position
   const pageVisible = usePageVisible()
   const boardRef = useRef<HTMLDivElement>(null)
   const boardInView = useInView(boardRef)
@@ -264,6 +267,7 @@ export default function App() {
   const liveEngine = useRef<Engine | null>(null)
   const reviewEngine = useRef<Engine | null>(null)
   const deepEngine = useRef<Engine | null>(null)
+  const botEngine = useRef<Engine | null>(null)
   const reviewToken = useRef(0)
 
   useEffect(() => {
@@ -382,6 +386,7 @@ export default function App() {
     setVariation([])
     setPlan([])
     setExplaining(null)
+    setPlay(null)
   }
 
   /** Opens an already-reviewed game (from My patterns) at a given move, without reviewing it again. */
@@ -456,7 +461,8 @@ export default function App() {
 
   // The live engine only runs while someone can see the board: not in a background tab or with the screen off,
   // not on the patterns/puzzles screens, and not while the board is scrolled out of view.
-  const liveActive = liveMode !== 'off' && pageVisible && view === 'analyze' && boardInView
+  // Nor while playing against the computer: its arrows and eval would give the moves away.
+  const liveActive = liveMode !== 'off' && pageVisible && view === 'analyze' && boardInView && !play
   useEffect(() => {
     const engine = liveEngine.current
     if (!engine) return
@@ -515,7 +521,8 @@ export default function App() {
   const onBoardMove = useCallback(
     (uci: string) => {
       // Playing the next mainline move just advances; anything else starts/extends a variation.
-      if (!plan.length && game.plies[ply]?.uci === uci) {
+      // Against the computer every move goes into the side line, which holds that game.
+      if (!play && !plan.length && game.plies[ply]?.uci === uci) {
         setPly(ply + 1)
         return
       }
@@ -526,8 +533,50 @@ export default function App() {
         setExplaining(null)
       }
     },
-    [variation, plan, game.plies, ply],
+    [variation, plan, game.plies, ply, play],
   )
+
+  // --- Playing against the computer ------------------------------------------
+
+  const startPlay = (settings: PlaySettings) => {
+    setExplaining(null)
+    setVarExplain(null)
+    setPlan(variation) // the game continues from the board; drop the rest of a side line being stepped through
+    setPlay(settings)
+    setOrientation(settings.bot === 'w' ? 'black' : 'white')
+  }
+
+  const onBoardMoveRef = useRef(onBoardMove)
+  useEffect(() => {
+    onBoardMoveRef.current = onBoardMove
+  })
+  useEffect(() => {
+    if (!play) {
+      botEngine.current?.terminate()
+      botEngine.current = null
+    }
+  }, [play])
+  useEffect(() => () => botEngine.current?.terminate(), [])
+  useEffect(() => {
+    if (!play || gameOver || fen.split(' ')[1] !== play.bot) return
+    botEngine.current ??= new Engine({
+      multiPv: BOT_LINES,
+      onError: (m) => setEngineError(t('Lite engine failed to start: {error}', { error: m })),
+    })
+    const engine = botEngine.current
+    let cancelled = false
+    const started = Date.now()
+    void botMove(engine, fen, play.strength, game.meta).then(async (uci) => {
+      // A moment's pause, so an instant reply doesn't land before your own move has finished animating
+      const wait = 700 - (Date.now() - started)
+      if (wait > 0) await new Promise((r) => setTimeout(r, wait))
+      if (!cancelled && uci) onBoardMoveRef.current(uci)
+    })
+    return () => {
+      cancelled = true
+      engine.stop()
+    }
+  }, [play, fen, gameOver, game.meta])
 
   // Forced mate in the current position (live engine, or the review when live analysis is off/paused)
   const mateIn = shownScore?.mate !== undefined && Math.abs(shownScore.mate) >= 1 ? Math.round(shownScore.mate) : null
@@ -557,6 +606,7 @@ export default function App() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return
+      if (play) return // no stepping around mid-game
       if (e.key === 'ArrowLeft') step(-1)
       else if (e.key === 'ArrowRight') step(1)
       else if (e.key === 'Home' || e.key === 'ArrowUp') goTo(0)
@@ -567,7 +617,7 @@ export default function App() {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [step, goTo, game.plies.length])
+  }, [step, goTo, game.plies.length, play])
 
   // --- Move verdict & explanation ------------------------------------------
 
@@ -774,6 +824,7 @@ export default function App() {
 
   const shapes = useMemo(() => {
     const out: DrawShape[] = []
+    if (play) return out
     // Arrows for the engine lines, coloured by how they compare with the best line; drawn worst first so
     // the best arrow ends up on top where they overlap.
     liveLines
@@ -800,7 +851,7 @@ export default function App() {
       if (glyph) out.push({ orig: sideVerdict.ply.uci.slice(2, 4) as Key, label: { text: glyph, fill } })
     }
     return out
-  }, [liveLines, liveLabels, fen, verdict, verdictPly, inVariation, game.plies, ply, isBookMove, sideVerdict, varExplainOn, varIsBook, brilliant, great])
+  }, [liveLines, liveLabels, fen, verdict, verdictPly, inVariation, game.plies, ply, isBookMove, sideVerdict, varExplainOn, varIsBook, brilliant, great, play])
 
   // --- Render --------------------------------------------------------------
 
@@ -833,7 +884,15 @@ export default function App() {
   const canStepForward = inLine ? variation.length < plan.length : ply < game.plies.length
   const canStepBack = inLine ? variation.length > 0 : ply > 0
   const exitLine = () => goTo(explaining ? explaining.ply : ply)
-  const lineTitle = !explaining
+  const navTo = play ? () => {} : goTo
+  /** A player of the game and how strong they are: their rating in the game, else the review's estimate. */
+  const playerInfo = (c: 'w' | 'b') => {
+    const elo = Number(c === 'w' ? meta.whiteElo : meta.blackElo)
+    return { name: c === 'w' ? meta.white : meta.black, rating: elo > 0 ? elo : (review?.rating[c].value ?? null) }
+  }
+  const lineTitle = play
+    ? t('Your game against the computer')
+    : !explaining
     ? varExplainOn && sideVerdict
       ? varExplain!.kind === 'why'
         ? t('{move}: how it can be punished', { move: sideVerdict.ply.san })
@@ -904,20 +963,27 @@ export default function App() {
         <section className="board-col">
           {player(top)}
           <div className={`board-row ${inLine ? 'off-game' : ''}`} ref={boardRef}>
-            <EvalBar score={shownScore} orientation={orientation} />
-            <Board fen={fen} orientation={orientation} lastMove={lastMove} shapes={shapes} onMove={onBoardMove} />
+            <EvalBar score={play ? null : shownScore} orientation={orientation} />
+            <Board
+              fen={fen}
+              orientation={orientation}
+              lastMove={lastMove}
+              shapes={shapes}
+              onMove={onBoardMove}
+              interactive={!play || fen.split(' ')[1] !== play.bot}
+            />
           </div>
           {player(top === 'w' ? 'b' : 'w')}
 
           {/* Right under the board, above the banners that come and go, so the buttons don't move while stepping */}
           <nav className="nav">
-            <button onClick={() => (inLine ? setVariation([]) : goTo(0))} aria-label={t('Start')}>⏮</button>
-            <button onClick={() => step(-1)} aria-label={t('Back')} disabled={!canStepBack}>◀</button>
-            <button onClick={() => step(1)} aria-label={t('Forward')} disabled={!canStepForward}>▶</button>
-            <button onClick={() => (inLine ? setVariation(plan) : goTo(game.plies.length))} aria-label={t('End')}>⏭</button>
+            <button onClick={() => (inLine ? setVariation([]) : goTo(0))} aria-label={t('Start')} disabled={!!play}>⏮</button>
+            <button onClick={() => step(-1)} aria-label={t('Back')} disabled={!canStepBack || !!play}>◀</button>
+            <button onClick={() => step(1)} aria-label={t('Forward')} disabled={!canStepForward || !!play}>▶</button>
+            <button onClick={() => (inLine ? setVariation(plan) : goTo(game.plies.length))} aria-label={t('End')} disabled={!!play}>⏭</button>
           </nav>
 
-          {mateIn !== null && !gameOver && (
+          {mateIn !== null && !gameOver && !play && (
             <div className={`mate-banner ${mateIn > 0 ? 'w' : 'b'}`}>
               <div className="mate-text">
                 <div className="mate-title">
@@ -935,7 +1001,9 @@ export default function App() {
             <LineBanner
               title={lineTitle}
               note={
-                explaining
+                play
+                  ? undefined
+                  : explaining
                   ? explaining.kind === 'why'
                     ? explanation?.text
                     : explanation?.bestText
@@ -949,7 +1017,7 @@ export default function App() {
               fen={mainFen}
               moves={plan}
               current={variation.length}
-              onSelect={(n) => setVariation(plan.slice(0, n))}
+              onSelect={(n) => !play && setVariation(plan.slice(0, n))}
               onExit={exitLine}
             />
           )}
@@ -959,7 +1027,7 @@ export default function App() {
             total={game.plies.length + 1}
             review={review}
             ply={ply}
-            onSelect={goTo}
+            onSelect={navTo}
           />
         </section>
 
@@ -988,14 +1056,16 @@ export default function App() {
             </div>
           )}
 
-          {isBookMove && verdictPly && (
+          {play && <PlayCard play={play} fen={fen} onStop={() => setPlay(null)} />}
+
+          {!play && isBookMove && verdictPly && (
             <div className="card verdict lbl-book">
               <strong>{moveName(game, verdictPly - 1)}</strong> <span className="glyph">📖</span> — {t('Book move')}
               {bookNow?.openingAt[verdictPly] && <span className="muted"> · {bookNow.openingAt[verdictPly]!.name}</span>}
             </div>
           )}
 
-          {varIsBook && !explaining && (
+          {!play && varIsBook && !explaining && (
             <div className="card verdict lbl-book">
               <strong>
                 {(() => {
@@ -1008,7 +1078,7 @@ export default function App() {
             </div>
           )}
 
-          {card && (
+          {!play && card && (
             <div className={`card verdict lbl-${card.brilliant ? 'brilliant' : card.great ? 'great' : card.rv.label}`}>
               <div>
                 <strong>
@@ -1048,7 +1118,7 @@ export default function App() {
             </div>
           )}
 
-          {sidePending && (
+          {!play && sidePending && (
             <div className="card verdict">
               <strong>{sideVerdict!.ply.san}</strong>{' '}
               <span className="muted">
@@ -1057,6 +1127,7 @@ export default function App() {
             </div>
           )}
 
+          {!play && (
           <div className="card engine">
             <div className="engine-head">
               <span className="muted">
@@ -1094,7 +1165,13 @@ export default function App() {
             </div>
             {liveLines.length > 0 && <EngineLines fen={fen} lines={liveLines} labels={liveLabels} onPlay={onEngineLine} bookMoves={lineBookMoves} />}
             <PositionChat context={positionContext} />
+            {!gameOver && (
+              <div className="play-on">
+                <PlaySetup key={`${game.startFen}|${pgn}`} defaultSide={mySide(game, orientation)} player={playerInfo} onStart={startPlay} />
+              </div>
+            )}
           </div>
+          )}
 
           {game.plies.length > 0 && (
             <div className="panel">
@@ -1107,9 +1184,9 @@ export default function App() {
                 </button>
               </div>
               {tab === 'summary' && review ? (
-                <SummaryCard game={game} review={review} onSelect={goTo} deep={deep} onDeep={startDeep} book={bookNow} pgn={pgn} side={mySide(game, orientation)} brilliant={brilliant} great={great} />
+                <SummaryCard game={game} review={review} onSelect={navTo} deep={deep} onDeep={startDeep} book={bookNow} pgn={pgn} side={mySide(game, orientation)} brilliant={brilliant} great={great} />
               ) : (
-                <MoveList game={game} review={review} ply={inLine ? -1 : ply} onSelect={goTo} bookPlies={bookPlies} brilliant={brilliant} great={great} />
+                <MoveList game={game} review={review} ply={inLine ? -1 : ply} onSelect={navTo} bookPlies={bookPlies} brilliant={brilliant} great={great} />
               )}
             </div>
           )}

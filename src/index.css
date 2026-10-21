@@ -1683,3 +1683,44 @@ cg-board square.last-move {
 .position-chat > button {
   font-size: 13px;
 }
+
+.play-on {
+  margin-top: 8px;
+}
+
+.play-on > button {
+  font-size: 13px;
+}
+
+.play-setup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(127, 127, 127, 0.08);
+}
+
+.play-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.play-row select {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.play-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.play-card .why {
+  margin: 0;
+}

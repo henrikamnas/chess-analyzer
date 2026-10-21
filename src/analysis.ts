@@ -411,6 +411,19 @@ export function estimateRating(acpl: number, moves: number, meta?: Pick<GameMeta
   }
 }
 
+/** The other way round: the typical ACPL of a player with this rating, on the same tables. */
+export function acplForRating(rating: number, meta?: Pick<GameMeta, 'platform' | 'timeClass'>): number {
+  const key = meta?.platform && meta.timeClass ? `${meta.platform}:${meta.timeClass}` : ''
+  const used = key in RATING_TABLES ? key : [TABLE_FALLBACK[key], 'chesscom:rapid'].find((k) => k && k in RATING_TABLES)!
+  const t = RATING_TABLES[used] // ratings descending
+  let i = t.findIndex(([, r]) => r <= rating)
+  if (i <= 0) i = i === 0 ? 1 : t.length - 1 // extrapolate from the end segments
+  const [a0, r0] = t[i - 1]
+  const [a1, r1] = t[i]
+  const x = Math.log(a0) + ((rating - r0) / (r1 - r0)) * (Math.log(a1) - Math.log(a0))
+  return Math.max(5, Math.min(300, Math.exp(x)))
+}
+
 export function formatScore(score: Score): string {
   if (score.mate !== undefined) {
     if (Math.abs(score.mate) < 1) return score.mate > 0 ? '1-0' : '0-1'
