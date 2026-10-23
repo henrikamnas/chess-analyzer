@@ -1829,3 +1829,11 @@ cg-board square.last-move {
   font-size: 13px;
   padding: 2px 4px;
 }
+
+.origin-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  font-size: 13px;
+}

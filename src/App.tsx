@@ -285,6 +285,16 @@ export default function App() {
   const [reviewDepth, setReviewDepth] = useState<number>(() => savedDepth(REVIEW_DEPTH_KEY, REVIEW_DEPTHS) ?? REVIEW_LIMITS.depth)
   const reviewDepthRef = useRef(reviewDepth)
   const [play, setPlay] = useState<PlaySettings | null>(null) // playing on against the computer from the board position
+  // The game a game against the computer was played from, to go back to after reviewing that game
+  const [origin, setOrigin] = useState<{
+    pgn: string
+    ply: number
+    line: string[] // the side line the game against the computer started from, if any
+    review: Review | null
+    orientation: 'white' | 'black'
+    title: string
+  } | null>(null)
+  const playFrom = useRef<string[]>([]) // the side line on the board when the game against the computer started
   const pageVisible = usePageVisible()
   const boardRef = useRef<HTMLDivElement>(null)
   const boardInView = useInView(boardRef)
@@ -428,6 +438,7 @@ export default function App() {
     const g = parseGame(stored.pgn)
     setPgn(stored.pgn)
     setGame(g)
+    setOrigin(null)
     setReview(rateReview(stored.review, g))
     setPartialEvals([])
     setProgress(null)
@@ -449,6 +460,7 @@ export default function App() {
         setGame(g)
         setPly(0)
         resetLine()
+        setOrigin(null)
         setError(null)
         setShowImport(false)
         setTab('moves')
@@ -597,8 +609,79 @@ export default function App() {
     setExplaining(null)
     setVarExplain(null)
     setPlan(variation) // the game continues from the board; drop the rest of a side line being stepped through
+    playFrom.current = variation
     setPlay(settings)
     setOrientation(settings.bot === 'w' ? 'black' : 'white')
+  }
+
+  /**
+   * Ends a game against the computer and opens it as a game of its own: the moves up to where it started plus
+   * the moves played, reviewed like any game, so side lines can be explored without losing it.
+   */
+  const finishPlay = () => {
+    if (!play) return
+    setPlay(null)
+    if (plan.length <= playFrom.current.length) return // nothing played: just stop, back where it started
+    const chess = new Chess(game.startFen)
+    for (const uci of [...game.plies.slice(0, ply).map((p) => p.uci), ...plan]) {
+      chess.move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] })
+    }
+    const human = play.bot === 'w' ? 'b' : 'w'
+    const names = { w: game.meta.white, b: game.meta.black }
+    const elos = { w: game.meta.whiteElo, b: game.meta.blackElo }
+    const bot = play.strength === null ? t('Computer (full strength)') : t('Computer (~{rating})', { rating: play.strength })
+    chess.setHeader('Event', t('Played on against the computer'))
+    chess.setHeader('White', human === 'w' ? names.w : bot)
+    chess.setHeader('Black', human === 'b' ? names.b : bot)
+    if (elos[human]) chess.setHeader(human === 'w' ? 'WhiteElo' : 'BlackElo', elos[human]!)
+    if (play.strength !== null) chess.setHeader(play.bot === 'w' ? 'WhiteElo' : 'BlackElo', String(play.strength))
+    if (game.meta.date) chess.setHeader('Date', game.meta.date)
+    try {
+      const original = new Chess()
+      original.loadPgn(pgn)
+      const tc = original.getHeaders().TimeControl
+      if (tc) chess.setHeader('TimeControl', tc)
+    } catch {
+      /* a position-only board has no PGN */
+    }
+    const result = chess.isCheckmate() ? (chess.turn() === 'w' ? '0-1' : '1-0') : chess.isDraw() || chess.isStalemate() ? '1/2-1/2' : '*'
+    chess.setHeader('Result', result)
+    const text = chess.pgn()
+    const from = { pgn, ply, line: playFrom.current, review, orientation, title: `${game.meta.white} – ${game.meta.black}` }
+    const g = parseGame(text)
+    // The original game's time control, for the rating tables (its site would link to the original game)
+    g.meta.timeClass = game.meta.timeClass
+    g.meta.platform = game.meta.platform
+    setPgn(text)
+    setGame(g)
+    resetLine()
+    setPly(g.plies.length)
+    setOrigin(from)
+    setTab('moves')
+    startReview(g)
+  }
+
+  /** Back to the game a game against the computer was played from, at the move it started. */
+  const backToOrigin = () => {
+    if (!origin) return
+    reviewToken.current++
+    reviewEngine.current?.stop()
+    stopDeep()
+    const g = parseGame(origin.pgn)
+    setPgn(origin.pgn)
+    setGame(g)
+    resetLine()
+    setPly(origin.ply)
+    setVariation(origin.line) // the exact position the game against the computer started from
+    setPlan(origin.line)
+    setOrientation(origin.orientation)
+    setPartialEvals([])
+    setProgress(null)
+    setOrigin(null)
+    if (origin.review) {
+      setReview(rateReview(origin.review, g))
+      setTab('summary')
+    } else startReview(g)
   }
 
   const onBoardMoveRef = useRef(onBoardMove)
@@ -1124,7 +1207,16 @@ export default function App() {
             </div>
           )}
 
-          {play && <PlayCard play={play} fen={playEndFen} atEnd={playAtEnd} onResume={() => setVariation(plan)} onStop={() => setPlay(null)} />}
+          {play && <PlayCard play={play} fen={playEndFen} atEnd={playAtEnd} onResume={() => setVariation(plan)} onStop={finishPlay} />}
+
+          {origin && !play && (
+            <div className="card origin-card">
+              <span className="muted">{t('Your game against the computer, reviewed like any game.')}</span>
+              <button className="link" onClick={backToOrigin}>
+                ↩ {t('Back to {game}', { game: origin.title })}
+              </button>
+            </div>
+          )}
 
           {!play && isBookMove && verdictPly && (
             <div className="card verdict lbl-book">

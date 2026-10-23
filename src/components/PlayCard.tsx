@@ -119,7 +119,7 @@ export function PlayCard({ play, fen, atEnd, onResume, onStop }: CardProps) {
           </button>
         )}
         <button className={result ? 'primary' : ''} onClick={onStop}>
-          {result ? t('Review the moves') : t('Stop and review')}
+          {result ? t('Review the game') : t('Stop and review')}
         </button>
       </div>
     </div>
