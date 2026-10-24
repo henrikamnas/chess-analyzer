@@ -456,6 +456,13 @@ export const SV: Record<string, string> = {
   'like {name} ({rating})': 'som {name} ({rating})',
   'rated about {rating}': 'som en spelare på cirka {rating}',
   'full strength': 'full styrka',
+  'human-like': 'mänsklig',
+  Style: 'Stil',
+  'Human-like': 'Mänsklig',
+  Engine: 'Motor',
+  'Human-like: plays the moves players of that rating play, mistakes included (Maia, trained on Lichess games).':
+    'Mänsklig: spelar de drag spelare med den ratingen spelar, misstag inräknade (Maia, tränad på Lichess-partier).',
+  'Engine: Stockfish, held back to about that rating.': 'Motor: Stockfish, nedskruvad till ungefär den ratingen.',
   'Tip: a little stronger than you is best for practice.': 'Tips: lite starkare än du är bäst för träning.',
   'Start game': 'Starta',
   'Playing the computer': 'Spel mot datorn',

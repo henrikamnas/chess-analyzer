@@ -13,10 +13,11 @@ import { ImportPanel } from './components/ImportPanel'
 import { EngineLines } from './components/EngineLines'
 import { PositionChat } from './components/PositionChat'
 import { Captured } from './components/Captured'
-import { PlayCard, PlaySetup, type PlaySettings, type TrainingInfo } from './components/PlayCard'
+import { PlayCard, PlaySetup, humanAvailable, type PlaySettings, type TrainingInfo } from './components/PlayCard'
 import { OpeningPicker, type TrainingStart } from './components/OpeningPicker'
 import { bookReplies, bookStatus, nameAt, pickBookMove } from './openingLines'
 import { BANDS, bandOf, lichessRating, movesAt, pickHumanMove, type MoveStat } from './explorer'
+import { maiaMoves, maiaRating, pickMaiaMove } from './maia'
 import { BOT_LINES, botMove } from './bot'
 import type { PositionContext } from './aiPrompt'
 import { SummaryCard, type DeepState } from './components/SummaryCard'
@@ -687,10 +688,13 @@ export default function App() {
     setView('analyze')
     playFrom.current = []
     setTrainOff(false)
+    const human = humanAvailable(s.strength)
+    const level = s.strength === null ? t('full strength') : t('rated about {rating}', { rating: s.strength })
     setPlay({
       bot,
       strength: s.strength,
-      name: s.strength === null ? t('full strength') : t('rated about {rating}', { rating: s.strength }),
+      human,
+      name: human ? `${level} · ${t('human-like')}` : level,
       training: { selection: s.selection, lines: s.lines, all: s.all, tricky: s.tricky },
     })
     setOrientation(s.side === 'w' ? 'white' : 'black')
@@ -796,17 +800,32 @@ export default function App() {
     if (!play || !playAtEnd || gameOver || fen.split(' ')[1] !== play.bot) return
     let cancelled = false
     const started = Date.now()
-    const engineMove = () => {
+    const reply = async (uci: string | null) => {
+      // A moment's pause, so an instant reply doesn't land before your own move has finished animating
+      const wait = 700 - (Date.now() - started)
+      if (wait > 0) await new Promise((r) => setTimeout(r, wait))
+      if (!cancelled && uci) onBoardMoveRef.current(uci)
+    }
+    const stockfishMove = () => {
       botEngine.current ??= new Engine({
         multiPv: BOT_LINES,
         onError: (m) => setEngineError(t('Lite engine failed to start: {error}', { error: m })),
       })
-      void botMove(botEngine.current, fen, play.strength, game.meta).then(async (uci) => {
-        // A moment's pause, so an instant reply doesn't land before your own move has finished animating
-        const wait = 700 - (Date.now() - started)
-        if (wait > 0) await new Promise((r) => setTimeout(r, wait))
-        if (!cancelled && uci) onBoardMoveRef.current(uci)
-      })
+      void botMove(botEngine.current, fen, play.strength, game.meta).then(reply)
+    }
+    // Human-like: Maia's prediction for a player of that rating, with the game so far as its history
+    const net = play.human && play.strength !== null ? maiaRating(lichessRating(play.strength)) : null
+    const engineMove = () => {
+      if (!net) return stockfishMove()
+      const chess = new Chess(game.startFen)
+      const history = [chess.fen()]
+      for (const uci of playedFromStart) {
+        chess.move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] })
+        history.push(chess.fen())
+      }
+      void maiaMoves(history, net)
+        .then((moves) => reply(pickMaiaMove(moves)))
+        .catch(() => !cancelled && stockfishMove())
     }
     const cleanup = () => {
       cancelled = true
@@ -836,7 +855,7 @@ export default function App() {
       clearTimeout(timer)
       cleanup()
     }
-  }, [play, playAtEnd, fen, gameOver, game.meta, trainOff, bookNowStatus, playedFromStart, trainBand])
+  }, [play, playAtEnd, fen, gameOver, game.meta, game.startFen, trainOff, bookNowStatus, playedFromStart, trainBand])
 
   // Forced mate in the current position (live engine, or the review when live analysis is off/paused)
   const mateIn = shownScore?.mate !== undefined && Math.abs(shownScore.mate) >= 1 ? Math.round(shownScore.mate) : null

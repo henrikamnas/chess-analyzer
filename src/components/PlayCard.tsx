@@ -2,17 +2,23 @@ import { useState } from 'react'
 import { Chess } from 'chess.js'
 import type { BotStrength } from '../bot'
 import type { OpeningLine } from '../openingLines'
+import { lichessRating } from '../explorer'
+import { maiaRating } from '../maia'
 import { t } from '../i18n'
 
 export interface PlaySettings {
   bot: 'w' | 'b' // the computer's side
   strength: BotStrength
   name: string // what the strength is called, e.g. "like joey933 (727)"
+  human?: boolean // play like a human of that rating (Maia) rather than a weakened engine, where Maia covers it
   // opening practice: book moves first (all: for names; tricky: favour the moves that score best)
   training?: { selection: string; lines: OpeningLine[]; all: OpeningLine[]; tricky: boolean }
 }
 
 export const LEVELS = [800, 1000, 1200, 1500, 1800, 2100]
+
+/** Whether Maia has a network for a strength (Chess.com rating): up to about Chess.com 1850. */
+export const humanAvailable = (strength: BotStrength) => strength !== null && maiaRating(lichessRating(strength)) !== null
 
 /** Opening practice: where the moves stand against the book. */
 export interface TrainingInfo {
@@ -36,21 +42,24 @@ export function PlaySetup({ defaultSide, player, onStart }: SetupProps) {
   const [open, setOpen] = useState(false)
   const [side, setSide] = useState(defaultSide)
   const [choice, setChoice] = useState<string>('like')
+  const [human, setHuman] = useState(true)
   const bot = side === 'w' ? 'b' : 'w'
   const opp = player(bot)
+  const chosen: BotStrength = choice === 'like' && opp.rating !== null ? opp.rating : choice === 'max' ? null : Number(choice === 'like' ? 1200 : choice)
 
   if (!open) return <button onClick={() => setOpen(true)}>🤖 {t('Play on against the computer')}</button>
 
   const start = () => {
     const like = choice === 'like' && opp.rating !== null
-    const strength = like ? opp.rating : choice === 'max' ? null : Number(choice === 'like' ? 1200 : choice)
+    const strength = chosen
     const name = like
       ? t('like {name} ({rating})', { name: opp.name, rating: opp.rating! })
       : strength === null
         ? t('full strength')
         : t('rated about {rating}', { rating: strength })
     setOpen(false)
-    onStart({ bot, strength, name })
+    const asHuman = human && humanAvailable(strength)
+    onStart({ bot, strength, name: asHuman ? `${name} · ${t('human-like')}` : name, human: asHuman })
   }
 
   return (
@@ -78,7 +87,25 @@ export function PlaySetup({ defaultSide, player, onStart }: SetupProps) {
           <option value="max">{t('full strength')}</option>
         </select>
       </label>
-      <div className="muted small">{t('Tip: a little stronger than you is best for practice.')}</div>
+      {humanAvailable(chosen) && (
+        <div className="play-row">
+          <span>{t('Style')}</span>
+          <span className="seg" role="group" aria-label={t('Style')}>
+            <button className={human ? 'on' : ''} onClick={() => setHuman(true)}>
+              {t('Human-like')}
+            </button>
+            <button className={!human ? 'on' : ''} onClick={() => setHuman(false)}>
+              {t('Engine')}
+            </button>
+          </span>
+        </div>
+      )}
+      <div className="muted small">
+        {humanAvailable(chosen) && human
+          ? t('Human-like: plays the moves players of that rating play, mistakes included (Maia, trained on Lichess games).')
+          : t('Engine: Stockfish, held back to about that rating.')}{' '}
+        {t('Tip: a little stronger than you is best for practice.')}
+      </div>
       <div className="row">
         <button className="primary" onClick={start}>
           ▶ {t('Start game')}
