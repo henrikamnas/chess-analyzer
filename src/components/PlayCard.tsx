@@ -1,15 +1,25 @@
 import { useState } from 'react'
 import { Chess } from 'chess.js'
 import type { BotStrength } from '../bot'
+import type { OpeningLine } from '../openingLines'
 import { t } from '../i18n'
 
 export interface PlaySettings {
   bot: 'w' | 'b' // the computer's side
   strength: BotStrength
   name: string // what the strength is called, e.g. "like joey933 (727)"
+  training?: { selection: string; lines: OpeningLine[]; all: OpeningLine[] } // opening practice: book moves first (all: for names)
 }
 
-const LEVELS = [800, 1000, 1200, 1500, 1800, 2100]
+export const LEVELS = [800, 1000, 1200, 1500, 1800, 2100]
+
+/** Opening practice: where the moves stand against the book. */
+export interface TrainingInfo {
+  opening: string | null // the deepest named position reached
+  state: 'book' | 'ended' | 'left' | 'off' // off: the user chose to play on after leaving the book
+  played?: string // the move that left the book (SAN)
+  book?: string[] // the book moves there (SAN)
+}
 
 interface SetupProps {
   defaultSide: 'w' | 'b' // the side the user plays by default
@@ -84,10 +94,13 @@ interface CardProps {
   atEnd: boolean // false while looking back at an earlier move
   onResume: () => void
   onStop: () => void
+  training?: TrainingInfo
+  onRetry?: () => void // take back the move that left the book
+  onPlayOn?: () => void // carry on without the book
 }
 
 /** While playing: whose turn it is, the result when the game ends, and a button to stop and look at the moves. */
-export function PlayCard({ play, fen, atEnd, onResume, onStop }: CardProps) {
+export function PlayCard({ play, fen, atEnd, onResume, onStop, training, onRetry, onPlayOn }: CardProps) {
   const chess = new Chess(fen)
   const human = play.bot === 'w' ? 'b' : 'w'
   const result = chess.isCheckmate()
@@ -104,12 +117,43 @@ export function PlayCard({ play, fen, atEnd, onResume, onStop }: CardProps) {
   return (
     <div className="card play-card">
       <div>
-        <strong>🤖 {t('Playing the computer')}</strong> <span className="muted">· {play.name}</span>
+        {play.training ? (
+          <>
+            <strong>📖 {t('Opening practice')}</strong> <span className="muted">· {play.training.selection}</span>
+          </>
+        ) : (
+          <>
+            <strong>🤖 {t('Playing the computer')}</strong> <span className="muted">· {play.name}</span>
+          </>
+        )}
       </div>
+      {training && atEnd && !result && (
+        <div className={`training-note ${training.state}`}>
+          {training.state === 'left' ? (
+            <>
+              <p>
+                {t('{move} is not in the book here. Book moves: {moves}.', { move: training.played!, moves: training.book!.join(', ') })}
+              </p>
+              <div className="row">
+                <button className="primary" onClick={onRetry}>
+                  ↺ {t('Try again')}
+                </button>
+                <button onClick={onPlayOn}>{t('Play on from here')}</button>
+              </div>
+            </>
+          ) : training.state === 'ended' ? (
+            <p>{t('End of the book line{name}. The computer plays on from here ({strength}).', { name: training.opening ? `: ${training.opening}` : '', strength: play.name })}</p>
+          ) : training.state === 'off' ? (
+            <p>{t('Off book. The computer plays on ({strength}).', { strength: play.name })}</p>
+          ) : (
+            <p>📖 {training.opening ?? t('Starting position')}</p>
+          )}
+        </div>
+      )}
       <p className="why">
         {!atEnd && !result
           ? t('Looking back at an earlier move. The game waits until you return.')
-          : (result ?? (chess.turn() === play.bot ? t('The computer is thinking…') : t('Your move.')))}
+          : (result ?? (training?.state === 'left' ? t('Your move.') : chess.turn() === play.bot ? t('The computer is thinking…') : t('Your move.')))}
         {!result && atEnd && <span className="muted"> {t('The engine stays quiet while you play.')}</span>}
       </p>
       <div className="row">

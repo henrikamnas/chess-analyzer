@@ -13,7 +13,9 @@ import { ImportPanel } from './components/ImportPanel'
 import { EngineLines } from './components/EngineLines'
 import { PositionChat } from './components/PositionChat'
 import { Captured } from './components/Captured'
-import { PlayCard, PlaySetup, type PlaySettings } from './components/PlayCard'
+import { PlayCard, PlaySetup, type PlaySettings, type TrainingInfo } from './components/PlayCard'
+import { OpeningPicker, type TrainingStart } from './components/OpeningPicker'
+import { bookReplies, bookStatus, nameAt, pickBookMove } from './openingLines'
 import { BOT_LINES, botMove } from './bot'
 import type { PositionContext } from './aiPrompt'
 import { SummaryCard, type DeepState } from './components/SummaryCard'
@@ -278,7 +280,7 @@ export default function App() {
     link?.bad ? t('The link has a move that is not legal here ({move}); showing the line up to it.', { move: link.bad }) : null,
   )
   const [tab, setTab] = useState<'summary' | 'moves'>(restored?.review ? restored.tab : 'moves')
-  const [view, setView] = useState<'analyze' | 'patterns' | 'puzzles'>('analyze')
+  const [view, setView] = useState<'analyze' | 'patterns' | 'puzzles' | 'openings'>('analyze')
   const [deep, setDeep] = useState<DeepState>(restored?.deepDone ? { ...emptyDeep, status: 'done' } : emptyDeep)
   const [liveMode, setLiveMode] = useState<LiveMode>(savedLiveMode)
   const [liveDepth, setLiveDepth] = useState<number | null>(() => savedDepth(LIVE_DEPTH_KEY, LIVE_DEPTHS)) // null: auto
@@ -295,6 +297,7 @@ export default function App() {
     title: string
   } | null>(null)
   const playFrom = useRef<string[]>([]) // the side line on the board when the game against the computer started
+  const [trainOff, setTrainOff] = useState(false) // opening practice: the user chose to play on after leaving the book
   const pageVisible = usePageVisible()
   const boardRef = useRef<HTMLDivElement>(null)
   const boardInView = useInView(boardRef)
@@ -630,7 +633,7 @@ export default function App() {
     const names = { w: game.meta.white, b: game.meta.black }
     const elos = { w: game.meta.whiteElo, b: game.meta.blackElo }
     const bot = play.strength === null ? t('Computer (full strength)') : t('Computer (~{rating})', { rating: play.strength })
-    chess.setHeader('Event', t('Played on against the computer'))
+    chess.setHeader('Event', play.training ? t('Opening practice: {name}', { name: play.training.selection }) : t('Played on against the computer'))
     chess.setHeader('White', human === 'w' ? names.w : bot)
     chess.setHeader('Black', human === 'b' ? names.b : bot)
     if (elos[human]) chess.setHeader(human === 'w' ? 'WhiteElo' : 'BlackElo', elos[human]!)
@@ -656,9 +659,67 @@ export default function App() {
     setGame(g)
     resetLine()
     setPly(g.plies.length)
-    setOrigin(from)
+    setOrigin(pgn ? from : null) // opening practice starts from an empty board: nothing to go back to
     setTab('moves')
     startReview(g)
+  }
+
+  // --- Opening practice -------------------------------------------------------
+
+  /** Starts opening practice: a fresh board, the computer playing the opening's book moves for its side. */
+  const startTraining = (s: TrainingStart) => {
+    reviewToken.current++
+    reviewEngine.current?.stop()
+    stopDeep()
+    const bot = s.side === 'w' ? 'b' : 'w'
+    const botName = s.strength === null ? t('Computer (full strength)') : t('Computer (~{rating})', { rating: s.strength })
+    setPgn('')
+    setGame({ ...emptyGame(), meta: { white: s.side === 'w' ? t('You') : botName, black: s.side === 'b' ? t('You') : botName, result: '*' } })
+    setReview(null)
+    setPartialEvals([])
+    setProgress(null)
+    resetLine()
+    setPly(0)
+    setOrigin(null)
+    setShowImport(false)
+    setError(null)
+    setView('analyze')
+    playFrom.current = []
+    setTrainOff(false)
+    setPlay({
+      bot,
+      strength: s.strength,
+      name: s.strength === null ? t('full strength') : t('rated about {rating}', { rating: s.strength }),
+      training: { selection: s.selection, lines: s.lines, all: s.all },
+    })
+    setOrientation(s.side === 'w' ? 'white' : 'black')
+  }
+
+  // The moves from the start, for checking against the book (practice starts from the starting position)
+  const playedFromStart = useMemo(() => [...game.plies.slice(0, ply).map((p) => p.uci), ...plan], [game.plies, ply, plan])
+  const training = play?.training
+  const bookNowStatus = useMemo(() => (training ? bookStatus(training.lines, playedFromStart) : null), [training, playedFromStart])
+  const trainingInfo = useMemo<TrainingInfo | undefined>(() => {
+    if (!training || !bookNowStatus) return undefined
+    // Named among all openings, so the way into the chosen one has names too (1. d4: Queen's Pawn Game)
+    const opening = nameAt(training.all, playedFromStart)
+    if (trainOff) return { opening, state: 'off' }
+    if (bookNowStatus.kind !== 'left') return { opening: bookNowStatus.kind === 'ended' ? nameAt(training.all, playedFromStart.slice(0, bookNowStatus.at)) : opening, state: bookNowStatus.kind }
+    // Name the move that left the book and the book moves there, in SAN
+    const before = playedFromStart.slice(0, bookNowStatus.at)
+    const chess = new Chess(game.startFen)
+    for (const uci of before) chess.move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] })
+    const san = (uci: string) => new Chess(chess.fen()).move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] }).san
+    const replies = [...bookReplies(training.lines, before)].sort((a, b) => b[1] - a[1]).map(([m]) => san(m))
+    return { opening: nameAt(training.all, before), state: 'left', played: san(playedFromStart[bookNowStatus.at]), book: replies }
+  }, [training, bookNowStatus, playedFromStart, trainOff, game.startFen])
+
+  /** Takes back the move that left the book (and anything after it), to try again. */
+  const retryBook = () => {
+    if (bookNowStatus?.kind !== 'left') return
+    const keep = Math.max(0, bookNowStatus.at - game.plies.slice(0, ply).length)
+    setVariation(plan.slice(0, keep))
+    setPlan(plan.slice(0, keep))
   }
 
   /** Back to the game a game against the computer was played from, at the move it started. */
@@ -699,6 +760,15 @@ export default function App() {
   const playAtEnd = variation.length === plan.length
   useEffect(() => {
     if (!play || !playAtEnd || gameOver || fen.split(' ')[1] !== play.bot) return
+    if (play.training && !trainOff) {
+      if (bookNowStatus?.kind === 'left') return // waiting: try again, or play on
+      const replies = bookNowStatus?.kind === 'book' ? bookReplies(play.training.lines, playedFromStart) : null
+      if (replies?.size) {
+        const move = pickBookMove(replies)
+        const timer = setTimeout(() => move && onBoardMoveRef.current(move), 600)
+        return () => clearTimeout(timer)
+      }
+    }
     botEngine.current ??= new Engine({
       multiPv: BOT_LINES,
       onError: (m) => setEngineError(t('Lite engine failed to start: {error}', { error: m })),
@@ -716,7 +786,7 @@ export default function App() {
       cancelled = true
       engine.stop()
     }
-  }, [play, playAtEnd, fen, gameOver, game.meta])
+  }, [play, playAtEnd, fen, gameOver, game.meta, trainOff, bookNowStatus, playedFromStart])
 
   // Forced mate in the current position (live engine, or the review when live analysis is off/paused)
   const mateIn = shownScore?.mate !== undefined && Math.abs(shownScore.mate) >= 1 ? Math.round(shownScore.mate) : null
@@ -1075,6 +1145,13 @@ export default function App() {
             🧩<span className="btn-label"> {t('Puzzles')}</span>
           </button>
           <button
+            className={view === 'openings' ? 'on' : ''}
+            onClick={() => setView((v) => (v === 'openings' ? 'analyze' : 'openings'))}
+            aria-label={t('Openings')}
+          >
+            📖<span className="btn-label"> {t('Openings')}</span>
+          </button>
+          <button
             className={view === 'patterns' ? 'on' : ''}
             onClick={() => setView((v) => (v === 'patterns' ? 'analyze' : 'patterns'))}
             aria-label={t('My patterns')}
@@ -1102,6 +1179,8 @@ export default function App() {
       <div className="patterns-wrap" hidden={view !== 'patterns'}>
         <PatternsView onOpen={openReviewed} />
       </div>
+
+      {view === 'openings' && <OpeningPicker onStart={startTraining} />}
 
       {view === 'puzzles' && (
         <PuzzleView
@@ -1207,7 +1286,18 @@ export default function App() {
             </div>
           )}
 
-          {play && <PlayCard play={play} fen={playEndFen} atEnd={playAtEnd} onResume={() => setVariation(plan)} onStop={finishPlay} />}
+          {play && (
+            <PlayCard
+              play={play}
+              fen={playEndFen}
+              atEnd={playAtEnd}
+              onResume={() => setVariation(plan)}
+              onStop={finishPlay}
+              training={trainingInfo}
+              onRetry={retryBook}
+              onPlayOn={() => setTrainOff(true)}
+            />
+          )}
 
           {origin && !play && (
             <div className="card origin-card">

@@ -11,6 +11,7 @@ import { positionHash } from '../src/openingHash.ts'
 const BASE = 'https://raw.githubusercontent.com/lichess-org/chess-openings/master'
 const book = new Set()
 const named = new Map() // hash -> [eco, name] for the position a named line ends in
+const lines = [] // [eco, name, UCI moves] per named line, for the opening trainer
 
 for (const file of ['a', 'b', 'c', 'd', 'e']) {
   const res = await fetch(`${BASE}/${file}.tsv`)
@@ -21,11 +22,14 @@ for (const file of ['a', 'b', 'c', 'd', 'e']) {
     const chess = new Chess()
     chess.loadPgn(pgn)
     const replay = new Chess()
+    const uci = []
     for (const move of chess.history()) {
-      replay.move(move)
+      const m = replay.move(move)
+      uci.push(m.from + m.to + (m.promotion ?? ''))
       book.add(positionHash(replay.fen()))
     }
     named.set(positionHash(replay.fen()), [eco, name])
+    lines.push([eco, name, uci.join(' ')])
   }
 }
 
@@ -36,4 +40,6 @@ const out = {
   named: [...named].map(([h, [eco, name]]) => [h.toString(36), eco, name]),
 }
 writeFileSync('src/data/openings.json', JSON.stringify(out))
-console.log(`book positions: ${book.size}, named positions: ${named.size}`)
+// Loaded separately (only the opening trainer needs it)
+writeFileSync('src/data/openingLines.json', JSON.stringify({ source: out.source, lines }))
+console.log(`book positions: ${book.size}, named positions: ${named.size}, lines: ${lines.length}`)
