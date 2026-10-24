@@ -1,0 +1,16 @@
+{
+ "source": "lichess_db_standard_rated_2026-09.pgn.zst",
+ "license": "Lichess open database, CC0 (https://database.lichess.org)",
+ "games": 15000000,
+ "plies": 20,
+ "minGames": 20,
+ "bands": [
+  1200,
+  1500,
+  1800,
+  2100
+ ],
+ "shardDigits": 2,
+ "maxUndercount": 46,
+ "built": "2026-10-24"
+}

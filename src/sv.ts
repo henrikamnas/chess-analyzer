@@ -468,6 +468,16 @@ export const SV: Record<string, string> = {
   'Draw: not enough material to mate.': 'Remi: otillräckligt material för matt.',
   'Draw.': 'Remi.',
   'Review the game': 'Analysera partiet',
+  '{move}: rarely played at this level.': '{move}: spelas sällan på den här nivån.',
+  '{move}: played in {share}% of games at this level, scoring {score}% for the side playing it.':
+    '{move}: spelas i {share}% av partierna på den här nivån, med {score}% poäng för den som spelar det.',
+  Opponent: 'Motståndare',
+  'Popular moves': 'Vanliga drag',
+  'Tricky lines': 'Lömska varianter',
+  'The computer favours the moves that score best against players at that level: the lines people tend to get wrong.':
+    'Datorn väljer helst de drag som ger bäst resultat mot spelare på den nivån: varianterna man ofta spelar fel i.',
+  'The computer picks book moves as often as players at that level play them on Lichess, and keeps playing like them while there is data.':
+    'Datorn väljer teoridrag lika ofta som spelare på den nivån spelar dem på Lichess, och fortsätter spela som dem så länge det finns data.',
   'Computer (full strength)': 'Datorn (full styrka)',
   'Computer (~{rating})': 'Datorn (~{rating})',
   'Played on against the computer': 'Spelat vidare mot datorn',
@@ -499,7 +509,6 @@ export const SV: Record<string, string> = {
   'All openings': 'Alla öppningar',
   'All lines': 'Alla varianter',
   '{n} lines, up to {moves} moves deep': '{n} varianter, upp till {moves} drag djupt',
-  'After the book': 'Efter teorin',
   'Start practice': 'Börja träna',
   'Opening practice': 'Öppningsträning',
   'Opening practice: {name}': 'Öppningsträning: {name}',

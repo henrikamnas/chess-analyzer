@@ -11,7 +11,8 @@ export interface TrainingStart {
   lines: OpeningLine[]
   all: OpeningLine[] // every named line, to name positions on the way into the chosen opening
   side: 'w' | 'b' // the side the user plays
-  strength: BotStrength // how the computer plays once the book runs out
+  strength: BotStrength // the computer's level: which players' move choices it follows, and its engine strength after
+  tricky: boolean // favour the book moves that score best against players at that level
 }
 
 /** Opening practice: find an opening, pick a variation (or all of it) and a side, then play it against the computer. */
@@ -22,6 +23,7 @@ export function OpeningPicker({ onStart }: { onStart: (s: TrainingStart) => void
   const [selection, setSelection] = useState<string | null>(null)
   const [side, setSide] = useState<'w' | 'b'>('b')
   const [strength, setStrength] = useState<string>('1200')
+  const [tricky, setTricky] = useState(false)
 
   useEffect(() => {
     void loadOpeningLines().then(setAll)
@@ -131,7 +133,7 @@ export function OpeningPicker({ onStart }: { onStart: (s: TrainingStart) => void
             </span>
           </div>
           <label className="play-row">
-            <span>{t('After the book')}</span>
+            <span>{t('Opponent')}</span>
             <select value={strength} onChange={(e) => setStrength(e.target.value)}>
               {LEVELS.map((r) => (
                 <option key={r} value={String(r)}>
@@ -141,8 +143,24 @@ export function OpeningPicker({ onStart }: { onStart: (s: TrainingStart) => void
               <option value="max">{t('full strength')}</option>
             </select>
           </label>
+          <div className="play-row">
+            <span>{t('Computer plays')}</span>
+            <span className="seg" role="group" aria-label={t('Computer plays')}>
+              <button className={!tricky ? 'on' : ''} onClick={() => setTricky(false)}>
+                {t('Popular moves')}
+              </button>
+              <button className={tricky ? 'on' : ''} onClick={() => setTricky(true)}>
+                {t('Tricky lines')}
+              </button>
+            </span>
+          </div>
+          <div className="muted small">
+            {tricky
+              ? t('The computer favours the moves that score best against players at that level: the lines people tend to get wrong.')
+              : t('The computer picks book moves as often as players at that level play them on Lichess, and keeps playing like them while there is data.')}
+          </div>
           <div className="row">
-            <button className="primary" onClick={() => onStart({ selection, lines, all, side, strength: strength === 'max' ? null : Number(strength) })}>
+            <button className="primary" onClick={() => onStart({ selection, lines, all, side, strength: strength === 'max' ? null : Number(strength), tricky })}>
               ▶ {t('Start practice')}
             </button>
           </div>

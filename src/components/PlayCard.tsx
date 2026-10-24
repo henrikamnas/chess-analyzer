@@ -8,7 +8,8 @@ export interface PlaySettings {
   bot: 'w' | 'b' // the computer's side
   strength: BotStrength
   name: string // what the strength is called, e.g. "like joey933 (727)"
-  training?: { selection: string; lines: OpeningLine[]; all: OpeningLine[] } // opening practice: book moves first (all: for names)
+  // opening practice: book moves first (all: for names; tricky: favour the moves that score best)
+  training?: { selection: string; lines: OpeningLine[]; all: OpeningLine[]; tricky: boolean }
 }
 
 export const LEVELS = [800, 1000, 1200, 1500, 1800, 2100]
@@ -18,7 +19,9 @@ export interface TrainingInfo {
   opening: string | null // the deepest named position reached
   state: 'book' | 'ended' | 'left' | 'off' // off: the user chose to play on after leaving the book
   played?: string // the move that left the book (SAN)
-  book?: string[] // the book moves there (SAN)
+  book?: string[] // the book moves there (SAN, with how often they're played)
+  /** The last move against what players at the level play: share of games and the mover's score (0–1). */
+  last?: { san: string; you: boolean; share: number | null; score: number | null }
 }
 
 interface SetupProps {
@@ -99,6 +102,8 @@ interface CardProps {
   onPlayOn?: () => void // carry on without the book
 }
 
+const pct = (x: number) => (x < 0.01 ? '<1' : String(Math.round(100 * x)))
+
 /** While playing: whose turn it is, the result when the game ends, and a button to stop and look at the moves. */
 export function PlayCard({ play, fen, atEnd, onResume, onStop, training, onRetry, onPlayOn }: CardProps) {
   const chess = new Chess(fen)
@@ -147,6 +152,17 @@ export function PlayCard({ play, fen, atEnd, onResume, onStop, training, onRetry
             <p>{t('Off book. The computer plays on ({strength}).', { strength: play.name })}</p>
           ) : (
             <p>📖 {training.opening ?? t('Starting position')}</p>
+          )}
+          {training.last && training.state !== 'left' && (
+            <p className="muted small">
+              {training.last.share === null
+                ? t('{move}: rarely played at this level.', { move: training.last.san })
+                : t('{move}: played in {share}% of games at this level, scoring {score}% for the side playing it.', {
+                    move: training.last.san,
+                    share: pct(training.last.share),
+                    score: pct(training.last.score ?? 0.5),
+                  })}
+            </p>
           )}
         </div>
       )}

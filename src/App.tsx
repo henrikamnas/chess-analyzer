@@ -16,6 +16,7 @@ import { Captured } from './components/Captured'
 import { PlayCard, PlaySetup, type PlaySettings, type TrainingInfo } from './components/PlayCard'
 import { OpeningPicker, type TrainingStart } from './components/OpeningPicker'
 import { bookReplies, bookStatus, nameAt, pickBookMove } from './openingLines'
+import { BANDS, bandOf, lichessRating, movesAt, pickHumanMove, type MoveStat } from './explorer'
 import { BOT_LINES, botMove } from './bot'
 import type { PositionContext } from './aiPrompt'
 import { SummaryCard, type DeepState } from './components/SummaryCard'
@@ -690,7 +691,7 @@ export default function App() {
       bot,
       strength: s.strength,
       name: s.strength === null ? t('full strength') : t('rated about {rating}', { rating: s.strength }),
-      training: { selection: s.selection, lines: s.lines, all: s.all },
+      training: { selection: s.selection, lines: s.lines, all: s.all, tricky: s.tricky },
     })
     setOrientation(s.side === 'w' ? 'white' : 'black')
   }
@@ -698,21 +699,54 @@ export default function App() {
   // The moves from the start, for checking against the book (practice starts from the starting position)
   const playedFromStart = useMemo(() => [...game.plies.slice(0, ply).map((p) => p.uci), ...plan], [game.plies, ply, plan])
   const training = play?.training
-  const bookNowStatus = useMemo(() => (training ? bookStatus(training.lines, playedFromStart) : null), [training, playedFromStart])
+  // Your moves count as book if any named opening has them (1.d4 d5 2.c4 c6 3.Nc3 Nf6 is filed under other names)
+  const bookNowStatus = useMemo(() => (training ? bookStatus(training.all, playedFromStart) : null), [training, playedFromStart])
+  // The rating band whose move choices the computer follows (Chess.com level → Lichess band)
+  const trainBand = play?.strength == null ? BANDS.length : bandOf(lichessRating(play.strength))
+  // What players at that level played in the position before the last move
+  const beforeLast = useMemo(() => {
+    if (!training || !playedFromStart.length) return null
+    const chess = new Chess(game.startFen)
+    for (const uci of playedFromStart.slice(0, -1)) chess.move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] })
+    return chess.fen()
+  }, [training, playedFromStart, game.startFen])
+  const [lastStats, setLastStats] = useState<{ fen: string; stats: MoveStat[] | null } | null>(null)
+  useEffect(() => {
+    if (!beforeLast) return
+    let live = true
+    void movesAt(beforeLast, trainBand).then((stats) => live && setLastStats({ fen: beforeLast, stats }))
+    return () => {
+      live = false
+    }
+  }, [beforeLast, trainBand])
   const trainingInfo = useMemo<TrainingInfo | undefined>(() => {
     if (!training || !bookNowStatus) return undefined
     // Named among all openings, so the way into the chosen one has names too (1. d4: Queen's Pawn Game)
     const opening = nameAt(training.all, playedFromStart)
-    if (trainOff) return { opening, state: 'off' }
-    if (bookNowStatus.kind !== 'left') return { opening: bookNowStatus.kind === 'ended' ? nameAt(training.all, playedFromStart.slice(0, bookNowStatus.at)) : opening, state: bookNowStatus.kind }
+    // The last move against the statistics, once they've loaded
+    const stats = lastStats && lastStats.fen === beforeLast ? lastStats.stats : null
+    let last: TrainingInfo['last']
+    if (stats && beforeLast) {
+      const uci = playedFromStart.at(-1)!
+      const stat = stats.find((s) => s.uci === uci)
+      const move = new Chess(beforeLast).move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] })
+      const you = (beforeLast.split(' ')[1] === 'w') !== (play!.bot === 'w')
+      last = { san: move.san, you, share: stat ? stat.share : null, score: stat ? stat.score : null }
+    }
+    if (trainOff) return { opening, state: 'off', last }
+    if (bookNowStatus.kind !== 'left') return { opening: bookNowStatus.kind === 'ended' ? nameAt(training.all, playedFromStart.slice(0, bookNowStatus.at)) : opening, state: bookNowStatus.kind, last }
     // Name the move that left the book and the book moves there, in SAN
     const before = playedFromStart.slice(0, bookNowStatus.at)
     const chess = new Chess(game.startFen)
     for (const uci of before) chess.move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] })
     const san = (uci: string) => new Chess(chess.fen()).move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] }).san
-    const replies = [...bookReplies(training.lines, before)].sort((a, b) => b[1] - a[1]).map(([m]) => san(m))
+    // Book moves, most played first when the statistics for this position are in
+    const share = (m: string) => (bookNowStatus.at === playedFromStart.length - 1 ? stats?.find((s) => s.uci === m)?.share : undefined)
+    const replies = [...bookReplies(training.all, before)]
+      .sort((a, b) => (share(b[0]) ?? 0) - (share(a[0]) ?? 0) || b[1] - a[1])
+      .map(([m]) => (share(m) === undefined ? san(m) : `${san(m)} (${Math.max(1, Math.round(100 * share(m)!))}%)`))
     return { opening: nameAt(training.all, before), state: 'left', played: san(playedFromStart[bookNowStatus.at]), book: replies }
-  }, [training, bookNowStatus, playedFromStart, trainOff, game.startFen])
+  }, [training, bookNowStatus, playedFromStart, trainOff, game.startFen, lastStats, beforeLast, play])
 
   /** Takes back the move that left the book (and anything after it), to try again. */
   const retryBook = () => {
@@ -760,33 +794,49 @@ export default function App() {
   const playAtEnd = variation.length === plan.length
   useEffect(() => {
     if (!play || !playAtEnd || gameOver || fen.split(' ')[1] !== play.bot) return
-    if (play.training && !trainOff) {
-      if (bookNowStatus?.kind === 'left') return // waiting: try again, or play on
-      const replies = bookNowStatus?.kind === 'book' ? bookReplies(play.training.lines, playedFromStart) : null
-      if (replies?.size) {
-        const move = pickBookMove(replies)
-        const timer = setTimeout(() => move && onBoardMoveRef.current(move), 600)
-        return () => clearTimeout(timer)
-      }
-    }
-    botEngine.current ??= new Engine({
-      multiPv: BOT_LINES,
-      onError: (m) => setEngineError(t('Lite engine failed to start: {error}', { error: m })),
-    })
-    const engine = botEngine.current
     let cancelled = false
     const started = Date.now()
-    void botMove(engine, fen, play.strength, game.meta).then(async (uci) => {
-      // A moment's pause, so an instant reply doesn't land before your own move has finished animating
-      const wait = 700 - (Date.now() - started)
-      if (wait > 0) await new Promise((r) => setTimeout(r, wait))
-      if (!cancelled && uci) onBoardMoveRef.current(uci)
-    })
-    return () => {
-      cancelled = true
-      engine.stop()
+    const engineMove = () => {
+      botEngine.current ??= new Engine({
+        multiPv: BOT_LINES,
+        onError: (m) => setEngineError(t('Lite engine failed to start: {error}', { error: m })),
+      })
+      void botMove(botEngine.current, fen, play.strength, game.meta).then(async (uci) => {
+        // A moment's pause, so an instant reply doesn't land before your own move has finished animating
+        const wait = 700 - (Date.now() - started)
+        if (wait > 0) await new Promise((r) => setTimeout(r, wait))
+        if (!cancelled && uci) onBoardMoveRef.current(uci)
+      })
     }
-  }, [play, playAtEnd, fen, gameOver, game.meta, trainOff, bookNowStatus, playedFromStart])
+    const cleanup = () => {
+      cancelled = true
+      botEngine.current?.stop()
+    }
+    if (!play.training) {
+      engineMove()
+      return cleanup
+    }
+    // Opening practice: book moves as players at the level choose them, then their popular moves while the
+    // statistics have enough games, then the engine
+    if (!trainOff && bookNowStatus?.kind === 'left') return // waiting: try again, or play on
+    // Book replies within the chosen opening, or any opening's once it has none (it may have transposed)
+    const inBook = !trainOff && bookNowStatus?.kind === 'book'
+    const chosen = inBook ? bookReplies(play.training.lines, playedFromStart) : null
+    const replies = chosen?.size ? chosen : inBook ? bookReplies(play.training.all, playedFromStart) : null
+    const tricky = play.training.tricky
+    const timer = setTimeout(() => {
+      void movesAt(fen, trainBand).then((stats) => {
+        if (cancelled) return
+        const move = replies?.size ? (pickHumanMove(stats, [...replies.keys()], tricky) ?? pickBookMove(replies)) : pickHumanMove(stats, null, tricky)
+        if (move) onBoardMoveRef.current(move)
+        else engineMove()
+      })
+    }, 600)
+    return () => {
+      clearTimeout(timer)
+      cleanup()
+    }
+  }, [play, playAtEnd, fen, gameOver, game.meta, trainOff, bookNowStatus, playedFromStart, trainBand])
 
   // Forced mate in the current position (live engine, or the review when live analysis is off/paused)
   const mateIn = shownScore?.mate !== undefined && Math.abs(shownScore.mate) >= 1 ? Math.round(shownScore.mate) : null
