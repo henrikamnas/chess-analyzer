@@ -1,10 +1,20 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { familyOf, linesFor, loadOpeningLines, suggestedSide, variationOf, type OpeningLine } from '../openingLines'
 import { LEVELS } from './PlayCard'
 import type { BotStrength } from '../bot'
 import { t } from '../i18n'
+import { BANDS, bandOf, lichessRating } from '../explorer'
+import { maiaRating } from '../maia'
+import { lineDifficulty, type Difficulty } from '../lineDifficulty'
 
 const linesText = (n: number) => (n === 1 ? t('1 line') : t('{n} lines', { n }))
+const pct = (x: number) => (x < 0.01 ? '<1' : String(Math.round(100 * x)))
+
+/** The difficulty as a small coloured label. */
+function DiffBadge({ d }: { d: Difficulty | undefined }) {
+  if (!d) return null
+  return <span className={`diff ${d.rating}`}>{t(d.rating)}</span>
+}
 
 export interface TrainingStart {
   selection: string // family or "family: variation"
@@ -24,6 +34,9 @@ export function OpeningPicker({ onStart }: { onStart: (s: TrainingStart) => void
   const [side, setSide] = useState<'w' | 'b'>('b')
   const [strength, setStrength] = useState<string>('1200')
   const [tricky, setTricky] = useState(false)
+  // How hard each selection is for the chosen side and level, keyed "selection|side|strength"
+  const [difficulty, setDifficulty] = useState<Map<string, Difficulty>>(new Map())
+  const working = useRef(new Set<string>())
 
   useEffect(() => {
     void loadOpeningLines().then(setAll)
@@ -53,6 +66,34 @@ export function OpeningPicker({ onStart }: { onStart: (s: TrainingStart) => void
     return [...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
   }, [all, family])
 
+  // Rates the chosen selection first, then the family and each variation, one at a time in the background
+  const diffKey = (sel: string) => `${sel}|${side}|${strength}`
+  useEffect(() => {
+    if (!all || !family) return
+    let cancelled = false
+    const level = strength === 'max' ? null : Number(strength)
+    const band = level === null ? BANDS.length : bandOf(lichessRating(level))
+    const net = (level === null ? null : maiaRating(lichessRating(level))) ?? 1900
+    const todo = [...new Set([...(selection ? [selection] : []), family, ...variations.map(([v]) => `${family}: ${v}`)])]
+    void (async () => {
+      for (const sel of todo) {
+        const key = `${sel}|${side}|${strength}`
+        if (cancelled) return
+        if (working.current.has(key)) continue
+        working.current.add(key)
+        const d = await lineDifficulty(linesFor(all, sel), side, band, net, () => cancelled)
+        if (!d) {
+          working.current.delete(key) // cancelled half-way: rate it again next time
+          return
+        }
+        setDifficulty((m) => new Map(m).set(key, d))
+      }
+    })()
+    return () => {
+      cancelled = true
+    }
+  }, [all, family, variations, selection, side, strength])
+
   const choose = (sel: string) => {
     setSelection(sel)
     setSide(suggestedSide(sel))
@@ -81,7 +122,13 @@ export function OpeningPicker({ onStart }: { onStart: (s: TrainingStart) => void
             />
             <div className="opening-list">
               {families.slice(0, 60).map(([name, n]) => (
-                <button key={name} onClick={() => setFamily(name)}>
+                <button
+                  key={name}
+                  onClick={() => {
+                    setFamily(name)
+                    setSide(suggestedSide(name))
+                  }}
+                >
                   <span>{name}</span>
                   <span className="muted">{linesText(n)}</span>
                 </button>
@@ -104,12 +151,16 @@ export function OpeningPicker({ onStart }: { onStart: (s: TrainingStart) => void
             <div className="opening-list">
               <button className={selection === family ? 'on' : ''} onClick={() => choose(family)}>
                 <span>{t('All lines')}</span>
-                <span className="muted">{linesText(linesFor(all, family).length)}</span>
+                <span className="muted">
+                  <DiffBadge d={difficulty.get(diffKey(family))} /> {linesText(linesFor(all, family).length)}
+                </span>
               </button>
               {variations.map(([v, n]) => (
                 <button key={v} className={selection === `${family}: ${v}` ? 'on' : ''} onClick={() => choose(`${family}: ${v}`)}>
                   <span>{v}</span>
-                  <span className="muted">{linesText(n)}</span>
+                  <span className="muted">
+                    <DiffBadge d={difficulty.get(diffKey(`${family}: ${v}`))} /> {linesText(n)}
+                  </span>
                 </button>
               ))}
             </div>
@@ -159,6 +210,7 @@ export function OpeningPicker({ onStart }: { onStart: (s: TrainingStart) => void
               ? t('The computer favours the moves that score best against players at that level: the lines people tend to get wrong.')
               : t('The computer picks book moves as often as players at that level play them on Lichess, and keeps playing like them while there is data.')}
           </div>
+          <DifficultyNote d={difficulty.get(diffKey(selection))} side={side} who={strength === 'max' ? t('strong players') : t('players rated about {rating}', { rating: strength })} />
           <div className="row">
             <button className="primary" onClick={() => onStart({ selection, lines, all, side, strength: strength === 'max' ? null : Number(strength), tricky })}>
               ▶ {t('Start practice')}
@@ -166,6 +218,31 @@ export function OpeningPicker({ onStart }: { onStart: (s: TrainingStart) => void
           </div>
         </div>
       )}
+    </div>
+  )
+}
+
+/** The selection's difficulty for the side: how many tricky moves, where they come, and the chance of a clean run. */
+function DifficultyNote({ d, side, who }: { d: Difficulty | undefined; side: 'w' | 'b'; who: string }) {
+  if (!d) return <div className="muted small">{t('Rating the difficulty…')}</div>
+  const n = d.tricky.length
+  return (
+    <div className="difficulty-note small">
+      <div>
+        {t('Difficulty for {who} playing {side}:', { who, side: t(side === 'w' ? 'White' : 'Black').toLowerCase() })} <DiffBadge d={d} />{' '}
+        {n === 0 ? t('no tricky moves') : n === 1 ? t('1 tricky move') : t('{n} tricky moves', { n })}
+      </div>
+      {n > 0 && (
+        <div className="muted">
+          {t('Tricky moments: {list}.', {
+            list: d.tricky
+              .slice(0, 4)
+              .map((m) => (m.after ? t('after {move} ({n}% find a good reply)', { move: m.after, n: pct(m.p) }) : t('your first move ({n}%)', { n: pct(m.p) })))
+              .join(', '),
+          })}
+        </div>
+      )}
+      <div className="muted">{t('Chance of playing the whole book line without a slip: about {n}%.', { n: pct(d.clean) })}</div>
     </div>
   )
 }

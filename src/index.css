@@ -450,23 +450,9 @@ cg-board square.last-move {
   width: 100%;
 }
 
-.famous-players {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  margin-top: 8px;
-  max-height: 96px;
-  overflow-y: auto;
-}
-
-.famous-players button {
-  padding: 2px 8px;
-  font-size: 12px;
-  border-radius: 12px;
-}
-
-.famous-players small {
-  color: var(--muted);
+.famous-player {
+  width: 100%;
+  margin-top: 6px;
 }
 
 .famous-list {
@@ -1940,4 +1926,40 @@ cg-board square.last-move {
 
 .training-note.left p {
   color: var(--mistake, #e08a2c);
+}
+
+/* ---- Opening difficulty ---- */
+
+.diff {
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 1px 5px;
+  margin-right: 4px;
+}
+.diff.easy {
+  background: color-mix(in srgb, var(--best) 25%, transparent);
+  color: var(--best);
+}
+.diff.medium {
+  background: color-mix(in srgb, var(--inaccuracy) 25%, transparent);
+  color: var(--inaccuracy);
+}
+.diff.hard {
+  background: color-mix(in srgb, var(--blunder) 25%, transparent);
+  color: var(--blunder);
+}
+
+.difficulty-note {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tricky-ahead {
+  color: var(--inaccuracy);
+}
+
+.found-it {
+  color: var(--best);
 }

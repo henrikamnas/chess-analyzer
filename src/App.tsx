@@ -30,6 +30,7 @@ import { getStoredGame, type StoredGame } from './store'
 import { brilliantMoves, isBrilliant } from './brilliant'
 import { findGreatMoves, greatText, judgeGreat, type GreatMove } from './greatMoves'
 import { findFindability, findabilityText } from './findability'
+import { findShare, TRICKY } from './lineDifficulty'
 import { bookInfo, bookMovesInLine, followBook, loadOpenings, type BookInfo, type Db as OpeningDb } from './openings'
 import { setLang, t, useLang } from './i18n'
 
@@ -741,6 +742,35 @@ export default function App() {
       live = false
     }
   }, [beforeLast, trainBand])
+  // How many players at the level find a move that works: in the position you're to move in (a warning when
+  // it's a tricky one), and where you just moved (praise when you found a tricky one)
+  const trainFens = useMemo(() => {
+    if (!training) return []
+    const chess = new Chess(game.startFen)
+    return [chess.fen(), ...playedFromStart.map((uci) => (chess.move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] }), chess.fen()))]
+  }, [training, playedFromStart, game.startFen])
+  const [shares, setShares] = useState<Map<string, number | null>>(new Map())
+  useEffect(() => {
+    if (!training || !play || trainOff) return
+    const level = play.strength
+    const net = (level === null ? null : maiaRating(lichessRating(level))) ?? 1900
+    const user = play.bot === 'w' ? 'b' : 'w'
+    let live = true
+    for (const at of [trainFens.length - 1, trainFens.length - 2, trainFens.length - 3]) {
+      if (at < 0 || trainFens[at].split(' ')[1] !== user) continue
+      const before = playedFromStart.slice(0, at)
+      if (bookStatus(training.all, before).kind !== 'book') continue
+      const chosen = bookReplies(training.lines, before)
+      const book = [...(chosen.size ? chosen : bookReplies(training.all, before)).keys()]
+      const fen = trainFens[at]
+      void findShare(trainFens.slice(Math.max(0, at - 7), at + 1), book, trainBand, net).then(
+        (f) => live && setShares((m) => (m.get(fen) === (f?.p ?? null) ? m : new Map(m).set(fen, f?.p ?? null))),
+      )
+    }
+    return () => {
+      live = false
+    }
+  }, [training, play, trainOff, trainFens, playedFromStart, trainBand])
   const trainingInfo = useMemo<TrainingInfo | undefined>(() => {
     if (!training || !bookNowStatus) return undefined
     // Named among all openings, so the way into the chosen one has names too (1. d4: Queen's Pawn Game)
@@ -756,7 +786,23 @@ export default function App() {
       last = { san: move.san, you, share: stat ? stat.share : null, score: stat ? stat.score : null }
     }
     if (trainOff) return { opening, state: 'off', last }
-    if (bookNowStatus.kind !== 'left') return { opening: bookNowStatus.kind === 'ended' ? nameAt(training.all, playedFromStart.slice(0, bookNowStatus.at)) : opening, state: bookNowStatus.kind, last }
+    if (bookNowStatus.kind !== 'left') {
+      const user = play!.bot === 'w' ? 'b' : 'w'
+      const now = trainFens.at(-1)
+      const ahead = bookNowStatus.kind === 'book' && now?.split(' ')[1] === user ? shares.get(now) : undefined
+      // Your latest move: the last one, or the one before the computer's reply
+      const mineAt = trainFens.length - (trainFens.at(-2)?.split(' ')[1] === user ? 2 : 3)
+      const found = mineAt >= 0 ? shares.get(trainFens[mineAt]) : undefined
+      const foundSan = mineAt >= 0 && found != null ? new Chess(trainFens[mineAt]).move({ from: playedFromStart[mineAt].slice(0, 2), to: playedFromStart[mineAt].slice(2, 4), promotion: playedFromStart[mineAt][4] }).san : undefined
+      return {
+        opening: bookNowStatus.kind === 'ended' ? nameAt(training.all, playedFromStart.slice(0, bookNowStatus.at)) : opening,
+        state: bookNowStatus.kind,
+        last,
+        who: play!.strength === null ? t('strong players') : t('players rated about {rating}', { rating: play!.strength }),
+        ahead: ahead != null && ahead < TRICKY ? ahead : undefined,
+        found: found != null && found < TRICKY ? { san: foundSan!, p: found } : undefined,
+      }
+    }
     // Name the move that left the book and the book moves there, in SAN
     const before = playedFromStart.slice(0, bookNowStatus.at)
     const chess = new Chess(game.startFen)
@@ -768,7 +814,7 @@ export default function App() {
       .sort((a, b) => (share(b[0]) ?? 0) - (share(a[0]) ?? 0) || b[1] - a[1])
       .map(([m]) => (share(m) === undefined ? san(m) : `${san(m)} (${Math.max(1, Math.round(100 * share(m)!))}%)`))
     return { opening: nameAt(training.all, before), state: 'left', played: san(playedFromStart[bookNowStatus.at]), book: replies }
-  }, [training, bookNowStatus, playedFromStart, trainOff, game.startFen, lastStats, beforeLast, play])
+  }, [training, bookNowStatus, playedFromStart, trainOff, game.startFen, lastStats, beforeLast, play, trainFens, shares])
 
   /** Takes back the move that left the book (and anything after it), to try again. */
   const retryBook = () => {

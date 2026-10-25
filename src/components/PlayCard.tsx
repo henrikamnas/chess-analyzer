@@ -28,6 +28,11 @@ export interface TrainingInfo {
   book?: string[] // the book moves there (SAN, with how often they're played)
   /** The last move against what players at the level play: share of games and the mover's score (0–1). */
   last?: { san: string; you: boolean; share: number | null; score: number | null }
+  who?: string // the players the shares below are for, e.g. "players rated about 1200"
+  /** You're to move in a position where few players at the level find a move that works (the share). */
+  ahead?: number
+  /** Your latest move was one few players at the level find. */
+  found?: { san: string; p: number }
 }
 
 interface SetupProps {
@@ -189,6 +194,16 @@ export function PlayCard({ play, fen, atEnd, onResume, onStop, training, onRetry
                     share: pct(training.last.share),
                     score: pct(training.last.score ?? 0.5),
                   })}
+            </p>
+          )}
+          {training.found && (
+            <p className="small found-it">
+              👏 {t('Well found: only {n}% of {who} find {move} or another good move there.', { n: pct(training.found.p), who: training.who!, move: training.found.san })}
+            </p>
+          )}
+          {training.ahead !== undefined && atEnd && chess.turn() !== play.bot && (
+            <p className="small tricky-ahead">
+              ⚠ {t('A tricky one: only {n}% of {who} find a good move here.', { n: pct(training.ahead), who: training.who! })}
             </p>
           )}
         </div>

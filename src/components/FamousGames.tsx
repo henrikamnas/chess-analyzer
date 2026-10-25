@@ -102,16 +102,14 @@ export function FamousGames({ onLoad }: { onLoad: (pgn: string) => void }) {
         onChange={(e) => setQuery(e.target.value)}
         spellCheck={false}
       />
-      <div className="famous-players" role="group" aria-label={t('Players')}>
-        <button className={player === null ? 'on' : ''} onClick={() => setPlayer(null)}>
-          {t('All')} <small>{games.length}</small>
-        </button>
+      <select className="famous-player" value={player ?? ''} onChange={(e) => setPlayer(e.target.value || null)} aria-label={t('Players')}>
+        <option value="">{t('All players ({n} games)', { n: games.length })}</option>
         {players.map(([name, n]) => (
-          <button key={name} className={player === name ? 'on' : ''} onClick={() => setPlayer(player === name ? null : name)}>
-            {name} <small>{n}</small>
-          </button>
+          <option key={name} value={name}>
+            {name} ({n})
+          </option>
         ))}
-      </div>
+      </select>
       {shown.length === 0 ? (
         <p className="muted">{t('No games found.')}</p>
       ) : (
