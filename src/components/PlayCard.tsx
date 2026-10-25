@@ -132,12 +132,13 @@ interface CardProps {
   training?: TrainingInfo
   onRetry?: () => void // take back the move that left the book
   onPlayOn?: () => void // carry on without the book
+  onUndo?: () => void // take back your last move (absent before you've made one)
 }
 
 const pct = (x: number) => (x < 0.01 ? '<1' : String(Math.round(100 * x)))
 
 /** While playing: whose turn it is, the result when the game ends, and a button to stop and look at the moves. */
-export function PlayCard({ play, fen, atEnd, onResume, onStop, training, onRetry, onPlayOn }: CardProps) {
+export function PlayCard({ play, fen, atEnd, onResume, onStop, training, onRetry, onPlayOn, onUndo }: CardProps) {
   const chess = new Chess(fen)
   const human = play.bot === 'w' ? 'b' : 'w'
   const result = chess.isCheckmate()
@@ -218,6 +219,11 @@ export function PlayCard({ play, fen, atEnd, onResume, onStop, training, onRetry
         {!atEnd && !result && (
           <button className="primary" onClick={onResume}>
             ⏭ {t('Back to the game')}
+          </button>
+        )}
+        {onUndo && (
+          <button onClick={onUndo} title={t('Take back your last move')}>
+            ↶ {t('Undo')}
           </button>
         )}
         <button className={result ? 'primary' : ''} onClick={onStop}>

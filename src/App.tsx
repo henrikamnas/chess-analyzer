@@ -844,6 +844,20 @@ export default function App() {
     setPlan(plan.slice(0, keep))
   }
 
+  // Against the computer: takes back your last move, and the computer's reply to it if it has made one
+  const undoTo = useMemo(() => {
+    if (!play) return null
+    const human = play.bot === 'w' ? 'b' : 'w'
+    const firstMover = mainFen.split(' ')[1]
+    for (let i = plan.length - 1; i >= 0; i--) if ((i % 2 === 0) === (firstMover === human)) return i
+    return null
+  }, [play, plan, mainFen])
+  const undo = () => {
+    if (undoTo === null) return
+    setVariation(plan.slice(0, undoTo))
+    setPlan(plan.slice(0, undoTo))
+  }
+
   /** Back to the game a game against the computer was played from, at the move it started. */
   const backToOrigin = () => {
     if (!origin) return
@@ -1465,6 +1479,7 @@ export default function App() {
               training={trainingInfo}
               onRetry={retryBook}
               onPlayOn={() => setTrainOff(true)}
+              onUndo={undoTo === null ? undefined : undo}
             />
           )}
 

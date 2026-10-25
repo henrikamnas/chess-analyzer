@@ -560,6 +560,8 @@ export const SV: Record<string, string> = {
   You: 'Du',
   '{move} is not in the book here. Book moves: {moves}.': '{move} finns inte i teorin här. Teoridrag: {moves}.',
   'Try again': 'Försök igen',
+  'Undo': 'Ångra',
+  'Take back your last move': 'Ta tillbaka ditt senaste drag',
   'Play on from here': 'Spela vidare härifrån',
   'End of the book line{name}. The computer plays on from here ({strength}).': 'Slut på teorin{name}. Datorn spelar vidare härifrån ({strength}).',
   'Off book. The computer plays on ({strength}).': 'Utanför teorin. Datorn spelar vidare ({strength}).',
