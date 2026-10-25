@@ -12,7 +12,7 @@ import { MoveList } from './components/MoveList'
 import { ImportPanel } from './components/ImportPanel'
 import { EngineLines } from './components/EngineLines'
 import { PositionChat } from './components/PositionChat'
-import { HumanMoves } from './components/HumanMoves'
+import { HumanMoves, type HumanTop } from './components/HumanMoves'
 import { CommentaryCard } from './components/CommentaryCard'
 import { loadCommentary, type Commentary } from './commentary'
 import { Captured } from './components/Captured'
@@ -209,9 +209,10 @@ const BADGE_COLOR: Record<Label, [string, string]> = {
   blunder: ['#d9453b', '#ffffff'],
 }
 
+const HUMAN_BADGE: [string, string] = ['#8a5cd6', '#ffffff']
+
 /** A pill-shaped badge drawn on an arrow (chessground draws it in a 100×100 box the size of a square). */
-function arrowBadge(text: string, label: Label) {
-  const [bg, fg] = BADGE_COLOR[label]
+function arrowBadge(text: string, [bg, fg]: [string, string]) {
   const w = Math.min(96, 30 + text.length * 17)
   return `<rect x="${50 - w / 2}" y="31" width="${w}" height="38" rx="19" fill="${bg}" stroke="rgba(0,0,0,.35)" stroke-width="2"/>
 <text x="50" y="58" text-anchor="middle" font-size="28" font-weight="700" font-family="system-ui, sans-serif" fill="${fg}">${text}</text>`
@@ -1192,9 +1193,16 @@ export default function App() {
 
   // --- Board annotations ---------------------------------------------------
 
+  const [humanTop, setHumanTop] = useState<HumanTop | null>(null)
   const shapes = useMemo(() => {
     const out: DrawShape[] = []
     if (play) return out
+    // The move a human at the chosen rating would most likely play, under the engine arrows, with its share
+    if (humanTop?.fen === fen) {
+      const arrow = shape(humanTop.uci, 'human')
+      arrow.customSvg = { html: arrowBadge(`${Math.round(humanTop.p * 100)}%`, HUMAN_BADGE), center: 'label' }
+      out.push(arrow)
+    }
     // Arrows for the engine lines, coloured by how they compare with the best line; drawn worst first so
     // the best arrow ends up on top where they overlap.
     liveLines
@@ -1206,7 +1214,7 @@ export default function App() {
         const arrow = shape(line.pv[0], LINE_BRUSH[label], i === 0 ? undefined : 7)
         // Alternatives get a badge on the arrow saying how much worse they are than the best line.
         const badge = i > 0 ? lineCost(liveLines[0].score, line.score, fen.split(' ')[1] === 'w').badge : null
-        if (badge) arrow.customSvg = { html: arrowBadge(badge, label), center: 'label' }
+        if (badge) arrow.customSvg = { html: arrowBadge(badge, BADGE_COLOR[label]), center: 'label' }
         out.push(arrow)
       })
     if (verdict && !inVariation && verdictPly === ply && !isBookMove) {
@@ -1221,7 +1229,7 @@ export default function App() {
       if (glyph) out.push({ orig: sideVerdict.ply.uci.slice(2, 4) as Key, label: { text: glyph, fill } })
     }
     return out
-  }, [liveLines, liveLabels, fen, verdict, verdictPly, inVariation, game.plies, ply, isBookMove, sideVerdict, varExplainOn, varIsBook, brilliant, great, play])
+  }, [liveLines, liveLabels, fen, verdict, verdictPly, inVariation, game.plies, ply, isBookMove, sideVerdict, varExplainOn, varIsBook, brilliant, great, play, humanTop])
 
   // --- Render --------------------------------------------------------------
 
@@ -1609,6 +1617,7 @@ export default function App() {
               <HumanMoves
                 history={[game.startFen, ...game.plies.slice(0, ply).map((p) => p.fenAfter), ...varLine.map((v) => v.fen)].slice(-8)}
                 onPlay={onEngineLine}
+                onTop={setHumanTop}
               />
             )}
             <PositionChat context={positionContext} />

@@ -40,13 +40,16 @@ export function Board({ fen, orientation, lastMove, shapes, onMove, interactive 
       highlight: { lastMove: true, check: true },
       drawable: {
         enabled: true,
-        // Extra arrow colours for engine lines that are worse than the best one (see LINE_BRUSH in App).
+        // Extra arrow colours for engine lines that are worse than the best one (see LINE_BRUSH in App), and
+        // for the human move.
         // Chessground deep-merges these into its default brushes, so only the additions are listed.
         brushes: {
           lineGood: { key: 'lg', color: '#7fb069', opacity: 0.6, lineWidth: 7 },
           lineInaccuracy: { key: 'li', color: '#e6b53c', opacity: 0.7, lineWidth: 7 },
           lineMistake: { key: 'lm', color: '#e08a2c', opacity: 0.75, lineWidth: 7 },
           lineBlunder: { key: 'lb', color: '#d9453b', opacity: 0.8, lineWidth: 7 },
+          // The move a human at the chosen rating would most likely play (HumanMoves)
+          human: { key: 'hu', color: '#8a5cd6', opacity: 0.7, lineWidth: 9 },
         } as unknown as DrawBrushes,
       },
       movable: { free: false, showDests: true },

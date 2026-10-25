@@ -17,11 +17,18 @@ function storedLevel(): number | null {
   }
 }
 
+export interface HumanTop {
+  fen: string
+  uci: string
+  p: number
+}
+
 /**
  * Next to the engine lines: the moves a human of the chosen rating would most likely play here (Maia), so you
- * can see what's natural at that level as well as what's best. Tapping a move plays it on the board.
+ * can see what's natural at that level as well as what's best. Tapping a move plays it on the board; the most
+ * likely one is reported through `onTop` for an arrow on the board.
  */
-export function HumanMoves({ history, onPlay }: { history: string[]; onPlay: (uci: string[]) => void }) {
+export function HumanMoves({ history, onPlay, onTop }: { history: string[]; onPlay: (uci: string[]) => void; onTop: (top: HumanTop | null) => void }) {
   const [level, setLevel] = useState<number | null>(storedLevel)
   const fen = history[history.length - 1]
   const [moves, setMoves] = useState<{ fen: string; level: number; list: { uci: string; p: number }[] } | null>(null)
@@ -58,6 +65,13 @@ export function HumanMoves({ history, onPlay }: { history: string[]; onPlay: (uc
   }
 
   const shown = moves && moves.fen === fen && moves.level === level ? moves.list.filter((m) => m.p >= 0.05).slice(0, 4) : null
+  const top = level !== null ? shown?.[0] : undefined
+  useEffect(() => {
+    onTop(top ? { fen, uci: top.uci, p: top.p } : null)
+    // onTop is a state setter; the move shown is what matters
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fen, top?.uci, top?.p])
+  useEffect(() => () => onTop(null), [onTop])
   return (
     <div className="human-moves">
       <select value={level ?? ''} onChange={(e) => choose(e.target.value)} aria-label={t('Human moves')} title={t('What a human of this rating would most likely play here (Maia)')}>

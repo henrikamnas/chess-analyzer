@@ -1979,6 +1979,8 @@ cg-board square.last-move {
 
 .human-list {
   display: flex;
+  border-left: 3px solid #8a5cd6;
+  padding-left: 6px;
   flex-wrap: wrap;
   gap: 2px 6px;
 }
