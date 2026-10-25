@@ -1,0 +1,96 @@
+{
+  "id": "fischer-spassky-1972-g6",
+  "intro": {
+    "en": "Reykjavik, 1972, game 6 of the World Championship match between Boris Spassky and Bobby Fischer. Fischer, who had almost always opened with 1.e4, surprised everyone with 1.c4, and the game turned into a Queen's Gambit Declined. There is no early tactic here: watch how Fischer slowly targets Black's centre pawns, trades the right pieces and then breaks through on the kingside.",
+    "sv": "Reykjavik 1972, parti 6 i VM-matchen mellan Boris Spasskij och Bobby Fischer. Fischer, som nästan alltid hade öppnat med 1.e4, överraskade alla med 1.c4, och partiet övergick i avböjd damgambit. Här finns ingen tidig taktik: se hur Fischer långsamt riktar in sig på Svarts centrumbönder, byter rätt pjäser och sedan bryter igenom på kungsflygeln."
+  },
+  "comments": [
+    {
+      "ply": 13,
+      "en": "7...b6 is the Tartakower Defence of the Queen's Gambit Declined. Black plans to develop the queen's bishop on the long diagonal or on e6 and to free his game with ...c5. It is one of the most solid systems, and Spassky knew it well.",
+      "sv": "7...b6 är Tartakowerförsvaret i avböjd damgambit. Svart planerar att utveckla damlöparen på den långa diagonalen eller på e6 och att befria spelet med ...c5. Det är ett av de mest solida systemen, och Spasskij kände det väl."
+    },
+    {
+      "ply": 23,
+      "en": "After the exchanges Black has pawns on c5 and d5 side by side. They control the centre, but they can become a target: the rook on the c-file, the queen (soon on a3) and later the bishop all aim at them.",
+      "sv": "Efter bytena har Svart bönder på c5 och d5 bredvid varandra. De kontrollerar centrum, men kan bli ett mål: tornet på c-linjen, damen (snart på a3) och senare löparen siktar alla mot dem."
+    },
+    {
+      "ply": 29,
+      "en": "After 15...bxc5 Black has the classic 'hanging pawns' on c5 and d5, with no pawns beside them to protect them. They are strong if they can advance safely, but weak if the opponent can fix them and attack them with pieces.",
+      "sv": "Efter 15...bxc5 har Svart de klassiska 'hängande bönderna' på c5 och d5, utan bönder bredvid som kan skydda dem. De är starka om de kan avancera säkert, men svaga om motståndaren kan låsa fast dem och angripa dem med pjäser."
+    },
+    {
+      "ply": 36,
+      "en": "19.Nxe6 gives up the knight for Black's bishop, the piece that defended the light squares around d5. After the recapture Black's pawn structure is stiffer, and White's light-squared bishop has no opponent.",
+      "sv": "19.Nxe6 ger bort springaren mot Svarts löpare, den pjäs som försvarade de vita rutorna runt d5. Efter återtagningen är Svarts bondestruktur stelare, och Vits vitfältslöpare saknar motståndare."
+    },
+    {
+      "ply": 38,
+      "en": "20.e4! attacks the pawn on d5 at once, and the engine agrees it is the best move. White wants to break up the centre before Black can consolidate.",
+      "sv": "20.e4! anfaller d5-bonden direkt, och motorn håller med om att det är det bästa draget. Vit vill bryta upp centrum innan Svart hinner konsolidera."
+    },
+    {
+      "ply": 39,
+      "en": "20...d4? is the critical mistake. The pawn becomes a protected passed pawn, but it releases the pressure on White's e4 pawn, so f4 and e5 can follow, and it opens the diagonal from c4 towards e6. The engine preferred 20...dxe4, keeping the position open for Black's pieces.",
+      "sv": "20...d4? är det kritiska misstaget. Bonden blir en skyddad fribonde, men trycket mot Vits e4-bonde försvinner, så att f4 och e5 kan följa, och diagonalen från c4 mot e6 öppnas. Motorn föredrog 20...dxe4, som håller ställningen öppen för Svarts pjäser.",
+      "line": {
+        "from": "before",
+        "san": [
+          "dxe4",
+          "Rc4",
+          "Qf5",
+          "Rfc1"
+        ]
+      }
+    },
+    {
+      "ply": 40,
+      "en": "21.f4 prepares e5 and f5. With the centre closed by Black's own d4 pawn, Black's pieces have little room on the kingside, where Fischer is about to attack.",
+      "sv": "21.f4 förbereder e5 och f5. När centrum är stängt av Svarts egen d4-bonde har de svarta pjäserna lite utrymme på kungsflygeln, där Fischer snart anfaller."
+    },
+    {
+      "ply": 43,
+      "en": "22...Rb8? is a serious error. The knight belonged on d5 via b6, where it would be a strong central piece supporting d4, covering e3 and f4; the engine's choice was 22...Nb6. After the rook move White's bishop comes to c4, aiming at e6.",
+      "sv": "22...Rb8? är ett allvarligt fel. Springaren hörde hemma på d5 via b6, där den hade varit en stark centralpjäs som stöder d4 och täcker e3 och f4; motorns val var 22...Nb6. Efter tornflytten kommer den vita löparen till c4 och siktar på e6.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Nb6",
+          "Qd3",
+          "Nd5",
+          "Qe4"
+        ]
+      }
+    },
+    {
+      "ply": 47,
+      "en": "24...Nf8 pulls the knight back to guard the kingside, and the black pieces now do nothing but defend. The engine preferred the counterattack 24...Rxb2: when you are being squeezed, active play is usually the better defence.",
+      "sv": "24...Nf8 drar tillbaka springaren för att vakta kungsflygeln, och de svarta pjäserna gör nu inget annat än att försvara. Motorn föredrog motangreppet 24...Rxb2: när man blir hårt pressad är aktivt spel oftast det bättre försvaret."
+    },
+    {
+      "ply": 50,
+      "en": "26.f5 opens the f-file. Engines also like the preparatory 26.a4, but the plan is the same: open lines towards the king while Black's pieces are tied to the queenside and the centre.",
+      "sv": "26.f5 öppnar f-linjen. Motorn gillar också det förberedande 26.a4, men planen är densamma: öppna linjer mot kungen medan de svarta pjäserna är bundna vid damflygeln och centrum."
+    },
+    {
+      "ply": 60,
+      "en": "31.e6 pushes the passed pawn further. It cuts Black's position in two, the bishop on c4 protects it, and the black rooks have to watch it all the time.",
+      "sv": "31.e6 för fribonden ännu längre fram. Den delar den svarta ställningen i två delar, löparen på c4 skyddar den, och de svarta tornen måste hela tiden hålla koll på den."
+    },
+    {
+      "ply": 74,
+      "en": "38.Rxf6! gives up the exchange to break open the king's position. The engine agrees it is the strongest move: once the knight is gone, the black king has lost its last minor-piece defender, and Black's rooks and queen are too far away to help.",
+      "sv": "38.Rxf6! offrar kvaliteten för att bryta upp kungsställningen. Motorn håller med om att det är det starkaste draget: när springaren är borta har den svarta kungen förlorat sin sista lätta pjäs i försvaret, och Svarts torn och dam står för långt bort för att hjälpa till."
+    },
+    {
+      "ply": 80,
+      "en": "41.Qf4 and Spassky resigned. The queen joins the rook against h6, and the engine finds a forced mate. Spassky was reported to have joined the audience in applauding Fischer's play.",
+      "sv": "41.Qf4 och Spasskij gav upp. Damen förenar sig med tornet mot h6, och motorn hittar en forcerad matt. Det rapporterades att Spasskij själv applåderade Fischers spel tillsammans med publiken."
+    }
+  ],
+  "summary": {
+    "en": "Fischer won without any early tactics: he exchanged the bishop that defended Black's light squares, attacked the hanging pawns and used the moment when 20...d4 closed the centre to switch to a kingside attack. Black's pieces ended up passive, and 22...Rb8 instead of bringing the knight to d5 made it worse. A model game for how to play against hanging pawns and how to turn small advantages into an attack.",
+    "sv": "Fischer vann utan någon tidig taktik: han bytte bort löparen som försvarade Svarts vita rutor, angrep de hängande bönderna och utnyttjade att 20...d4 stängde centrum till att gå över till kungsangrepp. De svarta pjäserna blev passiva, och 22...Rb8 i stället för att föra springaren till d5 gjorde det värre. Ett mönsterparti för hur man spelar mot hängande bönder och omvandlar små fördelar till ett angrepp."
+  }
+}

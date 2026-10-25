@@ -1,0 +1,121 @@
+{
+  "id": "carlsen-karjakin-2016-tb4",
+  "intro": {
+    "en": "New York, 30 November 2016: the World Championship match between Magnus Carlsen and Sergey Karjakin was level after twelve classical games, so it went to a rapid tiebreak. Carlsen needed only a draw in this fourth rapid game, but played for a win with White. Watch how he slowly builds pressure, how Karjakin misses his best chance for counterplay, and how the game ends with a queen sacrifice.",
+    "sv": "New York, 30 november 2016: VM-matchen mellan Magnus Carlsen och Sergej Karjakin stod lika efter tolv klassiska partier och avgjordes därför i snabbschack. Carlsen behövde bara remi i det fjärde snabbpartiet, men spelade på vinst med de vita pjäserna. Se hur han långsamt bygger upp trycket, hur Karjakin missar sin bästa chans till motspel och hur partiet slutar med ett damoffer."
+  },
+  "comments": [
+    {
+      "ply": 8,
+      "en": "5.f3 is the Prins Variation of the Sicilian. White protects e4 with a pawn so that c4 can follow, setting up pawns on c4 and e4 that clamp down on d5. It leads to a calm, positional game rather than a sharp theoretical fight.",
+      "sv": "5.f3 är Prinsvarianten i sicilianskt. Vit skyddar e4 med en bonde så att c4 kan följa, och bönderna på c4 och e4 håller sedan ett grepp om d5. Det leder till ett lugnt, positionellt parti snarare än en skarp teoretisk strid."
+    },
+    {
+      "ply": 12,
+      "en": "With pawns on c4 and e4 White controls d5, the key square in this structure. Black answers by gaining space on the queenside with the a-pawn, trying to create a weakness in White's queenside pawns.",
+      "sv": "Med bönder på c4 och e4 kontrollerar Vit d5, den viktigaste rutan i den här strukturen. Svart svarar med att vinna utrymme på damflygeln med a-bonden, för att försöka skapa en svaghet bland Vits damflygelbönder."
+    },
+    {
+      "ply": 35,
+      "en": "18...Bc6 is an inaccuracy. The engine preferred 18...Nf4, putting the knight on the strong f4 square where it presses on White's kingside. On c6 the bishop does less, and White gets a lasting edge.",
+      "sv": "18...Bc6 är en onoggrannhet. Motorn föredrog 18...Nf4, som ställer springaren på den starka rutan f4 där den trycker mot Vits kungsflygel. På c6 gör löparen mindre, och Vit får en bestående fördel.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Nf4",
+          "Rfd1",
+          "Qa5",
+          "Bxf4",
+          "Qxb4"
+        ]
+      }
+    },
+    {
+      "ply": 43,
+      "en": "22...Ra3 activates the rook, but the engine preferred 22...Bg5 to trade off Black's dark-squared bishop. With Black's pawns on d6 and e5, that bishop is hemmed in by its own pawns, a classic 'bad bishop', and exchanging it would have eased Black's game.",
+      "sv": "22...Ra3 aktiverar tornet, men motorn föredrog 22...Bg5 för att byta bort Svarts svartfältslöpare. Med Svarts bönder på d6 och e5 är den löparen instängd av de egna bönderna, en klassisk 'dålig löpare', och ett byte hade lättat på Svarts spel."
+    },
+    {
+      "ply": 55,
+      "en": "Black has been making small concessions for several moves, and 28...Bf8 is another. The bishop retreats to defend, while White is ready to take on h4, win a pawn and half-open the g-file.",
+      "sv": "Svart har gjort små eftergifter i flera drag, och 28...Bf8 är ännu en. Löparen backar för att försvara, medan Vit är redo att slå på h4, vinna en bonde och halvöppna g-linjen."
+    },
+    {
+      "ply": 58,
+      "en": "30.Bxf4 gives up the bishop for the knight to simplify. It is practical in a rapid game, but the engine preferred 30.Bf5, keeping more pieces and a bigger advantage.",
+      "sv": "30.Bxf4 ger bort löparen mot springaren för att förenkla. Det är praktiskt i ett snabbparti, men motorn föredrog 30.Bf5, som behåller fler pjäser och en större fördel.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Bf5",
+          "Rb8",
+          "Kh1"
+        ]
+      }
+    },
+    {
+      "ply": 67,
+      "en": "34...Rxb3? grabs a pawn but misses Black's best chance. The engine's choice was 34...Ra1, offering a rook trade and then breaking with ...d5, which would have brought Black close to equality. After the capture White's knight jumps to d4 and the pressure returns.",
+      "sv": "34...Rxb3? tar en bonde men missar Svarts bästa chans. Motorns val var 34...Ra1, som erbjuder tornbyte och sedan bryter med ...d5, vilket hade fört Svart nära utjämning. Efter slaget hoppar den vita springaren till d4 och trycket återvänder.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Ra1",
+          "h5",
+          "d5",
+          "exd5",
+          "Qf6"
+        ]
+      }
+    },
+    {
+      "ply": 76,
+      "en": "39.h5 pushes the h-pawn forward. It cramps Black's king and takes the g6 square away, which will matter in the final position. White has the safer king and more active pieces, and Black has to defend for a long time.",
+      "sv": "39.h5 för fram h-bonden. Den tränger ihop den svarta kungen och tar bort rutan g6, vilket får betydelse i slutställningen. Vit har den säkrare kungen och aktivare pjäser, och Svart får försvara sig länge."
+    },
+    {
+      "ply": 88,
+      "en": "45.Rf5 brings the rook to the kingside, attacking the queen on f6 and the pawn on f4. White's queen and rooks are gathering around Black's king, while Black's pieces are scattered.",
+      "sv": "45.Rf5 för tornet till kungsflygeln, anfaller damen på f6 och bonden på f4. Vits dam och torn samlas runt den svarta kungen, medan de svarta pjäserna är utspridda."
+    },
+    {
+      "ply": 92,
+      "en": "47.Qxf4 wins the pawn. White is clearly winning now, but Black still has one trick in mind: getting the queen and rook close to White's king.",
+      "sv": "47.Qxf4 vinner bonden. Vit står nu klart till vinst, men Svart har fortfarande ett trick i tankarna: att få damen och tornet nära den vita kungen."
+    },
+    {
+      "ply": 95,
+      "en": "48...Qf2? goes for counterplay against White's king, but it walks into a forced mate. The engine's choice was to trade queens with 48...Qxf4, which would have left Black in a very difficult endgame, but without a forced mate.",
+      "sv": "48...Qf2? söker motspel mot den vita kungen, men går rakt in i en forcerad matt. Motorns val var att byta damer med 48...Qxf4, vilket hade gett Svart ett mycket svårt slutspel, men utan forcerad matt.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qxf4",
+          "Rxf4",
+          "Bf6"
+        ]
+      }
+    },
+    {
+      "ply": 97,
+      "en": "49...Kh7 lets the queen in. Blocking with the bishop on f8 would have held out a few moves longer, but White has mate in either case.",
+      "sv": "49...Kh7 släpper in damen. Att blockera med löparen på f8 hade hållit ut några drag till, men Vit har matt i båda fallen."
+    },
+    {
+      "ply": 98,
+      "en": "50.Qh6+!! and Karjakin resigned. If the king takes, the rook goes to h8 with mate: the rook on f5 covers g5 and protects the pawn on h5, the pawn covers g6, and Black's own pawn blocks g7. If the g-pawn takes, the rook takes on f7 with mate: it covers g7, the other rook covers g8 and h8, and the pawn on h5 covers g6.",
+      "sv": "50.Qh6+!! och Karjakin gav upp. Om kungen slår går tornet till h8 med matt: tornet på f5 täcker g5 och skyddar bonden på h5, bonden täcker g6 och Svarts egen bonde blockerar g7. Om g-bonden slår tar tornet på f7 med matt: det täcker g7, det andra tornet täcker g8 och h8, och bonden på h5 täcker g6.",
+      "line": {
+        "from": "after",
+        "san": [
+          "Kxh6",
+          "Rh8#"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "en": "Carlsen kept his title with a typical game: a quiet opening, a small lasting advantage and patient pressure until his opponent cracked. Karjakin's best chance was the active 34...Ra1, and in a difficult position his attempt at counterplay with 48...Qf2 allowed the finish. The final queen sacrifice shows how a pawn on h5 and two rooks near the king can be enough for mate.",
+    "sv": "Carlsen behöll sin titel med ett typiskt parti: en lugn öppning, en liten bestående fördel och tålmodigt tryck tills motståndaren sprack. Karjakins bästa chans var det aktiva 34...Ra1, och i en svår ställning tillät hans försök till motspel med 48...Qf2 avslutningen. Det avslutande damoffret visar hur en bonde på h5 och två torn nära kungen kan räcka till matt."
+  }
+}

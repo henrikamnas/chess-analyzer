@@ -26,6 +26,7 @@ export interface GameMeta {
   site?: string
   platform?: Platform // where the game was played, from the Site header
   timeClass?: TimeClass // from the TimeControl header
+  famousId?: string // a famous game from the app's collection (FamousId header), which may have commentary
 }
 
 function detectPlatform(site?: string): Platform | undefined {
@@ -116,6 +117,7 @@ export function parseGame(pgn: string): Game {
       date: h.Date ?? h.UTCDate ?? undefined,
       event: h.Event ?? undefined,
       opening: h.Opening ?? openingFromEco(h.ECOUrl),
+      famousId: h.FamousId ?? undefined,
       site: h.Site ?? h.Link ?? undefined,
       platform: detectPlatform(h.Site ?? h.Link),
       timeClass: detectTimeClass(h.TimeControl, detectPlatform(h.Site ?? h.Link)),

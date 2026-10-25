@@ -1,0 +1,152 @@
+{
+  "id": "opera-game",
+  "intro": {
+    "en": "Paris, 1858: Paul Morphy plays a casual game in a box at the opera against the Duke of Brunswick and Count Isouard, who consult together on Black's moves. Watch how quickly Morphy gets his pieces out while Black spends time on a bishop trade and pawn moves. Every tempo Black loses is used to attack the uncastled king in the centre, and it ends with a queen sacrifice and a back-rank mate.",
+    "sv": "Paris 1858: Paul Morphy spelar ett vänskapsparti i en operaloge mot hertigen av Braunschweig och greve Isouard, som rådgör med varandra om de svarta dragen. Lägg märke till hur snabbt Morphy får ut sina pjäser medan Svart lägger tid på ett löparbyte och bondedrag. Varje tempo Svart förlorar används till att anfalla den orockerade kungen i centrum, och det hela slutar med ett damoffer och matt på baslinjen."
+  },
+  "comments": [
+    {
+      "ply": 3,
+      "en": "2...d6 is the Philidor Defence. It holds the e5 pawn solidly, but it is passive: the pawn on d6 shuts in the bishop on f8, and White gets more space in the centre. The engine prefers the natural 2...Nc6, which develops a piece and defends e5 at the same time.",
+      "sv": "2...d6 är Philidors försvar. Det håller e5-bonden stabilt men är passivt: bonden på d6 stänger in löparen på f8, och Vit får mer utrymme i centrum. Motorn föredrar det naturliga 2...Nc6, som utvecklar en pjäs och skyddar e5 på samma gång."
+    },
+    {
+      "ply": 7,
+      "en": "4...Bxf3 gives up the bishop for the knight, and White recaptures with the queen, which comes into play at once and eyes the weak f7 pawn. The engine preferred 4...Nc6, bringing out a piece and keeping the bishop.",
+      "sv": "4...Bxf3 ger bort löparen mot springaren, och Vit tar tillbaka med damen, som kommer i spel direkt och siktar på den svaga bonden på f7. Motorn föredrog 4...Nc6, som utvecklar en pjäs och behåller löparen."
+    },
+    {
+      "ply": 10,
+      "en": "6.Bc4 develops with a threat: the bishop and queen now both aim at f7, the weakest point near Black's king. The engine actually liked 6.Qb3 somewhat more, attacking f7 and b7 at once, but Morphy's move is entirely in the spirit of the position: pieces out first.",
+      "sv": "6.Bc4 utvecklar med hot: löparen och damen siktar nu båda på f7, den svagaste punkten nära den svarta kungen. Motorn gillade faktiskt 6.Qb3 en del mer, som anfaller f7 och b7 på en gång, men Morphys drag är helt i ställningens anda: ut med pjäserna först."
+    },
+    {
+      "ply": 11,
+      "en": "6...Nf6? is the first real mistake. It develops, but it does nothing to guard f7, and now 7.Qb3 hits f7 and b7 at the same time. The engine's choice was 6...Qf6, covering f7 and offering to trade queens, which takes much of the sting out of White's attack.",
+      "sv": "6...Nf6? är det första riktiga misstaget. Draget utvecklar, men det gör ingenting för att skydda f7, och nu träffar 7.Qb3 både f7 och b7 samtidigt. Motorns val var 6...Qf6, som täcker f7 och erbjuder dambyte, vilket tar udden av mycket av det vita anfallet.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qf6",
+          "Qb3",
+          "Nd7",
+          "Qxb7",
+          "Rb8",
+          "Qa6",
+          "Qxa6",
+          "Bxa6"
+        ]
+      }
+    },
+    {
+      "ply": 14,
+      "en": "Here comes a famous decision: instead of taking on b7, Morphy simply brings out another piece. The traditional story praises this as development over pawn-grabbing, and it is a good lesson. Still, the engine slightly prefers 8.Qxb7, since after the queen trade White is simply a clean pawn up.",
+      "sv": "Här kommer ett berömt beslut: i stället för att ta på b7 utvecklar Morphy bara ännu en pjäs. Den traditionella berättelsen hyllar detta som utveckling före bondeplock, och det är en bra läxa. Motorn föredrar ändå 8.Qxb7 en aning, eftersom Vit efter dambytet helt enkelt har en ren merbonde.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qxb7",
+          "Qb4+",
+          "Qxb4",
+          "Bxb4+",
+          "Bd2"
+        ]
+      }
+    },
+    {
+      "ply": 16,
+      "en": "9.Bg5 pins the knight on f6 to the queen on e7. Black's pieces are now tied up: the queen guards the knight, the king is still in the centre, and the bishop and rook on the kingside have not moved.",
+      "sv": "9.Bg5 binder springaren på f6 mot damen på e7. De svarta pjäserna är nu fastlåsta: damen skyddar springaren, kungen står kvar i centrum och löparen och tornet på kungsflygeln har inte rört sig."
+    },
+    {
+      "ply": 17,
+      "en": "9...b5? is a serious mistake. Black tries to drive away the bishop with a pawn instead of getting the king to safety, and it opens lines towards his own king. 9...Kd8 was the engine's choice, walking the king towards the queenside away from the open centre.",
+      "sv": "9...b5? är ett allvarligt misstag. Svart försöker driva bort löparen med en bonde i stället för att sätta kungen i säkerhet, och det öppnar linjer mot den egna kungen. 9...Kd8 var motorns val: kungen går mot damflygeln, bort från det öppna centrumet.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Kd8",
+          "O-O-O+",
+          "Kc7",
+          "Bxf7"
+        ]
+      }
+    },
+    {
+      "ply": 18,
+      "en": "10.Nxb5! Morphy gives up the knight rather than retreat. White gets two pawns for it, the diagonal from b5 to e8 opens, and White gains time for the attack while Black's king is still in the middle of the board.",
+      "sv": "10.Nxb5! Morphy offrar springaren hellre än att backa. Vit får två bönder för den, diagonalen från b5 till e8 öppnas, och Vit vinner tid för anfallet medan den svarta kungen fortfarande står mitt på brädet."
+    },
+    {
+      "ply": 19,
+      "en": "Taking the knight lets the bishop in with check. Black's best defence was 10...Qb4+, forcing a queen trade: without queens the attack loses much of its force. White would still be winning, but his job would have been much harder.",
+      "sv": "Att ta springaren släpper in löparen med schack. Svarts bästa försvar var 10...Qb4+, som tvingar fram dambyte: utan damer förlorar anfallet mycket av sin kraft. Vit skulle fortfarande stå till vinst, men uppgiften hade blivit betydligt svårare.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qb4+",
+          "Qxb4",
+          "Bxb4+",
+          "c3",
+          "cxb5",
+          "Bxb5+",
+          "Ke7"
+        ]
+      }
+    },
+    {
+      "ply": 22,
+      "en": "12.O-O-O castles with a purpose: the rook lands straight on the open d-file and joins the attack on the pinned knight on d7. Black is lost; almost every White piece is in play, while Black's bishop on f8 and rook on h8 have never moved.",
+      "sv": "12.O-O-O är en rockad med ett syfte: tornet hamnar direkt på den öppna d-linjen och anfaller den bundna springaren på d7. Svart är förlorad; nästan alla vita pjäser är med i spelet, medan Svarts löpare på f8 och torn på h8 aldrig har rört sig."
+    },
+    {
+      "ply": 24,
+      "en": "13.Rxd7! gives up a rook to remove a key defender. The engine agrees it is the best move: the d7 square is a knot of pins, and breaking it open keeps the attack going.",
+      "sv": "13.Rxd7! ger bort ett torn för att slå bort en viktig försvarare. Motorn håller med om att det är det bästa draget: d7 är en knut av bindningar, och att slå upp den håller anfallet vid liv."
+    },
+    {
+      "ply": 26,
+      "en": "14.Rd1 brings the last piece in. The rook on d7 is pinned by the bishop on b5, and now a second white piece attacks it. Black has more material, but his pieces are paralysed.",
+      "sv": "14.Rd1 tar in den sista pjäsen. Tornet på d7 är bundet av löparen på b5, och nu anfaller ytterligare en vit pjäs det. Svart har mer material, men pjäserna är förlamade."
+    },
+    {
+      "ply": 29,
+      "en": "15...Nxd7 allows a quick mate, but there was no real rescue. Taking with the queen would have lasted longer, and the king move 15...Ke7 runs into mate as well.",
+      "sv": "15...Nxd7 tillåter en snabb matt, men det fanns ingen verklig räddning. Att ta med damen hade hållit ut längre, och kungsdraget 15...Ke7 leder också till matt.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Ke7",
+          "Qb4+",
+          "Qd6",
+          "Qxd6+",
+          "Kd8",
+          "Qb8+",
+          "Ke7",
+          "Qe8#"
+        ]
+      }
+    },
+    {
+      "ply": 30,
+      "en": "16.Qb8+!! The queen sacrifice pulls the knight off d7, where it was blocking the d-file. After the knight takes, the rook goes to d8, protected by the bishop on g5.",
+      "sv": "16.Qb8+!! Damoffret drar bort springaren från d7, där den spärrade d-linjen. När springaren slår går tornet till d8, skyddat av löparen på g5.",
+      "line": {
+        "from": "after",
+        "san": [
+          "Nxb8",
+          "Rd8#"
+        ]
+      }
+    },
+    {
+      "ply": 32,
+      "en": "17.Rd8# Mate with just a rook and a bishop. Black's king is boxed in by its own pawn on f7 and its bishop on f8, which never moved: a perfect picture of what neglected development costs.",
+      "sv": "17.Rd8# Matt med bara torn och löpare. Den svarta kungen är instängd av sin egen bonde på f7 och sin löpare på f8, som aldrig rörde sig: en perfekt bild av vad försummad utveckling kostar."
+    }
+  ],
+  "summary": {
+    "en": "Morphy won by bringing every piece into play while Black moved the same pieces twice, swapped off his bishop and left his king in the centre. Once the lead in development was large enough, sacrifices on b5 and d7 opened lines and the final queen sacrifice finished it. The engine finds small improvements for White, but Black's real errors were 6...Nf6 and 9...b5, and trading queens would have let Black resist much longer.",
+    "sv": "Morphy vann genom att ta in alla pjäser i spelet medan Svart flyttade samma pjäser två gånger, bytte bort sin löpare och lämnade kungen i centrum. När utvecklingsförsprånget var tillräckligt stort öppnade offren på b5 och d7 linjer, och det avslutande damoffret avgjorde. Motorn hittar små förbättringar för Vit, men Svarts verkliga fel var 6...Nf6 och 9...b5, och ett dambyte hade låtit Svart göra betydligt längre motstånd."
+  }
+}

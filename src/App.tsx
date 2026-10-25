@@ -12,6 +12,9 @@ import { MoveList } from './components/MoveList'
 import { ImportPanel } from './components/ImportPanel'
 import { EngineLines } from './components/EngineLines'
 import { PositionChat } from './components/PositionChat'
+import { HumanMoves } from './components/HumanMoves'
+import { CommentaryCard } from './components/CommentaryCard'
+import { loadCommentary, type Commentary } from './commentary'
 import { Captured } from './components/Captured'
 import { PlayCard, PlaySetup, humanAvailable, type PlaySettings, type TrainingInfo } from './components/PlayCard'
 import { OpeningPicker, type TrainingStart } from './components/OpeningPicker'
@@ -580,6 +583,22 @@ export default function App() {
   )
 
   /** Enters a side line from the given mainline ply, showing its first move; step through the rest. */
+  // Written commentary, for famous games that have it
+  const famousId = game.meta.famousId
+  const [loadedCommentary, setLoadedCommentary] = useState<{ id: string; c: Commentary | null } | null>(null)
+  useEffect(() => {
+    if (!famousId) return
+    let live = true
+    void loadCommentary(famousId).then((c) => live && setLoadedCommentary({ id: famousId, c }))
+    return () => {
+      live = false
+    }
+  }, [famousId])
+  const commentary = famousId && loadedCommentary?.id === famousId ? loadedCommentary.c : null
+  // While a line from a comment is on the board, its comment stays up
+  const [commentLine, setCommentLine] = useState<{ at: number; from: number; first: string } | null>(null)
+  const commentPly = commentLine && inVariation && ply === commentLine.from && variation[0] === commentLine.first ? commentLine.at : ply
+
   const enterLine = (fromPly: number, moves: string[]) => {
     setPly(fromPly)
     setPlan(moves)
@@ -1470,6 +1489,18 @@ export default function App() {
             </div>
           )}
 
+          {!play && commentary && (
+            <CommentaryCard
+              commentary={commentary}
+              game={game}
+              ply={commentPly}
+              onShowLine={(from, moves) => {
+                setCommentLine({ at: commentPly, from, first: moves[0] })
+                enterLine(from, moves)
+              }}
+            />
+          )}
+
           {!play && card && (
             <div className={`card verdict lbl-${card.brilliant ? 'brilliant' : card.great ? 'great' : card.rv.label}`}>
               <div>
@@ -1574,6 +1605,12 @@ export default function App() {
               </span>
             </div>
             {liveLines.length > 0 && <EngineLines fen={fen} lines={liveLines} labels={liveLabels} onPlay={onEngineLine} bookMoves={lineBookMoves} />}
+            {!gameOver && (
+              <HumanMoves
+                history={[game.startFen, ...game.plies.slice(0, ply).map((p) => p.fenAfter), ...varLine.map((v) => v.fen)].slice(-8)}
+                onPlay={onEngineLine}
+              />
+            )}
             <PositionChat context={positionContext} />
             {!gameOver && (
               <div className="play-on">

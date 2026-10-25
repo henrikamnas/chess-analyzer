@@ -1,0 +1,101 @@
+{
+  "id": "ding-gukesh-2024-g14",
+  "intro": {
+    "en": "Singapore, December 2024: the fourteenth and final classical game of the World Championship match between Ding Liren and Gukesh Dommaraju, with the score level. Most of the game is a balanced endgame with rooks and bishops where Gukesh, a pawn up, keeps pressing without real winning chances. Watch how one rook trade changes everything, and how precise king moves decide the pawn ending.",
+    "sv": "Singapore, december 2024: det fjortonde och sista klassiska partiet i VM-matchen mellan Ding Liren och Gukesh Dommaraju, med ställningen lika. Större delen av partiet är ett balanserat slutspel med torn och löpare där Gukesh, med en merbonde, fortsätter att pressa utan verkliga vinstchanser. Se hur ett enda tornbyte ändrar allt, och hur exakta kungsdrag avgör bondeslutspelet."
+  },
+  "comments": [
+    {
+      "ply": 6,
+      "en": "With 4.d4 we reach the Reversed Grünfeld: White uses the setup of the Grünfeld Defence, with the bishop on g2 aiming at the centre, but with colours reversed and an extra tempo. Black has a broad centre that White will try to undermine.",
+      "sv": "Med 4.d4 uppstår omvänd Grünfeld: Vit använder uppställningen från Grünfeldförsvaret, med löparen på g2 riktad mot centrum, men med ombytta färger och ett extra tempo. Svart har ett brett centrum som Vit försöker underminera."
+    },
+    {
+      "ply": 26,
+      "en": "Ding misses his best chance of the game. After 13...Bb6, which the engine considers an inaccuracy, 14.Qe2 would have given White a pleasant edge. 14.b3 is more cautious, and the position is level again.",
+      "sv": "Ding missar partiets bästa chans. Efter 13...Bb6, som motorn ser som en onoggrannhet, hade 14.Qe2 gett Vit en behaglig fördel. 14.b3 är försiktigare, och ställningen är jämn igen.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qe2",
+          "e5",
+          "Rd1",
+          "Qf6"
+        ]
+      }
+    },
+    {
+      "ply": 38,
+      "en": "20.Nf4! is a neat tactical solution and the engine's top choice. White gives the knight to deflect the e5 pawn, then takes the knight on c6, which was defending the bishop on d4, and wins the material back.",
+      "sv": "20.Nf4! är en snygg taktisk lösning och motorns förstaval. Vit ger springaren för att locka bort e5-bonden och slår sedan springaren på c6, som skyddade löparen på d4, och vinner tillbaka materialet."
+    },
+    {
+      "ply": 40,
+      "en": "21.Bxc6 is the only move: anything else leaves White a piece down. After the exchanges the position is completely level.",
+      "sv": "21.Bxc6 är det enda draget: allt annat lämnar Vit en pjäs under. Efter bytena är ställningen helt jämn."
+    },
+    {
+      "ply": 62,
+      "en": "Queens and a pair of rooks are gone. Black has three pawns against two, all on the kingside, with one rook and same-coloured bishops each. With all the pawns on one side, an extra pawn is usually not enough to win, and the engine rates the position as a draw. White's task is simple to state: keep the pieces active and avoid giving Black targets.",
+      "sv": "Damerna och ett tornpar är borta. Svart har tre bönder mot två, alla på kungsflygeln, med ett torn och likfärgade löpare var. När alla bönder står på samma flygel räcker en merbonde oftast inte för vinst, och motorn bedömer ställningen som remi. Vits uppgift är lätt att formulera: håll pjäserna aktiva och ge inte Svart några mål att angripa."
+    },
+    {
+      "ply": 83,
+      "en": "42...g4 gains space and fixes White's pawn on g3. Gukesh keeps probing for many moves, moving his king and rook to new squares, hoping the defender will slip, while the engine's evaluation stays at a draw.",
+      "sv": "42...g4 vinner utrymme och låser fast den vita bonden på g3. Gukesh fortsätter att pröva i många drag, flyttar kung och torn till nya rutor i hopp om att försvararen ska göra fel, medan motorns värdering ligger kvar på remi."
+    },
+    {
+      "ply": 91,
+      "en": "After the pawn trade Black has an f-pawn and a g-pawn against White's single g-pawn. This is still a known drawing set-up with rooks and same-coloured bishops on, as long as White's rook stays active and his king stays near the pawns.",
+      "sv": "Efter bondebytet har Svart en f-bonde och en g-bonde mot Vits ensamma g-bonde. Det är fortfarande en känd remiställning med torn och likfärgade löpare kvar, så länge det vita tornet är aktivt och kungen står nära bönderna."
+    },
+    {
+      "ply": 107,
+      "en": "Black's king has come to e5, its most active square. White can still hold easily, for example by keeping the rook active on the a-file or by bringing the bishop back to g2. But the position is about to change.",
+      "sv": "Den svarta kungen har kommit till e5, sin mest aktiva ruta. Vit kan fortfarande hålla lätt, till exempel genom att hålla tornet aktivt på a-linjen eller föra tillbaka löparen till g2. Men ställningen är på väg att ändras."
+    },
+    {
+      "ply": 108,
+      "en": "55.Rf2?? is the blunder that decided the World Championship. White offers a rook trade, but the bishop ending that follows is lost, because Black can force the bishops off too and win the pawn ending. 55.Ra4 or 55.Bg2 would have kept a dead draw.",
+      "sv": "55.Rf2?? är bortsättningen som avgjorde VM. Vit erbjuder tornbyte, men löparslutspelet som följer är förlorat, eftersom Svart kan tvinga fram ett löparbyte också och vinna bondeslutspelet. 55.Ra4 eller 55.Bg2 hade hållit en klar remi.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Ra4",
+          "Rb5",
+          "Bg2"
+        ]
+      }
+    },
+    {
+      "ply": 111,
+      "en": "56...Bd5! is the only winning move, and Gukesh found it. The bishop blocks the long diagonal, so the white bishop in the corner can only go to b7 or c6, and the trade cannot be avoided. Other moves, like 56...f4, would have let White draw.",
+      "sv": "56...Bd5! är det enda vinstdraget, och Gukesh hittade det. Löparen spärrar den långa diagonalen, så den vita löparen i hörnet kan bara gå till b7 eller c6, och bytet går inte att undvika. Andra drag, som 56...f4, hade låtit Vit hålla remi."
+    },
+    {
+      "ply": 113,
+      "en": "Now it is a pure pawn ending: Black's king on d5 against White's king on f2, with two black pawns against one. Black's king is the more active one, and that, together with the extra pawn, decides.",
+      "sv": "Nu är det ett rent bondeslutspel: den svarta kungen på d5 mot den vita på f2, med två svarta bönder mot en. Den svarta kungen är den aktivare, och det, tillsammans med merbonden, avgör."
+    },
+    {
+      "ply": 115,
+      "en": "58...Ke5! and Ding resigned. Black takes the opposition: the kings face each other with one square between them and White to move, so White's king must give way and Black's king gets in. The engine shows this is the only winning move; 58...Ke6 or 58...Kd6 would have allowed a draw. Gukesh became world champion at 18.",
+      "sv": "58...Ke5! och Ding gav upp. Svart tar oppositionen: kungarna står mitt emot varandra med en ruta emellan och Vit vid draget, så den vita kungen måste vika och den svarta tar sig in. Motorn visar att detta är det enda vinstdraget; 58...Ke6 eller 58...Kd6 hade tillåtit remi. Gukesh blev världsmästare vid 18 års ålder.",
+      "line": {
+        "from": "after",
+        "san": [
+          "Kd3",
+          "f4",
+          "Ke2",
+          "f3+",
+          "Kf2",
+          "Ke4"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "en": "For about forty moves, from move 14 to move 54, the engine rated the game as a draw, and it was decided by a single slip: 55.Rf2 traded rooks into a bishop ending that turned into a lost pawn ending. The lesson for every club player: before trading pieces in an endgame, check the ending that remains, especially a king and pawn ending, where the more active king usually wins. Gukesh's 56...Bd5 and 58...Ke5 also show that the winning side must still find the only moves.",
+    "sv": "I ungefär fyrtio drag, från drag 14 till drag 54, bedömde motorn partiet som remi, och det avgjordes av ett enda felsteg: 55.Rf2 bytte torn till ett löparslutspel som blev ett förlorat bondeslutspel. Läxan för varje klubbspelare: innan du byter pjäser i slutspelet, kontrollera slutspelet som blir kvar, särskilt ett bondeslutspel, där den aktivare kungen oftast vinner. Gukeshs drag 56...Bd5 och 58...Ke5 visar också att den vinnande sidan fortfarande måste hitta de enda dragen."
+  }
+}

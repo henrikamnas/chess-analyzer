@@ -1,0 +1,115 @@
+{
+  "id": "nepomniachtchi-ding-2023-tb4",
+  "intro": {
+    "en": "Astana, 30 April 2023: the World Championship match between Ian Nepomniachtchi and Ding Liren was level after the classical games, and this was the last game of the rapid tiebreak. Ding, with Black, chose a risky path with a pawn sacrifice, and the game turned into a long fight with queens, bishops and passed pawns. Watch the queenside passed pawns: they decide the game once Nepomniachtchi, short of time, lets them advance.",
+    "sv": "Astana, 30 april 2023: VM-matchen mellan Ian Nepomnjasjtjij och Ding Liren stod lika efter de klassiska partierna, och detta var det sista partiet i snabbschacksavgörandet. Ding valde med svart en riskfylld väg med ett bondeoffer, och partiet blev en lång kamp med damer, löpare och fribönder. Håll ögonen på fribönderna på damflygeln: de avgör partiet när Nepomnjasjtjij, i tidsnöd, låter dem gå fram."
+  },
+  "comments": [
+    {
+      "ply": 10,
+      "en": "6.d3 is the Martinez Variation of the Closed Ruy Lopez. Instead of the big centre with c3 and d4, White keeps the centre closed and prepares a slow manoeuvring game, a common choice when a player wants to avoid deep opening theory.",
+      "sv": "6.d3 är Martinezvarianten i den stängda spanskan. I stället för det stora centrumet med c3 och d4 håller Vit centrum stängt och förbereder ett långsamt manöverspel, ett vanligt val när man vill undvika djup öppningsteori."
+    },
+    {
+      "ply": 35,
+      "en": "18...d5 is the natural central break, freeing Black's pieces. The engine slightly preferred to wait with 18...Qd7, but the position stays balanced.",
+      "sv": "18...d5 är den naturliga centrumbrytningen, som frigör Svarts pjäser. Motorn föredrog att vänta en aning med 18...Qd7, men ställningen förblir balanserad."
+    },
+    {
+      "ply": 39,
+      "en": "Both players erred here. 20.Bd2 was a mistake (20.Nxd5 was level), and Ding could have punished it with 20...Nf4, sending the knight towards White's kingside and keeping more pieces on. After the exchange on c3 the game is balanced again.",
+      "sv": "Båda spelarna gjorde fel här. 20.Bd2 var ett misstag (20.Nxd5 var jämnt), och Ding hade kunnat straffa det med 20...Nf4, som skickar springaren mot Vits kungsflygel och behåller fler pjäser på brädet. Efter bytet på c3 är spelet balanserat igen.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Nf4",
+          "Ra4",
+          "Kh8",
+          "Re1",
+          "Ng6"
+        ]
+      }
+    },
+    {
+      "ply": 57,
+      "en": "29...e4!? is Ding's risky choice. He gives up a pawn to open lines and bring his knight into d3. The engine prefers the quiet 29...Ne7 and gives White a small edge after the sacrifice, but it makes the game sharp and unbalanced.",
+      "sv": "29...e4!? är Dings riskfyllda val. Han ger bort en bonde för att öppna linjer och föra in springaren till d3. Motorn föredrar det lugna 29...Ne7 och ger Vit en liten fördel efter offret, men det gör partiet skarpt och obalanserat."
+    },
+    {
+      "ply": 68,
+      "en": "After the trades we reach a queen, rook and same-coloured bishop middlegame. The engine prefers 35.Rd2, but after 35.Ra1 Black wins the material back and the position is level. Black has the more mobile queenside pawns; White's king is a little safer.",
+      "sv": "Efter bytena har vi ett mittspel med dam, torn och likfärgade löpare. Motorn föredrar 35.Rd2, men efter 35.Ra1 vinner Svart tillbaka materialet och ställningen är jämn. Svart har de rörligare damflygelbönderna; den vita kungen står lite säkrare."
+    },
+    {
+      "ply": 79,
+      "en": "40...Bxc3 wins the c3 pawn. Black now has two passed pawns on the queenside, on a5 and c5. That is the long-term trump: White has to rely on active queen play and checks against Black's king, and the engine still rates the position as level.",
+      "sv": "40...Bxc3 vinner c3-bonden. Svart har nu två fribönder på damflygeln, på a5 och c5. Det är den långsiktiga trumfen: Vit måste lita till aktivt damspel och schackar mot den svarta kungen, och motorn bedömer fortfarande ställningen som jämn."
+    },
+    {
+      "ply": 94,
+      "en": "48.h4? is the first big slip of the endgame. White pushes a kingside pawn while the black c-pawn is ready to run. The engine's 48.Qf4 attacks the c4 pawn and keeps the balance; after the game move the passed pawn advances and Black is much better.",
+      "sv": "48.h4? är slutspelets första stora felsteg. Vit drar en kungsflygelbonde medan den svarta c-bonden är redo att springa. Motorns 48.Qf4 anfaller c4-bonden och håller balansen; efter partidraget går fribonden fram och Svart står mycket bättre.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qf4",
+          "Bd6",
+          "Qxc4"
+        ]
+      }
+    },
+    {
+      "ply": 105,
+      "en": "53...Rd6? is Ding's slip: trading rooks relieves White. 53...c2, attacking the rook on d1, would have kept a winning position.",
+      "sv": "53...Rd6? är Dings felsteg: tornbytet lättar trycket på Vit. 53...c2, som anfaller tornet på d1, hade behållit en vunnen ställning.",
+      "line": {
+        "from": "before",
+        "san": [
+          "c2",
+          "Rf1",
+          "Qe4",
+          "Bc1"
+        ]
+      }
+    },
+    {
+      "ply": 113,
+      "en": "With rooks off, it is queen and dark-squared bishop on both sides. Black has the two queenside passed pawns; White's drawing plan is to blockade them with the bishop, which can attack c3 and cover the queening squares, and to use queen checks against Black's king. After 57...a4 the engine rates the position as level.",
+      "sv": "Med tornen borta har båda sidor dam och svartfältslöpare. Svart har de två fribönderna på damflygeln; Vits remiplan är att blockera dem med löparen, som kan anfalla c3 och täcka förvandlingsrutorna, och att ge damschackar mot den svarta kungen. Efter 57...a4 bedömer motorn ställningen som jämn."
+    },
+    {
+      "ply": 116,
+      "en": "59.Qc7? is the decisive mistake. The queen goes to c7, away from the action, and Black gains the time to bring the queen to g6 and push the c-pawn to c2. The engine's 59.h5, keeping the queen active, would have held the draw.",
+      "sv": "59.Qc7? är det avgörande misstaget. Damen går till c7, bort från händelsernas centrum, och Svart vinner tid att föra damen till g6 och driva c-bonden till c2. Motorns 59.h5, som håller damen aktiv, hade hållit remi.",
+      "line": {
+        "from": "before",
+        "san": [
+          "h5",
+          "Bf8",
+          "Qf7",
+          "Qe4",
+          "Bxc3"
+        ]
+      }
+    },
+    {
+      "ply": 120,
+      "en": "With pawns on a3 and c2, White's queen and bishop are stretched to the limit. The bishop on e3 watches c1, but every time White's pieces stop the pawns, Black's queen and bishop find new threats against White's king.",
+      "sv": "Med bönder på a3 och c2 är den vita damen och löparen pressade till det yttersta. Löparen på e3 bevakar c1, men varje gång de vita pjäserna stoppar bönderna hittar den svarta damen och löparen nya hot mot den vita kungen."
+    },
+    {
+      "ply": 126,
+      "en": "In mutual time pressure both sides made several inaccuracies. White was already lost, and 64.g4? makes things worse by opening White's own king. The engine preferred 64.Kg2, keeping the pawn shield in place.",
+      "sv": "I ömsesidig tidsnöd gjorde båda sidor flera onoggrannheter. Vit var redan förlorad, och 64.g4? gör saken värre genom att öppna den egna kungsställningen. Motorn föredrog 64.Kg2, som behåller bondeskölden."
+    },
+    {
+      "ply": 135,
+      "en": "68...Bxf4 and Nepomniachtchi resigned. The a-pawn was given back to deflect the queen, the bishop now takes on f4 and attacks e3, and the c-pawn is ready to promote. The engine finds a forced mate, and Ding became world champion.",
+      "sv": "68...Bxf4 och Nepomnjasjtjij gav upp. A-bonden gavs bort för att locka bort damen, löparen slår nu på f4 och anfaller e3, och c-bonden är redo att förvandlas. Motorn hittar en forcerad matt, och Ding blev världsmästare."
+    }
+  ],
+  "summary": {
+    "en": "The game was decided by two passed pawns on the queenside: once Black had them, White needed precise, active defence, and the engine shows the draw was there almost until the end. Both players erred under time pressure, Ding with 53...Rd6 and Nepomniachtchi with 48.h4 and finally 59.Qc7. The lesson for endgames with queens: passed pawns supported by the queen are dangerous, and the defender must keep his own pieces active rather than chasing side issues.",
+    "sv": "Partiet avgjordes av två fribönder på damflygeln: när Svart väl hade dem behövde Vit ett exakt och aktivt försvar, och motorn visar att remin fanns nästan till slutet. Båda spelarna gjorde fel i tidsnöd, Ding med 53...Rd6 och Nepomnjasjtjij med 48.h4 och till sist 59.Qc7. Läxan för slutspel med damer: fribönder som stöds av damen är farliga, och försvararen måste hålla sina egna pjäser aktiva i stället för att ägna sig åt sidofrågor."
+  }
+}

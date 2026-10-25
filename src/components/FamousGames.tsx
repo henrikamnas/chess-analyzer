@@ -18,6 +18,7 @@ interface FamousGame {
   players: string[] // the famous player(s) it's listed under
   about: string
   moves: string // SAN movetext
+  commentary?: boolean // has written commentary in famous/commentary/<id>.json
 }
 
 let famous: Promise<FamousGame[]> | null = null
@@ -47,6 +48,7 @@ function famousPgn(g: FamousGame): string {
     tag('BlackElo', g.blackElo) +
     tag('ECO', g.eco) +
     tag('Opening', g.opening) +
+    (g.commentary ? tag('FamousId', g.id) : '') +
     `\n${g.moves} ${g.result}`
   )
 }
@@ -118,7 +120,10 @@ export function FamousGames({ onLoad }: { onLoad: (pgn: string) => void }) {
             <li key={g.id}>
               <button onClick={() => onLoad(famousPgn(g))}>
                 <span className="famous-head">
-                  <strong>{g.title}</strong>
+                  <strong>
+                    {g.title}
+                    {g.commentary && <span title={t('With commentary')}> 💬</span>}
+                  </strong>
                   <span className="muted">
                     {g.year} · {g.result}
                   </span>

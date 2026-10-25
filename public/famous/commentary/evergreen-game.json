@@ -1,0 +1,155 @@
+{
+  "id": "evergreen-game",
+  "intro": {
+    "en": "Berlin, 1852: a year after the Immortal Game, Adolf Anderssen plays a casual game against Jean Dufresne. It is an Evans Gambit, where White gives up a pawn to gain time for a strong centre and fast development. Watch Black's king stay in the centre, and how the e- and d-files open towards it for a famous finish with a queen sacrifice and a double check.",
+    "sv": "Berlin 1852: ett år efter det odödliga partiet spelar Adolf Anderssen ett vänskapsparti mot Jean Dufresne. Det är en Evansgambit, där Vit ger bort en bonde för att vinna tid till ett starkt centrum och snabb utveckling. Lägg märke till hur den svarta kungen blir kvar i centrum, och hur e- och d-linjerna öppnas mot den inför ett berömt slut med damoffer och dubbelschack."
+  },
+  "comments": [
+    {
+      "ply": 6,
+      "en": "4.b4 is the Evans Gambit. White offers a pawn to deflect the bishop, so that c3 and d4 can follow with gain of time and build a strong pawn centre. It was one of the most popular attacking weapons of the 19th century.",
+      "sv": "4.b4 är Evansgambit. Vit erbjuder en bonde för att locka bort löparen, så att c3 och d4 kan följa med tempovinst och bygga upp ett starkt bondecentrum. Det var ett av 1800-talets populäraste anfallsvapen."
+    },
+    {
+      "ply": 13,
+      "en": "7...d3 is the Dufresne Defence. Black gives a pawn back so that White cannot recapture on d4 with the c-pawn and build an ideal centre. The engine prefers developing with 7...Nf6.",
+      "sv": "7...d3 är Dufresnes försvar. Svart ger tillbaka en bonde så att Vit inte kan ta tillbaka på d4 med c-bonden och bygga ett idealt centrum. Motorn föredrar att utveckla med 7...Nf6."
+    },
+    {
+      "ply": 16,
+      "en": "9.e5 gains space and drives the queen away from f6. The pawn also takes the f6 and d6 squares from Black's pieces, which makes it harder for Black to develop comfortably.",
+      "sv": "9.e5 vinner utrymme och driver bort damen från f6. Bonden tar också rutorna f6 och d6 från de svarta pjäserna, vilket gör det svårare för Svart att utveckla sig bekvämt."
+    },
+    {
+      "ply": 21,
+      "en": "11...b5? is Black's first real mistake. Throwing in a pawn on the queenside costs time, while Black's king is still in the centre. The engine wanted the central break 11...d5, freeing the bishop on c8 and opening the centre on Black's terms.",
+      "sv": "11...b5? är Svarts första verkliga misstag. Att kasta in en bonde på damflygeln kostar tid medan den svarta kungen fortfarande står i centrum. Motorn ville ha centrumbrytningen 11...d5, som frigör löparen på c8 och öppnar centrum på Svarts villkor.",
+      "line": {
+        "from": "before",
+        "san": [
+          "d5",
+          "exd6",
+          "cxd6"
+        ]
+      }
+    },
+    {
+      "ply": 27,
+      "en": "14...Bb7? develops, but the king had to come first. The engine's choice was 14...O-O, getting the king to safety before the centre opens. From here on Black's king never finds shelter.",
+      "sv": "14...Bb7? utvecklar, men kungen måste gå före. Motorns val var 14...O-O, som sätter kungen i säkerhet innan centrum öppnas. Härifrån hittar den svarta kungen aldrig skydd.",
+      "line": {
+        "from": "before",
+        "san": [
+          "O-O",
+          "Nf1",
+          "d5"
+        ]
+      }
+    },
+    {
+      "ply": 29,
+      "en": "15...Qf5? is a serious error. The queen steps onto the same diagonal as d3, so once White takes that pawn with the bishop, every move of the knight on e4 will uncover an attack on the queen. 15...d2 was better, giving the pawn back with an attack on the rook on e1.",
+      "sv": "15...Qf5? är ett allvarligt fel. Damen ställer sig på samma diagonal som d3, så när Vit slår den bonden med löparen kommer varje drag med springaren på e4 att öppna ett avdragsangrepp mot damen. 15...d2 var bättre, som ger tillbaka bonden med angrepp på tornet på e1.",
+      "line": {
+        "from": "before",
+        "san": [
+          "d2",
+          "Nexd2",
+          "Nd8"
+        ]
+      }
+    },
+    {
+      "ply": 32,
+      "en": "17.Nf6+ is the start of the famous combination, but here the engine really disagrees with tradition. It rates the sacrifice as throwing away most of White's advantage: 17.Ng3, attacking the queen, would have kept a winning position without any risk.",
+      "sv": "17.Nf6+ är början på den berömda kombinationen, men här skiljer sig motorn verkligen från traditionen. Den bedömer att offret kastar bort det mesta av den vita fördelen: 17.Ng3, som anfaller damen, hade behållit en vunnen ställning utan någon risk.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Ng3",
+          "Qh6",
+          "Rad1"
+        ]
+      }
+    },
+    {
+      "ply": 34,
+      "en": "After 18.exf6 the e-file is fully open and the pawn on f6 attacks the knight on e7, which is pinned against the king by the rook on e1. Black has an extra piece but a king stuck in the middle.",
+      "sv": "Efter 18.exf6 är e-linjen helt öppen och bonden på f6 anfaller springaren på e7, som är bunden mot kungen av tornet på e1. Svart har en pjäs mer men en kung som sitter fast i mitten."
+    },
+    {
+      "ply": 36,
+      "en": "19.Rad1!! is the celebrated quiet move: instead of defending against Black's threats on the kingside, White brings the last rook to the d-file, aiming at d7 next to Black's king. The engine calls the position roughly level here, and slightly prefers 19.Be4, but the move sets a deep trap.",
+      "sv": "19.Rad1!! är det hyllade lugna draget: i stället för att försvara sig mot Svarts hot på kungsflygeln för Vit in det sista tornet på d-linjen, med sikte på d7 bredvid den svarta kungen. Motorn bedömer ställningen som ungefär jämn här och föredrar 19.Be4 en aning, men draget gillrar en djup fälla."
+    },
+    {
+      "ply": 37,
+      "en": "19...Qxf3? takes the knight with an attack on g2, and it loses. The engine's defence was 19...Bd4!, leading to a level position after a series of checks on White's king.",
+      "sv": "19...Qxf3? tar springaren och hotar g2, men förlorar. Motorns försvar var 19...Bd4!, som leder till en jämn ställning efter en rad schackar mot den vita kungen.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Bd4",
+          "cxd4",
+          "Qxf3",
+          "Be4",
+          "Rxg2+",
+          "Kh1",
+          "Rxh2+",
+          "Kxh2",
+          "Qxf2+",
+          "Kh1"
+        ]
+      }
+    },
+    {
+      "ply": 39,
+      "en": "20...Nxe7 allows mate in four. Moving the king with 20...Kd8 would have held out longer, but White wins material back by force and Black would still be lost.",
+      "sv": "20...Nxe7 tillåter matt i fyra drag. Att flytta kungen med 20...Kd8 hade hållit ut längre, men Vit vinner tillbaka material forcerat och Svart vore ändå förlorad.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Kd8",
+          "Rxd7+",
+          "Kc8",
+          "Rd8+",
+          "Kxd8",
+          "Be2+",
+          "Nd4",
+          "Bxf3",
+          "Bxf3"
+        ]
+      }
+    },
+    {
+      "ply": 40,
+      "en": "21.Qxd7+!! The queen sacrifice removes the d7 pawn and draws the king onto the d-file, where only White's own bishop on d3 stands between it and the rook on d1.",
+      "sv": "21.Qxd7+!! Damoffret slår bort d7-bonden och lockar ut kungen på d-linjen, där bara Vits egen löpare på d3 står mellan den och tornet på d1.",
+      "line": {
+        "from": "after",
+        "san": [
+          "Kxd7",
+          "Bf5+",
+          "Ke8",
+          "Bd7+",
+          "Kf8",
+          "Bxe7#"
+        ]
+      }
+    },
+    {
+      "ply": 42,
+      "en": "22.Bf5+ is a double check: the bishop checks from f5 and uncovers the rook on d1 at the same time. Against a double check the king must move, and it is driven back to e8.",
+      "sv": "22.Bf5+ är en dubbelschack: löparen ger schack från f5 och öppnar samtidigt tornets linje från d1. Mot en dubbelschack måste kungen flytta, och den drivs tillbaka till e8."
+    },
+    {
+      "ply": 46,
+      "en": "24.Bxe7# The bishop gives mate, protected by the pawn on f6, which also covers g7. The other bishop on d7 covers e8, and Black's own rook on g8 and pawn on f7 take away the last squares.",
+      "sv": "24.Bxe7# Löparen gör matt, skyddad av bonden på f6, som också täcker g7. Den andra löparen på d7 täcker e8, och Svarts eget torn på g8 och bonde på f7 tar de sista rutorna."
+    }
+  ],
+  "summary": {
+    "en": "Black lost because his king never castled: 14...Bb7 instead of castling and the queen trip with 15...Qf5 let White open the centre. The engine shows that Anderssen's famous 17.Nf6+ was not the strongest move and that 19...Bd4 would have saved Black, which makes the game a lesson in practical chances as well as tactics. The final pattern, a queen sacrifice followed by a double check and mate with two bishops, is worth remembering.",
+    "sv": "Svart förlorade för att kungen aldrig rockerade: 14...Bb7 i stället för rockad och damutflykten med 15...Qf5 lät Vit öppna centrum. Motorn visar att Anderssens berömda 17.Nf6+ inte var det starkaste draget och att 19...Bd4 hade räddat Svart, vilket gör partiet till en läxa i praktiska chanser lika mycket som i taktik. Slutmönstret, ett damoffer följt av dubbelschack och matt med två löpare, är värt att komma ihåg."
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "id": "kasparov-topalov-1999",
+  "intro": {
+    "en": "Wijk aan Zee, January 1999: world number one Garry Kasparov against Veselin Topalov at the Hoogovens tournament. Both kings end up on the queenside, and Kasparov starts a king hunt with a rook sacrifice that drives Black's king all the way to the first rank. Watch how White's pieces keep finding checks, and read the engine's notes: the famous combination was even more complicated than it looked.",
+    "sv": "Wijk aan Zee, januari 1999: världsettan Garri Kasparov mot Veselin Topalov i Hoogovensturneringen. Båda kungarna hamnar på damflygeln, och Kasparov inleder en kungsjakt med ett tornoffer som driver den svarta kungen ända ner till första raden. Se hur de vita pjäserna hela tiden hittar nya schackar, och läs motorns kommentarer: den berömda kombinationen var ännu mer komplicerad än den såg ut."
+  },
+  "comments": [
+    {
+      "ply": 1,
+      "en": "1...d6 leads to the Pirc Defence. Black lets White build a broad pawn centre, plans to fianchetto the bishop on g7 and then attack the centre with pieces and pawn breaks.",
+      "sv": "1...d6 leder till Pircförsvaret. Svart låter Vit bygga ett brett bondecentrum, planerar att fianchettera löparen till g7 och sedan angripa centrum med pjäser och bondebrytningar."
+    },
+    {
+      "ply": 16,
+      "en": "With Be3, Qd2 and Bh6 White trades off Black's fianchettoed bishop, the best defender of the dark squares around a kingside-castled king. That is one reason Black will later castle on the queenside instead.",
+      "sv": "Med Be3, Qd2 och Bh6 byter Vit bort Svarts fianchetterade löpare, den bästa försvararen av de mörka rutorna runt en kung som rockerat kort. Det är en anledning till att Svart senare rockerar långt i stället."
+    },
+    {
+      "ply": 25,
+      "en": "13...O-O-O puts the king on the queenside, behind pawns that have already advanced to a6, b5 and c6. Those pawn moves have loosened the king's shelter, which matters later. The engine slightly prefers to release the tension first with 13...exd4.",
+      "sv": "13...O-O-O ställer kungen på damflygeln, bakom bönder som redan har gått fram till a6, b5 och c6. De bondedragen har luckrat upp kungens skydd, vilket får betydelse senare. Motorn föredrar en aning att först lösa upp spänningen med 13...exd4."
+    },
+    {
+      "ply": 34,
+      "en": "18.Na5 puts the knight on the rim, but close to Black's king, where it eyes b7 and c6. The engine preferred 18.Qf4 and now considers the position level.",
+      "sv": "18.Na5 ställer springaren på kanten, men nära den svarta kungen, där den siktar på b7 och c6. Motorn föredrog 18.Qf4 och bedömer nu ställningen som jämn."
+    },
+    {
+      "ply": 41,
+      "en": "21...d4 gains space and drives the knight from c3. Black's centre looks strong, but every pawn that leaves the king's side opens more lines for White's pieces.",
+      "sv": "21...d4 vinner utrymme och driver bort springaren från c3. Svarts centrum ser starkt ut, men varje bonde som lämnar kungens närhet öppnar fler linjer för de vita pjäserna."
+    },
+    {
+      "ply": 46,
+      "en": "24.Rxd4!! is the famous rook sacrifice. If Black takes, the pawn on c5 that shields the black king disappears and the diagonal from d4 towards a7 opens. The engine finds it the best move, but rates the position as roughly level: the sacrifice is a deep practical try rather than a forced win.",
+      "sv": "24.Rxd4!! är det berömda tornoffret. Om Svart tar försvinner c5-bonden som skyddar den svarta kungen, och diagonalen från d4 mot a7 öppnas. Motorn anser att det är det bästa draget, men bedömer ställningen som ungefär jämn: offret är ett djupt praktiskt försök snarare än en forcerad vinst."
+    },
+    {
+      "ply": 47,
+      "en": "24...cxd4? Taking the rook is the mistake. The engine's defence was 24...Kb6, declining the sacrifice; after 25.b4 Qxf4 the queens come off and the game is level. After the capture, the black king is dragged out into the open.",
+      "sv": "24...cxd4? Att ta tornet är misstaget. Motorns försvar var 24...Kb6, som avböjer offret; efter 25.b4 Qxf4 försvinner damerna och ställningen är jämn. Efter slaget dras den svarta kungen ut i det fria.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Kb6",
+          "b4",
+          "Qxf4",
+          "Rxf4",
+          "Nxd5"
+        ]
+      }
+    },
+    {
+      "ply": 53,
+      "en": "27...Ka4 is forced: the only other legal move, capturing on b4 with the queen, leads to mate. The king is now deep in White's half of the board, far from any shelter.",
+      "sv": "27...Ka4 är tvunget: det enda andra lagliga draget, att slå på b4 med damen, leder till matt. Kungen står nu djupt inne på Vits planhalva, långt från allt skydd."
+    },
+    {
+      "ply": 54,
+      "en": "Here the engine has its biggest surprise. Kasparov's 28.Qc3 keeps the attack going, but the engine finds 28.Ra7!, which would have been clearly winning. After the game move, White is only somewhat better if Black defends precisely.",
+      "sv": "Här kommer motorns största överraskning. Kasparovs 28.Qc3 håller anfallet vid liv, men motorn hittar 28.Ra7!, som hade stått klart till vinst. Efter partidraget står Vit bara något bättre om Svart försvarar sig exakt.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Ra7",
+          "Bxd5",
+          "Qc3"
+        ]
+      }
+    },
+    {
+      "ply": 55,
+      "en": "28...Qxd5 is the only good defence: the alternatives lose at once, for example a knight move to e4 allows mate on b3. The queen takes a pawn and comes back to defend.",
+      "sv": "28...Qxd5 är det enda bra försvaret: alternativen förlorar direkt, till exempel tillåter ett springardrag till e4 matt på b3. Damen tar en bonde och kommer tillbaka för att försvara."
+    },
+    {
+      "ply": 61,
+      "en": "31...Kxa3? Grabbing another pawn sends the king even further into the open. The engine's choice was 31...Rd1+, using the rooks to counterattack, which would have limited White's advantage, although White would still be clearly better.",
+      "sv": "31...Kxa3? Att ta ännu en bonde skickar kungen ännu längre ut i det fria. Motorns val var 31...Rd1+, som använder tornen till motangrepp och hade begränsat Vits fördel, även om Vit fortfarande hade stått klart bättre.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Rd1+",
+          "Kb2",
+          "Ra8",
+          "Qb6"
+        ]
+      }
+    },
+    {
+      "ply": 69,
+      "en": "After a series of checks the black king has walked from a7 all the way to d1. White has given up a lot of material, but the black king is now on the first rank, far from its own pieces.",
+      "sv": "Efter en rad schackar har den svarta kungen vandrat från a7 ända till d1. Vit har gett bort mycket material, men den svarta kungen står nu på första raden, långt från sina egna pjäser."
+    },
+    {
+      "ply": 70,
+      "en": "36.Bf1! is a quiet move in the middle of the attack. The bishop attacks the queen on c4 and covers the e2 square. The engine agrees it is the only good move here; other moves would even lose.",
+      "sv": "36.Bf1! är ett lugnt drag mitt i anfallet. Löparen anfaller damen på c4 och täcker rutan e2. Motorn håller med om att det är det enda bra draget här; andra drag skulle till och med förlora."
+    },
+    {
+      "ply": 72,
+      "en": "37.Rd7! pins the black rook on d2 against its own king, so it can no longer take White's queen. Black has to give up material: after the trades, White's queen picks up the rook on h8.",
+      "sv": "37.Rd7! binder det svarta tornet på d2 mot den egna kungen, så att det inte längre kan ta den vita damen. Svart måste ge upp material: efter bytena tar den vita damen tornet på h8.",
+      "line": {
+        "from": "after",
+        "san": [
+          "Rxd7",
+          "Bxc4",
+          "bxc4",
+          "Qxh8"
+        ]
+      }
+    },
+    {
+      "ply": 86,
+      "en": "44.Qa7 and Topalov resigned. It is queen against rook, and the queen will soon pick up the weak black pawns on the kingside while Black's c-pawn is easily stopped.",
+      "sv": "44.Qa7 och Topalov gav upp. Det är dam mot torn, och damen kommer snart att plocka de svaga svarta bönderna på kungsflygeln, medan Svarts c-bonde lätt stoppas."
+    }
+  ],
+  "summary": {
+    "en": "Kasparov's Immortal is a lesson in the power of initiative: every check gained time for the next one, and Black's king never got back to safety. The engine adds two honest notes: the sacrifice 24.Rxd4 only gave equal chances if Black had declined it, and 28.Ra7 would have been clearly winning, unlike the game move. Still, finding 36.Bf1 and 37.Rd7 in the middle of the hunt shows how far ahead Kasparov had calculated.",
+    "sv": "Kasparovs odödliga är en läxa i initiativets kraft: varje schack vann tid för nästa, och den svarta kungen kom aldrig tillbaka i säkerhet. Motorn lägger till två ärliga anmärkningar: offret 24.Rxd4 gav bara lika chanser om Svart hade avböjt det, och 28.Ra7 hade stått klart till vinst, till skillnad från partidraget. Ändå visar 36.Bf1 och 37.Rd7 mitt i jakten hur långt Kasparov hade räknat."
+  }
+}

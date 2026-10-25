@@ -1,0 +1,143 @@
+{
+  "id": "immortal-game",
+  "intro": {
+    "en": "London, 1851: Adolf Anderssen and Lionel Kieseritzky play a casual game during the great London tournament. It is a King's Gambit, the favourite opening of the romantic era, where White gives up material for open lines and quick development. Watch how Anderssen keeps adding pieces to the attack while Black collects material, until White mates with only three minor pieces left.",
+    "sv": "London 1851: Adolf Anderssen och Lionel Kieseritzky spelar ett vänskapsparti under den stora turneringen i London. Det är en kungsgambit, den romantiska erans favoritöppning, där Vit ger bort material för öppna linjer och snabb utveckling. Lägg märke till hur Anderssen hela tiden för in fler pjäser i anfallet medan Svart samlar på sig material, tills Vit gör matt med bara tre lätta pjäser kvar."
+  },
+  "comments": [
+    {
+      "ply": 2,
+      "en": "2.f4 is the King's Gambit. White offers the f-pawn to pull Black's e-pawn away from the centre, hoping to build a big centre with d4 and use the open f-file. Modern engines are sceptical and give Black a small edge, but in practical play it leads to exactly the kind of open fight seen here.",
+      "sv": "2.f4 är kungsgambit. Vit erbjuder f-bonden för att locka bort den svarta e-bonden från centrum, i hopp om att bygga ett stort centrum med d4 och använda den öppna f-linjen. Moderna motorer är skeptiska och ger Svart en liten fördel, men i praktiskt spel leder den till precis den sortens öppna strid som här."
+    },
+    {
+      "ply": 6,
+      "en": "After 3.Bc4, the Bishop's Gambit, Black's queen check costs White the right to castle. 4.Kf1 is the normal answer: the king is a little exposed, but White gains time later by chasing the black queen around.",
+      "sv": "Efter 3.Bc4, löpargambit, kostar den svarta damschacken Vit rätten att rockera. 4.Kf1 är det normala svaret: kungen står lite utsatt, men Vit vinner senare tid genom att jaga runt den svarta damen."
+    },
+    {
+      "ply": 7,
+      "en": "4...b5 is the Bryan Countergambit: Black gives back a pawn to deflect the bishop from its strong diagonal towards f7. The engine is not convinced and prefers simple development with 4...Nf6.",
+      "sv": "4...b5 är Bryans motgambit: Svart ger tillbaka en bonde för att locka bort löparen från dess starka diagonal mot f7. Motorn är inte övertygad och föredrar enkel utveckling med 4...Nf6."
+    },
+    {
+      "ply": 14,
+      "en": "Anderssen's play is far from flawless. 8.Nh4 puts the knight on the edge of the board, and the engine now gives Black the better game. It preferred 8.Rg1, getting the rook off h1 and preparing g4 to chase the knight.",
+      "sv": "Anderssens spel är långt ifrån felfritt. 8.Nh4 ställer springaren på kanten av brädet, och motorn ger nu Svart det bättre spelet. Den föredrog 8.Rg1, som flyttar tornet från h1 och förbereder g4 för att jaga springaren.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Rg1",
+          "c6",
+          "g4",
+          "cxb5",
+          "gxh5"
+        ]
+      }
+    },
+    {
+      "ply": 18,
+      "en": "The bishop on b5 is attacked, but Anderssen ignores it and pushes 10.g4 to chase the knight and gain space on the kingside. This is the romantic style: time and attack before material. The engine disagrees and prefers to save the bishop with 10.Ba4.",
+      "sv": "Löparen på b5 är anfallen, men Anderssen bryr sig inte om det utan spelar 10.g4 för att jaga springaren och vinna utrymme på kungsflygeln. Det är den romantiska stilen: tid och anfall före material. Motorn håller inte med och föredrar att rädda löparen med 10.Ba4."
+    },
+    {
+      "ply": 21,
+      "en": "11...cxb5? is the real turning point. Taking the bishop looks natural, but it gives White the time he needs to harass Black's queen. The engine's choice was 11...h5, keeping the pressure on White's kingside pawns; then the bishop would have had to retreat after all, and Black would have been doing well.",
+      "sv": "11...cxb5? är den verkliga vändpunkten. Att ta löparen ser naturligt ut, men det ger Vit den tid han behöver för att trakassera den svarta damen. Motorns val var 11...h5, som håller trycket mot de vita kungsflygelbönderna; då hade löparen ändå fått backa, och Svart hade stått bra.",
+      "line": {
+        "from": "before",
+        "san": [
+          "h5",
+          "h4",
+          "Qg6",
+          "Ba4"
+        ]
+      }
+    },
+    {
+      "ply": 27,
+      "en": "14...Ng8 retreats the knight to its starting square. Black now has an extra piece, but his development is going backwards. The engine preferred to develop with 14...Bb7.",
+      "sv": "14...Ng8 drar tillbaka springaren till utgångsrutan. Svart har nu en pjäs mer, men utvecklingen går baklänges. Motorn föredrog att utveckla med 14...Bb7."
+    },
+    {
+      "ply": 31,
+      "en": "16...Bc5 attacks the rook on g1, but it is a mistake. White's pieces are all heading for the black king, and Black should have kept his queen close to defend: the engine's choice was 16...Qc6.",
+      "sv": "16...Bc5 anfaller tornet på g1, men det är ett misstag. De vita pjäserna är alla på väg mot den svarta kungen, och Svart borde ha hållit damen nära för att försvara: motorns val var 16...Qc6."
+    },
+    {
+      "ply": 32,
+      "en": "17.Nd5 is the famous continuation. The knight hits the queen and eyes c7, but it lets Black take on b2 with a threat to the rook on a1. The engine prefers 17.d4, attacking the bishop and keeping b2 protected.",
+      "sv": "17.Nd5 är den berömda fortsättningen. Springaren angriper damen och siktar på c7, men den låter Svart ta på b2 med hot mot tornet på a1. Motorn föredrar 17.d4, som anfaller löparen och håller b2 skyddad.",
+      "line": {
+        "from": "before",
+        "san": [
+          "d4",
+          "Ne7",
+          "dxc5",
+          "Nxf5",
+          "gxf5"
+        ]
+      }
+    },
+    {
+      "ply": 34,
+      "en": "18.Bd6!? is the move that made the game immortal: Anderssen lets both rooks go. The bishop attacks the bishop on c5 and takes control of e7 and f8, squares the black king will need. The engine admires it less: it rates 18.Re1 as clearly stronger, and after this move White's advantage shrinks a lot if Black finds the right defence.",
+      "sv": "18.Bd6!? är draget som gjorde partiet odödligt: Anderssen låter båda tornen gå. Löparen anfaller löparen på c5 och tar kontroll över e7 och f8, rutor som den svarta kungen kommer att behöva. Motorn är mindre imponerad: den bedömer 18.Re1 som klart starkare, och efter detta drag krymper den vita fördelen kraftigt om Svart hittar rätt försvar."
+    },
+    {
+      "ply": 35,
+      "en": "18...Bxg1? grabs the first rook, but the engine's defence was to take the other rook with check first and bring the queen back to b2 to help defend. White would still be better, but nowhere near winning by force.",
+      "sv": "18...Bxg1? tar det första tornet, men motorns försvar var att först ta det andra tornet med schack och sedan föra tillbaka damen till b2 för att hjälpa till i försvaret. Vit skulle fortfarande stå bättre, men långt ifrån forcerat vunnet.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qxa1+",
+          "Ke2",
+          "Qb2",
+          "Kd2",
+          "Bxg1"
+        ]
+      }
+    },
+    {
+      "ply": 36,
+      "en": "19.e5 is a key idea: the pawn shuts the long diagonal, so once the black queen takes on a1 it can no longer come back to defend g7 and f6. The engine slightly prefers 19.Re1, but the point of the move is instructive.",
+      "sv": "19.e5 är en nyckelidé: bonden stänger den långa diagonalen, så när den svarta damen tar på a1 kan den inte längre komma tillbaka och försvara g7 och f6. Motorn föredrar 19.Re1 en aning, men tanken bakom draget är lärorik."
+    },
+    {
+      "ply": 39,
+      "en": "20...Na6 guards c7 against a knight check, but it allows a forced mate. 20...Ba6 was the engine's choice, though even then Black would have been in serious trouble against White's coordinated pieces.",
+      "sv": "20...Na6 skyddar c7 mot en springarschack, men tillåter en forcerad matt. 20...Ba6 var motorns val, men även då hade Svart haft stora problem mot de samarbetande vita pjäserna.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Ba6",
+          "Nc7+",
+          "Kd8",
+          "Nxa6"
+        ]
+      }
+    },
+    {
+      "ply": 42,
+      "en": "22.Qf6+!! The last sacrifice: the queen drags the knight away from g8, from where it could have captured a bishop on e7. Now the bishop can land on e7 with mate, protected by the knight on d5.",
+      "sv": "22.Qf6+!! Det sista offret: damen lockar bort springaren från g8, varifrån den hade kunnat slå en löpare på e7. Nu kan löparen gå till e7 med matt, skyddad av springaren på d5.",
+      "line": {
+        "from": "after",
+        "san": [
+          "Nxf6",
+          "Be7#"
+        ]
+      }
+    },
+    {
+      "ply": 44,
+      "en": "23.Be7# Mate with three minor pieces. The bishop gives check and is protected by the knight on d5, which also covers c7; the knight on g7 covers e8; and c8 and d7 are blocked by Black's own bishop and pawn. Black has two rooks, a queen and more, but none of them can help.",
+      "sv": "23.Be7# Matt med tre lätta pjäser. Löparen ger schack och skyddas av springaren på d5, som också täcker c7; springaren på g7 täcker e8; och c8 och d7 är blockerade av Svarts egen löpare och bonde. Svart har två torn, en dam och mer därtill, men ingen av dem kan hjälpa till."
+    }
+  ],
+  "summary": {
+    "en": "The Immortal Game shows the power of active pieces against a king with no defenders: Black won a mountain of material, but his queen wandered and his pieces stayed at home. The engine shows that both sides made serious errors, and Black's greedy 11...cxb5 and 18...Bxg1 were what really lost. For club players the lesson holds: count the pieces taking part in the fight, not just the material on the board.",
+    "sv": "Det odödliga partiet visar kraften hos aktiva pjäser mot en kung utan försvarare: Svart vann ett berg av material, men damen irrade runt och pjäserna stannade hemma. Motorn visar att båda sidor gjorde allvarliga fel, och det var Svarts giriga 11...cxb5 och 18...Bxg1 som verkligen förlorade. För klubbspelare håller läxan: räkna de pjäser som deltar i striden, inte bara materialet på brädet."
+  }
+}

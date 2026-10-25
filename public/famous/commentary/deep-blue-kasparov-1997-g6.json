@@ -1,0 +1,130 @@
+{
+  "id": "deep-blue-kasparov-1997-g6",
+  "intro": {
+    "en": "New York, May 1997: the sixth and final game of the rematch between world champion Garry Kasparov and IBM's Deep Blue, with the match level going into the game. Kasparov chose the Caro-Kann, a solid defence, but went wrong early in a well-known line. Watch how a single inaccurate move order allows a knight sacrifice after which Black's king never found safety.",
+    "sv": "New York, maj 1997: det sjätte och sista partiet i returmatchen mellan världsmästaren Garri Kasparov och IBM:s Deep Blue, med matchen oavgjord inför partiet. Kasparov valde Caro-Kann, ett solitt försvar, men gick fel tidigt i en välkänd variant. Lägg märke till hur en enda felaktig dragordning tillåter ett springaroffer varefter den svarta kungen aldrig hittade säkerhet."
+  },
+  "comments": [
+    {
+      "ply": 1,
+      "en": "1...c6 is the Caro-Kann Defence. Black prepares to challenge the centre with ...d5 while keeping the pawn structure sound and the light-squared bishop free. It is known as one of Black's most solid replies to 1.e4.",
+      "sv": "1...c6 är Caro-Kann. Svart förbereder att utmana centrum med ...d5 och behåller samtidigt en sund bondestruktur och en fri vitfältslöpare. Det räknas som ett av Svarts mest solida svar på 1.e4."
+    },
+    {
+      "ply": 7,
+      "en": "4...Nd7 is the Karpov Variation. The idea is to play ...Ngf6 next, so that if White exchanges on f6 Black can recapture with the other knight and keep a healthy pawn structure.",
+      "sv": "4...Nd7 är Karpovvarianten. Tanken är att nästa drag spela ...Ngf6, så att Svart kan ta tillbaka med den andra springaren om Vit byter på f6, och därmed behålla en frisk bondestruktur."
+    },
+    {
+      "ply": 8,
+      "en": "5.Ng5 is the modern try. The knight jumps towards e6 and f7, the sensitive squares around Black's king, and Black has to be careful about move order in what follows.",
+      "sv": "5.Ng5 är det moderna försöket. Springaren hoppar mot e6 och f7, de känsliga rutorna runt den svarta kungen, och Svart måste vara noga med dragordningen i fortsättningen."
+    },
+    {
+      "ply": 13,
+      "en": "7...h6? is the critical mistake of the opening. Kicking the knight looks natural, but it comes one move too early: the knight does not retreat, it sacrifices itself on e6. The normal order was to develop first with 7...Bd6, and only then ask the knight to leave.",
+      "sv": "7...h6? är öppningens kritiska misstag. Att jaga springaren ser naturligt ut, men det kommer ett drag för tidigt: springaren backar inte, den offrar sig på e6. Den normala ordningen var att först utveckla med 7...Bd6 och först därefter jaga bort springaren.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Bd6",
+          "Qe2",
+          "h6",
+          "Ne4",
+          "Nxe4",
+          "Qxe4"
+        ]
+      }
+    },
+    {
+      "ply": 14,
+      "en": "8.Nxe6! The engine agrees this is White's best move. White gets only a pawn for the knight, but Black's king can no longer castle safely and will be stuck in the middle, while Black's kingside pieces are badly placed to help.",
+      "sv": "8.Nxe6! Motorn håller med om att detta är Vits bästa drag. Vit får bara en bonde för springaren, men den svarta kungen kan inte längre rockera i säkerhet och blir kvar i mitten, medan Svarts pjäser på kungsflygeln står dåligt till för att hjälpa till."
+    },
+    {
+      "ply": 15,
+      "en": "8...Qe7 is a further inaccuracy. The engine preferred to take the knight at once with 8...fxe6: after the bishop check the king could then step to e7. With the queen on e7, the king has to go to d8 instead, and White gets to castle for free.",
+      "sv": "8...Qe7 är ytterligare en onoggrannhet. Motorn föredrog att ta springaren direkt med 8...fxe6: efter löparschacken kunde kungen då gå till e7. Med damen på e7 måste kungen i stället gå till d8, och Vit får rockera gratis.",
+      "line": {
+        "from": "before",
+        "san": [
+          "fxe6",
+          "Bg6+",
+          "Ke7",
+          "Bf4"
+        ]
+      }
+    },
+    {
+      "ply": 18,
+      "en": "10.Bg6+ drives the king away from its natural home. Blocking with the queen would simply lose it, so the king goes to d8, where the king blocks its own pieces and the rook on h8 and bishop on f8 stay out of play for a long time.",
+      "sv": "10.Bg6+ driver kungen bort från sin naturliga plats. Att blockera med damen vore bara att förlora den, så kungen går till d8, där kungen står i vägen för sina egna pjäser och tornet på h8 och löparen på f8 blir stående utanför spelet länge."
+    },
+    {
+      "ply": 20,
+      "en": "11.Bf4 brings the other bishop to a strong diagonal aimed at the queenside, where Black's king is heading. Material is in Black's favour, but White is ahead in development and has the safer king.",
+      "sv": "11.Bf4 tar ut den andra löparen till en stark diagonal mot damflygeln, dit den svarta kungen är på väg. Materiellt leder Svart, men Vit ligger före i utveckling och har den säkrare kungen."
+    },
+    {
+      "ply": 21,
+      "en": "11...b5 gains space on the queenside, but it also loosens the pawns in front of the square where Black's king wants to hide. The engine preferred 11...Nh7, untangling the kingside pieces first.",
+      "sv": "11...b5 vinner utrymme på damflygeln, men luckrar samtidigt upp bönderna framför den ruta där den svarta kungen vill gömma sig. Motorn föredrog 11...Nh7, som först reder ut pjäserna på kungsflygeln."
+    },
+    {
+      "ply": 22,
+      "en": "12.a4 attacks the b5 pawn at once, aiming to open lines on the queenside where Black's king is going. When the opponent's king is stuck, opening files is usually the right plan.",
+      "sv": "12.a4 anfaller b5-bonden direkt med siktet på att öppna linjer på damflygeln, dit den svarta kungen är på väg. När motståndarens kung sitter fast är det oftast rätt plan att öppna linjer."
+    },
+    {
+      "ply": 27,
+      "en": "14...Kc8 tucks the king away, but Black's pieces are still uncoordinated. The engine preferred 14...a5, holding the queenside pawns together before the files open.",
+      "sv": "14...Kc8 gömmer undan kungen, men de svarta pjäserna samarbetar fortfarande dåligt. Motorn föredrog 14...a5, som håller ihop bönderna på damflygeln innan linjerna öppnas."
+    },
+    {
+      "ply": 30,
+      "en": "16.Qd3 attacks the b5 pawn and lines up the queen behind the bishop on g6. Black has to defend b5, and every defensive move costs time that Black does not have.",
+      "sv": "16.Qd3 anfaller b5-bonden och ställer damen bakom löparen på g6. Svart måste försvara b5, och varje försvarsdrag kostar tid som Svart inte har."
+    },
+    {
+      "ply": 32,
+      "en": "17.Bf5! A second sacrifice. The bishop attacks the pawn on e6, the only thing standing between White's rook on e1 and Black's queen on e7. If Black takes the bishop, the e-file opens and the queen is lost.",
+      "sv": "17.Bf5! Ett andra offer. Löparen anfaller bonden på e6, det enda som står mellan det vita tornet på e1 och den svarta damen på e7. Om Svart tar löparen öppnas e-linjen och damen går förlorad.",
+      "line": {
+        "from": "after",
+        "san": [
+          "exf5",
+          "Rxe7",
+          "Nxe7",
+          "Re1"
+        ]
+      }
+    },
+    {
+      "ply": 35,
+      "en": "White has won the queen for a rook and a bishop, and Black has more pieces on paper but they do not work together and the king is exposed. Recapturing with the knight, 18...Nxe7, was the engine's choice; after the bishop recapture White can strike at once.",
+      "sv": "Vit har vunnit damen mot ett torn och en löpare, och Svart har fler pjäser på pappret, men de samarbetar inte och kungen står öppet. Att ta tillbaka med springaren, 18...Nxe7, var motorns val; efter att löparen tagit tillbaka kan Vit slå till direkt."
+    },
+    {
+      "ply": 36,
+      "en": "19.c4 attacks the b5 pawn and the knight on d5 and threatens to open the c-file towards Black's king. Kasparov resigned here: White will win back material while the attack continues, and the match went to Deep Blue, the first time a computer beat a reigning world champion in a match under tournament conditions.",
+      "sv": "19.c4 anfaller b5-bonden och springaren på d5 och hotar att öppna c-linjen mot den svarta kungen. Kasparov gav upp här: Vit vinner tillbaka material medan anfallet fortsätter, och matchen gick till Deep Blue, första gången en dator besegrade en regerande världsmästare i en match under turneringsförhållanden.",
+      "line": {
+        "from": "after",
+        "san": [
+          "bxc4",
+          "Qxc4",
+          "Nb4",
+          "Re1",
+          "Re8",
+          "Rxe7",
+          "Rxe7",
+          "Qxb4"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "en": "In a sharp opening, move order matters: one early pawn move let White sacrifice a knight, and Black's king never found safety. Material counted for little after that, because the rook on h8 never got into play while White opened lines with a4, Bf5 and c4. The lesson for club players is to finish development before making pawn moves that invite tactics near your own king.",
+    "sv": "I en skarp öppning spelar dragordningen roll: ett tidigt bondedrag lät Vit offra en springare, och den svarta kungen hittade aldrig säkerhet. Därefter betydde materialet lite, eftersom tornet på h8 aldrig kom i spel medan Vit öppnade linjer med a4, Bf5 och c4. Läxan för klubbspelare är att avsluta utvecklingen innan man gör bondedrag som bjuder in till taktik nära den egna kungen."
+  }
+}

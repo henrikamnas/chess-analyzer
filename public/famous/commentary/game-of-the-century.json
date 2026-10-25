@@ -1,0 +1,103 @@
+{
+  "id": "game-of-the-century",
+  "intro": {
+    "en": "New York, 1956, the Rosenwald Trophy: the strong master Donald Byrne faces 13-year-old Bobby Fischer. Byrne spends several moves with his queen while his king stays in the centre, and Fischer punishes it with a knight offer and then a famous queen sacrifice. Watch how Black's pieces work together afterwards: a rook, two bishops and a knight hunt down the white king while White's queen has little support.",
+    "sv": "New York 1956, Rosenwald Trophy: den starka mästaren Donald Byrne möter 13-årige Bobby Fischer. Byrne lägger flera drag på damen medan kungen står kvar i centrum, och Fischer straffar det med ett springarerbjudande och sedan ett berömt damoffer. Lägg märke till hur de svarta pjäserna samarbetar efteråt: torn, två löpare och springare jagar den vita kungen medan den vita damen har lite stöd."
+  },
+  "comments": [
+    {
+      "ply": 9,
+      "en": "5...d5 is a hypermodern idea: Black has let White take the centre with pawns and now strikes at it at once. White's early bishop move has not stopped Black from equalising.",
+      "sv": "5...d5 är en hypermodern idé: Svart har låtit Vit ta centrum med bönder och slår nu direkt mot det. Vits tidiga löpardrag har inte hindrat Svart från att utjämna."
+    },
+    {
+      "ply": 18,
+      "en": "10.Qc5 is the queen's third move in the opening, while White's bishop on f1 and rook on h1 are still at home and the king has not castled. The engine prefers the modest 10.Qb3. Moving the same piece again and again is exactly what gives Fischer his chance.",
+      "sv": "10.Qc5 är damens tredje drag i öppningen, medan Vits löpare på f1 och torn på h1 står kvar hemma och kungen inte har rockerat. Motorn föredrar det blygsamma 10.Qb3. Att flytta samma pjäs om och om igen är precis det som ger Fischer hans chans."
+    },
+    {
+      "ply": 20,
+      "en": "11.Bg5? is the decisive mistake. Again White moves a piece that is already developed, instead of 11.Be2, which would prepare castling. With the king in the centre and the e4 pawn defended only by the knight on c3, White is about to be hit by a tactic.",
+      "sv": "11.Bg5? är det avgörande misstaget. Återigen flyttar Vit en pjäs som redan är utvecklad, i stället för 11.Be2, som hade förberett rockad. Med kungen i centrum och e4-bonden skyddad bara av springaren på c3 står Vit inför en taktisk smäll.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Be2",
+          "Bxf3",
+          "Bxf3",
+          "Nfd7"
+        ]
+      }
+    },
+    {
+      "ply": 21,
+      "en": "11...Na4!! The knight offers itself to remove the only defender of e4. If White takes it, Black's other knight takes on e4 with attacks on the queen and the bishop on g5. The engine confirms this is the only strong move; the quiet alternatives are about level.",
+      "sv": "11...Na4!! Springaren erbjuder sig själv för att slå bort den enda försvararen av e4. Om Vit tar den slår Svarts andra springare på e4 med angrepp på damen och löparen på g5. Motorn bekräftar att detta är det enda starka draget; de lugna alternativen är ungefär jämna."
+    },
+    {
+      "ply": 26,
+      "en": "14.Bxe7 wins a pawn and attacks the rook on f8, but it opens the e-file towards White's own uncastled king. The engine preferred 14.Be3, bringing the bishop back to defend.",
+      "sv": "14.Bxe7 vinner en bonde och anfaller tornet på f8, men öppnar e-linjen mot Vits egen orockerade kung. Motorn föredrog 14.Be3, som för tillbaka löparen till försvaret."
+    },
+    {
+      "ply": 27,
+      "en": "14...Qb6 ignores the attack on the rook and brings the queen into play against d4 and the king's position. The engine prefers 14...Qd5, but both keep Black clearly better.",
+      "sv": "14...Qb6 struntar i angreppet på tornet och för in damen i spelet mot d4 och den vita kungsställningen. Motorn föredrar 14...Qd5, men båda behåller en klar svart fördel."
+    },
+    {
+      "ply": 31,
+      "en": "16...Rfe8+ uses the open e-file at once and drives the king to f1, where it stands on the same diagonal as the bishop on c4. That detail is what makes the next move possible.",
+      "sv": "16...Rfe8+ utnyttjar den öppna e-linjen direkt och driver kungen till f1, där den står på samma diagonal som löparen på c4. Den detaljen är det som gör nästa drag möjligt."
+    },
+    {
+      "ply": 33,
+      "en": "17...Be6!! is the famous queen sacrifice. Black leaves the queen attacked and instead challenges the bishop on c4: if White takes the queen, Black takes on c4 with check and the knight starts jumping with discovered checks. The engine agrees completely: every other move throws away Black's advantage.",
+      "sv": "17...Be6!! är det berömda damoffret. Svart låter damen stå anfallen och utmanar i stället löparen på c4: om Vit tar damen slår Svart på c4 med schack, och springaren börjar hoppa med avdragsschackar. Motorn håller med fullständigt: alla andra drag kastar bort Svarts fördel."
+    },
+    {
+      "ply": 34,
+      "en": "Byrne takes the queen, and the engine thinks this makes a lost position hopeless. 18.Qxc3 would have given the queen back in exchanges; White would still be clearly worse, but with some fight left. After taking the queen, the windmill follows.",
+      "sv": "Byrne tar damen, och motorn anser att det gör en förlorad ställning hopplös. 18.Qxc3 hade gett tillbaka damen genom byten; Vit hade fortfarande stått klart sämre, men med visst spel kvar. Efter att Vit tagit damen följer väderkvarnen.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qxc3",
+          "Qxc5",
+          "dxc5",
+          "Bxc3",
+          "Bxe6",
+          "Rxe6"
+        ]
+      }
+    },
+    {
+      "ply": 39,
+      "en": "This is a windmill. The king is shuffled between f1 and g1: on g1 it is checked by the knight, on f1 every knight move uncovers a check from the bishop on c4. Each turn of the windmill lets the knight grab something, here the d4 pawn.",
+      "sv": "Det här är en väderkvarn. Kungen skickas fram och tillbaka mellan f1 och g1: på g1 får den schack av springaren, på f1 ger varje springardrag avdragsschack från löparen på c4. Varje varv i väderkvarnen låter springaren ta något, här d4-bonden."
+    },
+    {
+      "ply": 45,
+      "en": "With 23...axb6 Fischer collects the bishop. For the queen he now has two bishops and two pawns, the rooks are still level, and the knight on c3 is about to win a rook. Just as important: White's rook on h1 is still shut in, so Black's pieces are much more active.",
+      "sv": "Med 23...axb6 tar Fischer hem löparen. För damen har han nu två löpare och två bönder, tornen är fortfarande lika många, och springaren på c3 är på väg att vinna ett torn. Lika viktigt: det vita tornet på h1 är fortfarande instängt, så de svarta pjäserna är mycket aktivare."
+    },
+    {
+      "ply": 49,
+      "en": "25...Nxd1 wins a whole rook. Black's material advantage is now overwhelming, and the rest of the game is about coordinating rook, bishops and knight against the white king, while the white queen, with little support, can only give a few checks.",
+      "sv": "25...Nxd1 vinner ett helt torn. Svarts materiella övertag är nu förkrossande, och resten av partiet handlar om att samordna torn, löpare och springare mot den vita kungen, medan den vita damen, med lite stöd, bara kan ge några schackar."
+    },
+    {
+      "ply": 69,
+      "en": "35...Bc5+ starts the final hunt. The bishops and knight push the king across the first rank towards the queenside, where the black rook waits. From here the engine finds a forced mate.",
+      "sv": "35...Bc5+ inleder den slutliga jakten. Löparna och springaren driver kungen längs första raden mot damflygeln, där det svarta tornet väntar. Härifrån hittar motorn en forcerad matt."
+    },
+    {
+      "ply": 81,
+      "en": "41...Rc2# The rook gives check, protected by the bishop on b3. The knight on c3 covers b1 and d1, and the rook itself covers b2 and d2. (41...Ba3# would also have been mate.)",
+      "sv": "41...Rc2# Tornet ger schack, skyddat av löparen på b3. Springaren på c3 täcker b1 och d1, och tornet självt täcker b2 och d2. (41...Ba3# hade också varit matt.)"
+    }
+  ],
+  "summary": {
+    "en": "White lost because he moved his queen and bishops around while his king stayed in the centre, and 11.Bg5 allowed the shot 11...Na4. The famous 17...Be6 was not only beautiful but, according to the engine, the only good move, while taking the queen turned a lost position into a hopeless one. After that, a rook, two bishops and a knight working together beat a queen with little support with ease.",
+    "sv": "Vit förlorade för att han flyttade runt damen och löparna medan kungen stod kvar i centrum, och 11.Bg5 tillät smällen 11...Na4. Det berömda 17...Be6 var inte bara vackert utan enligt motorn det enda bra draget, medan att ta damen gjorde en förlorad ställning hopplös. Därefter slog torn, två löpare och springare i samarbete en dam med lite stöd med lätthet."
+  }
+}

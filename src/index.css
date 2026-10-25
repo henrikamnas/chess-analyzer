@@ -1963,3 +1963,31 @@ cg-board square.last-move {
 .found-it {
   color: var(--best);
 }
+
+.human-moves {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+.human-moves select {
+  font-size: 12px;
+}
+
+.human-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 6px;
+}
+
+.commentary p {
+  margin: 0 0 6px;
+  line-height: 1.45;
+}
+
+.commentary p:last-child {
+  margin-bottom: 0;
+}
