@@ -29,6 +29,7 @@ import { PuzzleView } from './components/PuzzleView'
 import { getStoredGame, type StoredGame } from './store'
 import { brilliantMoves, isBrilliant } from './brilliant'
 import { findGreatMoves, greatText, judgeGreat, type GreatMove } from './greatMoves'
+import { findFindability, findabilityText } from './findability'
 import { bookInfo, bookMovesInLine, followBook, loadOpenings, type BookInfo, type Db as OpeningDb } from './openings'
 import { setLang, t, useLang } from './i18n'
 
@@ -498,6 +499,23 @@ export default function App() {
     void findGreatMoves(game, review, engine, () => cancelled).then((great) => {
       engine.terminate()
       if (!cancelled && great) setReview((r) => (r === review ? { ...r, great } : r))
+    })
+    return () => {
+      cancelled = true
+      engine.terminate()
+    }
+  }, [review, game, progress, deep.status])
+
+  // --- How hard the moves were to find -------------------------------------
+  // After the great moves: Maia's prediction of what players at each mover's level play, with the engine
+  // judging the likely moves. Stored with the review too.
+  useEffect(() => {
+    if (!review?.great || review.findability || progress || deep.status === 'running') return
+    let cancelled = false
+    const engine = new Engine({ onError: () => {} })
+    void findFindability(game, review, engine, () => cancelled).then((findability) => {
+      engine.terminate()
+      if (!cancelled && findability) setReview((r) => (r === review ? { ...r, findability } : r))
     })
     return () => {
       cancelled = true
@@ -1036,6 +1054,7 @@ export default function App() {
     brilliant: boolean
     great: GreatMove | null
     explanation: MoveExplanation | null
+    found?: string | null // how many players at the mover's level find a good move here (game moves only)
     note: string | null // what a good move does (a tactic, punishing a mistake), when there's no explanation
     kind?: 'why' | 'best'
     show: (k: 'why' | 'best') => void
@@ -1050,6 +1069,14 @@ export default function App() {
             brilliant: brilliant.has(verdictPly - 1),
             great: great.get(verdictPly - 1) ?? null,
             explanation,
+            found: review?.findability?.[verdictPly - 1]
+              ? findabilityText(
+                  review.findability[verdictPly - 1],
+                  ['inaccuracy', 'mistake', 'blunder'].includes(verdict.label) ? 'error' : verdict.label === 'best' ? 'best' : 'other',
+                  game.plies[verdictPly - 1].san,
+                  t,
+                )
+              : null,
             note: goodNote,
             kind: explaining?.kind,
             show: showExplanation,
@@ -1416,6 +1443,7 @@ export default function App() {
                 )}
               </div>
               {card.great && !card.brilliant && <GreatNote great={card.great} />}
+              {card.found && <p className="why found">👥 {card.found}</p>}
               {!card.explanation && card.note && <p className="why">{card.note}</p>}
               {card.explanation && (
                 <>

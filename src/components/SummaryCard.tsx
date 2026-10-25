@@ -5,6 +5,7 @@ import { t, useLang } from '../i18n'
 import type { BookInfo } from '../openings'
 import type { Side } from '../aiPrompt'
 import type { GreatMove } from '../greatMoves'
+import { missedKinds } from '../findability'
 import { AskAi } from './AskAi'
 
 export interface DeepState {
@@ -39,6 +40,16 @@ export function SummaryCard({ game, review, onSelect, deep, onDeep, reviewDepth,
   const { meta } = game
   const brilliantCount = (c: 'w' | 'b') => [...brilliant].filter((i) => game.plies[i].color === c).length
   const greatCount = (c: 'w' | 'b') => [...great.keys()].filter((i) => game.plies[i].color === c).length
+  // The errors split by how many players at the level would have found a good move instead
+  const missed = (c: 'w' | 'b') => {
+    const f = review.findability
+    if (!f) return null
+    const errors = game.plies.flatMap((p, i) => (p.color === c ? [i] : [])).filter((i) => ERRORS.includes(review.moves[i].label) && f[i])
+    if (!errors.length) return null
+    const avoidable = errors.filter((i) => missedKinds(f[i]) === 'avoidable').length
+    const hard = errors.filter((i) => missedKinds(f[i]) === 'hard').length
+    return { n: errors.length, avoidable, hard, level: f[errors[0]].level }
+  }
 
   const player = (c: 'w' | 'b') => {
     const est = review.rating[c]
@@ -78,6 +89,16 @@ export function SummaryCard({ game, review, onSelect, deep, onDeep, reviewDepth,
             </span>
           ))}
         </div>
+        {(() => {
+          const m = missed(c)
+          if (!m) return null
+          return (
+            <div className="stat-missed muted small">
+              👥 {t('{a} of {n} errors: most players rated about {level} avoid them.', { a: m.avoidable, n: m.n, level: m.level })}
+              {m.hard > 0 && ` ${t('{h} hard to avoid at that level.', { h: m.hard })}`}
+            </div>
+          )
+        })()}
       </div>
     )
   }

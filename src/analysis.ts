@@ -2,6 +2,7 @@ import { Chess } from 'chess.js'
 import type { Engine, Limits, Score } from './engine'
 import type { TimeClass } from './imports'
 import type { GreatMove } from './greatMoves'
+import type { Findability } from './findability'
 import { t } from './i18n'
 
 /** Engine limits for the standard review. The rating estimate is calibrated on reviews made with these. */
@@ -85,6 +86,8 @@ export interface Review {
   counts: { w: Record<Label, number>; b: Record<Label, number> }
   /** Great moves (only good move), by ply index; filled in by a background pass after the review */
   great?: Record<number, GreatMove>
+  /** How many players at the mover's level find a good move, by ply index; a background pass after the great moves */
+  findability?: Record<number, Findability>
   depth?: number // search depth of the evals; missing on reviews from before it was stored (REVIEW_LIMITS)
 }
 

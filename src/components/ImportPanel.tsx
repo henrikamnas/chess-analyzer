@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { fetchChessComGames, fetchLichessGames, type GameSummary } from '../imports'
 import { locale, t, useLang } from '../i18n'
+import { FamousGames } from './FamousGames'
 
 interface Props {
   onLoad: (pgn: string) => void
@@ -31,7 +32,7 @@ function loadPrefs(): { source: Source; user: string } {
 
 export function ImportPanel({ onLoad }: Props) {
   useLang()
-  const [tab, setTab] = useState<'user' | 'pgn'>('user')
+  const [tab, setTab] = useState<'user' | 'famous' | 'pgn'>('user')
   const [prefs, setPrefs] = useState(loadPrefs)
   const [pgn, setPgn] = useState('')
   const [games, setGames] = useState<GameSummary[] | null>(null)
@@ -65,6 +66,7 @@ export function ImportPanel({ onLoad }: Props) {
     <div className="import-panel">
       <div className="tabs">
         <button className={tab === 'user' ? 'on' : ''} onClick={() => setTab('user')}>{t('My games')}</button>
+        <button className={tab === 'famous' ? 'on' : ''} onClick={() => setTab('famous')}>{t('Famous games')}</button>
         <button className={tab === 'pgn' ? 'on' : ''} onClick={() => setTab('pgn')}>{t('Paste PGN')}</button>
       </div>
 
@@ -125,6 +127,8 @@ export function ImportPanel({ onLoad }: Props) {
             </p>
           )}
         </>
+      ) : tab === 'famous' ? (
+        <FamousGames onLoad={onLoad} />
       ) : (
         <div className="pgn-form">
           <textarea placeholder={t('Paste a PGN…')} value={pgn} onChange={(e) => setPgn(e.target.value)} rows={8} spellCheck={false} />

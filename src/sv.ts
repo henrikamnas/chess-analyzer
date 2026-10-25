@@ -441,6 +441,20 @@ export const SV: Record<string, string> = {
   'checking the move…': 'kontrollerar draget…',
   'Brilliant move': 'Briljant drag',
   'Great move': 'Starkt drag',
+  'Famous games': 'Kända partier',
+  'Could not load the famous games: {error}': 'Kunde inte ladda de kända partierna: {error}',
+  'Search player, opening, event or year': 'Sök spelare, öppning, turnering eller år',
+  Players: 'Spelare',
+  'Loading…': 'Laddar…',
+  '{n}% of players rated about {level} find a good move here: one to learn from.':
+    '{n} % av spelare med rating runt {level} hittar ett bra drag här: ett att lära sig av.',
+  '{n}% of players rated about {level} find a good move here.': '{n} % av spelare med rating runt {level} hittar ett bra drag här.',
+  'A hard one: only {n}% of players rated about {level} find a good move here.':
+    'Svår: bara {n} % av spelare med rating runt {level} hittar ett bra drag här.',
+  '{move} is a natural mistake: {n}% of them play it.': '{move} är ett naturligt misstag: {n} % av dem spelar det.',
+  'Only {n}% of players rated about {level} play {move} here.': 'Bara {n} % av spelare med rating runt {level} spelar {move} här.',
+  '{a} of {n} errors: most players rated about {level} avoid them.': '{a} av {n} fel: de flesta med rating runt {level} undviker dem.',
+  '{h} hard to avoid at that level.': '{h} svåra att undvika på den nivån.',
   'The only good move. The best alternative, {move} ({score}), would cost about {n}% winning chances.':
     'Det enda bra draget. Bästa alternativet, {move} ({score}), skulle kosta ungefär {n} % i vinstchans.',
   'Hard to spot: a quiet backward move that only shows its point when you look deeper.':
