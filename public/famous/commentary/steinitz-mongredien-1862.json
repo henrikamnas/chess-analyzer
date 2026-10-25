@@ -1,0 +1,86 @@
+{
+  "id": "steinitz-mongredien-1862",
+  "intro": {
+    "en": "London, 1862: a young Wilhelm Steinitz plays Augustus Mongredien in a tournament. Years before he worked out his positional theories, Steinitz attacked like the romantics of his day. Watch how he builds a kingside attack with a knight on e5, a pawn on f4 and a rook lift, and how one loosening pawn capture by Black opens the door to a king hunt.",
+    "sv": "London 1862: en ung Wilhelm Steinitz möter Augustus Mongredien i en turnering. Flera år innan han utvecklade sina positionella teorier anföll Steinitz som sin tids romantiker. Se hur han bygger upp ett anfall på kungsflygeln med en springare på e5, en bonde på f4 och ett tornlyft, och hur ett enda försvagande bondeslag från Svart öppnar dörren för en kungsjakt."
+  },
+  "comments": [
+    {
+      "ply": 5,
+      "en": "After 1...d5 2.exd5 Qxd5 3.Nc3, the Scandinavian queen has to move again. 3...Qd8, the Valencian Variation, retreats all the way home: very safe, but passive, and White can develop freely. The engine slightly prefers 3...Qa5, which keeps the queen active.",
+      "sv": "Efter 1...d5 2.exd5 Qxd5 3.Nc3 måste den skandinaviska damen flytta igen. 3...Qd8, Valenciavarianten, drar sig hela vägen hem: mycket säkert men passivt, och Vit kan utveckla fritt. Motorn föredrar en aning 3...Qa5, som håller damen aktiv."
+    },
+    {
+      "ply": 18,
+      "en": "With 9.Ne5 and 10.f4 Steinitz plants a knight on e5 and supports it with a pawn, while the bishop on d3 points at h7. This is an attacking set-up aimed at Black's king. The engine finds the f-pawn advance a little loosening and prefers 10.Qe2, but the position stays roughly balanced.",
+      "sv": "Med 9.Ne5 och 10.f4 placerar Steinitz en springare på e5 och stöder den med en bonde, medan löparen på d3 pekar mot h7. Det är en anfallsuppställning riktad mot Svarts kung. Motorn tycker att f-bondens framstöt försvagar en aning och föredrar 10.Qe2, men ställningen förblir ungefär i balans."
+    },
+    {
+      "ply": 21,
+      "en": "11...Nd5 offers to trade knights. The engine prefers 11...c5, the classical answer to a white build-up like this: strike at the centre before the attack gets going.",
+      "sv": "11...Nd5 erbjuder springarbyte. Motorn föredrar 11...c5, det klassiska svaret på en sådan vit uppställning: slå mot centrum innan anfallet kommer igång."
+    },
+    {
+      "ply": 23,
+      "en": "12...exd5? is the first real mistake. The new pawn on d5 shuts in Black's own bishop on b7, and White's rook can swing over to the kingside via f3. 12...Bxd5 keeps the bishop active, and White is only slightly better.",
+      "sv": "12...exd5? är det första riktiga misstaget. Den nya bonden på d5 stänger in Svarts egen löpare på b7, och Vits torn kan svänga över till kungsflygeln via f3. 12...Bxd5 håller löparen aktiv, och Vit står bara något bättre.",
+      "line": { "from": "before", "san": ["Bxd5", "Rad1", "f5", "c4", "Bb7"] }
+    },
+    {
+      "ply": 26,
+      "en": "13.Rf3 and 14.Rh3: the rook lift brings the rook to the h-file, facing the black king. The engine would have sent it to g3 instead, but the idea is the same: more attackers than defenders on the kingside.",
+      "sv": "13.Rf3 och 14.Rh3: tornlyftet för tornet till h-linjen, mittemot den svarta kungen. Motorn hade hellre skickat det till g3, men idén är densamma: fler anfallare än försvarare på kungsflygeln."
+    },
+    {
+      "ply": 28,
+      "en": "15.g4!? is pure romantic chess: a pawn storm to open the g-file. The engine dislikes it, because Black can answer 15...Nxe5! and after 16.dxe5 Qd7 the attack has largely run out of steam. The calm 15.Rf1, bringing the last rook into play, kept a clear advantage.",
+      "sv": "15.g4!? är rent romantiskt schack: en bondestorm för att öppna g-linjen. Motorn ogillar det, eftersom Svart kan svara 15...Nxe5! och efter 16.dxe5 Qd7 har anfallet i stort sett tappat kraften. Det lugna 15.Rf1, som tar in det sista tornet i spelet, behöll en klar fördel.",
+      "line": { "from": "after", "san": ["Nxe5", "dxe5", "Qd7", "Bd4", "Qe6"] }
+    },
+    {
+      "ply": 29,
+      "en": "15...fxg4? is the losing move. Taking the pawn opens lines towards Black's own king and lets White's pieces in. Removing the knight with 15...Nxe5 was the right defence.",
+      "sv": "15...fxg4? är förlustdraget. Bondeslaget öppnar linjer mot Svarts egen kung och släpper in Vits pjäser. Att ta bort springaren med 15...Nxe5 var rätt försvar."
+    },
+    {
+      "ply": 30,
+      "en": "16.Rxh7!? is the spectacular choice: the rook takes the h7 pawn and offers itself. Honest note: the engine prefers the simple 16.Qxg4, which wins even more clearly. Steinitz's move still keeps a winning attack.",
+      "sv": "16.Rxh7!? är det spektakulära valet: tornet slår bonden på h7 och offrar sig. Ärligt sagt föredrar motorn det enkla 16.Qxg4, som vinner ännu tydligare. Steinitz drag behåller ändå ett vinnande anfall.",
+      "line": { "from": "before", "san": ["Qxg4", "Nxe5", "dxe5", "Qe8", "f5"] }
+    },
+    {
+      "ply": 33,
+      "en": "17...Kxh7 accepts the rook, but the king has lost its h-pawn and has only the g6 pawn left as cover. The engine's 17...Bg5 was a tougher defence, though White would still be much better.",
+      "sv": "17...Kxh7 tar emot tornet, men kungen har förlorat sin h-bonde och har bara g6-bonden kvar som skydd. Motorns 17...Bg5 var ett segare försvar, även om Vit fortfarande skulle stå mycket bättre."
+    },
+    {
+      "ply": 35,
+      "en": "18...Rg8? lets White force mate. The engine's defence was 18...Qe8, bringing the queen to guard the kingside. From here the white queen drives the king out with a series of checks.",
+      "sv": "18...Rg8? låter Vit tvinga fram matt. Motorns försvar var 18...Qe8, som för damen till försvaret av kungsflygeln. Härifrån driver den vita damen ut kungen med en rad schackar."
+    },
+    {
+      "ply": 44,
+      "en": "23.Rf1+ brings the last piece into the attack with check. The engine points out that 23.e6+ forced mate, but White's attack stays decisive after the game move too.",
+      "sv": "23.Rf1+ tar in den sista pjäsen i anfallet med schack. Motorn påpekar att 23.e6+ tvingade fram matt, men Vits anfall är avgörande även efter partidraget."
+    },
+    {
+      "ply": 46,
+      "en": "24.Qe6 centralises the queen close to the black king, where it covers d7 and f7 and attacks the bishop on e7.",
+      "sv": "24.Qe6 centraliserar damen nära den svarta kungen, där den täcker d7 och f7 och angriper löparen på e7."
+    },
+    {
+      "ply": 49,
+      "en": "25...Qd7? allows a forced mate in four, starting with a bishop sacrifice on g6. Black was lost anyway, but now it ends at once.",
+      "sv": "25...Qd7? tillåter en forcerad matt i fyra drag, som börjar med ett löparoffer på g6. Svart var förlorad ändå, men nu tar det slut direkt."
+    },
+    {
+      "ply": 50,
+      "en": "26.Bxg6+! removes the last pawn shield. After 26...Rxg6 27.Qxg6+ Kd8 28.Rf8+ Qe8 the queen takes on e8 for mate, protected by the rook on f8.",
+      "sv": "26.Bxg6+! tar bort det sista bondeskyddet. Efter 26...Rxg6 27.Qxg6+ Kd8 28.Rf8+ Qe8 slår damen på e8 med matt, skyddad av tornet på f8."
+    }
+  ],
+  "summary": {
+    "en": "Steinitz's attack worked because Black weakened his own kingside: 12...exd5 shut in the b7 bishop, and 15...fxg4 opened lines towards his king. Note that the engine was not impressed by every romantic touch: 15.g4 and 16.Rxh7 were not the strongest moves, and after 15.g4 calm defence (15...Nxe5) could have held. The lesson for both sides is to count attackers and defenders before you open lines near a king.",
+    "sv": "Steinitz anfall fungerade eftersom Svart försvagade sin egen kungsflygel: 12...exd5 stängde in löparen på b7, och 15...fxg4 öppnade linjer mot kungen. Lägg märke till att motorn inte imponerades av varje romantiskt inslag: 15.g4 och 16.Rxh7 var inte de starkaste dragen, och efter 15.g4 hade lugnt försvar (15...Nxe5) kunnat hålla. Läxan för båda sidor är att räkna anfallare och försvarare innan man öppnar linjer nära en kung."
+  }
+}

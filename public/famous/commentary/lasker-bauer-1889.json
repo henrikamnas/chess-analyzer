@@ -1,0 +1,81 @@
+{
+  "id": "lasker-bauer-1889",
+  "intro": {
+    "en": "Amsterdam, 1889: the young Emanuel Lasker, five years before he became world champion, faces Johann Bauer. The opening is quiet, but watch where White's two bishops point: one on the long diagonal towards g7, the other towards h7. When Black lets a white knight reach h5, both bishops are sacrificed to strip the king, and the pattern has carried Lasker's name ever since.",
+    "sv": "Amsterdam 1889: den unge Emanuel Lasker, fem år innan han blev världsmästare, möter Johann Bauer. Öppningen är lugn, men lägg märke till vart Vits två löpare siktar: den ena längs den långa diagonalen mot g7, den andra mot h7. När Svart låter en vit springare nå h5 offras båda löparna för att skala av kungen, och mönstret har burit Laskers namn sedan dess."
+  },
+  "comments": [
+    {
+      "ply": 8,
+      "en": "1.f4 is Bird's Opening, and with b3, Bb2 and now 5.Bd3 White's plan is clear: the b2 bishop rakes the long diagonal towards g7, and the d3 bishop aims at h7. Both target the squares in front of Black's future castled king.",
+      "sv": "1.f4 är Birds öppning, och med b3, Bb2 och nu 5.Bd3 är Vits plan tydlig: löparen på b2 sveper längs den långa diagonalen mot g7, och löparen på d3 siktar mot h7. Båda riktar in sig på rutorna framför Svarts blivande rockerade kung."
+    },
+    {
+      "ply": 21,
+      "en": "11...Nxe5 is the first real mistake. The engine's 11...g6 was better, closing the d3 bishop's diagonal and keeping a white knight out of h5. Now White could have recaptured with the f-pawn and stood clearly better.",
+      "sv": "11...Nxe5 är det första riktiga misstaget. Motorns 11...g6 var bättre: draget stänger d3-löparens diagonal och håller en vit springare borta från h5. Nu kunde Vit ha tagit tillbaka med f-bonden och stått klart bättre."
+    },
+    {
+      "ply": 22,
+      "en": "Lasker takes back with the bishop, putting it on e5 where it eyes f6 and g7. That suits his attacking plans, but the engine strongly prefers 12.fxe5, which hits the knight on f6 at once and opens the f-file for the rook. After the game move the position is about equal again.",
+      "sv": "Lasker tar tillbaka med löparen och ställer den på e5, där den siktar på f6 och g7. Det passar hans anfallsplaner, men motorn föredrar klart 12.fxe5, som genast angriper springaren på f6 och öppnar f-linjen för tornet. Efter partidraget är ställningen ungefär lika igen.",
+      "line": { "from": "before", "san": ["fxe5", "Ne4", "Bxe4", "dxe4", "Qg4"] }
+    },
+    {
+      "ply": 25,
+      "en": "13...a6? is a serious mistake. It does nothing for the kingside, and now 14.Nh5 adds a second attacker on the knight on f6, the only minor piece guarding h7. The engine's 13...g6 would have kept the knight out of h5.",
+      "sv": "13...a6? är ett allvarligt misstag. Draget gör ingenting för kungsflygeln, och nu angriper 14.Nh5 springaren på f6 för andra gången, den enda lätta pjäsen som skyddar h7. Motorns 13...g6 hade hållit springaren borta från h5.",
+      "line": { "from": "before", "san": ["g6", "c4", "dxc4", "Bxc4"] }
+    },
+    {
+      "ply": 27,
+      "en": "14...Nxh5? walks into the combination. Black had to keep the knight and accept losing a pawn: after 14...Rfc8, White wins the h7 pawn and is clearly better, but the black king keeps most of its cover. Now both bishops can be sacrificed.",
+      "sv": "14...Nxh5? går rakt in i kombinationen. Svart borde ha behållit springaren och accepterat att förlora en bonde: efter 14...Rfc8 vinner Vit bonden på h7 och står klart bättre, men den svarta kungen behåller det mesta av sitt skydd. Nu kan båda löparna offras.",
+      "line": { "from": "before", "san": ["Rfc8", "Nxf6+", "Bxf6", "Bxh7+", "Kf8"] }
+    },
+    {
+      "ply": 28,
+      "en": "15.Bxh7+! The first bishop goes. After 15...Kxh7 the queen recaptures the knight on h5 with check, close to the black king.",
+      "sv": "15.Bxh7+! Den första löparen offras. Efter 15...Kxh7 tar damen tillbaka springaren på h5 med schack, nära den svarta kungen."
+    },
+    {
+      "ply": 32,
+      "en": "17.Bxg7! The second bishop removes the g7 pawn, the last pawn on the g- and h-files in front of the king. White has given two bishops, but the king is now bare, and the queen and a rook can reach it faster than Black's pieces can come to help.",
+      "sv": "17.Bxg7! Den andra löparen tar bort bonden på g7, den sista bonden på g- och h-linjen framför kungen. Vit har gett två löpare, men kungen står nu naken, och damen och ett torn hinner fram snabbare än Svarts pjäser hinner till undsättning."
+    },
+    {
+      "ply": 36,
+      "en": "19.Rf3, the rook lift: the rook is heading for h3 to give check on the open h-file. The engine rates 19.Qh3+ as equally strong, but Lasker's move is the famous one and wins just as surely.",
+      "sv": "19.Rf3, tornlyftet: tornet är på väg mot h3 för att ge schack på den öppna h-linjen. Motorn bedömer 19.Qh3+ som lika starkt, men Laskers drag är det berömda och vinner lika säkert."
+    },
+    {
+      "ply": 37,
+      "en": "19...e5 is the engine's choice too. Black opens the sixth rank so that the queen can block on h6, because the only other way to stop the check would be to put the bishop on h4. It costs the queen for a rook.",
+      "sv": "19...e5 är även motorns val. Svart öppnar sjätte raden så att damen kan blockera på h6, eftersom det enda andra sättet att stoppa schacken vore att ställa löparen på h4. Det kostar damen mot ett torn."
+    },
+    {
+      "ply": 42,
+      "en": "22.Qd7! is the second point of the combination: a queen fork of the two bishops on e7 and b7. Black can save only one, and after 23.Qxb7 White has queen and rook against two rooks and a bishop, with two extra pawns.",
+      "sv": "22.Qd7! är kombinationens andra poäng: en damgaffel mot de två löparna på e7 och b7. Svart kan bara rädda den ena, och efter 23.Qxb7 har Vit dam och torn mot två torn och en löpare, plus två merbönder."
+    },
+    {
+      "ply": 54,
+      "en": "The rest is technique. 27.fxe5 and 28.e6 drive the e-pawn deep into Black's position, where it attacks f7 and helps the queen and rook against the king.",
+      "sv": "Resten är teknik. 27.fxe5 och 28.e6 för fram e-bonden djupt in i Svarts ställning, där den angriper f7 och hjälper damen och tornet mot kungen."
+    },
+    {
+      "ply": 58,
+      "en": "30.Rxf6+! breaks the last barrier. After 30...Bxf6 31.Qxf6+ the queen chases the king, and 33.Qg7+ gives check along the seventh rank, so that once the king steps away, 34.Qxb7 wins the rook.",
+      "sv": "30.Rxf6+! bryter den sista barriären. Efter 30...Bxf6 31.Qxf6+ jagar damen kungen, och 33.Qg7+ ger schack längs sjunde raden, så att 34.Qxb7 vinner tornet när kungen har flyttat."
+    },
+    {
+      "ply": 74,
+      "en": "With queen and six pawns against a rook and one pawn, Black resigned. White's material advantage had been decisive for a long time.",
+      "sv": "Med dam och sex bönder mot ett torn och en bonde gav Svart upp. Vits materiella övertag hade varit avgörande länge."
+    }
+  ],
+  "summary": {
+    "en": "Two bishops aimed at the king, a knight on h5 and a rook that can swing to the h-file: when those come together, the double bishop sacrifice can work, and it is worth knowing the pattern from both sides. Black's real errors were 11...Nxe5, 13...a6, which allowed the knight to h5, and 14...Nxh5, which allowed the sacrifices. The engine also shows that Lasker could have played 12.fxe5 for a clear edge, so even the classic games have hidden improvements.",
+    "sv": "Två löpare riktade mot kungen, en springare på h5 och ett torn som kan svänga över till h-linjen: när de faktorerna sammanfaller kan det dubbla löparoffret fungera, och mönstret är värt att känna till från båda sidor. Svarts verkliga fel var 11...Nxe5, 13...a6, som släppte in springaren på h5, och 14...Nxh5, som tillät offren. Motorn visar också att Lasker kunde ha spelat 12.fxe5 och fått en klar fördel, så även klassiska partier har dolda förbättringar."
+  }
+}

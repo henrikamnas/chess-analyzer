@@ -6,9 +6,10 @@
 //   the engine's lines from the facts, or in the comment's own line
 import { readFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
+import { resolve } from 'node:path'
 
 const [repo, factsDir, ...files] = process.argv.slice(2)
-const require = createRequire(repo + '/package.json')
+const require = createRequire(resolve(repo, 'package.json'))
 const { Chess } = require('chess.js')
 
 const MOVE = /\b(\d+)\.(\.\.)?\s?((?:[KQRBN][a-h]?[1-8]?x?[a-h][1-8]|[a-h]x[a-h][1-8](?:=[QRBN])?|[a-h][1-8](?:=[QRBN])?|O-O-O|O-O)[+#]?)/g

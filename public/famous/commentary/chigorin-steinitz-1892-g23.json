@@ -1,0 +1,78 @@
+{
+  "id": "chigorin-steinitz-1892-g23",
+  "intro": {
+    "en": "Havana, 1892: game 23, the last game of the World Championship match between Mikhail Chigorin and Wilhelm Steinitz. Chigorin opens with his beloved King's Gambit, the queens come off early, and the game becomes a tense fight between White's extra piece and Black's rooks on the second rank. Watch the bishop on d6 near the end: it quietly guards h2, and when it leaves, the game is over.",
+    "sv": "Havanna 1892: parti 23, det sista partiet i VM-matchen mellan Michail Tjigorin och Wilhelm Steinitz. Tjigorin öppnar med sin älskade kungsgambit, damerna byts tidigt, och partiet blir en spänd kamp mellan Vits merpjäs och Svarts torn på andra raden. Håll ögonen på löparen på d6 mot slutet: den skyddar i det tysta h2, och när den flyttar är partiet över."
+  },
+  "comments": [
+    {
+      "ply": 2,
+      "en": "2.f4 is the King's Gambit: White offers the f-pawn to deflect Black's e-pawn and open the f-file. The engine prefers the quiet 2.Nf3, but the gambit leads to sharp play that suited Chigorin's style.",
+      "sv": "2.f4 är kungsgambit: Vit erbjuder f-bonden för att avleda Svarts e-bonde och öppna f-linjen. Motorn föredrar det lugna 2.Nf3, men gambiten leder till skarpt spel som passade Tjigorins stil."
+    },
+    {
+      "ply": 7,
+      "en": "3...Nf6 is the Schallopp Defence. After 4.e5 the main line puts the knight on the edge at h5, where it guards the extra pawn on f4 but is out of play.",
+      "sv": "3...Nf6 är Schalloppförsvaret. Efter 4.e5 placerar huvudvarianten springaren på kanten, på h5, där den skyddar merbonden på f4 men står utanför spelet."
+    },
+    {
+      "ply": 16,
+      "en": "9.Ne1, the engine's choice too, moves the knight out of the way so that the bishop on e2 attacks the knight on h5.",
+      "sv": "9.Ne1, även motorns val, flyttar springaren ur vägen så att löparen på e2 angriper springaren på h5."
+    },
+    {
+      "ply": 18,
+      "en": "10.Bxh5 gxh5 gives Black doubled, isolated h-pawns, but also the two bishops. The engine prefers 10.dxe5 first, and after the game move Black is somewhat better.",
+      "sv": "10.Bxh5 gxh5 ger Svart dubbla, isolerade h-bönder, men också löparparet. Motorn föredrar 10.dxe5 först, och efter partidraget står Svart något bättre.",
+      "line": { "from": "before", "san": ["dxe5", "Qxd1", "Bxd1", "Nc6", "Bxh5", "gxh5"] }
+    },
+    {
+      "ply": 25,
+      "en": "With the queens off, the fight is about the e5 pawn and Black's bishops. 13...Bf5 lets White keep it for now; the engine wanted 13...Nxe5, simply winning the pawn while White's knights are still poorly placed.",
+      "sv": "Med damerna borta handlar kampen om bonden på e5 och Svarts löpare. 13...Bf5 låter Vit behålla den tills vidare; motorn ville ha 13...Nxe5, som helt enkelt vinner bonden medan Vits springare fortfarande står dåligt.",
+      "line": { "from": "before", "san": ["Nxe5", "Nf3", "Nxf3+", "gxf3"] }
+    },
+    {
+      "ply": 43,
+      "en": "22...h4?! throws away Black's advantage. The engine's 22...Nxg3, exchanging the knight for White's bishop, would have kept a clear advantage.",
+      "sv": "22...h4?! slarvar bort Svarts fördel. Motorns 22...Nxg3, som byter springaren mot Vits löpare, hade behållit en klar fördel.",
+      "line": { "from": "before", "san": ["Nxg3", "hxg3", "Re5", "Nf3", "Rb5"] }
+    },
+    {
+      "ply": 45,
+      "en": "23...Nd4?? simply lets the c3 pawn take the knight. In return the c-file opens, and Steinitz gets both rooks to White's second rank, but a whole piece is too much. The engine's 23...Bh5 kept the position level.",
+      "sv": "23...Nd4?? låter helt enkelt bonden på c3 slå springaren. I gengäld öppnas c-linjen, och Steinitz får in båda tornen på Vits andra rad, men en hel pjäs är för mycket. Motorns 23...Bh5 höll ställningen jämn.",
+      "line": { "from": "before", "san": ["Bh5", "Nf3", "h3", "gxh3"] }
+    },
+    {
+      "ply": 51,
+      "en": "After 24...Rc2+, 25...Ree2 and 26...Rxg2+ the black rooks are on White's second rank and the white king is driven towards the corner. It looks dangerous, but White is a piece for a pawn up and winning, as long as the king's last defenders stay in place.",
+      "sv": "Efter 24...Rc2+, 25...Ree2 och 26...Rxg2+ står de svarta tornen på Vits andra rad och den vita kungen drivs mot hörnet. Det ser farligt ut, men Vit har en pjäs mot en bonde mer och vinner, så länge kungens sista försvarare står kvar."
+    },
+    {
+      "ply": 56,
+      "en": "29.Ne6+ is not the most precise move; the engine preferred 29.Re7+. White stays clearly winning, but the advantage shrinks noticeably.",
+      "sv": "29.Ne6+ är inte det mest precisa draget; motorn föredrog 29.Re7+. Vit står fortfarande klart på vinst, men fördelen krymper märkbart."
+    },
+    {
+      "ply": 61,
+      "en": "31...Rcd2 brings the rook to the d-file. Now look closely at the bishop on d6: along the diagonal through e5, f4 and g3 it guards the pawn on h2 next to White's king, so a rook capture there would simply lose the rook.",
+      "sv": "31...Rcd2 för tornet till d-linjen. Titta nu noga på löparen på d6: längs diagonalen via e5, f4 och g3 skyddar den bonden på h2 bredvid Vits kung, så ett tornslag där skulle bara förlora tornet."
+    },
+    {
+      "ply": 62,
+      "en": "32.Bb4?? is one of the most famous blunders in championship history. The bishop leaves the diagonal, only the king guards h2 now, and Black mates in two. The engine's 32.Rxb7 was clearly winning for White.",
+      "sv": "32.Bb4?? är en av de mest berömda bortsättningarna i VM-historien. Löparen lämnar diagonalen, nu skyddar bara kungen h2, och Svart sätter matt i två drag. Motorns 32.Rxb7 vann klart för Vit.",
+      "line": { "from": "before", "san": ["Rxb7", "Bh5", "Rb3", "Bf7"] }
+    },
+    {
+      "ply": 63,
+      "en": "32...Rxh2+ and Chigorin resigned. After 33.Kg1 Rdg2# the rook on g2 gives check, protected by the rook on h2; the h2 rook covers h1, the g2 rook covers f2, and White's own rook blocks f1.",
+      "sv": "32...Rxh2+ och Tjigorin gav upp. Efter 33.Kg1 Rdg2# ger tornet på g2 schack, skyddat av tornet på h2; h2-tornet täcker h1, g2-tornet täcker f2, och Vits eget torn blockerar f1."
+    }
+  ],
+  "summary": {
+    "en": "This game swung back and forth: Steinitz had the better of the queenless middlegame, then gave away a whole piece with 23...Nd4, and Chigorin was winning for most of the rest. One careless bishop move undid all that work, because the bishop on d6 was what kept the black rooks away from h2. The lesson: before you move a piece, ask what it is defending, especially near your own king.",
+    "sv": "Partiet svängde fram och tillbaka: Steinitz hade det bättre i mittspelet utan damer, sedan gav han bort en hel pjäs med 23...Nd4, och Tjigorin stod på vinst under större delen av resten. Ett enda slarvigt löpardrag gjorde allt det arbetet ogjort, eftersom det var löparen på d6 som höll de svarta tornen borta från h2. Läxan: innan du flyttar en pjäs, fråga dig vad den försvarar, särskilt nära din egen kung."
+  }
+}

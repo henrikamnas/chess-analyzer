@@ -1,0 +1,196 @@
+{
+  "id": "pillsbury-lasker-1895",
+  "intro": {
+    "en": "St Petersburg, 1895/96: a four-player tournament between world champion Emanuel Lasker, Wilhelm Steinitz, Mikhail Chigorin and Harry Nelson Pillsbury, who had just won Hastings 1895. Pillsbury castles long and aims at Black's kingside, but Lasker strikes first on the queenside with two rook sacrifices. Watch how the white king is dragged out of its shelter, and also how both players, under pressure, let the win slip back and forth before the end.",
+    "sv": "S:t Petersburg 1895/96: en turnering med fyra spelare mellan världsmästaren Emanuel Lasker, Wilhelm Steinitz, Michail Tjigorin och Harry Nelson Pillsbury, som just hade vunnit Hastings 1895. Pillsbury rockerar långt och siktar mot Svarts kungsflygel, men Lasker slår till först på damflygeln med två tornoffer. Se hur den vita kungen dras ut ur sitt skydd, och även hur båda spelarna under press låter vinsten glida fram och tillbaka innan slutet."
+  },
+  "comments": [
+    {
+      "ply": 8,
+      "en": "5.Bg5 is the Pillsbury Variation of the Queen's Gambit Declined, named after White himself; Black has already struck at the centre with 4...c5. The bishop pins the knight on f6, but the engine prefers to clear the centre first with 5.cxd5, after which White gets a broad pawn centre with e4.",
+      "sv": "5.Bg5 är Pillsburyvarianten i avböjd damgambit, uppkallad efter Vit själv; Svart har redan angripit centrum med 4...c5. Löparen binder springaren på f6, men motorn föredrar att först reda ut centrum med 5.cxd5, varefter Vit får ett brett bondecentrum med e4.",
+      "line": {
+        "from": "before",
+        "san": [
+          "cxd5",
+          "Nxd5",
+          "e4",
+          "Nxc3",
+          "bxc3",
+          "cxd4",
+          "cxd4",
+          "Bb4+"
+        ]
+      }
+    },
+    {
+      "ply": 14,
+      "en": "8.O-O-O shows Pillsbury's plan: queen and bishop on the kingside, king on the queenside, and an attack on Black's king. The drawback is that White's own king now sits on the c-file, with Black's queen about to arrive on a5.",
+      "sv": "8.O-O-O visar Pillsburys plan: dam och löpare på kungsflygeln, kungen på damflygeln och anfall mot den svarta kungen. Nackdelen är att den vita kungen nu står på c-linjen, och den svarta damen är på väg till a5."
+    },
+    {
+      "ply": 16,
+      "en": "9.e3? is the engine's first real complaint. With his king castled long and Black's queen already on a5, White has no time for a quiet move; 9.cxd5 was needed to settle the centre. Black is now clearly better.",
+      "sv": "9.e3? är motorns första verkliga anmärkning. Med kungen långrockerad och den svarta damen redan på a5 har Vit inte tid med ett lugnt drag; 9.cxd5 behövdes för att stabilisera centrum. Nu står Svart klart bättre.",
+      "line": {
+        "from": "before",
+        "san": [
+          "cxd5",
+          "exd5",
+          "e4",
+          "Be6",
+          "Bb5",
+          "O-O",
+          "Bxc6",
+          "bxc6"
+        ]
+      }
+    },
+    {
+      "ply": 30,
+      "en": "16.f4 starts a pawn advance to drive away the bishop on e6 with f5. The engine preferred 16.Bc4, developing the last piece and attacking the isolated pawn on d5 at once. White's bishop on f1 and rook on h1 are still asleep, which matters a few moves later.",
+      "sv": "16.f4 inleder en bondeframstöt för att driva bort löparen på e6 med f5. Motorn föredrog 16.Bc4, som utvecklar den sista pjäsen och direkt angriper den isolerade bonden på d5. Vits löpare på f1 och torn på h1 sover fortfarande, och det får betydelse några drag senare."
+    },
+    {
+      "ply": 33,
+      "en": "17...Rxc3! The first rook sacrifice removes the knight that shielded White's king. Taking back with 18.bxc3 would open the king completely, and the engine says Black would then win, so Pillsbury takes the bishop on e6 instead. The engine slightly preferred the calm 17...Bd7, but the sacrifice is sound.",
+      "sv": "17...Rxc3! Det första tornoffret slår bort springaren som skyddade den vita kungen. Att ta tillbaka med 18.bxc3 skulle öppna kungen helt, och enligt motorn vinner Svart då, så Pillsbury tar i stället löparen på e6. Motorn föredrog en aning det lugna 17...Bd7, men offret är korrekt.",
+      "line": {
+        "from": "after",
+        "san": [
+          "bxc3",
+          "Bd7",
+          "h4",
+          "Qxc3"
+        ]
+      }
+    },
+    {
+      "ply": 35,
+      "en": "18...Ra3!! The famous move, and the engine's first choice. The rook offers itself on a3 to rip open the b-file: after the b-pawn takes, the queen checks on b6 and wins the bishop on b5, and White's king is left with almost no pawn cover.",
+      "sv": "18...Ra3!! Det berömda draget, och motorns förstaval. Tornet offrar sig på a3 för att slita upp b-linjen: när b-bonden slår ger damen schack på b6 och vinner löparen på b5, och den vita kungen står nästan utan bondeskydd.",
+      "line": {
+        "from": "after",
+        "san": [
+          "bxa3",
+          "Qb6+",
+          "Bb5",
+          "Qxb5+",
+          "Ka1",
+          "fxe6"
+        ]
+      }
+    },
+    {
+      "ply": 36,
+      "en": "19.exf7+? is the real error. Winning a pawn with check looks natural, but the rook that recaptures on f7 can swing along the seventh rank to the c-file and join the attack. Taking the rook at once with 19.bxa3 would have limited the damage: Black is better, but far from winning.",
+      "sv": "19.exf7+? är det verkliga felet. Att vinna en bonde med schack ser naturligt ut, men tornet som tar tillbaka på f7 kan svänga längs sjunde raden till c-linjen och delta i anfallet. Att ta tornet direkt med 19.bxa3 hade begränsat skadan: Svart står bättre, men långt ifrån vinnande.",
+      "line": {
+        "from": "before",
+        "san": [
+          "bxa3",
+          "Qb6+",
+          "Bb5",
+          "Qxb5+",
+          "Ka1",
+          "fxe6"
+        ]
+      }
+    },
+    {
+      "ply": 41,
+      "en": "21...Qxb5+ After the exchanges White has two rooks against rook and bishop, but his king is driven into the corner on a1 with open lines all around it, while Black's queen, rook and bishop are all ready to join the attack. The engine rates Black as winning.",
+      "sv": "21...Qxb5+ Efter avbytena har Vit två torn mot torn och löpare, men kungen drivs in i hörnet på a1 med öppna linjer runt sig, medan Svarts dam, torn och löpare alla står redo att delta i anfallet. Motorn bedömer att Svart står till vinst."
+    },
+    {
+      "ply": 43,
+      "en": "22...Rc7? lets the win slip. The engine wanted 22...Qc4, eyeing the d4 pawn and preparing ...Re7 and ...Bxd4+. After the slower rook move Pillsbury can bring his pieces to defend, and with 23.Rd2 the engine sees the game as level.",
+      "sv": "22...Rc7? släpper vinsten. Motorn ville spela 22...Qc4, som siktar på bonden på d4 och förbereder ...Re7 och ...Bxd4+. Efter det långsammare torndraget hinner Pillsbury få fram pjäserna till försvaret, och efter 23.Rd2 bedömer motorn ställningen som jämn.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qc4",
+          "Qg4",
+          "Re7",
+          "Qh3",
+          "Bxd4+",
+          "Kb1"
+        ]
+      }
+    },
+    {
+      "ply": 46,
+      "en": "24.Rhd1? hands the advantage back. The engine's 24.Re1 would have used the open e-file to give checks against Black's king and hold the balance. Instead both white rooks stand passively on the d-file.",
+      "sv": "24.Rhd1? ger tillbaka fördelen. Motorns 24.Re1 hade utnyttjat den öppna e-linjen för att ge schackar mot den svarta kungen och hålla balansen. I stället står båda de vita tornen passivt på d-linjen.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Re1",
+          "Qa5",
+          "Re8+",
+          "Kh7",
+          "Qf5+",
+          "g6"
+        ]
+      }
+    },
+    {
+      "ply": 47,
+      "en": "24...Rc3? and Lasker returns the favour: the engine now rates the position as roughly level, even slightly better for White. 24...Qc6, preparing ...Bg5 to win the exchange on d2, was still winning for Black.",
+      "sv": "24...Rc3? och Lasker ger tillbaka tjänsten: motorn bedömer nu ställningen som ungefär jämn, till och med något bättre för Vit. 24...Qc6, som förbereder ...Bg5 för att vinna kvalitet på d2, hade fortfarande vunnit för Svart.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qc6",
+          "Kb1",
+          "Bg5",
+          "Qf3",
+          "Bxd2",
+          "Rxd2"
+        ]
+      }
+    },
+    {
+      "ply": 50,
+      "en": "26.Kb2?? is the decisive blunder. It looks like it attacks the rook, but it walks the king towards Black's pieces. 26.Kb1 kept White on top. Now 26...Rxa3! cannot be taken: the king would be chased up the board into a mating net, which is exactly what happens two moves later.",
+      "sv": "26.Kb2?? är det avgörande grova misstaget. Draget ser ut att angripa tornet, men kungen går mot de svarta pjäserna. 26.Kb1 hade behållit övertaget för Vit. Nu kan 26...Rxa3! inte tas: kungen skulle jagas upp på brädet in i ett mattnät, vilket är precis vad som händer två drag senare.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Kb1",
+          "Qb5+",
+          "Rb2",
+          "Qc6"
+        ]
+      }
+    },
+    {
+      "ply": 54,
+      "en": "28.Kxa3?? takes the rook and allows a forced mate. 28.Qf5+ was the way to fight on, though Black would still be winning.",
+      "sv": "28.Kxa3?? tar tornet och tillåter en forcerad matt. 28.Qf5+ var sättet att kämpa vidare, även om Svart fortfarande hade stått till vinst."
+    },
+    {
+      "ply": 57,
+      "en": "29...b5+! A pawn sacrifice that pulls the king one step further forward, where the queen and bishop can finish the hunt.",
+      "sv": "29...b5+! Ett bondeoffer som drar kungen ytterligare ett steg framåt, där damen och löparen kan avsluta jakten."
+    },
+    {
+      "ply": 59,
+      "en": "30...Qc4+ The king has only a5 left, and then the bishop checks from d8 and mates on b6 after White's queen blocks. Pillsbury resigned here.",
+      "sv": "30...Qc4+ Kungen har bara a5 kvar, och sedan ger löparen schack från d8 och gör matt på b6 efter att den vita damen har blockerat. Här gav Pillsbury upp.",
+      "line": {
+        "from": "after",
+        "san": [
+          "Ka5",
+          "Bd8+",
+          "Qb6",
+          "Bxb6#"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "en": "Castling long and attacking on the kingside is double-edged: when White's queen wandered to h4 and h5, his own king on the queenside was left with too few defenders, and Lasker's rook sacrifices on c3 and a3 tore it open. The engine shows that the second half was far from flawless, with the advantage changing hands several times between moves 22 and 26. The lesson there is practical: with a king this exposed, one careless king move like 26.Kb2 decides the game.",
+    "sv": "Att rockera långt och anfalla på kungsflygeln är tveeggat: när Vits dam vandrade till h4 och h5 fick den egna kungen på damflygeln för få försvarare, och Laskers tornoffer på c3 och a3 slet upp den. Motorn visar att andra halvan var långt ifrån felfri, och fördelen bytte ägare flera gånger mellan drag 22 och 26. Lärdomen där är praktisk: med en så utsatt kung avgör ett enda slarvigt kungsdrag som 26.Kb2 partiet."
+  }
+}

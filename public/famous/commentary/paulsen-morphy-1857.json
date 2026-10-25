@@ -1,0 +1,103 @@
+{
+  "id": "paulsen-morphy-1857",
+  "intro": {
+    "en": "New York, 1857: the First American Chess Congress, where Paul Morphy met Louis Paulsen, one of the strongest players of the day. The opening is a quiet Four Knights Game, and for a long time nothing dramatic happens. Watch Black's queen settle on d3, where it smothers White's queenside, and then the famous queen sacrifice on f3 that rips open the white king.",
+    "sv": "New York 1857: den första amerikanska schackkongressen, där Paul Morphy mötte Louis Paulsen, en av tidens starkaste spelare. Öppningen är ett lugnt fyrspringarparti, och länge händer inget dramatiskt. Lägg märke till hur den svarta damen slår sig ner på d3, där den kväver Vits damflygel, och sedan det berömda damoffret på f3 som river upp den vita kungsställningen."
+  },
+  "comments": [
+    {
+      "ply": 7,
+      "en": "4...Bc5 is the Classical Variation of the Four Knights Game: Black develops the bishop to its most active square. The engine slightly prefers 4...Bb4, mirroring White's bishop, but both are playable.",
+      "sv": "4...Bc5 är den klassiska varianten av fyrspringarspelet: Svart utvecklar löparen till sin aktivaste ruta. Motorn föredrar en aning 4...Bb4, som speglar Vits löpare, men båda är spelbara."
+    },
+    {
+      "ply": 11,
+      "en": "6.Nxe5 grabs the pawn using a well-known fork trick: if Black takes back, d4 hits both the bishop and the knight and White regains the piece. Morphy instead counterattacks the e4 pawn with 6...Re8. The engine thinks the simple 6...Nxe5 7.d4 Bd6 was a little more accurate.",
+      "sv": "6.Nxe5 tar bonden med hjälp av ett välkänt gaffeltrick: om Svart slår tillbaka angriper d4 både löparen och springaren, och Vit vinner tillbaka pjäsen. Morphy angriper i stället bonden på e4 med 6...Re8. Motorn anser att det enkla 6...Nxe5 7.d4 Bd6 var något mer exakt.",
+      "line": {
+        "from": "before",
+        "san": ["Nxe5", "d4", "Bd6", "f4", "Nc6", "e5"]
+      }
+    },
+    {
+      "ply": 12,
+      "en": "6...Re8 attacks the knight on e5 as well as e4. 7.Nxc6 trades it off, and after 7...dxc6 the d-file and the diagonal of Black's light-squared bishop open up. The engine preferred 7.Nf3, bringing the knight back to defend the king.",
+      "sv": "6...Re8 angriper springaren på e5 och bonden på e4. 7.Nxc6 byter bort springaren, och efter 7...dxc6 öppnas d-linjen och diagonalen för Svarts vitfältslöpare. Motorn föredrog 7.Nf3, som tar tillbaka springaren för att försvara kungen."
+    },
+    {
+      "ply": 15,
+      "en": "8.Bc4 was a real mistake, and the engine shows how to punish it: 8...Ng4! brings the knight and the bishop on c5 together against f2. Morphy's 8...b5 chases the bishop back but lets White off the hook, and the position is level again.",
+      "sv": "8.Bc4 var ett verkligt misstag, och motorn visar hur det skulle straffas: 8...Ng4! låter springaren och löparen på c5 samverka mot f2. Morphys 8...b5 driver tillbaka löparen men släpper Vit ur greppet, och ställningen är jämn igen.",
+      "line": {
+        "from": "before",
+        "san": ["Ng4", "d4", "Qd6", "g3", "Bxd4"]
+      }
+    },
+    {
+      "ply": 23,
+      "en": "12...Qd3! is the key idea of the game. The queen sits in front of the d2 pawn, so White's bishop on c1 and rook on a1 cannot easily come into play. The engine agrees it is the best move.",
+      "sv": "12...Qd3! är partiets nyckelidé. Damen står framför bonden på d2, så att Vits löpare på c1 och torn på a1 inte lätt kommer i spel. Motorn håller med om att det är det bästa draget."
+    },
+    {
+      "ply": 24,
+      "en": "13.b4 tries to free the queenside by gaining space, but it does nothing about the queen on d3. The engine wanted 13.Re1, contesting the open e-file and offering to trade rooks.",
+      "sv": "13.b4 försöker frigöra damflygeln genom att vinna utrymme, men gör ingenting åt damen på d3. Motorn ville spela 13.Re1, som bestrider den öppna e-linjen och erbjuder tornbyte."
+    },
+    {
+      "ply": 29,
+      "en": "Surprisingly, the engine calls 15...Bd7 a serious error. The bishop on c8 was covering a6; once it leaves, White can play 16.Qa6 and force the queens off, and the trade gets rid of Black's dominant queen. 15...Bb7 kept everything under control.",
+      "sv": "Överraskande nog kallar motorn 15...Bd7 för ett allvarligt fel. Löparen på c8 täckte a6; när den flyttar kan Vit spela 16.Qa6 och tvinga fram dambyte, och bytet gör sig av med Svarts dominerande dam. 15...Bb7 höll allt under kontroll.",
+      "line": {
+        "from": "after",
+        "san": ["Qa6", "Qxa6", "Rxa6"]
+      }
+    },
+    {
+      "ply": 30,
+      "en": "16.Ra2? misses the chance, and this is the decisive mistake. The rook move is passive, and Black uses the tempo for 16...Rae8, bringing his last piece to the open e-file. White's bishop on c1 is still buried.",
+      "sv": "16.Ra2? missar chansen, och detta är det avgörande misstaget. Torndraget är passivt, och Svart använder tempot till 16...Rae8 och tar in sin sista pjäs på den öppna e-linjen. Vits löpare på c1 är fortfarande instängd."
+    },
+    {
+      "ply": 32,
+      "en": "17.Qa6 sends the queen even further from the king. The engine's 17.Qd1 would have brought it back to defend, although White was already in serious trouble either way.",
+      "sv": "17.Qa6 skickar damen ännu längre bort från kungen. Motorns 17.Qd1 hade tagit tillbaka den till försvaret, även om Vit redan låg mycket illa till oavsett."
+    },
+    {
+      "ply": 33,
+      "en": "17...Qxf3!! Morphy gives his queen for a bishop, and the engine agrees it is the strongest move. After 18.gxf3 the g-file is open, the rook comes to g6 with check, and the bishop joins via h3. White's queen and rook on the queenside are far too far away to help.",
+      "sv": "17...Qxf3!! Morphy ger sin dam för en löpare, och motorn håller med om att det är starkaste draget. Efter 18.gxf3 är g-linjen öppen, tornet kommer till g6 med schack och löparen ansluter via h3. Vits dam och torn på damflygeln står alldeles för långt bort för att hjälpa till."
+    },
+    {
+      "ply": 37,
+      "en": "19...Bh3 threatens mate in two: the bishop goes to g2 with check and then takes on f3, with the rook on g6 joining in along the g-file. White's only real defence was 20.Qd3, bringing the queen back to guard f3; after 20.Rd1 the engine finds a forced mate.",
+      "sv": "19...Bh3 hotar matt i två drag: löparen går till g2 med schack och slår sedan på f3, med tornet på g6 som hjälper till längs g-linjen. Vits enda verkliga försvar var 20.Qd3, som tar tillbaka damen för att skydda f3; efter 20.Rd1 hittar motorn en forcerad matt.",
+      "line": {
+        "from": "after",
+        "san": ["Qd3", "f5", "Rd1", "Bg2+", "Kg1", "Bxf3+"]
+      }
+    },
+    {
+      "ply": 43,
+      "en": "Here Morphy repeats checks with the bishop instead of finishing. The engine points out a faster win: 22...Rg2! threatens mate, and White can only delay it by giving up the queen.",
+      "sv": "Här upprepar Morphy schackar med löparen i stället för att avgöra. Motorn pekar på en snabbare vinst: 22...Rg2! hotar matt, och Vit kan bara skjuta upp den genom att ge bort damen.",
+      "line": {
+        "from": "before",
+        "san": ["Rg2", "Qe2", "Rxe2", "d3", "Rxh2", "Rxe2", "Rh1#"]
+      }
+    },
+    {
+      "ply": 47,
+      "en": "24...Bxf2 passes up a forced mate, but it is a clean practical choice. It threatens mate with the bishop on g2, and White can only stop it by handing back the queen with 25.Qf1. Black ends up two pawns ahead, with crushing activity.",
+      "sv": "24...Bxf2 avstår från en forcerad matt, men är ett rent praktiskt val. Draget hotar matt med löparen på g2, och Vit kan bara stoppa det genom att ge tillbaka damen med 25.Qf1. Svart får två merbönder och förkrossande aktivitet."
+    },
+    {
+      "ply": 55,
+      "en": "28...Be3 and Paulsen resigned. Black's rooks have taken over the second rank and the h-file, and the h2 pawn and White's king cannot hold out. The bishop on c1 never moved, and the rook on a1 only shuffled to a2 and back. Both were shut out from the moment the queen landed on d3.",
+      "sv": "28...Be3 och Paulsen gav upp. Svarts torn har tagit över andra raden och h-linjen, och bonden på h2 och den vita kungen kan inte hålla emot. Löparen på c1 rörde sig aldrig, och tornet på a1 gick bara till a2 och tillbaka. Båda var utestängda från det ögonblick damen landade på d3."
+    }
+  ],
+  "summary": {
+    "en": "The game turned on one square: the black queen on d3 kept White's queenside pieces shut in for the whole game. Paulsen's last chance was to trade queens with 16.Qa6, and after he missed it, Morphy's queen sacrifice opened the g-file against a king with no defenders nearby. The engine finds faster mates near the end, but Morphy's judgement that the attack was worth a queen was exactly right.",
+    "sv": "Partiet avgjordes av en enda ruta: den svarta damen på d3 höll Vits pjäser på damflygeln instängda hela partiet. Paulsens sista chans var att byta damer med 16.Qa6, och när han missade den öppnade Morphys damoffer g-linjen mot en kung utan försvarare i närheten. Motorn hittar snabbare matter mot slutet, men Morphys bedömning att anfallet var värt en dam var helt riktig."
+  }
+}

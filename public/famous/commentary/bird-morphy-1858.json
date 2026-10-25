@@ -1,0 +1,99 @@
+{
+  "id": "bird-morphy-1858",
+  "intro": {
+    "en": "London, 1858: Paul Morphy, on his tour of Europe, faces the English player Henry Bird. Morphy answers with the Philidor Countergambit, a sharp and risky way to play the Philidor Defence. Bird gets a promising position but overreaches on the kingside, and once he castles queenside Morphy throws everything at the white king, starting with a rook sacrifice on f2.",
+    "sv": "London 1858: Paul Morphy möter under sin Europaturné den engelske spelaren Henry Bird. Morphy svarar med Philidors motgambit, ett skarpt och riskabelt sätt att spela Philidors försvar. Bird får en lovande ställning men spelar för offensivt på kungsflygeln, och när han rockerar långt kastar Morphy allt mot den vita kungen, med början i ett tornoffer på f2."
+  },
+  "comments": [
+    {
+      "ply": 5,
+      "en": "3...f5 is the Philidor Countergambit. Black strikes at e4 at once, but it loosens his own king and the centre. The engine considers it dubious: after 4.exf5 White would keep a clear advantage. The solid choice was 3...exd4.",
+      "sv": "3...f5 är Philidors motgambit. Svart slår direkt mot e4, men det försvagar den egna kungen och centrum. Motorn anser draget tvivelaktigt: efter 4.exf5 skulle Vit behålla en klar fördel. Det solida valet var 3...exd4.",
+      "line": {
+        "from": "after",
+        "san": ["exf5", "Bxf5", "Nc3", "Be7", "Bd3"]
+      }
+    },
+    {
+      "ply": 9,
+      "en": "5...d5 attacks the knight and grabs space, but it is a mistake: Black's king is still in the centre, the e5 pawn loses its only defender, and the e-file and the e6 square become targets. The engine prefers the calm 5...Nf6, developing.",
+      "sv": "5...d5 angriper springaren och tar utrymme, men det är ett misstag: den svarta kungen står kvar i centrum, bonden på e5 förlorar sin enda försvarare, och e-linjen och rutan e6 blir måltavlor. Motorn föredrar det lugna 5...Nf6, som utvecklar."
+    },
+    {
+      "ply": 10,
+      "en": "6.Ng3? lets Black off the hook. The engine's 6.Neg5! keeps the knight close to the weak e6 and f7 squares, and if Black takes on d4, White sacrifices the bishop on b5 to open the e-file against the uncastled king.",
+      "sv": "6.Ng3? släpper Svart ur greppet. Motorns 6.Neg5! håller springaren nära de svaga rutorna e6 och f7, och om Svart slår på d4 offrar Vit löparen på b5 för att öppna e-linjen mot den orockerade kungen.",
+      "line": {
+        "from": "before",
+        "san": ["Neg5", "exd4", "Bb5+", "c6", "O-O", "cxb5", "Re1+"]
+      }
+    },
+    {
+      "ply": 16,
+      "en": "9.Nh5 begins an attack on the kingside before White has castled or finished developing. The engine preferred the simple 9.Be2 followed by castling; from here on the initiative slowly passes to Black.",
+      "sv": "9.Nh5 inleder ett anfall på kungsflygeln innan Vit har rockerat eller utvecklat klart. Motorn föredrog det enkla 9.Be2 följt av rockad; härifrån går initiativet sakta över till Svart."
+    },
+    {
+      "ply": 20,
+      "en": "11.g4? is too ambitious. It weakens White's own king and gives Black a target. 11.Bxf6 was the engine's choice, removing a defender before going for the king.",
+      "sv": "11.g4? är för ambitiöst. Det försvagar den egna kungen och ger Svart ett mål. 11.Bxf6 var motorns val, som slår bort en försvarare innan Vit går mot kungen."
+    },
+    {
+      "ply": 23,
+      "en": "After 11...Nxg4 12.Nxg4 Qxh5 the smoke clears: Black has won a pawn, and the black queen stands actively on h5. White's king has no safe home on the kingside any more.",
+      "sv": "Efter 11...Nxg4 12.Nxg4 Qxh5 lägger sig röken: Svart har vunnit en bonde, och den svarta damen står aktivt på h5. Den vita kungen har inte längre något säkert hem på kungsflygeln."
+    },
+    {
+      "ply": 31,
+      "en": "After 15.Nxc6 bxc6 the b-file is half-open, and 16...Rb8 puts a rook on it at once. It is a clear signal: if White castles queenside, the king will stand right next to it.",
+      "sv": "Efter 15.Nxc6 bxc6 är b-linjen halvöppen, och 16...Rb8 placerar direkt ett torn där. Det är en tydlig signal: om Vit rockerar långt kommer kungen att stå precis bredvid den."
+    },
+    {
+      "ply": 33,
+      "en": "17...Rxf2! is the famous sacrifice: a whole rook for a pawn, to drag the bishop away from e3, where it blocked the third rank. Now the queen on h3 can swing across to a3. The engine is honest here: Black was already much better, and the quiet 17...Bb4 would have kept a larger advantage. But the sacrifice gives White very little room for error.",
+      "sv": "17...Rxf2! är det berömda offret: ett helt torn för en bonde, för att dra bort löparen från e3, där den spärrade tredje raden. Nu kan damen på h3 svänga över till a3. Motorn är ärlig här: Svart stod redan mycket bättre, och det lugna 17...Bb4 hade behållit en större fördel. Men offret ger Vit mycket litet utrymme för misstag.",
+      "line": {
+        "from": "before",
+        "san": ["Bb4", "c3", "Bd6"]
+      }
+    },
+    {
+      "ply": 35,
+      "en": "18...Qa3! The queen heads for the white king. Together with the rook on b8 it hits b2. White answers 19.c3, so that his queen can guard b2 along the second rank, and the black queen takes the a-pawn instead.",
+      "sv": "18...Qa3! Damen går mot den vita kungen. Tillsammans med tornet på b8 angriper den b2. Vit svarar 19.c3, så att damen kan skydda b2 längs andra raden, och den svarta damen tar a-bonden i stället."
+    },
+    {
+      "ply": 42,
+      "en": "22.Kb2?? is the decisive blunder. The king steps onto the open b-file, right in front of Black's rook. 22.Kc1 would have held: there the engine gives Black only a small edge, since White's extra material balances the attack.",
+      "sv": "22.Kb2?? är den avgörande blundern. Kungen kliver ut på den öppna b-linjen, rakt framför Svarts torn. 22.Kc1 hade hållit: där ger motorn Svart bara en liten fördel, eftersom Vits extra material väger upp anfallet.",
+      "line": {
+        "from": "before",
+        "san": ["Kc1", "a5", "Rhg1", "Bf5"]
+      }
+    },
+    {
+      "ply": 43,
+      "en": "22...Bxb4! punishes it at once. After 23.cxb4 Rxb4+ the rook arrives with check, and White's best is to give up the queen for it.",
+      "sv": "22...Bxb4! straffar det direkt. Efter 23.cxb4 Rxb4+ kommer tornet med schack, och Vits bästa är att ge damen för det."
+    },
+    {
+      "ply": 47,
+      "en": "After 24...Qxb4+ White has two rooks and two bishops against queen and bishop, but only two pawns against seven. The white king is exposed, his pieces are uncoordinated, and Black's pawns are ready to roll, so the engine considers Black completely winning.",
+      "sv": "Efter 24...Qxb4+ har Vit två torn och två löpare mot dam och löpare, men bara två bönder mot sju. Den vita kungen är blottad, pjäserna samarbetar inte och de svarta bönderna är redo att rulla, så motorn bedömer Svarts ställning som helt vunnen."
+    },
+    {
+      "ply": 49,
+      "en": "25...e3! clears the e4 square, which was blocking the diagonal from f5 to c2. After 26.Bxe3 the bishop comes to f5 with check, and the queen keeps chasing the king.",
+      "sv": "25...e3! frigör rutan e4, som spärrade diagonalen från f5 till c2. Efter 26.Bxe3 kommer löparen till f5 med schack, och damen fortsätter jaga kungen."
+    },
+    {
+      "ply": 57,
+      "en": "29...Qb1+ and Bird resigned. Whether the king goes to d2 or the bishop blocks on c1, Black wins a rook, and the attack goes on.",
+      "sv": "29...Qb1+ och Bird gav upp. Oavsett om kungen går till d2 eller löparen ställer sig emellan på c1 vinner Svart ett torn, och anfallet fortsätter."
+    }
+  ],
+  "summary": {
+    "en": "Black's opening was risky, and Bird could have punished it with 4.exf5 or 6.Neg5. Instead he launched a kingside attack before finishing his development and then castled queenside, right next to the half-open b-file. Morphy's rook sacrifice was not objectively the strongest move, but it made every White move a test, and 22.Kb2 failed it. Lesson: once the files are open, a king near them is in danger, however much extra material it has to defend it.",
+    "sv": "Svarts öppning var riskabel, och Bird kunde ha straffat den med 4.exf5 eller 6.Neg5. I stället inledde han ett anfall på kungsflygeln innan han utvecklat klart och rockerade sedan långt, precis bredvid den halvöppna b-linjen. Morphys tornoffer var inte objektivt det starkaste draget, men det gjorde varje vitt drag till ett test, och 22.Kb2 klarade inte testet. Läxan: när linjerna är öppna är en kung i närheten av dem i fara, hur mycket extra material den än har till sitt försvar."
+  }
+}

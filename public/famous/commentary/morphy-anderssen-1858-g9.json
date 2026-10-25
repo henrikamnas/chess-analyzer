@@ -1,0 +1,70 @@
+{
+  "id": "morphy-anderssen-1858-g9",
+  "intro": {
+    "en": "Paris, 1858: game 9 of the match between Paul Morphy and Adolf Anderssen, then regarded as the strongest player in Europe. Morphy won the match clearly. This game is a short, wild Sicilian: Anderssen lashes out with his f-pawn, Morphy gives up a bishop to fork king and rook, and the black king ends up walking into the open.",
+    "sv": "Paris 1858: parti 9 i matchen mellan Paul Morphy och Adolf Anderssen, som då räknades som Europas starkaste spelare. Morphy vann matchen klart. Det här partiet är en kort och vild siciliansk: Anderssen slår ut med f-bonden, Morphy ger bort en löpare för att gaffla kung och torn, och den svarta kungen går till slut rakt ut i det öppna."
+  },
+  "comments": [
+    {
+      "ply": 8,
+      "en": "5.Nb5 is the Szén idea in the Sicilian: the knight jumps to b5 and eyes the weak d6 square, so Black has to spend a move on ...d6, which shuts in his dark-squared bishop. The engine considers the simple 5.Nc3 a little better.",
+      "sv": "5.Nb5 är Széns idé i siciliansk: springaren hoppar till b5 och siktar på den svaga rutan d6, så att Svart måste lägga ett drag på ...d6, vilket stänger in den svartfältiga löparen. Motorn anser att det enkla 5.Nc3 är något bättre."
+    },
+    {
+      "ply": 13,
+      "en": "7...f5? is the first real mistake. Black wants to chase the bishop with ...f4, but the pawn move weakens the e6 square and opens the diagonal from h5 to his own king, which is still in the centre. 7...Nf6, simply developing, was correct.",
+      "sv": "7...f5? är det första riktiga misstaget. Svart vill jaga löparen med ...f4, men bondedraget försvagar rutan e6 och öppnar diagonalen från h5 mot den egna kungen, som fortfarande står i centrum. 7...Nf6, som helt enkelt utvecklar, var rätt."
+    },
+    {
+      "ply": 18,
+      "en": "Morphy ignores the attack on his bishop: after 9.Nd5 fxe3 the knight lands on c7 with check, forking the king and the rook on a8. Morphy is happy to give up the bishop: the rook on a8 is now hanging, and Black's king has been drawn out to f7.",
+      "sv": "Morphy struntar i angreppet på löparen: efter 9.Nd5 fxe3 landar springaren på c7 med schack och gafflar kungen och tornet på a8. Morphy ger gärna bort löparen: tornet på a8 hänger nu, och den svarta kungen har dragits ut till f7."
+    },
+    {
+      "ply": 20,
+      "en": "11.Qf3+ goes for the king instead of taking the rook. The engine disagrees with this choice: the simple 11.Nxa8 kept a clear advantage, while after the queen check Black can hold the balance with exact defence.",
+      "sv": "11.Qf3+ går på kungen i stället för att ta tornet. Motorn håller inte med om valet: det enkla 11.Nxa8 behöll en klar fördel, medan Svart efter damschacken kan hålla balansen med exakt försvar.",
+      "line": {
+        "from": "before",
+        "san": ["Nxa8", "exf2+", "Kxf2", "Qh4+", "g3", "Qxe4"]
+      }
+    },
+    {
+      "ply": 24,
+      "en": "13.Nxf6+ takes the knight and uncovers a check from the bishop on c4. Anderssen blocks with 13...d5, and the position is a tangle of pieces attacking each other around the black king.",
+      "sv": "13.Nxf6+ slår springaren och ger samtidigt avtäckarschack från löparen på c4. Anderssen ställer emellan med 13...d5, och ställningen är ett virrvarr av pjäser som angriper varandra runt den svarta kungen."
+    },
+    {
+      "ply": 27,
+      "en": "14...Kg6?? is the losing move. The king walks forward towards White's queen and knight. 14...Ke7 was the only way to hold: the king steps across to e7, away from White's pieces, and the engine sees equal chances.",
+      "sv": "14...Kg6?? är det förlorande draget. Kungen går framåt, mot Vits dam och springare. 14...Ke7 var enda sättet att hålla: kungen går åt sidan till e7, bort från Vits pjäser, och motorn ser lika chanser.",
+      "line": {
+        "from": "before",
+        "san": ["Ke7", "Qh5", "gxf6", "Nxa8", "Nxc2+", "Ke2"]
+      }
+    },
+    {
+      "ply": 28,
+      "en": "15.Qh5+ forces the king to take the knight on f6, right out in the open. The black king now stands on the f-file in front of all of White's pieces.",
+      "sv": "15.Qh5+ tvingar kungen att slå springaren på f6, mitt ute i det öppna. Den svarta kungen står nu på f-linjen framför alla Vits pjäser."
+    },
+    {
+      "ply": 30,
+      "en": "16.fxe3 opens the f-file towards the king and attacks the knight on d4. Black is still a little ahead in material, but his king is far too exposed. The engine's best defence, 16...g6, does not save the game either.",
+      "sv": "16.fxe3 öppnar f-linjen mot kungen och angriper springaren på d4. Svart har fortfarande lite mer material, men kungen är alldeles för blottad. Motorns bästa försvar, 16...g6, räddar inte heller partiet.",
+      "line": {
+        "from": "after",
+        "san": ["g6", "Qh4+", "g5", "Qf2+", "Nf5", "Nxa8"]
+      }
+    },
+    {
+      "ply": 32,
+      "en": "17.Ke2, and Anderssen resigned. The knight on c2 is far from the action, and White's rooks are about to join the attack on the f-file against the exposed king.",
+      "sv": "17.Ke2, och Anderssen gav upp. Springaren på c2 står långt från händelserna, och Vits torn är på väg att ansluta till anfallet längs f-linjen mot den blottade kungen."
+    }
+  ],
+  "summary": {
+    "en": "Anderssen's 7...f5 loosened his position while his king was still in the centre, and Morphy pounced with a knight fork on c7. The engine thinks Morphy could have won more simply by taking the rook, and that Black could have held with 14...Ke7. Under pressure Anderssen chose the wrong king move and the game ended after 17 moves. The lesson: with the centre opening, every pawn move near your own king needs a good reason.",
+    "sv": "Anderssens 7...f5 försvagade ställningen medan kungen stod kvar i centrum, och Morphy slog till med en springargaffel på c7. Motorn anser att Morphy kunde ha vunnit enklare genom att ta tornet, och att Svart kunde ha hållit med 14...Ke7. Under press valde Anderssen fel kungsdrag, och partiet tog slut efter 17 drag. Läxan: när centrum öppnas behöver varje bondedrag nära den egna kungen ett bra skäl."
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "id": "lasker-napier-1904",
+  "intro": {
+    "en": "Cambridge Springs, 1904: world champion Emanuel Lasker has White against William Napier. Lasker throws his kingside pawns forward, Napier answers with blows in the centre, and for several moves pieces hang on both sides of the board. Watch the black knight that sits en prise on c3 for several moves: both players have reasons not to deal with it, and the engine shows that both missed chances in the chaos.",
+    "sv": "Cambridge Springs 1904: världsmästaren Emanuel Lasker har vit mot William Napier. Lasker kastar fram sina kungsflygelbönder, Napier svarar med slag i centrum, och under flera drag hänger pjäser på båda sidor av brädet. Håll ögonen på den svarta springaren som står i slag på c3 i flera drag: båda spelarna har skäl att låta den vara, och motorn visar att båda missade chanser i kaoset."
+  },
+  "comments": [
+    {
+      "ply": 9,
+      "en": "The opening is an Accelerated Dragon: Black fianchettoes the bishop on g7 before playing ...d6. The point of the system is that Black can often break with ...d5 in one move, freeing the position before White has organised an attack.",
+      "sv": "Öppningen är en accelererad drake: Svart fianchetterar löparen till g7 innan ...d6 har spelats. Poängen med systemet är att Svart ofta kan bryta med ...d5 i ett enda drag och befria ställningen innan Vit har hunnit organisera ett anfall."
+    },
+    {
+      "ply": 16,
+      "en": "7.h3, 8.g4 and now 9.g5: Lasker storms with his kingside pawns while his king is still in the centre. It gains space and kicks the knight from f6, but it also loosens White's position. The engine preferred to develop with 9.Qd2 and castle first.",
+      "sv": "7.h3, 8.g4 och nu 9.g5: Lasker stormar med kungsflygelbönderna medan kungen fortfarande står i centrum. Det vinner utrymme och jagar bort springaren från f6, men det försvagar också den vita ställningen. Motorn föredrog att utveckla med 9.Qd2 och rockera först."
+    },
+    {
+      "ply": 17,
+      "en": "9...Ne8 is too passive. The engine's 9...Nh5 keeps the knight active and prepares ...Qb6, hitting d4 and b2 while White's king and queen are still at home.",
+      "sv": "9...Ne8 är för passivt. Motorns 9...Nh5 håller springaren aktiv och förbereder ...Qb6, som angriper d4 och b2 medan Vits kung och dam fortfarande står hemma.",
+      "line": {
+        "from": "before",
+        "san": ["Nh5", "Rg1", "Qb6", "Nd5", "Qxb2", "Rb1", "Qa3"]
+      }
+    },
+    {
+      "ply": 21,
+      "en": "11...e5! The classical answer to an attack on the wing is a counter-strike in the centre, and the engine agrees it is the best move. White's pawns on f4, g5 and h4 have left holes behind them, and opening the centre exposes White's uncastled king.",
+      "sv": "11...e5! Det klassiska svaret på ett flankanfall är ett motslag i centrum, och motorn håller med om att det är bästa draget. De vita bönderna på f4, g5 och h4 har lämnat hål bakom sig, och när centrum öppnas blir den orockerade vita kungen utsatt."
+    },
+    {
+      "ply": 25,
+      "en": "13...Nd4? starts a forcing sequence that goes wrong for Black. The engine preferred 13...exf4, simply opening lines. After the game continuation the queens come off and White's knight lands on e7 with check, and White is clearly better.",
+      "sv": "13...Nd4? inleder en forcerande följd som slutar illa för Svart. Motorn föredrog 13...exf4, som helt enkelt öppnar linjer. Efter partiets fortsättning byts damerna av och den vita springaren landar på e7 med schack, och Vit står klart bättre.",
+      "line": {
+        "from": "after",
+        "san": ["Nxd4", "Nxd5", "Nf5", "Nxc3", "Qxd8", "Rxd8", "Ne7+", "Kh8"]
+      }
+    },
+    {
+      "ply": 34,
+      "en": "18.h5! Black's knight on c3 is attacked by the b2 pawn, but Lasker does not take it. He keeps up the pressure on the kingside first, and the engine agrees that this is the best move: the knight can wait, the attack cannot.",
+      "sv": "18.h5! Den svarta springaren på c3 är angripen av bonden på b2, men Lasker tar den inte. Han fortsätter trycket på kungsflygeln först, och motorn håller med om att det är bästa draget: springaren kan vänta, anfallet kan det inte."
+    },
+    {
+      "ply": 37,
+      "en": "19...gxh5? grabs a pawn but does nothing about Black's problems. 19...exf4 was the engine's choice. Now 20.bxc3 would finally take the knight, after which the bishop can come to b5 to hit the rook on e8.",
+      "sv": "19...gxh5? tar en bonde men gör ingenting åt Svarts problem. 19...exf4 var motorns val. Nu hade 20.bxc3 äntligen tagit springaren, och därefter kan löparen gå till b5 och angripa tornet på e8.",
+      "line": {
+        "from": "after",
+        "san": ["bxc3", "Bf8", "Bb5", "Bxe7", "Bxe8", "Bxc5"]
+      }
+    },
+    {
+      "ply": 38,
+      "en": "20.Bc4? Lasker again ignores the knight and aims at f7, where a bishop capture would hit the rook on e8. The engine calls this a serious mistake: 20...Ne4! would rescue the knight with an attack on the bishop on c5, which protects White's knight on e7, and Black would be winning.",
+      "sv": "20.Bc4? Lasker ignorerar återigen springaren och siktar på f7, där ett löparslag skulle angripa tornet på e8. Motorn kallar detta ett allvarligt misstag: 20...Ne4! hade räddat springaren med angrepp på löparen på c5, som skyddar Vits springare på e7, och Svart hade stått till vinst.",
+      "line": {
+        "from": "after",
+        "san": ["Ne4", "Bxf7", "Bg4", "f5", "Nxc5"]
+      }
+    },
+    {
+      "ply": 39,
+      "en": "20...exf4? misses the chance. Black wins a second pawn, but leaves both the knight on c3 and the pawn on f7 hanging, and White is better again.",
+      "sv": "20...exf4? missar chansen. Svart vinner en andra bonde men låter både springaren på c3 och bonden på f7 hänga, och Vit står bättre igen."
+    },
+    {
+      "ply": 41,
+      "en": "21...Ne4? finally moves the knight, but the rook on e8 is still attacked by the bishop on f7, and 22.Bxe8 wins the exchange. The engine preferred 21...Bg4, developing and limiting White's advantage.",
+      "sv": "21...Ne4? flyttar äntligen springaren, men tornet på e8 är fortfarande angripet av löparen på f7, och 22.Bxe8 vinner kvalitet. Motorn föredrog 21...Bg4, som utvecklar och begränsar Vits fördel.",
+      "line": {
+        "from": "before",
+        "san": ["Bg4", "bxc3", "Bxc3+", "Kf2", "Red8"]
+      }
+    },
+    {
+      "ply": 50,
+      "en": "26.Rxh5 walks into a knight fork on g3 and gives material back, but the engine rates it as the best move. Lasker is steering for an endgame where his pieces are far more active than Black's.",
+      "sv": "26.Rxh5 går in i en springargaffel på g3 och ger tillbaka material, men motorn bedömer det som bästa draget. Lasker styr mot ett slutspel där hans pjäser är mycket aktivare än de svarta.",
+      "line": {
+        "from": "after",
+        "san": ["Ng3+", "Kg2", "Nxh5", "Rxb7"]
+      }
+    },
+    {
+      "ply": 54,
+      "en": "28.Rxb7 Material is level: rook, bishop and knight each, with three pawns each. But White's rook is on the seventh rank, the knight on e7 covers g8 and g6 next to Black's king, and Black's knight is badly placed on the edge on h5. The engine sees White as winning.",
+      "sv": "28.Rxb7 Materialet är jämnt: torn, löpare och springare var, och tre bönder var. Men Vits torn står på sjunde raden, springaren på e7 täcker g8 och g6 intill den svarta kungen, och den svarta springaren står dåligt på kanten på h5. Motorn bedömer att Vit står till vinst."
+    },
+    {
+      "ply": 67,
+      "en": "34...Na4? sends the knight even further from the king. The engine's 34...a4 was more stubborn, though White would still be winning.",
+      "sv": "34...Na4? skickar springaren ännu längre bort från kungen. Motorns 34...a4 var segare, även om Vit fortfarande hade stått till vinst."
+    },
+    {
+      "ply": 68,
+      "en": "35.Be3 Black's king on h8 is boxed in and his knight is far away on a4. In the engine's line White pushes the g-pawn and Black has to give up his rook to stop the threats. Black gave up here.",
+      "sv": "35.Be3 Den svarta kungen på h8 är instängd och springaren står långt borta på a4. I motorns variant trycker Vit fram g-bonden, och Svart måste ge upp tornet för att stoppa hoten. Svart gav upp här.",
+      "line": {
+        "from": "after",
+        "san": ["Nb2", "g6", "Rf6+", "Kg4", "Rxg6+", "Nxg6+"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "This is a game about nerve as much as accuracy. Lasker's early pawn storm was objectively risky, Napier's 11...e5 hit back in the right way, and in the complications the engine finds a missed win for Black with 20...Ne4. Lasker's practical strength showed afterwards: he kept the initiative, gave back material at the right moment, and won an endgame that began with equal material because his pieces were active and Black's were not.",
+    "sv": "Det här är ett parti som handlar lika mycket om nerver som om precision. Laskers tidiga bondestorm var objektivt riskabel, Napiers 11...e5 slog tillbaka på rätt sätt, och i komplikationerna hittar motorn en missad vinst för Svart med 20...Ne4. Laskers praktiska styrka syntes efteråt: han behöll initiativet, gav tillbaka material i rätt ögonblick och vann ett slutspel som började med lika material eftersom hans pjäser var aktiva och Svarts inte var det."
+  }
+}

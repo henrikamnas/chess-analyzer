@@ -1,0 +1,103 @@
+{
+  "id": "steinitz-von-bardeleben-1895",
+  "intro": {
+    "en": "Hastings, 1895: Wilhelm Steinitz, the former world champion, against Curt von Bardeleben. The opening is a Giuoco Piano in which White builds a big centre with c3 and d4. Watch how Black's king never finds a safe home: it gets off the e-file too late and is driven straight back to it, and how Steinitz finishes with one of the most famous rook manoeuvres in chess history.",
+    "sv": "Hastings 1895: Wilhelm Steinitz, den förre världsmästaren, mot Curt von Bardeleben. Öppningen är ett Giuoco Piano där Vit bygger ett stort centrum med c3 och d4. Se hur den svarta kungen aldrig hittar ett säkert hem: den kommer bort från e-linjen för sent och drivs genast tillbaka dit, och hur Steinitz avslutar med en av schackhistoriens mest berömda tornmanövrer."
+  },
+  "comments": [
+    {
+      "ply": 12,
+      "en": "7.Nc3 is Greco's Attack: White develops and lets the e4 pawn go, hoping to use the lead in development. The engine's main reply is to take it with 7...Nxe4, which leads to sharp play.",
+      "sv": "7.Nc3 är Grecos angrepp: Vit utvecklar och släpper bonden på e4, i hopp om att utnyttja utvecklingsförsprånget. Motorns huvudsvar är att ta den med 7...Nxe4, vilket leder till skarpt spel."
+    },
+    {
+      "ply": 13,
+      "en": "7...d5? is a serious mistake. It looks like a natural central break, but after 8.exd5 Nxd5 the e-file opens while the black king is still on e8, and White is clearly better. 7...Nxe4 was the critical test of White's idea.",
+      "sv": "7...d5? är ett allvarligt misstag. Det ser ut som ett naturligt centrumgenombrott, men efter 8.exd5 Nxd5 öppnas e-linjen medan den svarta kungen står kvar på e8, och Vit står klart bättre. 7...Nxe4 var det kritiska testet av Vits idé.",
+      "line": {
+        "from": "before",
+        "san": ["Nxe4", "O-O", "Bxc3", "d5", "Ne5", "Qe2", "O-O"]
+      }
+    },
+    {
+      "ply": 19,
+      "en": "10...Be7 blocks the bishop's attack on the queen, but leads to a series of exchanges that leave the black king stranded in the centre. The engine preferred 10...Qd7, defending the knight on d5 and keeping the bishop on b4, so that Black can castle soon.",
+      "sv": "10...Be7 blockerar löparens angrepp på damen, men leder till en serie byten som lämnar den svarta kungen strandsatt i centrum. Motorn föredrog 10...Qd7, som skyddar springaren på d5 och behåller löparen på b4, så att Svart snart kan rockera."
+    },
+    {
+      "ply": 26,
+      "en": "After the trades, 14.Re1 attacks the knight on e7. Black cannot castle now, because the king is the knight's only defender and castling would leave it hanging. The whole game revolves around this pin-like pressure on the e-file.",
+      "sv": "Efter bytena angriper 14.Re1 springaren på e7. Svart kan inte rockera nu, eftersom kungen är springarens enda försvarare och rockaden skulle lämna den hängande. Hela partiet kretsar kring detta tryck på e-linjen."
+    },
+    {
+      "ply": 27,
+      "en": "14...f6 makes room for the king on f7, where it can guard the knight and later connect the rooks. It is a sensible plan, but it takes time.",
+      "sv": "14...f6 gör plats för kungen på f7, där den kan skydda springaren och senare förbinda tornen. Det är en vettig plan, men den tar tid."
+    },
+    {
+      "ply": 31,
+      "en": "16...c6? is the decisive mistake. Black spends a tempo on a pawn move instead of carrying out his plan with 16...Kf7, getting the king off the e-file. It also invites the d-pawn break, which will open the c-file for White's rook on c1.",
+      "sv": "16...c6? är det avgörande misstaget. Svart lägger ett tempo på ett bondedrag i stället för att genomföra sin plan med 16...Kf7 och få bort kungen från e-linjen. Draget bjuder dessutom in till genombrottet med d-bonden, som kommer att öppna c-linjen för Vits torn på c1.",
+      "line": {
+        "from": "before",
+        "san": ["Kf7", "Nd2", "Rhe8"]
+      }
+    },
+    {
+      "ply": 32,
+      "en": "17.d5! gives up the pawn to clear the d4 square for the knight. From d4 it can jump to e6, right next to Black's king.",
+      "sv": "17.d5! ger bort bonden för att frigöra rutan d4 för springaren. Därifrån kan den hoppa till e6, alldeles intill den svarta kungen."
+    },
+    {
+      "ply": 33,
+      "en": "17...cxd5 takes the pawn but makes things worse. The engine still preferred 17...Kf7, using the time to get the king off the e-file.",
+      "sv": "17...cxd5 tar bonden men gör saken värre. Motorn föredrog fortfarande 17...Kf7, som använder tiden till att få bort kungen från e-linjen."
+    },
+    {
+      "ply": 37,
+      "en": "With the knight on e6 eyeing g7 and c7, Black is in deep trouble. 19...Rhc8 contests the c-file, but it allows 20.Qg4, adding the queen to the attack on g7. The engine's 19...Nc6 would have put up more resistance.",
+      "sv": "Med springaren på e6, som siktar på g7 och c7, är Svart illa ute. 19...Rhc8 bestrider c-linjen, men tillåter 20.Qg4, som sätter in damen i anfallet mot g7. Motorns 19...Nc6 hade gjort mer motstånd."
+    },
+    {
+      "ply": 42,
+      "en": "22.Rxe7+!! is the famous sacrifice, and the engine agrees it is the best move. At this moment White's queen, rook on c1, knight and rook on e7 are all attacked. But every white move from now on is a check, so Black never gets time to take anything.",
+      "sv": "22.Rxe7+!! är det berömda offret, och motorn håller med om att det är bästa draget. Just nu är Vits dam, tornet på c1, springaren och tornet på e7 alla anfallna. Men varje vitt drag härifrån är en schack, så Svart får aldrig tid att slå något."
+    },
+    {
+      "ply": 43,
+      "en": "Taking the rook loses too. After 22...Qxe7 the queen no longer guards c8, and 23.Rxc8+ Rxc8 24.Qxc8+ leaves White a piece up. If the king steps to d8, the queen on g4 takes on d7 with mate. Von Bardeleben steps aside with 22...Kf8.",
+      "sv": "Att slå tornet förlorar också. Efter 22...Qxe7 skyddar damen inte längre c8, och 23.Rxc8+ Rxc8 24.Qxc8+ lämnar Vit en pjäs över. Går kungen till d8 slår damen på g4 på d7 med matt. Von Bardeleben kliver undan med 22...Kf8.",
+      "line": {
+        "from": "before",
+        "san": ["Qxe7", "Rxc8+", "Rxc8", "Qxc8+", "Qd8", "Qxd8+", "Kxd8", "Nxh7"]
+      }
+    },
+    {
+      "ply": 44,
+      "en": "23.Rf7+ The rook keeps checking. It cannot be taken by the king, because the knight on g5 guards f7, and if the queen takes it, White again wins the rook on c8.",
+      "sv": "23.Rf7+ Tornet fortsätter schacka. Kungen kan inte slå det, eftersom springaren på g5 skyddar f7, och om damen slår det vinner Vit återigen tornet på c8."
+    },
+    {
+      "ply": 46,
+      "en": "24.Rg7+ Now the king could take the rook, but then the queen on d7 is lost with check. The engine shows that 24...Qxg7 was the toughest defence, though after 25.Qe6+ and the capture on c8 White is still winning easily.",
+      "sv": "24.Rg7+ Nu skulle kungen kunna slå tornet, men då går damen på d7 förlorad med schack. Motorn visar att 24...Qxg7 var det segaste försvaret, men efter 25.Qe6+ och slaget på c8 vinner Vit ändå enkelt.",
+      "line": {
+        "from": "after",
+        "san": ["Qxg7", "Qe6+", "Kh8", "Rxc8+", "Rxc8", "Qxc8+", "Qg8"]
+      }
+    },
+    {
+      "ply": 48,
+      "en": "25.Rxh7+ Here von Bardeleben left the playing hall and never came back, and Steinitz showed the spectators the forced mate that follows if the king goes back to g8. The engine adds that 25...Qxh7, giving up the queen, avoids the mate, but White's material advantage would then decide.",
+      "sv": "25.Rxh7+ Här lämnade von Bardeleben spelsalen och kom aldrig tillbaka, och Steinitz visade åskådarna den forcerade matt som följer om kungen går tillbaka till g8. Motorn tillägger att 25...Qxh7, som ger bort damen, undviker matten, men då avgör Vits materiella övertag.",
+      "line": {
+        "from": "after",
+        "san": ["Qxh7", "Rxc8+", "Rxc8", "Qxc8+", "Qg8"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "Von Bardeleben's 7...d5 opened the e-file while his king was still in the centre, and after the exchanges the king left the e-file too late, only to be driven back to it by 21.Ng5+. Steinitz used the pressure with the pawn sacrifice 17.d5, a knight on e6 and finally the rook sacrifice on e7. The finish is a lesson in forcing play: when every move is a check, the opponent never gets to cash in on all the pieces you leave hanging.",
+    "sv": "Von Bardelebens 7...d5 öppnade e-linjen medan kungen stod kvar i centrum, och efter bytena lämnade kungen e-linjen för sent, bara för att drivas tillbaka dit av 21.Ng5+. Steinitz utnyttjade trycket med bondeoffret 17.d5, en springare på e6 och till sist tornoffret på e7. Slutet är en lektion i forcerande spel: när varje drag är en schack får motståndaren aldrig tid att ta alla pjäser man lämnar hängande."
+  }
+}

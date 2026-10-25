@@ -5,9 +5,10 @@
 import { spawn } from 'node:child_process'
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs'
 import { createRequire } from 'node:module'
+import { resolve } from 'node:path'
 
 const [repo, outDir, ...ids] = process.argv.slice(2)
-const require = createRequire(repo + '/package.json')
+const require = createRequire(resolve(repo, 'package.json'))
 const { Chess } = require('chess.js')
 const games = JSON.parse(readFileSync(repo + '/public/famous/games.json', 'utf8')).games
 const lines = JSON.parse(readFileSync(repo + '/src/data/openingLines.json', 'utf8')).lines.map(([eco, name, moves]) => ({ eco, name, moves: moves.split(' ') }))

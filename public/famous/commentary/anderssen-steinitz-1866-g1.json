@@ -1,0 +1,85 @@
+{
+  "id": "anderssen-steinitz-1866-g1",
+  "intro": {
+    "en": "London, 1866: the first game of the match between Adolf Anderssen, the great attacking player of the era, and Wilhelm Steinitz, who would later become the first official world champion. Steinitz went on to win the match. Anderssen opens with the Evans Gambit, gives a pawn for quick development, and the game moves from a sharp middlegame into a long, balanced ending with queens, rooks and minor pieces, which is decided by a single king move.",
+    "sv": "London 1866: första partiet i matchen mellan Adolf Anderssen, epokens store anfallsspelare, och Wilhelm Steinitz, som senare blev den förste officielle världsmästaren. Steinitz vann till slut matchen. Anderssen öppnar med Evans gambit och ger en bonde för snabb utveckling, och partiet går från ett skarpt mittspel till ett långt, jämnt slutspel med dam, torn och lätt pjäs på var sida, som avgörs av ett enda kungsdrag."
+  },
+  "comments": [
+    {
+      "ply": 6,
+      "en": "4.b4 is the Evans Gambit. White offers a pawn to deflect the bishop from c5, so that c3 and d4 follow with gain of time and a big centre. The engine rates the quiet 4.O-O a shade higher, but the gambit is fully sound.",
+      "sv": "4.b4 är Evans gambit. Vit offrar en bonde för att locka bort löparen från c5, så att c3 och d4 kan följa med tempovinst och ett stort centrum. Motorn värderar det lugna 4.O-O en aning högre, men gambiten är fullt sund."
+    },
+    {
+      "ply": 9,
+      "en": "5...Bc5 brings the bishop back to its best diagonal, but it lets White play d4 with tempo. The engine prefers the main line 5...Ba5, which keeps the bishop out of reach.",
+      "sv": "5...Bc5 tar tillbaka löparen till sin bästa diagonal, men låter Vit spela d4 med tempo. Motorn föredrar huvudvarianten 5...Ba5, som håller löparen utom räckhåll."
+    },
+    {
+      "ply": 16,
+      "en": "9.d5 gains space and drives the knight from c6, but it gives up the e5 square and closes the centre a little. The engine slightly preferred to keep the tension with 9.h3 or 9.Nc3.",
+      "sv": "9.d5 vinner utrymme och driver bort springaren från c6, men lämnar rutan e5 och stänger centrum en aning. Motorn föredrog en aning att behålla spänningen med 9.h3 eller 9.Nc3."
+    },
+    {
+      "ply": 25,
+      "en": "13...f5? is the first real mistake. Steinitz wants to break up White's centre, but the pawn move loosens his own king and the e6 square. The calm 13...Bg4, developing the last minor piece, was the engine's choice.",
+      "sv": "13...f5? är det första riktiga misstaget. Steinitz vill bryta upp Vits centrum, men bondedraget försvagar den egna kungen och rutan e6. Det lugna 13...Bg4, som utvecklar den sista lätta pjäsen, var motorns val."
+    },
+    {
+      "ply": 26,
+      "en": "14.Rc1 misses the punishment. The engine's 14.Ng3 brings another piece towards Black's king, and after the exchange on e4 White's d-pawn becomes very strong. After the game move the position is level again.",
+      "sv": "14.Rc1 missar straffet. Motorns 14.Ng3 för ytterligare en pjäs mot Svarts kung, och efter bytet på e4 blir Vits d-bonde mycket stark. Efter partidraget är ställningen jämn igen.",
+      "line": {
+        "from": "before",
+        "san": ["Ng3", "fxe4", "Bxe4", "Nc4", "Bc3", "Ne5", "Nxe5", "dxe5", "d6"]
+      }
+    },
+    {
+      "ply": 36,
+      "en": "19.Nxc6!? starts a typical Anderssen combination. The knight takes a pawn and attacks the queen and both knights at once. After a series of captures White wins back his gambit pawn, but the engine thinks the quiet 19.Re1 would have kept a small advantage, while the combination only leads to equality.",
+      "sv": "19.Nxc6!? inleder en typisk Anderssenkombination. Springaren tar en bonde och angriper damen och båda springarna på en gång. Efter en serie slag vinner Vit tillbaka gambitbonden, men motorn anser att det lugna 19.Re1 hade behållit en liten fördel, medan kombinationen bara leder till jämvikt.",
+      "line": {
+        "from": "after",
+        "san": ["Nexc6", "Bxf6", "Qxf6", "Rxc6", "Nxc6", "Qd5+", "Qf7", "Qxc6"]
+      }
+    },
+    {
+      "ply": 44,
+      "en": "After 23.Qxc6 the material is level: queen, rook and knight against queen, rook and bishop. Black has a passed d-pawn, but the engine sees an equal position, and it stays that way for many moves.",
+      "sv": "Efter 23.Qxc6 är materialet lika: dam, torn och springare mot dam, torn och löpare. Svart har en fribonde på d-linjen, men motorn ser en jämn ställning, och så förblir det länge."
+    },
+    {
+      "ply": 49,
+      "en": "25...d4 pushes the passed pawn one step further, where the bishop on b6 protects it. White blockades on d3 with the rook. With queens on the board, both kings must stay careful about checks.",
+      "sv": "25...d4 för fram fribonden ett steg till, där löparen på b6 skyddar den. Vit blockerar på d3 med tornet. Med damerna kvar på brädet måste båda kungarna se upp med schackar."
+    },
+    {
+      "ply": 62,
+      "en": "32.Ne5 brings the knight into the centre, closer to Black's king. The knight is now White's best piece, and Black has to watch the squares around his king, especially g6 and f7.",
+      "sv": "32.Ne5 tar in springaren i centrum, närmare Svarts kung. Springaren är nu Vits bästa pjäs, och Svart måste vakta rutorna runt kungen, särskilt g6 och f7."
+    },
+    {
+      "ply": 67,
+      "en": "34...Kg8?? is the decisive mistake after a long, balanced fight. The king returns to the back rank and leaves g6 free for the knight. 34...g6 was the move: the pawn takes g6 away from the knight, and the engine sees roughly equal chances.",
+      "sv": "34...Kg8?? är det avgörande misstaget efter en lång och jämn kamp. Kungen går tillbaka till baslinjen och lämnar g6 fritt för springaren. 34...g6 var draget: bonden tar rutan g6 från springaren, och motorn ser ungefär jämna chanser.",
+      "line": {
+        "from": "before",
+        "san": ["g6", "Nd7", "Rc1+", "Kg2", "Qc6", "Qxc6", "Rxc6"]
+      }
+    },
+    {
+      "ply": 68,
+      "en": "35.Ng6! The knight lands on g6, covering f8, h8 and e7 around the black king, with the queen on e4 behind it. White threatens 36.Qe8+, after which the knight joins in with checks of its own, and Black has no good defence.",
+      "sv": "35.Ng6! Springaren landar på g6, där den täcker f8, h8 och e7 runt den svarta kungen, med damen på e4 bakom sig. Vit hotar 36.Qe8+, varefter springaren ansluter med egna schackar, och Svart har inget bra försvar."
+    },
+    {
+      "ply": 70,
+      "en": "36.Qe8+, and Steinitz resigned. If the king goes to h7, the knight checks from f8 and Black's best is to give up the queen for it; if the queen blocks on f8, the knight simply takes it. Either way the queen is lost.",
+      "sv": "36.Qe8+, och Steinitz gav upp. Går kungen till h7 schackar springaren från f8, och Svarts bästa är att ge damen för den; ställer damen sig emellan på f8 slår springaren den helt enkelt. Hur som helst går damen förlorad."
+    }
+  ],
+  "summary": {
+    "en": "The Evans Gambit gave Anderssen quick development, and Steinitz's 13...f5 could have been punished with 14.Ng3. After Anderssen's combination the game settled into an equal queen, rook and minor piece ending that lasted many moves. It was lost by one careless king move: 34...Kg8 let the knight reach g6, where it and the queen hunted down the black queen. Lesson: in endings with queens on the board, the squares next to your king matter more than the material count.",
+    "sv": "Evans gambit gav Anderssen snabb utveckling, och Steinitz 13...f5 kunde ha straffats med 14.Ng3. Efter Anderssens kombination övergick partiet i ett jämnt slutspel med dam, torn och lätt pjäs som pågick länge. Det förlorades på ett enda slarvigt kungsdrag: 34...Kg8 lät springaren nå g6, där den och damen jagade ner den svarta damen. Läxan: i slutspel med damerna kvar på brädet betyder rutorna runt kungen mer än materialräkningen."
+  }
+}

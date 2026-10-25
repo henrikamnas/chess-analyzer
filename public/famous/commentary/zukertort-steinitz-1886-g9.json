@@ -1,0 +1,80 @@
+{
+  "id": "zukertort-steinitz-1886-g9",
+  "intro": {
+    "en": "1886: game 9 of the first official World Championship match, between Johannes Zukertort and Wilhelm Steinitz. White gets an isolated queen's pawn, and later a pair of hanging pawns on c4 and d4. Steinitz believed such pawns are a long-term weakness; Zukertort uses the activity they give him to attack the king. Watch how the balance holds for a long time, until White's attack goes one step too far.",
+    "sv": "1886: parti 9 i den första officiella VM-matchen, mellan Johannes Zukertort och Wilhelm Steinitz. Vit får en isolerad dambonde och senare ett par hängande bönder på c4 och d4. Steinitz ansåg att sådana bönder är en långsiktig svaghet; Zukertort använder aktiviteten de ger till att anfalla kungen. Se hur balansen håller länge, tills Vits anfall går ett steg för långt."
+  },
+  "comments": [
+    {
+      "ply": 7,
+      "en": "4...dxc4 is the Vienna Variation of the Queen's Gambit Declined. Black gives up the centre for a moment to take the c4 pawn and plans to strike back with ...c5.",
+      "sv": "4...dxc4 är Wienvarianten i avböjd damgambit. Svart släpper centrum för en stund för att ta bonden på c4 och planerar att slå tillbaka med ...c5."
+    },
+    {
+      "ply": 12,
+      "en": "After 6...cxd4 7.exd4 White has an isolated queen's pawn on d4: no white pawns on the c- or e-files can ever protect it. In return White gets free piece play and the e5 square for a knight. Black's plan is the classical one: put a piece on d5, right in front of the pawn.",
+      "sv": "Efter 6...cxd4 7.exd4 har Vit en isolerad dambonde på d4: inga vita bönder på c- eller e-linjen kan någonsin skydda den. I gengäld får Vit fritt pjässpel och rutan e5 för en springare. Svarts plan är den klassiska: ställa en pjäs på d5, rakt framför bonden."
+    },
+    {
+      "ply": 21,
+      "en": "11...Nbd5: the knight has travelled via d7 and b6 to the blockade square d5. From there it cannot be driven away by a pawn, and it stops the isolated pawn from advancing.",
+      "sv": "11...Nbd5: springaren har gått via d7 och b6 till blockadrutan d5. Där kan den inte drivas bort av en bonde, och den hindrar den isolerade bonden från att gå fram."
+    },
+    {
+      "ply": 29,
+      "en": "White has the typical isolated-pawn set-up: active pieces and a knight on e5 that eyes f7. Steinitz answers with 15...Be8, a modest retreat that adds a guard to f7.",
+      "sv": "Vit har den typiska uppställningen med isolerad bonde: aktiva pjäser och en springare på e5 som siktar på f7. Steinitz svarar med 15...Be8, en blygsam reträtt som ger f7 ett extra skydd."
+    },
+    {
+      "ply": 34,
+      "en": "After 17...Nxc3 18.bxc3 the d4 pawn is no longer isolated, but White now has a pawn pair on c3 and d4, and the c3 pawn sits on the half-open c-file where Black's rook is waiting.",
+      "sv": "Efter 17...Nxc3 18.bxc3 är d4-bonden inte längre isolerad, men Vit har nu ett bondepar på c3 och d4, och c3-bonden står på den halvöppna c-linjen där Svarts torn väntar."
+    },
+    {
+      "ply": 43,
+      "en": "After the trades, 22.c4 and 22...Rdd8, White has 'hanging pawns' on c4 and d4, with no pawns beside them. They control the centre and can advance, but if they get stuck, they become targets. The engine rates the position as level.",
+      "sv": "Efter bytena, 22.c4 och 22...Rdd8, har Vit 'hängande bönder' på c4 och d4, utan bönder bredvid sig. De kontrollerar centrum och kan gå fram, men om de fastnar blir de måltavlor. Motorn bedömer ställningen som jämn."
+    },
+    {
+      "ply": 47,
+      "en": "Zukertort turns to a kingside attack with 23.Re3 and 24.Rd1, planning to lift the rook to h3. The engine slightly preferred 24.Nf3. Steinitz meets it with 24...f6, attacking the knight on e5.",
+      "sv": "Zukertort går över till kungsanfall med 23.Re3 och 24.Rd1, med planen att lyfta tornet till h3. Motorn föredrog en aning 24.Nf3. Steinitz möter det med 24...f6, som angriper springaren på e5."
+    },
+    {
+      "ply": 57,
+      "en": "Now both sides make a mistake, one after the other. 29...Bc6 gives back Black's growing advantage; the engine's 29...f5 was stronger, gaining space on the kingside.",
+      "sv": "Nu gör båda sidor var sitt misstag, det ena efter det andra. 29...Bc6 ger tillbaka Svarts växande fördel; motorns 29...f5 var starkare och vann utrymme på kungsflygeln."
+    },
+    {
+      "ply": 58,
+      "en": "30.Rg3 misses the right moment for the hanging pawns: 30.d5! would have hit the bishop on c6 and the e6 pawn, and the position would be level again. Pawns like these are strong when they advance and weak when they stand still.",
+      "sv": "30.Rg3 missar rätt ögonblick för de hängande bönderna: 30.d5! hade angripit löparen på c6 och bonden på e6, och ställningen hade varit jämn igen. Sådana bönder är starka när de går fram och svaga när de står still.",
+      "line": { "from": "before", "san": ["d5", "Be8", "h3", "Rc7"] }
+    },
+    {
+      "ply": 60,
+      "en": "31.Rg6?? is the decisive mistake. The rook goes deep into Black's camp, cut off from the rest of White's pieces, and 31...Be4 attacks the queen. Black then threatens ...Kf7 against the stranded rook and ...f4 against the knight. The engine's 31.c5 was the move.",
+      "sv": "31.Rg6?? är det avgörande misstaget. Tornet går djupt in i Svarts läger, avskuret från resten av Vits pjäser, och 31...Be4 angriper damen. Svart hotar sedan ...Kf7 mot det strandsatta tornet och ...f4 mot springaren. Motorns 31.c5 var draget.",
+      "line": { "from": "after", "san": ["Be4", "Qb3", "Kf7", "Rg3", "f4", "Rg4", "fxe3"] }
+    },
+    {
+      "ply": 64,
+      "en": "32...Kh7 attacks the unprotected rook on g6. 33.c5, the engine's choice as well, is a counterattack in a lost position: the rook escapes by taking on e6, but Black takes the c5 pawn and comes in on the c-file.",
+      "sv": "32...Kh7 angriper det oskyddade tornet på g6. 33.c5, även motorns val, är ett motanfall i en förlorad ställning: tornet räddar sig genom att slå på e6, men Svart slår c5-bonden och tränger in på c-linjen."
+    },
+    {
+      "ply": 69,
+      "en": "34...Rc1+ 35.Nd1 Qf4: the knight on d1 is pinned against the king by the rook on c1, and White's back rank is weak. The engine's 36.Qe3, offering a queen trade, was the toughest defence.",
+      "sv": "34...Rc1+ 35.Nd1 Qf4: springaren på d1 är bunden mot kungen av tornet på c1, och Vits baslinje är svag. Motorns 36.Qe3, som erbjuder dambyte, var det segaste försvaret."
+    },
+    {
+      "ply": 75,
+      "en": "After 38.Rxe4 Qxe4 Black is the exchange up, the knight on d1 is still pinned by the rook on b1, and the rook on c8 attacks the white queen. Zukertort resigned.",
+      "sv": "Efter 38.Rxe4 Qxe4 har Svart vunnit kvalitet, springaren på d1 är fortfarande bunden av tornet på b1, och tornet på c8 angriper den vita damen. Zukertort gav upp."
+    }
+  ],
+  "summary": {
+    "en": "For most of the game the isolated pawn and then the hanging pawns gave White activity, and the engine shows that the position stayed balanced. Black won because Steinitz defended calmly and Zukertort overreached: 30.Rg3 missed the d5 break, and 31.Rg6 put a rook where it could not help. The lesson: with hanging pawns, look for the moment to push them, and do not send pieces on adventures far from the action.",
+    "sv": "Under större delen av partiet gav den isolerade bonden och sedan de hängande bönderna Vit aktivitet, och motorn visar att ställningen höll sig i balans. Svart vann för att Steinitz försvarade sig lugnt medan Zukertort gick för långt: 30.Rg3 missade genombrottet d5, och 31.Rg6 ställde ett torn där det inte kunde hjälpa till. Läxan: med hängande bönder ska man leta efter ögonblicket att föra fram dem, och inte skicka pjäser på äventyr långt från striden."
+  }
+}

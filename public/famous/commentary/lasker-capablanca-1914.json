@@ -1,0 +1,138 @@
+{
+  "id": "lasker-capablanca-1914",
+  "intro": {
+    "en": "St Petersburg, 1914: world champion Emanuel Lasker against the rising José Raúl Capablanca, in a game Lasker needed to win. He chooses the quiet Exchange Ruy Lopez and trades queens on move 6, which hardly looks like playing for a win. Watch how one pawn move, 12.f5, changes the character of the game, and how a white knight on e6 ties Black's pieces down until the kingside breaks open.",
+    "sv": "S:t Petersburg 1914: världsmästaren Emanuel Lasker mot den unge stigande stjärnan José Raúl Capablanca, i ett parti som Lasker behövde vinna. Han väljer den lugna avbytesvarianten i spanskt och byter damer i drag 6, vilket knappast ser ut som att spela på vinst. Se hur ett enda bondedrag, 12.f5, ändrar partiets karaktär, och hur en vit springare på e6 binder de svarta pjäserna tills kungsflygeln bryts upp."
+  },
+  "comments": [
+    {
+      "ply": 6,
+      "en": "4.Bxc6 is the Exchange Variation of the Ruy Lopez. White gives up the bishop pair and doubles Black's c-pawns. The engine slightly prefers the main line 4.Ba4, but the exchange gives White a clear long-term plan.",
+      "sv": "4.Bxc6 är avbytesvarianten i spanskt. Vit ger bort löparparet och skapar en dubbelbonde på c-linjen för Svart. Motorn föredrar en aning huvudvarianten 4.Ba4, men avbytet ger Vit en tydlig långsiktig plan."
+    },
+    {
+      "ply": 13,
+      "en": "7...Bd6 is the Alekhine Variation. With the queens gone, the pawn structure tells the story. White has four pawns against three on the kingside and can in principle create a passed pawn there. Black has four against three on the queenside, but the doubled c-pawns make that majority hard to use. In return Black has the two bishops.",
+      "sv": "7...Bd6 är Aljechinvarianten. När damerna är borta är det bondestrukturen som berättar historien. Vit har fyra bönder mot tre på kungsflygeln och kan i princip skapa en fribonde där. Svart har fyra mot tre på damflygeln, men dubbelbonden på c-linjen gör den majoriteten svår att utnyttja. I gengäld har Svart löparparet."
+    },
+    {
+      "ply": 22,
+      "en": "12.f5! The famous decision, and the engine's top choice. It gives up control of e5 and leaves the pawn on e4 without a neighbour, which looks anti-positional. But it fixes Black's kingside pawns, takes e6 away from Black's light-squared bishop, and prepares a home on e6 for a white knight.",
+      "sv": "12.f5! Det berömda beslutet, och motorns förstaval. Draget ger upp kontrollen över e5 och lämnar bonden på e4 utan granne, vilket ser antipositionellt ut. Men det låser Svarts kungsflygelbönder, tar e6 ifrån Svarts vitfältslöpare och förbereder ett hem på e6 för en vit springare."
+    },
+    {
+      "ply": 25,
+      "en": "13...Bb7 lets White exchange on d6, and after the recapture the bishop on b7 looks at its own pawn on c6. The engine preferred 13...Bxf4, trading on Black's terms.",
+      "sv": "13...Bb7 låter Vit byta på d6, och efter återtagningen tittar löparen på b7 rakt in i den egna bonden på c6. Motorn föredrog 13...Bxf4, som byter på Svarts villkor.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Bxf4",
+          "Rxf4",
+          "c5",
+          "Rd1",
+          "Bb7",
+          "Rd7"
+        ]
+      }
+    },
+    {
+      "ply": 29,
+      "en": "15...Rad8? allows the knight to e6. The engine wanted 15...Bc8, bringing the bishop back to guard e6, the one square that matters most in this position.",
+      "sv": "15...Rad8? tillåter springaren att gå till e6. Motorn ville spela 15...Bc8, som tar tillbaka löparen för att bevaka e6, den enskilt viktigaste rutan i ställningen.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Bc8",
+          "g4",
+          "d5",
+          "exd5",
+          "Nxd5",
+          "Nxd5",
+          "cxd5"
+        ]
+      }
+    },
+    {
+      "ply": 30,
+      "en": "16.Ne6 The knight has found its outpost. No black pawn can ever attack it, since the pawns on d6 and f6 have already passed it, and Black's light-squared bishop, the natural piece to challenge it, is blocked by its own pawn on c6. From e6 the knight presses on c7, d8, f8 and g7 and cramps Black's whole position.",
+      "sv": "16.Ne6 Springaren har hittat sin utpost. Ingen svart bonde kan någonsin angripa den, eftersom bönderna på d6 och f6 redan har passerat den, och Svarts vitfältslöpare, den naturliga pjäsen att utmana den, blockeras av den egna bonden på c6. Från e6 trycker springaren på c7, d8, f8 och g7 och gör hela den svarta ställningen trång."
+    },
+    {
+      "ply": 41,
+      "en": "21...Ba8 is another waiting move. The engine suggests giving up the exchange with 21...Rxe6, getting rid of the knight even at a material cost. Capablanca keeps waiting, and White's advantage keeps growing.",
+      "sv": "21...Ba8 är ytterligare ett väntedrag. Motorn föreslår att offra kvaliteten med 21...Rxe6 och bli av med springaren även till priset av material. Capablanca fortsätter att vänta, och Vits fördel fortsätter att växa.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Rxe6",
+          "fxe6+",
+          "Rxe6",
+          "Rd4"
+        ]
+      }
+    },
+    {
+      "ply": 44,
+      "en": "23.g4! With the queenside under control, Lasker turns to the kingside. The plan is g5, opening a file against Black's king with the kingside pawn majority the opening gave him.",
+      "sv": "23.g4! Med damflygeln under kontroll vänder sig Lasker mot kungsflygeln. Planen är g5, som öppnar en linje mot den svarta kungen med hjälp av den bondemajoritet på kungsflygeln som öppningen gav honom."
+    },
+    {
+      "ply": 52,
+      "en": "27.Kf3 Lasker takes his time and brings the king up before breaking. The engine prefers the immediate 27.g5, but in a position where Black has no counterplay, there is little risk in improving first.",
+      "sv": "27.Kf3 Lasker tar god tid på sig och för fram kungen innan genombrottet. Motorn föredrar ett omedelbart 27.g5, men i en ställning där Svart saknar motspel är det liten risk att förbättra ställningen först.",
+      "line": {
+        "from": "before",
+        "san": [
+          "g5",
+          "hxg5",
+          "hxg5",
+          "Rxe6",
+          "fxe6+",
+          "Kxe6"
+        ]
+      }
+    },
+    {
+      "ply": 59,
+      "en": "30...Nb6? is a serious mistake that hastens the end. The knight leaves c8, where it guarded d6 and e7, and after 31.hxg5 White's rook gets onto the open h-file. The engine's 30...Rge8, keeping the rooks ready to give the exchange for the knight on e6, would have resisted much longer.",
+      "sv": "30...Nb6? är ett allvarligt misstag som påskyndar slutet. Springaren lämnar c8, där den bevakade d6 och e7, och efter 31.hxg5 kommer Vits torn ut på den öppna h-linjen. Motorns 30...Rge8, som håller tornen redo att ge kvaliteten för springaren på e6, hade gjort mycket längre motstånd.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Rge8",
+          "hxg5",
+          "fxg5",
+          "Kf2",
+          "Rxe6",
+          "fxe6+",
+          "Rxe6"
+        ]
+      }
+    },
+    {
+      "ply": 62,
+      "en": "32.Rh3 The rook takes the open h-file, heading for h7 on the seventh rank. Black's pieces are still tied to defending the squares around the knight on e6.",
+      "sv": "32.Rh3 Tornet tar den öppna h-linjen, på väg mot h7 på sjunde raden. De svarta pjäserna är fortfarande bundna till att försvara rutorna runt springaren på e6."
+    },
+    {
+      "ply": 68,
+      "en": "35.e5! The pawn that looked weak after 12.f5 becomes the breakthrough. It sacrifices itself to clear e4 for the knight on c3, which now joins the attack.",
+      "sv": "35.e5! Bonden som såg svag ut efter 12.f5 blir genombrottet. Den offrar sig för att frigöra e4 åt springaren på c3, som nu ansluter till anfallet."
+    },
+    {
+      "ply": 72,
+      "en": "37.N6c5 After 21 moves on e6, the knight finally leaves its post, and with a purpose: from c5 it attacks the rook on d7 and the bishop on b7 at once. White wins the exchange next move, and with a rook coming to the seventh rank the game is over.",
+      "sv": "37.N6c5 Efter 21 drag på e6 lämnar springaren äntligen sin utpost, och med ett syfte: från c5 angriper den tornet på d7 och löparen på b7 samtidigt. Vit vinner kvalitet i nästa drag, och med ett torn på väg till sjunde raden är partiet avgjort."
+    },
+    {
+      "ply": 82,
+      "en": "42.Nc5 White threatens to check on d7, where the knight on c5 now protects the rook, and then take the bishop on c8 with mate. Black resigned.",
+      "sv": "42.Nc5 Vit hotar att ge schack på d7, där springaren på c5 nu skyddar tornet, och sedan slå löparen på c8 med matt. Svart gav upp."
+    }
+  ],
+  "summary": {
+    "en": "Lasker won with a plan, not with tricks. The Exchange Variation gave him a healthy kingside majority, 12.f5 made e6 a permanent outpost, and the knight on e6 tied Black down while White prepared the break on the kingside. Capablanca's mistake was to defend passively: the engine repeatedly suggests giving up the exchange to remove the knight on e6, and without that, the h-file and the e5 break finished the game.",
+    "sv": "Lasker vann med en plan, inte med knep. Avbytesvarianten gav honom en sund majoritet på kungsflygeln, 12.f5 gjorde e6 till en permanent utpost, och springaren på e6 band Svart medan Vit förberedde genombrottet på kungsflygeln. Capablancas misstag var att försvara sig passivt: motorn föreslår upprepade gånger att ge kvaliteten för att bli av med springaren på e6, och utan det avgjorde h-linjen och genombrottet med e5 partiet."
+  }
+}

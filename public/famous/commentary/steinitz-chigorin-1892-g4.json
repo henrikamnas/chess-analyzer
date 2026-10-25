@@ -1,0 +1,87 @@
+{
+  "id": "steinitz-chigorin-1892-g4",
+  "intro": {
+    "en": "Havana, 1892: game 4 of the World Championship rematch between Wilhelm Steinitz and Mikhail Chigorin. Steinitz plays a slow Ruy Lopez, keeps his king in the centre for a long time and pushes his h-pawn against Black's fianchettoed king. Watch the h-file: once it opens, a rook sacrifice on h7 ends the game with a king hunt.",
+    "sv": "Havanna 1892: parti 4 i returmatchen om VM-titeln mellan Wilhelm Steinitz och Michail Tjigorin. Steinitz spelar en långsam spansk öppning, låter kungen stå kvar i centrum länge och för fram h-bonden mot Svarts fianchetterade kung. Håll ögonen på h-linjen: när den öppnas avslutar ett tornoffer på h7 partiet med en kungsjakt."
+  },
+  "comments": [
+    {
+      "ply": 6,
+      "en": "After 3...Nf6, the Berlin Defence, Steinitz chooses the quiet 4.d3, the Anti-Berlin. White protects e4 with a pawn and keeps the option of a slow build-up instead of an early fight in the centre.",
+      "sv": "Efter 3...Nf6, Berlinförsvaret, väljer Steinitz det lugna 4.d3, anti-Berlin. Vit skyddar e4 med en bonde och håller möjligheten öppen till en långsam uppbyggnad i stället för en tidig kamp om centrum."
+    },
+    {
+      "ply": 12,
+      "en": "5.c3, 6.Nbd2 and 7.Nf1: the queen's knight takes the typical Ruy Lopez route via d2 and f1 towards e3 or g3. Steinitz does not hurry to castle, which leaves him free to use his h-pawn later.",
+      "sv": "5.c3, 6.Nbd2 och 7.Nf1: damspringaren tar den typiska vägen i spanskt via d2 och f1 mot e3 eller g3. Steinitz har ingen brådska att rockera, vilket ger honom frihet att använda h-bonden senare."
+    },
+    {
+      "ply": 17,
+      "en": "9...Nc5 misses a chance. The engine's 9...f5 strikes at e4 at once and gives Black active play on the kingside, the natural plan with the bishop on g7.",
+      "sv": "9...Nc5 missar en chans. Motorns 9...f5 slår mot e4 direkt och ger Svart aktivt spel på kungsflygeln, den naturliga planen med löparen på g7.",
+      "line": { "from": "before", "san": ["f5", "h4", "f4", "h5", "g5"] }
+    },
+    {
+      "ply": 20,
+      "en": "11.h4! is the engine's choice too. With his king still in the centre, Steinitz can throw the h-pawn at the g6 pawn to pry open the h-file, where his rook is already waiting on h1.",
+      "sv": "11.h4! är även motorns val. Med kungen kvar i centrum kan Steinitz kasta fram h-bonden mot g6-bonden för att bryta upp h-linjen, där tornet redan väntar på h1."
+    },
+    {
+      "ply": 25,
+      "en": "13...fxg6? is the key positional mistake. Black opens the f-file for his rook, but the h7 pawn is left alone on the h-file facing White's rook. The engine's 13...hxg6 keeps the pawns together around the king and leaves no pawn on the h-file to attack.",
+      "sv": "13...fxg6? är det viktigaste positionella misstaget. Svart öppnar f-linjen för sitt torn, men bonden på h7 blir lämnad ensam på h-linjen mitt emot Vits torn. Motorns 13...hxg6 håller ihop bönderna runt kungen och lämnar ingen bonde på h-linjen att angripa.",
+      "line": { "from": "before", "san": ["hxg6", "Bd2", "Re8", "Ng4", "Qd6"] }
+    },
+    {
+      "ply": 29,
+      "en": "After the trades on d5 White is clearly better. The h7 pawn is a lasting target, and the bishop coming to b3 will aim down the diagonal at Black's king.",
+      "sv": "Efter bytena på d5 står Vit klart bättre. Bonden på h7 är ett bestående mål, och löparen som kommer till b3 kommer att sikta längs diagonalen mot Svarts kung."
+    },
+    {
+      "ply": 36,
+      "en": "19.O-O-O: Steinitz finally castles, on the queenside, so the rook on h1 stays on the h-file and the other rook lands on d1, ready to support a central break.",
+      "sv": "19.O-O-O: Steinitz rockerar till slut, på damflygeln, så att tornet på h1 står kvar på h-linjen och det andra tornet hamnar på d1, redo att stödja ett genombrott i centrum."
+    },
+    {
+      "ply": 38,
+      "en": "20.Qf1 is an odd-looking move, and the engine does not like it: 20.Qd2 was stronger. After the game move Black could have answered 20...h5 with counterplay from ...Nf4 and ...e4, and White's advantage would have shrunk a lot.",
+      "sv": "20.Qf1 ser märkligt ut, och motorn tycker inte om det: 20.Qd2 var starkare. Efter partidraget kunde Svart ha svarat 20...h5 med motspel genom ...Nf4 och ...e4, och Vits fördel hade krympt rejält.",
+      "line": { "from": "after", "san": ["h5", "Rh4", "Nf4", "d4", "e4"] }
+    },
+    {
+      "ply": 39,
+      "en": "20...a5? misses that chance, and now 21.d4! opens the centre while Black's king is still weak. From here White is winning.",
+      "sv": "20...a5? missar den chansen, och nu öppnar 21.d4! centrum medan Svarts kung fortfarande är svag. Härifrån vinner Vit."
+    },
+    {
+      "ply": 44,
+      "en": "23.Rxd4! recaptures, and it is the engine's choice. The knight on e6 can take the rook, though Be3 would take back. Black should leave it alone: after the engine's 23...Kg8 he is lost anyway, but there is no immediate mate.",
+      "sv": "23.Rxd4! tar tillbaka, och det är motorns val. Springaren på e6 kan slå tornet, men Be3 kan slå tillbaka. Svart borde låta bli: efter motorns 23...Kg8 är han förlorad ändå, men det finns ingen omedelbar matt.",
+      "line": { "from": "after", "san": ["Kg8", "a4", "Rf7", "Rd5"] }
+    },
+    {
+      "ply": 45,
+      "en": "23...Nxd4?? takes the rook, but the knight leaves e6, where it guarded g7 next to its king, as well as f4 and g5, and now White has a forced mate starting with a rook sacrifice on h7.",
+      "sv": "23...Nxd4?? slår tornet, men springaren lämnar e6, där den skyddade g7 intill kungen samt f4 och g5, och nu har Vit en forcerad matt som börjar med ett tornoffer på h7."
+    },
+    {
+      "ply": 46,
+      "en": "24.Rxh7+! This is what the h-file was opened for. After 24...Kxh7 25.Qh1+ the queen takes over the file with check, and the king is driven into the open.",
+      "sv": "24.Rxh7+! Det var för detta h-linjen öppnades. Efter 24...Kxh7 25.Qh1+ tar damen över linjen med schack, och kungen drivs ut i det fria."
+    },
+    {
+      "ply": 49,
+      "en": "25...Kg7 shortens the game. The engine's 25...Bh3 blocks the check and lasts a move longer, but after 26.Qxh3+ the king is driven out anyway.",
+      "sv": "25...Kg7 förkortar partiet. Motorns 25...Bh3 blockerar schacken och håller ett drag längre, men efter 26.Qxh3+ drivs kungen ut ändå."
+    },
+    {
+      "ply": 54,
+      "en": "28.Qxd4+ wins back the piece with check. The only reply is 28...Kf5, and 29.Qf4 is mate, so Chigorin resigned.",
+      "sv": "28.Qxd4+ vinner tillbaka pjäsen med schack. Det enda draget är 28...Kf5, och 29.Qf4 är matt, så Tjigorin gav upp."
+    }
+  ],
+  "summary": {
+    "en": "Steinitz delayed castling so that his h-pawn could attack, and Chigorin helped him by recapturing 13...fxg6, which left h7 exposed on the h-file. Black had one more chance for counterplay with 20...h5, but missed it, and the central break 21.d4 then brought White's pieces into the attack. The lesson: when your king is fianchettoed, be careful about giving the opponent a target on the h-file.",
+    "sv": "Steinitz väntade med rockaden så att h-bonden kunde anfalla, och Tjigorin hjälpte honom genom att ta tillbaka med 13...fxg6, vilket lämnade h7 blottad på h-linjen. Svart hade ännu en chans till motspel med 20...h5 men missade den, och genombrottet 21.d4 förde sedan in Vits pjäser i anfallet. Läxan: när kungen står bakom en fianchetto ska man vara försiktig med att ge motståndaren ett mål på h-linjen."
+  }
+}

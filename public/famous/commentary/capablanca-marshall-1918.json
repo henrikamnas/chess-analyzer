@@ -1,0 +1,117 @@
+{
+  "id": "capablanca-marshall-1918",
+  "intro": {
+    "en": "New York, 1918: Frank Marshall springs a new pawn sacrifice in the Ruy Lopez on José Raúl Capablanca, who has to meet it at the board. The gambit is now called the Marshall Attack. Watch how Capablanca takes the material, defends calmly while his king walks from g1 to c2, and then decides the game with his queenside pawns.",
+    "sv": "New York 1918: Frank Marshall överraskar José Raúl Capablanca med ett nytt bondeoffer i spanskt, som Capablanca måste möta vid brädet. Gambiten kallas i dag Marshallangreppet. Se hur Capablanca tar materialet, försvarar sig lugnt medan kungen vandrar från g1 till c2, och sedan avgör partiet med sina damflygelbönder."
+  },
+  "comments": [
+    {
+      "ply": 15,
+      "en": "8...d5!? is the Marshall Attack. Black gives up the e5 pawn to open lines towards White's kingside, where White has few defenders once the knight on f3 is drawn away to e5. In return Black gets fast development and attacking chances.",
+      "sv": "8...d5!? är Marshallangreppet. Svart ger bort bonden på e5 för att öppna linjer mot Vits kungsflygel, där Vit har få försvarare när springaren på f3 har lockats bort till e5. I gengäld får Svart snabb utveckling och anfallschanser."
+    },
+    {
+      "ply": 18,
+      "en": "10.Nxe5 Capablanca simply takes the pawn, and the engine agrees it is the best move. Accepting a gambit and then defending accurately is often the most testing answer.",
+      "sv": "10.Nxe5 Capablanca tar helt enkelt bonden, och motorn håller med om att det är bästa draget. Att anta en gambit och sedan försvara sig exakt är ofta det svåraste svaret att möta."
+    },
+    {
+      "ply": 21,
+      "en": "11...Nf6 is Marshall's original version. In the modern main line Black keeps the knight on d5 and supports it with ...c6. The engine's choice here is 11...Bb7, developing towards the long diagonal and White's king.",
+      "sv": "11...Nf6 är Marshalls ursprungliga version. I den moderna huvudvarianten behåller Svart springaren på d5 och stöder den med ...c6. Motorns val här är 11...Bb7, som utvecklar mot den långa diagonalen och den vita kungen."
+    },
+    {
+      "ply": 25,
+      "en": "13...Ng4!? offers the knight: if White takes with the h-pawn, the h-file opens for Black's queen. The engine preferred the quieter 13...Bb7, but Marshall wants to attack at once.",
+      "sv": "13...Ng4!? erbjuder springaren: om Vit slår med h-bonden öppnas h-linjen för den svarta damen. Motorn föredrog det lugnare 13...Bb7, men Marshall vill anfalla direkt."
+    },
+    {
+      "ply": 26,
+      "en": "14.Qf3! is the engine's choice too. The queen guards f2, attacks the knight on g4 and eyes the rook on a8 along the long diagonal.",
+      "sv": "14.Qf3! är också motorns val. Damen skyddar f2, angriper springaren på g4 och siktar på tornet på a8 längs den långa diagonalen."
+    },
+    {
+      "ply": 29,
+      "en": "15...Nxf2 The engine's top choice for Black. The knight takes the f2 pawn right next to White's king and also eyes h3, adding to the pressure. White is better, but he has to be careful.",
+      "sv": "15...Nxf2 Motorns förstaval för Svart. Springaren slår bonden på f2 alldeles intill den vita kungen och siktar också på h3, vilket ökar trycket. Vit står bättre, men måste vara försiktig."
+    },
+    {
+      "ply": 31,
+      "en": "16...Bg4? goes too far. It offers the bishop to keep the attack going, and after 17.hxg4 White's extra material starts to tell. The engine preferred 16...Ng4, bringing the knight back into play, when White is better but Black still has chances.",
+      "sv": "16...Bg4? går för långt. Draget erbjuder löparen för att hålla anfallet igång, och efter 17.hxg4 börjar Vits materiella övertag göra sig gällande. Motorn föredrog 16...Ng4, som tar tillbaka springaren i spel, och då står Vit bättre men Svart har fortfarande chanser.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Ng4",
+          "Nd2",
+          "Nf6",
+          "Qxa8",
+          "Bg4"
+        ]
+      }
+    },
+    {
+      "ply": 32,
+      "en": "17.hxg4 is correct. Taking on f2 with the queen instead would be a mistake: after 17.Qxf2 Bg3 the engine's line has White giving up the queen for the bishop, and Black is better.",
+      "sv": "17.hxg4 är korrekt. Att i stället slå på f2 med damen vore ett misstag: efter 17.Qxf2 Bg3 ger Vit i motorns variant bort damen mot löparen, och Svart står bättre.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qxf2",
+          "Bg3",
+          "Qxg3",
+          "Qxg3"
+        ]
+      }
+    },
+    {
+      "ply": 38,
+      "en": "20.Ke2 The king starts its walk. All of Black's active pieces are on the kingside, so the safest place for White's king is the other side of the board, and it heads for c2 via d3.",
+      "sv": "20.Ke2 Kungen påbörjar sin vandring. Alla Svarts aktiva pjäser står på kungsflygeln, så den säkraste platsen för den vita kungen är på andra sidan brädet, och den går mot c2 via d3."
+    },
+    {
+      "ply": 46,
+      "en": "24.Kc2 The king has arrived. White has two minor pieces against a rook, and Black's attack has run out of targets. What remains is to bring out the knight on b1 and the rook on a1, and the engine sees White as clearly winning.",
+      "sv": "24.Kc2 Kungen har kommit fram. Vit har två lätta pjäser mot ett torn, och det svarta anfallet har inga mål kvar. Det som återstår för Vit är att få ut springaren på b1 och tornet på a1, och motorn bedömer att Vit står till klar vinst."
+    },
+    {
+      "ply": 54,
+      "en": "28.b4 Capablanca goes over to the attack on the queenside, gaining space with tempo against the bishop. The pawns on a2 and b4 will open lines and later create a passed pawn.",
+      "sv": "28.b4 Capablanca går över till anfall på damflygeln och vinner utrymme med tempo mot löparen. Bönderna på a2 och b4 ska öppna linjer och senare skapa en fribonde."
+    },
+    {
+      "ply": 64,
+      "en": "33.b6 The passed b-pawn runs. Black's rooks and queen are far away on the kingside, and Black can't stop the pawn without giving up material.",
+      "sv": "33.b6 Den fria b-bonden springer. Svarts torn och dam står långt borta på kungsflygeln, och Svart kan inte stoppa bonden utan att ge bort material."
+    },
+    {
+      "ply": 69,
+      "en": "35...Re3 attacks White's queen, but it is too late. The pawn on b7 is one step from queening, and White has a forcing finish.",
+      "sv": "35...Re3 angriper den vita damen, men det är för sent. Bonden på b7 är ett steg från att bli dam, och Vit har en forcerande avslutning."
+    },
+    {
+      "ply": 70,
+      "en": "36.Bxf7+! The bishop sacrifice deflects the rook: if it takes on f7, the b-pawn queens with check along the now empty eighth rank. The engine finds mate in a few moves. Marshall resigned here.",
+      "sv": "36.Bxf7+! Löparoffret lockar bort tornet: om det slår på f7 blir b-bonden dam med schack längs den nu tomma åttonde raden. Motorn hittar matt i några drag. Här gav Marshall upp.",
+      "line": {
+        "from": "after",
+        "san": [
+          "Rxf7",
+          "b8=Q+",
+          "Re8",
+          "Qxe8+",
+          "Kh7",
+          "Qd3+",
+          "Rf5",
+          "Qxf5+",
+          "g6",
+          "Qfxg6#"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "en": "The Marshall Attack was sound enough to become a main line, but in this game Black went too far with 16...Bg4 and gave up more than the attack was worth. Capablanca's defence is the lesson: take the material, find the right defensive moves, walk the king to the side where the opponent has no pieces, and then use the extra material to attack on the other wing.",
+    "sv": "Marshallangreppet var tillräckligt sunt för att bli en huvudvariant, men i det här partiet gick Svart för långt med 16...Bg4 och gav bort mer än anfallet var värt. Capablancas försvar är lärdomen: ta materialet, hitta de rätta försvarsdragen, flytta kungen till den sida där motståndaren saknar pjäser, och använd sedan det materiella övertaget till att anfalla på andra flygeln."
+  }
+}
