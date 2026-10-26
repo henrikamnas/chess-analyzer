@@ -1,0 +1,75 @@
+{
+  "id": "ding-gukesh-2024-g12",
+  "intro": {
+    "en": "Singapore, 2024, game 12 of the World Championship match. Gukesh had just won game 11 to take the lead for the first time, and Ding answered in the very next game with one of his best games of the match. It is a slow, positional English Opening, so watch the plans rather than the tactics: White's central break with d4, the knight route Ng1-e2-f4, and the d-pawn that marches all the way to d7.",
+    "sv": "Singapore 2024, parti 12 i VM-matchen. Gukesh hade just vunnit parti 11 och tagit ledningen för första gången, och Ding svarade redan i nästa parti med ett av sina bästa partier i matchen. Det är en lugn, positionell engelsk öppning, så följ planerna snarare än taktiken: Vits centrumgenombrott med d4, springarvägen Ng1-e2-f4 och d-bonden som marscherar hela vägen till d7."
+  },
+  "comments": [
+    {
+      "ply": 1,
+      "en": "1...e6 is the Agincourt Defence. Black keeps the option of ...d5 and a Queen's Gambit-style setup. Ding fianchettoes his bishop to g2, where it presses on the long diagonal towards Black's queenside.",
+      "sv": "1...e6 är Agincourtförsvaret. Svart behåller möjligheten till ...d5 och en uppställning i damgambitstil. Ding fianchetterar sin löpare till g2, där den trycker längs den långa diagonalen mot Svarts damflygel."
+    },
+    {
+      "ply": 15,
+      "en": "After 4...d4 and the exchanges on e3, Black has a pleasant central pawn on e5 and easy development. White has no weaknesses, though, and his pieces have flexible squares. The middlegame will be about slow improvement rather than early tactics.",
+      "sv": "Efter 4...d4 och bytena på e3 har Svart en fin centrumbonde på e5 och enkel utveckling. Vit har dock inga svagheter, och hans pjäser har flexibla rutor. Mittspelet kommer att handla om långsamma förbättringar snarare än tidig taktik."
+    },
+    {
+      "ply": 28,
+      "en": "15.Nb5 brings the knight to an active square, eyeing c7 and the a7 square. Ding has quietly prepared his pieces with h3, Kh2 and Qc2 and is now ready for action in the centre.",
+      "sv": "15.Nb5 för springaren till en aktiv ruta, med sikte på c7 och rutan a7. Ding har i lugn och ro förberett sina pjäser med h3, Kh2 och Qc2 och är nu redo att agera i centrum."
+    },
+    {
+      "ply": 34,
+      "en": "18.d4! is the central break. Black answers by pushing past it with 18...e4, but then the pawn on d4 is no longer under attack from e5, and White's pieces get more space. The engine already gives White a clear edge.",
+      "sv": "18.d4! är centrumgenombrottet. Svart svarar med att trycka förbi med 18...e4, men då angrips d4-bonden inte längre från e5, och Vits pjäser får mer utrymme. Motorn ger redan Vit en klar fördel."
+    },
+    {
+      "ply": 36,
+      "en": "19.Ng1 looks like a retreat, but it is the start of a regrouping: the knight goes to e2 and then f4, a fine square that the e4 pawn can no longer control.",
+      "sv": "19.Ng1 ser ut som en reträtt, men är början på en omgruppering: springaren går till e2 och sedan f4, en fin ruta som e4-bonden inte längre kan kontrollera."
+    },
+    {
+      "ply": 43,
+      "en": "22...Bg5? is the turning point. Black offers to trade dark-squared bishops, but after 23.Nf4 Bxf4 24.Bxf4 White keeps the bishop pair and Black's dark squares, such as d6 and c7, are weak. The engine preferred 22...Na5, bringing the knight towards c4.",
+      "sv": "22...Bg5? är vändpunkten. Svart erbjuder byte av de svartfältiga löparna, men efter 23.Nf4 Bxf4 24.Bxf4 behåller Vit löparparet och Svarts svarta rutor, som d6 och c7, är svaga. Motorn föredrog 22...Na5, som för springaren mot c4.",
+      "line": { "from": "before", "san": ["Na5", "c5", "Nbc4", "Nf4", "Bf5"] }
+    },
+    {
+      "ply": 52,
+      "en": "26.d5 and 27.d6 drive a spearhead into Black's position. The pawn on d6 is protected by the bishop on f4 and the rook on d1, it cramps Black's pieces, and it gives the knight a supported outpost on c7.",
+      "sv": "26.d5 och 27.d6 driver in en kil i Svarts ställning. Bonden på d6 skyddas av löparen på f4 och tornet på d1, den tränger ihop Svarts pjäser och ger springaren en stödd utpost på c7."
+    },
+    {
+      "ply": 54,
+      "en": "28.Nc7 attacks the rook on e8 and settles on c7, protected by the d6 pawn. Black's pieces are tied up, and White can now start collecting pawns.",
+      "sv": "28.Nc7 angriper tornet på e8 och etablerar sig på c7, skyddad av d6-bonden. Svarts pjäser är bundna, och Vit kan nu börja samla in bönder."
+    },
+    {
+      "ply": 64,
+      "en": "With 29.Bxe4 and now 33.Qxc5 White has won two pawns. The passed pawns on d5 and d6 are a huge asset, and Black has no counterplay.",
+      "sv": "Med 29.Bxe4 och nu 33.Qxc5 har Vit vunnit två bönder. Fribönderna på d5 och d6 är en enorm tillgång, och Svart saknar motspel."
+    },
+    {
+      "ply": 70,
+      "en": "36.d7 puts the pawn one step from queening. Black's pieces are busy watching d8, and White's rook on e7 and bishop on f4 are ready to break the blockade.",
+      "sv": "36.d7 ställer bonden ett steg från förvandling. Svarts pjäser är upptagna med att bevaka d8, och Vits torn på e7 och löpare på f4 står redo att bryta blockaden."
+    },
+    {
+      "ply": 75,
+      "en": "38...f6 allows a forced finish, although Black was lost anyway; the engine's 38...Kh7 would only have prolonged the game. The rook on f8 is the only piece guarding d8, and White can now remove it.",
+      "sv": "38...f6 tillåter ett forcerat slut, även om Svart var förlorad ändå; motorns 38...Kh7 hade bara förlängt partiet. Tornet på f8 är den enda pjäs som bevakar d8, och Vit kan nu eliminera det."
+    },
+    {
+      "ply": 76,
+      "en": "39.Rxg7+! After 39...Kxg7 40.Bxf8+ Kxf8 the rook guarding d8 is gone, and 41.d8=Q+ queens with check, followed by a queen attack on Black's king. Gukesh resigned, and the match was level once more.",
+      "sv": "39.Rxg7+! Efter 39...Kxg7 40.Bxf8+ Kxf8 är tornet som bevakade d8 borta, och 41.d8=Q+ förvandlar med schack, följt av ett damangrepp mot Svarts kung. Gukesh gav upp, och matchen var lika igen.",
+      "line": { "from": "after", "san": ["Kxg7", "Bxf8+", "Kxf8", "d8=Q+", "Qe8", "Qxf6+", "Qf7", "Qxh6+", "Ke8"] }
+    }
+  ],
+  "summary": {
+    "en": "Ding won this game with clear, classical play: a well-timed central break, a knight rerouted to a better square, the bishop pair, and a passed pawn pushed with support. Gukesh's 22...Bg5 gave White the dark squares, and after that the d-pawn decided the game. A protected passed pawn deep in the enemy camp can be worth more than a piece.",
+    "sv": "Ding vann partiet med tydligt, klassiskt spel: ett vältajmat centrumgenombrott, en springare som omgrupperas till en bättre ruta, löparparet och en fribonde som trycks fram med stöd. Gukeshs 22...Bg5 gav Vit de svarta rutorna, och därefter avgjorde d-bonden partiet. En skyddad fribonde djupt inne i motståndarens läger kan vara värd mer än en pjäs."
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "gukesh-ding-2024-g3",
+  "intro": {
+    "en": "Singapore, 2024, game 3 of the World Championship match. Ding had won the first game, and Gukesh needed to hit back. His preparation led to an unusual early queen trade, and Ding spent a lot of time in the opening and fell far behind on the clock. Watch the black bishop that wanders to c2 and never comes home, and the tactics that finish the game.",
+    "sv": "Singapore 2024, parti 3 i VM-matchen. Ding hade vunnit första partiet, och Gukesh behövde slå tillbaka. Hans förberedelser ledde till ett ovanligt tidigt dambyte, och Ding förbrukade mycket tid i öppningen och hamnade långt efter på klockan. Följ den svarta löparen som vandrar till c2 och aldrig kommer hem, och taktiken som avgör partiet."
+  },
+  "comments": [
+    {
+      "ply": 7,
+      "en": "After 4.cxd5 exd5 the pawn structure is the one from the Exchange Variation of the Queen's Gambit, the Carlsbad structure, which is complete once Black plays ...c6 next move: Black's pawns on c6 and d5, White's on d4. Usually White plays slowly in the centre or on the queenside, but Gukesh has other plans.",
+      "sv": "Efter 4.cxd5 exd5 uppstår bondestrukturen från avbytesvarianten i damgambit, Carlsbadstrukturen, som blir komplett när Svart spelar ...c6 i nästa drag: Svarts bönder på c6 och d5, Vits på d4. Vanligtvis spelar Vit lugnt i centrum eller på damflygeln, men Gukesh har andra planer."
+    },
+    {
+      "ply": 16,
+      "en": "9.g4 is the engine's choice too. The pawn attacks the bishop on f5 and grabs space on the kingside, while the queens face each other on b3 and b6. After 9...Qxb3 10.axb3 the queens are off, and White's doubled b-pawns are compensated by the half-open a-file.",
+      "sv": "9.g4 är också motorns val. Bonden angriper löparen på f5 och tar utrymme på kungsflygeln, medan damerna står mot varandra på b3 och b6. Efter 9...Qxb3 10.axb3 är damerna borta, och Vits dubbelbönder på b-linjen kompenseras av den halvöppna a-linjen."
+    },
+    {
+      "ply": 19,
+      "en": "10...Bc2 sends the bishop deep into White's camp to attack the b3 pawns. It is active, but far from home; the engine rates the modest 10...Be6 about the same. Keep an eye on how this bishop gets out again.",
+      "sv": "10...Bc2 skickar löparen djupt in i Vits läger för att angripa b3-bönderna. Den är aktiv men långt hemifrån; motorn värderar det blygsamma 10...Be6 ungefär lika. Håll ett öga på hur löparen ska ta sig ut igen.",
+      "line": { "from": "before", "san": ["Be6", "Bf4", "Ne4", "Ne5", "g5"] }
+    },
+    {
+      "ply": 35,
+      "en": "18...Rh5? is the turning point. The rook goes after the g5 pawn, but it does nothing for the bishop on c2. Up to now Black was slightly better, and 18...Be7, finishing development, would have kept it that way.",
+      "sv": "18...Rh5? är vändpunkten. Tornet går efter g5-bonden, men gör ingenting för löparen på c2. Fram till nu stod Svart något bättre, och 18...Be7, som avslutar utvecklingen, hade behållit det så.",
+      "line": { "from": "before", "san": ["Be7", "Rc1", "Bf5", "e4", "Be6"] }
+    },
+    {
+      "ply": 36,
+      "en": "19.e4! blocks the bishop's way home. Until now it could have retreated along the c2-h7 diagonal to f5, but the pawn on e4 cuts that road, and the centre opens while Black's king is still on e8.",
+      "sv": "19.e4! spärrar löparens väg hem. Hittills kunde den ha retirerat längs diagonalen c2-h7 till f5, men bonden på e4 skär av den vägen, och centrum öppnas medan Svarts kung fortfarande står på e8."
+    },
+    {
+      "ply": 37,
+      "en": "19...dxe4 makes things worse; the engine preferred 19...Ne6 at once, hitting d4 and keeping the d5 pawn for now.",
+      "sv": "19...dxe4 förvärrar läget; motorn föredrog 19...Ne6 direkt, som angriper d4 och behåller d5-bonden tills vidare.",
+      "line": { "from": "before", "san": ["Ne6", "Rc1", "Nxd4", "Bf2", "Bc5"] }
+    },
+    {
+      "ply": 40,
+      "en": "After 21.Rc1 the bishop on c2 is trapped: every square it could go to is covered by a white piece. Black can only get some pawns for it, and after 21...Nxd4 22.Bf2 Bg7 23.Ne2 Nxb3 24.Rxc2 Nxd2 25.Kxd2 White has an extra piece for two pawns.",
+      "sv": "Efter 21.Rc1 är löparen på c2 instängd: varje ruta den kan gå till täcks av en vit pjäs. Svart kan bara få några bönder för den, och efter 21...Nxd4 22.Bf2 Bg7 23.Ne2 Nxb3 24.Rxc2 Nxd2 25.Kxd2 har Vit en extra pjäs mot två bönder."
+    },
+    {
+      "ply": 53,
+      "en": "Black's hope is the queenside pawns. The engine wanted to use them at once with 27...a5 and ...a4. 27...Rh2 is active but leads nowhere, and White's extra piece starts to tell.",
+      "sv": "Svarts hopp är bönderna på damflygeln. Motorn ville använda dem direkt med 27...a5 och ...a4. 27...Rh2 är aktivt men leder ingenstans, och Vits extra pjäs börjar göra sig gällande.",
+      "line": { "from": "before", "san": ["a5", "Nf3", "a4", "Bg2", "b5"] }
+    },
+    {
+      "ply": 69,
+      "en": "35...Rxg5 wins a third pawn for the piece, so the material is level on paper. But the rook on g5 is exposed, and the engine preferred trading rooks with 35...Rxh1.",
+      "sv": "35...Rxg5 vinner en tredje bonde för pjäsen, så materialet är lika på pappret. Men tornet på g5 står utsatt, och motorn föredrog tornbyte med 35...Rxh1."
+    },
+    {
+      "ply": 70,
+      "en": "36.Bh3! attacks the rook on d7. The bishop now also stands in front of White's rook on h1, ready to step aside with a discovered attack.",
+      "sv": "36.Bh3! angriper tornet på d7. Löparen står nu också framför Vits torn på h1, redo att kliva åt sidan med ett avdragsangrepp."
+    },
+    {
+      "ply": 73,
+      "en": "36...f5 blocked the attack on d7, but 37.Bf4 hit the rook on g5, which had to go to h5, into the line of White's rook. Now 38.Bxf5 would attack the rook on d7 and uncover the rook on h1 against the rook on h5 at the same time. Ding, in deep time trouble, lost on time here, with his position already lost.",
+      "sv": "36...f5 blockerade angreppet mot d7, men 37.Bf4 angrep tornet på g5, som fick gå till h5, rakt in i linjen för Vits torn. Nu skulle 38.Bxf5 angripa tornet på d7 och samtidigt öppna linjen för tornet på h1 mot tornet på h5. Ding, i svår tidsnöd, förlorade här på tid, med ställningen redan förlorad.",
+      "line": { "from": "after", "san": ["Bxf5", "gxf5", "Rxh5", "fxe4+", "Kxe4"] }
+    }
+  ],
+  "summary": {
+    "en": "Gukesh levelled the match with a game full of practical lessons. Black's bishop went to c2 to win pawns and was cut off by a single pawn move, 19.e4, which cost a piece. In the endgame the white bishops combined with the rooks for a classic discovered attack. Before sending a piece deep into enemy territory, make sure it has a way back.",
+    "sv": "Gukesh utjämnade matchen i ett parti fullt av praktiska lärdomar. Svarts löpare gick till c2 för att vinna bönder och skars av med ett enda bondedrag, 19.e4, vilket kostade en pjäs. I slutspelet samverkade de vita löparna med tornen i ett klassiskt avdragsangrepp. Innan du skickar en pjäs djupt in i fiendeland, se till att den har en väg tillbaka."
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "id": "ding-nepomniachtchi-2023-g6",
+  "intro": {
+    "en": "Astana, 2023, game 6 of the World Championship match. Nepomniachtchi had just won game 5 to lead by a point, and Ding answered with a London System, an opening club players know well. Watch how Ding gains space on the queenside, pushes his h-pawn, and later turns a messy position into a mating attack with queen, rook and knight.",
+    "sv": "Astana 2023, parti 6 i VM-matchen. Nepomnjasjtjij hade just vunnit parti 5 och ledde med en poäng, och Ding svarade med Londonsystemet, en öppning som klubbspelare känner väl. Se hur Ding vinner utrymme på damflygeln, trycker fram sin h-bonde och senare förvandlar en rörig ställning till ett mattangrepp med dam, torn och springare."
+  },
+  "comments": [
+    {
+      "ply": 4,
+      "en": "3.Bf4 is the London System. White develops the dark-squared bishop before playing e3, so it is not shut in behind the pawns, and then builds a solid c3-d4-e3 structure. Black's 3...c5 is the most natural way to challenge the centre.",
+      "sv": "3.Bf4 är Londonsystemet. Vit utvecklar den svartfältiga löparen innan e3 spelas, så att den inte stängs in bakom bönderna, och bygger sedan en solid struktur med c3, d4 och e3. Svarts 3...c5 är det naturligaste sättet att utmana centrum."
+    },
+    {
+      "ply": 22,
+      "en": "After the dark-squared bishops were traded, 12.Ne5 puts the knight on its ideal square, supported by the pawn on d4. It is a classic outpost in this structure. The only pawn that can challenge it is the f-pawn, and ...f6 would weaken e6, so Black has to use pieces, as with 14...Nd7.",
+      "sv": "Efter att de svartfältiga löparna bytts ställer 12.Ne5 springaren på dess bästa ruta, stödd av bonden på d4. Det är en klassisk utpost i den här strukturen. Den enda bonde som kan utmana den är f-bonden, och ...f6 skulle försvaga e6, så Svart måste använda pjäser, som med 14...Nd7."
+    },
+    {
+      "ply": 30,
+      "en": "13.a4 and now 16.a5 grab space on the queenside. The pawn on a5 takes the b6 square away from Black's pieces, so the queen and knights have fewer squares on the queenside. Two moves later the rook comes to a3, ready to swing along the third rank.",
+      "sv": "13.a4 och nu 16.a5 tar utrymme på damflygeln. Bonden på a5 tar ifrån Svarts pjäser rutan b6, så att damen och springarna får färre rutor på damflygeln. Två drag senare kommer tornet till a3, redo att svänga längs tredje raden."
+    },
+    {
+      "ply": 39,
+      "en": "20...Qe7 avoids the queen trade. The engine preferred 20...Bf5 or the trade on g3, which would have taken most of the danger out of the position; with queens on, White's pieces keep aiming at Black's king.",
+      "sv": "20...Qe7 undviker dambytet. Motorn föredrog 20...Bf5 eller bytet på g3, som hade tagit bort det mesta av faran i ställningen; med damerna kvar fortsätter de vita pjäserna att sikta mot Svarts kung."
+    },
+    {
+      "ply": 40,
+      "en": "21.h4 is Ding's typical idea (the engine slightly preferred 21.Raa1): the h-pawn wants to go to h5 and chase the bishop from g6, gaining space in front of Black's king. Then 21...Re8? (the engine wanted 21...Qc7, offering the queen trade again) gives White a real edge.",
+      "sv": "21.h4 är Dings typiska idé (motorn föredrog en aning 21.Raa1): h-bonden vill gå till h5 och jaga bort löparen från g6, och vinna utrymme framför Svarts kung. Sedan ger 21...Re8? (motorn ville ha 21...Qc7, med nytt erbjudande om dambyte) Vit en verklig fördel."
+    },
+    {
+      "ply": 43,
+      "en": "22...e5 is an active try to free Black's position by breaking in the centre, and it starts a sharp sequence. After 23.Rb3 Nxa5 24.Rxe5 both sides have won a pawn and the material is level, but White's pieces are more active.",
+      "sv": "22...e5 är ett aktivt försök att befria Svarts ställning med ett genombrott i centrum, och det sätter igång en skarp sekvens. Efter 23.Rb3 Nxa5 24.Rxe5 har båda sidor vunnit en bonde och materialet är lika, men de vita pjäserna är mer aktiva."
+    },
+    {
+      "ply": 52,
+      "en": "27.h5 chases the bishop, as planned since move 21. The engine preferred taking a pawn first with 27.Nxb7, but after 27...Bc2 28.Nxb7 White gets it anyway.",
+      "sv": "27.h5 jagar löparen, enligt planen sedan drag 21. Motorn föredrog att först ta en bonde med 27.Nxb7, men efter 27...Bc2 28.Nxb7 får Vit den ändå."
+    },
+    {
+      "ply": 62,
+      "en": "32.Rc5? goes after the pawn on c4 but leaves the pawn on c3 hanging to Black's queen. 32.Qe1 would have defended it and kept a clear advantage.",
+      "sv": "32.Rc5? går efter bonden på c4 men lämnar bonden på c3 oskyddad mot Svarts dam. 32.Qe1 hade skyddat den och behållit en klar fördel."
+    },
+    {
+      "ply": 63,
+      "en": "32...Qc1+? misses the chance. 32...Qxc3! would have taken the pawn and brought Black close to equality. After the check White keeps the c3 pawn and soon wins the c4 pawn too.",
+      "sv": "32...Qc1+? missar chansen. 32...Qxc3! hade tagit bonden och fört Svart nära utjämning. Efter schacken behåller Vit c3-bonden och vinner snart c4-bonden också.",
+      "line": { "from": "before", "san": ["Qxc3", "Nxf7", "Bd3", "Kh2", "Qd2"] }
+    },
+    {
+      "ply": 68,
+      "en": "35.Nxc4 wins a pawn. Black's last hope is the a-pawn, which runs towards a1, but White's knight, rook and queen are much closer to the black king than the pawn is to queening.",
+      "sv": "35.Nxc4 vinner en bonde. Svarts sista hopp är a-bonden, som springer mot a1, men Vits springare, torn och dam står mycket närmare den svarta kungen än bonden står förvandlingen."
+    },
+    {
+      "ply": 81,
+      "en": "41...a2? spends a tempo on the pawn while Black's king is in danger. Now 42.Qc7 and the knight's jumps build a mating net. The engine's 41...Qe1 would have kept Black alive a while longer, though White was winning anyway.",
+      "sv": "41...a2? lägger ett tempo på bonden medan Svarts kung är i fara. Nu bygger 42.Qc7 och springarens hopp upp ett mattnät. Motorns 41...Qe1 hade hållit Svart vid liv en stund till, även om Vit vann i alla fall."
+    },
+    {
+      "ply": 84,
+      "en": "43.Ng6 attacks the rook on f8 and settles on a square protected by the h5 pawn, where it also covers h8. After 43...Rg8 Black's king has almost no room left.",
+      "sv": "43.Ng6 angriper tornet på f8 och placerar sig på en ruta skyddad av h5-bonden, där den också täcker h8. Efter 43...Rg8 har Svarts kung nästan inget utrymme kvar."
+    },
+    {
+      "ply": 86,
+      "en": "44.Qf7 threatens to take the rook on g8 with the queen; after the king recaptures, the rook on a7 mates on the eighth rank. Promoting the a-pawn doesn't help, because the rook on a7 simply takes the new queen. Nepomniachtchi resigned, and the match was level again.",
+      "sv": "44.Qf7 hotar att ta tornet på g8 med damen; när kungen tar tillbaka sätter tornet på a7 matt på åttonde raden. Att förvandla a-bonden hjälper inte, eftersom tornet på a7 helt enkelt tar den nya damen. Nepomnjasjtjij gav upp, och matchen var lika igen."
+    }
+  ],
+  "summary": {
+    "en": "Ding's London System shows that a quiet opening can still lead to an attack: space with a4-a5, a strong knight on e5, a rook lift and an h-pawn push. Nepomniachtchi kept avoiding queen trades that would have eased his defence, and when he missed 32...Qxc3, White's pieces came in for the kill. When you are under pressure, a queen trade is often your best friend.",
+    "sv": "Dings Londonsystem visar att en lugn öppning ändå kan leda till anfall: utrymme med a4-a5, en stark springare på e5, ett tornlyft och en h-bonde som rusar fram. Nepomnjasjtjij undvek gång på gång dambyten som hade underlättat försvaret, och när han missade 32...Qxc3 kom de vita pjäserna in för att avgöra. När du är under tryck är ett dambyte ofta din bästa vän."
+  }
+}

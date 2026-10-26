@@ -1,0 +1,98 @@
+{
+  "id": "anand-nakamura-2011",
+  "intro": {
+    "en": "London Chess Classic, 2011. Hikaru Nakamura, with Black, took on the reigning world champion Viswanathan Anand with the King's Indian Defence. It is a classic race: White attacks on the queenside, Black storms the kingside with his pawns. The engine thinks Anand was winning for a long time, so watch how the race is lost and won in a handful of moves.",
+    "sv": "London Chess Classic 2011. Hikaru Nakamura, med svart, mötte den regerande världsmästaren Viswanathan Anand med kungsindiskt försvar. Det är en klassisk kapplöpning: Vit anfaller på damflygeln, Svart stormar fram med bönderna på kungsflygeln. Enligt motorn stod Anand länge på vinst, så se hur kapplöpningen förloras och vinns på bara några få drag."
+  },
+  "comments": [
+    {
+      "ply": 15,
+      "en": "After 8.d5 Ne7 the centre is closed, which sets the plans of the Orthodox King's Indian: White attacks on the queenside, where the pawns point, with c5; Black attacks on the kingside with ...f5 and a pawn storm.",
+      "sv": "Efter 8.d5 Ne7 är centrum stängt, och det bestämmer planerna i den ortodoxa kungsindiskan: Vit anfaller på damflygeln, dit bönderna pekar, med c5; Svart anfaller på kungsflygeln med ...f5 och en bondestorm."
+    },
+    {
+      "ply": 16,
+      "en": "9.b4 is the Bayonet Attack, the most direct way to carry out White's plan: b4 supports c5 at once.",
+      "sv": "9.b4 är bajonettangreppet, det mest direkta sättet att genomföra Vits plan: b4 stöder c5 direkt."
+    },
+    {
+      "ply": 27,
+      "en": "14...f4 closes the kingside centre. Now Black's pawns on g5 and h6 are free to advance towards White's king, but White's queenside attack is further along. The engine preferred keeping the tension with 14...Ng6, and White has a clear advantage.",
+      "sv": "14...f4 stänger centrum på kungsflygeln. Nu kan Svarts bönder på g5 och h6 rycka fram mot Vits kung, men Vits damflygelangrepp har kommit längre. Motorn föredrog att behålla spänningen med 14...Ng6, och Vit har en klar fördel."
+    },
+    {
+      "ply": 37,
+      "en": "The race is on: White's pawn has reached b6, and Black answers with 19...g4. The engine prefers White here, because the queenside breakthrough comes first.",
+      "sv": "Kapplöpningen är i gång: Vits bonde har nått b6, och Svart svarar med 19...g4. Motorn föredrar Vit här, eftersom genombrottet på damflygeln kommer först."
+    },
+    {
+      "ply": 44,
+      "en": "23.d6 pushes the passed d-pawn deep into Black's position, where it works together with the pawn on b6. White is close to winning, and Black must hope the kingside attack comes in time.",
+      "sv": "23.d6 för fribonden på d-linjen djupt in i Svarts ställning, där den samarbetar med bonden på b6. Vit står nära vinst, och Svart måste hoppas att angreppet på kungsflygeln hinner fram."
+    },
+    {
+      "ply": 55,
+      "en": "28...gxh2 opens lines towards White's king, but objectively it makes things worse for Black; the engine preferred 28...Nd7. White is now winning.",
+      "sv": "28...gxh2 öppnar linjer mot Vits kung, men objektivt gör det saken värre för Svart; motorn föredrog 28...Nd7. Vit står nu på vinst."
+    },
+    {
+      "ply": 56,
+      "en": "29.Nc4? is the first big slip. The engine's 29.Bh3 brings the bishop back to guard the light squares around the king; after the knight move White still has an advantage, but much smaller.",
+      "sv": "29.Nc4? är den första stora missen. Motorns 29.Bh3 för tillbaka löparen för att täcka de vita rutorna runt kungen; efter springardraget har Vit fortfarande en fördel, men mycket mindre.",
+      "line": {
+        "from": "before",
+        "san": ["Bh3", "Nh7", "Nc4", "Rc8"]
+      }
+    },
+    {
+      "ply": 60,
+      "en": "After 30.Bd5? the position was level, and 31.Rf2? turns the game around. The engine's 31.Bf2 brought the bishop back to defend the king; now 31...h3 opens the white king for good.",
+      "sv": "Efter 30.Bd5? var ställningen jämn, och 31.Rf2? vänder partiet. Motorns 31.Bf2 förde tillbaka löparen för att försvara kungen; nu öppnar 31...h3 den vita kungen för gott.",
+      "line": {
+        "from": "before",
+        "san": ["Bf2", "Rd8", "Qa4", "Qxa4", "Rxa4"]
+      }
+    },
+    {
+      "ply": 67,
+      "en": "Nakamura misses 34...Nxd5, removing White's light-squared bishop, the key defender of the king, with a winning position. After 34...Nd7 Black is still better, but White gets back into the game.",
+      "sv": "Nakamura missar 34...Nxd5, som tar bort Vits vitfältslöpare, kungens viktigaste försvarare, med vinnande ställning. Efter 34...Nd7 står Svart fortfarande bättre, men Vit kommer tillbaka in i partiet.",
+      "line": {
+        "from": "before",
+        "san": ["Nxd5", "exd5", "Qg6", "Qf1", "Qg3+"]
+      }
+    },
+    {
+      "ply": 73,
+      "en": "Another twist: 37...a5 lets White off the hook, and the engine sees a level position. 37...Nxb6 would have kept a clear advantage for Black.",
+      "sv": "Ännu en vändning: 37...a5 släpper Vit ur greppet, och motorn ser en jämn ställning. 37...Nxb6 hade behållit en klar fördel för Svart.",
+      "line": {
+        "from": "before",
+        "san": ["Nxb6", "Be6", "Rxc4", "d7", "Nxd7"]
+      }
+    },
+    {
+      "ply": 78,
+      "en": "40.Rxa5?? is the decisive blunder. The rook on a3 was guarding the f3 pawn along the third rank. After 40...Bc5 Black attacks the rook on f2, the other defender of f3, and the f3 pawn and with it White's king position soon collapse. 40.Rd3 would have held the balance.",
+      "sv": "40.Rxa5?? är den avgörande bortsättningen. Tornet på a3 skyddade bonden på f3 längs tredje raden. Efter 40...Bc5 angriper Svart tornet på f2, den andra försvararen av f3, och bonden på f3 och med den Vits kungsställning faller snart. 40.Rd3 hade hållit balansen.",
+      "line": {
+        "from": "before",
+        "san": ["Rd3", "Bc5", "Be6", "Nf6", "Rc2"]
+      }
+    },
+    {
+      "ply": 89,
+      "en": "Both sides missed chances in the moves before, but now Black's plan has worked: after the exchanges on f2 and f3 Black's queen sits on f3, and together with the rook on g3 it attacks the bare white king.",
+      "sv": "Båda sidor missade chanser i dragen innan, men nu har Svarts plan fungerat: efter bytena på f2 och f3 står Svarts dam på f3, och tillsammans med tornet på g3 angriper den den nakna vita kungen."
+    },
+    {
+      "ply": 97,
+      "en": "White has no useful checks left, and Black's queen, rook and knight are all aimed at the white king. Anand resigned.",
+      "sv": "Vit har inga användbara schackar kvar, och Svarts dam, torn och springare siktar alla mot den vita kungen. Anand gav upp."
+    }
+  ],
+  "summary": {
+    "en": "A model of the King's Indian race, but also a lesson in practical chess: the engine shows White winning after the queenside breakthrough, yet a few defensive slips around his own king turned the game. The lessons: in opposite-side attacks every tempo counts, keep defenders near your king, and check what each piece is guarding before you grab a pawn.",
+    "sv": "Ett mönsterexempel på kungsindisk kapplöpning, men också en läxa i praktiskt schack: motorn visar att Vit stod på vinst efter genombrottet på damflygeln, men några få försvarsmissar runt den egna kungen vände partiet. Lärdomarna: i angrepp på var sin flygel räknas varje tempo, håll försvarare nära kungen, och kontrollera vad varje pjäs skyddar innan du tar en bonde."
+  }
+}

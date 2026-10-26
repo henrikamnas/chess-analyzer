@@ -1,0 +1,91 @@
+{
+  "id": "caruana-topalov-2014",
+  "intro": {
+    "en": "Saint Louis, 2014: another game from Fabiano Caruana's 7–0 start at the Sinquefield Cup, this time against Veselin Topalov, a former FIDE world champion. Topalov plays the Taimanov Sicilian, and an early queen sortie makes him give up castling. Watch the black king stay in the centre all game, and how Caruana's bishop sacrifice on e6 finally breaks through to it.",
+    "sv": "Saint Louis 2014: ytterligare ett parti från Fabiano Caruanas inledning med 7–0 i Sinquefield Cup, denna gång mot Veselin Topalov, tidigare FIDE-världsmästare. Topalov spelar Taimanovvarianten i sicilianskt, och en tidig damutflykt får honom att avstå från rockaden. Se hur den svarta kungen blir kvar i centrum hela partiet, och hur Caruanas löparoffer på e6 till slut bryter igenom till den."
+  },
+  "comments": [
+    {
+      "ply": 7,
+      "en": "4...Nc6 brings us to the Taimanov Variation of the Sicilian. Black keeps his pawn structure flexible and delays deciding where the king's knight and bishop go, often following up with ...a6 and ...Qc7.",
+      "sv": "4...Nc6 leder till Taimanovvarianten i sicilianskt. Svart håller bondestrukturen flexibel och väntar med att bestämma var kungsspringaren och löparen ska stå, ofta följt av ...a6 och ...Qc7."
+    },
+    {
+      "ply": 13,
+      "en": "After 6.Nxc6 bxc6 and 7...d5 Black has a broad pawn centre on c6, d5 and e6. It controls many squares, but White plans to push e5, gain space on the kingside and aim his pieces at the black king.",
+      "sv": "Efter 6.Nxc6 bxc6 och 7...d5 har Svart ett brett bondecentrum på c6, d5 och e6. Det kontrollerar många rutor, men Vit planerar att spela e5, vinna utrymme på kungsflygeln och rikta pjäserna mot den svarta kungen."
+    },
+    {
+      "ply": 21,
+      "en": "10.e5 drove the knight away from f6, its best defensive post, and 11.Qg4 attacks g7 at once. Topalov answers with 11...Kf8, giving up castling for good; the engine preferred 11...g6. From now on the black king will stay in the centre.",
+      "sv": "10.e5 jagade bort springaren från f6, dess bästa försvarsruta, och 11.Qg4 angriper g7 direkt. Topalov svarar med 11...Kf8 och avstår från rockaden för gott; motorn föredrog 11...g6. Från och med nu blir den svarta kungen kvar i centrum."
+    },
+    {
+      "ply": 27,
+      "en": "14...g5 hits the queen with a pawn. Since the black king is not going to castle short anyway, Topalov can use his kingside pawns to chase the white queen and gain space, and the engine agrees with the idea.",
+      "sv": "14...g5 angriper damen med en bonde. Eftersom den svarta kungen ändå inte ska rockera kort kan Topalov använda kungsflygelbönderna för att jaga den vita damen och vinna utrymme, och motorn håller med om idén."
+    },
+    {
+      "ply": 33,
+      "en": "17...Rg8? is a serious mistake. The engine's 17...Nxe5! grabs the pawn with tempo against the queen, and after the forced trades the game would be level. Now White could have struck with 18.f4!, breaking open the kingside in front of the king on f8.",
+      "sv": "17...Rg8? är ett allvarligt misstag. Motorns 17...Nxe5! tar bonden med tempo mot damen, och efter de forcerade bytena hade partiet varit jämnt. Nu kunde Vit ha slagit till med 18.f4!, som bryter upp kungsflygeln framför kungen på f8.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Nxe5",
+          "Rxe5",
+          "Qxe5",
+          "Bc3",
+          "Qf4",
+          "Qxf4",
+          "gxf4",
+          "Bxh8"
+        ]
+      }
+    },
+    {
+      "ply": 38,
+      "en": "20.Bxc4 is natural, but it gives back much of White's advantage. The engine wanted 20.Bh7!, attacking the rook on g8 and keeping the bishop on the b1-h7 diagonal aimed at Black's kingside, with f4 to follow.",
+      "sv": "20.Bxc4 är naturligt, men ger tillbaka mycket av Vits fördel. Motorn ville ha 20.Bh7!, som angriper tornet på g8 och behåller löparen på diagonalen b1-h7 riktad mot Svarts kungsflygel, med f4 att följa.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Bh7",
+          "Rh8",
+          "Bc2",
+          "Bb7",
+          "f4"
+        ]
+      }
+    },
+    {
+      "ply": 45,
+      "en": "23...Nc6? is the decisive error. The engine wanted 23...Bd5, offering to trade off White's dangerous bishop on c4. Now the bishop gets to sacrifice itself on e6.",
+      "sv": "23...Nc6? är det avgörande felet. Motorn ville ha 23...Bd5, som erbjuder byte av Vits farliga löpare på c4. Nu får löparen i stället offra sig på e6."
+    },
+    {
+      "ply": 46,
+      "en": "24.Bxe6! is the breakthrough, and the engine approves. If Black takes back, the f-file opens and the rook on e3 swings to f3 with check against the king on f8. The idea works because Black's king never castled and the f7 pawn was its only shield.",
+      "sv": "24.Bxe6! är genombrottet, och motorn godkänner det. Om Svart tar tillbaka öppnas f-linjen och tornet på e3 svänger över till f3 med schack mot kungen på f8. Idén fungerar eftersom den svarta kungen aldrig rockerade och bonden på f7 var dess enda skydd."
+    },
+    {
+      "ply": 47,
+      "en": "24...fxe6 makes things worse. The engine's 24...Nd4 would have kept some defensive chances, although White would still be much better. Now after 25.Rf3+ Ke8 26.Qxe6 the white queen hits both the rook on g8 and the bishop on e7.",
+      "sv": "24...fxe6 gör saken värre. Motorns 24...Nd4 hade gett vissa försvarschanser, även om Vit fortfarande hade stått klart bättre. Nu efter 25.Rf3+ Ke8 26.Qxe6 angriper den vita damen både tornet på g8 och löparen på e7."
+    },
+    {
+      "ply": 54,
+      "en": "28.e6 adds the pawn to the attack. It takes away d7 and f7 from the black king, and White does not mind giving up the rook on f3, because the black king has nowhere to hide.",
+      "sv": "28.e6 kopplar in bonden i angreppet. Den tar ifrån den svarta kungen rutorna d7 och f7, och Vit bryr sig inte om att ge bort tornet på f3, eftersom den svarta kungen inte har någonstans att gömma sig."
+    },
+    {
+      "ply": 60,
+      "en": "31.Bxg7 and Topalov resigned. Once the knight had left d4 and the e-pawn had advanced, the long diagonal was open, and the bishop on c3 swept across it to take the rook on g7. With White's queen, bishop and e6 pawn all around the black king, the position is hopeless.",
+      "sv": "31.Bxg7 och Topalov gav upp. När springaren hade lämnat d4 och e-bonden hade avancerat var den långa diagonalen öppen, och löparen på c3 svepte längs den och slog tornet på g7. Med Vits dam, löpare och e6-bonde runt den svarta kungen är ställningen hopplös."
+    }
+  ],
+  "summary": {
+    "en": "A model attack against a king stuck in the centre: 11...Kf8 gave up castling, and Caruana kept looking for ways to open lines towards f8 and e8. Topalov's 17...Rg8 missed the tactical 17...Nxe5, and once 23...Nc6 allowed 24.Bxe6, the f-file and the long diagonal opened with decisive effect. When the opponent's king cannot castle, look for sacrifices that rip open the centre.",
+    "sv": "Ett mönsterangrepp mot en kung som fastnat i centrum: 11...Kf8 gav upp rockaden, och Caruana letade hela tiden efter sätt att öppna linjer mot f8 och e8. Topalovs 17...Rg8 missade det taktiska 17...Nxe5, och när 23...Nc6 tillät 24.Bxe6 öppnades f-linjen och den långa diagonalen med avgörande verkan. När motståndarens kung inte kan rockera, leta efter offer som river upp centrum."
+  }
+}

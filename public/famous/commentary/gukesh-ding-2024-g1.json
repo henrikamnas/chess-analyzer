@@ -1,0 +1,76 @@
+{
+  "id": "gukesh-ding-2024-g1",
+  "intro": {
+    "en": "Singapore, 2024, game 1 of the World Championship match between the defending champion Ding Liren and the 18-year-old challenger Gukesh Dommaraju. Ding had been out of form before the match, but with Black he chose the French Defence and won. Watch Black's queenside pawn march, the knight that lands on b2, and the moment White lets Black's king escape to safety.",
+    "sv": "Singapore 2024, parti 1 i VM-matchen mellan den regerande världsmästaren Ding Liren och den 18-årige utmanaren Gukesh Dommaraju. Ding hade varit ur form före matchen, men med svart valde han franskt och vann. Lägg märke till Svarts bondemarsch på damflygeln, springaren som landar på b2 och ögonblicket när Vit låter Svarts kung komma i säkerhet."
+  },
+  "comments": [
+    {
+      "ply": 8,
+      "en": "This is the Steinitz Variation of the Classical French. With 4.e5 and 5.f4 White builds a big pawn centre on d4, e5 and f4 and gains space on the kingside. Black's plan is to attack the base of the chain: ...c5 against d4, then ...Nc6 and often ...Qb6 to add pressure.",
+      "sv": "Det här är Steinitzvarianten av klassiskt franskt. Med 4.e5 och 5.f4 bygger Vit ett stort bondecentrum på d4, e5 och f4 och vinner utrymme på kungsflygeln. Svarts plan är att angripa kedjans bas: ...c5 mot d4, sedan ...Nc6 och ofta ...Qb6 för att öka trycket."
+    },
+    {
+      "ply": 10,
+      "en": "6.Nce2 retreats the knight so that c3 can support d4 with a pawn. It keeps the centre solid but costs time; the engine preferred the simple 6.Nf3.",
+      "sv": "6.Nce2 drar tillbaka springaren så att c3 kan stödja d4 med en bonde. Det håller centrum stabilt men kostar tid; motorn föredrog det enkla 6.Nf3."
+    },
+    {
+      "ply": 18,
+      "en": "10.g4 grabs space on the kingside, but it also loosens the pawns around White's own king. Meanwhile Black's a-pawn has been marching down the board; the engine preferred to settle the centre first with 10.dxc5.",
+      "sv": "10.g4 tar utrymme på kungsflygeln, men försvagar samtidigt bönderna runt Vits egen kung. Under tiden har Svarts a-bonde marscherat nedför brädet; motorn föredrog att först reda ut centrum med 10.dxc5."
+    },
+    {
+      "ply": 21,
+      "en": "11...a3 forces White to answer with b3, which weakens the dark squares on the queenside. The pawn on a3 will later support a black knight on b2. The engine preferred 11...b5, but the idea is clear.",
+      "sv": "11...a3 tvingar Vit att svara med b3, vilket försvagar de svarta rutorna på damflygeln. Bonden på a3 kommer senare att stödja en svart springare på b2. Motorn föredrog 11...b5, men idén är tydlig."
+    },
+    {
+      "ply": 35,
+      "en": "18...Nb2! The knight jumps deep into White's position, protected by the pawn on a3. White cannot easily drive it away, and from b2 it eyes c4, d3 and d1.",
+      "sv": "18...Nb2! Springaren hoppar djupt in i Vits ställning, skyddad av bonden på a3. Vit kan inte lätt driva bort den, och från b2 siktar den på c4, d3 och d1."
+    },
+    {
+      "ply": 40,
+      "en": "21.f5 tries to open the f-file and attack e6, but the engine thought it was premature and preferred 21.Rfe1. The black queen jumps to d3, where it presses on White's position and offers a trade.",
+      "sv": "21.f5 försöker öppna f-linjen och angripa e6, men motorn ansåg att det var förhastat och föredrog 21.Rfe1. Den svarta damen hoppar till d3, där den trycker på Vits ställning och erbjuder byte."
+    },
+    {
+      "ply": 42,
+      "en": "22.Qe1? is the first serious mistake. It avoids the queen trade but takes the queen off the e3 square, so 22...Bg5 comes with gain of time against the rook on c1. The engine wanted 22.g5 and a queen trade, with only a modest disadvantage.",
+      "sv": "22.Qe1? är det första allvarliga misstaget. Det undviker dambytet men tar bort damen från e3, så att 22...Bg5 kommer med tempo mot tornet på c1. Motorn ville ha 22.g5 och dambyte, med bara en liten nackdel.",
+      "line": { "from": "before", "san": ["g5", "Qxe3", "Bxe3", "O-O"] }
+    },
+    {
+      "ply": 51,
+      "en": "After 25...Rxc3 26.Rxc3 Qxc3 Black has won the c3 pawn and is clearly better. The queen on c3 and the knight on b2 dominate White's queenside.",
+      "sv": "Efter 25...Rxc3 26.Rxc3 Qxc3 har Svart vunnit c3-bonden och står klart bättre. Damen på c3 och springaren på b2 dominerar Vits damflygel."
+    },
+    {
+      "ply": 53,
+      "en": "27...fxe6? is a mistake. Recapturing with the bishop, 27...Bxe6, would have kept a much larger advantage. After the pawn recapture Black is still better, but much less so, and White gets chances against the uncastled king.",
+      "sv": "27...fxe6? är ett misstag. Att ta tillbaka med löparen, 27...Bxe6, hade behållit en mycket större fördel. Efter bondeslaget står Svart fortfarande bättre, men betydligt mindre, och Vit får chanser mot den orockerade kungen.",
+      "line": { "from": "before", "san": ["Bxe6", "Ne2", "Qxe5", "Nxf4", "Qxf4"] }
+    },
+    {
+      "ply": 58,
+      "en": "30.Qc2? is the decisive mistake. Black's king is still in the centre, and 30.Bc5! would have kept it there: the bishop covers f8, so Black cannot castle, and White would have been only slightly worse. After the queen move Black plays ...Qc4 and castles at once, and the rook joins the game on the f-file.",
+      "sv": "30.Qc2? är det avgörande misstaget. Svarts kung står fortfarande i centrum, och 30.Bc5! hade hållit kvar den där: löparen täcker f8, så Svart kan inte rockera, och Vit hade bara stått något sämre. Efter damdraget spelar Svart ...Qc4 och rockerar direkt, och tornet kommer in i spelet på f-linjen.",
+      "line": { "from": "before", "san": ["Bc5", "Qxg4", "Rf3", "Nc4", "Qf1", "Kd8"] }
+    },
+    {
+      "ply": 67,
+      "en": "34...e5! lures the bishop away from d4. Once it takes on e5, the fourth rank is open and Black's queen captures on g4 with check, also opening the way for the bishop on d7.",
+      "sv": "34...e5! lockar bort löparen från d4. När den tar på e5 är fjärde raden öppen, och Svarts dam slår på g4 med schack, vilket också öppnar vägen för löparen på d7."
+    },
+    {
+      "ply": 83,
+      "en": "With three extra pawns, including the dangerous a-pawn, and White's king exposed, Black is completely winning. Gukesh resigned after 42...Kh8, and Ding led the match after the first game.",
+      "sv": "Med tre extra bönder, bland dem den farliga a-bonden, och en blottad vit kung vinner Svart helt klart. Gukesh gav upp efter 42...Kh8, och Ding ledde matchen efter första partiet."
+    }
+  ],
+  "summary": {
+    "en": "A model French Defence for Black: undermine White's centre, gain space with the a-pawn, and plant a knight on a square the opponent cannot easily reach. White's kingside play with g4 and f5 created more weaknesses than threats. The key lesson is about king safety: when your opponent's king is stuck in the centre, look for a move like 30.Bc5 that stops castling.",
+    "sv": "Ett mönsterparti i franskt för Svart: undergräv Vits centrum, ta utrymme med a-bonden och placera en springare på en ruta som motståndaren inte lätt kan nå. Vits kungsflygelspel med g4 och f5 skapade fler svagheter än hot. Den viktigaste lärdomen gäller kungssäkerhet: när motståndarens kung sitter fast i centrum, leta efter ett drag som 30.Bc5 som hindrar rockaden."
+  }
+}

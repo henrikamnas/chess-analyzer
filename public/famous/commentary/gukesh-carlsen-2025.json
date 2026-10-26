@@ -1,0 +1,76 @@
+{
+  "id": "gukesh-carlsen-2025",
+  "intro": {
+    "en": "Norway Chess 2025: the reigning world champion Gukesh Dommaraju has White against Magnus Carlsen. For most of the game Carlsen outplays him, first with a slow squeeze in a quiet Ruy Lopez and then in a long endgame where Black is clearly winning. Watch how Black's pieces take over the light squares, and then how a few hurried moves late in the game throw it all away.",
+    "sv": "Norway Chess 2025: den regerande världsmästaren Gukesh Dommaraju har vit mot Magnus Carlsen. Under större delen av partiet spelar Carlsen ut honom, först med ett långsamt tryck i ett lugnt spanskt parti och sedan i ett långt slutspel där Svart står klart på vinst. Se hur de svarta pjäserna tar över de vita rutorna, och sedan hur några förhastade drag sent i partiet kastar bort alltihop."
+  },
+  "comments": [
+    {
+      "ply": 6,
+      "en": "4.d3 is the Anti-Berlin. Instead of 4.O-O, which allows the famous Berlin endgame after the knight takes on e4, White protects e4 with a pawn and aims for a slow, Italian-style game with c3, h3 and a later d4. The engine slightly prefers 4.O-O, but both moves are fully playable.",
+      "sv": "4.d3 är Anti-Berlin. I stället för 4.O-O, som tillåter det berömda Berlinslutspelet efter att springaren slår på e4, skyddar Vit e4 med en bonde och siktar på ett långsamt spel i italiensk stil med c3, h3 och senare d4. Motorn föredrar 4.O-O en aning, men båda dragen är fullt spelbara."
+    },
+    {
+      "ply": 34,
+      "en": "18.d5 closes the centre and gains space, but it fixes White's pawns on light squares. With no c-pawn left and the e-pawn on e4, the d3 square can never be covered by a pawn, and Black's light-squared bishop will make use of it. The engine preferred 18.b4, keeping the tension.",
+      "sv": "18.d5 stänger centrum och vinner utrymme, men låser fast Vits bönder på vita rutor. Utan c-bonde och med e-bonden på e4 kan rutan d3 aldrig täckas av en bonde, och Svarts vitfältslöpare kommer att utnyttja det. Motorn föredrog 18.b4, som behåller spänningen."
+    },
+    {
+      "ply": 44,
+      "en": "23.Qc2 is the start of White's drift. The engine wanted 23.Nd2 followed by Ne2, bringing the knights over to challenge the strong black knight on f4. Instead White's pieces stay passive, and Black slowly takes over.",
+      "sv": "23.Qc2 är början på Vits glidning. Motorn ville ha 23.Nd2 följt av Ne2, för att föra över springarna och utmana den starka svarta springaren på f4. I stället blir de vita pjäserna stående passivt, och Svart tar långsamt över."
+    },
+    {
+      "ply": 49,
+      "en": "25...Bd3! The bishop has travelled from b7 via c8 and a6 to the hole on d3, where it hits the e4 pawn. Together with the knight on f4 and the rook on b4, Black's pieces are far more active than White's queen on a2 and bishop on c6. 25.Qa2 had been a real mistake; the engine wanted 25.Kh2.",
+      "sv": "25...Bd3! Löparen har vandrat från b7 via c8 och a6 till hålet på d3, där den angriper e4-bonden. Tillsammans med springaren på f4 och tornet på b4 är de svarta pjäserna mycket aktivare än den vita damen på a2 och löparen på c6. 25.Qa2 hade varit ett verkligt misstag; motorn ville ha 25.Kh2."
+    },
+    {
+      "ply": 52,
+      "en": "27.Qxa5 wins a pawn and forces the queens off, but it does not help White. Black's pieces are so much better placed that the engine considers Black winning even a pawn down. A classic case of activity mattering more than material.",
+      "sv": "27.Qxa5 vinner en bonde och tvingar fram dambyte, men det hjälper inte Vit. De svarta pjäserna står så mycket bättre att motorn bedömer att Svart står på vinst trots en bonde mindre. Ett klassiskt exempel på att aktivitet väger tyngre än material."
+    },
+    {
+      "ply": 65,
+      "en": "33...Nxh3 is a spectacular knight sacrifice that tears open the white king, and after 34.gxh3 Bxe4 the material is level again. The engine preferred the simpler 33...Bxe4 first, but Black remains winning either way.",
+      "sv": "33...Nxh3 är ett spektakulärt springaroffer som river upp den vita kungsställningen, och efter 34.gxh3 Bxe4 är materialet jämnt igen. Motorn föredrog det enklare 33...Bxe4 först, men Svart står kvar på vinst i båda fallen.",
+      "line": {
+        "from": "before",
+        "san": ["Bxe4", "gxf4", "Rd1+", "Re1", "Bxf3", "Rxd1", "Bxd1"]
+      }
+    },
+    {
+      "ply": 71,
+      "en": "36...Bxd5 collects another pawn, but the engine preferred 36...Bxf3, trading off the active white knight. Black is still winning, but the moves are becoming less precise as the clock runs down.",
+      "sv": "36...Bxd5 plockar ännu en bonde, men motorn föredrog 36...Bxf3, som byter bort den aktiva vita springaren. Svart står fortfarande på vinst, men dragen blir mindre exakta i takt med att tiden rinner ut."
+    },
+    {
+      "ply": 79,
+      "en": "40...Ke6 sends the king on a long walk towards White's queenside pawn on b3. It is ambitious, and the engine preferred 40...Rh8 to go after the white kingside pawns, but Black is still clearly better after the king march.",
+      "sv": "40...Ke6 skickar kungen på en lång promenad mot Vits damflygelbonde på b3. Det är ambitiöst, och motorn föredrog 40...Rh8 för att gå efter de vita kungsflygelbönderna, men Svart står fortfarande klart bättre efter kungsmarschen."
+    },
+    {
+      "ply": 87,
+      "en": "44...f6? is the first serious slip. With 44...f5 Black would keep a winning position; now White forces a rook trade and then 48.Ne4+ comes with check while attacking the pawn on f6. Black is still somewhat better, but no longer winning.",
+      "sv": "44...f6? är den första allvarliga missen. Med 44...f5 hade Svart behållit en vinstställning; nu tvingar Vit fram ett tornbyte, och sedan kommer 48.Ne4+ med schack samtidigt som bonden på f6 angrips. Svart står fortfarande något bättre, men inte längre på vinst.",
+      "line": {
+        "from": "before",
+        "san": ["f5", "gxf5", "gxf5", "Rf3+", "Kc2", "Ra2+", "Kb1"]
+      }
+    },
+    {
+      "ply": 103,
+      "en": "52...Ne2+?? is the decisive blunder. The rook on f8 was attacked by the knight on d7, and 52...Re8 would simply have saved it, with Black still slightly better. Instead the check is answered by 53.Rxe2+, the rook taking the knight with check, and after 53...Kxe2 54.Nxf8 White is a whole knight up.",
+      "sv": "52...Ne2+?? är den avgörande blundern. Tornet på f8 var angripet av springaren på d7, och 52...Re8 hade helt enkelt räddat det, och Svart hade fortfarande stått något bättre. I stället besvaras schacken med 53.Rxe2+, där tornet slår springaren med schack, och efter 53...Kxe2 54.Nxf8 har Vit en hel springare mer."
+    },
+    {
+      "ply": 122,
+      "en": "62.Kf4 and Carlsen resigned. The knight on c4 guards d2 and e3, the white king attacks the e3 pawn, and nothing can stop the h-pawn. Carlsen famously banged his fist on the table in frustration, and Gukesh had his first classical win against him.",
+      "sv": "62.Kf4 och Carlsen gav upp. Springaren på c4 bevakar d2 och e3, den vita kungen angriper bonden på e3, och ingenting kan stoppa h-bonden. Carlsen slog, i en scen som blev berömd, näven i bordet av frustration, och Gukesh hade tagit sin första vinst mot honom i klassiskt schack."
+    }
+  ],
+  "summary": {
+    "en": "Carlsen won the middlegame with patient, positional play: once the centre was closed with 18.d5, his bishop and knights took over the light squares, including the hole on d3, while White's pieces stood idle. But a winning position still has to be won. A few imprecise moves in time trouble, 44...f6 and above all 52...Ne2+, turned a clear win into a loss. And Gukesh shows the value of staying stubborn and setting problems when you are worse.",
+    "sv": "Carlsen vann mittspelet med tålmodigt positionsspel: när centrum stängts med 18.d5 tog hans löpare och springare över de vita rutorna, inklusive hålet på d3, medan Vits pjäser stod overksamma. Men en vinstställning måste fortfarande vinnas. Några oprecisa drag i tidsnöd, 44...f6 och framför allt 52...Ne2+, förvandlade en klar vinst till en förlust. Och Gukesh visar värdet av att försvara sig envist och ställa problem när man står sämre."
+  }
+}

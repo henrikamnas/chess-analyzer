@@ -1,0 +1,79 @@
+{
+  "id": "caruana-aronian-2018",
+  "intro": {
+    "en": "Berlin, 2018: in the closing rounds of the Candidates Tournament, Fabiano Caruana meets Levon Aronian in a Closed Ruy Lopez. Caruana went on to win the tournament and earn the right to challenge Magnus Carlsen. Watch the slow manoeuvring of the first twenty moves, Aronian's bishop sacrifice on g4, and how a single defensive slip after White had let the advantage go decided the game.",
+    "sv": "Berlin 2018: i kandidatturneringens avslutande ronder möter Fabiano Caruana Levon Aronian i ett stängt spanskt parti. Caruana vann sedan turneringen och fick rätten att utmana Magnus Carlsen. Se det långsamma manövrerandet under de första tjugo dragen, Aronians löparoffer på g4, och hur en enda försvarsmiss, efter att Vit hade släppt fördelen, avgjorde partiet."
+  },
+  "comments": [
+    {
+      "ply": 14,
+      "en": "8.d3 is a well-known way to avoid the Marshall Attack, the sharp gambit that follows 8.c3 d5. The engine slightly prefers 8.c3, but 8.d3 leads to the slow, manoeuvring kind of Ruy Lopez where both sides build up behind their pawns.",
+      "sv": "8.d3 är ett välkänt sätt att undvika Marshallangreppet, den skarpa gambit som följer på 8.c3 d5. Motorn föredrar 8.c3 en aning, men 8.d3 leder till den långsamma, manövrerande typen av spanskt parti där båda sidor bygger upp bakom bönderna."
+    },
+    {
+      "ply": 32,
+      "en": "17.Nf1 is the classic Ruy Lopez knight manoeuvre: from d2 via f1 to e3 or g3, where it eyes the kingside and the d5 and f5 squares. The engine agrees that it is the best move.",
+      "sv": "17.Nf1 är den klassiska springarmanövern i spanskt: från d2 via f1 till e3 eller g3, där den siktar mot kungsflygeln och rutorna d5 och f5. Motorn håller med om att det är det bästa draget."
+    },
+    {
+      "ply": 36,
+      "en": "Caruana prepares the advance g4 slowly with 18.g3 and 19.Kg2. The engine wanted 19.g4 at once, hitting the knight on h5 and gaining space on the kingside, but White keeps a pleasant edge either way.",
+      "sv": "Caruana förbereder framstöten g4 i lugn takt med 18.g3 och 19.Kg2. Motorn ville ha 19.g4 direkt, som angriper springaren på h5 och vinner utrymme på kungsflygeln, men Vit behåller en behaglig fördel i båda fallen."
+    },
+    {
+      "ply": 47,
+      "en": "24...Bh5 invites 25.g4, and Aronian has a sacrifice in mind. The engine preferred the calm 24...Qd7.",
+      "sv": "24...Bh5 bjuder in till 25.g4, och Aronian har ett offer i tankarna. Motorn föredrog det lugna 24...Qd7."
+    },
+    {
+      "ply": 49,
+      "en": "25...Bxg4!? gives a bishop to tear open the white king. After 26.hxg4 Nxg4 and 27...Nxf2 Black has three pawns for the piece and a knight deep in White's camp. It is a brave practical try, but the engine prefers the retreat 25...Bg6 and considers White clearly better after the sacrifice.",
+      "sv": "25...Bxg4!? ger en löpare för att riva upp den vita kungsställningen. Efter 26.hxg4 Nxg4 och 27...Nxf2 har Svart tre bönder för pjäsen och en springare djupt inne i Vits läger. Det är ett modigt praktiskt försök, men motorn föredrar reträtten 25...Bg6 och bedömer att Vit står klart bättre efter offret.",
+      "line": {
+        "from": "before",
+        "san": ["Bg6", "axb5", "axb5", "Nxg6", "fxg6", "Bxb5"]
+      }
+    },
+    {
+      "ply": 56,
+      "en": "29.N1e3? lets the advantage go. After 29...gxf5 30.exf5 Qf6 31.Qxf2 White wins the knight back, but Black's pieces have become active and the engine rates the position as level. It wanted 29.a5 first, gaining time against the bishop on b6.",
+      "sv": "29.N1e3? släpper fördelen. Efter 29...gxf5 30.exf5 Qf6 31.Qxf2 vinner Vit tillbaka springaren, men de svarta pjäserna har blivit aktiva och motorn bedömer ställningen som jämn. Den ville ha 29.a5 först, som vinner tid mot löparen på b6.",
+      "line": {
+        "from": "before",
+        "san": ["a5", "Ba7", "N5e3", "Nh3", "Nd5"]
+      }
+    },
+    {
+      "ply": 61,
+      "en": "31...e4? is the losing mistake. The engine's 31...Nxb4! would have held: after 32.cxb4 Rd4 the black rook becomes active and the game stays balanced. After the pawn push, White soon picks up the pawn on e4, and Black's attack has run out of steam.",
+      "sv": "31...e4? är det förlorande misstaget. Motorns 31...Nxb4! hade hållit: efter 32.cxb4 Rd4 blir det svarta tornet aktivt och partiet förblir i balans. Efter bondedraget plockar Vit snart bonden på e4, och Svarts angrepp har tagit slut.",
+      "line": {
+        "from": "before",
+        "san": ["Nxb4", "cxb4", "Rd4", "Kh3", "Qg5", "f6+", "Kh8"]
+      }
+    },
+    {
+      "ply": 62,
+      "en": "32.Rh1 brings the rook to the h-file against the black king on h7. The engine slightly preferred taking the pawn at once with 32.Bxe4, but both moves keep White winning.",
+      "sv": "32.Rh1 för tornet till h-linjen mot den svarta kungen på h7. Motorn föredrog en aning att ta bonden direkt med 32.Bxe4, men båda dragen behåller Vits vinstställning."
+    },
+    {
+      "ply": 70,
+      "en": "36.axb5 is good enough, but the engine already wanted the finishing blow 36.Rxh6+ here, using the f-pawn and the queen against the exposed black king.",
+      "sv": "36.axb5 räcker gott, men motorn ville redan här ha slutslaget 36.Rxh6+, där f-bonden och damen används mot den blottade svarta kungen.",
+      "line": {
+        "from": "before",
+        "san": ["Rxh6+", "Qxh6", "f6+", "Ng6", "Qxh6+", "Kxh6", "Nf5+"]
+      }
+    },
+    {
+      "ply": 76,
+      "en": "39.Rxh6+ and Aronian resigned. The rook removes the last pawn in front of the black king, and with White's rook, queen, bishop and the pawn on f6 all close by, the king has no safe shelter left.",
+      "sv": "39.Rxh6+ och Aronian gav upp. Tornet tar bort den sista bonden framför den svarta kungen, och med Vits torn, dam, löpare och bonden på f6 i närheten har kungen inget säkert skydd kvar."
+    }
+  ],
+  "summary": {
+    "en": "For the first twenty-five moves this was a textbook Closed Ruy Lopez: slow knight manoeuvres and a gradual kingside build-up gave Caruana a lasting edge. Aronian's bishop sacrifice was objectively unsound, but it created real problems, and after 29.N1e3 the game was level again. The decisive moment was 31...e4, when 31...Nxb4 would have held: in a sharp position, one move can undo all the good work.",
+    "sv": "Under de första tjugofem dragen var detta ett läroboksexempel på stängt spanskt: långsamma springarmanövrar och en gradvis uppbyggnad på kungsflygeln gav Caruana en bestående fördel. Aronians löparoffer var objektivt inte korrekt, men det skapade verkliga problem, och efter 29.N1e3 var partiet jämnt igen. Det avgörande ögonblicket var 31...e4, när 31...Nxb4 hade hållit: i en skarp ställning kan ett enda drag förstöra allt det goda arbetet."
+  }
+}

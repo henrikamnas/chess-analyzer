@@ -1,0 +1,92 @@
+{
+  "id": "kramnik-caruana-2018",
+  "intro": {
+    "en": "Berlin, 2018: Vladimir Kramnik and Fabiano Caruana meet at the Candidates Tournament, which Caruana went on to win. After a quiet Petrov's Defence with an early queen trade, Kramnik goes for sharp, unbalanced play and gives up material, in the end a whole piece, for activity and passed pawns. What follows is a wild endgame in which the advantage changes hands several times; watch the passed pawns on both sides and the one rook move that finally decides it.",
+    "sv": "Berlin 2018: Vladimir Kramnik och Fabiano Caruana möts i kandidatturneringen, som Caruana sedan vann. Efter ett lugnt ryskt parti med tidigt dambyte går Kramnik in för skarpt, obalanserat spel och ger upp material, till slut en hel pjäs, för aktivitet och fribönder. Det som följer är ett vilt slutspel där fördelen byter sida flera gånger; se på fribönderna på båda sidor och det enda torndrag som till slut avgör."
+  },
+  "comments": [
+    {
+      "ply": 8,
+      "en": "5.Qe2 is the Cozio Attack. The queen pins the knight on e4 against the black king, so Black answers 5...Qe7, and the queens soon come off. It is a quiet way to avoid the main lines; the engine preferred the usual 5.d4.",
+      "sv": "5.Qe2 är Cozioangreppet. Damen binder springaren på e4 mot den svarta kungen, så Svart svarar 5...Qe7, och damerna byts snart av. Det är ett lugnt sätt att undvika huvudvarianterna; motorn föredrog det vanliga 5.d4."
+    },
+    {
+      "ply": 18,
+      "en": "10.O-O-O: with the queens gone, the king is safe on the queenside and the rook arrives on the d-file at once. Black castles short next move, so the kings end up on opposite wings.",
+      "sv": "10.O-O-O: när damerna är borta står kungen säkert på damflygeln, och tornet kommer direkt till d-linjen. Svart rockerar kort i nästa drag, så kungarna hamnar på olika flyglar."
+    },
+    {
+      "ply": 38,
+      "en": "19.c4 and 20.Ne4 are ambitious, but they give Black the initiative. After 20...Bxe4 21.Rxe4 Bg5+ and 22...gxh3, Black's pawns break into White's kingside. The engine preferred 20.Bxe5, exchanging Black's strong knight.",
+      "sv": "19.c4 och 20.Ne4 är ambitiösa, men ger Svart initiativet. Efter 20...Bxe4 21.Rxe4 Bg5+ och 22...gxh3 bryter de svarta bönderna in på Vits kungsflygel. Motorn föredrog 20.Bxe5, som byter bort Svarts starka springare.",
+      "line": {
+        "from": "before",
+        "san": ["Bxe5", "Bxe5", "hxg4", "Bxg4", "f3", "Bf5"]
+      }
+    },
+    {
+      "ply": 44,
+      "en": "23.c5!? is typical Kramnik in this game: instead of the safe 23.gxh3, he lets the black pawn run to g2 and goes after Black's queenside with his rook and pawns. The engine considers it a real mistake, and Black is now clearly better.",
+      "sv": "23.c5!? är typiskt för Kramnik i detta parti: i stället för det säkra 23.gxh3 låter han den svarta bonden springa till g2 och går efter Svarts damflygel med tornet och bönderna. Motorn bedömer det som ett verkligt misstag, och Svart står nu klart bättre.",
+      "line": {
+        "from": "before",
+        "san": ["gxh3", "f5", "Ree1", "Nf3", "Rh1", "Rad8"]
+      }
+    },
+    {
+      "ply": 56,
+      "en": "29.d7 shows White's compensation: the d-pawn has reached the seventh rank and the rook on b7 is very active. But Black is a knight for a pawn up, with a pawn on g2 close to queening, and the engine sees Black as winning.",
+      "sv": "29.d7 visar Vits kompensation: d-bonden har nått sjunde raden och tornet på b7 är mycket aktivt. Men Svart har en springare mot en bonde mer, med en bonde på g2 nära att bli dam, och motorn bedömer att Svart står på vinst."
+    },
+    {
+      "ply": 61,
+      "en": "31...Ng4? throws away most of the advantage. The engine wanted 31...Nf1 with the same idea of bringing the knight to e3, and Black stays winning. A series of errors on both sides follows: 32.Rxa7 gave the advantage back (the engine wanted 32.c4), and 33...h6 let it go again, where 33...Rxc2 was strong.",
+      "sv": "31...Ng4? kastar bort det mesta av fördelen. Motorn ville ha 31...Nf1 med samma idé att föra springaren till e3, och då står Svart kvar på vinst. Sedan följer en rad misstag från båda håll: 32.Rxa7 gav tillbaka fördelen (motorn ville ha 32.c4), och 33...h6 släppte den igen, där 33...Rxc2 var starkt.",
+      "line": {
+        "from": "before",
+        "san": ["Nf1", "Rxa7", "Ne3", "Rg1", "Rxc2"]
+      }
+    },
+    {
+      "ply": 75,
+      "en": "38...Kd6?? is a serious mistake, and now White is winning. The engine shows 39.Rc6+! Ke7 40.a6, and after the d-pawn falls White's rook comes round to e8 with check and then takes the knight on e3. Kramnik played 39.Rb7 instead, keeping only part of his advantage.",
+      "sv": "38...Kd6?? är ett allvarligt misstag, och nu står Vit på vinst. Motorn visar 39.Rc6+! Ke7 40.a6, och efter att d-bonden fallit kommer det vita tornet runt till e8 med schack och slår sedan springaren på e3. Kramnik spelade i stället 39.Rb7 och behöll bara en del av fördelen.",
+      "line": {
+        "from": "after",
+        "san": ["Rc6+", "Ke7", "a6", "Rxd7", "Rc8", "Ra7", "Re8+", "Kf6", "Rxe3"]
+      }
+    },
+    {
+      "ply": 86,
+      "en": "44.c4? lets the h-pawn run with 44...h3, and much of White's advantage disappears. The engine wanted to cash in the d-pawn first: after 44.d8=Q+ Bxd8 45.Rd7+ and 46.Bc6, White keeps a winning position. Curiously, the engine rates promoting to a bishop or knight just as highly, since the new piece is taken at once anyway.",
+      "sv": "44.c4? låter h-bonden springa med 44...h3, och mycket av Vits fördel försvinner. Motorn ville först växla in d-bonden: efter 44.d8=Q+ Bxd8 45.Rd7+ och 46.Bc6 behåller Vit en vinstställning. Märkligt nog värderar motorn en promovering till löpare eller springare lika högt, eftersom den nya pjäsen ändå slås direkt.",
+      "line": {
+        "from": "before",
+        "san": ["d8=Q+", "Bxd8", "Rd7+", "Ke5", "Bc6", "Rxa7", "Rxa7"]
+      }
+    },
+    {
+      "ply": 96,
+      "en": "After 48.d8=Q Bxd8 49.Rxg4 the dust has settled. White has two rooks and a bishop against Black's rook, bishop and knight, each side has two passed pawns, and the engine rates the position as completely level.",
+      "sv": "Efter 48.d8=Q Bxd8 49.Rxg4 har dammet lagt sig. Vit har två torn och en löpare mot Svarts torn, löpare och springare, båda sidor har två fribönder, och motorn bedömer ställningen som helt jämn."
+    },
+    {
+      "ply": 116,
+      "en": "59.Rd1?? is the decisive blunder. The rook on e1 was attacked by the knight on f3, and the engine's 59.Rxf6, giving the rook for the bishop, would have held the balance. After 59...Ra1+ 60.Kc2 Rxd1 Black has won a rook. Taking back with the king fails to ...h2, as the h-pawn queens, and the engine rates White's position as lost.",
+      "sv": "59.Rd1?? är den avgörande blundern. Tornet på e1 var angripet av springaren på f3, och motorns 59.Rxf6, där tornet ges för löparen, hade hållit balansen. Efter 59...Ra1+ 60.Kc2 Rxd1 har Svart vunnit ett torn. Att ta tillbaka med kungen strandar på ...h2, eftersom h-bonden blir dam, och motorn bedömer Vits ställning som förlorad.",
+      "line": {
+        "from": "before",
+        "san": ["Rxf6", "Nxe1", "Bf1", "h2", "Rh6", "Kxc5"]
+      }
+    },
+    {
+      "ply": 131,
+      "en": "66...f2 and Kramnik resigned. The f-pawn is protected by the rook on d2 and will queen, and the engine already sees a forced mate for Black.",
+      "sv": "66...f2 och Kramnik gav upp. f-bonden skyddas av tornet på d2 och kommer att bli dam, och motorn ser redan en forcerad matt för Svart."
+    }
+  ],
+  "summary": {
+    "en": "Kramnik's aggressive choices, 20.Ne4 and especially 23.c5, gave Black a winning position, but the game was far from a clean conversion. In the complex endgame both players made big mistakes: Black let the win slip with 31...Ng4 and later even stood lost after 38...Kd6, before White let the win slip again with 43.b4, 44.c4 and the moves that followed, until the position was level. In the end one careless rook move, 59.Rd1, decided it. In endgames full of passed pawns, every tempo counts, and calculating each pawn race carefully matters more than general principles.",
+    "sv": "Kramniks aggressiva val, 20.Ne4 och särskilt 23.c5, gav Svart en vinstställning, men partiet var långt ifrån en ren omvandling. I det komplicerade slutspelet gjorde båda spelarna stora misstag: Svart släppte vinsten med 31...Ng4 och stod senare till och med förlorat efter 38...Kd6, innan Vit i sin tur släppte vinsten med 43.b4, 44.c4 och de följande dragen, tills ställningen var jämn. Till slut avgjorde ett enda slarvigt torndrag, 59.Rd1. I slutspel fulla av fribönder räknas varje tempo, och att noga räkna ut varje bondelopp betyder mer än allmänna principer."
+  }
+}

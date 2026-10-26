@@ -1,0 +1,80 @@
+{
+  "id": "ding-nepomniachtchi-2023-g12",
+  "intro": {
+    "en": "Astana, 2023, game 12 of the World Championship match between Ding Liren and Ian Nepomniachtchi. Nepomniachtchi led by a point with three games left, so Ding needed a win, and this was one of his last chances. The opening is a quiet Colle System, but the middlegame turns into a wild fight in which both players miss chances. Watch the g-file, Black's knight on h4, and the weak pawn on e6.",
+    "sv": "Astana 2023, parti 12 i VM-matchen mellan Ding Liren och Ian Nepomnjasjtjij. Nepomnjasjtjij ledde med en poäng när tre partier återstod, så Ding behövde en vinst, och detta var en av hans sista chanser. Öppningen är ett lugnt Colle-system, men mittspelet blir en vild kamp där båda spelarna missar chanser. Håll ögonen på g-linjen, Svarts springare på h4 och den svaga bonden på e6."
+  },
+  "comments": [
+    {
+      "ply": 4,
+      "en": "3.e3 sets up the Colle System: White builds a solid pawn chain with c3, d4 and e3, develops with Nbd2 and Bd3, and keeps the e4 break for later. It is safe rather than ambitious; the engine prefers the sharper 3.c4. Black answers in the usual way, by striking at d4 with 3...c5.",
+      "sv": "3.e3 bygger upp Colle-systemet: Vit skapar en solid bondekedja med c3, d4 och e3, utvecklar med Nbd2 och Bd3 och sparar genombrottet e4 till senare. Det är säkert snarare än ambitiöst; motorn föredrar det skarpare 3.c4. Svart svarar på vanligt sätt genom att angripa d4 med 3...c5."
+    },
+    {
+      "ply": 23,
+      "en": "12.Bxf6 gxf6 gives Black the bishop pair and doubled f-pawns, but it also opens the g-file. Nepomniachtchi tucks his king into the corner on h8 and soon puts his rooks on that file, aiming straight at White's king.",
+      "sv": "12.Bxf6 gxf6 ger Svart löparparet och dubbelbönder på f-linjen, men öppnar också g-linjen. Nepomnjasjtjij ställer kungen i hörnet på h8 och placerar snart tornen på den linjen, riktade rakt mot Vits kung."
+    },
+    {
+      "ply": 32,
+      "en": "17.g4 attacks the pawn on f5 and supports the knight on h5, but it loosens the pawns in front of Ding's own king. With Black's rooks heading for the g-file, the engine preferred the calm 17.Kh1 first.",
+      "sv": "17.g4 angriper bonden på f5 och stöder springaren på h5, men försvagar bönderna framför Dings egen kung. Eftersom Svarts torn är på väg till g-linjen föredrog motorn att först spela det lugna 17.Kh1."
+    },
+    {
+      "ply": 37,
+      "en": "After 19.Bc2, instead of the engine's 19.Rg1, Black's knight jumps to h4, where it eyes f3 and g2. Black's pieces now point at the white king, and the engine now prefers Black.",
+      "sv": "Efter 19.Bc2, i stället för motorns 19.Rg1, hoppar Svarts springare till h4, där den siktar på f3 och g2. Svarts pjäser pekar nu mot den vita kungen, och motorn föredrar nu Svart."
+    },
+    {
+      "ply": 46,
+      "en": "24.c4 is a pawn sacrifice to open lines on the queenside and in the centre, a typical try for counterplay when you are worse. The engine thinks it makes things worse and preferred the patient 24.Bd1. After 24...dxc4 Black is a pawn up and still attacking.",
+      "sv": "24.c4 är ett bondeoffer för att öppna linjer på damflygeln och i centrum, ett typiskt försök till motspel när man står sämre. Motorn anser att det förvärrar läget och föredrog det tålmodiga 24.Bd1. Efter 24...dxc4 är Svart en bonde före och anfaller fortfarande."
+    },
+    {
+      "ply": 53,
+      "en": "27...Rag8? lets the win slip. 27...Nf3! would have attacked both rooks, on e1 and g1, at once. After 28.Bxg6 Qh4 the rook on e1 falls, and Black would have been close to winning.",
+      "sv": "27...Rag8? släpper vinsten. 27...Nf3! hade angripit båda tornen, på e1 och g1, på en gång. Efter 28.Bxg6 Qh4 faller tornet på e1, och Svart hade varit nära vinst.",
+      "line": { "from": "before", "san": ["Nf3", "Bxg6", "Qh4", "Kg2", "Nxe1+", "Rxe1", "hxg6"] }
+    },
+    {
+      "ply": 55,
+      "en": "28...Bb8? is a real blunder. The queen on c6 was attacking the bishop, but this retreat lets White take on g6 and, after 29.Bxg6 hxg6, push the d-pawn to d5, opening lines: the white queen joins in along the sixth rank and the d-pawn starts rolling. The engine's 28...Nf5 kept Black clearly better.",
+      "sv": "28...Bb8? är en riktig blunder. Damen på c6 angrep löparen, men reträtten låter Vit slå på g6 och, efter 29.Bxg6 hxg6, föra fram d-bonden till d5, vilket öppnar linjer: den vita damen kommer in längs sjätte raden och d-bonden börjar rulla. Motorns 28...Nf5 hade behållit en klar fördel för Svart."
+    },
+    {
+      "ply": 56,
+      "en": "29.Qb7? misses the chance. 29.Bxg6 was the move: White takes the rook on g6, and after 29...Nxg6 30.Qf3 Black has given up the exchange for nothing. After the queen move Black is better again.",
+      "sv": "29.Qb7? missar chansen. 29.Bxg6 var draget: Vit tar tornet på g6, och efter 29...Nxg6 30.Qf3 har Svart gett bort kvalitet för ingenting. Efter damdraget står Svart bättre igen.",
+      "line": { "from": "before", "san": ["Bxg6", "Nxg6", "Qf3"] }
+    },
+    {
+      "ply": 59,
+      "en": "After 30.Be4 the engine considered the position level if Black pushed 30...f3 at once. 30...Rf8 is slower, and after 31.Qxb4 White is a pawn up and slightly better.",
+      "sv": "Efter 30.Be4 bedömde motorn ställningen som jämn om Svart direkt spelade 30...f3. 30...Rf8 är långsammare, och efter 31.Qxb4 är Vit en bonde före och står något bättre."
+    },
+    {
+      "ply": 67,
+      "en": "34...f5?? decides the game. The pawn on f7 was the only defender of e6, and now White's rook on e2 can take it. The engine's 34...Qg5 would have kept the game balanced.",
+      "sv": "34...f5?? avgör partiet. Bonden på f7 var den enda försvararen av e6, och nu kan Vits torn på e2 ta den. Motorns 34...Qg5 hade hållit partiet i balans."
+    },
+    {
+      "ply": 68,
+      "en": "35.Rxe6 wins the pawn and brings the rook to the sixth rank, where it hits the knight on g6. White's d-pawn is now free to advance, and Black's position falls apart.",
+      "sv": "35.Rxe6 vinner bonden och för tornet till sjätte raden, där det angriper springaren på g6. Vits d-bonde kan nu avancera fritt, och Svarts ställning faller samman."
+    },
+    {
+      "ply": 72,
+      "en": "35...Rxh5 36.gxh5 Qxh5 was a desperate try against the white king, but 37.d5+ is a discovered check: the pawn steps off the long diagonal, and the queen on c3 gives check all the way to h8.",
+      "sv": "35...Rxh5 36.gxh5 Qxh5 var ett desperat försök mot den vita kungen, men 37.d5+ är en avdragsschack: bonden kliver bort från den långa diagonalen, och damen på c3 ger schack hela vägen till h8."
+    },
+    {
+      "ply": 74,
+      "en": "38.d6 brings the passed pawn closer to queening, and White is the exchange and a pawn up. Nepomniachtchi resigned, and the match was level with two games to play.",
+      "sv": "38.d6 för fribonden närmare förvandling, och Vit har en kvalitet och en bonde mer. Nepomnjasjtjij gav upp, och matchen var lika med två partier kvar."
+    }
+  ],
+  "summary": {
+    "en": "This game shows how quickly an advantage can change hands when both kings are exposed and the clock is ticking. Nepomniachtchi missed 27...Nf3, Ding missed 29.Bxg6, and in the end a single pawn move, 34...f5, left e6 without a defender. Before you push a pawn, check which squares it stops guarding.",
+    "sv": "Partiet visar hur snabbt en fördel kan byta ägare när båda kungarna är blottade och klockan tickar. Nepomnjasjtjij missade 27...Nf3, Ding missade 29.Bxg6, och till slut lämnade ett enda bondedrag, 34...f5, e6 utan försvar. Innan du flyttar en bonde: kontrollera vilka rutor den slutar skydda."
+  }
+}

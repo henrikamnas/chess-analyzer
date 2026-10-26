@@ -1,0 +1,94 @@
+{
+  "id": "caruana-gukesh-2022",
+  "intro": {
+    "en": "The 2022 Olympiad in Chennai, Gukesh's home city. The 16-year-old won his first eight games there, and this win with Black over Fabiano Caruana, then one of the world's top players, was the eighth. Watch how Black's loosened kingside survives a long manoeuvring phase, how White's queenside pawns become targets, and how Caruana's final attack is turned against his own king.",
+    "sv": "Schackolympiaden 2022 i Chennai, Gukeshs hemstad. Den 16-årige Gukesh vann sina åtta första partier där, och den här segern med svart mot Fabiano Caruana, då en av världens främsta spelare, var den åttonde. Se hur Svarts försvagade kungsflygel klarar en lång manövreringsfas, hur Vits damflygelbönder blir mål och hur Caruanas slutattack vänds mot hans egen kung."
+  },
+  "comments": [
+    {
+      "ply": 9,
+      "en": "This is the Rossolimo Attack of the Sicilian with the fianchetto ...g6. White gives the bishop for the knight to double Black's c-pawns; in return Black gets the bishop pair and a strong dark-squared bishop on g7.",
+      "sv": "Det här är Rossolimoangreppet i siciliansk med fianchetto ...g6. Vit ger löparen mot springaren för att dubblera Svarts c-bönder; i gengäld får Svart löparparet och en stark svartfältslöpare på g7."
+    },
+    {
+      "ply": 16,
+      "en": "After 8.e5 dxe5 9.d3 White is a pawn down for the moment, but Black's e5 pawn is hard to keep, and White hopes to use the open lines while Black's king is still in the centre.",
+      "sv": "Efter 8.e5 dxe5 9.d3 är Vit en bonde under för stunden, men Svarts e5-bonde är svår att behålla, och Vit hoppas utnyttja de öppna linjerna medan Svarts kung står kvar i centrum."
+    },
+    {
+      "ply": 21,
+      "en": "11...Nh6 allows 12.Nxe5: if 12...Bxe5, 13.Bxh6 wins the knight, so White simply has the pawn back with a good position. The engine preferred 11...Be6, which develops; White also regains the pawn after 12.d4, but Black is more comfortable.",
+      "sv": "11...Nh6 tillåter 12.Nxe5: om 12...Bxe5 vinner 13.Bxh6 springaren, så Vit har helt enkelt fått tillbaka bonden med bra ställning. Motorn föredrog 11...Be6, som utvecklar; Vit tar tillbaka bonden även efter 12.d4, men Svart står bekvämare.",
+      "line": {
+        "from": "before",
+        "san": ["Be6", "d4", "exd4", "Nxd4", "Bd7"]
+      }
+    },
+    {
+      "ply": 27,
+      "en": "14...f6 drives the knight away from e5, but it weakens Black's king position: the diagonal to g8 and the e6 square become sensitive. The engine preferred 14...Be6, and White now has a clear edge.",
+      "sv": "14...f6 driver bort springaren från e5, men försvagar Svarts kungsställning: diagonalen mot g8 och rutan e6 blir känsliga. Motorn föredrog 14...Be6, och nu har Vit en klar fördel."
+    },
+    {
+      "ply": 33,
+      "en": "With ...g5 Black drove White's bishop back to h2, and ...h5 gains more space on the kingside. It looks loose, but White's pieces are not yet arranged to exploit it.",
+      "sv": "Med ...g5 drev Svart tillbaka Vits löpare till h2, och ...h5 vinner mer utrymme på kungsflygeln. Det ser löst ut, men Vits pjäser är ännu inte placerade för att utnyttja det."
+    },
+    {
+      "ply": 44,
+      "en": "Here the engine wanted the sacrifice 23.Nxg5, breaking open Black's loosened kingside: after 23...fxg5 24.Qxh5 White has two pawns and an attack for the piece. Caruana chose the quieter 23.Qc4, and the chance passed.",
+      "sv": "Här ville motorn offra med 23.Nxg5 och bryta upp Svarts försvagade kungsflygel: efter 23...fxg5 24.Qxh5 har Vit två bönder och ett angrepp för pjäsen. Caruana valde det lugnare 23.Qc4, och chansen gick förlorad.",
+      "line": {
+        "from": "before",
+        "san": ["Nxg5", "fxg5", "Qxh5", "Ng7", "Qxg5"]
+      }
+    },
+    {
+      "ply": 54,
+      "en": "28.a3?! is an inaccuracy, and it has lasting consequences. After 28...a5 Black opens the a-file, and the pawn on a3 becomes a fixed target for the black rooks. The engine preferred 28.a4, keeping the pawn on a square where it is easier to defend.",
+      "sv": "28.a3?! är en onoggrannhet med långvariga följder. Efter 28...a5 öppnar Svart a-linjen, och bonden på a3 blir ett fast mål för de svarta tornen. Motorn föredrog 28.a4, som håller bonden på en ruta där den är lättare att försvara."
+    },
+    {
+      "ply": 60,
+      "en": "31.Nc5? is the turning point; 31.Qc2 kept Black's edge small. After 31...Qd5 Black's queen dominates the centre and attacks the rook on e4. A queen trade on d5 would bring a black pawn there that hits the rook again, and the engine gives Black a clear advantage either way. After 32.Qe2 the a3 pawn falls.",
+      "sv": "31.Nc5? är vändpunkten; 31.Qc2 höll Svarts fördel liten. Efter 31...Qd5 dominerar Svarts dam centrum och angriper tornet på e4. Ett dambyte på d5 skulle föra dit en svart bonde som angriper tornet igen, och motorn ger Svart en klar fördel i båda fallen. Efter 32.Qe2 faller bonden på a3.",
+      "line": {
+        "from": "before",
+        "san": ["Qc2", "Rb5", "Rbe1", "Bxa3"]
+      }
+    },
+    {
+      "ply": 66,
+      "en": "34.g4? opens White's own king. A pawn down, Caruana looks for activity, but after the h-pawns are exchanged Black's rooks, queen and bishops get open lines towards g1. The engine preferred 34.Rb1; White was already clearly worse, but now the position collapses.",
+      "sv": "34.g4? öppnar Vits egen kung. En bonde under söker Caruana aktivitet, men när h-bönderna är bytta får Svarts torn, dam och löpare öppna linjer mot g1. Motorn föredrog 34.Rb1; Vit stod redan klart sämre, men nu rasar ställningen."
+    },
+    {
+      "ply": 72,
+      "en": "37.Nxe5 is a desperate knight sacrifice: after 37...fxe5 38.Rxe5 White has two pawns and threats along the e- and g-files. Gukesh keeps calm, and the extra piece decides.",
+      "sv": "37.Nxe5 är ett desperat springaroffer: efter 37...fxe5 38.Rxe5 har Vit två bönder och hot längs e- och g-linjerna. Gukesh håller huvudet kallt, och merpjäsen avgör."
+    },
+    {
+      "ply": 77,
+      "en": "39...Qf3! brings the queen close to White's king, supported by the bishop on g4. Together with the rooks on the a-file, Black's pieces now threaten the white king more than White's attack threatens Black's.",
+      "sv": "39...Qf3! för damen nära Vits kung, med stöd av löparen på g4. Tillsammans med tornen på a-linjen hotar Svarts pjäser nu den vita kungen mer än Vits angrepp hotar den svarta."
+    },
+    {
+      "ply": 86,
+      "en": "White's last attack: 43.Rxg7+ Kxg7 44.Qg5+. The engine shows that Black's king escapes and that Black even has a forced mate.",
+      "sv": "Vits sista angrepp: 43.Rxg7+ Kxg7 44.Qg5+. Motorn visar att Svarts kung kommer undan och att Svart till och med har en forcerad matt."
+    },
+    {
+      "ply": 89,
+      "en": "45...Qxe4! The queen cannot be taken: after 46.Rxe4 Ra1+ 47.Re1 Rxe1 is mate, because the bishop on h3 covers g2, the bishop on d6 covers h2 and the rook covers the first rank. Caruana resigned.",
+      "sv": "45...Qxe4! Damen kan inte slås: efter 46.Rxe4 Ra1+ 47.Re1 är Rxe1 matt, eftersom löparen på h3 täcker g2, löparen på d6 täcker h2 och tornet täcker första raden. Caruana gav upp.",
+      "line": {
+        "from": "after",
+        "san": ["Rxe4", "Ra1+", "Re1", "Rxe1#"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "For a long time this was a balanced manoeuvring game, and Caruana even missed an interesting sacrifice on g5. The lessons: every pawn move on the queenside can create a target (28.a3), check whether a queen trade really works before allowing it, and do not open your own king when you are the one with fewer attacking pieces.",
+    "sv": "Länge var detta ett jämnt manövreringsparti, och Caruana missade till och med ett intressant offer på g5. Lärdomarna: varje bondedrag på damflygeln kan skapa ett mål (28.a3), kontrollera att ett dambyte verkligen fungerar innan du tillåter det, och öppna inte din egen kung när det är du som har färre anfallande pjäser."
+  }
+}

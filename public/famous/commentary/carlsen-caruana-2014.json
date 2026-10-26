@@ -1,0 +1,129 @@
+{
+  "id": "carlsen-caruana-2014",
+  "intro": {
+    "en": "Saint Louis, 2014: Fabiano Caruana opened the Sinquefield Cup with seven straight wins against a field of the world's best players, and this was one of them, against world champion Magnus Carlsen. A quiet Bishop's Opening suddenly explodes when Carlsen sacrifices a bishop on f7. Watch how both kings come under fire, and how one wrong blocking move decides the game.",
+    "sv": "Saint Louis 2014: Fabiano Caruana inledde Sinquefield Cup med sju raka vinster mot ett startfält med världens bästa spelare, och detta var en av dem, mot världsmästaren Magnus Carlsen. En lugn löparöppning exploderar plötsligt när Carlsen offrar en löpare på f7. Se hur båda kungarna kommer under eld, och hur ett enda felaktigt mellansättningsdrag avgör partiet."
+  },
+  "comments": [
+    {
+      "ply": 5,
+      "en": "The Bishop's Opening with 3.d3 is a quiet choice. White keeps things flexible and avoids sharp theory, and Black answers with 3...c6 and soon ...d5, the Paulsen Defence, building a pawn centre of his own.",
+      "sv": "Löparöppningen med 3.d3 är ett lugnt val. Vit håller ställningen flexibel och undviker skarp teori, och Svart svarar med 3...c6 och snart ...d5, Paulsens försvar, och bygger ett eget bondecentrum."
+    },
+    {
+      "ply": 20,
+      "en": "11.Bg3 spends another tempo on the bishop while the king is still in the centre; the engine wanted 11.O-O first. Black immediately aims ...Nh5 at the bishop, and after 13...Nxg3 14.fxg3 White has doubled g-pawns, though the half-open f-file gives the rook a target on f7.",
+      "sv": "11.Bg3 lägger ytterligare ett tempo på löparen medan kungen fortfarande står i centrum; motorn ville ha 11.O-O först. Svart siktar genast med ...Nh5 på löparen, och efter 13...Nxg3 14.fxg3 har Vit dubbelbönder på g-linjen, men den halvöppna f-linjen ger tornet ett mål på f7."
+    },
+    {
+      "ply": 28,
+      "en": "15.Bxf7+!? Carlsen gives a bishop for two pawns to drag the black king out while it is still uncastled. It is brave, but the engine does not believe in it: the quiet 15.Bc2 would have kept a balanced game, and after the sacrifice Black is better.",
+      "sv": "15.Bxf7+!? Carlsen ger en löpare för två bönder för att dra ut den svarta kungen medan den fortfarande inte har rockerat. Det är modigt, men motorn tror inte på det: det lugna 15.Bc2 hade gett ett jämnt parti, och efter offret står Svart bättre.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Bc2",
+          "O-O",
+          "b4",
+          "Nd7",
+          "a4",
+          "a5"
+        ]
+      }
+    },
+    {
+      "ply": 36,
+      "en": "After 16.Nxe5+, 17.Ng6 and 18.Rf8+ White picks up the rook on h8 and is now ahead in material. But the knight on h8 is trapped in the corner, and the black king is safe enough on h7. Now it is Black's turn to strike.",
+      "sv": "Efter 16.Nxe5+, 17.Ng6 och 18.Rf8+ plockar Vit tornet på h8 och har nu mer material. Men springaren på h8 sitter fast i hörnet, och den svarta kungen står tillräckligt säkert på h7. Nu är det Svarts tur att slå till."
+    },
+    {
+      "ply": 39,
+      "en": "20...Nd3 is a pretty deflection: the white queen on f1 is the only defender of the rook on f8, so if 21.Qxd3 then 21...Rxf8 wins the rook. Still, the engine preferred the plain 20...Rxf8 21.Qxf8 Be6, which keeps more of Black's advantage.",
+      "sv": "20...Nd3 är en vacker avledning: den vita damen på f1 är den enda försvararen av tornet på f8, så om 21.Qxd3 vinner 21...Rxf8 tornet. Ändå föredrog motorn det enkla 20...Rxf8 21.Qxf8 Be6, som behåller mer av Svarts fördel.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Rxf8",
+          "Qxf8",
+          "Be6",
+          "Nf1",
+          "Qd8",
+          "Qxd8",
+          "Bxd8"
+        ]
+      }
+    },
+    {
+      "ply": 43,
+      "en": "22...Qxg4 lets most of the advantage slip. The trapped knight on h8 was not going anywhere, but taking it first with 22...Kxh8 was more precise. Now 23.Nb3 would have brought White close to equality; Carlsen's 23.Nf3 was weaker.",
+      "sv": "22...Qxg4 släpper det mesta av fördelen. Den instängda springaren på h8 kunde inte fly, men att först ta den med 22...Kxh8 var mer exakt. Nu hade 23.Nb3 fört Vit nära utjämning; Carlsens 23.Nf3 var svagare.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Kxh8",
+          "Nf3",
+          "Qxg4",
+          "c4",
+          "Qxg3"
+        ]
+      }
+    },
+    {
+      "ply": 46,
+      "en": "24.e5+ misses a resource. The knight on h8 was going to be lost anyway, so the engine preferred 24.Nf7, letting the rook take it on f7 before 25.e5+, which kept the game much closer. After 24...Kxh8 material is level, but Black's queen and bishop are far more active.",
+      "sv": "24.e5+ missar en resurs. Springaren på h8 skulle ändå gå förlorad, så motorn föredrog 24.Nf7, där tornet får slå den på f7 innan 25.e5+, vilket höll partiet mycket jämnare. Efter 24...Kxh8 är materialet jämnt, men den svarta damen och löparen är betydligt aktivare.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Nf7",
+          "Rxf7",
+          "e5+",
+          "g6",
+          "a4",
+          "Bxe5"
+        ]
+      }
+    },
+    {
+      "ply": 48,
+      "en": "25.e6 pushes the passed pawn, but it allows 25...Bb6+ with check along the diagonal towards g1. The engine wanted 25.Kh1 first. The pawn is dangerous, but Black's queen and bishop are already close to the white king.",
+      "sv": "25.e6 för fram fribonden, men tillåter 25...Bb6+ med schack längs diagonalen mot g1. Motorn ville ha 25.Kh1 först. Bonden är farlig, men den svarta damen och löparen står redan nära den vita kungen."
+    },
+    {
+      "ply": 60,
+      "en": "31.Nh2?? is the decisive mistake. After the check from h5 White had to block, and 31.Qh2 was the toughest defence, though Black would still be much better. Now the knight is lost: 31...Rd1+ 32.Rxd1 Qxd1+ 33.Nf1 Qxf1+, and the white king is exposed.",
+      "sv": "31.Nh2?? är det avgörande misstaget. Efter schacken från h5 måste Vit sätta emellan, och 31.Qh2 var det segaste försvaret, även om Svart fortfarande hade stått mycket bättre. Nu går springaren förlorad: 31...Rd1+ 32.Rxd1 Qxd1+ 33.Nf1 Qxf1+, och den vita kungen står öppen.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qh2",
+          "Qe8",
+          "g4",
+          "Rd7",
+          "g5",
+          "Rxe7"
+        ]
+      }
+    },
+    {
+      "ply": 67,
+      "en": "34...Qg1+ and Carlsen resigned. The engine points out that 34...Bg1+ was even faster, but the queen check also wins: Black will pick up the pawn on e7 and remain a piece ahead.",
+      "sv": "34...Qg1+ och Carlsen gav upp. Motorn påpekar att 34...Bg1+ var ännu snabbare, men damschacken vinner också: Svart tar bonden på e7 och har kvar en pjäs mer.",
+      "line": {
+        "from": "after",
+        "san": [
+          "Kh3",
+          "Qe3+",
+          "Qg3",
+          "Qe6+",
+          "Qg4",
+          "Qxe7"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "en": "Carlsen's 15.Bxf7+ was a bold practical try, but the engine shows that the quiet 15.Bc2 was better: a sacrifice needs more than an uncastled king to work. Both sides missed chances in the tactical melee that followed, which is normal when pieces are hanging all over the board. In the end one blocking move, 31.Nh2 instead of 31.Qh2, lost the knight and the game.",
+    "sv": "Carlsens 15.Bxf7+ var ett djärvt praktiskt försök, men motorn visar att det lugna 15.Bc2 var bättre: ett offer kräver mer än en orockerad kung för att fungera. Båda sidor missade chanser i den taktiska röra som följde, vilket är normalt när pjäser hänger över hela brädet. Till slut förlorade ett enda mellansättningsdrag, 31.Nh2 i stället för 31.Qh2, springaren och partiet."
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "id": "gukesh-firouzja-2024",
+  "intro": {
+    "en": "Toronto, 2024, round 13 of the Candidates Tournament. Gukesh Dommaraju had White against Alireza Firouzja, and his win here put him in the sole lead with one round to go; he went on to win the tournament and earn the right to play for the world title. There are no fireworks: watch a long, balanced middlegame, one wrong decision about a queen trade, and how Gukesh converts the endgame with his queenside pawns.",
+    "sv": "Toronto 2024, rond 13 i kandidatturneringen. Gukesh Dommaraju hade vit mot Alireza Firouzja, och segern här gav honom ensam ledning inför sista ronden; han vann sedan turneringen och rätten att spela om världsmästartiteln. Här finns inga fyrverkerier: se ett långt, jämnt mittspel, ett felaktigt beslut om ett dambyte och hur Gukesh vinner slutspelet med sina damflygelbönder."
+  },
+  "comments": [
+    {
+      "ply": 6,
+      "en": "4.d3 is the Anti-Berlin: instead of 4.O-O, after which Black can take on e4 and head for the well-known Berlin endgame, White protects e4 and keeps the queens on. It leads to a slow, manoeuvring game.",
+      "sv": "4.d3 är anti-Berlin: i stället för 4.O-O, varefter Svart kan slå på e4 och styra mot det välkända Berlinslutspelet, skyddar Vit e4 och behåller damerna på brädet. Det leder till ett långsamt manövreringsspel."
+    },
+    {
+      "ply": 25,
+      "en": "13...d5 is the natural central break. Black has developed comfortably, and the position is roughly level.",
+      "sv": "13...d5 är det naturliga brytet i centrum. Svart har utvecklat sig bekvämt, och ställningen är ungefär jämn."
+    },
+    {
+      "ply": 37,
+      "en": "After 18...e4 and the exchange on e4, Black has an advanced pawn on e4. It cramps White, but it can also become a target. Whether it is a strength or a weakness will decide much of the game.",
+      "sv": "Efter 18...e4 och bytet på e4 har Svart en framskjuten bonde på e4. Den tränger in Vit, men den kan också bli ett mål. Om den är en styrka eller en svaghet kommer att avgöra mycket av partiet."
+    },
+    {
+      "ply": 47,
+      "en": "24...a3 pushes the a-pawn deep into White's camp. It blocks White's a2 pawn and eyes b2, but it is also far from Black's other pieces and needs looking after.",
+      "sv": "24...a3 för a-bonden djupt in i Vits läger. Den blockerar Vits a2-bonde och siktar på b2, men den står också långt från Svarts övriga pjäser och behöver skyddas."
+    },
+    {
+      "ply": 63,
+      "en": "32...g5 is an inaccuracy. Black wants to open the g-file, but after the exchanges on f4 Black's own king is more exposed than White's. The engine preferred 32...h5.",
+      "sv": "32...g5 är en onoggrannhet. Svart vill öppna g-linjen, men efter bytena på f4 blir Svarts egen kung mer utsatt än Vits. Motorn föredrog 32...h5."
+    },
+    {
+      "ply": 87,
+      "en": "After a long period of manoeuvring a pair of rooks has been traded. 44...Rg8?! is an inaccuracy; the engine preferred 44...Qg6. White could now have kept a clear advantage with 45.Qh6.",
+      "sv": "Efter en lång manövreringsfas har ett tornpar bytts av. 44...Rg8?! är en onoggrannhet; motorn föredrog 44...Qg6. Vit kunde nu ha behållit en klar fördel med 45.Qh6.",
+      "line": {
+        "from": "after",
+        "san": ["Qh6", "Qe7", "Ke2", "Qf7", "Kd2"]
+      }
+    },
+    {
+      "ply": 88,
+      "en": "45.Qg5 lets the advantage slip, and the position is level again. But it sets Black a practical problem: should Black trade queens?",
+      "sv": "45.Qg5 släpper fördelen, och ställningen är jämn igen. Men draget ställer Svart inför ett praktiskt problem: ska Svart byta damer?"
+    },
+    {
+      "ply": 89,
+      "en": "45...Qg6?? is the decisive mistake. After the queen trade White's rook becomes very active, and Black's weak pawns on g6 and f5 and passive knight on g7 cannot hold. 45...Ne6 would have held: Black gives up the f5 pawn, but keeps the queens on and gets checks against White's king.",
+      "sv": "45...Qg6?? är det avgörande misstaget. Efter dambytet blir Vits torn mycket aktivt, och Svarts svaga bönder på g6 och f5 och den passiva springaren på g7 kan inte hålla. 45...Ne6 hade hållit: Svart ger bort bonden på f5 men behåller damerna och får schackar mot Vits kung.",
+      "line": {
+        "from": "before",
+        "san": ["Ne6", "Qxf5", "Qg7", "Ng4", "Qb2+", "Ke3", "Qc1+"]
+      }
+    },
+    {
+      "ply": 92,
+      "en": "47.Rd6 goes straight for the pawn on g6. Black cannot defend both g6 and the rest of the position, and White soon wins a pawn.",
+      "sv": "47.Rd6 går direkt på bonden på g6. Svart kan inte försvara både g6 och resten av ställningen, och Vit vinner snart en bonde."
+    },
+    {
+      "ply": 99,
+      "en": "50...Nc2? makes White's task easy. The engine's 50...e3+ uses Black's most advanced pawn to create counterplay against White's king. Now 51.Rxb7 wins a second pawn and gives White two connected passed pawns on the queenside.",
+      "sv": "50...Nc2? gör Vits uppgift lätt. Motorns 50...e3+ använder Svarts mest framskjutna bonde för att skapa motspel mot Vits kung. Nu vinner 51.Rxb7 en andra bonde och ger Vit två förbundna fribönder på damflygeln.",
+      "line": {
+        "from": "before",
+        "san": ["e3+", "Nxe3", "Re4", "Rxb7", "Rxf4+"]
+      }
+    },
+    {
+      "ply": 111,
+      "en": "56...Rxh3 wins a pawn back, but it is far too slow. White's b- and c-pawns march up the board, supported by the rook and the knight on d5.",
+      "sv": "56...Rxh3 vinner tillbaka en bonde, men det är alldeles för långsamt. Vits b- och c-bönder marscherar uppför brädet med stöd av tornet och springaren på d5."
+    },
+    {
+      "ply": 124,
+      "en": "The b-pawn is on b6 and the c-pawn on c5, the rook on c7 and the knight on d5 support them, and Black's king is too far away. Firouzja resigned.",
+      "sv": "b-bonden står på b6 och c-bonden på c5, tornet på c7 och springaren på d5 stöder dem, och Svarts kung är för långt borta. Firouzja gav upp."
+    }
+  ],
+  "summary": {
+    "en": "A game decided by patience. For more than forty moves the position was close to level; then Black misjudged one queen trade. The lessons: before trading queens, compare the endgame that follows: whose rook is more active, whose pawns are weak? An extra pawn plus connected passed pawns on the queenside is usually enough to win.",
+    "sv": "Ett parti som avgjordes av tålamod. I mer än fyrtio drag var ställningen nära jämn; sedan felbedömde Svart ett enda dambyte. Lärdomarna: jämför slutspelet som följer innan du byter damer: vems torn är aktivast, vems bönder är svaga? En merbonde plus förbundna fribönder på damflygeln räcker oftast för att vinna."
+  }
+}

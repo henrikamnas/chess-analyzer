@@ -1,0 +1,94 @@
+{
+  "id": "gukesh-ding-2024-g11",
+  "intro": {
+    "en": "Singapore, 2024, game 11 of the World Championship match between Ding Liren and the 18-year-old challenger Gukesh Dommaraju. The match was level going into this game. Gukesh chose a rare Réti setup, and for a long time Ding held his own; watch the b-file, where White slowly piles up pressure, and how one careless queen move decides the game.",
+    "sv": "Singapore 2024, parti 11 i VM-matchen mellan Ding Liren och den 18-årige utmanaren Gukesh Dommaraju. Matchen var jämn inför partiet. Gukesh valde en ovanlig Rétiuppställning, och länge stod Ding emot väl; följ b-linjen, där Vit långsamt bygger upp trycket, och se hur ett enda slarvigt damdrag avgör partiet."
+  },
+  "comments": [
+    {
+      "ply": 4,
+      "en": "After 2...d4 Black has grabbed space in the centre. With 3.b4 White answers on the queenside: the pawn gains space and challenges ...c5, the pawn Black wants to support d4 with. This is the idea of the Reversed Blumenfeld Gambit, the Blumenfeld idea with colours reversed.",
+      "sv": "Efter 2...d4 har Svart tagit utrymme i centrum. Med 3.b4 svarar Vit på damflygeln: bonden tar utrymme och utmanar ...c5, den bonde som Svart vill stödja d4 med. Det är idén bakom omvänd Blumenfeldgambit, Blumenfeldidén med ombytta färger."
+    },
+    {
+      "ply": 13,
+      "en": "7...Bxf3 gives up the bishop for the knight, so White gets the bishop pair. In return Black develops quickly, and the pawn on d4 cramps White's position.",
+      "sv": "7...Bxf3 ger bort löparen mot springaren, så Vit får löparparet. I gengäld utvecklar Svart snabbt, och bonden på d4 tränger in den vita ställningen."
+    },
+    {
+      "ply": 28,
+      "en": "15.Rd1 is the first real inaccuracy; the engine preferred 15.Nd2. Black's knights on c5 and e5 both aim at the weak pawn on d3, and White's queenside pieces are still at home.",
+      "sv": "15.Rd1 är den första verkliga onoggrannheten; motorn föredrog 15.Nd2. Svarts springare på c5 och e5 siktar båda mot den svaga bonden på d3, och Vits pjäser på damflygeln står fortfarande kvar hemma."
+    },
+    {
+      "ply": 29,
+      "en": "A missed chance. 15...e6 opens the diagonal for the f8 bishop, and after 16.Nd2 Bd6 Black can soon win the d3 pawn; the engine judged Black clearly better. After 15...g6 the bishop goes the long way round to h6 and White has time to sort out his position.",
+      "sv": "En missad chans. 15...e6 öppnar diagonalen för löparen på f8, och efter 16.Nd2 Bd6 kan Svart snart vinna bonden på d3; motorn bedömde att Svart stod klart bättre. Efter 15...g6 tar löparen omvägen till h6, och Vit hinner ordna sin ställning.",
+      "line": {
+        "from": "before",
+        "san": ["e6", "Nd2", "Bd6", "b6", "Qe7", "Ne4", "Nexd3"]
+      }
+    },
+    {
+      "ply": 34,
+      "en": "18.Ba3 attacks the knight on c5, which stands on the same diagonal as Black's queen on d6. White is ready to give up the bishop to remove one of Black's best pieces.",
+      "sv": "18.Ba3 angriper springaren på c5, som står på samma diagonal som Svarts dam på d6. Vit är beredd att ge upp löparen för att bli av med en av Svarts bästa pjäser."
+    },
+    {
+      "ply": 38,
+      "en": "After 19.Bxc5 Qxc5 the queen comes to e4, in the centre, where it eyes b7 together with the bishop on g2. White's play is all about the long diagonal and the b-file.",
+      "sv": "Efter 19.Bxc5 Qxc5 kommer damen till e4, mitt i centrum, där den tillsammans med löparen på g2 siktar mot b7. Vits spel handlar helt om den långa diagonalen och b-linjen."
+    },
+    {
+      "ply": 41,
+      "en": "21...Rd7 is an inaccuracy: Black should castle. The engine's 21...O-O gets the king safe and brings the h8 rook into play; after the rook move Black's king is still in the centre while White's pieces gather on the b-file.",
+      "sv": "21...Rd7 är en onoggrannhet: Svart borde rockera. Motorns 21...O-O sätter kungen i säkerhet och tar in tornet på h8 i spelet; efter tornflytten står Svarts kung kvar i centrum medan Vits pjäser samlas på b-linjen.",
+      "line": {
+        "from": "before",
+        "san": ["O-O", "Rdb1", "Nb4", "Rb3", "Qxb6"]
+      }
+    },
+    {
+      "ply": 47,
+      "en": "Black has won the b6 pawn and finally castled, and White has only a small edge. But White's rook on b5 hits b7, and the queen on e4 and bishop on g2 line up against the knight on c6, so Black must defend carefully.",
+      "sv": "Svart har vunnit bonden på b6 och till slut rockerat, och Vit har bara en liten fördel. Men Vits torn på b5 angriper b7, och damen på e4 och löparen på g2 står i linje mot springaren på c6, så Svart måste försvara sig noggrant."
+    },
+    {
+      "ply": 48,
+      "en": "25.Na1 looks strange, but the knight is heading for b3 and c5, where it will hit b7 and the d7 rook. The engine preferred to double rooks at once with 25.Rdb1.",
+      "sv": "25.Na1 ser märkligt ut, men springaren är på väg till b3 och c5, där den angriper b7 och tornet på d7. Motorn föredrog att dubblera tornen direkt med 25.Rdb1."
+    },
+    {
+      "ply": 51,
+      "en": "26...e6? lets the knight come to c5 with gain of time, attacking the rook on d7 and the b7 pawn. The engine wanted 26...Rd6, keeping the rook out of the knight's reach. Now White has a clear advantage.",
+      "sv": "26...e6? låter springaren komma till c5 med tempo och angripa tornet på d7 och bonden på b7. Motorn ville spela 26...Rd6 och hålla tornet utom räckhåll för springaren. Nu har Vit en klar fördel."
+    },
+    {
+      "ply": 54,
+      "en": "The engine's choice was 28.Nxb7, simply winning a pawn. Gukesh instead doubles rooks on the b-file, adding pressure against b7 and the rook on b8.",
+      "sv": "Motorns val var 28.Nxb7, som helt enkelt vinner en bonde. Gukesh dubblerar i stället tornen på b-linjen och ökar trycket mot b7 och tornet på b8."
+    },
+    {
+      "ply": 55,
+      "en": "28...Qc8?? is the decisive blunder, played with both players in time trouble. 28.Rdb1 had set up a trick, and the queen move does nothing to stop it. The knight on c6 is protected by the queen and the b7 pawn, but the b-pawn cannot take back without opening the b-file onto the rook on b8, which only the queen defends. 28...Nb4 would have held: White is only slightly better after it.",
+      "sv": "28...Qc8?? är den avgörande bortsättningen, spelad när båda spelarna var i tidsnöd. 28.Rdb1 hade förberett en fälla, och damdraget gör ingenting för att stoppa den. Springaren på c6 skyddas av damen och bonden på b7, men b-bonden kan inte ta tillbaka utan att öppna b-linjen mot tornet på b8, som bara damen försvarar. 28...Nb4 hade hållit: efter det står Vit bara något bättre.",
+      "line": {
+        "from": "before",
+        "san": ["Nb4", "Nxb7", "Bf8", "c5", "Nd5", "Qxd4"]
+      }
+    },
+    {
+      "ply": 56,
+      "en": "29.Qxc6! takes the knight. If 29...bxc6, then 30.Rxb8 Qxb8 31.Rxb8+ and White comes out a whole piece up. Ding resigned, and Gukesh took the lead in the match for the first time.",
+      "sv": "29.Qxc6! tar springaren. Om 29...bxc6 följer 30.Rxb8 Qxb8 31.Rxb8+, och Vit blir en hel pjäs över. Ding gav upp, och Gukesh tog för första gången ledningen i matchen.",
+      "line": {
+        "from": "after",
+        "san": ["bxc6", "Rxb8", "Qxb8", "Rxb8+", "Kg7", "Bxc6"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "Ding came out of the opening with a good position and even missed a chance to take over with 15...e6. The lessons: castle in time, keep your pieces out of reach of an enemy knight, and when your opponent doubles rooks, ask what they threaten. After 28.Rdb1 the queen was overloaded, defending both the knight on c6 and the rook on b8, and 28...Qc8 did nothing about it.",
+    "sv": "Ding fick en bra ställning ur öppningen och missade till och med en chans att ta över med 15...e6. Lärdomarna: rockera i tid, håll pjäserna utom räckhåll för en fientlig springare, och fråga dig vad motståndaren hotar när tornen dubbleras. Efter 28.Rdb1 var damen överbelastad, eftersom den försvarade både springaren på c6 och tornet på b8, och 28...Qc8 gjorde ingenting åt det."
+  }
+}
