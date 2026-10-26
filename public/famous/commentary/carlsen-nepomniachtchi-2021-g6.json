@@ -1,0 +1,144 @@
+{
+  "id": "carlsen-nepomniachtchi-2021-g6",
+  "intro": {
+    "en": "Dubai, 2021, game 6 of the World Championship match between Magnus Carlsen and Ian Nepomniachtchi. The first five games were drawn. At 136 moves this is the longest game ever played in a world championship match. Watch the unusual material balance: for most of the game White's rooks and knight fight against Black's queen, and the question is whether the queen can hold everything together.",
+    "sv": "Dubai 2021, parti 6 i VM-matchen mellan Magnus Carlsen och Ian Nepomnjasjtjij. De fem första partierna hade slutat remi. Med 136 drag är det här det längsta parti som någonsin spelats i en VM-match. Lägg märke till den ovanliga materialbalansen: under större delen av partiet kämpar Vits torn och springare mot Svarts dam, och frågan är om damen kan hålla ihop allt."
+  },
+  "comments": [
+    {
+      "ply": 10,
+      "en": "The opening is a Pseudo-Catalan: White fianchettoes the king's bishop and plays a quiet 6.b3 instead of the usual 6.c4. Carlsen avoids sharp theory and aims for a long game where small advantages matter.",
+      "sv": "Öppningen är en pseudokatalan: Vit fianchetterar kungslöparen och spelar det lugna 6.b3 i stället för det vanliga 6.c4. Carlsen undviker skarp teori och siktar på ett långt parti där små fördelar spelar roll."
+    },
+    {
+      "ply": 20,
+      "en": "With 8.c4 dxc4 White gave up a pawn for a moment, and 11.Nxc4 wins it back with a well-placed knight. The position is level.",
+      "sv": "Med 8.c4 dxc4 gav Vit bort en bonde för ett ögonblick, och 11.Nxc4 vinner tillbaka den med en välplacerad springare. Ställningen är jämn."
+    },
+    {
+      "ply": 33,
+      "en": "17.Bxf6 gxf6: Black recaptures with the pawn to keep the queens on, accepting doubled f-pawns in front of the king. The engine preferred 17...Qxf6, which leads to a queen trade, but both moves keep the balance.",
+      "sv": "17.Bxf6 gxf6: Svart tar tillbaka med bonden för att behålla damerna, och accepterar dubbelbönder på f-linjen framför kungen. Motorn föredrog 17...Qxf6, som leder till dambyte, men båda dragen håller balansen."
+    },
+    {
+      "ply": 52,
+      "en": "26.Qxc8 Rxc8 27.Rxc8: White gives the queen for two rooks. Now White has two rooks and a knight against queen and bishop. Rooks are strongest when they work together on open files; the queen is best at attacking a loose king and loose pawns. The engine sees a level game.",
+      "sv": "26.Qxc8 Rxc8 27.Rxc8: Vit ger damen mot två torn. Nu har Vit två torn och en springare mot dam och löpare. Torn är starkast när de samarbetar på öppna linjer; damen är bäst på att angripa en oskyddad kung och oskyddade bönder. Motorn ser ett jämnt parti."
+    },
+    {
+      "ply": 61,
+      "en": "31...Bb2? is a serious mistake. The bishop leaves the centre for a square where it has little to do, and 32.Rc5 attacks the queen and the b5 pawn. White's rooks become very active and the knight can join the attack on h5. The engine preferred 31...Qe4, keeping the pieces together.",
+      "sv": "31...Bb2? är ett allvarligt misstag. Löparen lämnar centrum för ett fält där den har lite att göra, och 32.Rc5 angriper damen och b5-bonden. Vits torn blir mycket aktiva och springaren kan ansluta till angreppet mot h5. Motorn föredrog 31...Qe4, som håller ihop pjäserna.",
+      "line": {
+        "from": "after",
+        "san": [
+          "Rc5",
+          "Qd6",
+          "Rcc2",
+          "Bxa3",
+          "Nf4",
+          "Qb8",
+          "Rd7",
+          "Qe8",
+          "Nxh5+"
+        ]
+      }
+    },
+    {
+      "ply": 64,
+      "en": "33.Rd1? lets the advantage go. With 33.Rcc2 White would keep the bishop driven into the corner and bring the knight to f4 to win the h5 pawn. After the rook move Black takes on a3 and the game is level again.",
+      "sv": "33.Rd1? släpper fördelen. Med 33.Rcc2 hade Vit drivit in löparen i hörnet och fört springaren till f4 för att vinna h5-bonden. Efter tornflytten tar Svart på a3 och partiet är jämnt igen.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Rcc2",
+          "Ba1",
+          "Nf4",
+          "Qe7",
+          "Nxh5+"
+        ]
+      }
+    },
+    {
+      "ply": 75,
+      "en": "38...e4? attacks the knight, but the pawn advance only helps White. After 39.Nc5 the knight attacks the queen and the a4 pawn, and the e4 pawn has become a target. Black should have played 38...f5 or taken on b4 with the bishop.",
+      "sv": "38...e4? angriper springaren, men bondedraget hjälper bara Vit. Efter 39.Nc5 angriper springaren damen och a4-bonden, och e4-bonden har blivit ett mål. Svart borde ha spelat 38...f5 eller tagit på b4 med löparen.",
+      "line": {
+        "from": "before",
+        "san": [
+          "f5",
+          "Ra1",
+          "Bxb4",
+          "Nxb4",
+          "Qxb4"
+        ]
+      }
+    },
+    {
+      "ply": 78,
+      "en": "40.Nxe4? wins a pawn but lets the advantage go. The engine's 40.Rdc2 would have used both rooks against Black's bishop on a3 and the a4 pawn, and White would have kept a clear advantage. This ended a run of mistakes by both sides; now the position is level again.",
+      "sv": "40.Nxe4? vinner en bonde men släpper fördelen. Motorns 40.Rdc2 hade använt båda tornen mot den svarta löparen på a3 och a4-bonden, och Vit hade behållit ett klart övertag. Det avslutade en rad misstag från båda sidor; nu är ställningen jämn igen.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Rdc2",
+          "f5",
+          "Nxa4",
+          "Qxa4",
+          "Rc3",
+          "Qd7",
+          "Rcxa3"
+        ]
+      }
+    },
+    {
+      "ply": 105,
+      "en": "After 53.Rxa3 Qxh4+ the material is two rooks, a knight and three pawns against queen, bishop and three pawns. Now the long middle phase begins. White presses, trying to coordinate the rooks and push the kingside pawns; Black's plan is to keep the queen active, harass White's king, and keep the pawns protected. The engine sees only a small edge for White.",
+      "sv": "Efter 53.Rxa3 Qxh4+ är materialet två torn, springare och tre bönder mot dam, löpare och tre bönder. Nu börjar den långa mittfasen. Vit pressar och försöker samordna tornen och flytta fram kungsflygelbönderna; Svarts plan är att hålla damen aktiv, störa den vita kungen och hålla bönderna skyddade. Motorn ser bara ett litet övertag för Vit."
+    },
+    {
+      "ply": 162,
+      "en": "79.Rxf5, 80.Rxf7+ and 82.Rxa7: White gives back a rook to win the bishop and two pawns. Now it is rook, knight and three pawns against queen and one pawn. The engine rates this about the same as the alternatives, and the position is still close to a draw.",
+      "sv": "79.Rxf5, 80.Rxf7+ och 82.Rxa7: Vit ger tillbaka ett torn för att vinna löparen och två bönder. Nu är det torn, springare och tre bönder mot dam och en bonde. Motorn värderar det ungefär som alternativen, och ställningen är fortfarande nära remi."
+    },
+    {
+      "ply": 229,
+      "en": "Black has exchanged the last pawn with 113...h4, and now it is rook, knight and two connected pawns against a lone queen. In theory Black can hold: the queen must keep checking or attack the pawns, and the king must stay in front of them. In practice it is very hard, because one passive queen move can be the end.",
+      "sv": "Svart har bytt bort den sista bonden med 113...h4, och nu är det torn, springare och två sammanhängande bönder mot en ensam dam. I teorin kan Svart hålla: damen måste fortsätta schacka eller angripa bönderna, och kungen måste stå framför dem. I praktiken är det mycket svårt, eftersom ett enda passivt damdrag kan vara slutet."
+    },
+    {
+      "ply": 259,
+      "en": "130...Qe6? is the decisive mistake. The queen gives up checking from a distance and stands passively in front of the pawns. After 131.Kh4 White's king escapes towards g5 and the knight joins in. The engine's 130...Qc2, aiming for checks from behind, would still hold.",
+      "sv": "130...Qe6? är det avgörande misstaget. Damen slutar schacka på avstånd och står passivt framför bönderna. Efter 131.Kh4 tar sig den vita kungen mot g5 och springaren ansluter. Motorns 130...Qc2, som siktar på schackar bakifrån, hade fortfarande hållit.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qc2",
+          "Rf6",
+          "Qd1",
+          "Kh4",
+          "Qe1"
+        ]
+      }
+    },
+    {
+      "ply": 262,
+      "en": "131...Qh6+ was another error, and after 132.Nh5 the knight covers f6 and g7, close to the pawns. Black's checks have run out: every check now simply loses the queen, so the pawns can advance.",
+      "sv": "131...Qh6+ var ytterligare ett fel, och efter 132.Nh5 täcker springaren f6 och g7, nära bönderna. Svarts schackar är slut: varje schack förlorar nu helt enkelt damen, så bönderna kan gå framåt."
+    },
+    {
+      "ply": 266,
+      "en": "133...Qg6? made it hopeless, and 134.Rf7 cuts Black's king off on the back rank: the only king move is to d8. The e-pawn, supported by the rook and the knight, will soon promote.",
+      "sv": "133...Qg6? gjorde det hopplöst, och 134.Rf7 skär av den svarta kungen på baslinjen: det enda kungsdraget är till d8. E-bonden, stödd av tornet och springaren, blir snart dam."
+    },
+    {
+      "ply": 270,
+      "en": "After 136.Ng7 the e-pawn is ready to advance to e7 and promote, and Nepomniachtchi resigned. This win was the turning point of the match; Carlsen went on to defend his title.",
+      "sv": "Efter 136.Ng7 är e-bonden redo att gå till e7 och bli dam, och Nepomnjasjtjij gav upp. Vinsten blev matchens vändpunkt; Carlsen fortsatte och försvarade sin titel."
+    }
+  ],
+  "summary": {
+    "en": "An endurance test: White's rooks, knight and pawns against a queen, for more than a hundred moves. Both sides made serious mistakes around moves 31–40, but the lesson of the ending is clear: against rook, knight and passed pawns the queen must stay active and keep checking, because one passive move lets the pieces and pawns work together. Carlsen's strength was his patience: he kept finding small ways to pose problems without risk.",
+    "sv": "Ett uthållighetsprov: Vits torn, springare och bönder mot en dam i mer än hundra drag. Båda sidor gjorde allvarliga misstag runt drag 31–40, men lärdomen från slutspelet är tydlig: mot torn, springare och fribönder måste damen vara aktiv och fortsätta schacka, för ett enda passivt drag låter pjäserna och bönderna samarbeta. Carlsens styrka var tålamodet: han fortsatte hitta små sätt att ställa problem utan risk."
+  }
+}

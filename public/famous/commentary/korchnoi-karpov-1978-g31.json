@@ -1,0 +1,79 @@
+{
+  "id": "korchnoi-karpov-1978-g31",
+  "intro": {
+    "en": "Baguio, 1978: the world championship match between Anatoly Karpov and the challenger Viktor Korchnoi was played until one player had won six games. After trailing 5–2, Korchnoi won three of four games, and this one levelled the score at 5–5. It is not a game of fireworks but of patience: a long manoeuvring battle from a Queen's Gambit Declined that turns into a rook ending, where one careless pawn move decides everything.",
+    "sv": "Baguio 1978: VM-matchen mellan Anatolij Karpov och utmanaren Viktor Kortjnoj spelades tills en av spelarna hade vunnit sex partier. Efter att ha legat under med 5–2 vann Kortjnoj tre av fyra partier, och det här partiet utjämnade till 5–5. Det är inget fyrverkeriparti utan ett tålamodsprov: en lång manöverstrid från ett avböjt damgambit som övergår i ett tornslutspel, där ett slarvigt bondedrag avgör allt."
+  },
+  "comments": [
+    {
+      "ply": 7,
+      "en": "4.cxd5 exd5 gives the Exchange Variation of the Queen's Gambit Declined. The pawn structure is fixed: White typically plays for a minority attack on the queenside with b4-b5, aiming to create a weakness at c6, while Black looks for play in the centre and on the kingside.",
+      "sv": "4.cxd5 exd5 ger avbytesvarianten av det avböjda damgambitet. Bondestrukturen är låst: Vit spelar typiskt ett minoritetsangrepp på damflygeln med b4-b5 för att skapa en svaghet på c6, medan Svart söker spel i centrum och på kungsflygeln."
+    },
+    {
+      "ply": 22,
+      "en": "After giving up the bishop for the knight with 11.Bxf6, Korchnoi starts the minority attack with 12.b4. The engine thought the trade on f6 gave away most of White's small edge, and the position is now close to equal.",
+      "sv": "Efter att ha gett löparen mot springaren med 11.Bxf6 inleder Kortjnoj minoritetsangreppet med 12.b4. Motorn ansåg att bytet på f6 gav bort det mesta av Vits lilla fördel, och ställningen är nu nära jämn."
+    },
+    {
+      "ply": 30,
+      "en": "16.Qxd7 trades queens early. The position becomes an endgame-like struggle with rooks and minor pieces, where both kings can come to the centre and small advantages count.",
+      "sv": "16.Qxd7 byter damer tidigt. Ställningen blir en slutspelsliknande kamp med torn och lätta pjäser, där båda kungarna kan gå till centrum och små fördelar räknas."
+    },
+    {
+      "ply": 46,
+      "en": "With the queens off, the king is a strong piece. Korchnoi marches it to the centre with 22.Kf1, 23.Ke2 and 24.Kd3, where it helps cover the squares in front of his pawns.",
+      "sv": "Utan damer är kungen en stark pjäs. Kortjnoj marscherar in den i centrum med 22.Kf1, 23.Ke2 och 24.Kd3, där den hjälper till att täcka fälten framför hans bönder."
+    },
+    {
+      "ply": 80,
+      "en": "After many quiet moves on both sides, Korchnoi finally breaks in the centre with 41.e4. The engine considers the position roughly level throughout this long phase; neither player has managed to make progress.",
+      "sv": "Efter många lugna drag från båda sidor bryter Kortjnoj till slut i centrum med 41.e4. Motorn bedömer ställningen som ungefär jämn under hela den här långa fasen; ingen av spelarna har lyckats göra framsteg."
+    },
+    {
+      "ply": 91,
+      "en": "A series of exchanges has led to a rook ending with six pawns each. Material is level, and so is the engine's evaluation. White's pawn on c5 and his more active king are small pluses, but Black should be able to hold.",
+      "sv": "En rad avbyten har lett till ett tornslutspel med sex bönder var. Materialet är jämnt, och det är motorns värdering också. Vits bonde på c5 och hans aktivare kung är små plus, men Svart bör kunna hålla."
+    },
+    {
+      "ply": 95,
+      "en": "48...Rg8 is a small inaccuracy. The engine wanted 48...Ra8, putting the rook on the a-file to attack White's a-pawn. Korchnoi does not punish it: 49.Kc3 lets the chance pass, where 49.Re6 would have activated the rook and attacked c6.",
+      "sv": "48...Rg8 är en liten inexakthet. Motorn ville spela 48...Ra8, som ställer tornet på a-linjen för att anfalla den vita a-bonden. Kortjnoj straffar det inte: 49.Kc3 låter chansen gå förbi, medan 49.Re6 hade aktiverat tornet och anfallit c6."
+    },
+    {
+      "ply": 106,
+      "en": "52.a6 bxa6 opened the way for White's king, which has walked via a5 to b6 to attack Black's queenside pawns from close range. The position is still balanced, but Black must defend accurately.",
+      "sv": "52.a6 bxa6 öppnade vägen för den vita kungen, som har gått via a5 till b6 för att anfalla de svarta damflygelbönderna på nära håll. Ställningen är fortfarande i balans, men Svart måste försvara sig exakt."
+    },
+    {
+      "ply": 110,
+      "en": "55.d5 cxd5 56.Rxd5+ gives White a passed pawn on c5. Black has two passed pawns of his own on the queenside, so the ending is still a race between both sides' pawns.",
+      "sv": "55.d5 cxd5 56.Rxd5+ ger Vit en fribonde på c5. Svart har själv två fribönder på damflygeln, så slutspelet är fortfarande en kapplöpning mellan båda sidors bönder."
+    },
+    {
+      "ply": 115,
+      "en": "58...b3?? is the decisive blunder in a drawn position. The pawn simply walks into the range of White's rook on g3. The engine's drawing plan was 58...Rd4: Black gives up both queenside pawns but activates the rook to win the f5 pawn, with a balanced ending.",
+      "sv": "58...b3?? är den avgörande blundern i en remiställning. Bonden går helt enkelt in i skottlinjen för det vita tornet på g3. Motorns remiplan var 58...Rd4: Svart ger upp båda damflygelbönderna men aktiverar tornet och vinner bonden på f5, med ett jämnt slutspel.",
+      "line": { "from": "before", "san": ["Rd4", "Kxa5", "Kc7", "Kb5", "Rd7", "Rb3", "Rd5", "Rxb4", "Rxf5"] }
+    },
+    {
+      "ply": 116,
+      "en": "59.Kc6! Korchnoi does not hurry to take the pawn. First his king goes to c6, where it keeps Black's king confined to the back rank, and only then does the rook take the pawn with 60.Rxb3+.",
+      "sv": "59.Kc6! Kortjnoj har ingen brådska att ta bonden. Först går hans kung till c6, där den håller den svarta kungen instängd på baslinjen, och först därefter tar tornet bonden med 60.Rxb3+."
+    },
+    {
+      "ply": 133,
+      "en": "White's rook collected the pawns on b3, f6, h6 and a3 one by one. Black has picked up the f5 pawn, but he has no pawns left, while White still has the passed c-pawn and the h-pawn.",
+      "sv": "Det vita tornet plockade bönderna på b3, f6, h6 och a3 en efter en. Svart har tagit bonden på f5, men har inga bönder kvar, medan Vit fortfarande har den fria c-bonden och h-bonden."
+    },
+    {
+      "ply": 140,
+      "en": "71.Rh7, and Karpov resigned. White's king supports the c-pawn, the rook on the seventh rank keeps Black's king cut off, and the h-pawn is ready to run as well. Karpov won the very next game, game 32, to win the match 6–5.",
+      "sv": "71.Rh7, och Karpov gav upp. Den vita kungen stödjer c-bonden, tornet på sjunde raden håller den svarta kungen avskuren, och h-bonden är också redo att springa. Karpov vann redan nästa parti, parti 32, och därmed matchen med 6–5."
+    }
+  ],
+  "summary": {
+    "en": "This game shows Korchnoi's determination: he kept playing a level position for dozens of moves, and kept asking questions until his opponent went wrong. The decisive moment came deep in a drawn rook ending, where 58...b3 gave away a pawn and with it the active defence. In rook endings, an active rook that attacks pawns is usually worth more than a pawn.",
+    "sv": "Partiet visar Kortjnojs envishet: han fortsatte att spela en jämn ställning i dussintals drag och fortsatte att ställa frågor tills motståndaren gick fel. Det avgörande ögonblicket kom djupt inne i ett remiartat tornslutspel, där 58...b3 gav bort en bonde och med den det aktiva försvaret. I tornslutspel är ett aktivt torn som anfaller bönder oftast värt mer än en bonde."
+  }
+}

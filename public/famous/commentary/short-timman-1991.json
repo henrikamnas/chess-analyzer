@@ -1,0 +1,84 @@
+{
+  "id": "short-timman-1991",
+  "intro": {
+    "en": "Tilburg, 1991: Nigel Short against Jan Timman. Timman chooses the Alekhine Defence, and Short builds a quiet but lasting grip on the dark squares around Black's king. Watch how Black's queenside bishop stays at home for a long time, and how White's pieces gather on the kingside. The finish is one of the most famous ideas in modern chess: with queens still on the board, White's own king walks up the board to help deliver mate.",
+    "sv": "Tilburg 1991: Nigel Short mot Jan Timman. Timman väljer Aljechins försvar, och Short bygger upp ett lugnt men varaktigt grepp om de mörka fälten runt den svarta kungen. Lägg märke till hur den svarta damflygelslöparen blir stående hemma länge, och hur de vita pjäserna samlas på kungsflygeln. Avslutningen är en av de mest berömda idéerna i modernt schack: med damerna kvar på brädet vandrar den vita kungen själv uppför brädet för att hjälpa till med matten."
+  },
+  "comments": [
+    {
+      "ply": 1,
+      "en": "1...Nf6 is the Alekhine Defence. Black invites White's pawns forward, hoping that the big centre will later become a target. The engine prefers the classical 1...e5, but the Alekhine is a fully respectable opening.",
+      "sv": "1...Nf6 är Aljechins försvar. Svart lockar fram de vita bönderna i förhoppningen att det stora centrumet senare ska bli ett angreppsmål. Motorn föredrar det klassiska 1...e5, men Aljechins försvar är en fullt respektabel öppning."
+    },
+    {
+      "ply": 7,
+      "en": "4...g6 is the Alburt Variation of the Modern Variation. Black puts the bishop on g7 to put pressure on the e5 pawn. The knight on d5 is still loose, and 5.Bc4 attacks it at once and drives it back to b6.",
+      "sv": "4...g6 är Alburtvarianten av den moderna varianten. Svart ställer löparen på g7 för att sätta press på bonden på e5. Springaren på d5 är fortfarande löst placerad, och 5.Bc4 anfaller den direkt och driver tillbaka den till b6."
+    },
+    {
+      "ply": 25,
+      "en": "13...e6 takes d5 and f5 away from White's pieces, but it shuts in the bishop on c8 and loosens the dark squares around the king. The engine preferred 13...Bd7, simply developing the last minor piece. That bishop will not move until move 24.",
+      "sv": "13...e6 tar d5 och f5 från de vita pjäserna, men det stänger in löparen på c8 och försvagar de mörka fälten runt kungen. Motorn föredrog 13...Bd7, som helt enkelt utvecklar den sista lätta pjäsen. Den löparen kommer inte att flytta sig förrän i drag 24."
+    },
+    {
+      "ply": 27,
+      "en": "14...Nd5 puts the knight on a fine central square, but it soon goes back to b6, and it ends up being traded for White's bishop. Once again the engine wanted 14...Bd7: Black needs development more than knight manoeuvres.",
+      "sv": "14...Nd5 ställer springaren på ett fint centralt fält, men springaren går snart tillbaka till b6, och till slut byts den mot den vita löparen. Återigen ville motorn spela 14...Bd7: Svart behöver utveckling mer än springarmanövrer."
+    },
+    {
+      "ply": 39,
+      "en": "20...Qc5? sends the queen back to c5, where it does nothing for the kingside. The engine's choice was 20...h6, which keeps White's pieces off g5 and gives the king some air.",
+      "sv": "20...Qc5? skickar tillbaka damen till c5, där den inte gör någonting för kungsflygeln. Motorns val var 20...h6, som håller de vita pjäserna borta från g5 och ger kungen lite luft."
+    },
+    {
+      "ply": 40,
+      "en": "21.Qh4 heads straight for the kingside, aiming at the dark squares f6 and h6. Strong as it looks, the engine preferred 21.Ra3, a rook lift: the rook swings along the third rank to the d-file, bringing another piece into the attack first.",
+      "sv": "21.Qh4 går raka vägen mot kungsflygeln och siktar på de mörka fälten f6 och h6. Hur starkt det än ser ut föredrog motorn 21.Ra3, ett tornlyft: tornet svänger längs tredje raden till d-linjen och för in ännu en pjäs i anfallet först.",
+      "line": { "from": "before", "san": ["Ra3", "h6", "Rad3", "Qe7"] }
+    },
+    {
+      "ply": 43,
+      "en": "22...Qc6? attacks the pawn on a4 and lines up on the long diagonal against the knight on f3, but it leaves the kingside without its best defender. 22...Qf8 was the defensive move, covering the dark squares near the king.",
+      "sv": "22...Qc6? anfaller bonden på a4 och ställer sig på den långa diagonalen mot springaren på f3, men det lämnar kungsflygeln utan sin bästa försvarare. 22...Qf8 var det defensiva draget, som täcker de mörka fälten nära kungen."
+    },
+    {
+      "ply": 45,
+      "en": "After 23.Bh6, which according to the engine was the only move that kept White's big advantage, Timman avoids the bishop trade with 23...Bh8. But the bishop is now buried in the corner, and the dark squares f6 and g7 are still weak.",
+      "sv": "Efter 23.Bh6, som enligt motorn var det enda drag som behöll Vits stora fördel, undviker Timman löparbytet med 23...Bh8. Men löparen är nu begravd i hörnet, och de mörka fälten f6 och g7 är fortfarande svaga."
+    },
+    {
+      "ply": 46,
+      "en": "24.Rd8 invades the eighth rank and hits the rook on e8. The engine slightly preferred 24.Bg5, but after the natural 24...Bb7 and 25.Rad1 White doubles on the d-file and Black is already lost.",
+      "sv": "24.Rd8 tränger in på åttonde raden och anfaller tornet på e8. Motorn föredrog 24.Bg5 en aning, men efter det naturliga 24...Bb7 och 25.Rad1 dubblerar Vit på d-linjen och Svart är redan förlorad."
+    },
+    {
+      "ply": 53,
+      "en": "With 26.R8d7 the rook settled on the seventh rank, hitting f7 and c7, and now 27.Bxg7 Kxg7 has removed Black's dark-squared bishop. The king is left alone on squares that White's queen and rooks can reach.",
+      "sv": "Med 26.R8d7 slog sig tornet ner på sjunde raden, där det anfaller f7 och c7, och nu har 27.Bxg7 Kxg7 tagit bort den svarta löparen på de mörka fälten. Kungen står ensam på fält som den vita damen och tornen kan nå."
+    },
+    {
+      "ply": 56,
+      "en": "29.Qf6+ plants the queen on f6, supported by the pawn on e5. From there it covers g7 and h8, and together with the rook on d7 it keeps Black's king locked in. The engine preferred 29.Qg5, but every serious line wins for White.",
+      "sv": "29.Qf6+ planterar damen på f6, skyddad av bonden på e5. Därifrån täcker den g7 och h8, och tillsammans med tornet på d7 håller den den svarta kungen inlåst. Motorn föredrog 29.Qg5, men alla rimliga varianter vinner för Vit."
+    },
+    {
+      "ply": 60,
+      "en": "31.Kh2! The famous king walk begins. Short sees that Black's pieces are tied to defence and cannot create any threats, and that his queen already hits g7, the mating square. It needs only one helper, and that helper will be his own king: it heads for h6, where it will protect the queen on g7.",
+      "sv": "31.Kh2! Den berömda kungsvandringen börjar. Short ser att de svarta pjäserna är bundna till försvaret och inte kan skapa några hot, och att hans dam redan träffar g7, mattfältet. Den behöver bara en hjälpare, och den hjälparen blir hans egen kung: den är på väg till h6, där den ska skydda damen på g7."
+    },
+    {
+      "ply": 62,
+      "en": "32.Kg3 continues the march. The engine's first choice was 32.Qf4, but Black's pieces are so passive that the king walk works just as well.",
+      "sv": "32.Kg3 fortsätter marschen. Motorns förstahandsval var 32.Qf4, men de svarta pjäserna är så passiva att kungsvandringen fungerar lika bra."
+    },
+    {
+      "ply": 66,
+      "en": "34.Kg5 and Timman resigned. The threat is Kh6 followed by Qg7#, with the king protecting the queen on g7, and Black has no defence: the engine finds mate in five whatever Black does.",
+      "sv": "34.Kg5 och Timman gav upp. Hotet är Kh6 följt av Qg7#, där kungen skyddar damen på g7, och Svart har inget försvar: motorn hittar matt i fem drag vad Svart än gör."
+    }
+  ],
+  "summary": {
+    "en": "Black lost this game slowly: a bishop that stayed at home for too long, and a few quiet queen moves that left the dark squares around the king without defenders. Short's lesson is that when the opponent's pieces are passive and cannot counterattack, even the king can join the attack. Before you march your king, make sure the opponent really has no checks or threats.",
+    "sv": "Svart förlorade det här partiet långsamt: en löpare som stod kvar hemma för länge, och några lugna damdrag som lämnade de mörka fälten runt kungen utan försvarare. Shorts läxa är att när motståndarens pjäser är passiva och inte kan gå till motanfall kan till och med kungen delta i anfallet. Innan du marscherar med kungen, se till att motståndaren verkligen saknar schackar och hot."
+  }
+}

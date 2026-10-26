@@ -1,0 +1,76 @@
+{
+  "id": "short-karpov-1992-g10",
+  "intro": {
+    "en": "The tenth game of the 1992 Candidates semi-final between Nigel Short and the former world champion Anatoly Karpov. Short won this final game to take the match 6–4 and went on to play Kasparov for the world title in 1993. The game is a sharp Sicilian with castling on opposite sides: watch White's pawn storm on the kingside, a tense middlegame where both players make mistakes, and an unusual ending with rook, bishop and knight against a queen.",
+    "sv": "Det tionde partiet i kandidatsemifinalen 1992 mellan Nigel Short och förre världsmästaren Anatolij Karpov. Short vann detta sista parti, tog hem matchen med 6–4 och spelade sedan om världsmästartiteln mot Kasparov 1993. Partiet är en skarp siciliansk med rockad åt olika håll: lägg märke till Vits bondestorm på kungsflygeln, ett spänt mittspel där båda spelarna gör misstag, och ett ovanligt slutspel med torn, löpare och springare mot dam."
+  },
+  "comments": [
+    {
+      "ply": 10,
+      "en": "6.Bg5 is the Richter-Rauzer Attack. White plans Qd2 and long castling, putting pressure on d6 and preparing a pawn storm on the kingside. With the kings on opposite wings, both sides will race to attack.",
+      "sv": "6.Bg5 är Richter-Rauzer-angreppet. Vit planerar Qd2 och lång rockad, sätter press på d6 och förbereder en bondestorm på kungsflygeln. Med kungarna på olika flyglar blir det en kapplöpning där båda sidor anfaller."
+    },
+    {
+      "ply": 19,
+      "en": "10.Bxf6 gxf6 is a typical decision in this line. White gives up the bishop to break up Black's kingside pawns: Black gets the bishop pair and the half-open g-file, but the king's shelter is weakened and the doubled f-pawns are inflexible.",
+      "sv": "10.Bxf6 gxf6 är ett typiskt beslut i den här varianten. Vit ger upp löparen för att splittra de svarta bönderna på kungsflygeln: Svart får löparparet och den halvöppna g-linjen, men kungens skydd försvagas och de dubblerade f-bönderna är svårrörliga."
+    },
+    {
+      "ply": 28,
+      "en": "With h4, g4, g5 and now 15.f4, White's pawns roll forward against Black's king, while Black pushes on the queenside with b5-b4. The engine still sees roughly equal chances: it is a race.",
+      "sv": "Med h4, g4, g5 och nu 15.f4 rullar de vita bönderna fram mot den svarta kungen, medan Svart trycker på damflygeln med b5-b4. Motorn ser fortfarande ungefär lika chanser: det är en kapplöpning."
+    },
+    {
+      "ply": 33,
+      "en": "17...e5? is the first serious mistake. It allows 18.f5, which gains space and controls e6, and the pawn move itself leaves a permanent hole on d5, since no black pawn can ever cover that square again. The engine preferred 17...a5, continuing the queenside counterplay.",
+      "sv": "17...e5? är det första allvarliga misstaget. Det tillåter 18.f5, som vinner utrymme och kontrollerar e6, och bondedraget lämnar dessutom ett permanent hål på d5, eftersom ingen svart bonde någonsin kan täcka det fältet igen. Motorn föredrog 17...a5, som fortsätter motspelet på damflygeln."
+    },
+    {
+      "ply": 39,
+      "en": "Black has won a pawn on g5, but 20...Qf6? is another mistake. 20...f6 was the engine's choice, holding the position together. Now 21.Nb6 lands on the weak b6 square and exchanges itself for the bishop on c8 (22.Nxc8), after which 23.Bxa6 wins back the pawn and White has a large advantage.",
+      "sv": "Svart har vunnit en bonde på g5, men 20...Qf6? är ännu ett misstag. 20...f6 var motorns val, som håller ihop ställningen. Nu landar 21.Nb6 på det svaga fältet b6 och byter sig mot löparen på c8 (22.Nxc8), varefter 23.Bxa6 vinner tillbaka bonden och Vit har en stor fördel."
+    },
+    {
+      "ply": 48,
+      "en": "25.Na5 lets much of the advantage slip. The simple 25.Qxb4 just takes the loose pawn on b4 and keeps a big advantage. Black answers with 25...d5, striking back in the centre.",
+      "sv": "25.Na5 släpper en stor del av fördelen. Det enkla 25.Qxb4 tar bara den lösa bonden på b4 och behåller en stor fördel. Svart svarar med 25...d5 och slår tillbaka i centrum.",
+      "line": { "from": "before", "san": ["Qxb4", "Rg4", "a3", "h6"] }
+    },
+    {
+      "ply": 56,
+      "en": "29.Rxd5? throws away White's advantage. Black can take with 29...Rxd5, and after 30.Qxf8+ Rg8 White can do no better than a repetition of moves. 29.Qh4 kept White's advantage.",
+      "sv": "29.Rxd5? kastar bort Vits fördel. Svart kan ta med 29...Rxd5, och efter 30.Qxf8+ Rg8 kan Vit inte uppnå mer än en dragupprepning. 29.Qh4 behöll Vits fördel.",
+      "line": { "from": "after", "san": ["Rxd5", "Qxf8+", "Rg8", "Qe7", "Qxc6", "Qxf7", "Rg7", "Qf8+", "Rg8", "Qf7"] }
+    },
+    {
+      "ply": 57,
+      "en": "29...Qg7?? is the decisive blunder. The queen prepares checks on the g-file, but it stops guarding the rook on d6, and 30.Rxd6 simply wins it. Karpov missed that 29...Rxd5 would have saved the game.",
+      "sv": "29...Qg7?? är den avgörande blundern. Damen förbereder schackar på g-linjen, men den slutar skydda tornet på d6, och 30.Rxd6 vinner det helt enkelt. Karpov missade att 29...Rxd5 hade räddat partiet."
+    },
+    {
+      "ply": 64,
+      "en": "After a series of exchanges, White has rook, bishop and knight against Black's queen, and an extra pawn. Three pieces working together are usually stronger than a lone queen, as long as the king is safe from checks.",
+      "sv": "Efter en rad avbyten har Vit torn, löpare och springare mot den svarta damen, plus en merbonde. Tre pjäser som samarbetar är oftast starkare än en ensam dam, så länge kungen är säker mot schackar."
+    },
+    {
+      "ply": 68,
+      "en": "35.a3 lets Black take the f5 pawn. The engine wanted 35.f6+ first, driving the king back and keeping the pawn. White is still winning, but the game becomes harder.",
+      "sv": "35.a3 låter Svart ta bonden på f5. Motorn ville spela 35.f6+ först, som driver tillbaka kungen och behåller bonden. Vit vinner fortfarande, men partiet blir svårare."
+    },
+    {
+      "ply": 73,
+      "en": "White's last few rook moves were not precise, and here Black had a real chance: 37...h4! sends the passed h-pawn forward, forcing White's pieces to stop it. 37...Qe6 is too slow, and White regains control.",
+      "sv": "Vits senaste torndrag var inte precisa, och här hade Svart en verklig chans: 37...h4! skickar fram den fria h-bonden och tvingar de vita pjäserna att stoppa den. 37...Qe6 är för långsamt, och Vit tar tillbaka kontrollen.",
+      "line": { "from": "before", "san": ["h4", "Bb7", "h3", "Bh1"] }
+    },
+    {
+      "ply": 80,
+      "en": "41.c5, and Karpov resigned. Black has no pawns left on the queenside, so nothing can stop the c-pawn from being escorted forward by the bishop on d5 and the knight on b4, and Black's queen cannot hold it back on its own.",
+      "sv": "41.c5, och Karpov gav upp. Svart har inga bönder kvar på damflygeln, så ingenting kan hindra c-bonden från att eskorteras framåt av löparen på d5 och springaren på b4, och den svarta damen kan inte hålla tillbaka den på egen hand."
+    }
+  ],
+  "summary": {
+    "en": "In opposite-side castling positions, tempo is everything: 17...e5 and 20...Qf6 gave White the time to open lines and use the b6 square and the hole on d5. The game also shows how hard it is to stay accurate: Short let a clear advantage slip with 29.Rxd5, and Karpov missed the saving reply. In the ending, a team of pieces with a passed pawn beat the lone queen.",
+    "sv": "I ställningar med rockad åt olika håll är tempo allt: 17...e5 och 20...Qf6 gav Vit tid att öppna linjer och utnyttja fältet b6 och hålet på d5. Partiet visar också hur svårt det är att hålla sig exakt: Short släppte en klar fördel med 29.Rxd5, och Karpov missade det räddande svaret. I slutspelet slog ett lag av pjäser med en fribonde den ensamma damen."
+  }
+}

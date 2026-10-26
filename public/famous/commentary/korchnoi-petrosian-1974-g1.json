@@ -1,0 +1,81 @@
+{
+  "id": "korchnoi-petrosian-1974-g1",
+  "intro": {
+    "en": "The first game of the 1974 Candidates semi-final between Viktor Korchnoi and former world champion Tigran Petrosian, a match that Petrosian abandoned after five games, with Korchnoi leading 3½–1½. Petrosian was famous for his defence, but here he is slowly squeezed on the kingside. Watch White's pawn on the f-file: after 15.gxf4 it advances step by step to f6, and behind it the queen, knights and rooks gather for a mating attack.",
+    "sv": "Det första partiet i kandidatsemifinalen 1974 mellan Viktor Kortjnoj och förre världsmästaren Tigran Petrosjan, en match som Petrosjan avbröt efter fem partier, när Kortjnoj ledde med 3½–1½. Petrosjan var berömd för sitt försvar, men här blir han långsamt hopträngd på kungsflygeln. Lägg märke till den vita bonden på f-linjen: efter 15.gxf4 avancerar den steg för steg till f6, och bakom den samlas damen, springarna och tornen till ett mattangrepp."
+  },
+  "comments": [
+    {
+      "ply": 7,
+      "en": "The English Opening, Anglo-Indian Defence with a Queen's Indian formation. Black fianchettoes the bishop to b7, where it aims along the long diagonal at e4. White answers by occupying the centre with e4 and d3 and putting his own bishop on g2.",
+      "sv": "Engelskt parti, anglo-indiskt försvar med en damindisk uppställning. Svart fianchetterar löparen till b7, där den siktar längs den långa diagonalen mot e4. Vit svarar med att ta centrum med e4 och d3 och ställa sin egen löpare på g2."
+    },
+    {
+      "ply": 19,
+      "en": "10...e5 fixes the centre. With the pawns on c4, d3 and e4 facing c5, d6 and e5, there is little play in the middle, so both sides look to the wings. White's natural plan is the break f2-f4 on the kingside.",
+      "sv": "10...e5 låser centrum. Med bönderna på c4, d3 och e4 mot c5, d6 och e5 finns det lite spel i mitten, så båda sidor söker sig till flyglarna. Vits naturliga plan är brytningen f2-f4 på kungsflygeln."
+    },
+    {
+      "ply": 28,
+      "en": "After 11.Bh3, 12.Nh4 and 13.Ng2 White carried out the break with 14.f4, and now recaptures 15.gxf4 with the pawn. That builds a strong pawn pair on e4 and f4 and half-opens the g-file, at the cost of loosening White's own king. The engine slightly preferred 15.Nxf4.",
+      "sv": "Efter 11.Bh3, 12.Nh4 och 13.Ng2 genomförde Vit brytningen med 14.f4, och tar nu tillbaka med bonden, 15.gxf4. Det bygger ett starkt bondepar på e4 och f4 och halvöppnar g-linjen, till priset av att den egna kungsställningen blir lösare. Motorn föredrog 15.Nxf4 en aning."
+    },
+    {
+      "ply": 35,
+      "en": "18...Nc7 is Black's first real inaccuracy. It lets White push 19.f5 with a strong bind; the engine's choice was 18...Nhg7, bringing the knight back to defend the kingside first.",
+      "sv": "18...Nc7 är Svarts första verkliga inexakthet. Det låter Vit trycka fram 19.f5 med ett starkt grepp; motorns val var 18...Nhg7, som först för tillbaka springaren för att försvara kungsflygeln."
+    },
+    {
+      "ply": 37,
+      "en": "Korchnoi delayed f5 with 19.Nde3, and Petrosian could have used the moment for queenside counterplay with 19...b5, hitting White's c4 pawn. Instead 19...Ng7 is too passive, and now 20.f5 comes anyway.",
+      "sv": "Kortjnoj väntade med f5 och spelade 19.Nde3, och Petrosjan kunde ha utnyttjat tillfället till motspel på damflygeln med 19...b5, som anfaller den vita bonden på c4. I stället är 19...Ng7 för passivt, och nu kommer 20.f5 ändå.",
+      "line": { "from": "before", "san": ["b5", "Nf5", "Bc3", "Rf1", "Kh8"] }
+    },
+    {
+      "ply": 38,
+      "en": "20.f5 gains space, takes the e6 square away from Black's knights and puts pressure on the g6 pawn. Black's knights on c7 and g7 have very few good squares, and White can calmly bring more pieces to the kingside.",
+      "sv": "20.f5 vinner utrymme, tar fältet e6 från de svarta springarna och sätter press på bonden på g6. De svarta springarna på c7 och g7 har mycket få bra fält, och Vit kan lugnt föra över fler pjäser till kungsflygeln."
+    },
+    {
+      "ply": 51,
+      "en": "26...Rg8? is the turning point. Black had to stop the f-pawn with 26...f6, keeping the position closed. Now White plays 27.f6!, driving a wedge into Black's position close to the king.",
+      "sv": "26...Rg8? är vändpunkten. Svart måste stoppa f-bonden med 26...f6 och hålla ställningen stängd. Nu spelar Vit 27.f6!, som driver in en kil i den svarta ställningen nära kungen.",
+      "line": { "from": "before", "san": ["f6", "Bh6", "Rg8", "Qe2", "g5"] }
+    },
+    {
+      "ply": 52,
+      "en": "The pawn on f6 attacks the knight on g7 and controls g7 and e7. With the bishop on g5 supporting it, the pawn cuts Black's position in two, and every white piece that reaches g7 or h6 will be dangerous.",
+      "sv": "Bonden på f6 anfaller springaren på g7 och kontrollerar g7 och e7. Med löparen på g5 som stöd delar bonden den svarta ställningen i två delar, och varje vit pjäs som når g7 eller h6 blir farlig."
+    },
+    {
+      "ply": 60,
+      "en": "After 28.Qh4 and the exchanges on g5, 30.Bxh5 gxh5 31.Qxh5 has won a pawn and torn open the pawn cover in front of Black's king. White is a pawn up and his attack is still growing.",
+      "sv": "Efter 28.Qh4 och avbytena på g5 har 30.Bxh5 gxh5 31.Qxh5 vunnit en bonde och rivit upp bondeskyddet framför den svarta kungen. Vit har en merbonde och anfallet växer fortfarande."
+    },
+    {
+      "ply": 63,
+      "en": "32...Qe5? attacks the pawn on f6 but loses valuable time. The engine wanted 32...Bxf6, removing the dangerous pawn at once. Now 33.Rf3 heads for h3, where the rook joins the queen against h7.",
+      "sv": "32...Qe5? anfaller bonden på f6 men förlorar värdefull tid. Motorn ville spela 32...Bxf6, som tar bort den farliga bonden direkt. Nu går 33.Rf3 mot h3, där tornet förenar sig med damen mot h7.",
+      "line": { "from": "before", "san": ["Bxf6", "Nxd6", "Qe7", "Nxb7"] }
+    },
+    {
+      "ply": 66,
+      "en": "34.Rh3 completes the rook lift. Queen and rook both aim at h7, threatening Qxh7 mate, and Black answers with 34...h6, which loosens the king's position even more.",
+      "sv": "34.Rh3 fullbordar tornlyftet. Både dam och torn siktar mot h7 och hotar Qxh7 matt, och Svart svarar med 34...h6, vilket försvagar kungsställningen ännu mer."
+    },
+    {
+      "ply": 69,
+      "en": "35...Re8?? allows mate in one. Black was lost anyway, but 35...Qxf5, giving up the queen for the knight, was the engine's choice and would at least have kept the game going.",
+      "sv": "35...Re8?? tillåter matt i ett drag. Svart var förlorad ändå, men 35...Qxf5, som ger damen mot springaren, var motorns val och hade åtminstone hållit partiet vid liv."
+    },
+    {
+      "ply": 70,
+      "en": "36.Qg7#. The queen is protected by the knight on f5, and from g7 it covers h7 and g8, so Black's king has no escape.",
+      "sv": "36.Qg7#. Damen skyddas av springaren på f5, och från g7 täcker den h7 och g8, så den svarta kungen har ingen flyktväg."
+    }
+  ],
+  "summary": {
+    "en": "With the centre locked, the game was decided on the kingside, where Korchnoi's f-pawn advanced all the way to f6 and took the space Black's pieces needed. Petrosian's passive knight moves and 26...Rg8, which allowed f6, were the key errors. The lesson: when a pawn wedge is about to land near your king, stop it while you still can.",
+    "sv": "Med centrum låst avgjordes partiet på kungsflygeln, där Kortjnojs f-bonde avancerade hela vägen till f6 och tog det utrymme som de svarta pjäserna behövde. Petrosjans passiva springardrag och 26...Rg8, som tillät f6, var de avgörande felen. Läxan: när en bondekil är på väg att landa nära din kung, stoppa den medan du fortfarande kan."
+  }
+}

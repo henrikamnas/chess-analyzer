@@ -1,0 +1,71 @@
+{
+  "id": "korchnoi-tal-1968-g4",
+  "intro": {
+    "en": "A game from the 1968 Candidates semi-final between Viktor Korchnoi and former world champion Mikhail Tal, a match that Korchnoi won. Tal, the great attacker, gets an isolated pawn and active pieces from a Nimzo-Indian. Watch how Korchnoi trades into an endgame, and how one wrong pawn capture lets his rook in to pin Black's pieces to the back rank.",
+    "sv": "Ett parti från kandidatsemifinalen 1968 mellan Viktor Kortjnoj och förre världsmästaren Michail Tal, en match som Kortjnoj vann. Tal, den store anfallaren, får en isolerad bonde och aktiva pjäser ur ett nimzoindiskt. Lägg märke till hur Kortjnoj byter av till ett slutspel, och hur ett felaktigt bondeslag släpper in hans torn så att det kan binda de svarta pjäserna till baslinjen."
+  },
+  "comments": [
+    {
+      "ply": 11,
+      "en": "The Nimzo-Indian, here the Gligoric System. With 3...Bb4 Black pins the knight on c3 and fights for e4, and with ...c5 and ...d5 he strikes at White's centre. White develops quietly with e3, Bd3, Nf3 and castling.",
+      "sv": "Nimzoindiskt, här Gligoric-systemet. Med 3...Bb4 binder Svart springaren på c3 och kämpar om e4, och med ...c5 och ...d5 slår han mot det vita centrumet. Vit utvecklar lugnt med e3, Bd3, Nf3 och rockad."
+    },
+    {
+      "ply": 17,
+      "en": "9...Nb6 is a small inaccuracy: the engine preferred 9...Bxc3, giving up the bishop and then gaining space with ...c4, which hits the bishop on d3. After the game move White can take on c5 and leave Black with an isolated pawn on d5.",
+      "sv": "9...Nb6 är en liten inexakthet: motorn föredrog 9...Bxc3, som ger upp löparen och sedan vinner utrymme med ...c4, som anfaller löparen på d3. Efter partidraget kan Vit ta på c5 och lämna Svart med en isolerad bonde på d5."
+    },
+    {
+      "ply": 29,
+      "en": "A sharp tactical sequence is over. 13.Bxh7+ gave up the bishop for the h-pawn, and 14.a3 then won Black's bishop on b4. After 15...Nxb4 the material is level, but Black's king has lost its h-pawn and the d5 pawn is isolated, with no pawns on the c- or e-file to support it.",
+      "sv": "En skarp taktisk sekvens är över. 13.Bxh7+ gav upp löparen mot h-bonden, och 14.a3 vann sedan den svarta löparen på b4. Efter 15...Nxb4 är materialet jämnt, men den svarta kungen har förlorat sin h-bonde och bonden på d5 är isolerad, utan bönder på c- eller e-linjen som kan stödja den."
+    },
+    {
+      "ply": 40,
+      "en": "21.Bxa5 wins a pawn, but it lets Black's rook swing to g6 and the d-pawn advance. The engine preferred 21.Nf4, bringing the knight to f4 first, where it attacks d5 and covers g6.",
+      "sv": "21.Bxa5 vinner en bonde, men låter det svarta tornet svänga över till g6 och d-bonden avancera. Motorn föredrog 21.Nf4, som först för springaren till f4, där den anfaller d5 och täcker g6.",
+      "line": { "from": "before", "san": ["Nf4", "Qd8", "Rfd1", "d4"] }
+    },
+    {
+      "ply": 45,
+      "en": "22...d4 opens lines for Black's pieces, and Korchnoi answers by trading queens with 23.Qxg5. In the endgame White is a pawn up, but Black's advanced d-pawn and active pieces give him good compensation.",
+      "sv": "22...d4 öppnar linjer för de svarta pjäserna, och Kortjnoj svarar med att byta damer med 23.Qxg5. I slutspelet har Vit en merbonde, men den svarta framskjutna d-bonden och de aktiva pjäserna ger honom god kompensation."
+    },
+    {
+      "ply": 49,
+      "en": "25...dxe3? is the turning point. Black exchanges his strong d-pawn and gives White time for 26.Ra8, which pins the bishop on c8 against the king on g8. The engine's choice was 25...d3, turning the pawn into a dangerous passed pawn, with a balanced game.",
+      "sv": "25...dxe3? är vändpunkten. Svart byter bort sin starka d-bonde och ger Vit tid för 26.Ra8, som binder löparen på c8 mot kungen på g8. Motorns val var 25...d3, som gör bonden till en farlig fribonde, med ett jämnt parti.",
+      "line": { "from": "before", "san": ["d3", "Rd1", "Rb5", "Bd4", "Nxd4", "exd4", "Rxb2"] }
+    },
+    {
+      "ply": 51,
+      "en": "The bishop on c8 is pinned and attacked, so Black has to guard it with 26...Ne7. Now both of Black's minor pieces are tied up, and the knight on e7 can be attacked by White's bishop.",
+      "sv": "Löparen på c8 är bunden och anfallen, så Svart måste skydda den med 26...Ne7. Nu är båda de svarta lätta pjäserna fastlåsta, och springaren på e7 kan anfallas av den vita löparen."
+    },
+    {
+      "ply": 54,
+      "en": "28.b4 is a slip, letting Black back into the game. The engine preferred 28.Ne4, bringing the knight closer to the queenside. Now 28...Kh7! would have unpinned the bishop, which could then come out to g4 and free the knight from its guard duty.",
+      "sv": "28.b4 är en miss som släpper tillbaka Svart in i partiet. Motorn föredrog 28.Ne4, som för springaren närmare damflygeln. Nu hade 28...Kh7! löst upp bindningen av löparen, som då kunde komma ut till g4 och befria springaren från dess vaktuppdrag.",
+      "line": { "from": "after", "san": ["Kh7", "Bc5", "Bg4", "h3", "Nf5"] }
+    },
+    {
+      "ply": 55,
+      "en": "28...Rd1+? is the decisive mistake. The checks only drive White's king to safety while the bishop and knight remain stuck. After 29.Kf2 Rd2+ 30.Ke1 Rxg2 Black wins a pawn, but 31.Bc5 attacks the knight on e7, which cannot move because it guards the pinned bishop.",
+      "sv": "28...Rd1+? är det avgörande misstaget. Schackarna driver bara den vita kungen i säkerhet medan löparen och springaren förblir fastlåsta. Efter 29.Kf2 Rd2+ 30.Ke1 Rxg2 vinner Svart en bonde, men 31.Bc5 anfaller springaren på e7, som inte kan flytta eftersom den skyddar den bundna löparen."
+    },
+    {
+      "ply": 62,
+      "en": "31...Kh7 came one move too late: it unpins the bishop, but 32.Bxe7 simply takes the knight. White is a whole piece up and the rest is technique.",
+      "sv": "31...Kh7 kom ett drag för sent: det löser upp bindningen av löparen, men 32.Bxe7 tar helt enkelt springaren. Vit har en hel pjäs mer, och resten är teknik."
+    },
+    {
+      "ply": 74,
+      "en": "Korchnoi brings his king forward with 36.Kd3, 37.Kd4 and 38.Kc5, where it will escort the b-pawn. With a whole extra piece and a safe king, White's win is only a matter of time, and Tal resigned.",
+      "sv": "Kortjnoj för fram kungen med 36.Kd3, 37.Kd4 och 38.Kc5, där den ska eskortera b-bonden. Med en hel pjäs mer och en säker kung är Vits vinst bara en tidsfråga, och Tal gav upp."
+    }
+  ],
+  "summary": {
+    "en": "Against an attacking player like Tal, Korchnoi chose to trade queens and fight in the endgame. The key lesson is about pins: after 25...dxe3 and 26.Ra8, Black's bishop was pinned to the king and the knight was tied to the bishop. The cure was to move the king off the pinning line at once with 28...Kh7; checks that achieve nothing only waste the time needed to untangle.",
+    "sv": "Mot en anfallsspelare som Tal valde Kortjnoj att byta damer och kämpa i slutspelet. Den viktiga läxan handlar om bindningar: efter 25...dxe3 och 26.Ra8 var den svarta löparen bunden mot kungen och springaren bunden till löparen. Botemedlet var att genast flytta kungen bort från bindningslinjen med 28...Kh7; schackar som inte uppnår någonting slösar bara bort den tid som behövs för att reda ut ställningen."
+  }
+}

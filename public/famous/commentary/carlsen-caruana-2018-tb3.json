@@ -1,0 +1,106 @@
+{
+  "id": "carlsen-caruana-2018-tb3",
+  "intro": {
+    "en": "London, 2018: all twelve classical games of the World Championship match between Magnus Carlsen and Fabiano Caruana were drawn, so the title was decided in rapid tiebreak games. Carlsen won the first two, and Caruana had to win this one to stay in the match. Watch how Carlsen's central break turns a quiet Sicilian into a queen endgame where only he has winning chances.",
+    "sv": "London 2018: alla tolv klassiska partier i VM-matchen mellan Magnus Carlsen och Fabiano Caruana slutade remi, så titeln avgjordes i snabbschackpartier. Carlsen vann de två första, och Caruana måste vinna det här för att stanna kvar i matchen. Se hur Carlsens genombrott i centrum förvandlar ett lugnt sicilianskt parti till ett damslutspel där bara han har vinstchanser."
+  },
+  "comments": [
+    {
+      "ply": 4,
+      "en": "3.c4 is the Kramnik Variation of the Sicilian. White puts a pawn on c4 before playing d4, so that after the open-Sicilian exchange on d4 White already has a Maróczy-type grip on d5. The engine slightly prefers the main move 3.d4, but this choice steers clear of the sharpest theory.",
+      "sv": "3.c4 är Kramnikvarianten i sicilianskt. Vit sätter en bonde på c4 innan d4 spelas, så att Vit efter bytet på d4 redan har ett grepp om d5 i Maróczystil. Motorn föredrar en aning huvuddraget 3.d4, men valet håller sig borta från den skarpaste teorin."
+    },
+    {
+      "ply": 25,
+      "en": "After 13.Bxc5 bxc5 Black has a pawn on c5 that controls d4, but it is a long-term target, and the pawn on a7 is now isolated. The engine preferred recapturing with the queen, 13...Qxc5. Later White's knight goes to a4 precisely to attack c5.",
+      "sv": "Efter 13.Bxc5 bxc5 har Svart en bonde på c5 som kontrollerar d4, men den är ett långsiktigt mål, och bonden på a7 är nu isolerad. Motorn föredrog att ta tillbaka med damen, 13...Qxc5. Senare går den vita springaren till a4 just för att angripa c5."
+    },
+    {
+      "ply": 26,
+      "en": "14.f4 drives the knight away from e5 and gains space on the kingside. The pawns on c4, e4 and f4 give White a firm grip, and Black has to wait for the right moment to break with ...d5.",
+      "sv": "14.f4 driver bort springaren från e5 och vinner utrymme på kungsflygeln. Vits bönder på c4, e4 och f4 ger ett fast grepp, och Svart måste vänta på rätt tillfälle att bryta med ...d5."
+    },
+    {
+      "ply": 45,
+      "en": "23...Nc6? misses the moment. The engine wanted the freeing break 23...d5, which trades off White's central pawns and gives Black's pieces air. After the knight move White keeps the clamp and starts to gain space on the kingside.",
+      "sv": "23...Nc6? missar ögonblicket. Motorn ville ha det befriande genombrottet 23...d5, som byter av Vits centrumbönder och ger de svarta pjäserna luft. Efter springardraget behåller Vit greppet och börjar vinna utrymme på kungsflygeln.",
+      "line": {
+        "from": "before",
+        "san": [
+          "d5",
+          "exd5",
+          "exd5",
+          "cxd5",
+          "Bxd5",
+          "Nxd5",
+          "Nexd5"
+        ]
+      }
+    },
+    {
+      "ply": 48,
+      "en": "24.g4 and 25.Na4: Carlsen gains more space on the kingside and his knight attacks the weak c5 pawn, the target created back on move 13.",
+      "sv": "24.g4 och 25.Na4: Carlsen vinner mer utrymme på kungsflygeln och springaren angriper den svaga c5-bonden, målet som skapades redan vid drag 13."
+    },
+    {
+      "ply": 50,
+      "en": "26.e5 is Carlsen's practical decision. The engine preferred 26.g5, keeping a small edge, and thinks the break lets it go. But after 26...dxe5 27.Nxc5 lots of pieces come off, and White gets a simplified position with a passed c-pawn and no risk. Black has nothing better than taking: 26...Ne8 or 26...Nh7 would leave White clearly better.",
+      "sv": "26.e5 är Carlsens praktiska beslut. Motorn föredrog 26.g5, som behåller ett litet övertag, och anser att genombrottet släpper det. Men efter 26...dxe5 27.Nxc5 byts många pjäser av, och Vit får en förenklad ställning med en fri c-bonde och ingen risk. Svart har inget bättre än att slå: 26...Ne8 eller 26...Nh7 hade gett Vit klart bättre spel.",
+      "line": {
+        "from": "after",
+        "san": [
+          "dxe5",
+          "Nxc5",
+          "Rxd2",
+          "Rxd2",
+          "Rxd2",
+          "Qxd2"
+        ]
+      }
+    },
+    {
+      "ply": 68,
+      "en": "After 35.Qxa8 we have queen and bishop against queen and knight, five pawns each. White's c-pawn is passed, and so is Black's e-pawn. The engine sees a dead draw, but the bishop on the long diagonal supports White's c-pawn, and only White can press without risk.",
+      "sv": "Efter 35.Qxa8 har vi dam och löpare mot dam och springare, fem bönder var. Vits c-bonde är fri, och det är också Svarts e-bonde. Motorn ser en ren remi, men löparen på den långa diagonalen stöder Vits c-bonde, och bara Vit kan pressa utan risk."
+    },
+    {
+      "ply": 82,
+      "en": "41...Ng5 was a small inaccuracy (the engine wanted to keep checking with 41...Qd1+), and 42.c5 sends the passed pawn forward. Every step it takes ties Black's pieces down more.",
+      "sv": "41...Ng5 var en mindre onoggrannhet (motorn ville fortsätta schacka med 41...Qd1+), och 42.c5 skickar fribonden framåt. Varje steg den tar binder de svarta pjäserna mer."
+    },
+    {
+      "ply": 85,
+      "en": "43...Ne6? is the losing mistake. Black needed 43...Qd6, keeping the queen close to the pawn, where it controls c7 and the d-file. The knight is too slow to stop the pawn on its own, and White gets time for a4 and Qf4.",
+      "sv": "43...Ne6? är det förlorande misstaget. Svart behövde 43...Qd6, som håller damen nära bonden, där den kontrollerar c7 och d-linjen. Springaren är för långsam för att stoppa bonden på egen hand, och Vit får tid till a4 och Qf4.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qd6",
+          "h4",
+          "Ne6",
+          "a4",
+          "Nf4"
+        ]
+      }
+    },
+    {
+      "ply": 89,
+      "en": "45...Ne6 makes it worse: the knight leaves c7, and 46.Qd6 supports the pawn's advance to c7. Black was already lost, but now it is quick.",
+      "sv": "45...Ne6 gör det värre: springaren lämnar c7, och 46.Qd6 stöder bondens marsch till c7. Svart var redan förlorad, men nu går det snabbt."
+    },
+    {
+      "ply": 94,
+      "en": "48.c7: the pawn is one step from queening and the queen on d6 guards c7. Black's counterplay with the queen and knight against White's king comes too late.",
+      "sv": "48.c7: bonden är ett steg från att bli dam och damen på d6 skyddar c7. Svarts motspel med dam och springare mot den vita kungen kommer för sent."
+    },
+    {
+      "ply": 100,
+      "en": "50.c8=Q gave White two queens, and after 51.Qg4 the engine sees a forced mate. Caruana resigned, and Carlsen kept his world title with a 3–0 win in the tiebreak.",
+      "sv": "50.c8=Q gav Vit två damer, och efter 51.Qg4 ser motorn en forcerad matt. Caruana gav upp, och Carlsen behöll sin världsmästartitel med 3–0 i särspelet."
+    }
+  ],
+  "summary": {
+    "en": "Carlsen won by making the position simple: one central break, many exchanges, and an endgame with a passed pawn in which only he could win. For Caruana, who had to win, the queen endgame was a test of patience, and one inaccurate knight manoeuvre let the c-pawn through. A passed pawn must be blockaded, ideally by a piece that can't easily be driven away.",
+    "sv": "Carlsen vann genom att förenkla ställningen: ett genombrott i centrum, många byten och ett slutspel med en fribonde där bara han kunde vinna. För Caruana, som måste vinna, blev damslutspelet ett tålamodsprov, och en enda felaktig springarmanöver släppte igenom c-bonden. En fribonde måste blockeras, helst av en pjäs som inte lätt kan drivas bort."
+  }
+}

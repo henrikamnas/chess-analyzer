@@ -1,0 +1,95 @@
+{
+  "id": "carlsen-anand-2013-g5",
+  "intro": {
+    "en": "Chennai, 2013, game 5 of the World Championship match between the champion Viswanathan Anand and the challenger Magnus Carlsen. The first four games were drawn. The queens come off early, and from then on there is no big tactic: watch how Carlsen keeps asking small questions in a level endgame until one of the answers is wrong.",
+    "sv": "Chennai 2013, parti 5 i VM-matchen mellan världsmästaren Viswanathan Anand och utmanaren Magnus Carlsen. De fyra första partierna hade slutat remi. Damerna byts tidigt, och sedan kommer ingen stor kombination: se hur Carlsen fortsätter att ställa små frågor i ett jämnt slutspel tills ett av svaren blir fel."
+  },
+  "comments": [
+    {
+      "ply": 6,
+      "en": "After 1.c4 e6 2.d4 d5 3.Nc3 c6 the game has reached a Semi-Slav, and 4.e4 is the Marshall Gambit. White strikes in the centre at once, and Black takes the pawn on e4.",
+      "sv": "Efter 1.c4 e6 2.d4 d5 3.Nc3 c6 har partiet nått en semislavisk ställning, och 4.e4 är Marshallgambiten. Vit slår till i centrum direkt, och Svart tar bonden på e4."
+    },
+    {
+      "ply": 10,
+      "en": "The main line is 6.Bd2, letting Black take the d4 pawn with the queen in return for fast development and pressure on the dark squares; the engine prefers that sharp gambit. Carlsen chose the quiet 6.Nc3, which keeps his pawn and avoids the main-line theory.",
+      "sv": "Huvudvarianten är 6.Bd2, där Vit låter Svart ta d4-bonden med damen i utbyte mot snabb utveckling och tryck på de mörka fälten; motorn föredrar den skarpa gambiten. Carlsen valde det lugna 6.Nc3, som behåller bonden och undviker huvudvariantens teori.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Bd2",
+          "Qxd4",
+          "Bxb4",
+          "Qxe4+",
+          "Be2"
+        ]
+      }
+    },
+    {
+      "ply": 24,
+      "en": "11...Ng4 and 12...Nxe3 won the bishop pair, and after 13.fxe3 White has an isolated pawn on e3. In return White gets the half-open f-file and more control of the centre squares d4 and f4. The position is roughly level.",
+      "sv": "11...Ng4 och 12...Nxe3 vann löparparet, och efter 13.fxe3 har Vit en isolerad bonde på e3. I gengäld får Vit den halvöppna f-linjen och mer kontroll över centrumfälten d4 och f4. Ställningen är ungefär jämn."
+    },
+    {
+      "ply": 28,
+      "en": "14.Nxc6 bxc6 and 15.Qxd8+ take the queens off. The engine preferred 14.Ncb5, keeping more tension, but Carlsen is happy with a long endgame: Black's pawns on a7 and c6 are isolated, and Black's king must come to the centre to replace the queen.",
+      "sv": "14.Nxc6 bxc6 och 15.Qxd8+ byter av damerna. Motorn föredrog 14.Ncb5 för att behålla mer spänning, men Carlsen är nöjd med ett långt slutspel: Svarts bönder på a7 och c6 är isolerade, och den svarta kungen måste gå till centrum i damens ställe."
+    },
+    {
+      "ply": 43,
+      "en": "A short tactical burst: 19.c5 attacked the bishop, 19...f5 attacked the knight, and after 20.cxb6 fxe4 21.b7 Rab8 22.Bxe4 Rxb7 both sides have regained their piece. Material is level, with two rooks and a light-squared bishop each.",
+      "sv": "En kort taktisk sekvens: 19.c5 angrep löparen, 19...f5 angrep springaren, och efter 20.cxb6 fxe4 21.b7 Rab8 22.Bxe4 Rxb7 har båda sidor fått tillbaka sin pjäs. Materialet är lika, med två torn och en vitfältslöpare var."
+    },
+    {
+      "ply": 54,
+      "en": "Carlsen doubles his rooks on the f-file and 28.Rf6 attacks the e6 pawn. Black is not in danger yet, but has to keep answering threats while White improves the king and the bishop. That is the kind of slow pressure Carlsen is known for.",
+      "sv": "Carlsen dubblerar tornen på f-linjen och 28.Rf6 angriper bonden på e6. Svart är ännu inte i fara, men måste hela tiden svara på hot medan Vit förbättrar kungen och löparen. Det är just den sortens långsamma tryck som Carlsen är känd för."
+    },
+    {
+      "ply": 82,
+      "en": "After 40.Rxg5 Rxb3+ 41.Rxb3 Bxb3 42.Rxe5+ a pair of rooks has gone. White has won the g5 and e5 pawns and Black the b3 pawn, so White is a pawn up, but Black's active rook and queenside pawns keep the balance.",
+      "sv": "Efter 40.Rxg5 Rxb3+ 41.Rxb3 Bxb3 42.Rxe5+ har ett tornpar bytts. Vit har vunnit bönderna på g5 och e5 och Svart bonden på b3, så Vit är en bonde över, men Svarts aktiva torn och damflygelbönder håller balansen."
+    },
+    {
+      "ply": 100,
+      "en": "49.Bxb3 axb3 50.Kxb3 removed the last minor pieces, and after 50...Rxg2 51.Rxh4 it is a pure rook endgame. White has three pawns (a3, e5, h2) against Black's c5 pawn. That sounds like a lot, but Black's rook is active and the engine still calls it a draw.",
+      "sv": "49.Bxb3 axb3 50.Kxb3 tog bort de sista lätta pjäserna, och efter 50...Rxg2 51.Rxh4 är det ett rent tornslutspel. Vit har tre bönder (a3, e5, h2) mot Svarts bonde på c5. Det låter mycket, men det svarta tornet är aktivt och motorn bedömer det fortfarande som remi."
+    },
+    {
+      "ply": 101,
+      "en": "51...Ke6? is the losing mistake. The king goes to collect the e5 pawn, but that takes it away from the a-pawn, which now runs. The engine's 51...Re2 wins the e5 pawn with the rook instead, so the king stays close enough to the queenside to stop the a-pawn.",
+      "sv": "51...Ke6? är det förlorande misstaget. Kungen går för att ta bonden på e5, men då kommer den långt från a-bonden, som nu springer iväg. Motorns 51...Re2 vinner e5-bonden med tornet i stället, så att kungen stannar tillräckligt nära damflygeln för att stoppa a-bonden.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Re2",
+          "Kc4",
+          "Rxe5",
+          "Kb5",
+          "Kd6",
+          "a4",
+          "Re2"
+        ]
+      }
+    },
+    {
+      "ply": 104,
+      "en": "52.a4 Kxe5 53.a5: the king has its pawn, but it is on the wrong side of the board. Black's rook alone has to stop the a-pawn, and White's rook is free to cut off the king.",
+      "sv": "52.a4 Kxe5 53.a5: kungen har fått sin bonde, men den står på fel sida av brädet. Det svarta tornet måste ensamt stoppa a-bonden, och det vita tornet är fritt att skära av kungen."
+    },
+    {
+      "ply": 113,
+      "en": "A typical picture: the pawn is on a7 and the rook on h7 guards it along the seventh rank. Black's rook is tied to the a-file, because if it leaves, a8 becomes a queen.",
+      "sv": "En typisk bild: bonden står på a7 och tornet på h7 skyddar den längs sjunde raden. Det svarta tornet är bundet till a-linjen, för om det lämnar den blir a8 en dam."
+    },
+    {
+      "ply": 114,
+      "en": "58.h4 brings a second passed pawn into play. Black's rook can't stop both pawns, and Anand resigned. Carlsen won the match a few games later and became World Champion.",
+      "sv": "58.h4 sätter en andra fribonde i rörelse. Det svarta tornet kan inte stoppa båda bönderna, och Anand gav upp. Carlsen vann matchen några partier senare och blev världsmästare."
+    }
+  ],
+  "summary": {
+    "en": "This game shows Carlsen's method: trade into a level endgame and keep posing small problems, move after move. Anand defended accurately for a long time, but one slip at move 51 was enough. The lesson for rook endgames: the king must stay near the opponent's passed pawn, and the rook belongs where it is active.",
+    "sv": "Partiet visar Carlsens metod: byt ner till ett jämnt slutspel och fortsätt ställa små problem, drag efter drag. Anand försvarade sig exakt länge, men ett enda snedsteg vid drag 51 räckte. Lärdomen för tornslutspel: kungen måste stanna nära motståndarens fribonde, och tornet hör hemma där det är aktivt."
+  }
+}

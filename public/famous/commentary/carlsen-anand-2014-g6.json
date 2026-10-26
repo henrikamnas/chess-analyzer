@@ -1,0 +1,109 @@
+{
+  "id": "carlsen-anand-2014-g6",
+  "intro": {
+    "en": "Sochi, 2014, game 6 of the World Championship rematch between Magnus Carlsen and Viswanathan Anand. Queens are traded after nine moves, but this is no dull endgame: White's e5 pawn cramps Black, and Carlsen builds slow pressure on the kingside. Watch for move 26, where both players missed the same tactic.",
+    "sv": "Sotji 2014, parti 6 i VM-returmatchen mellan Magnus Carlsen och Viswanathan Anand. Damerna byts redan efter nio drag, men det blir inget tråkigt slutspel: Vits bonde på e5 tränger ihop Svart, och Carlsen bygger upp ett långsamt tryck på kungsflygeln. Håll utkik efter drag 26, där båda spelarna missade samma taktik."
+  },
+  "comments": [
+    {
+      "ply": 8,
+      "en": "4...a6 is the Kan Variation of the Sicilian, and 5.c4 sets up the Maróczy Bind: the pawns on c4 and e4 clamp the d5 square, so Black finds it hard to free the game with ...d5.",
+      "sv": "4...a6 är Kanvarianten i sicilianskt, och 5.c4 bygger upp Maróczybindningen: bönderna på c4 och e4 kontrollerar fältet d5, så att Svart får svårt att befria spelet med ...d5."
+    },
+    {
+      "ply": 13,
+      "en": "7...Nc6 is the first inaccuracy. It invites the trade on c6 and an early queen exchange that leaves Black's king in the centre and Black's knight driven back. The engine preferred 7...d5, freeing the position at once.",
+      "sv": "7...Nc6 är den första onoggrannheten. Draget bjuder in till byte på c6 och ett tidigt dambyte som lämnar den svarta kungen i centrum och den svarta springaren tillbakaträngd. Motorn föredrog 7...d5, som befriar ställningen direkt.",
+      "line": {
+        "from": "before",
+        "san": [
+          "d5",
+          "exd5",
+          "exd5",
+          "Be2",
+          "Nc6"
+        ]
+      }
+    },
+    {
+      "ply": 18,
+      "en": "After the queen trade, 10.e5 is the engine's clear choice. It drives the knight from f6 and gains space; the pawn on e5 covers d6 and f6 and will cramp Black for the rest of the game.",
+      "sv": "Efter dambytet är 10.e5 motorns klara val. Draget driver bort springaren från f6 och vinner utrymme; bonden på e5 kontrollerar d6 och f6 och kommer att tränga ihop Svart resten av partiet."
+    },
+    {
+      "ply": 26,
+      "en": "With 13.h4 and 14.h5 Carlsen gains space on the kingside and fixes Black's pawns there. Later his rook comes to g3 via the third rank to attack g7.",
+      "sv": "Med 13.h4 och 14.h5 vinner Carlsen utrymme på kungsflygeln och låser fast Svarts bönder där. Senare kommer tornet till g3 via tredje raden för att angripa g7."
+    },
+    {
+      "ply": 50,
+      "en": "26.Kd2?? is a serious blunder. 26...Nxe5 opens the g-file, so Black's rook on g8 attacks the rook on g4, and with the king on d2 the knight can take on c4 with check. Black would win two pawns.",
+      "sv": "26.Kd2?? är en allvarlig blunder. 26...Nxe5 öppnar g-linjen, så att det svarta tornet på g8 angriper tornet på g4, och med kungen på d2 kan springaren ta på c4 med schack. Svart hade vunnit två bönder.",
+      "line": {
+        "from": "after",
+        "san": [
+          "Nxe5",
+          "Rxg8",
+          "Nxc4+",
+          "Kd3",
+          "Nb2+",
+          "Ke2",
+          "Rxg8"
+        ]
+      }
+    },
+    {
+      "ply": 51,
+      "en": "26...a4?? misses it. Black continues with the queenside plan, and the chance never comes back: after 27.Ke2 the c4 pawn is no longer taken with check. One of the most famous double oversights in championship history.",
+      "sv": "26...a4?? missar det. Svart fortsätter med planen på damflygeln, och chansen kommer aldrig tillbaka: efter 27.Ke2 kan c4-bonden inte längre tas med schack. Ett av de mest kända dubbla förbiseendena i VM-historien."
+    },
+    {
+      "ply": 55,
+      "en": "28...Rd8 gave White the chance of 29.Bxg6 fxg6 30.Rxg6, opening the g-file and attacking e6 and h6, with a clear edge. Carlsen played 29.Ke1 instead, and the same idea comes back a few moves later.",
+      "sv": "28...Rd8 gav Vit chansen till 29.Bxg6 fxg6 30.Rxg6, som öppnar g-linjen och angriper e6 och h6, med klar fördel. Carlsen spelade 29.Ke1 i stället, och samma idé dyker upp igen några drag senare.",
+      "line": {
+        "from": "after",
+        "san": [
+          "Bxg6",
+          "fxg6",
+          "Rxg6",
+          "Be8",
+          "Rg7+"
+        ]
+      }
+    },
+    {
+      "ply": 63,
+      "en": "32...Bc6? is the decisive mistake. Black blocks the check, but now 33.Bxg6 removes the knight and the kingside pawns fall. The engine's 32...Ka7 gives up the exchange after 33.Bxa8 Kxa8 but keeps the knight, and White would be only somewhat better.",
+      "sv": "32...Bc6? är det avgörande misstaget. Svart blockerar schacken, men nu tar 33.Bxg6 bort springaren och bönderna på kungsflygeln faller. Motorns 32...Ka7 ger upp kvaliteten efter 33.Bxa8 Kxa8 men behåller springaren, och Vit hade bara stått något bättre.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Ka7",
+          "Bxa8",
+          "Kxa8",
+          "Rxh6"
+        ]
+      }
+    },
+    {
+      "ply": 66,
+      "en": "33.Bxg6 fxg6 34.Rxg6: White has given the bishop for the knight and taken a pawn, and the rook now attacks e6 and h6. Without the knight, Black's remaining kingside and centre pawns are weak and soon fall.",
+      "sv": "33.Bxg6 fxg6 34.Rxg6: Vit har gett löparen mot springaren och tagit en bonde, och tornet angriper nu e6 och h6. Utan springaren är Svarts kvarvarande bönder på kungsflygeln och i centrum svaga och faller snart."
+    },
+    {
+      "ply": 70,
+      "en": "35.Rxe6 and 36.Bxa3 collect two more pawns. Black's rook becomes active on the first rank, but White's rooks and the passed e-pawn are far stronger.",
+      "sv": "35.Rxe6 och 36.Bxa3 plockar två bönder till. Det svarta tornet blir aktivt på första raden, men Vits torn och den fria e-bonden är betydligt starkare."
+    },
+    {
+      "ply": 74,
+      "en": "38.Re7+ drives the king back, and the e-pawn is ready to advance. White is three pawns up, and Anand resigned. The win gave Carlsen the lead in the match.",
+      "sv": "38.Re7+ driver tillbaka kungen, och e-bonden är redo att gå framåt. Vit är tre bönder över, och Anand gav upp. Vinsten gav Carlsen ledningen i matchen."
+    }
+  ],
+  "summary": {
+    "en": "A queenless middlegame can still be full of play: the e5 pawn and the rook lift gave Carlsen a lasting initiative. The famous moment at move 26 shows that even world champions miss tactics when they are focused on their own plans, so always look at what the opponent's last move allows. The real decisive error came later, when 32...Bc6? left the knight and the kingside pawns to their fate.",
+    "sv": "Ett damlöst mittspel kan fortfarande vara fullt av spel: bonden på e5 och tornlyftet gav Carlsen ett varaktigt initiativ. Det berömda ögonblicket vid drag 26 visar att även världsmästare missar taktik när de är fokuserade på sina egna planer, så titta alltid på vad motståndarens senaste drag tillåter. Det verkligt avgörande felet kom senare, när 32...Bc6? lämnade springaren och kungsflygelbönderna åt sitt öde."
+  }
+}
