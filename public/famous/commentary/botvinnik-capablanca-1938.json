@@ -1,0 +1,124 @@
+{
+  "id": "botvinnik-capablanca-1938",
+  "intro": {
+    "en": "The AVRO tournament of 1938 in the Netherlands brought together eight of the world's best players, among them the former world champion José Raúl Capablanca. In this Nimzo-Indian, Botvinnik accepts doubled c-pawns in return for the bishop pair and a strong centre. Watch how the centre pawns roll forward while Black's knight wanders off to the queenside, and how a single passed pawn on e6 ends up worth more than a whole piece.",
+    "sv": "AVRO-turneringen 1938 i Nederländerna samlade åtta av världens bästa spelare, bland dem förre världsmästaren José Raúl Capablanca. I det här nimzoindiska partiet accepterar Botvinnik dubbelbönder på c-linjen i utbyte mot löparparet och ett starkt centrum. Se hur centrumbönderna rullar fram medan den svarta springaren vandrar iväg till damflygeln, och hur en enda fribonde på e6 till slut är värd mer än en hel pjäs."
+  },
+  "comments": [
+    {
+      "ply": 10,
+      "en": "After 5...Bxc3+ 6.bxc3 White has doubled c-pawns, the typical price in the Nimzo-Indian. In return he has the two bishops, and capturing towards the centre gives him a solid pawn mass that can later support the advance e3-e4.",
+      "sv": "Efter 5...Bxc3+ 6.bxc3 har Vit dubbelbönder på c-linjen, det typiska priset i nimzoindiskt. I gengäld har han löparparet, och slaget mot centrum ger honom en stabil bondemassa som senare kan stödja framstöten e3-e4."
+    },
+    {
+      "ply": 27,
+      "en": "14...c4 gains a tempo on the queen and fixes White's c3 pawn, giving Black a pawn majority on the queenside. The engine agrees it is the best move. The drawback is that it releases the tension in the centre: White no longer has to worry about d4 and can calmly prepare f3 and e4.",
+      "sv": "14...c4 vinner ett tempo på damen och låser fast Vits c3-bonde, vilket ger Svart bondemajoritet på damflygeln. Motorn håller med om att det är bästa draget. Nackdelen är att spänningen i centrum släpper: Vit behöver inte längre oroa sig för d4 och kan i lugn och ro förbereda f3 och e4."
+    },
+    {
+      "ply": 29,
+      "en": "15...Nb8 starts a long knight trip via c6 and a5 to b3. The trip ends with Black winning the a4 pawn, but it takes the knight far away from the kingside, where the real fight will be. The engine preferred 15...Nc7.",
+      "sv": "15...Nb8 inleder en lång springarresa via c6 och a5 till b3. Resan slutar med att Svart vinner a4-bonden, men den tar springaren långt bort från kungsflygeln, där den verkliga striden kommer att stå. Motorn föredrog 15...Nc7."
+    },
+    {
+      "ply": 33,
+      "en": "17...Na5? is the turning point. The engine's choice was 17...Ne4, putting a knight on the very square White wants for his pawn and keeping the centre blocked. After the game move White plays f3 and e4 without any trouble.",
+      "sv": "17...Na5? är vändpunkten. Motorns val var 17...Ne4, som placerar en springare på just den ruta Vit vill ha för sin bonde och håller centrum blockerat. Efter partidraget spelar Vit f3 och e4 utan några problem.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Ne4",
+          "Nh5",
+          "Qf5",
+          "Nf4",
+          "Ne7",
+          "Bc1",
+          "Nf6",
+          "Qxf5",
+          "Nxf5",
+          "f3"
+        ]
+      }
+    },
+    {
+      "ply": 38,
+      "en": "Black has won a pawn, but 20.e5 drives the knight from f6, its best defensive post. White now has a big pawn centre and a free hand on the kingside, while Black's queen and knight are stuck on a4 and b3.",
+      "sv": "Svart har vunnit en bonde, men 20.e5 driver bort springaren från f6, dess bästa försvarsruta. Vit har nu ett stort bondecentrum och fria händer på kungsflygeln, medan den svarta damen och springaren sitter fast på a4 och b3."
+    },
+    {
+      "ply": 44,
+      "en": "23.exf6 is an en passant capture: Black's f-pawn moved two squares past the pawn on e5, which may take it as if it had moved only one. White's f-pawn is now free to advance against the black king.",
+      "sv": "23.exf6 är ett slag en passant: Svarts f-bonde gick två steg förbi bonden på e5, som får slå den som om den bara hade gått ett steg. Vits f-bonde kan nu fritt avancera mot den svarta kungen."
+    },
+    {
+      "ply": 49,
+      "en": "25...Re8 allows 26.Re6, and the trade of rooks that follows leaves White with a dangerous passed pawn on e6. The engine preferred 25...Rf8, putting the rook on the f-file to fight the f-pawn.",
+      "sv": "25...Re8 tillåter 26.Re6, och tornbytet som följer ger Vit en farlig fribonde på e6. Motorn föredrog 25...Rf8, som ställer tornet på f-linjen för att bekämpa f-bonden."
+    },
+    {
+      "ply": 52,
+      "en": "After the rook trade, 27.fxe6 creates a passed pawn on e6. No black pawn can stop it, so only pieces can block it, and Black's queen and one knight are far away on the queenside. From now on the whole game turns on this pawn.",
+      "sv": "Efter tornbytet skapar 27.fxe6 en fribonde på e6. Ingen svart bonde kan stoppa den, så bara pjäser kan blockera den, och Svarts dam och ena springare står långt borta på damflygeln. Från och med nu handlar hela partiet om den här bonden."
+    },
+    {
+      "ply": 56,
+      "en": "The engine is surprisingly critical of 29.Qe5. It wanted 29.Qc7+ first, driving the king back to g8 before the queen goes to e5; in the engine's line the e-pawn then marches straight on. After the game move Black had a chance to defend.",
+      "sv": "Motorn är förvånansvärt kritisk mot 29.Qe5. Den ville spela 29.Qc7+ först, för att driva tillbaka kungen till g8 innan damen går till e5; i motorns variant marscherar e-bonden sedan rakt fram. Efter partidraget fick Svart en chans att försvara sig.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qc7+",
+          "Kg8",
+          "Qe5",
+          "Qf8",
+          "e7",
+          "Qf7",
+          "Qxf6",
+          "Qxf6",
+          "e8=Q+"
+        ]
+      }
+    },
+    {
+      "ply": 57,
+      "en": "29...Qe7? is the decisive mistake, and it is what makes the famous combination possible. The engine's choice was 29...h6, which covers g5, the square White's queen needs in the combination. White would still have been clearly better, but there would have been no knockout.",
+      "sv": "29...Qe7? är det avgörande misstaget, och det är det som gör den berömda kombinationen möjlig. Motorns val var 29...h6, som täcker g5, den ruta som den vita damen behöver i kombinationen. Vit hade fortfarande stått klart bättre, men det hade inte funnits någon knockout.",
+      "line": {
+        "from": "before",
+        "san": [
+          "h6",
+          "Qd6",
+          "Qf8",
+          "Qc7+",
+          "Kh8",
+          "Qe5",
+          "Kg7"
+        ]
+      }
+    },
+    {
+      "ply": 58,
+      "en": "30.Ba3!! The bishop offers itself to the queen on e7, which is blockading the passed pawn. If the queen takes, it leaves the e-file, and the knight and queen will clear the way for the pawn. The engine's best defence was 30...Nc5, but Black is lost anyway.",
+      "sv": "30.Ba3!! Löparen offrar sig åt damen på e7, som blockerar fribonden. Om damen slår lämnar den e-linjen, och springaren och damen röjer sedan vägen för bonden. Motorns bästa försvar var 30...Nc5, men Svart är förlorad oavsett."
+    },
+    {
+      "ply": 60,
+      "en": "31.Nh5+! A second sacrifice. If the pawn on g6 takes, the queen gets g5 with check, then takes the knight on f6, the piece that guards e8. That is exactly what happens in the game.",
+      "sv": "31.Nh5+! Ett andra offer. Om bonden på g6 slår får damen g5 med schack och slår sedan springaren på f6, den pjäs som bevakar e8. Det är precis vad som händer i partiet."
+    },
+    {
+      "ply": 66,
+      "en": "34.e7 Botvinnik is a knight and a pawn down, but the pawn is one step from queening, and Black could only stop it by giving up the queen. Black's only hope is perpetual check, and the white king has to walk out of the checks.",
+      "sv": "34.e7 Botvinnik ligger under med en springare och en bonde, men bonden står ett steg från förvandling, och Svart kan bara stoppa den genom att ge bort damen. Svarts enda hopp är evig schack, och den vita kungen måste gå ut ur schackarna."
+    },
+    {
+      "ply": 80,
+      "en": "41.Kh5 The king has escaped up the board to h5. The only checks Black has left simply give away the queen, and the pawn will queen or White will mate, so Capablanca resigned.",
+      "sv": "41.Kh5 Kungen har tagit sig upp på brädet till h5. De enda schackar Svart har kvar ger bara bort damen, och bonden förvandlas eller Vit gör matt, så Capablanca gav upp."
+    }
+  ],
+  "summary": {
+    "en": "Botvinnik's plan was simple and strong: accept the doubled pawns, then advance f3, e4, e5 and f4-f5 while Black's knight was on a long trip to the queenside. The real mistakes were 17...Na5, which let the centre roll, and 29...Qe7, which allowed the famous 30.Ba3. The combination shows how a far-advanced passed pawn can be worth more than a whole piece when the defender's pieces are far away.",
+    "sv": "Botvinniks plan var enkel och stark: acceptera dubbelbönderna och sedan spela f3, e4, e5 och f4-f5 medan den svarta springaren var på långresa till damflygeln. De verkliga misstagen var 17...Na5, som lät centrum rulla, och 29...Qe7, som tillät det berömda 30.Ba3. Kombinationen visar hur en långt framskjuten fribonde kan vara värd mer än en hel pjäs när försvararens pjäser står långt borta."
+  }
+}

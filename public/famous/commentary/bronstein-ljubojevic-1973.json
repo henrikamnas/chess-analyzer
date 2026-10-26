@@ -1,0 +1,90 @@
+{
+  "id": "bronstein-ljubojevic-1973",
+  "intro": {
+    "en": "Petrópolis Interzonal, 1973. David Bronstein, one of the most inventive players of his time, meets the young Ljubomir Ljubojević's Alekhine Defence with the aggressive Four Pawns Attack. Watch the passed pawn on the d-file: Bronstein gives up a whole rook to keep it moving, and later walks his king up the board while the pawn marches to promotion.",
+    "sv": "Interzonturneringen i Petrópolis 1973. David Bronstein, en av sin tids mest uppfinningsrika spelare, möter Aljechins försvar från den unge Ljubomir Ljubojević med den aggressiva fyrbondeattacken. Håll ögonen på fribonden på d-linjen: Bronstein ger bort ett helt torn för att hålla den i rörelse, och vandrar senare upp på brädet med kungen medan bonden marscherar mot förvandling."
+  },
+  "comments": [
+    {
+      "ply": 8,
+      "en": "5.f4 is the Four Pawns Attack. White accepts Black's invitation and builds a huge pawn centre on c4, d4, e5 and f4. Alekhine's Defence is based on the idea that such a centre can become a target, so the whole game revolves around whether it is strong or overextended.",
+      "sv": "5.f4 är fyrbondeattacken. Vit tackar ja till Svarts inbjudan och bygger ett enormt bondecentrum på c4, d4, e5 och f4. Aljechins försvar bygger på idén att ett sådant centrum kan bli en måltavla, så hela partiet handlar om huruvida det är starkt eller överdrivet."
+    },
+    {
+      "ply": 11,
+      "en": "6...c5 strikes at the centre at once, but it is a sharp choice. The engine prefers the developing 6...Nc6, putting pressure on d4 before attacking it with pawns. After 7.d5 White gains even more space.",
+      "sv": "6...c5 slår mot centrum direkt, men det är ett skarpt val. Motorn föredrar det utvecklande 6...Nc6, som pressar d4 innan Svart angriper med bönder. Efter 7.d5 vinner Vit ännu mer utrymme.",
+      "line": { "from": "before", "san": ["Nc6", "Be3", "Bf5", "Nc3", "e6"] }
+    },
+    {
+      "ply": 18,
+      "en": "After the exchange on d5, White has a passed pawn on d5, while 9...c4 gives Black a pawn deep in White's camp. The engine wanted 10.d6 at once, pushing the passed pawn before Black can blockade it; 10.Nf3 is natural but gives Black time.",
+      "sv": "Efter bytet på d5 har Vit en fribonde på d5, medan 9...c4 ger Svart en bonde långt inne i det vita lägret. Motorn ville spela 10.d6 direkt och föra fram fribonden innan Svart hinner blockera den; 10.Nf3 är naturligt men ger Svart tid.",
+      "line": { "from": "before", "san": ["d6", "Be6", "Nf3", "Nc6", "Bf4"] }
+    },
+    {
+      "ply": 22,
+      "en": "After 10...Bg4 11.Qd4 Bxf3 12.gxf3 White's kingside pawns are broken and his king has nowhere safe to castle on that side. In return he gets the two bishops and a half-open g-file. The engine thought both sides had better moves here (10...Bb4 and 11.d6), a sign of how sharp the position is.",
+      "sv": "Efter 10...Bg4 11.Qd4 Bxf3 12.gxf3 är Vits bönder på kungsflygeln splittrade och kungen har ingen säker rockad på den sidan. I gengäld får Vit löparparet och en halvöppen g-linje. Motorn tyckte att båda sidor hade bättre drag här (10...Bb4 och 11.d6), ett tecken på hur skarp ställningen är."
+    },
+    {
+      "ply": 26,
+      "en": "14.Rg1 puts the rook on the half-open g-file, aiming at the black king. The engine preferred 14.Bh6, but the rook move fits Bronstein's plan of attacking down the g-file.",
+      "sv": "14.Rg1 ställer tornet på den halvöppna g-linjen, riktat mot den svarta kungen. Motorn föredrog 14.Bh6, men tornflytten passar Bronsteins plan att angripa längs g-linjen.",
+      "line": { "from": "before", "san": ["Bh6", "Nxc4", "Qg4", "Bxc3+", "bxc3"] }
+    },
+    {
+      "ply": 33,
+      "en": "17.Qf4 left the rook on g1 to be taken, and Black has taken it. The point is 18.d6: the passed pawn advances, the queen on c7 is hit, and Black's pieces are scattered. Remarkably, the engine rates 17.Qf4 as White's best move and the position as roughly level despite the missing rook.",
+      "sv": "17.Qf4 lät tornet på g1 stå kvar att slås, och Svart har slagit det. Poängen är 18.d6: fribonden går fram, damen på c7 angrips och de svarta pjäserna står utspridda. Anmärkningsvärt nog bedömer motorn 17.Qf4 som Vits bästa drag och ställningen som ungefär jämn trots det saknade tornet.",
+      "line": { "from": "after", "san": ["d6", "Qc5", "Ne4", "Qd4", "Rd1", "Qxb2"] }
+    },
+    {
+      "ply": 35,
+      "en": "18...Qc8? is too passive. The engine wanted 18...Qc5, centralising the queen, which also guards the bishop on g1 along the diagonal. Now White is clearly better.",
+      "sv": "18...Qc8? är för passivt. Motorn ville spela 18...Qc5 och centralisera damen, som då också skyddar löparen på g1 längs diagonalen. Nu står Vit klart bättre.",
+      "line": { "from": "before", "san": ["Qc5", "Ne4", "Qd4", "Rd1", "Qxb2"] }
+    },
+    {
+      "ply": 36,
+      "en": "19.Ke2? frees the rook in a bold way, but the engine calls it a serious error. 19.O-O-O was clearly stronger, because after the king move Black could play 19...Qc5!, protecting the bishop and keeping the extra material.",
+      "sv": "19.Ke2? frigör tornet på ett djärvt sätt, men motorn kallar det ett allvarligt fel. 19.O-O-O var klart starkare, eftersom Svart efter kungsdraget kunde ha spelat 19...Qc5!, som skyddar löparen och behåller det extra materialet.",
+      "line": { "from": "before", "san": ["O-O-O", "Bf2", "e6", "fxe6", "Qe5"] }
+    },
+    {
+      "ply": 37,
+      "en": "19...Bc5? misses the chance. After 19...Qc5 20.Rxg1 Qxg1 Black would have kept the material and the better game. Now the bishop is back on c5, where it is pinned after 21.Rc1, and White wins it for the exchange while the attack rolls on.",
+      "sv": "19...Bc5? missar chansen. Efter 19...Qc5 20.Rxg1 Qxg1 hade Svart behållit materialet och stått bättre. Nu står löparen på c5 igen, där den blir bunden efter 21.Rc1, och Vit vinner den mot kvaliteten medan angreppet rullar vidare.",
+      "line": { "from": "before", "san": ["Qc5", "Rxg1", "Qxg1", "e6", "N8d7"] }
+    },
+    {
+      "ply": 42,
+      "en": "21.Rc1 pins the bishop on c5 against the queen, and after 21...Qc6 Bronstein gives up the exchange with 22.Rxc5. The knight on e4 is waiting to jump to f6 with check.",
+      "sv": "21.Rc1 binder löparen på c5 mot damen, och efter 21...Qc6 ger Bronstein kvaliteten med 22.Rxc5. Springaren på e4 står redo att hoppa till f6 med schack."
+    },
+    {
+      "ply": 46,
+      "en": "After 23.Nf6+ Kh8 24.Qh4 the queen and knight both hit h7, threatening Qxh7 mate. Black is still ahead in material, but his king is helpless, and he has to throw in checks.",
+      "sv": "Efter 23.Nf6+ Kh8 24.Qh4 angriper både damen och springaren h7, och Qxh7 matt hotar. Svart har fortfarande mer material, men kungen är hjälplös, och Svart måste kasta in schackar."
+    },
+    {
+      "ply": 56,
+      "en": "26...Qxb3+ gave up the queen for the bishop to get knight checks, but the white king simply walks forward: 29.Kxd5 puts it in the middle of the board. With so few black pieces left, the king is safe there and even helps the d-pawn.",
+      "sv": "26...Qxb3+ gav damen mot löparen för att få springarschackar, men den vita kungen går helt enkelt framåt: 29.Kxd5 ställer den mitt på brädet. Med så få svarta pjäser kvar står kungen säkert där och hjälper till och med d-bonden."
+    },
+    {
+      "ply": 72,
+      "en": "37.Qxf5! gives the queen back for a rook so that the d-pawn can queen next move. White's knight is lost after 38.d8=Q fxg4, but a queen against a lone rook is far too strong.",
+      "sv": "37.Qxf5! ger tillbaka damen mot ett torn så att d-bonden kan bli dam i nästa drag. Den vita springaren går förlorad efter 38.d8=Q fxg4, men en dam mot ett ensamt torn är alldeles för starkt."
+    },
+    {
+      "ply": 80,
+      "en": "41.f4 and Black resigned: White's queen against a lone rook, with more pawns, is an easy win. The engine noted faster mates along the way, but Bronstein's play was clear and safe.",
+      "sv": "41.f4 och Svart gav upp: Vits dam mot ett ensamt torn, med fler bönder, är en lätt vinst. Motorn hittade snabbare matter på vägen, men Bronsteins spel var tydligt och säkert."
+    }
+  ],
+  "summary": {
+    "en": "This game is a lesson in the power of a passed pawn supported by active pieces: Bronstein gave up a rook and then the exchange to keep the d-pawn rolling. The engine shows that both sides went wrong around moves 18–19, and Black missed a chance to refute the king walk with 19...Qc5. Practical lesson: when your opponent sacrifices, look for the move that defends and centralises at the same time.",
+    "sv": "Partiet är en lektion i kraften hos en fribonde som stöds av aktiva pjäser: Bronstein gav bort ett torn och sedan kvaliteten för att hålla d-bonden rullande. Motorn visar att båda sidor gick fel runt drag 18–19, och att Svart missade chansen att vederlägga kungsvandringen med 19...Qc5. Praktisk lärdom: när motståndaren offrar, leta efter draget som försvarar och centraliserar på samma gång."
+  }
+}

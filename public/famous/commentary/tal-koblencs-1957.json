@@ -1,0 +1,91 @@
+{
+  "id": "tal-koblencs-1957",
+  "intro": {
+    "en": "Riga, 1957: the young Mikhail Tal plays his own trainer, Alexander Koblencs, in a Richter-Rauzer Sicilian. The kings castle on opposite sides and both players throw their pawns forward. This is not a clean attacking game: the engine finds big mistakes by both sides, and the evaluation swings back and forth until the very end. Watch how dangerous an open h-file can be, even when the attack is objectively risky.",
+    "sv": "Riga 1957: den unge Michail Tal möter sin egen tränare, Aleksandr Koblencs, i en sicilianare med Richter-Rauzer. Kungarna rockerar åt olika håll och båda spelarna kastar fram sina bönder. Det här är inget rent anfallsparti: motorn hittar stora misstag av båda sidor, och värderingen svänger fram och tillbaka ända till slutet. Se hur farlig en öppen h-linje kan vara, även när angreppet objektivt är riskabelt."
+  },
+  "comments": [
+    {
+      "ply": 10,
+      "en": "6.Bg5 is the Richter-Rauzer Variation. The bishop pins the knight on f6, and White plans Qd2 and long castling, aiming for a quick attack on the kingside.",
+      "sv": "6.Bg5 är Richter-Rauzer-varianten. Löparen binder springaren på f6, och Vit planerar Qd2 och lång rockad, med siktet inställt på ett snabbt angrepp på kungsflygeln."
+    },
+    {
+      "ply": 20,
+      "en": "11.g4 starts the pawn storm. With the kings castled on opposite wings the game becomes a race: White throws his kingside pawns at Black's king, and Black uses his queenside pawns the same way. The engine wanted the careful 11.Kb1 first.",
+      "sv": "11.g4 inleder bondestormen. Med kungarna rockerade åt olika håll blir partiet en kapplöpning: Vit kastar sina kungsflygelbönder mot den svarta kungen, och Svart använder sina damflygelbönder på samma sätt. Motorn ville först spela det försiktiga 11.Kb1."
+    },
+    {
+      "ply": 25,
+      "en": "13...b5 continues the race, but the engine prefers 13...d5. Hitting back in the centre is the classic answer to an attack on the wing: it opens lines while White's pieces are busy on the kingside.",
+      "sv": "13...b5 fortsätter kapplöpningen, men motorn föredrar 13...d5. Att slå tillbaka i centrum är det klassiska svaret på ett flankangrepp: det öppnar linjer medan de vita pjäserna är upptagna på kungsflygeln.",
+      "line": { "from": "before", "san": ["d5", "Qf2", "dxe4", "Rxd8+", "Bxd8", "g5", "Nd5", "Nxd5", "exd5", "fxe4"] }
+    },
+    {
+      "ply": 28,
+      "en": "15.g6!? offers a pawn to tear open the black king's cover. Objectively it gives away most of White's edge, since the engine preferred 15.Qf2, but it sets Black a real problem: which pawn should take?",
+      "sv": "15.g6!? erbjuder en bonde för att riva upp skyddet framför den svarta kungen. Objektivt släpper det det mesta av den vita fördelen, eftersom motorn föredrog 15.Qf2, men det ger Svart ett verkligt problem: vilken bonde ska slå?"
+    },
+    {
+      "ply": 29,
+      "en": "15...hxg6? is the wrong capture. After 16.h5 the h-file opens straight towards Black's king. Taking with the f-pawn keeps the h-pawn in place and the h-file closed, and the engine says Black would then be fine.",
+      "sv": "15...hxg6? är fel sätt att slå. Efter 16.h5 öppnas h-linjen rakt mot den svarta kungen. Att slå med f-bonden behåller h-bonden på plats och h-linjen stängd, och enligt motorn hade Svart då stått bra.",
+      "line": { "from": "before", "san": ["fxg6", "h5", "gxh5", "Rxh5", "Nf6", "Rg5", "d5"] }
+    },
+    {
+      "ply": 32,
+      "en": "White is a pawn down, but his rook stands on the open h-file and the queen can join it there. Black's king on g8 has no pawn left on the h-file to shield it.",
+      "sv": "Vit har en bonde mindre, men tornet står på den öppna h-linjen och damen kan ansluta där. Den svarta kungen på g8 har ingen bonde kvar på h-linjen som skydd."
+    },
+    {
+      "ply": 38,
+      "en": "20.Bf4? is a serious mistake that throws away White's winning chances. It pins the knight on e5 to the queen on c7, but it is too slow, and Black calmly defends with 20...Bd6. 20.Qh2 at once, heading for h8, kept a strong attack.",
+      "sv": "20.Bf4? är ett allvarligt misstag som kastar bort de vita vinstchanserna. Draget binder springaren på e5 mot damen på c7, men det är för långsamt, och Svart försvarar sig lugnt med 20...Bd6. 20.Qh2 direkt, på väg mot h8, behöll ett starkt angrepp.",
+      "line": { "from": "before", "san": ["Qh2", "Kf8", "Qh8+", "Ng8", "Bd4", "Bf6", "Bc5+", "Be7", "Rh7"] }
+    },
+    {
+      "ply": 43,
+      "en": "22.Qh8+ looked crushing, but it was another mistake: Black had only two replies, and the king walk 22...Ke7 would have escaped, leaving Black clearly winning. Koblencs blocked with 22...Ng8? instead, and after 23.Rh7 his king is boxed in again.",
+      "sv": "22.Qh8+ såg förkrossande ut, men det var ytterligare ett misstag: Svart hade bara två svar, och kungsvandringen 22...Ke7 hade räddat kungen och lämnat Svart med klar vinstställning. Koblencs blockerade i stället med 22...Ng8?, och efter 23.Rh7 är kungen instängd igen.",
+      "line": { "from": "before", "san": ["Ke7", "Qh4", "Nxf3", "Bxd6+", "Qxd6"] }
+    },
+    {
+      "ply": 48,
+      "en": "Tal keeps adding fuel: 24.Bh6 brings the bishop to the h-file and aims at g7, and 25.Bxb5 wins a pawn back and opens lines. The engine agrees these were the best moves, and the position is roughly balanced.",
+      "sv": "Tal fortsätter att lägga ved på elden: 24.Bh6 för löparen till h-linjen och siktar på g7, och 25.Bxb5 vinner tillbaka en bonde och öppnar linjer. Motorn håller med om att detta var de bästa dragen, och ställningen är ungefär i balans."
+    },
+    {
+      "ply": 49,
+      "en": "25...Rf7? guards g7 along the rank but does nothing about White's growing attack. 25...Ng6 was the defence: the knight attacks the queen on h8 and covers the key squares around the king.",
+      "sv": "25...Rf7? skyddar g7 längs raden men gör ingenting åt det växande vita angreppet. 25...Ng6 var försvaret: springaren anfaller damen på h8 och täcker de viktiga rutorna runt kungen.",
+      "line": { "from": "before", "san": ["Ng6", "Nd4", "Re7"] }
+    },
+    {
+      "ply": 57,
+      "en": "In this wild position both players now go wrong. After 28...Be5? (28...Bf4+ was correct) Tal could have kept a big advantage with 29.Nf3, but 29.Nc6 let Black back into the game, and 29...Bxc3? missed the chance: 29...axb5 would have cut White's advantage considerably.",
+      "sv": "I den här vilda ställningen går båda spelarna fel. Efter 28...Be5? (28...Bf4+ var rätt) hade Tal kunnat behålla en stor fördel med 29.Nf3, men 29.Nc6 släppte in Svart i partiet igen, och 29...Bxc3? missade chansen: 29...axb5 hade minskat den vita fördelen betydligt."
+    },
+    {
+      "ply": 62,
+      "en": "32.Bg5? throws away a completely winning position. 32.gxf5 would have broken open Black's king position, and the king would not have survived. Now Black has the resource 32...Bxb2+, and the engine rates the position as level.",
+      "sv": "32.Bg5? kastar bort en helt vunnen ställning. 32.gxf5 hade brutit upp den svarta kungsställningen, och kungen hade inte överlevt. Nu har Svart resursen 32...Bxb2+, och motorn bedömer ställningen som jämn.",
+      "line": { "from": "before", "san": ["gxf5", "Qd6", "fxe6", "Qxe6", "Rf1+", "Ke8", "Rxg7"] }
+    },
+    {
+      "ply": 65,
+      "en": "33...d3? is the final mistake. White simply takes the bishop with 34.bxc3, and the pawn check only drives his king to d1. 33...Qxc6 or 33...Bxb2+ was needed, and the engine says either would have held the balance.",
+      "sv": "33...d3? är det sista misstaget. Vit tar helt enkelt löparen med 34.bxc3, och bondeschacken driver bara kungen till d1. 33...Qxc6 eller 33...Bxb2+ var nödvändigt, och enligt motorn hade vilket som helst av dem hållit balansen.",
+      "line": { "from": "before", "san": ["Qxc6", "Rf6+", "gxf6", "Bh6+", "Rg7", "Bxg7+", "Ke7", "Bxf6+", "Kd6", "Be5+"] }
+    },
+    {
+      "ply": 72,
+      "en": "36.Rf6+! finishes it. Taking the rook with the g-pawn lets the bishop check on h6, so Koblencs blocked with 36...Rf7. But that rook is pinned against the king by the rook on f6, so it cannot take on g7, and after 37.Qxg7+ White has a forced mate. Black is still ahead in material, but he resigned.",
+      "sv": "36.Rf6+! avgör. Att ta tornet med g-bonden låter löparen ge schack på h6, så Koblencs blockerade med 36...Rf7. Men det tornet är bundet mot kungen av tornet på f6, så det kan inte slå på g7, och efter 37.Qxg7+ har Vit en forcerad matt. Svart har fortfarande mer material, men han gav upp.",
+      "line": { "from": "after", "san": ["Ke8", "Qxg8+", "Kd7", "Rfxf7+", "Kd6", "Bf4+"] }
+    }
+  ],
+  "summary": {
+    "en": "This game shows Tal's attacking style at its most daring, and the engine shows how risky it was: 15.g6, 20.Bf4 and 22.Qh8+ all gave Black chances, and 32.Bg5 threw away a won position. Koblencs lost because of a few specific defensive errors: 15...hxg6 opened the h-file, and later 25...Rf7 and 33...d3 missed the saving moves. In practice, defending against constant threats is hard, and one wrong capture can open a file that never closes again.",
+    "sv": "Partiet visar Tals anfallsstil när den är som mest djärv, och motorn visar hur riskabel den var: 15.g6, 20.Bf4 och 22.Qh8+ gav alla Svart chanser, och 32.Bg5 kastade bort en vunnen ställning. Koblencs förlorade på grund av några konkreta försvarsfel: 15...hxg6 öppnade h-linjen, och senare missade 25...Rf7 och 33...d3 de räddande dragen. I praktiken är det svårt att försvara sig mot ständiga hot, och ett felaktigt slag kan öppna en linje som aldrig stängs igen."
+  }
+}

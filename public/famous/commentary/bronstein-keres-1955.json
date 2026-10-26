@@ -1,0 +1,85 @@
+{
+  "id": "bronstein-keres-1955",
+  "intro": {
+    "en": "Gothenburg Interzonal, 1955. David Bronstein faces Paul Keres in a Nimzo-Indian Defence, and both players go for a fight. Watch how Bronstein lets Black grab pawns in the centre while he aims everything at the black king, then sacrifices a bishop on h6 to rip open the kingside.",
+    "sv": "Interzonturneringen i Göteborg 1955. David Bronstein möter Paul Keres i nimzoindiskt försvar, och båda spelarna går in för en kamp. Se hur Bronstein låter Svart ta bönder i centrum medan han riktar allt mot den svarta kungen, och sedan offrar en löpare på h6 för att slita upp kungsflygeln."
+  },
+  "comments": [
+    {
+      "ply": 10,
+      "en": "4.e3 is the Rubinstein System of the Nimzo-Indian, and 6.Ne2 is a typical idea in it: if Black takes on c3, White can recapture with the knight and avoid doubled pawns.",
+      "sv": "4.e3 är Rubinsteinsystemet i nimzoindiskt, och 6.Ne2 är en typisk idé där: om Svart slår på c3 kan Vit ta tillbaka med springaren och slipper dubbelbönder."
+    },
+    {
+      "ply": 16,
+      "en": "9.d5 grabs space and cuts the diagonal of the bishop on b7. Black's pieces are a little cramped, and the engine suggests 9...Re8 to prepare ...exd5 and use the e-file.",
+      "sv": "9.d5 tar utrymme och skär av diagonalen för löparen på b7. De svarta pjäserna står lite trångt, och motorn föreslår 9...Re8 för att förbereda ...exd5 och använda e-linjen."
+    },
+    {
+      "ply": 20,
+      "en": "11.Nb5 is typical Bronstein: instead of the calm 11.a3, which the engine preferred, he lets Black win the d5 pawn and keeps his pieces pointed at the kingside. Objectively it throws away White's edge, but it makes the game very sharp.",
+      "sv": "11.Nb5 är typisk Bronstein: i stället för det lugna 11.a3, som motorn föredrog, låter han Svart vinna d5-bonden och håller pjäserna riktade mot kungsflygeln. Objektivt kastar det bort Vits fördel, men det gör partiet mycket skarpt.",
+      "line": { "from": "before", "san": ["a3", "Bxc3", "Nxc3", "Qc7", "Qd4"] }
+    },
+    {
+      "ply": 25,
+      "en": "13...dxc4 wins a second pawn, but it costs time while White's pieces gather around the king. The engine wanted 13...Re8, bringing a rook into the defence, with a level game.",
+      "sv": "13...dxc4 vinner en andra bonde, men det kostar tid medan de vita pjäserna samlas kring kungen. Motorn ville spela 13...Re8 och föra in ett torn i försvaret, med jämnt spel.",
+      "line": { "from": "before", "san": ["Re8", "cxd5", "Bxd5", "Nf5", "Bc4"] }
+    },
+    {
+      "ply": 26,
+      "en": "14.Bxh6! is the engine's top choice. The pawn on h6 was part of the king's pawn cover. If Black takes the bishop, the g-file opens and the white queen can follow to h6.",
+      "sv": "14.Bxh6! är motorns förstaval. Bonden på h6 var en del av kungens bondeskydd. Om Svart tar löparen öppnas g-linjen, och den vita damen kan följa efter till h6."
+    },
+    {
+      "ply": 27,
+      "en": "14...gxh6 accepts, opening the g-file around the king. The engine preferred to ignore the bishop with 14...Nc5, bringing another piece towards the defence.",
+      "sv": "14...gxh6 tar emot offret och öppnar g-linjen runt kungen. Motorn föredrog att strunta i löparen med 14...Nc5 och föra en pjäs till i försvaret.",
+      "line": { "from": "before", "san": ["Nc5", "Bxg7", "Kxg7", "Re1", "Rg8"] }
+    },
+    {
+      "ply": 29,
+      "en": "15...Nh7? is the decisive mistake. The knight leaves f6, its best defensive square, and 16.Qxh6 brings the queen right up to the king with a crushing attack. The engine's defence was 15...Nc5, centralising the other knight.",
+      "sv": "15...Nh7? är det avgörande misstaget. Springaren lämnar f6, sin bästa försvarsruta, och 16.Qxh6 för fram damen ända till kungen med ett förkrossande angrepp. Motorns försvar var 15...Nc5, som centraliserar den andra springaren.",
+      "line": { "from": "before", "san": ["Nc5", "Rae1", "Nfe4", "Nxe4", "Nxe4"] }
+    },
+    {
+      "ply": 34,
+      "en": "After 16...f5 17.Nxf5! Rxf5 18.Bxf5 the material is roughly level again (Black has two minor pieces for a rook and a pawn), but Black's king has lost its pawn cover, the queen on h6 is close by, and White's bishop and knight join in. Keres's extra material no longer matters.",
+      "sv": "Efter 16...f5 17.Nxf5! Rxf5 18.Bxf5 är materialet ungefär jämnt igen (Svart har två lätta pjäser mot ett torn och en bonde), men den svarta kungen har förlorat sitt bondeskydd, damen på h6 står nära, och Vits löpare och springare hänger på. Keres extra material spelar inte längre någon roll."
+    },
+    {
+      "ply": 40,
+      "en": "21.Nd6 puts the knight on a beautiful square, where it eyes f7 and e8 and cannot be chased by a pawn. White's pieces dominate, and he can now collect pawns at leisure.",
+      "sv": "21.Nd6 ställer springaren på en härlig ruta, där den siktar mot f7 och e8 och inte kan jagas bort av någon bonde. De vita pjäserna dominerar, och Vit kan nu i lugn och ro plocka bönder."
+    },
+    {
+      "ply": 52,
+      "en": "With 24.Bxc6, 25.Qxc4 and 27.Qxc6 White has won back the pawns and now has a rook and three pawns against two minor pieces, a clear material edge, while Black's king is still exposed. The rest is about converting without allowing counterplay.",
+      "sv": "Med 24.Bxc6, 25.Qxc4 och 27.Qxc6 har Vit vunnit tillbaka bönderna och har nu torn och tre bönder mot två lätta pjäser, ett klart materiellt övertag, medan den svarta kungen fortfarande står öppet. Resten handlar om att vinna utan att släppa till motspel."
+    },
+    {
+      "ply": 70,
+      "en": "Keres finally gets counterplay with his queen and knights. 36.Nxg7 is not the most precise, as the engine preferred 36.Qg5, but White's attack is still winning.",
+      "sv": "Keres får till slut motspel med damen och springarna. 36.Nxg7 är inte det mest precisa, motorn föredrog 36.Qg5, men Vits angrepp vinner fortfarande.",
+      "line": { "from": "before", "san": ["Qg5", "Qc3", "Rd3", "Qb2", "Nxg7"] }
+    },
+    {
+      "ply": 73,
+      "en": "37...Nxf4? grabs a pawn but leaves the knight on g7 alive. The engine wanted 37...Kxg7, removing the dangerous knight at once.",
+      "sv": "37...Nxf4? tar en bonde men låter springaren på g7 leva. Motorn ville spela 37...Kxg7 och ta bort den farliga springaren direkt.",
+      "line": { "from": "before", "san": ["Kxg7", "Rc6", "Qh4", "Rc7+", "Kh8"] }
+    },
+    {
+      "ply": 76,
+      "en": "39.Rh6+ and Black resigned. The engine finds a forced mate whatever Black does; for example, after 39...Nh7 White takes on e8 and the two rooks hunt down the black king.",
+      "sv": "39.Rh6+ och Svart gav upp. Motorn hittar en forcerad matt vad Svart än gör; till exempel efter 39...Nh7 slår Vit på e8 och de två tornen jagar ner den svarta kungen.",
+      "line": { "from": "after", "san": ["Nh7", "Nxe8", "Qxf3", "Rxf3", "Kg8", "Rg6+", "Kh8", "Rf7"] }
+    }
+  ],
+  "summary": {
+    "en": "Bronstein let Keres win pawns in the centre and used the time to bring his pieces towards the king, then struck with 14.Bxh6. The engine shows that Black could have kept the balance with better defence, but after 15...Nh7 the king was defenceless. The lessons: pawns grabbed at the cost of development and king safety are often given back with interest, and a knight on f6 is a key defender of a castled king.",
+    "sv": "Bronstein lät Keres vinna bönder i centrum och använde tiden till att föra pjäserna mot kungen, för att sedan slå till med 14.Bxh6. Motorn visar att Svart hade kunnat hålla balansen med bättre försvar, men efter 15...Nh7 var kungen försvarslös. Lärdomarna: bönder som tas på bekostnad av utveckling och kungssäkerhet ges ofta tillbaka med ränta, och en springare på f6 är en nyckelförsvarare för en rockerad kung."
+  }
+}

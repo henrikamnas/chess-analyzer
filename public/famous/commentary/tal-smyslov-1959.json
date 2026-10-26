@@ -1,0 +1,95 @@
+{
+  "id": "tal-smyslov-1959",
+  "intro": {
+    "en": "The 1959 Candidates Tournament in Yugoslavia, which Tal won to earn his match against Botvinnik. Here he faces the former world champion Vasily Smyslov in a quiet-looking Caro-Kann. Watch how Tal gives up a bishop to bring his queen and knights against Black's king, and how one natural-looking knight move opens a file that decides the game.",
+    "sv": "Kandidatturneringen 1959 i Jugoslavien, som Tal vann och därmed fick sin match mot Botvinnik. Här möter han förre världsmästaren Vasilij Smyslov i en lugn Caro-Kann. Se hur Tal ger bort en löpare för att föra damen och springarna mot den svarta kungen, och hur ett naturligt springardrag öppnar en linje som avgör partiet."
+  },
+  "comments": [
+    {
+      "ply": 2,
+      "en": "2.d3 is the Breyer Variation of the Caro-Kann. Instead of taking the centre with 2.d4, White supports e4 with a pawn and keeps a calmer set-up. The engine prefers the main lines with 2.Nc3 or 2.d4, but this avoids a lot of theory.",
+      "sv": "2.d3 är Breyervarianten i Caro-Kann. I stället för att ta centrum med 2.d4 stöder Vit e4 med en bonde och väljer en lugnare uppställning. Motorn föredrar huvudvarianterna med 2.Nc3 eller 2.d4, men det här undviker mycket teori."
+    },
+    {
+      "ply": 8,
+      "en": "5.d4 spends a second move on the d-pawn, but now that Black has committed to ...e5 the centre opens, and White's pieces are better placed to use the open lines.",
+      "sv": "5.d4 lägger ett andra drag på d-bonden, men nu när Svart har spelat ...e5 öppnas centrum, och de vita pjäserna står bättre till för att utnyttja de öppna linjerna."
+    },
+    {
+      "ply": 16,
+      "en": "9.O-O-O shows Tal's intentions: the king goes to the queenside and the rook lands on the open d-file, so the queens stay on and the game stays sharp. The engine preferred 9.Nd6+, trading into a queenless position where White keeps a small edge.",
+      "sv": "9.O-O-O visar Tals avsikter: kungen går till damflygeln och tornet hamnar på den öppna d-linjen, så damerna blir kvar och partiet förblir skarpt. Motorn föredrog 9.Nd6+, som leder till en ställning utan damer där Vit behåller en liten fördel.",
+      "line": { "from": "before", "san": ["Nd6+", "Bxd6", "Qxd6", "Ne4", "Bxd8", "Nxd6", "Bc7", "Ne4"] }
+    },
+    {
+      "ply": 19,
+      "en": "After 10.Nd6 the white knight sits deep in Black's camp. 10...Qa5 eyes both the a2 pawn and the bishop on g5, but it takes the queen far from its own king. The engine liked the quieter 10...h6, asking the bishop where it is going.",
+      "sv": "Efter 10.Nd6 står den vita springaren djupt inne i det svarta lägret. 10...Qa5 siktar både på bonden på a2 och löparen på g5, men det för damen långt bort från den egna kungen. Motorn gillade det lugnare 10...h6, som frågar löparen vart den ska ta vägen.",
+      "line": { "from": "before", "san": ["h6", "Bh4", "Nb6", "Qe5", "Nbd5", "Nxc8", "Qxc8"] }
+    },
+    {
+      "ply": 22,
+      "en": "11...b5 attacked the bishop on c4, and Tal simply leaves it there. 12.Bd2 hits the queen on a5 instead, so Black must spend a move on her before taking the piece. The engine says this sacrifice is sound but only holds the balance; it preferred 12.Bxf7+, giving bishop and knight for rook and pawn.",
+      "sv": "11...b5 anföll löparen på c4, och Tal låter den helt enkelt stå kvar. 12.Bd2 anfaller i stället damen på a5, så Svart måste lägga ett drag på henne innan pjäsen kan tas. Motorn anser att offret är korrekt men bara räcker till balans; den föredrog 12.Bxf7+, som ger löpare och springare för torn och bonde.",
+      "line": { "from": "before", "san": ["Bxf7+", "Rxf7", "Nxf7", "Kxf7", "Kb1", "Qb4", "Bxf6", "gxf6"] }
+    },
+    {
+      "ply": 27,
+      "en": "Black takes the bishop and is a piece up. In return, White's knight on f5 and queen on h4 are already aimed at the black king, while Black's queen is on a6, far from the kingside.",
+      "sv": "Svart tar löparen och har en pjäs mer. I gengäld siktar redan den vita springaren på f5 och damen på h4 mot den svarta kungen, medan den svarta damen står på a6, långt från kungsflygeln."
+    },
+    {
+      "ply": 28,
+      "en": "15.Qg5 threatens mate on g7, since the queen and the knight on f5 both attack that square. 15...Nh5 covers g7, but the knight on h5 is loose. The engine slightly preferred 15...g6, but either defence holds.",
+      "sv": "15.Qg5 hotar matt på g7, eftersom både damen och springaren på f5 anfaller den rutan. 15...Nh5 täcker g7, men springaren på h5 står oskyddad. Motorn föredrog en aning 15...g6, men båda försvaren håller."
+    },
+    {
+      "ply": 32,
+      "en": "16.Nh6+ forced the king into the corner, and 17.Qxh5 wins the knight back. Material is level again, but White's knight on h6 and queen on h5 are close to the black king, and f7 is now a target.",
+      "sv": "16.Nh6+ tvingade kungen in i hörnet, och 17.Qxh5 vinner tillbaka springaren. Materialet är lika igen, men den vita springaren på h6 och damen på h5 står nära den svarta kungen, och f7 är nu ett mål."
+    },
+    {
+      "ply": 33,
+      "en": "17...Qxa2 grabs a pawn and threatens to check on a1, but the queen moves even further from the defence. The engine's choice was 17...Nf6, driving the white queen away from the king first.",
+      "sv": "17...Qxa2 plockar en bonde och hotar schack på a1, men damen hamnar ännu längre från försvaret. Motorns val var 17...Nf6, som först driver bort den vita damen från kungen.",
+      "line": { "from": "before", "san": ["Nf6", "Qe5", "Nd7", "Qd6", "Qxa2", "Bc3", "Bf6", "Bxf6", "gxf6"] }
+    },
+    {
+      "ply": 34,
+      "en": "18.Bc3 brings the bishop onto the long diagonal, aiming at g7. It is the only good move here: according to the engine, both 18.Nxf7+ and 18.Bb4 would simply lose.",
+      "sv": "18.Bc3 för ut löparen på den långa diagonalen, riktad mot g7. Det är det enda bra draget här: enligt motorn hade både 18.Nxf7+ och 18.Bb4 helt enkelt förlorat."
+    },
+    {
+      "ply": 35,
+      "en": "18...Nf6? is the losing mistake. It attacks the queen, but the knight on d7 was blocking the d-file, and now White's rook on d1 looks straight at the bishop on d8 and Black's back rank. 18...Bc7 would have kept the balance.",
+      "sv": "18...Nf6? är det förlorande misstaget. Draget anfaller damen, men springaren på d7 spärrade d-linjen, och nu ser det vita tornet på d1 rakt på löparen på d8 och den svarta baslinjen. 18...Bc7 hade behållit balansen.",
+      "line": { "from": "before", "san": ["Bc7", "Qh4", "f6", "Kd2", "Qa6", "Rhe1", "Ba5", "Re7", "Bxc3+", "bxc3"] }
+    },
+    {
+      "ply": 36,
+      "en": "19.Qxf7! The queen crashes in on f7, next to Black's king in the corner, and threatens to take the rook on f8 with check, which leads to mate. If Black takes the queen, the rook has left the back rank and White's rook on d1 checks on d8 with a mating attack. Smyslov first played 19...Qa1+, but after 20.Kd2 his own queen hangs to the rook on d1.",
+      "sv": "19.Qxf7! Damen slår in på f7, intill den svarta kungen i hörnet, och hotar att slå tornet på f8 med schack, vilket leder till matt. Om Svart tar damen har tornet lämnat baslinjen, och det vita tornet på d1 ger schack på d8 med mattangrepp. Smyslov spelade först 19...Qa1+, men efter 20.Kd2 hänger hans egen dam för tornet på d1.",
+      "line": { "from": "after", "san": ["Qa1+", "Kd2", "Rxf7", "Nxf7+", "Kg8", "Rxa1", "Kxf7"] }
+    },
+    {
+      "ply": 43,
+      "en": "When the dust settles, White has two rooks, a bishop and a knight against a rook, two bishops and a knight: he is an exchange up. Black's pawns on a7, c6 and c4 are weak, and White's rooks will find open files.",
+      "sv": "När röken har lagt sig har Vit två torn, löpare och springare mot torn, två löpare och springare: han har en kvalitet mer. De svarta bönderna på a7, c6 och c4 är svaga, och de vita tornen kommer att hitta öppna linjer."
+    },
+    {
+      "ply": 46,
+      "en": "24.Nxc6 picks off a weak pawn. The engine preferred bringing the rook to e1 first, but White is winning either way.",
+      "sv": "24.Nxc6 plockar en svag bonde. Motorn föredrog att först ställa tornet på e1, men Vit vinner i vilket fall som helst."
+    },
+    {
+      "ply": 50,
+      "en": "26.Bd4 blocks the check and attacks the bishop on b6, while the knight on e4 is still hanging. Even simpler was 26.Kxe4, just taking the knight. White is an exchange and a pawn up, and Smyslov resigned.",
+      "sv": "26.Bd4 tar bort schacken och anfaller löparen på b6, medan springaren på e4 fortfarande hänger. Ännu enklare var 26.Kxe4, som helt enkelt tar springaren. Vit har en kvalitet och en bonde mer, och Smyslov gav upp.",
+      "line": { "from": "before", "san": ["Kxe4", "Bb7", "Bd4", "Bxc6+", "Ke3"] }
+    }
+  ],
+  "summary": {
+    "en": "Tal's bishop sacrifice was not objectively better than the engine's 12.Bxf7+, but it gave Black real problems: with his queen on the far side of the board, Smyslov had to find exact defensive moves. He found several, but 18...Nf6 opened the d-file to his own back rank, and 19.Qxf7 struck at once. The lesson: when your king is under attack, check what every defensive move unblocks, not just what it attacks.",
+    "sv": "Tals löparoffer var inte objektivt bättre än motorns 12.Bxf7+, men det gav Svart verkliga problem: med damen på andra sidan brädet måste Smyslov hitta exakta försvarsdrag. Han hittade flera, men 18...Nf6 öppnade d-linjen mot den egna baslinjen, och 19.Qxf7 slog till direkt. Läxan: när kungen är under angrepp, kontrollera vad varje försvarsdrag öppnar, inte bara vad det anfaller."
+  }
+}

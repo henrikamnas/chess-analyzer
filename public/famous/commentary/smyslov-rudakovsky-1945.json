@@ -1,0 +1,94 @@
+{
+  "id": "smyslov-rudakovsky-1945",
+  "intro": {
+    "en": "Moscow, 1945, the 14th USSR Championship. Vasily Smyslov, who would become world champion twelve years later, meets a Sicilian Scheveningen with a quiet, classical set-up. Watch how he trades off every black piece that guards the d5 square, plants a knight there, and only then opens the kingside with the pawn break f5–f6.",
+    "sv": "Moskva 1945, det 14:e sovjetiska mästerskapet. Vasilij Smyslov, som tolv år senare blev världsmästare, möter en Scheveningen-siciliansk med en lugn, klassisk uppställning. Se hur han byter bort varje svart pjäs som vaktar rutan d5, placerar en springare där och först därefter öppnar kungsflygeln med bondebrytningen f5–f6."
+  },
+  "comments": [
+    {
+      "ply": 10,
+      "en": "5...d6 gives the Scheveningen pawn shape: small pawns on d6 and e6 that hold the centre from behind. 6.Be2 is the classical answer, preparing castling and a later f4. The engine prefers the sharp 6.g4, but Smyslov's calm development is perfectly sound.",
+      "sv": "5...d6 ger Scheveningenstrukturen: bönder på d6 och e6 som håller centrum bakifrån. 6.Be2 är det klassiska svaret, som förbereder rockad och senare f4. Motorn föredrar det skarpa 6.g4, men Smyslovs lugna utveckling är fullt sund."
+    },
+    {
+      "ply": 18,
+      "en": "With 9.f4 and 10.Qe1 White prepares a kingside attack: the queen can swing to g3 or h4, and the f-pawn can advance. This regrouping is a typical plan against the Scheveningen.",
+      "sv": "Med 9.f4 och 10.Qe1 förbereder Vit ett kungsangrepp: damen kan svänga över till g3 eller h4, och f-bonden kan gå fram. Den här omgrupperingen är en typisk plan mot Scheveningen."
+    },
+    {
+      "ply": 21,
+      "en": "11...e5 gains time against the bishop and claims space, a standard freeing idea. The price is a permanent hole on d5: Black can no longer guard that square with a pawn, so it must be held by pieces.",
+      "sv": "11...e5 vinner tid mot löparen och tar utrymme, en vanlig befriande idé. Priset är ett permanent hål på d5: Svart kan inte längre vakta den rutan med en bonde, så den måste hållas med pjäser."
+    },
+    {
+      "ply": 23,
+      "en": "12...Be6 is a small inaccuracy. The bishop is a target here, and 13.f5 hits it with gain of time while also taking space. The engine preferred 12...Bd7, heading for c6 where the bishop helps watch d5.",
+      "sv": "12...Be6 är en liten felaktighet. Löparen blir en måltavla här, och 13.f5 angriper den med tempo samtidigt som Vit tar utrymme. Motorn föredrog 12...Bd7, på väg till c6 där löparen hjälper till att bevaka d5.",
+      "line": { "from": "before", "san": ["Bd7", "Rd1", "Bc6", "Nd5", "Bxd5", "exd5"] }
+    },
+    {
+      "ply": 25,
+      "en": "13...Bc4 offers to trade the light-squared bishops. It looks active, but that bishop was one of the pieces that could defend d5. After the exchange the knight on f6 is the last minor piece guarding the hole, and Smyslov sets out to remove it. Again the engine preferred 13...Bd7.",
+      "sv": "13...Bc4 erbjuder byte av de vitfältiga löparna. Det ser aktivt ut, men just den löparen var en av pjäserna som kunde försvara d5. Efter bytet är springaren på f6 den sista lätta pjäsen som vaktar hålet, och Smyslov går in för att ta bort den. Även här föredrog motorn 13...Bd7."
+    },
+    {
+      "ply": 28,
+      "en": "15.Bg5 is the logical follow-up: the bishop is going to take the knight on f6, the last black piece that controls d5.",
+      "sv": "15.Bg5 är den logiska fortsättningen: löparen ska ta springaren på f6, den sista svarta pjäsen som kontrollerar d5."
+    },
+    {
+      "ply": 29,
+      "en": "15...Rfe8 is too slow. Black should play 15...Rac8 or break out at once with 15...d5 (the engine rates them equally): after the trade on f6 and 17.Nxd5, the queen wins back the pawn on c2, and Black gets rid of the backward d-pawn and the weak square in one go.",
+      "sv": "15...Rfe8 är för långsamt. Svart borde spela 15...Rac8 eller bryta ut direkt med 15...d5 (motorn värderar dem lika): efter bytet på f6 och 17.Nxd5 vinner damen tillbaka bonden på c2, och Svart blir av med både den efterblivna d-bonden och den svaga rutan på en gång.",
+      "line": { "from": "before", "san": ["d5", "Bxf6", "Bxf6", "Nxd5", "Qxc2"] }
+    },
+    {
+      "ply": 32,
+      "en": "17.Nd5 is the picture Smyslov was aiming for: a knight on a central square that no black pawn can attack, against a black bishop hemmed in by its own pawns on d6 and e5. Good knight against bad bishop is a classic positional advantage.",
+      "sv": "17.Nd5 är bilden Smyslov siktade mot: en springare på en central ruta som ingen svart bonde kan angripa, mot en svart löpare som är instängd av sina egna bönder på d6 och e5. Bra springare mot dålig löpare är en klassisk positionell fördel."
+    },
+    {
+      "ply": 33,
+      "en": "17...Bd8? retreats into passivity. The engine wanted 17...Qxc2, grabbing a pawn and keeping the queen active; in a worse position, counterplay is worth more than a tidy defence.",
+      "sv": "17...Bd8? drar sig tillbaka till passivitet. Motorn ville spela 17...Qxc2, ta en bonde och hålla damen aktiv; i en sämre ställning är motspel värt mer än ett prydligt försvar.",
+      "line": { "from": "before", "san": ["Qxc2", "Rf2", "Qc6", "Rc1", "Qa6"] }
+    },
+    {
+      "ply": 41,
+      "en": "A curious phase: the engine says White could have broken through with f5–f6 on both move 19 and move 21, while Black should have stopped it for good with ...f6, both with 20...f6 and here with 21...f6. After 21...Kh8 the pawn break comes at once.",
+      "sv": "En märklig fas: motorn säger att Vit kunde ha brutit igenom med f5–f6 både i drag 19 och drag 21, medan Svart borde ha stoppat det för gott med ...f6, både med 20...f6 och här med 21...f6. Efter 21...Kh8 kommer bondebrytningen direkt.",
+      "line": { "from": "before", "san": ["f6", "Rh3", "Rf8", "Qh4", "h6"] }
+    },
+    {
+      "ply": 42,
+      "en": "22.f6! is the breakthrough. If Black takes, the g-file opens towards his king and f6 becomes a landing square for the knight; if Black ignores it, the pawn on f6 cuts into the king's shelter.",
+      "sv": "22.f6! är genombrottet. Om Svart slår öppnas g-linjen mot kungen och f6 blir en landningsruta för springaren; om Svart låter bli skär bonden på f6 rakt in i kungens skydd."
+    },
+    {
+      "ply": 43,
+      "en": "22...gxf6 opens the king's position. The engine's choice was 22...g5, keeping the kingside closed. Now 23.Qh4 attacks both the pawn on f6 and the one on h7.",
+      "sv": "22...gxf6 öppnar kungsställningen. Motorns val var 22...g5, som håller kungsflygeln stängd. Nu anfaller 23.Qh4 både bonden på f6 och bonden på h7.",
+      "line": { "from": "before", "san": ["g5", "Qg3", "Rg8", "Qg4"] }
+    },
+    {
+      "ply": 46,
+      "en": "24.Nxf6 is the knight's reward for its long stay on d5. It hits the rook on g8 and adds a second attacker on h7, so mate by Qxh7 is threatened. Black covers h7 with 24...Rg7.",
+      "sv": "24.Nxf6 är springarens belöning för den långa vistelsen på d5. Den angriper tornet på g8 och blir en andra angripare mot h7, så matt med Qxh7 hotar. Svart täcker h7 med 24...Rg7."
+    },
+    {
+      "ply": 50,
+      "en": "After 26.Qxf6 the rook on g7 is attacked by both the queen and the rook on g3. Black is completely tied up: for example, 26...b4 would allow 27.Qxg7 mate. White simply brings the last rook to the d-file.",
+      "sv": "Efter 26.Qxf6 är tornet på g7 angripet av både damen och tornet på g3. Svart är helt bunden: till exempel skulle 26...b4 tillåta 27.Qxg7 matt. Vit för helt enkelt in det sista tornet på d-linjen."
+    },
+    {
+      "ply": 54,
+      "en": "28.Rxg7 and Black resigned. After 28...Rxg7 29.Rxd5 the rook hits the queen and threatens to check on d8; in the engine line Black has to give up the queen for that rook.",
+      "sv": "28.Rxg7 och Svart gav upp. Efter 28...Rxg7 29.Rxd5 angriper tornet damen och hotar schack på d8; i motorns variant måste Svart ge damen för det tornet.",
+      "line": { "from": "after", "san": ["Rxg7", "Rxd5", "Qc7", "Rd8+", "Qxd8", "Qxd8+"] }
+    }
+  ],
+  "summary": {
+    "en": "Smyslov won with a simple plan: make a hole on d5, exchange every black piece that could defend it, and put a knight there. Black's freeing break ...d5 came only on move 27, far too late, and once the knight dominated, the f5–f6 break opened the king. Learn the pattern: a pawn on e5 in the Sicilian gives Black space, but the d5 square must then be guarded by pieces.",
+    "sv": "Smyslov vann med en enkel plan: skapa ett hål på d5, byt bort varje svart pjäs som kunde försvara det och ställ en springare där. Svarts befriande brytning ...d5 kom först i drag 27, alldeles för sent, och när springaren väl dominerade öppnade brytningen f5–f6 kungen. Lär dig mönstret: en bonde på e5 i sicilianskt ger Svart utrymme, men rutan d5 måste då vaktas av pjäser."
+  }
+}

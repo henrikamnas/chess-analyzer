@@ -1,0 +1,85 @@
+{
+  "id": "tal-hecht-1962",
+  "intro": {
+    "en": "The 1962 Chess Olympiad in Varna: Tal against Hans-Joachim Hecht in a Queen's Indian. The famous moment is a queen sacrifice that Tal gets back a few moves later, but the game is just as instructive afterwards: a long ending where White is a pawn down for a while yet keeps the more active pieces. Watch how both players miss chances in the endgame before Tal's passed pawns decide.",
+    "sv": "Schackolympiaden i Varna 1962: Tal mot Hans-Joachim Hecht i ett damindiskt försvar. Det berömda ögonblicket är ett damoffer som Tal vinner tillbaka några drag senare, men partiet är lika lärorikt efteråt: ett långt slutspel där Vit en tid har en bonde mindre men behåller de aktivare pjäserna. Se hur båda spelarna missar chanser i slutspelet innan Tals fribönder avgör."
+  },
+  "comments": [
+    {
+      "ply": 5,
+      "en": "3...b6 is the Queen's Indian Defence. Black prepares to fianchetto the queen's bishop on b7, where it controls e4 and d5 from a distance instead of occupying the centre with pawns.",
+      "sv": "3...b6 är damindiskt försvar. Svart förbereder att fianchettera damlöparen på b7, där den kontrollerar e4 och d5 på avstånd i stället för att besätta centrum med bönder."
+    },
+    {
+      "ply": 13,
+      "en": "7...Bxc3+ gives up the bishop pair to saddle White with doubled c-pawns, a typical idea in these Indian openings. Black then sets his centre pawns on dark squares with ...d6 and ...e5. The engine preferred keeping the tension with 7...Qe7.",
+      "sv": "7...Bxc3+ ger bort löparparet för att ge Vit dubbelbönder på c-linjen, en typisk idé i de här indiska öppningarna. Svart ställer sedan centrumbönderna på mörka fält med ...d6 och ...e5. Motorn föredrog att behålla spänningen med 7...Qe7."
+    },
+    {
+      "ply": 24,
+      "en": "13.c5!? is pure Tal: he gives up one of the doubled pawns to open lines while Black's king is still on e8. The engine is not convinced and preferred the check 13.Qa4+ first; after the game move Black is, if anything, slightly better.",
+      "sv": "13.c5!? är typiskt Tal: han ger bort en av dubbelbönderna för att öppna linjer medan den svarta kungen fortfarande står på e8. Motorn är inte övertygad och föredrog schacken 13.Qa4+ först; efter partidraget står Svart snarast en aning bättre.",
+      "line": { "from": "before", "san": ["Qa4+", "c6", "d5", "Ng6", "Bxf6", "Qxf6", "dxc6", "Bc8"] }
+    },
+    {
+      "ply": 29,
+      "en": "15...c6? is Black's first real mistake. Blocking the check with a pawn shuts in the bishop on b7 and leaves the king in the centre. 15...N8d7 kept the position together, and Black would have stayed better with his extra pawn.",
+      "sv": "15...c6? är Svarts första riktiga misstag. Att blockera schacken med en bonde stänger in löparen på b7 och lämnar kungen i centrum. 15...N8d7 höll ihop ställningen, och Svart hade stått kvar bättre med sin merbonde.",
+      "line": { "from": "before", "san": ["N8d7", "O-O", "Qf4", "Bxf6", "gxf6", "Nc4", "Rg8"] }
+    },
+    {
+      "ply": 35,
+      "en": "18.e5 attacked the knight on f6, and Hecht answers with a counterattack: 18...b5 hits both the queen on a4 and the knight on c4 at once. It looks as if White must retreat the queen.",
+      "sv": "18.e5 anföll springaren på f6, och Hecht svarar med ett motangrepp: 18...b5 anfaller både damen på a4 och springaren på c4 på en gång. Det ser ut som om Vit måste dra tillbaka damen."
+    },
+    {
+      "ply": 36,
+      "en": "19.exf6! Tal ignores the queen and takes the knight. After Black takes the queen, the pawn goes to g7 and attacks the rook on h8, and White's bishops and knight get to work against the king on e8. The engine rates 19.Qb3 slightly higher, but the sacrifice is sound.",
+      "sv": "19.exf6! Tal struntar i damen och tar springaren. När Svart har tagit damen går bonden till g7 och anfaller tornet på h8, och de vita löparna och springaren går till verket mot kungen på e8. Motorn värderar 19.Qb3 en aning högre, men offret är korrekt."
+    },
+    {
+      "ply": 40,
+      "en": "21.Bf5! traps the queen. Taking the bishop runs into a knight check on d6 that forks king and queen. Hecht grabs the bishop on h4 instead, and after 22.Bxe6 the material is level again. The engine slightly preferred 21.Bxg6, but the idea is the same.",
+      "sv": "21.Bf5! stänger in damen. Att ta löparen leder till en springarschack på d6 som gafflar kung och dam. Hecht tar i stället löparen på h4, och efter 22.Bxe6 är materialet lika igen. Motorn föredrog en aning 21.Bxg6, men idén är densamma."
+    },
+    {
+      "ply": 50,
+      "en": "After the exchanges Black is a pawn up, but his pawns are poor: doubled on the a-file and doubled on the c-file. White's bishop and rooks are more active than Black's knight, and the engine judges the position as roughly equal.",
+      "sv": "Efter bytena har Svart en bonde mer, men bönderna är dåliga: dubbelbönder på både a-linjen och c-linjen. Den vita löparen och tornen är aktivare än den svarta springaren, och motorn bedömer ställningen som ungefär lika."
+    },
+    {
+      "ply": 53,
+      "en": "27...f6? loosens Black's position. The d- and e-files are open for White's rooks to check the king, and the pawn on f6 becomes a target. 27...Ne3, hitting the rook on f1, was the engine's choice and kept the balance.",
+      "sv": "27...f6? försvagar den svarta ställningen. D- och e-linjerna är öppna för de vita tornen att ge schack mot kungen, och bonden på f6 blir ett mål. 27...Ne3, som anfaller tornet på f1, var motorns val och höll balansen.",
+      "line": { "from": "before", "san": ["Ne3", "Rf2", "Nd5", "Rd2", "Ke7", "Kf2"] }
+    },
+    {
+      "ply": 60,
+      "en": "The next moves are full of missed chances. 30.Kf2 let much of White's advantage slip (the engine wanted to keep checking with 30.Red1+), 30...c4 handed it back, and now 31.g4 lets it slip again. 31.Rb4, going after the loose pawns on c4 and a4, was much stronger.",
+      "sv": "De följande dragen är fulla av missade chanser. 30.Kf2 släppte mycket av den vita fördelen (motorn ville fortsätta schacka med 30.Red1+), 30...c4 gav tillbaka den, och nu släpper 31.g4 den igen. 31.Rb4, som går efter de oskyddade bönderna på c4 och a4, var mycket starkare.",
+      "line": { "from": "before", "san": ["Rb4", "Rd7", "Rxa4", "Kc7", "Bxc4"] }
+    },
+    {
+      "ply": 69,
+      "en": "Material is level and the rook ending is close to a draw, but 35...Rc8? goes after the c3 pawn and lets White's rook take on a4 and then f6. Afterwards White has three pawns against one on the kingside. 35...h5 was the right idea, breaking up White's kingside pawns at once.",
+      "sv": "Materialet är lika och tornslutspelet ligger nära remi, men 35...Rc8? går efter bonden på c3 och låter det vita tornet ta på a4 och sedan på f6. Efteråt har Vit tre bönder mot en på kungsflygeln. 35...h5 var rätt idé, som bryter upp de vita kungsflygelbönderna direkt.",
+      "line": { "from": "before", "san": ["h5", "Rxa4", "hxg4", "Ra6+", "Kc5", "Ree6", "Kc4"] }
+    },
+    {
+      "ply": 79,
+      "en": "40...Rh7? is too passive. White's g-pawn is free to run with 41.g5, with the rook on f6 controlling the squares in front of it. Black needed counterplay on the queenside, and 40...a5 was the engine's choice.",
+      "sv": "40...Rh7? är för passivt. Den vita g-bonden kan nu springa med 41.g5, med tornet på f6 som kontrollerar rutorna framför den. Svart behövde motspel på damflygeln, och 40...a5 var motorns val.",
+      "line": { "from": "before", "san": ["a5", "Kg3", "a4", "Rf4", "a3"] }
+    },
+    {
+      "ply": 96,
+      "en": "49.Rg5 shields the g-pawn from the black rook. If Black trades rooks, both sides queen, but White promotes first and his new queen gives the first check. Hecht resigned.",
+      "sv": "49.Rg5 skyddar g-bonden från det svarta tornet. Om Svart byter torn får båda sidor nya damer, men Vit förvandlar först och hans nya dam ger den första schacken. Hecht gav upp.",
+      "line": { "from": "after", "san": ["Rxg5", "Kxg5", "d3", "g7", "d2", "g8=Q", "d1=Q", "Qb3+"] }
+    }
+  ],
+  "summary": {
+    "en": "Tal's queen sacrifice was a short-term combination: he gave the queen for a knight and won it back with 21.Bf5, because Black's queen had no safe square. The real lessons are in the ending. A pawn down but with active pieces against weak doubled pawns, White kept the pressure on, and after several missed chances on both sides, 35...Rc8 and 40...Rh7 let White's kingside pawns run.",
+    "sv": "Tals damoffer var en kortsiktig kombination: han gav damen för en springare och vann tillbaka den med 21.Bf5, eftersom den svarta damen inte hade någon säker ruta. De verkliga läxorna finns i slutspelet. Med en bonde mindre men aktiva pjäser mot svaga dubbelbönder höll Vit trycket uppe, och efter flera missade chanser på båda sidor lät 35...Rc8 och 40...Rh7 de vita kungsflygelbönderna springa."
+  }
+}

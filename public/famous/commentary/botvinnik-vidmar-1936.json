@@ -1,0 +1,102 @@
+{
+  "id": "botvinnik-vidmar-1936",
+  "intro": {
+    "en": "Nottingham 1936 was one of the strongest tournaments of its era, and the young Mikhail Botvinnik shared first place with Capablanca. In this game against the Yugoslav grandmaster Milan Vidmar, a Queen's Gambit Declined leaves White with an isolated pawn on d4. Watch how Botvinnik uses the open lines and the outpost on e5 that this pawn gives him, and how one careless recapture lets his attack break through on the f-file.",
+    "sv": "Nottingham 1936 var en av sin tids starkaste turneringar, och den unge Michail Botvinnik delade förstaplatsen med Capablanca. I det här partiet mot den jugoslaviske stormästaren Milan Vidmar leder en avböjd damgambit till att Vit får en isolerad bonde på d4. Se hur Botvinnik utnyttjar de öppna linjerna och utpostrutan på e5 som bonden ger honom, och hur en enda slarvig återtagning låter anfallet bryta igenom på f-linjen."
+  },
+  "comments": [
+    {
+      "ply": 8,
+      "en": "5.Bg5 is the classical development in the Queen's Gambit Declined: the bishop puts pressure on the knight on f6, one of the main defenders of d5. The engine slightly prefers 5.Bf4, but both are well-established moves.",
+      "sv": "5.Bg5 är den klassiska utvecklingen i avböjd damgambit: löparen sätter press på springaren på f6, en av de viktigaste försvararna av d5. Motorn föredrar 5.Bf4 en aning, men båda är välkända drag."
+    },
+    {
+      "ply": 18,
+      "en": "After the exchanges on d4 and c4, White's d-pawn has no neighbours on the c- or e-file: it is an isolated queen's pawn. It can become a weakness in an endgame, but in the middlegame it gives White open lines, free piece play and the strong square e5 for a knight. That is exactly what Botvinnik will use.",
+      "sv": "Efter bytena på d4 och c4 har Vits d-bonde inga grannar på c- eller e-linjen: det är en isolerad dambonde. Den kan bli en svaghet i ett slutspel, men i mittspelet ger den Vit öppna linjer, fritt pjässpel och den starka rutan e5 för en springare. Det är precis vad Botvinnik kommer att utnyttja."
+    },
+    {
+      "ply": 24,
+      "en": "13.Ne5 puts the knight on the outpost that the d4 pawn supports. From e5 it eyes f7 and c6 and helps any attack on the kingside, and Black has no d-pawn left to challenge it.",
+      "sv": "13.Ne5 ställer springaren på utpostrutan som d4-bonden stöder. Från e5 siktar den mot f7 och c6 och hjälper till i varje anfall på kungsflygeln, och Svart har ingen d-bonde kvar som kan utmana den."
+    },
+    {
+      "ply": 28,
+      "en": "15.Qh3 swings the queen over to the kingside, where it presses against h7 and, once the e6 pawn moves, the whole diagonal towards c8. White's pieces are pointing at Black's king, while Black's knight has wandered to b4.",
+      "sv": "15.Qh3 svänger över damen till kungsflygeln, där den trycker mot h7 och, när e6-bonden väl flyttar, hela diagonalen mot c8. De vita pjäserna pekar mot den svarta kungen, medan den svarta springaren har vandrat iväg till b4."
+    },
+    {
+      "ply": 31,
+      "en": "16...Nbxd5? is the turning point. The engine's choice was 16...Nfxd5, offering to trade the dark-squared bishops after 17.Bxe7 and taking much of the force out of White's attack. After the game move the knight on f6 is still a target for the bishop on g5, and White can march the f-pawn forward.",
+      "sv": "16...Nbxd5? är vändpunkten. Motorns val var 16...Nfxd5, som erbjuder byte av de svartfältiga löparna efter 17.Bxe7 och tar udden av mycket av det vita anfallet. Efter partidraget är springaren på f6 fortfarande ett mål för löparen på g5, och Vit kan marschera fram f-bonden.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Nfxd5",
+          "Bxe7",
+          "Qxe7",
+          "f4",
+          "Rad8",
+          "f5",
+          "exf5"
+        ]
+      }
+    },
+    {
+      "ply": 32,
+      "en": "17.f4! The engine agrees this is best. The plan is f4-f5 to open the f-file for the rook on f1 and to attack e6 and f7, close to Black's king, where the knight on e5 already hits f7.",
+      "sv": "17.f4! Motorn håller med om att det är bäst. Planen är f4-f5 för att öppna f-linjen åt tornet på f1 och angripa e6 och f7 nära den svarta kungen, där springaren på e5 redan träffar f7."
+    },
+    {
+      "ply": 36,
+      "en": "19.Rxf5 brings the rook into the attack along the newly opened f-file. Black is already in serious trouble: the knight on f6 is attacked by the bishop on g5 and the rook, and the knight on e5 hits f7.",
+      "sv": "19.Rxf5 tar in tornet i anfallet längs den nyöppnade f-linjen. Svart har redan stora problem: springaren på f6 anfalls av löparen på g5 och tornet, och springaren på e5 träffar f7."
+    },
+    {
+      "ply": 37,
+      "en": "19...Qd6? loses at once. On d8 the queen guarded the rook on c8; now only the rook on f8 does, and a knight sacrifice on f7 can lure that rook away. As soon as White's rook leaves f5, the queen on h3 sees all the way to c8. In the engine's refutation White trades and sacrifices on f6 and f7, and the line ends with the queen taking the rook on c8 with check. 19...b6 would have resisted longer.",
+      "sv": "19...Qd6? förlorar direkt. På d8 skyddade damen tornet på c8; nu gör bara tornet på f8 det, och ett springaroffer på f7 kan locka bort det tornet. Så fort det vita tornet lämnar f5 ser damen på h3 hela vägen till c8. I motorns vederläggning byter och offrar Vit på f6 och f7, och varianten slutar med att damen slår tornet på c8 med schack. 19...b6 hade gjort längre motstånd.",
+      "line": {
+        "from": "after",
+        "san": [
+          "Bxf6",
+          "Nxf6",
+          "Nxf7",
+          "Rxf7",
+          "Rxf6",
+          "gxf6",
+          "Qxc8+"
+        ]
+      }
+    },
+    {
+      "ply": 38,
+      "en": "20.Nxf7! The knight gives itself up on f7. The engine slightly prefers to start with 20.Bxf6, but the two moves are about equally strong. After the rook takes, it is pinned against the king along the diagonal from b3 as soon as the knight on d5 disappears.",
+      "sv": "20.Nxf7! Springaren offrar sig på f7. Motorn föredrar en aning att börja med 20.Bxf6, men de två dragen är ungefär lika starka. När tornet tar på f7 blir det bundet mot kungen längs diagonalen från b3 så snart springaren på d5 försvinner."
+    },
+    {
+      "ply": 41,
+      "en": "21...Bxf6 is no better; the engine slightly preferred taking with the knight. Now the knight on d5 has lost its defender on f6, and White wins the piece back with a double attack.",
+      "sv": "21...Bxf6 är inte bättre; motorn föredrog en aning att ta med springaren. Nu har springaren på d5 förlorat sin försvarare på f6, och Vit vinner tillbaka pjäsen med ett dubbelangrepp."
+    },
+    {
+      "ply": 42,
+      "en": "22.Rxd5! The rook takes the knight and attacks the queen on d6, and by leaving f5 it opens the diagonal from h3, so the queen now attacks the rook on c8 as well. 22...Qc6 escapes and guards c8 at the same time, but the hunt goes on.",
+      "sv": "22.Rxd5! Tornet slår springaren och anfaller damen på d6, och genom att lämna f5 öppnar det diagonalen från h3, så att damen nu också anfaller tornet på c8. 22...Qc6 flyr och täcker c8 på samma gång, men jakten fortsätter."
+    },
+    {
+      "ply": 44,
+      "en": "23.Rd6 chases the queen again and also attacks the bishop on f6. With the d5 square empty, the bishop on b3 now pins the rook on f7 to the king.",
+      "sv": "23.Rd6 jagar damen igen och anfaller också löparen på f6. När d5 är tom binder löparen på b3 nu tornet på f7 mot kungen."
+    },
+    {
+      "ply": 46,
+      "en": "24.Rd7 attacks the pinned rook on f7 a second time, and the rook on d7 cannot be taken because the queen on h3 covers it. Black will lose at least the exchange, with a wrecked position, so Vidmar resigned.",
+      "sv": "24.Rd7 anfaller det bundna tornet på f7 en andra gång, och tornet på d7 kan inte slås eftersom damen på h3 täcker det. Svart förlorar minst kvalitet i en förstörd ställning, så Vidmar gav upp."
+    }
+  ],
+  "summary": {
+    "en": "The isolated d-pawn gave Botvinnik the e5 outpost and open lines, and he used them for a direct attack on the king rather than waiting. Black's decisive error was the recapture 16...Nbxd5, which kept the knight on f6 exposed; recapturing with the f6 knight to trade bishops was the way to defend. Once the f-file opened, loose pieces on c8 and d5 and the pin along the b3-g8 diagonal decided the game.",
+    "sv": "Den isolerade d-bonden gav Botvinnik utpostrutan e5 och öppna linjer, och han använde dem till ett direkt anfall mot kungen i stället för att vänta. Svarts avgörande fel var återtagningen 16...Nbxd5, som lämnade springaren på f6 utsatt; att ta tillbaka med f6-springaren och byta löpare var rätt sätt att försvara sig. När f-linjen väl öppnades avgjorde de oskyddade pjäserna på c8 och d5 och bindningen längs diagonalen b3-g8 partiet."
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "id": "botvinnik-tal-1960-g6",
+  "intro": {
+    "en": "Moscow, 1960, game 6 of the World Championship match between the champion Mikhail Botvinnik and the young challenger Mikhail Tal, who went on to win the match. Tal chooses the King's Indian against Botvinnik's fianchetto setup and then throws a knight onto f4, a sacrifice that is famous for its daring. Watch how the engine judges the sacrifice and the wild moves after it, and how the game was really decided by a single oversight.",
+    "sv": "Moskva 1960, parti 6 i VM-matchen mellan den regerande mästaren Michail Botvinnik och den unge utmanaren Michail Tal, som sedan vann matchen. Tal väljer kungsindiskt mot Botvinniks fianchettouppställning och kastar sedan in en springare på f4, ett offer som är berömt för sin djärvhet. Se hur motorn bedömer offret och de vilda dragen efter det, och hur partiet egentligen avgjordes av ett enda förbiseende."
+  },
+  "comments": [
+    {
+      "ply": 14,
+      "en": "This is the King's Indian Defence against White's fianchetto: White's bishop on g2 protects his king and eyes the long diagonal, and Black hits the centre with ...e5. With 8.e4 White builds a broad pawn centre, and Black will look for counterplay with ...c6 and later ...f5.",
+      "sv": "Det här är kungsindiskt försvar mot Vits fianchetto: Vits löpare på g2 skyddar kungen och siktar längs den långa diagonalen, och Svart slår mot centrum med ...e5. Med 8.e4 bygger Vit ett brett bondecentrum, och Svart söker motspel med ...c6 och senare ...f5."
+    },
+    {
+      "ply": 18,
+      "en": "10.d5 closes the centre. After the exchange on d5 the c-file opens, and Black's rooks will use it. The engine preferred 10.c5, hitting the queen on b6 and opening the position.",
+      "sv": "10.d5 stänger centrum. Efter bytet på d5 öppnas c-linjen, och Svarts torn kommer att använda den. Motorn föredrog 10.c5, som angriper damen på b6 och öppnar ställningen.",
+      "line": {
+        "from": "before",
+        "san": [
+          "c5",
+          "dxc5",
+          "dxe5",
+          "Ne8",
+          "e6",
+          "fxe6",
+          "Ng5"
+        ]
+      }
+    },
+    {
+      "ply": 35,
+      "en": "Black has doubled rooks on the c-file, with one rook boldly placed on c4, and the queen on b4 adds to the pressure on c3. It looks active, but the engine thinks Black has overreached: 18...Rac8 lets White get a clear advantage.",
+      "sv": "Svart har dubblerat tornen på c-linjen, med ena tornet djärvt placerat på c4, och damen på b4 ökar trycket mot c3. Det ser aktivt ut, men motorn anser att Svart har gått för långt: 18...Rac8 låter Vit få en klar fördel."
+    },
+    {
+      "ply": 37,
+      "en": "19...f5 is the typical King's Indian break, attacking White's centre from the side and opening the f-file. The engine agrees that it is the right move here.",
+      "sv": "19...f5 är det typiska kungsindiska brytet, som angriper Vits centrum från sidan och öppnar f-linjen. Motorn håller med om att det är rätt drag här."
+    },
+    {
+      "ply": 41,
+      "en": "21...Nf4!? The famous sacrifice. The knight attacks the queen on e2 and the bishop on g2, so White practically has to take it. The engine is not convinced: 21...Nf6 was objectively better, and after the sacrifice White should be clearly better. But the position becomes very hard to play.",
+      "sv": "21...Nf4!? Det berömda offret. Springaren anfaller damen på e2 och löparen på g2, så Vit måste i praktiken slå den. Motorn är inte övertygad: 21...Nf6 var objektivt bättre, och efter offret borde Vit stå klart bättre. Men ställningen blir mycket svår att spela."
+    },
+    {
+      "ply": 43,
+      "en": "After 22...exf4 Black has only a pawn for the knight, but the pawn attacks the bishop on e3, and the bishop on g7 now sees down the long diagonal to the knight on c3, which is attacked three times.",
+      "sv": "Efter 22...exf4 har Svart bara en bonde för springaren, men bonden anfaller löparen på e3, och löparen på g7 ser nu längs den långa diagonalen ner till springaren på c3, som anfalls tre gånger."
+    },
+    {
+      "ply": 44,
+      "en": "23.Bd2? is the first big mistake. The engine's choice was 23.a3, driving the queen away first, and White would have been clearly better. After the game move Black could have equalised with 23...Be5.",
+      "sv": "23.Bd2? är det första stora misstaget. Motorns val var 23.a3, som först driver bort damen, och Vit hade stått klart bättre. Efter partidraget kunde Svart ha utjämnat med 23...Be5.",
+      "line": {
+        "from": "before",
+        "san": [
+          "a3",
+          "Qb3",
+          "Bxa7",
+          "b6",
+          "a4",
+          "Be5"
+        ]
+      }
+    },
+    {
+      "ply": 45,
+      "en": "23...Qxb2 grabs a pawn but gives White the advantage back. The engine preferred 23...Be5, bringing the bishop into play first.",
+      "sv": "23...Qxb2 plockar en bonde men ger Vit fördelen tillbaka. Motorn föredrog 23...Be5, som först tar in löparen i spelet.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Be5",
+          "f3",
+          "Qxb2",
+          "Nd1",
+          "Qxa1",
+          "Rxa1",
+          "Bxa1"
+        ]
+      }
+    },
+    {
+      "ply": 47,
+      "en": "24...f3!? A typical Tal move: the pawn attacks the queen on e2 and the bishop on g2, while Black's own queen is attacked by the rook on b1. Objectively it is a mistake, and the engine preferred 24...Bxb1. White's correct answer was 25.Bxf3, removing the pawn, after which White would be winning.",
+      "sv": "24...f3!? Ett typiskt Tal-drag: bonden anfaller damen på e2 och löparen på g2, samtidigt som Svarts egen dam anfalls av tornet på b1. Objektivt är det ett misstag, och motorn föredrog 24...Bxb1. Vits korrekta svar var 25.Bxf3, som slår bort bonden, varefter Vit skulle stå till vinst.",
+      "line": {
+        "from": "after",
+        "san": [
+          "Bxf3",
+          "Bxb1",
+          "Rxb1",
+          "Qc2",
+          "Be4",
+          "Rxe4",
+          "Nxe4",
+          "Qxb1"
+        ]
+      }
+    },
+    {
+      "ply": 48,
+      "en": "25.Rxb2?? is the decisive blunder. White takes the queen, but the pawn takes White's queen back on e2. On paper White is a pawn up, but the pawn on e2 ties White's pieces down and Black's bishops and rooks are far more active. The engine already judges Black to be winning.",
+      "sv": "25.Rxb2?? är den avgörande blundern. Vit tar damen, men bonden tar tillbaka den vita damen på e2. På papperet har Vit en bonde mer, men bonden på e2 binder de vita pjäserna och Svarts löpare och torn är mycket aktivare. Motorn bedömer redan att Svart står till vinst."
+    },
+    {
+      "ply": 51,
+      "en": "26...Rd4 attacks the bishop on d2 and prepares to bring the dark-squared bishop into the attack with check. White's pieces are badly tangled.",
+      "sv": "26...Rd4 anfaller löparen på d2 och förbereder att föra in den svartfältiga löparen i anfallet med schack. De vita pjäserna är svårt hoptrasslade."
+    },
+    {
+      "ply": 59,
+      "en": "After the dust settles, material is almost level, but Black has the two bishops against bishop and knight and much more active pieces. White's pawns on d5 and a2 are weak, and Black's bishops will soon collect them.",
+      "sv": "När dammet har lagt sig är materialet nästan jämnt, men Svart har löparparet mot löpare och springare och mycket aktivare pjäser. Vits bönder på d5 och a2 är svaga, och de svarta löparna kommer snart att plocka upp dem."
+    },
+    {
+      "ply": 86,
+      "en": "44.Kxg3 The minor pieces are gone, and the rook endgame is easily winning for Black. Black is a pawn up and has a passed c-pawn that the king can escort, while White's king is far from it.",
+      "sv": "44.Kxg3 De lätta pjäserna är borta, och tornslutspelet är lätt vunnet för Svart. Svart har en bonde mer och en fri c-bonde som kungen kan eskortera, medan den vita kungen står långt ifrån den."
+    },
+    {
+      "ply": 91,
+      "en": "46...Kd4 The king steps up next to the c-pawn to support its advance. Black is easily winning, so Botvinnik resigned.",
+      "sv": "46...Kd4 Kungen går fram bredvid c-bonden för att stödja dess framryckning. Svart vinner enkelt, så Botvinnik gav upp."
+    }
+  ],
+  "summary": {
+    "en": "The knight sacrifice on f4 made this game famous, but the engine shows that it was objectively unsound: White kept the advantage after it, and was winning again after 24...f3. What decided the game was 25.Rxb2, which let Black win the queen back with the pawn. The lesson is a practical one: a speculative sacrifice can pay off because the defender must find accurate moves again and again, and one slip can be enough.",
+    "sv": "Springaroffret på f4 gjorde partiet berömt, men motorn visar att det objektivt inte höll: Vit behöll fördelen efter offret och stod till vinst igen efter 24...f3. Det som avgjorde partiet var 25.Rxb2, som lät Svart vinna tillbaka damen med bonden. Läxan är praktisk: ett spekulativt offer kan löna sig eftersom försvararen måste hitta exakta drag gång på gång, och ett enda misstag kan räcka."
+  }
+}

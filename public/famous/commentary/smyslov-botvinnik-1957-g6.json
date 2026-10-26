@@ -1,0 +1,84 @@
+{
+  "id": "smyslov-botvinnik-1957-g6",
+  "intro": {
+    "en": "Moscow, 1957, game 6 of the World Championship match in which Vasily Smyslov took the title from Mikhail Botvinnik. Botvinnik chose the Grünfeld, and the game went into the line that carries Smyslov's own name. Watch how one hasty queen trade hands White a much better endgame, and how Smyslov then turns it into a win by giving back material at the right moment.",
+    "sv": "Moskva 1957, parti 6 i VM-matchen där Vasilij Smyslov tog titeln från Michail Botvinnik. Botvinnik valde Grünfeldindiskt, och partiet gick in i den variant som bär Smyslovs eget namn. Se hur ett förhastat dambyte ger Vit ett klart bättre slutspel, och hur Smyslov sedan vinner det genom att ge tillbaka material i rätt ögonblick."
+  },
+  "comments": [
+    {
+      "ply": 8,
+      "en": "5.Qb3 is the Russian Variation of the Grünfeld. The queen puts pressure on d5, and after 5...dxc4 6.Qxc4 White can play e4 and build a big pawn centre. Black's whole strategy is to attack that centre with pieces later.",
+      "sv": "5.Qb3 är den ryska varianten i Grünfeldindiskt. Damen pressar d5, och efter 5...dxc4 6.Qxc4 kan Vit spela e4 och bygga ett stort bondecentrum. Svarts hela strategi går ut på att angripa det centrumet med pjäser senare."
+    },
+    {
+      "ply": 13,
+      "en": "7...Bg4 is the Smyslov Variation. The idea is to exchange the knight on f3, which defends d4, and then hit the centre with ...Nfd7, ...Nb6 and ...Nc6.",
+      "sv": "7...Bg4 är Smyslovvarianten. Idén är att byta bort springaren på f3, som skyddar d4, och sedan angripa centrum med ...Nfd7, ...Nb6 och ...Nc6."
+    },
+    {
+      "ply": 20,
+      "en": "After 10.h3 Bxf3 11.gxf3 White's pawns are doubled, but he has the two bishops, a strong centre and a half-open g-file. With White castled long, this is a sharp position, and the engine already gives White a clear edge.",
+      "sv": "Efter 10.h3 Bxf3 11.gxf3 har Vit dubbelbönder, men också löparparet, ett starkt centrum och en halvöppen g-linje. Med Vit långrockerad är ställningen skarp, och motorn ger redan Vit en klar fördel."
+    },
+    {
+      "ply": 23,
+      "en": "12...f5 hits the e4 pawn, but it also loosens Black's own king and the e6 square. The engine preferred the solid 12...e6.",
+      "sv": "12...f5 angriper e4-bonden, men försvagar samtidigt den egna kungen och rutan e6. Motorn föredrog det solida 12...e6.",
+      "line": { "from": "before", "san": ["e6", "h4", "h5", "f4", "Nd7"] }
+    },
+    {
+      "ply": 24,
+      "en": "13.Ne2 is calm but not the most testing. The engine wanted 13.f4 or 13.d5, keeping Black's pieces under pressure, while after Smyslov's move Black could have kept the queens on.",
+      "sv": "13.Ne2 är lugnt men inte det skarpaste. Motorn ville spela 13.f4 eller 13.d5 och hålla de svarta pjäserna under tryck, medan Svart efter Smyslovs drag hade kunnat behålla damerna.",
+      "line": { "from": "before", "san": ["f4", "e6", "d5", "exd5", "Nxd5"] }
+    },
+    {
+      "ply": 27,
+      "en": "14...Qxc5+? is the key mistake. After 15.dxc5 White's pawns on c5 and e5 take important squares from Black's knights, and the bishop on g7 bites on the e5 pawn. Keeping the queens with 14...Qd5 would have left Black with active pieces and fighting chances.",
+      "sv": "14...Qxc5+? är det avgörande misstaget. Efter 15.dxc5 tar de vita bönderna på c5 och e5 viktiga rutor från de svarta springarna, och löparen på g7 biter i e5-bonden. Att behålla damerna med 14...Qd5 hade gett Svart aktiva pjäser och goda chanser.",
+      "line": { "from": "before", "san": ["Qd5", "Qa3", "a5", "Nf4", "Qf7"] }
+    },
+    {
+      "ply": 32,
+      "en": "17.Bg2 puts the bishop on the long diagonal, where it aims through the knight on c6 at b7 and a8. The knight on c4 still bothers White, so Botvinnik decides to take on e3.",
+      "sv": "17.Bg2 ställer löparen på den långa diagonalen, där den siktar genom springaren på c6 mot b7 och a8. Springaren på c4 stör fortfarande Vit, så Botvinnik bestämmer sig för att ta på e3."
+    },
+    {
+      "ply": 35,
+      "en": "18...Nb4 lets White grab a pawn with 19.Bxb7, which also hits the rook on a8. The engine's choice was to trade rooks first with 18...Rxd1+.",
+      "sv": "18...Nb4 låter Vit ta en bonde med 19.Bxb7, som dessutom angriper tornet på a8. Motorns val var att först byta torn med 18...Rxd1+.",
+      "line": { "from": "before", "san": ["Rxd1+", "Rxd1", "Nd8", "Rd7", "c6"] }
+    },
+    {
+      "ply": 38,
+      "en": "20.c6 supports the bishop on b7, but it shuts the bishop off from d5 and so gives Black that square. The engine preferred the simple 20.Rxd8+, trading rooks and keeping things under control.",
+      "sv": "20.c6 stöder löparen på b7, men stänger av löparens väg till d5 och ger därmed Svart den rutan. Motorn föredrog det enkla 20.Rxd8+, som byter torn och håller allt under kontroll.",
+      "line": { "from": "before", "san": ["Rxd8+", "Rxd8", "Nd4", "Nd3+", "Kc2", "Nxc5"] }
+    },
+    {
+      "ply": 41,
+      "en": "Twice in a row Black missed the blockade on d5: both 20...Nd5 and 21...Nd5 would have put the knight on a strong central square in front of the white pieces. After 20...Kf7 and 21...e6, White's knight gets to b5 first.",
+      "sv": "Två gånger i rad missade Svart blockaden på d5: både 20...Nd5 och 21...Nd5 hade ställt springaren på en stark central ruta framför de vita pjäserna. Efter 20...Kf7 och 21...e6 hinner den vita springaren först till b5.",
+      "line": { "from": "before", "san": ["Nd5", "Rhe1", "g5", "Nxf5"] }
+    },
+    {
+      "ply": 44,
+      "en": "23.Rxd5! gives up the exchange to remove Black's best piece. After 23...exd5 the knight jumps to c7, the c-pawn and the bishop on b7 become very strong, and White soon wins material back. The engine agrees it is the best move.",
+      "sv": "23.Rxd5! ger kvaliteten för att ta bort Svarts bästa pjäs. Efter 23...exd5 hoppar springaren till c7, c-bonden och löparen på b7 blir mycket starka, och Vit vinner snart tillbaka material. Motorn håller med om att det är bästa draget."
+    },
+    {
+      "ply": 51,
+      "en": "The sequence 24.Nxc7 Rdc8 25.Bxc8 Rxc8 26.Nxd5 Rxc6+ has cleared the board. The exchange has come back, and along the way White has collected Black's pawns on b7, c7 and d5 for his c-pawn: White is now two pawns up in a rook and knight against rook and bishop endgame.",
+      "sv": "Följden 24.Nxc7 Rdc8 25.Bxc8 Rxc8 26.Nxd5 Rxc6+ har rensat brädet. Kvaliteten har kommit tillbaka, och på vägen har Vit plockat Svarts bönder på b7, c7 och d5 mot sin c-bonde: Vit har nu två merbönder i ett slutspel med torn och springare mot torn och löpare."
+    },
+    {
+      "ply": 54,
+      "en": "28.Nc3 and Botvinnik resigned. The knight heads for a good post, the black bishop is still blocked by the e5 pawn, and two extra pawns in an endgame are a matter of technique.",
+      "sv": "28.Nc3 och Botvinnik gav upp. Springaren är på väg mot en bra ruta, den svarta löparen är fortfarande blockerad av e5-bonden, och två merbönder i ett slutspel är en fråga om teknik."
+    }
+  ],
+  "summary": {
+    "en": "The turning point was 14...Qxc5+, which swapped queens into an endgame where White's pawns took the squares Black's knights needed. After that Smyslov kept making the most practical moves, and when Black finally reached d5 with the knight, he simply gave the exchange to eliminate it. The lessons: think twice before trading queens if it improves the opponent's pawns, and in endgames, put knights on blockade squares in time.",
+    "sv": "Vändpunkten var 14...Qxc5+, som bytte damer och gick in i ett slutspel där de vita bönderna tog rutorna som de svarta springarna behövde. Därefter gjorde Smyslov hela tiden de mest praktiska dragen, och när Svart till slut fick in springaren på d5 gav han helt enkelt kvaliteten för att ta bort den. Lärdomarna: tänk efter två gånger innan du byter damer om det förbättrar motståndarens bönder, och ställ i slutspel springarna på blockadrutor i tid."
+  }
+}

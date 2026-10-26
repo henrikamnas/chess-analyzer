@@ -1,0 +1,99 @@
+{
+  "id": "botvinnik-portisch-1968",
+  "intro": {
+    "en": "Monte Carlo 1968: the former world champion Mikhail Botvinnik meets the Hungarian grandmaster Lajos Portisch. The opening is a quiet English, and for fifteen moves nothing much happens. Then one careless knight retreat opens the c-file, and Botvinnik sacrifices both rooks to let his bishops and knight loose against the black king.",
+    "sv": "Monte Carlo 1968: förre världsmästaren Michail Botvinnik möter den ungerske stormästaren Lajos Portisch. Öppningen är en lugn engelsk, och under femton drag händer inte mycket. Sedan öppnar en enda slarvig springarreträtt c-linjen, och Botvinnik offrar båda tornen för att släppa lös sina löpare och sin springare mot den svarta kungen."
+  },
+  "comments": [
+    {
+      "ply": 5,
+      "en": "3...d5 gives the Reversed Dragon: a Sicilian Dragon with the colours reversed. White's bishop will come to g2 on the long diagonal, and since White is effectively playing the Dragon with an extra tempo, he gets a comfortable game.",
+      "sv": "3...d5 ger omvänd drake: en siciliansk drakvariant med ombytta färger. Vits löpare kommer till g2 på den långa diagonalen, och eftersom Vit i praktiken spelar draken med ett extra tempo får han ett bekvämt spel."
+    },
+    {
+      "ply": 22,
+      "en": "After the knight trade on a4 White's queen is active, and the c-file is half-open for White: White has no c-pawn, while Black's pawn on c7 is the only thing in the way. Botvinnik's next moves double the rooks against it.",
+      "sv": "Efter springarbytet på a4 står den vita damen aktivt, och c-linjen är halvöppen för Vit: Vit har ingen c-bonde, medan Svarts bonde på c7 är det enda som står i vägen. Botvinniks nästa drag dubblerar tornen mot den."
+    },
+    {
+      "ply": 28,
+      "en": "15.Rac1 completes the doubling. For now the knight on c6 blocks the c-file and shields c7, so Black is fine. The engine's quiet 15...h6 would have kept the balance.",
+      "sv": "15.Rac1 fullbordar dubbleringen. Än så länge spärrar springaren på c6 c-linjen och skyddar c7, så Svart står bra. Motorns lugna 15...h6 hade hållit balansen."
+    },
+    {
+      "ply": 29,
+      "en": "15...Nb8?? turns a level game into a lost one. The knight leaves c6, so the c7 pawn now faces both rooks with only the queen to defend it, and the diagonal from a4 to the rook on e8 is opened as well. 16.Rxc7 follows at once.",
+      "sv": "15...Nb8?? förvandlar ett jämnt parti till ett förlorat. Springaren lämnar c6, så bonden på c7 står nu mot båda tornen med bara damen som försvarare, och diagonalen från a4 till tornet på e8 öppnas dessutom. 16.Rxc7 följer direkt."
+    },
+    {
+      "ply": 31,
+      "en": "16...Bc6 is a tricky reply: it attacks White's queen and cuts the rook on c7 off from its partner on c1, so the rook hangs to Black's queen. The engine preferred 16...Nc6, but Botvinnik has a strong answer anyway.",
+      "sv": "16...Bc6 är ett listigt svar: det anfaller den vita damen och skär av tornet på c7 från sin partner på c1, så att tornet hänger mot den svarta damen. Motorn föredrog 16...Nc6, men Botvinnik har ändå ett starkt svar."
+    },
+    {
+      "ply": 32,
+      "en": "17.R1xc6! gives up the exchange to remove the bishop, which solves both problems at once: the queen is no longer attacked and the rook on c7 is safe. The engine agrees this is the best move.",
+      "sv": "17.R1xc6! ger kvalitet för att slå bort löparen, vilket löser båda problemen på en gång: damen är inte längre anfallen och tornet på c7 står säkert. Motorn håller med om att det är bästa draget."
+    },
+    {
+      "ply": 34,
+      "en": "18.Rxf7 With two pawns for the exchange, material is level, but White's pieces are far more active and Black's king has lost its f7 pawn. The rook can't be taken: after the king captures, a queen check on the diagonal towards f7 and a knight check from g5 would cost Black the queen.",
+      "sv": "18.Rxf7 Med två bönder för kvaliteten är materialet jämnt, men de vita pjäserna är mycket aktivare och den svarta kungen har förlorat sin f7-bonde. Tornet kan inte slås: om kungen tar följer en damschack på diagonalen mot f7 och en springarschack från g5, och Svart förlorar damen."
+    },
+    {
+      "ply": 38,
+      "en": "20.Qc4+ brings the queen to the diagonal leading to g8 and Black's king, and gains a tempo with the check.",
+      "sv": "20.Qc4+ för damen till diagonalen som leder till g8 och den svarta kungen, och vinner ett tempo med schacken."
+    },
+    {
+      "ply": 39,
+      "en": "The engine's choice was 20...Qe6, offering a queen trade: White would still be winning, but the direct threats against Black's king would disappear. After 20...Kh8 the attack goes on.",
+      "sv": "Motorns val var 20...Qe6, som erbjuder dambyte: Vit skulle fortfarande stå till vinst, men de direkta hoten mot den svarta kungen hade försvunnit. Efter 20...Kh8 fortsätter anfallet.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qe6",
+          "Nxe5",
+          "Qxc4",
+          "Nxc4",
+          "Re7"
+        ]
+      }
+    },
+    {
+      "ply": 41,
+      "en": "21...Qxb7 takes the second rook, and White is now a rook down. But the knight is heading for g6, and Black's queen has gone to b7, far from the king. The engine preferred 21...Qe6, which loses less.",
+      "sv": "21...Qxb7 tar det andra tornet, och Vit ligger nu ett torn under. Men springaren är på väg till g6, och den svarta damen har gått till b7, långt från kungen. Motorn föredrog 21...Qe6, som förlorar mindre."
+    },
+    {
+      "ply": 44,
+      "en": "23.Be4! puts the bishop behind the knight on the diagonal towards h7. Every move of the knight now gives a discovered check from the bishop.",
+      "sv": "23.Be4! ställer löparen bakom springaren på diagonalen mot h7. Varje springardrag ger nu avdragsschack från löparen."
+    },
+    {
+      "ply": 46,
+      "en": "24.Nxe5+ is a discovered check that also wins a pawn. The engine marginally prefers 24.Ne7+, but there is little to choose between them.",
+      "sv": "24.Nxe5+ är ett avdragsschack som också vinner en bonde. Motorn föredrar marginellt 24.Ne7+, men skillnaden är liten."
+    },
+    {
+      "ply": 50,
+      "en": "26.Bxh6+ Both bishops have now crashed into Black's kingside, and the one on h6 is offered. If the king takes, the queen checks from h4 and h7 and then picks up the black queen on b7. Portisch resigned.",
+      "sv": "26.Bxh6+ Båda löparna har nu brakat in i den svarta kungsflygeln, och den på h6 erbjuds. Om kungen slår ger damen schack från h4 och h7 och plockar sedan den svarta damen på b7. Portisch gav upp.",
+      "line": {
+        "from": "after",
+        "san": [
+          "Kxh6",
+          "Qh4+",
+          "Kg7",
+          "Qh7+",
+          "Kf8",
+          "Qxb7"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "en": "For fifteen moves the game was level; Portisch's 15...Nb8 removed the only piece blocking the c-file and lost at once. Botvinnik then gave up material again and again, trading rooks for open lines, until his queen, bishops and knight overwhelmed a king with no defenders. A good lesson: before moving a piece, ask what it was blocking or guarding.",
+    "sv": "Under femton drag var partiet jämnt; Portischs 15...Nb8 tog bort den enda pjäs som spärrade c-linjen och förlorade direkt. Botvinnik gav sedan bort material gång på gång, torn mot öppna linjer, tills hans dam, löpare och springare överväldigade en kung utan försvarare. En bra läxa: innan du flyttar en pjäs, fråga dig vad den spärrade eller skyddade."
+  }
+}

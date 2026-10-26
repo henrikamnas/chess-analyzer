@@ -1,0 +1,139 @@
+{
+  "id": "botvinnik-chekhover-1935",
+  "intro": {
+    "en": "Moscow 1935: Mikhail Botvinnik against the Soviet master Vitaly Chekhover. The game starts as a calm Réti Opening with White's queen's bishop on the long diagonal, but Botvinnik soon plays for an attack with f4 and a knight on e5. Watch the knight sacrifices on g5 and f7, which rip open Black's king position, and the long king hunt that ends with mate on b2.",
+    "sv": "Moskva 1935: Michail Botvinnik mot den sovjetiske mästaren Vitalij Tjechover. Partiet börjar som en lugn Rétiöppning med Vits damlöpare på den långa diagonalen, men Botvinnik spelar snart för anfall med f4 och en springare på e5. Se springaroffren på g5 och f7, som river upp den svarta kungsställningen, och den långa kungsjakten som slutar med matt på b2."
+  },
+  "comments": [
+    {
+      "ply": 6,
+      "en": "With b3 and Bb2, White develops his queen's bishop on the long diagonal, where it aims straight at Black's kingside. This flexible setup belongs to the Réti family. The engine was slightly more fond of 3.d4, but the plan is perfectly sound.",
+      "sv": "Med b3 och Bb2 utvecklar Vit damlöparen på den långa diagonalen, där den siktar rakt mot den svarta kungsflygeln. Den här flexibla uppställningen hör till Rétifamiljen. Motorn gillade 3.d4 en aning mer, men planen är fullt sund."
+    },
+    {
+      "ply": 20,
+      "en": "11.f4 grabs space on the kingside and prepares to put a knight on e5. Together with the bishop on b2, it shows where Botvinnik intends to play: against Black's king.",
+      "sv": "11.f4 tar utrymme på kungsflygeln och förbereder en springare på e5. Tillsammans med löparen på b2 visar det var Botvinnik tänker spela: mot den svarta kungen."
+    },
+    {
+      "ply": 28,
+      "en": "15.Ne5 looks natural, but the engine is critical: it wanted 15.d5, striking in the centre while Black's pieces were still passive. After the game move Black can exchange on d4, and most of White's advantage is gone.",
+      "sv": "15.Ne5 ser naturligt ut, men motorn är kritisk: den ville spela 15.d5, ett slag i centrum medan de svarta pjäserna fortfarande stod passivt. Efter partidraget kan Svart byta på d4, och det mesta av Vits fördel är borta.",
+      "line": {
+        "from": "before",
+        "san": [
+          "d5",
+          "Nf8",
+          "e4",
+          "Qxf4",
+          "Rae1"
+        ]
+      }
+    },
+    {
+      "ply": 38,
+      "en": "Both sides go wrong around here. 19...Ra7 was a slow move, and the engine wanted Botvinnik to punish it with 20.f5, opening the position at once. Instead 20.Nf2 gave Black time, and the engine's recommendation for Black was 20...b5, counterattacking on the queenside.",
+      "sv": "Båda sidor går fel här. 19...Ra7 var ett långsamt drag, och motorn ville att Botvinnik skulle bestraffa det med 20.f5, som öppnar ställningen direkt. I stället gav 20.Nf2 Svart tid, och motorns rekommendation för Svart var 20...b5, ett motanfall på damflygeln.",
+      "line": {
+        "from": "before",
+        "san": [
+          "f5",
+          "exf5",
+          "Ne3",
+          "f4",
+          "Nf5"
+        ]
+      }
+    },
+    {
+      "ply": 41,
+      "en": "21...h6? gives White a target. The knight can now be sacrificed on g5: after the h-pawn takes it and White's f-pawn recaptures, the f-file opens towards Black's king. The engine preferred 21...Ba8.",
+      "sv": "21...h6? ger Vit en måltavla. Springaren kan nu offras på g5: när h-bonden slår och Vits f-bonde tar tillbaka öppnas f-linjen mot den svarta kungen. Motorn föredrog 21...Ba8."
+    },
+    {
+      "ply": 42,
+      "en": "22.Ng5! The engine agrees. After the knight is taken, fxg5 opens the f-file for the rook on f1, and the new pawn on g5 attacks the knight on f6, a key defender of h7.",
+      "sv": "22.Ng5! Motorn håller med. När springaren slås öppnar fxg5 f-linjen för tornet på f1, och den nya bonden på g5 anfaller springaren på f6, en viktig försvarare av h7."
+    },
+    {
+      "ply": 45,
+      "en": "23...N8d7? takes the second knight away from the kingside. The engine's defence was 23...N6h7, getting the knight out of the pawn's attack while still guarding the kingside. Now White can strike on f7.",
+      "sv": "23...N8d7? för bort den andra springaren från kungsflygeln. Motorns försvar var 23...N6h7, som tar springaren ur bondens anfall och ändå skyddar kungsflygeln. Nu kan Vit slå till på f7.",
+      "line": {
+        "from": "before",
+        "san": [
+          "N6h7",
+          "Nxf7",
+          "Nxg5",
+          "Qh5",
+          "Bf3",
+          "Rxf3",
+          "Nxf3+",
+          "Qxf3"
+        ]
+      }
+    },
+    {
+      "ply": 46,
+      "en": "24.Nxf7! A second knight sacrifice, this time on f7, to pull the king forward. The engine slightly prefers 24.Nxd7, but both moves win. Once the king takes, White has given two knights for two pawns, and everything depends on the attack.",
+      "sv": "24.Nxf7! Ett andra springaroffer, nu på f7, för att dra fram kungen. Motorn föredrar en aning 24.Nxd7, men båda dragen vinner. När kungen har slagit har Vit gett två springare för två bönder, och allt hänger på anfallet."
+    },
+    {
+      "ply": 48,
+      "en": "Here the engine disagrees with the story. 25.g6+ looks crushing, but it wanted 25.Qh5+ first, driving the king back to g8. After the game move Black could have defended with 25...Kf8: White would still have been clearly better, but the attack would have lost much of its force.",
+      "sv": "Här håller motorn inte med om berättelsen. 25.g6+ ser förkrossande ut, men den ville spela 25.Qh5+ först, som driver tillbaka kungen till g8. Efter partidraget kunde Svart ha försvarat sig med 25...Kf8: Vit hade fortfarande stått klart bättre, men anfallet hade förlorat mycket av sin kraft.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qh5+",
+          "Kg8",
+          "gxf6",
+          "Nxf6",
+          "Rxf6",
+          "Bxf6",
+          "Rf1"
+        ]
+      }
+    },
+    {
+      "ply": 49,
+      "en": "25...Kg8? walks back into the attack. Now the queen takes on e6 with check, and the white queen and bishop have free access to Black's king.",
+      "sv": "25...Kg8? går tillbaka in i anfallet. Nu slår damen på e6 med schack, och den vita damen och löparen får fritt tillträde till den svarta kungen.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Kf8",
+          "Qxe6",
+          "Ne5",
+          "Rxf6+",
+          "gxf6",
+          "Qh3"
+        ]
+      }
+    },
+    {
+      "ply": 56,
+      "en": "29.Be6+ The bishop forces its way in with check, and after the knight takes it, the queen recaptures with check. White keeps checking and bringing new threats, so Black never gets time to use the extra material.",
+      "sv": "29.Be6+ Löparen tvingar sig in med schack, och när springaren slår tar damen tillbaka med schack. Vit fortsätter att schacka och skapa nya hot, så Svart får aldrig tid att utnyttja sitt extra material."
+    },
+    {
+      "ply": 62,
+      "en": "32.Rxf6 gives up the rook to remove the knight on f6, which guards h7. After the bishop takes, the queen comes in on h7 with check, protected by the pawn on g6. The engine slightly preferred 32.Qe6+, but both win.",
+      "sv": "32.Rxf6 ger bort tornet för att slå bort springaren på f6, som skyddar h7. När löparen slår kommer damen in på h7 med schack, skyddad av bonden på g6. Motorn föredrog en aning 32.Qe6+, men båda vinner."
+    },
+    {
+      "ply": 68,
+      "en": "35.Qh8+ From here the engine sees a forced mate. The black king is driven out of its corner and all the way across the board to the queenside by queen, bishop and pawn checks.",
+      "sv": "35.Qh8+ Härifrån ser motorn en forcerad matt. Den svarta kungen drivs ut ur sitt hörn och hela vägen över brädet till damflygeln av schackar med dam, löpare och bonde."
+    },
+    {
+      "ply": 84,
+      "en": "43.Qb1# The king on b2 is surrounded: the queen covers a1, c1, c2, and through the king b3, and protects the pawn on a2, while the bishop on b4 covers a3 and c3. The queen itself is protected by the rook on e1. 43.Qe2# would also have mated.",
+      "sv": "43.Qb1# Kungen på b2 är omringad: damen täcker a1, c1, c2 och, genom kungen, b3, och skyddar bonden på a2, medan löparen på b4 täcker a3 och c3. Damen själv skyddas av tornet på e1. 43.Qe2# hade också varit matt."
+    }
+  ],
+  "summary": {
+    "en": "Botvinnik aimed everything at the black king: a bishop on the long diagonal, f4 and a knight on e5. The engine shows the attack was not flawless, since 15.d5 and 20.f5 were stronger and 25.g6+ could have been met by 25...Kf8. But Black kept making it easier, first with 21...h6, which invited the knight sacrifice on g5, and later by walking the king back into the attack. Once the king was out in the open, the queen and bishop hunted it all the way to b2.",
+    "sv": "Botvinnik riktade allt mot den svarta kungen: en löpare på den långa diagonalen, f4 och en springare på e5. Motorn visar att anfallet inte var felfritt, eftersom 15.d5 och 20.f5 var starkare och 25.g6+ kunde ha mötts med 25...Kf8. Men Svart gjorde det hela tiden lättare, först med 21...h6, som bjöd in springaroffret på g5, och senare genom att gå tillbaka med kungen in i anfallet. När kungen väl stod öppet jagade damen och löparen den ända till b2."
+  }
+}

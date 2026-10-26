@@ -1,0 +1,85 @@
+{
+  "id": "tal-larsen-1965-g10",
+  "intro": {
+    "en": "Game 10 of the 1965 Candidates semi-final between Mikhail Tal and Bent Larsen. Tal won it and went on to the Candidates final. The game is a Sicilian Scheveningen with castling on opposite sides, and it is famous for Tal's knight sacrifice on d5, a move that the engine today considers unsound. Watch how hard it is to defend in practice, even when the sacrifice should not work.",
+    "sv": "Parti 10 i kandidatsemifinalen 1965 mellan Michail Tal och Bent Larsen. Tal vann partiet och gick vidare till kandidatfinalen. Partiet är en Scheveningen-siciliansk med rockad åt olika håll, och det är berömt för Tals springaroffer på d5, ett drag som motorn i dag bedömer som inkorrekt. Se hur svårt det är att försvara sig i praktiken, även när offret egentligen inte borde fungera."
+  },
+  "comments": [
+    {
+      "ply": 16,
+      "en": "The set-up with Be3, f4, Qf3 and long castling is known as the Tal Variation of the Scheveningen. With the kings on opposite sides, both players will throw their pawns at the enemy king, and speed is everything.",
+      "sv": "Uppställningen med Be3, f4, Qf3 och lång rockad kallas Tals variant i Scheveningen. Med kungarna på olika flyglar kommer båda spelarna att kasta fram bönderna mot den motsatta kungen, och snabbheten är allt."
+    },
+    {
+      "ply": 25,
+      "en": "The race is on: White has started with 11.g4 and will continue g5, while 13...b5 begins Black's attack on the queenside. After the knight trade on d4, White's bishop on d4 points along the long diagonal towards Black's king.",
+      "sv": "Kapplöpningen är i gång: Vit har börjat med 11.g4 och fortsätter med g5, medan 13...b5 inleder Svarts angrepp på damflygeln. Efter springarbytet på d4 siktar den vita löparen på d4 längs den långa diagonalen mot den svarta kungen."
+    },
+    {
+      "ply": 28,
+      "en": "15.Bd3 lines the bishop up towards h7, behind the e4 pawn, but it does nothing against 15...b4, which hits the knight on c3. The engine preferred to keep the pawn storm going with 15.h4.",
+      "sv": "15.Bd3 riktar löparen mot h7, bakom e4-bonden, men gör inget åt 15...b4, som angriper springaren på c3. Motorn föredrog att fortsätta bondestormen med 15.h4.",
+      "line": { "from": "before", "san": ["h4", "b4", "Ne2", "Qc7", "Ng3"] }
+    },
+    {
+      "ply": 30,
+      "en": "16.Nd5!? is the famous sacrifice. Instead of retreating with 16.Ne2, which the engine considers best, Tal offers the knight to open the e-file against the bishop on e7 and to get rid of his own e4 pawn, which was blocking the bishop on d3 from h7. Objectively it is unsound: with accurate defence Black should come out on top.",
+      "sv": "16.Nd5!? är det berömda offret. I stället för att dra tillbaka med 16.Ne2, som motorn anser bäst, offrar Tal springaren för att öppna e-linjen mot löparen på e7 och bli av med sin egen e4-bonde, som stängde vägen för löparen på d3 mot h7. Objektivt är det inkorrekt: med exakt försvar borde Svart klara sig och stå bättre.",
+      "line": { "from": "before", "san": ["Ne2", "e5", "Be3", "exf4", "Nxf4"] }
+    },
+    {
+      "ply": 32,
+      "en": "After 16...exd5 17.exd5 White is a knight down for a pawn, but look at the lines: the bishop on d3 aims at h7, the bishop on d4 at g7, and a rook is coming to the e-file. Black has to find exact moves.",
+      "sv": "Efter 16...exd5 17.exd5 har Vit en springare mindre mot en bonde, men titta på linjerna: löparen på d3 siktar mot h7, löparen på d4 mot g7, och ett torn är på väg till e-linjen. Svart måste hitta exakta drag."
+    },
+    {
+      "ply": 33,
+      "en": "17...f5 blocks the bishop on d3, but it throws away Black's whole advantage. The engine's defence was 17...g6, closing the diagonal towards h7 while keeping the f-pawn at home, after which Black would be clearly better.",
+      "sv": "17...f5 blockerar löparen på d3, men släpper hela Svarts fördel. Motorns försvar var 17...g6, som stänger diagonalen mot h7 och låter f-bonden stå kvar, och därefter hade Svart stått klart bättre.",
+      "line": { "from": "before", "san": ["g6", "Rhe1", "Bd8", "Qh3", "Ne5"] }
+    },
+    {
+      "ply": 34,
+      "en": "18.Rde1 brings the rook to the e-file. The engine slightly preferred the en passant capture 18.gxf6, a reminder that this special rule can matter in real games.",
+      "sv": "18.Rde1 för tornet till e-linjen. Motorn föredrog en aning slaget en passant, 18.gxf6, en påminnelse om att den specialregeln kan spela roll i verkliga partier.",
+      "line": { "from": "before", "san": ["gxf6", "Nxf6", "Rhg1", "Rf7", "Rde1"] }
+    },
+    {
+      "ply": 35,
+      "en": "18...Rf7? is the real losing move. 18...Bd8 would have taken the bishop off the e-file and kept the game level. After the rook move, 19.h4 brings the h-pawn into the attack, and the engine already considers White winning.",
+      "sv": "18...Rf7? är det egentliga förlustdraget. 18...Bd8 hade tagit bort löparen från e-linjen och hållit ställningen jämn. Efter tornflytten för 19.h4 in h-bonden i angreppet, och motorn bedömer redan Vit som vinnande.",
+      "line": { "from": "before", "san": ["Bd8", "Qh5", "Nc5", "Bxg7", "Nxd3+"] }
+    },
+    {
+      "ply": 38,
+      "en": "20.Bxf5 gives up the bishop to remove the f5 pawn, and after 20...Rxf5 21.Rxe7 White wins the bishop back. The engine preferred to keep pushing with 20.h5, but Tal's practical choice still leaves him clearly winning.",
+      "sv": "20.Bxf5 ger löparen för att ta bort f5-bonden, och efter 20...Rxf5 21.Rxe7 vinner Vit tillbaka löparen. Motorn föredrog att fortsätta med 20.h5, men Tals praktiska val vinner fortfarande klart.",
+      "line": { "from": "before", "san": ["h5", "Qf8", "g6", "Rf6", "gxh7+"] }
+    },
+    {
+      "ply": 44,
+      "en": "After 23.fxe5 the dust has settled a little: Tal has won back all the sacrificed material and is now two pawns up, the rook on e7 is in Black's camp, and Black's king is still the more exposed one.",
+      "sv": "Efter 23.fxe5 har dammet lagt sig något: Tal har vunnit tillbaka allt offrat material och har nu två merbönder, tornet på e7 står i det svarta lägret, och den svarta kungen är fortfarande den mer utsatta."
+    },
+    {
+      "ply": 54,
+      "en": "28.Rxe5 centralises the rook. White has two extra pawns, including a passed pawn on d5, and the rest is a matter of keeping the black queen and rook from giving perpetual check.",
+      "sv": "28.Rxe5 centraliserar tornet. Vit har två merbönder, bland dem en fribonde på d5, och resten handlar om att hindra den svarta damen och tornet från att ge evig schack."
+    },
+    {
+      "ply": 66,
+      "en": "34.Bc5! is a typical Tal finish: it lures the queen away from d6, where it guarded e6 and f8. After 34...Qxc5 35.Re8+ Rf8 36.Qe6+ the white queen gets in. The engine's choice was 34.b4, but Tal's move wins just as clearly.",
+      "sv": "34.Bc5! är en typisk Tal-avslutning: den lockar bort damen från d6, där den vaktade e6 och f8. Efter 34...Qxc5 35.Re8+ Rf8 36.Qe6+ kommer den vita damen in. Motorns val var 34.b4, men Tals drag vinner lika klart."
+    },
+    {
+      "ply": 72,
+      "en": "37.Qf7 and Larsen resigned. The rook on f8 is pinned against the king by the rook on e8 and attacked twice, and in the engine's line Black ends up with a rook against a queen.",
+      "sv": "37.Qf7 och Larsen gav upp. Tornet på f8 är bundet mot kungen av tornet på e8 och angripet två gånger, och i motorns variant blir Svart kvar med ett torn mot en dam.",
+      "line": { "from": "after", "san": ["Qxd5+", "Qxd5", "Rxe8", "Qxb7"] }
+    }
+  ],
+  "summary": {
+    "en": "16.Nd5 shows why Tal was so feared: the sacrifice was objectively unsound, but it created problems that were very hard to solve at the board. Larsen had two good defences, 17...g6 and 18...Bd8, and missed both. The lessons: in opposite-side castling positions, open lines matter more than material, and when defending, keep the pawns in front of your king intact rather than pushing them.",
+    "sv": "16.Nd5 visar varför Tal var så fruktad: offret var objektivt inkorrekt, men det skapade problem som var mycket svåra att lösa vid brädet. Larsen hade två bra försvar, 17...g6 och 18...Bd8, och missade båda. Lärdomarna: i ställningar med rockad åt olika håll betyder öppna linjer mer än material, och när du försvarar dig, håll bönderna framför kungen intakta i stället för att flytta fram dem."
+  }
+}

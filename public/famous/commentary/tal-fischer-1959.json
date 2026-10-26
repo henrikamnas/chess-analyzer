@@ -1,0 +1,87 @@
+{
+  "id": "tal-fischer-1959",
+  "intro": {
+    "en": "The 1959 Candidates Tournament in Yugoslavia: Tal against the 16-year-old Bobby Fischer, who lost all four of their games in that event. Fischer chooses his favourite King's Indian, and the game follows the classic pattern of a closed centre, with White attacking on the queenside and Black on the kingside. The middlegame is roughly balanced for a long time; watch how one pawn capture lets a white knight into the game with a deadly fork.",
+    "sv": "Kandidatturneringen 1959 i Jugoslavien: Tal mot den 16-årige Bobby Fischer, som förlorade alla fyra partierna mot Tal i den turneringen. Fischer väljer sitt favoritförsvar, kungsindiskt, och partiet följer det klassiska mönstret med stängt centrum, där Vit anfaller på damflygeln och Svart på kungsflygeln. Mittspelet är länge ungefär i balans; se hur ett enda bondeslag släpper in en vit springare i spelet med en dödlig gaffel."
+  },
+  "comments": [
+    {
+      "ply": 12,
+      "en": "7.d5 is the Petrosian Variation of the King's Indian: White closes the centre and follows up with Bg5. The plans are now clear: White expands on the queenside with b4 and c5, while Black prepares ...f5 to attack on the kingside.",
+      "sv": "7.d5 är Petrosianvarianten i kungsindiskt: Vit stänger centrum och fortsätter med Bg5. Planerna är nu tydliga: Vit expanderar på damflygeln med b4 och c5, medan Svart förbereder ...f5 för att anfalla på kungsflygeln."
+    },
+    {
+      "ply": 17,
+      "en": "After 8.Bg5 h6 9.Bh4 the bishop pins the knight on f6 against the queen. 9...a6 is a little slow; the engine wanted 9...g5 at once, breaking the pin and gaining space on the kingside.",
+      "sv": "Efter 8.Bg5 h6 9.Bh4 binder löparen springaren på f6 mot damen. 9...a6 är lite långsamt; motorn ville spela 9...g5 direkt, som bryter bindningen och vinner utrymme på kungsflygeln.",
+      "line": { "from": "before", "san": ["g5", "Bg3", "Nh5", "O-O", "Nf4"] }
+    },
+    {
+      "ply": 25,
+      "en": "Typical King's Indian play: Fischer brought the knight via h7 to g5 and now strikes with 13...f5. White meanwhile has started his own expansion with 12.b4. Each side attacks where its pawn chain points.",
+      "sv": "Typiskt kungsindiskt spel: Fischer förde springaren via h7 till g5 och slår nu till med 13...f5. Vit har under tiden inlett sin egen expansion med 12.b4. Båda sidor anfaller där deras bondekedja pekar."
+    },
+    {
+      "ply": 30,
+      "en": "16.c5 is White's thematic break, aiming to open the c-file and attack the base of Black's pawn chain on d6. The engine would have played it a move earlier, instead of 15.Rc1.",
+      "sv": "16.c5 är Vits tematiska genombrott, som ska öppna c-linjen och angripa basen i den svarta bondekedjan på d6. Motorn hade spelat det ett drag tidigare, i stället för 15.Rc1."
+    },
+    {
+      "ply": 39,
+      "en": "20...Nf4 plants the knight on a fine square, but it allows White's next move. The engine preferred 20...axb5, clearing the queenside first.",
+      "sv": "20...Nf4 placerar springaren på en fin ruta, men tillåter Vits nästa drag. Motorn föredrog 20...axb5, som först rensar upp på damflygeln.",
+      "line": { "from": "before", "san": ["axb5", "Bxb5", "Bxb5", "Nxb5", "dxc5"] }
+    },
+    {
+      "ply": 40,
+      "en": "21.c6! drives a pawn into Black's position, attacking both the pawn on b7 and the bishop on d7. Fischer answers with 21...Qg5, threatening mate on g2 together with the knight on f4, so White defends with 22.Bf3.",
+      "sv": "21.c6! driver in en bonde i den svarta ställningen och anfaller både bonden på b7 och löparen på d7. Fischer svarar med 21...Qg5, som tillsammans med springaren på f4 hotar matt på g2, så Vit försvarar sig med 22.Bf3."
+    },
+    {
+      "ply": 44,
+      "en": "23.dxc6? lets most of White's advantage slip. The engine wanted 23.h4, hitting the queen on g5 before recapturing. After the game move Black gets 23...Bg4 and can trade off White's bishop.",
+      "sv": "23.dxc6? släpper det mesta av den vita fördelen. Motorn ville spela 23.h4, som anfaller damen på g5 innan Vit tar tillbaka. Efter partidraget får Svart 23...Bg4 och kan byta bort den vita löparen.",
+      "line": { "from": "before", "san": ["h4", "Nh3+", "Kh2", "Qe7", "dxc6"] }
+    },
+    {
+      "ply": 46,
+      "en": "24.Bxg4 trades bishops, and after the recapture Black has fully equalised. The engine preferred 24.Be3, keeping more pieces on the board.",
+      "sv": "24.Bxg4 byter löpare, och efter återtagningen har Svart helt utjämnat. Motorn föredrog 24.Be3, som behåller fler pjäser på brädet."
+    },
+    {
+      "ply": 63,
+      "en": "The position has been level for several moves, but 32...Qg5 is inaccurate. It allows 33.g3, attacking the f4 pawn and opening the g-file near Black's king. The engine wanted 32...Qh5, which keeps the queen eyeing h2.",
+      "sv": "Ställningen har varit jämn i flera drag, men 32...Qg5 är inexakt. Det tillåter 33.g3, som anfaller bonden på f4 och öppnar g-linjen nära den svarta kungen. Motorn ville spela 32...Qh5, som håller damen riktad mot h2."
+    },
+    {
+      "ply": 67,
+      "en": "34...Bxf4?? is the decisive mistake. It wins back the pawn, but the bishop on e5 was the piece that kept the white knight out of d4. Fischer should have kept it there and played 34...Qg4.",
+      "sv": "34...Bxf4?? är det avgörande misstaget. Draget vinner tillbaka bonden, men löparen på e5 var den pjäs som höll den vita springaren borta från d4. Fischer borde ha låtit den stå kvar och spelat 34...Qg4.",
+      "line": { "from": "before", "san": ["Qg4", "h3", "Qh4", "Nxc7", "Rxc7", "fxe5"] }
+    },
+    {
+      "ply": 68,
+      "en": "35.Nd4! threatens the knight check on e6, which would hit the king on g7, the queen on g5, the rook on f8 and the bishop on f4 all at once. Black cannot cover everything.",
+      "sv": "35.Nd4! hotar springarschacken på e6, som skulle träffa kungen på g7, damen på g5, tornet på f8 och löparen på f4 på en gång. Svart kan inte täcka allt."
+    },
+    {
+      "ply": 70,
+      "en": "36.Rxf4 gives up the exchange to set up the fork: after Black takes on f4, 37.Ne6+ attacks the king and both black rooks. The engine preferred the check 36.Ne6+ at once, but this wins as well.",
+      "sv": "36.Rxf4 offrar kvaliteten för att förbereda gaffeln: när Svart har tagit på f4 anfaller 37.Ne6+ kungen och båda de svarta tornen. Motorn föredrog schacken 36.Ne6+ direkt, men även detta vinner."
+    },
+    {
+      "ply": 76,
+      "en": "38.Qd4+ checked along the long diagonal, and Fischer blocked with the rook from f8. Now 39.Nxf4 wins a rook and White is clearly winning, although the engine points out that 39.Rxf4 would even have led to a forced mate.",
+      "sv": "38.Qd4+ gav schack längs den långa diagonalen, och Fischer blockerade med tornet från f8. Nu vinner 39.Nxf4 ett torn och Vit står klart till vinst, även om motorn påpekar att 39.Rxf4 till och med hade lett till forcerad matt."
+    },
+    {
+      "ply": 80,
+      "en": "41.Qd7+ brings the queen in with check along the seventh rank. Blocking with the rook loses to a queen capture on f7 and a knight mate on g6, and if the king goes to g8, a queen check on d8 is best met by blocking with the rook on f8, which opens the diagonal so Black's queen on h4 is lost. Fischer resigned.",
+      "sv": "41.Qd7+ för in damen med schack längs sjunde raden. Att blockera med tornet förlorar på att damen slår på f7 och springaren ger matt på g6, och om kungen går till g8 möts en damschack på d8 bäst genom att blockera med tornet på f8, vilket öppnar diagonalen så att den svarta damen på h4 går förlorad. Fischer gav upp."
+    }
+  ],
+  "summary": {
+    "en": "For most of the game this was a well-played King's Indian with chances for both sides: Tal let an advantage slip with 23.dxc6, and Fischer equalised comfortably. The game turned on one natural recapture, 34...Bxf4, which removed the bishop that guarded d4 and let the white knight in for a fork. The lesson: before capturing, check what the capturing piece was guarding.",
+    "sv": "Under större delen av partiet var det ett välspelat kungsindiskt med chanser för båda sidor: Tal släppte en fördel med 23.dxc6, och Fischer utjämnade bekvämt. Partiet avgjordes av ett enda naturligt återtagande, 34...Bxf4, som tog bort löparen som bevakade d4 och släppte in den vita springaren för en gaffel. Läxan: innan du slår, kontrollera vad den slående pjäsen bevakade."
+  }
+}
