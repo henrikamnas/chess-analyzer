@@ -1,0 +1,76 @@
+{
+  "id": "petrosian-spassky-1966-g10",
+  "intro": {
+    "en": "Moscow 1966, game 10 of the World Championship match: the champion Tigran Petrosian, famous for safety-first play, against the challenger Boris Spassky. The game starts as a quiet King's Indian with a fianchetto, but Black's kingside pawns rush forward and the position opens. Watch the long diagonal and the light squares around Black's king, and how an exchange of queens could have kept Black in the game.",
+    "sv": "Moskva 1966, parti 10 i VM-matchen: världsmästaren Tigran Petrosjan, känd för sitt säkerhetstänkande, mot utmanaren Boris Spasskij. Partiet börjar som en lugn kungsindisk med fianchetto, men Svarts kungsflygelbönder stormar fram och ställningen öppnas. Lägg märke till den långa diagonalen och de vita rutorna runt den svarta kungen, och hur ett dambyte hade kunnat hålla Svart kvar i partiet."
+  },
+  "comments": [
+    {
+      "ply": 15,
+      "en": "8...Na5 is the main line of the Panno Variation of the Fianchetto King's Indian. The knight on the rim looks odd, but it hits c4, and Black plans ...c5 and ...b5 to open lines on the queenside.",
+      "sv": "8...Na5 är huvudvarianten i Pannovarianten i kungsindisk med fianchetto. Springaren på kanten ser konstig ut, men den angriper c4, och Svart planerar ...c5 och ...b5 för att öppna linjer på damflygeln."
+    },
+    {
+      "ply": 23,
+      "en": "12...f5 is the standard King's Indian break. Black wants to gain space and play on the kingside, while the e5 pawn holds the centre.",
+      "sv": "12...f5 är det typiska brytningsdraget i kungsindiskt. Svart vill vinna utrymme och spela på kungsflygeln, medan e5-bonden håller centrum."
+    },
+    {
+      "ply": 34,
+      "en": "After 17...Bxb2 18.Qxb2 the dark-squared bishops are gone. Black has lost the bishop that guarded the squares around his king, and White's queen now sits on the long diagonal aiming at g7 and h8. Remember this: it decides the game.",
+      "sv": "Efter 17...Bxb2 18.Qxb2 är de svartfältiga löparna borta. Svart har förlorat den löpare som vaktade rutorna runt kungen, och Vits dam står nu på den långa diagonalen och siktar mot g7 och h8. Kom ihåg det: det avgör partiet."
+    },
+    {
+      "ply": 37,
+      "en": "19...f4? is a mistake: it opens lines, but near Black's own weakened king. The engine preferred the quiet 19...Ra7, and shows that 20.Rxf4! would now have given White a clear advantage.",
+      "sv": "19...f4? är ett misstag: det öppnar linjer, men nära Svarts egen försvagade kung. Motorn föredrog det lugna 19...Ra7, och visar att 20.Rxf4! nu hade gett Vit en klar fördel.",
+      "line": { "from": "after", "san": ["Rxf4", "Rxf4", "gxf4", "Ng6", "Nf2", "Nxf4", "Nde4"] }
+    },
+    {
+      "ply": 38,
+      "en": "20.gxf4? lets the advantage go. Black could now have answered 20...Rxf4 with an equal game. Even the greatest defenders make mistakes in sharp positions.",
+      "sv": "20.gxf4? släpper fördelen. Svart hade nu kunnat svara 20...Rxf4 med jämnt spel. Även de största försvarsspelarna gör misstag i skarpa ställningar."
+    },
+    {
+      "ply": 41,
+      "en": "21...Bxf1 wins the exchange, but it is a mistake. The engine preferred 21...Rxf4, keeping the balance. After 22.Rxf1 White has only a pawn for the exchange, but Black has given up the light-squared bishop, and the light squares around his king, especially e6, become weak.",
+      "sv": "21...Bxf1 vinner kvaliteten, men det är ett misstag. Motorn föredrog 21...Rxf4, som håller balansen. Efter 22.Rxf1 har Vit bara en bonde för kvaliteten, men Svart har gett upp sin vitfältslöpare, och de vita rutorna runt kungen, särskilt e6, blir svaga."
+    },
+    {
+      "ply": 45,
+      "en": "23...Nxf4?? is the decisive blunder. Black should have played 23...Qf6!, offering the queen trade on the long diagonal. White would still be better, but without queens the danger to Black's king would be gone. Now the queen on b2, the bishop heading for e6 and the knights all go for the bare king.",
+      "sv": "23...Nxf4?? är den avgörande blundern. Svart borde ha spelat 23...Qf6! och erbjudit dambyte på den långa diagonalen. Vit hade fortfarande stått bättre, men utan damer hade faran för den svarta kungen varit borta. Nu går damen på b2, löparen på väg mot e6 och springarna alla mot den blottade kungen.",
+      "line": { "from": "before", "san": ["Qf6", "Be6+", "Kh8", "Qxf6+", "Rxf6"] }
+    },
+    {
+      "ply": 46,
+      "en": "24.Rxf4 is winning, though the engine preferred bringing the knight in first with 24.Ne4. Counting all the trades, White has given two rooks for a bishop and a knight, but material matters less than the attack here.",
+      "sv": "24.Rxf4 vinner, även om motorn föredrog att först föra in springaren med 24.Ne4. Räknar man alla byten har Vit gett två torn för en löpare och en springare, men materialet betyder mindre än angreppet här."
+    },
+    {
+      "ply": 49,
+      "en": "25...Rf7 blocks the check, but now the rook is pinned against the king by the bishop on e6. White's plan is simple: attack the pinned rook again.",
+      "sv": "25...Rf7 blockerar schacken, men nu är tornet bundet mot kungen av löparen på e6. Vits plan är enkel: angrip det bundna tornet en gång till."
+    },
+    {
+      "ply": 52,
+      "en": "27.Nxd6 takes a pawn and attacks the pinned rook on f7 a second time. Only the king defends it, so Black must bring more pieces to help.",
+      "sv": "27.Nxd6 tar en bonde och angriper det bundna tornet på f7 en andra gång. Bara kungen försvarar det, så Svart måste få fler pjäser till hjälp."
+    },
+    {
+      "ply": 56,
+      "en": "29.Bxf7+ sets up the finish. The engine actually preferred 29.Nef5, which wins even more, but Petrosian's way is crystal clear.",
+      "sv": "29.Bxf7+ förbereder avslutningen. Motorn föredrog faktiskt 29.Nef5, som vinner ännu mer, men Petrosjans väg är kristallklar."
+    },
+    {
+      "ply": 58,
+      "en": "30.Qh8+!! is the famous queen sacrifice. Black must take, and 31.Nxf7+ then forks the king and the queen on g5. After 32.Nxg5 White would be a whole piece up in the endgame, so Spassky resigned at once. It is not a mating attack, but a decisive knight fork.",
+      "sv": "30.Qh8+!! är det berömda damoffret. Svart måste slå, och 31.Nxf7+ gafflar sedan kungen och damen på g5. Efter 32.Nxg5 skulle Vit ha en hel pjäs mer i slutspelet, så Spasskij gav upp direkt. Det är inte ett mattangrepp, utan en avgörande springargaffel.",
+      "line": { "from": "after", "san": ["Kxh8", "Nxf7+", "Kg7", "Nxg5"] }
+    }
+  ],
+  "summary": {
+    "en": "This game is a lesson about the long diagonal: once the dark-squared bishops were traded, every square around Black's king was a potential target for White's queen. Both players made mistakes in a sharp middlegame, but the decisive one was 23...Nxf4, when Black could have traded queens and fought on. When your king is exposed, the exchange of queens is often the best defence.",
+    "sv": "Det här partiet är en lektion om den långa diagonalen: när de svartfältiga löparna väl var bytta blev varje ruta runt den svarta kungen ett möjligt mål för Vits dam. Båda spelarna gjorde misstag i ett skarpt mittspel, men det avgörande var 23...Nxf4, när Svart hade kunnat byta damer och kämpa vidare. När den egna kungen är blottad är dambyte ofta det bästa försvaret."
+  }
+}

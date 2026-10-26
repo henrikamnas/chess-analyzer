@@ -1,0 +1,90 @@
+{
+  "id": "larsen-spassky-1970",
+  "intro": {
+    "en": "Belgrade 1970, the USSR against the Rest of the World. Bent Larsen played first board for the World team and opened with his favourite 1.b3 against the reigning world champion Boris Spassky. Watch how quickly Black's lead in development turns into a direct attack once White loosens his kingside with f4, g3 and h3.",
+    "sv": "Belgrad 1970, Sovjetunionen mot resten av världen. Bent Larsen spelade på förstabordet för världslaget och öppnade med sitt favoritdrag 1.b3 mot den regerande världsmästaren Boris Spasskij. Se hur snabbt Svarts försprång i utveckling blir ett direkt angrepp när Vit försvagar sin kungsflygel med f4, g3 och h3."
+  },
+  "comments": [
+    {
+      "ply": 0,
+      "en": "1.b3 is the Nimzo-Larsen Attack. White prepares to put the bishop on b2, where it aims at the centre from a distance. It is a flexible, hypermodern start, but it gives Black a free hand to occupy the centre with pawns.",
+      "sv": "1.b3 är Nimzo-Larsens angrepp. Vit förbereder att ställa löparen på b2, där den siktar mot centrum på avstånd. Det är en flexibel, hypermodern start, men den ger Svart fria händer att ta centrum med bönder."
+    },
+    {
+      "ply": 1,
+      "en": "1...e5 is the most direct answer: Black takes the centre at once. The pawn on e5 blocks the long diagonal that White's bishop wants to use, so the bishop on b2 will bite on granite unless White can challenge e5.",
+      "sv": "1...e5 är det mest direkta svaret: Svart tar centrum direkt. Bonden på e5 blockerar den långa diagonal som Vits löpare vill använda, så löparen på b2 biter i granit om inte Vit kan utmana e5."
+    },
+    {
+      "ply": 11,
+      "en": "After 4...e4 the white knight was driven to d4, and 6.Nxc6 dxc6 has opened the d-file for Black. Black recaptured away from the centre, but in return gets free lines for the queen and rooks and very easy development. The engine slightly preferred 6.Nf5, but the position is still close to equal.",
+      "sv": "Efter 4...e4 drevs den vita springaren till d4, och 6.Nxc6 dxc6 har öppnat d-linjen för Svart. Svart tog tillbaka bort från centrum, men får i gengäld öppna linjer för dam och torn och mycket lätt utveckling. Motorn föredrog 6.Nf5 en aning, men ställningen är fortfarande nära jämn."
+    },
+    {
+      "ply": 17,
+      "en": "9...O-O-O puts Black's king on the queenside and the rook straight onto the open d-file. White's king is still in the centre, while Black's knight, both bishops and queen are already out and a rook is on d8.",
+      "sv": "9...O-O-O ställer Svarts kung på damflygeln och tornet direkt på den öppna d-linjen. Vits kung står fortfarande i centrum, medan Svarts springare, båda löpare och dam redan är ute och ett torn står på d8."
+    },
+    {
+      "ply": 18,
+      "en": "10.f4? is the turning point. White wants to support e4 and gain space, but the move leaves the e3 pawn defended only by the d-pawn and opens the diagonal from h4 to the king on e1. 10...Ng4 jumps in at once, hitting e3 and h2. The engine wanted 10.a3, keeping the kingside intact.",
+      "sv": "10.f4? är vändpunkten. Vit vill stödja e4 och vinna utrymme, men draget lämnar e3-bonden skyddad bara av d-bonden och öppnar diagonalen från h4 mot kungen på e1. 10...Ng4 hoppar in direkt och angriper e3 och h2. Motorn ville spela 10.a3, som håller kungsflygeln intakt.",
+      "line": {
+        "from": "before",
+        "san": ["a3", "Qe6", "Nc3", "Bd6", "b4", "Be5"]
+      }
+    },
+    {
+      "ply": 20,
+      "en": "11.g3 stops ...Qh4+ for the moment, but it creates a new target: the g3 pawn can be attacked by Black's h-pawn. The engine preferred 11.Bc3, though Black is clearly better whatever White plays now.",
+      "sv": "11.g3 stoppar ...Qh4+ för stunden, men skapar ett nytt mål: g3-bonden kan angripas av Svarts h-bonde. Motorn föredrog 11.Bc3, men Svart står klart bättre vad Vit än spelar nu."
+    },
+    {
+      "ply": 21,
+      "en": "11...h5! Spassky simply leaves the knight on g4 and sends the h-pawn forward. If White ever takes the knight with the h-pawn, the h-file opens straight towards the rook on h1 and the white king.",
+      "sv": "11...h5! Spasskij låter helt enkelt springaren stå kvar på g4 och skickar fram h-bonden. Om Vit någon gång tar springaren med h-bonden öppnas h-linjen rakt mot tornet på h1 och den vita kungen."
+    },
+    {
+      "ply": 23,
+      "en": "12...h4! offers the knight. If White takes it, Black's pawn captures on g3 and becomes a passed pawn only two steps from promotion, while the rook on h8 stares down the now open h-file.",
+      "sv": "12...h4! erbjuder springaren. Om Vit tar den slår Svarts bonde på g3 och blir en fribonde bara två steg från förvandling, medan tornet på h8 siktar längs den nu öppna h-linjen."
+    },
+    {
+      "ply": 25,
+      "en": "13...hxg3. Black is a knight down for a pawn, but the pawn on g3 is a monster. It threatens to advance to g2, attacking the rook on h1 and heading for g1, and Black's queen can come to h4 to support it.",
+      "sv": "13...hxg3. Svart har en springare mindre mot en bonde, men bonden på g3 är ett monster. Den hotar att gå till g2, där den angriper tornet på h1 och siktar mot g1, och Svarts dam kan komma till h4 och stödja den."
+    },
+    {
+      "ply": 27,
+      "en": "14...Rh1!! is the famous blow, and the engine agrees it is the best move. The rook is offered only to drag White's rook from g1 to h1. Then ...g2 attacks that rook and the g1 square is free for the pawn to promote.",
+      "sv": "14...Rh1!! är den berömda smällen, och motorn håller med om att det är det bästa draget. Tornet offras bara för att locka bort Vits torn från g1 till h1. Sedan angriper ...g2 det tornet, och g1 är fritt för bonden att förvandlas på."
+    },
+    {
+      "ply": 30,
+      "en": "16.Rf1? loses at once: Black now has a forced mate. White had to play 16.Rg1, though after 16...Qh4+ 17.Kd1 Qh1 Black wins the rook on g1 and is still winning.",
+      "sv": "16.Rf1? förlorar direkt: Svart har nu en forcerad matt. Vit måste spela 16.Rg1, men efter 16...Qh4+ 17.Kd1 Qh1 vinner Svart tornet på g1 och står fortfarande till vinst.",
+      "line": {
+        "from": "before",
+        "san": ["Rg1", "Qh4+", "Kd1", "Qh1", "Qc1", "Qxg1+"]
+      }
+    },
+    {
+      "ply": 31,
+      "en": "16...Qh4+ drives the king to d1, away from the f1 rook. Now the pawn can capture on f1 with check.",
+      "sv": "16...Qh4+ driver kungen till d1, bort från tornet på f1. Nu kan bonden slå på f1 med schack."
+    },
+    {
+      "ply": 33,
+      "en": "17...gxf1=Q+ and Larsen resigned. After 18.Bxf1 the e2 square is empty, so 18...Bxg4+ checks along the diagonal to d1, and 19.Kc1 Qe1+ 20.Qd1 Qxd1# follows. The engine notes that promoting to a rook mates just as quickly.",
+      "sv": "17...gxf1=Q+ och Larsen gav upp. Efter 18.Bxf1 är e2 tom, så 18...Bxg4+ schackar längs diagonalen mot d1, och 19.Kc1 Qe1+ 20.Qd1 Qxd1# följer. Motorn noterar att förvandling till torn mattar lika snabbt.",
+      "line": {
+        "from": "after",
+        "san": ["Bxf1", "Bxg4+", "Kc1", "Qe1+", "Qd1", "Qxd1#"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "Black developed every piece quickly, opened the d-file and castled, while White spent moves on pawns and left his king in the centre. The pawn moves f4, g3 and h3 gave Black targets, and Spassky used the h-pawn as a battering ram. The rook sacrifice 14...Rh1 shows a key attacking idea: deflect the one defender that stops a pawn from promoting.",
+    "sv": "Svart utvecklade alla pjäser snabbt, öppnade d-linjen och gjorde rockad, medan Vit lade drag på bönder och lämnade kungen i centrum. Bondedragen f4, g3 och h3 gav Svart mål, och Spasskij använde h-bonden som murbräcka. Tornoffret 14...Rh1 visar en viktig angreppsidé: locka bort den enda försvarare som hindrar en bonde från att förvandlas."
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "id": "fischer-petrosian-1971-g7",
+  "intro": {
+    "en": "Buenos Aires, 1971, game 7 of the Candidates final between Bobby Fischer and the former World Champion Tigran Petrosian. Fischer won the match and went on to face Spassky in 1972. The queens come off early, and the game turns on small things: an isolated pawn, an active rook and the battle between bishop and knight. Watch how White's rooks reach the seventh rank.",
+    "sv": "Buenos Aires 1971, parti 7 i kandidatfinalen mellan Bobby Fischer och förre världsmästaren Tigran Petrosjan. Fischer vann matchen och mötte sedan Spasskij 1972. Damerna byts tidigt, och partiet avgörs av små saker: en isolerad bonde, ett aktivt torn och kampen mellan löpare och springare. Se hur Vits torn tar sig in på sjunde raden."
+  },
+  "comments": [
+    {
+      "ply": 8,
+      "en": "5.Bd3 is the Modern Variation of the Kan Sicilian. The bishop supports e4, and White keeps the option of c2-c4 to clamp down on d5, the square Black needs to free his game.",
+      "sv": "5.Bd3 är den moderna varianten av Kan-sicilianskan. Löparen stöder e4, och Vit behåller möjligheten c2-c4 för att låsa fast d5, den ruta Svart behöver för att befria spelet."
+    },
+    {
+      "ply": 14,
+      "en": "After 7...d5 Black has a broad pawn centre, and 8.c4 attacks it at once. White wants to break up the centre before Black can complete development.",
+      "sv": "Efter 7...d5 har Svart ett brett bondecentrum, och 8.c4 anfaller det direkt. Vit vill bryta upp centrum innan Svart hinner slutföra utvecklingen."
+    },
+    {
+      "ply": 19,
+      "en": "10...exd5 leaves Black with an isolated pawn on d5: no black pawns remain on the c- or e-files to support it. White also has two queenside pawns against one. The engine preferred 10...Nxd5, recapturing with a piece and avoiding the weakness.",
+      "sv": "10...exd5 lämnar Svart med en isolerad bonde på d5: det finns inga svarta bönder kvar på c- eller e-linjen som kan stödja den. Vit har dessutom två bönder mot en på damflygeln. Motorn föredrog 10...Nxd5, att ta tillbaka med en pjäs och undvika svagheten.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Nxd5",
+          "Nc3",
+          "Bb7",
+          "Qb3",
+          "Qd7"
+        ]
+      }
+    },
+    {
+      "ply": 23,
+      "en": "12...Qd7 allows the queen trade. An isolated pawn has its dynamic side in the middlegame, but in an endgame it is mostly just a weakness. The engine preferred 12...Bd7, blocking the check and keeping the queens on.",
+      "sv": "12...Qd7 tillåter dambytet. En isolerad bonde har sina dynamiska sidor i mittspelet, men i ett slutspel är den mest bara en svaghet. Motorn föredrog 12...Bd7, som blockerar schacken och behåller damerna.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Bd7",
+          "Qd4",
+          "O-O",
+          "Bf4"
+        ]
+      }
+    },
+    {
+      "ply": 29,
+      "en": "15...O-O lets White exchange the dark-squared bishops with 16.Bc5. The engine wanted 15...d4, pushing the isolated pawn forward at once; if White takes it, Black's pieces become active along the d-file.",
+      "sv": "15...O-O låter Vit byta de svartfältiga löparna med 16.Bc5. Motorn ville spela 15...d4 och föra fram den isolerade bonden direkt; om Vit tar den blir Svarts pjäser aktiva längs d-linjen.",
+      "line": {
+        "from": "before",
+        "san": [
+          "d4",
+          "Bd2",
+          "O-O",
+          "a3"
+        ]
+      }
+    },
+    {
+      "ply": 36,
+      "en": "19.Nc5 is an ideal outpost: no black pawn can ever attack the knight there. From c5 it hits a6 and the bishop on e6. Petrosian chose to retreat the bishop with 19...Bc8.",
+      "sv": "19.Nc5 står på en idealisk utpost: ingen svart bonde kan någonsin anfalla springaren där. Från c5 träffar den a6 och löparen på e6, och Petrosjan valde att dra tillbaka löparen med 19...Bc8."
+    },
+    {
+      "ply": 39,
+      "en": "20...Rea7? gives up the e-file. The rook defends a6, but White's rook immediately takes over the open file. The engine's choice was 20...Nd7, challenging the strong knight on c5.",
+      "sv": "20...Rea7? släpper e-linjen. Tornet skyddar a6, men Vits torn tar direkt över den öppna linjen. Motorns val var 20...Nd7, som utmanar den starka springaren på c5.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Nd7",
+          "Nb3",
+          "Ne5",
+          "Bf1",
+          "Nc4"
+        ]
+      }
+    },
+    {
+      "ply": 41,
+      "en": "21.Re5 brought the rook up the e-file to attack d5, and now 21...Bd7 is another inaccuracy. The engine preferred 21...Rc7, with the idea of bringing a rook back to e7 to challenge the e-file.",
+      "sv": "21.Re5 förde fram tornet längs e-linjen och anföll d5, och nu är 21...Bd7 ännu en onoggrannhet. Motorn föredrog 21...Rc7, med idén att föra tillbaka ett torn till e7 och bestrida e-linjen.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Rc7",
+          "Rc1",
+          "Re7",
+          "Rce1",
+          "Rxe5"
+        ]
+      }
+    },
+    {
+      "ply": 42,
+      "en": "22.Nxd7+ is the famous decision: Fischer gives up his beautiful knight for Black's bishop. What remains is bishop against knight with pawns on both wings, where the long-range bishop is usually the better piece, and the d5 pawn is still weak. Interestingly, the engine preferred 22.a4, keeping the knight and gaining more space.",
+      "sv": "22.Nxd7+ är det berömda beslutet: Fischer ger bort sin fina springare mot Svarts löpare. Kvar blir löpare mot springare med bönder på båda flyglarna, där den långräckviddiga löparen oftast är den bättre pjäsen, och bonden på d5 är fortfarande svag. Intressant nog föredrog motorn 22.a4, som behåller springaren och vinner mer utrymme.",
+      "line": {
+        "from": "before",
+        "san": [
+          "a4",
+          "Bc6",
+          "Ree1",
+          "Bb7",
+          "a5"
+        ]
+      }
+    },
+    {
+      "ply": 46,
+      "en": "24.Rc7 puts a rook on the seventh rank, where it attacks pawns from the side and restricts Black's king.",
+      "sv": "24.Rc7 ställer ett torn på sjunde raden, där det anfaller bönderna från sidan och begränsar Svarts kung."
+    },
+    {
+      "ply": 53,
+      "en": "Both sides are imprecise here. 27.f4 was not the engine's choice, and Black could have answered with 27...Nb6, getting his knight active; 27...h4 lets the chance pass.",
+      "sv": "Båda sidor är onoggranna här. 27.f4 var inte motorns val, och Svart kunde ha svarat med 27...Nb6 och aktiverat springaren; 27...h4 låter chansen gå förbi.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Nb6",
+          "f5",
+          "Rf6",
+          "Ke3",
+          "Nc4+"
+        ]
+      }
+    },
+    {
+      "ply": 55,
+      "en": "28...f5? is a serious slip. The pawn no longer protects e6 or g6, and it removes the cover next to Black's king, so White's second rook can later come in on the e-file. The engine's choice was 28...Nb6.",
+      "sv": "28...f5? är ett allvarligt misstag. Bonden skyddar inte längre e6 eller g6, och den tar bort skyddet bredvid Svarts kung, så att Vits andra torn senare kan tränga in längs e-linjen. Motorns val var 28...Nb6."
+    },
+    {
+      "ply": 59,
+      "en": "30...Nb6? is the decisive mistake. It lets White double rooks on the seventh with 31.Ree7. The engine's choice was 30...a5, planning ...Re8 to contest the e-file.",
+      "sv": "30...Nb6? är det avgörande misstaget. Det låter Vit dubblera tornen på sjunde raden med 31.Ree7. Motorns val var 30...a5, med planen ...Re8 för att bestrida e-linjen.",
+      "line": {
+        "from": "before",
+        "san": [
+          "a5",
+          "b5",
+          "Re8",
+          "Rxe8+",
+          "Kxe8"
+        ]
+      }
+    },
+    {
+      "ply": 62,
+      "en": "32.Rf7+ keeps the rooks on the seventh and the initiative alive. The engine shows this is the move that matters: trading a pair of rooks on d7 instead would leave White only slightly better.",
+      "sv": "32.Rf7+ håller kvar tornen på sjunde raden och initiativet vid liv. Motorn visar att det är det här draget som gäller: att i stället byta ett tornpar på d7 skulle bara ge Vit en liten fördel."
+    },
+    {
+      "ply": 64,
+      "en": "33.Rb7 and Petrosian resigned. White's rooks rule the seventh rank, Black's king is stuck on the back rank, and Black's scattered pawns are easy targets.",
+      "sv": "33.Rb7 och Petrosjan gav upp. Vits torn behärskar sjunde raden, Svarts kung sitter fast på baslinjen, och Svarts utspridda bönder är lätta mål."
+    }
+  ],
+  "summary": {
+    "en": "Petrosian accepted an isolated pawn and then agreed to trade queens, which made the pawn a pure weakness. Fischer used the open files, put his rooks on the seventh rank and chose a bishop against a knight with pawns on both wings. The engine found stronger moves than the famous 22.Nxd7+, but the lesson stands: in the endgame, active rooks and a good bishop are worth a lot.",
+    "sv": "Petrosjan accepterade en isolerad bonde och gick sedan med på dambyte, vilket gjorde bonden till en ren svaghet. Fischer utnyttjade de öppna linjerna, placerade tornen på sjunde raden och valde löpare mot springare med bönder på båda flyglarna. Motorn hittade starkare drag än det berömda 22.Nxd7+, men läxan står sig: i slutspelet är aktiva torn och en bra löpare värda mycket."
+  }
+}

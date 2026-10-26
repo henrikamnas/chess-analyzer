@@ -1,0 +1,79 @@
+{
+  "id": "reshevsky-petrosian-1953",
+  "intro": {
+    "en": "Zurich 1953, the Candidates Tournament: Samuel Reshevsky, one of the world's best players, against the young Tigran Petrosian. Reshevsky builds a big centre and slowly squeezes Black on the kingside. Watch how Petrosian answers: not with a counterattack, but by giving up a rook for a bishop to win one perfect square for his knight.",
+    "sv": "Zürich 1953, kandidatturneringen: Samuel Reshevsky, en av världens bästa spelare, mot den unge Tigran Petrosjan. Reshevsky bygger ett stort centrum och pressar långsamt Svart på kungsflygeln. Se hur Petrosjan svarar: inte med ett motangrepp, utan genom att ge ett torn mot en löpare för att vinna en perfekt ruta åt sin springare."
+  },
+  "comments": [
+    {
+      "ply": 15,
+      "en": "8...Bxc3 is the typical Nimzo-Indian trade: Black gives up the bishop pair to leave White with doubled c-pawns. The plan is to keep the position closed, where knights are as good as bishops, and later attack the weak c-pawns.",
+      "sv": "8...Bxc3 är det typiska bytet i nimzoindiskt: Svart ger upp löparparet för att ge Vit dubbelbönder på c-linjen. Planen är att hålla ställningen stängd, där springare är lika bra som löpare, och senare angripa de svaga c-bönderna."
+    },
+    {
+      "ply": 21,
+      "en": "11...c4 closes the queenside. The bishop on b2 is now shut in behind its own pawns on c3 and d4, and the c3 pawn is fixed as a target. The price is that White's d4 pawn is no longer under pressure, so White is free to prepare e3-e4 in the centre. The engine preferred 11.Ne5 to 11.Bb2, which allowed this.",
+      "sv": "11...c4 stänger damflygeln. Löparen på b2 är nu instängd bakom sina egna bönder på c3 och d4, och c3-bonden är fastlåst som ett mål. Priset är att Vits d4-bonde inte längre är under tryck, så Vit kan i lugn och ro förbereda e3-e4 i centrum. Motorn föredrog 11.Ne5 framför 11.Bb2, som tillät detta."
+    },
+    {
+      "ply": 32,
+      "en": "17.e4 is the central break White has been preparing with 16.f3. If Black takes on e4 and White recaptures with the f-pawn, the half-open f-file becomes a route for the rook on f1, and White's pawns on d4 and e4 control the centre.",
+      "sv": "17.e4 är det brytningsdrag i centrum som Vit har förberett med 16.f3. Om Svart tar på e4 och Vit tar tillbaka med f-bonden blir den halvöppna f-linjen en väg för tornet på f1, och Vits bönder på d4 och e4 behärskar centrum."
+    },
+    {
+      "ply": 37,
+      "en": "19...Rfe8 is the first real inaccuracy: it is natural, but too slow. The engine wanted 19...Ne5!, heading for the hole on d3. The knight cannot be taken, because dxe5 would open the d-file and leave White's queen on d2 hanging to the queen on d7.",
+      "sv": "19...Rfe8 är den första verkliga felaktigheten: naturligt, men för långsamt. Motorn ville spela 19...Ne5!, på väg mot hålet på d3. Springaren kan inte slås, eftersom dxe5 skulle öppna d-linjen så att Vits dam på d2 hänger för damen på d7.",
+      "line": { "from": "before", "san": ["Ne5", "Bc1", "Rad8", "Qe2", "Nd3"] }
+    },
+    {
+      "ply": 44,
+      "en": "23.e5 gains space and takes the f6 and d6 squares from Black. White's queen on f4, the bishop on g4 and the pawn on e5 all point at the kingside, while Black's pieces are passive. White is clearly better.",
+      "sv": "23.e5 vinner utrymme och tar rutorna f6 och d6 från Svart. Vits dam på f4, löparen på g4 och bonden på e5 pekar alla mot kungsflygeln, medan de svarta pjäserna är passiva. Vit står klart bättre."
+    },
+    {
+      "ply": 45,
+      "en": "23...a5 tries for play on the queenside, but it is too slow. The engine preferred 23...Bd3, putting the bishop on a square protected by the c4 pawn, where it attacks the rook on f1.",
+      "sv": "23...a5 försöker skapa spel på damflygeln, men det är för långsamt. Motorn föredrog 23...Bd3, där löparen står skyddad av c4-bonden och anfaller tornet på f1."
+    },
+    {
+      "ply": 48,
+      "en": "25.Rfe1 doubles the rooks behind the e5 pawn, but it takes the rook off the f-file. The engine preferred 25.Bf3, keeping the pressure. Black's knight on c6 is doing very little, so Black must find a way to improve it.",
+      "sv": "25.Rfe1 dubblerar tornen bakom e5-bonden, men flyttar tornet från f-linjen. Motorn föredrog 25.Bf3, som behåller trycket. Svarts springare på c6 gör dock mycket lite, så Svart måste hitta ett sätt att förbättra den."
+    },
+    {
+      "ply": 49,
+      "en": "25...Re6!! is the famous positional exchange sacrifice, and the engine agrees it is Black's best move. Petrosian offers the rook to White's bishop. If White takes, Black can recapture with the f-pawn, the pawn on e6 guards d5, and the knight can go e7-d5, a square where no white pawn can attack it. White would also lose the light-squared bishop, his best attacking piece.",
+      "sv": "25...Re6!! är det berömda positionella kvalitetsoffret, och motorn håller med om att det är Svarts bästa drag. Petrosjan erbjuder tornet åt Vits löpare. Om Vit slår kan Svart ta tillbaka med f-bonden, bonden på e6 skyddar d5, och springaren kan gå e7-d5, en ruta där ingen vit bonde kan anfalla den. Vit skulle dessutom förlora sin vitfältslöpare, sin bästa anfallspjäs."
+    },
+    {
+      "ply": 53,
+      "en": "After 27.Bxe6 fxe6 White is the exchange up, a rook against a bishop. But the e5 pawn is now blocked by the pawn on e6, the bishop on b2 is still shut in by the pawns on c3 and d4, and Black's light squares are now very solid.",
+      "sv": "Efter 27.Bxe6 fxe6 har Vit vunnit kvaliteten, ett torn mot en löpare. Men e5-bonden är nu blockerad av bonden på e6, löparen på b2 är fortfarande instängd av bönderna på c3 och d4, och Svarts vita rutor är nu mycket solida."
+    },
+    {
+      "ply": 55,
+      "en": "28...Nd5 completes the plan. The knight is a perfect blockader: it stops the d-pawn, covers e3, c3 and b4, and nothing in White's army can easily drive it away. The engine now judges the position as level.",
+      "sv": "28...Nd5 fullbordar planen. Springaren är en perfekt blockadpjäs: den stoppar d-bonden, täcker e3, c3 och b4, och ingenting i Vits armé kan lätt driva bort den. Motorn bedömer nu ställningen som jämn."
+    },
+    {
+      "ply": 60,
+      "en": "After 29...Bd3 30.Rxd3 cxd3 31.Qxd3 White has given the exchange back and won a pawn. White is a pawn up, but the knight on d5 still dominates and Black's queenside pawns can now advance.",
+      "sv": "Efter 29...Bd3 30.Rxd3 cxd3 31.Qxd3 har Vit gett tillbaka kvaliteten och vunnit en bonde. Vit har en bonde mer, men springaren på d5 dominerar fortfarande och Svarts damflygelbönder kan nu avancera."
+    },
+    {
+      "ply": 64,
+      "en": "After the exchanges on b4 both sides have a passed pawn: White's on the a-file and Black's on the b-file. Each side must race its own pawn forward while watching the other.",
+      "sv": "Efter bytena på b4 har båda sidor en fribonde: Vit på a-linjen och Svart på b-linjen. Båda måste driva fram sin egen bonde samtidigt som de håller koll på motståndarens."
+    },
+    {
+      "ply": 80,
+      "en": "The pawns on a6 and b2 balance each other, and the engine sees the position as equal. The game was drawn here.",
+      "sv": "Bönderna på a6 och b2 väger upp varandra, och motorn ser ställningen som jämn. Partiet slutade remi här."
+    }
+  ],
+  "summary": {
+    "en": "Petrosian's exchange sacrifice teaches that material is not everything: a knight on an unassailable central square can be worth more than a rook with no open lines. It also shows how to defend against a slow squeeze: change the character of the position instead of waiting. Reshevsky had the better position for a long time. 25.Rfe1 gave Black the chance for 25...Re6, and after 26.a4 and 28.Qf1 the rest of White's advantage was gone.",
+    "sv": "Petrosjans kvalitetsoffer lär oss att material inte är allt: en springare på en ruta i centrum som inte kan angripas kan vara värd mer än ett torn utan öppna linjer. Det visar också hur man försvarar sig mot långsamt tryck: ändra ställningens karaktär i stället för att vänta. Reshevsky stod bättre länge. 25.Rfe1 gav Svart chansen till 25...Re6, och efter 26.a4 och 28.Qf1 var resten av Vits fördel borta."
+  }
+}

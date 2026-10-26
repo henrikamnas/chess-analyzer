@@ -1,0 +1,89 @@
+{
+  "id": "fischer-benko-1963",
+  "intro": {
+    "en": "New York, US Championship 1963/64, the event Fischer won with a perfect eleven wins out of eleven. Pal Benko answers 1.e4 with a Pirc setup, and Fischer replies with the aggressive Austrian Attack. Watch the white queen walk over to h5, and how one quiet queen move by Black allows a rook to land on f6 with decisive effect.",
+    "sv": "New York, USA-mästerskapet 1963/64, turneringen som Fischer vann med full pott: elva vinster på elva partier. Pal Benko möter 1.e4 med en Pircuppställning, och Fischer svarar med det aggressiva österrikiska angreppet. Se hur den vita damen vandrar över till h5, och hur ett enda lugnt damdrag av Svart låter ett torn landa på f6 med avgörande verkan."
+  },
+  "comments": [
+    {
+      "ply": 6,
+      "en": "4.f4 is the Austrian Attack against the Pirc. White sets up three pawns side by side on d4, e4 and f4, takes a lot of space and hopes to push on with e5 or f5. Black's fianchettoed bishop waits for a chance to hit back at the centre.",
+      "sv": "4.f4 är det österrikiska angreppet mot Pirc. Vit ställer upp tre bönder bredvid varandra på d4, e4 och f4, tar mycket utrymme och hoppas kunna gå vidare med e5 eller f5. Svarts fianchettolöpare väntar på ett tillfälle att slå tillbaka mot centrum."
+    },
+    {
+      "ply": 11,
+      "en": "6...Bg4 leads to giving up the bishop for the knight on f3, which hands White the bishop pair and brings the white queen to f3 for free. The engine preferred 6...Nc6, developing and keeping the bishop.",
+      "sv": "6...Bg4 leder till att löparen byts mot springaren på f3, vilket ger Vit löparparet och tar fram den vita damen till f3 gratis. Motorn föredrog 6...Nc6, som utvecklar och behåller löparen.",
+      "line": {
+        "from": "before",
+        "san": ["Nc6", "h3", "Nb4", "Be2", "c5", "d5"]
+      }
+    },
+    {
+      "ply": 20,
+      "en": "11.f5 gains more space on the kingside and keeps Black's pieces cramped. The pawn is now attacked, and Black has to decide whether to take it.",
+      "sv": "11.f5 vinner mer utrymme på kungsflygeln och håller Svarts pjäser trångbodda. Bonden är nu angripen, och Svart måste bestämma sig för om han ska ta den."
+    },
+    {
+      "ply": 21,
+      "en": "11...gxf5? is the first real mistake. The g-pawn was part of the shelter in front of Black's king; after White recaptures, the f-file is half-open for White's rooks and the queen stands actively on f5. The engine's choice was 11...Nd4, putting the knight on a strong central square instead.",
+      "sv": "11...gxf5? är det första riktiga misstaget. g-bonden var en del av skyddet framför den svarta kungen; när Vit tar tillbaka är f-linjen halvöppen för Vits torn och damen står aktivt på f5. Motorns val var 11...Nd4, som i stället ställer springaren på en stark centralruta.",
+      "line": {
+        "from": "before",
+        "san": ["Nd4", "Qf2", "b5", "g4", "c5"]
+      }
+    },
+    {
+      "ply": 26,
+      "en": "14.O-O puts the king's rook on the half-open f-file. The engine liked castling queenside a little more, but the rook on f1 is the piece that will decide the game.",
+      "sv": "14.O-O ställer kungstornet på den halvöppna f-linjen. Motorn tyckte lite bättre om lång rockad, men tornet på f1 är den pjäs som kommer att avgöra partiet."
+    },
+    {
+      "ply": 32,
+      "en": "The white queen has travelled f2, g3, g4 and h5 and now eyes h7. That pawn is defended only by the king. White's bishop on d3 also points at h7, but for now its diagonal is blocked by White's own pawn on e4.",
+      "sv": "Den vita damen har vandrat f2, g3, g4 och h5 och siktar nu på h7. Den bonden skyddas bara av kungen. Vits löpare på d3 pekar också mot h7, men än så länge är diagonalen blockerad av Vits egen bonde på e4."
+    },
+    {
+      "ply": 33,
+      "en": "17...Qe8?? is the losing move. On d8 the queen covered f6 together with the bishop on g7; now only the bishop watches that square, and Fischer finds a way to use it at once. The engine's choice was 17...Ne6, after which White is better but nothing is decided.",
+      "sv": "17...Qe8?? är förlustdraget. På d8 täckte damen f6 tillsammans med löparen på g7; nu bevakar bara löparen den rutan, och Fischer hittar direkt ett sätt att utnyttja det. Motorns val var 17...Ne6, och efter det står Vit bättre men ingenting är avgjort.",
+      "line": {
+        "from": "before",
+        "san": ["Ne6", "Rad1", "Qe7", "Rf3", "Bf6"]
+      }
+    },
+    {
+      "ply": 34,
+      "en": "18.Bxd4 removes the strong knight. Black recaptures with the e-pawn, and that matters: the e5 square is now empty, so White's e4 pawn can advance and open the bishop's diagonal towards h7.",
+      "sv": "18.Bxd4 slår bort den starka springaren. Svart tar tillbaka med e-bonden, och det spelar roll: rutan e5 är nu tom, så Vits bonde på e4 kan gå fram och öppna löparens diagonal mot h7."
+    },
+    {
+      "ply": 36,
+      "en": "19.Rf6!! The rook goes to f6, where it blocks the bishop on g7 and attacks the knight on d6. If Black takes it with the bishop, e5 opens the d3 bishop's diagonal and the attack on h7 leads to mate. The engine confirms this is the only strong move: the direct 19.e5 lets Black shut the diagonal with ...f5.",
+      "sv": "19.Rf6!! Tornet går till f6, där det spärrar löparen på g7 och anfaller springaren på d6. Om Svart tar det med löparen öppnar e5 diagonalen för löparen på d3, och angreppet mot h7 leder till matt. Motorn bekräftar att det är det enda starka draget: det direkta 19.e5 låter Svart stänga diagonalen med ...f5.",
+      "line": {
+        "from": "before",
+        "san": ["e5", "f5", "Qxe8", "Nxe8"]
+      }
+    },
+    {
+      "ply": 38,
+      "en": "20.e5 opens the diagonal from d3 to h7 and attacks the knight on d6. The threat is Qxh7, mate, since the bishop on d3 now protects the queen there.",
+      "sv": "20.e5 öppnar diagonalen från d3 till h7 och anfaller springaren på d6. Hotet är Qxh7 matt, eftersom löparen på d3 nu skyddar damen där."
+    },
+    {
+      "ply": 39,
+      "en": "20...h6 is the engine's choice and stops the immediate mate. The other tries it lists, 20...Bh6 and 20...Ne4, both lose to mate in three. Black is still completely lost: the knight on d6 is attacked twice and his kingside is wide open.",
+      "sv": "20...h6 är motorns val och stoppar den omedelbara matten. De andra försök den visar, 20...Bh6 och 20...Ne4, förlorar båda på matt i tre drag. Svart är ändå helt förlorad: springaren på d6 är angripen två gånger och kungsflygeln är vidöppen."
+    },
+    {
+      "ply": 40,
+      "en": "21.Ne2 brings the last piece towards the attack and hits the pawn on d4. The engine preferred 21.Ne4, but it hardly matters. Material is level, yet Black's pieces cannot defend both the knight and the king, and Benko resigned.",
+      "sv": "21.Ne2 för fram den sista pjäsen mot angreppet och anfaller bonden på d4. Motorn föredrog 21.Ne4, men det spelar knappast någon roll. Materialet är lika, men Svarts pjäser kan inte försvara både springaren och kungen, och Benko gav upp."
+    }
+  ],
+  "summary": {
+    "en": "Benko's position was uncomfortable after 11...gxf5 weakened his king, but it was 17...Qe8 that lost, because it took a defender away from f6. Fischer's 19.Rf6 shows how a blocked line can be opened by a pawn move: with the e-pawn advancing, the bishop on d3 joined the queen against h7. Before every quiet move, check which squares the moving piece stops guarding.",
+    "sv": "Benkos ställning var obekväm efter att 11...gxf5 försvagat kungen, men det var 17...Qe8 som förlorade, eftersom draget tog bort en försvarare från f6. Fischers 19.Rf6 visar hur en blockerad linje kan öppnas med ett bondedrag: när e-bonden gick fram kom löparen på d3 med i angreppet mot h7 tillsammans med damen. Kontrollera före varje lugnt drag vilka rutor den flyttade pjäsen slutar bevaka."
+  }
+}

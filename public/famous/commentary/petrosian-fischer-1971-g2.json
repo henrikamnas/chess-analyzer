@@ -1,0 +1,91 @@
+{
+  "id": "petrosian-fischer-1971-g2",
+  "intro": {
+    "en": "Buenos Aires 1971, game 2 of the Candidates final. Bobby Fischer arrived with a run of 20 straight wins at the highest level, including 6–0 scores against Taimanov and Larsen, and Tigran Petrosian ended it in this game, although Fischer went on to win the match. Watch Black's king: Fischer never castles, and Petrosian slowly opens the lines towards it.",
+    "sv": "Buenos Aires 1971, parti 2 i kandidatfinalen. Bobby Fischer kom med en svit på 20 raka vinster på högsta nivå, bland annat 6–0 mot Tajmanov och Larsen, och Tigran Petrosjan bröt den i det här partiet, även om Fischer sedan vann matchen. Håll ögonen på den svarta kungen: Fischer rockerar aldrig, och Petrosjan öppnar långsamt linjerna mot den."
+  },
+  "comments": [
+    {
+      "ply": 19,
+      "en": "This is the Brinckmann Attack of the Grünfeld, with 4.Bf4. After the sharp opening sequence White is a pawn up, but his c-pawns are doubled and the a-pawn is gone. Black expects to win back the pawn on c5 and to use his bishop on the long diagonal against the weak pawn on c3.",
+      "sv": "Det här är Brinckmanns angrepp i Grünfeldindiskt, med 4.Bf4. Efter den skarpa öppningsföljden har Vit en bonde mer, men c-bönderna är dubblerade och a-bonden är borta. Svart räknar med att vinna tillbaka bonden på c5 och att använda löparen på den långa diagonalen mot den svaga bonden på c3."
+    },
+    {
+      "ply": 23,
+      "en": "12...Ne5 is ambitious, but it leaves the king in the centre. The engine preferred to castle first with 12...O-O. Fischer's king never gets castled in this game, and that is what decides it.",
+      "sv": "12...Ne5 är ambitiöst, men lämnar kungen i centrum. Motorn föredrog att rockera först med 12...O-O. Fischers kung kommer aldrig i säkerhet genom rockad i det här partiet, och det är just det som avgör."
+    },
+    {
+      "ply": 25,
+      "en": "13...Bf5? is the first real mistake. Black should simply take back the pawn with 13...Qxc5, when the game is about equal. Now White has a strong reply.",
+      "sv": "13...Bf5? är det första verkliga misstaget. Svart borde helt enkelt ta tillbaka bonden med 13...Qxc5, och då är ställningen ungefär jämn. Nu har Vit ett starkt svar.",
+      "line": { "from": "before", "san": ["Qxc5", "c4", "b5", "Bxe5", "Bxe5"] }
+    },
+    {
+      "ply": 26,
+      "en": "The engine's choice was 14.e4!, giving up a pawn to gain time and open lines against the uncastled king. Petrosian chose the calmer 14.Bxe5, trading pieces. It keeps an edge, but less of one.",
+      "sv": "Motorns val var 14.e4!, som ger bort en bonde för att vinna tid och öppna linjer mot den orockerade kungen. Petrosjan valde det lugnare 14.Bxe5 och bytte pjäser. Det behåller en fördel, men en mindre.",
+      "line": { "from": "before", "san": ["e4", "Bxe4", "O-O", "Qxc5", "Ng3"] }
+    },
+    {
+      "ply": 31,
+      "en": "After 15...Qxc5 16.Nxf5 gxf5 material is level, but Black's kingside pawns are broken: two f-pawns and an isolated h-pawn. The f7 pawn is a target for the bishop on a2 once the d5 pawn moves out of its way.",
+      "sv": "Efter 15...Qxc5 16.Nxf5 gxf5 är materialet lika, men Svarts kungsflygelbönder är sönderslagna: två f-bönder och en isolerad h-bonde. Bonden på f7 blir ett mål för löparen på a2 när d5-bonden har flyttat ur vägen."
+    },
+    {
+      "ply": 33,
+      "en": "17...Qa5 is a mistake: White has castled, Black has not, and the queen goes to the edge. The engine preferred 17...h5, with play on the kingside. After 18.Qc2 White's queen attacks the f5 pawn.",
+      "sv": "17...Qa5 är ett misstag: Vit har rockerat, Svart har inte det, och damen går ut till kanten. Motorn föredrog 17...h5, med spel på kungsflygeln. Efter 18.Qc2 anfaller Vits dam f5-bonden."
+    },
+    {
+      "ply": 37,
+      "en": "19...fxe3 takes a pawn and leaves an advanced pawn on e3, but it opens the position while Black's king is still in the middle. The engine preferred 19...b6.",
+      "sv": "19...fxe3 slår en bonde och lämnar en framskjuten bonde på e3, men öppnar ställningen medan den svarta kungen fortfarande står i mitten. Motorn föredrog 19...b6."
+    },
+    {
+      "ply": 38,
+      "en": "20.c5! is the key idea. The pawn on c5 supports the push d5-d6, and once the d-pawn advances the bishop on a2 will see all the way to f7, next to Black's king.",
+      "sv": "20.c5! är nyckelidén. Bonden på c5 stöder framstöten d5-d6, och när d-bonden väl har gått fram ser löparen på a2 hela vägen till f7, bredvid den svarta kungen."
+    },
+    {
+      "ply": 41,
+      "en": "After 21.Qa4+ Black's best is 21...Kf8, but the king loses the right to castle and the rook on h8 is cut off from the other rook.",
+      "sv": "Efter 21.Qa4+ är 21...Kf8 Svarts bästa drag, men kungen förlorar rätten att rockera och tornet på h8 blir avskuret från det andra tornet."
+    },
+    {
+      "ply": 44,
+      "en": "23.d6 carries out the plan: it attacks e7 and opens the diagonal from a2 to f7.",
+      "sv": "23.d6 genomför planen: den anfaller e7 och öppnar diagonalen från a2 till f7."
+    },
+    {
+      "ply": 46,
+      "en": "24.f4? attacks the bishop on e5 but is a big mistake. The engine wanted 24.dxe7+, keeping a large advantage. Now 24...Bf6 would have given Black real chances to defend.",
+      "sv": "24.f4? anfaller löparen på e5 men är ett stort misstag. Motorn ville spela 24.dxe7+, som behåller en stor fördel. Nu hade 24...Bf6 gett Svart verkliga chanser att försvara sig.",
+      "line": { "from": "after", "san": ["Bf6", "Rd5", "Qg4", "dxe7+", "Bxe7"] }
+    },
+    {
+      "ply": 47,
+      "en": "24...e2? misses that chance. The pawn forks both rooks, but White simply takes the bishop with 25.fxe5. When the pawn queens on d1, White recaptures, and Black ends up with only the exchange while White's pieces and pawns crash through.",
+      "sv": "24...e2? missar den chansen. Bonden gafflar båda tornen, men Vit slår helt enkelt löparen med 25.fxe5. När bonden blir dam på d1 tar Vit tillbaka, och Svart har bara kvaliteten kvar medan Vits pjäser och bönder bryter igenom."
+    },
+    {
+      "ply": 50,
+      "en": "After 26.Rxd1 Black has two rooks against White's rook and bishop, but they still stand on a8 and h8, out of play. White's bishop aims at f7, the pawns on d6 and e5 cramp Black, and the rook is about to come to the f-file.",
+      "sv": "Efter 26.Rxd1 har Svart två torn mot Vits torn och löpare, men de står fortfarande på a8 och h8, utanför spelet. Vits löpare siktar mot f7, bönderna på d6 och e5 trycker ihop Svarts ställning, och tornet är på väg till f-linjen."
+    },
+    {
+      "ply": 54,
+      "en": "28.Qb3 puts the queen in front of the bishop on the open a2-g8 diagonal, a battery aimed at f7. Black's king has no shelter left.",
+      "sv": "28.Qb3 ställer damen framför löparen på den öppna diagonalen a2-g8, ett batteri riktat mot f7. Den svarta kungen har inget skydd kvar."
+    },
+    {
+      "ply": 62,
+      "en": "After 30.dxe7 the pawn is one step from queening, and 32.Kh1 steps out of the checks. The engine sees a forced mate for White, and Fischer resigned. His winning streak was over.",
+      "sv": "Efter 30.dxe7 står bonden ett steg från att bli dam, och 32.Kh1 kliver undan schackarna. Motorn ser en forcerad matt för Vit, och Fischer gav upp. Hans vinstsvit var bruten."
+    }
+  ],
+  "summary": {
+    "en": "A king left in the centre is a long-term weakness: Fischer never castled, and every line Petrosian opened led towards that king. Notice also how White's d-pawn and the bishop on a2 worked together: the pawn advanced, the diagonal opened, and f7 fell. Both players made big mistakes around moves 24 and 25, a reminder that sharp positions are hard even for the very best.",
+    "sv": "En kung som lämnas i centrum är en långsiktig svaghet: Fischer rockerade aldrig, och varje linje Petrosjan öppnade ledde mot den kungen. Lägg också märke till hur Vits d-bonde och löparen på a2 samarbetade: bonden gick fram, diagonalen öppnades och f7 föll. Båda spelarna gjorde stora misstag runt drag 24 och 25, en påminnelse om att skarpa ställningar är svåra även för de allra bästa."
+  }
+}

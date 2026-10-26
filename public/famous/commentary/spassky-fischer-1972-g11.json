@@ -1,0 +1,98 @@
+{
+  "id": "spassky-fischer-1972-g11",
+  "intro": {
+    "en": "Reykjavik 1972, game 11 of the World Championship match between Boris Spassky and Bobby Fischer. Fischer played the Poisoned Pawn Variation of the Najdorf, where Black's queen grabs the b2 pawn and then has to survive. Watch how Spassky keeps harassing the black queen while Black's king stays stuck in the centre.",
+    "sv": "Reykjavik 1972, parti 11 i VM-matchen mellan Boris Spasskij och Bobby Fischer. Fischer spelade förgiftade bonden-varianten i Najdorf, där Svarts dam tar bonden på b2 och sedan måste överleva. Se hur Spasskij hela tiden jagar den svarta damen medan Svarts kung sitter fast i centrum."
+  },
+  "comments": [
+    {
+      "ply": 15,
+      "en": "8...Qxb2 is the Poisoned Pawn. Black wins a pawn, but the queen goes far away from the other pieces and Black falls behind in development. White's compensation is quick development and chances to trap the queen.",
+      "sv": "8...Qxb2 är den förgiftade bonden. Svart vinner en bonde, men damen hamnar långt från de andra pjäserna och Svart halkar efter i utveckling. Vits kompensation är snabb utveckling och chanser att stänga in damen."
+    },
+    {
+      "ply": 19,
+      "en": "After 10.Bxf6 gxf6 Black's kingside pawns are broken up. Short castling would leave the king without a proper pawn shield, so Black's king usually stays in the centre or goes to the queenside.",
+      "sv": "Efter 10.Bxf6 gxf6 är Svarts bönder på kungsflygeln splittrade. Kort rockad skulle lämna kungen utan ett riktigt bondeskydd, så Svarts kung brukar stanna i centrum eller gå till damflygeln."
+    },
+    {
+      "ply": 26,
+      "en": "14.Nb1!? is the famous surprise. The knight retreats to its starting square, attacking the queen on a3, and plans to come back via d2 where it does not block the c-pawn. The engine slightly preferred 14.Nd1, but both keep the balance; the move's real value was the practical problem it set.",
+      "sv": "14.Nb1!? är den berömda överraskningen. Springaren går tillbaka till sin utgångsruta, angriper damen på a3 och planerar att komma tillbaka via d2, där den inte står i vägen för c-bonden. Motorn föredrog 14.Nd1 en aning, men båda håller balansen; draget var värdefullt för det praktiska problem det ställde."
+    },
+    {
+      "ply": 29,
+      "en": "15...d5 opens the centre while Black's king is still on e8. That is risky, and the engine preferred the calmer 15...Ne7, bringing the knight towards f5 or d5 first.",
+      "sv": "15...d5 öppnar centrum medan Svarts kung fortfarande står på e8. Det är riskabelt, och motorn föredrog det lugnare 15...Ne7, som först för springaren mot f5 eller d5.",
+      "line": {
+        "from": "before",
+        "san": ["Ne7", "N1d2", "Rc8", "c4", "h4"]
+      }
+    },
+    {
+      "ply": 35,
+      "en": "18...h4? is a wasted move in the middle of a fight about the centre. The engine wanted 18...exd5, removing the pawn on d5 before it becomes a wedge in Black's position.",
+      "sv": "18...h4? är ett bortkastat drag mitt i en strid om centrum. Motorn ville spela 18...exd5, som tar bort bonden på d5 innan den blir en kil i Svarts ställning.",
+      "line": {
+        "from": "before",
+        "san": ["exd5", "Nc3", "dxc4", "Qe4+", "Be7"]
+      }
+    },
+    {
+      "ply": 37,
+      "en": "19...Nd6? is the decisive mistake. The knight leaves its active post on f5, and the king stays in the centre, where White's pieces and the pawn on d5 can open lines against it. The engine's choice was 19...O-O-O, getting the king out of the centre even though White can take on f5.",
+      "sv": "19...Nd6? är det avgörande misstaget. Springaren lämnar sin aktiva post på f5, och kungen blir kvar i centrum, där Vits pjäser och bonden på d5 kan öppna linjer mot den. Motorns val var 19...O-O-O, som får bort kungen från centrum även om Vit kan slå på f5.",
+      "line": {
+        "from": "before",
+        "san": ["O-O-O", "Bxf5", "exf5", "h3", "Re8"]
+      }
+    },
+    {
+      "ply": 39,
+      "en": "20...f5 attacks the bishop on g4. Spassky does not move it: he keeps chasing the queen instead, because the queen is the bigger target.",
+      "sv": "20...f5 angriper löparen på g4. Spasskij flyttar den inte, utan fortsätter i stället att jaga damen, eftersom damen är det större målet."
+    },
+    {
+      "ply": 42,
+      "en": "22.c5 is a fork by a pawn: it attacks the queen on b6 and the knight on d6 at the same time.",
+      "sv": "22.c5 är en bondegaffel: den angriper damen på b6 och springaren på d6 samtidigt."
+    },
+    {
+      "ply": 43,
+      "en": "22...Qb5? walks into a trap. The engine preferred 22...Qd8, bringing the queen home, although Black was already clearly worse.",
+      "sv": "22...Qb5? går rakt in i en fälla. Motorn föredrog 22...Qd8, som tar hem damen, även om Svart redan stod klart sämre.",
+      "line": {
+        "from": "before",
+        "san": ["Qd8", "Bf3", "Bb5", "Qd4"]
+      }
+    },
+    {
+      "ply": 44,
+      "en": "23.Qc3! The queen on c3 attacks the rook on h8 along the long diagonal and prepares a4, after which the queen on b5 will have almost nowhere to go.",
+      "sv": "23.Qc3! Damen på c3 angriper tornet på h8 längs den långa diagonalen och förbereder a4, varefter damen på b5 knappt har någonstans att ta vägen."
+    },
+    {
+      "ply": 46,
+      "en": "24.a4 and the queen is lost. Fischer has won the bishop on g4, but the engine's best is now 24...Qxf1+, giving the queen for a rook. Fischer instead played 24...h3 and let the queen go without getting anything more for it.",
+      "sv": "24.a4 och damen är förlorad. Fischer har vunnit löparen på g4, men motorns bästa är nu 24...Qxf1+, som ger damen för ett torn. Fischer spelade i stället 24...h3 och lät damen gå utan att få något mer för den.",
+      "line": {
+        "from": "after",
+        "san": ["Qxf1+", "Rxf1", "Rh6", "cxd6"]
+      }
+    },
+    {
+      "ply": 55,
+      "en": "With a queen against a bishop, Spassky only has to keep his own king safe and open lines to Black's king, which is still on e8. 28.c6 and 29.dxe6 do exactly that.",
+      "sv": "Med dam mot löpare behöver Spasskij bara hålla den egna kungen säker och öppna linjer mot Svarts kung, som fortfarande står på e8. 28.c6 och 29.dxe6 gör precis det."
+    },
+    {
+      "ply": 60,
+      "en": "31.Rxe6 and Fischer resigned. The bishop on e7 is pinned to the king by the rook on e6 and attacked by the queen as well, and Black's king has no shelter left.",
+      "sv": "31.Rxe6 och Fischer gav upp. Löparen på e7 är bunden mot kungen av tornet på e6 och angrips dessutom av damen, och Svarts kung har inget skydd kvar."
+    }
+  ],
+  "summary": {
+    "en": "The Poisoned Pawn gives Black a pawn but costs time, and the queen can become a target. Spassky kept finding new ways to attack it, while Fischer's king never got out of the centre; 19...O-O-O was Black's chance to fix that. When the queen is in danger, count its escape squares before you move other pieces.",
+    "sv": "Förgiftade bonden ger Svart en bonde men kostar tid, och damen kan bli ett mål. Spasskij hittade hela tiden nya sätt att angripa den, medan Fischers kung aldrig kom ut ur centrum; 19...O-O-O var Svarts chans att ändra på det. När damen är i fara: räkna dess flyktrutor innan du flyttar andra pjäser."
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "id": "spassky-fischer-1972-g13",
+  "intro": {
+    "en": "Reykjavik 1972, game 13 of the World Championship match between Boris Spassky and Bobby Fischer. Fischer answered 1.e4 with Alekhine's Defence, won a pawn early and later reached a strange endgame where his rook and a crowd of pawns fight against White's rook and bishop. Watch how the advantage swings back and forth, and how one rook check near the end decides the game.",
+    "sv": "Reykjavik 1972, parti 13 i VM-matchen mellan Boris Spasskij och Bobby Fischer. Fischer svarade på 1.e4 med Aljechins försvar, vann en bonde tidigt och nådde senare ett märkligt slutspel där hans torn och en rad bönder kämpar mot Vits torn och löpare. Se hur fördelen pendlar fram och tillbaka, och hur ett enda tornschack nära slutet avgör partiet."
+  },
+  "comments": [
+    {
+      "ply": 1,
+      "en": "1...Nf6 is Alekhine's Defence. Black invites White's pawns forward, planning to attack them later. It is a provocative opening; the engine prefers the classical 1...e5.",
+      "sv": "1...Nf6 är Aljechins försvar. Svart bjuder in Vits bönder att gå fram, med planen att angripa dem senare. Det är en provokativ öppning; motorn föredrar det klassiska 1...e5."
+    },
+    {
+      "ply": 7,
+      "en": "4.Nf3 is the Modern Variation and 4...g6 the Alburt Variation. Black's bishop will go to g7, where it puts pressure on the pawn on e5 and the long diagonal.",
+      "sv": "4.Nf3 är den moderna varianten och 4...g6 Alburtvarianten. Svarts löpare ska till g7, där den sätter press på bonden på e5 och den långa diagonalen."
+    },
+    {
+      "ply": 24,
+      "en": "13.Ne4 lets Black win the pawn on a4: it is attacked three times, by both knights and by the queen on e8 along the diagonal, and defended only twice, by the bishop on b3 and the rook on a1. The engine preferred 13.Ba2, but White gets some activity for the pawn and Black is only slightly better.",
+      "sv": "13.Ne4 låter Svart vinna bonden på a4: den angrips tre gånger, av båda springarna och av damen på e8 längs diagonalen, och skyddas bara två gånger, av löparen på b3 och tornet på a1. Motorn föredrog 13.Ba2, men Vit får viss aktivitet för bonden och Svart står bara något bättre.",
+      "line": {
+        "from": "after",
+        "san": ["Nbxa4", "Re1", "Nxb3", "cxb3"]
+      }
+    },
+    {
+      "ply": 36,
+      "en": "19.g4 gains space and chases the bishop, but it loosens White's own king, and later f4 loosens it further. The engine preferred 19.Nd4.",
+      "sv": "19.g4 vinner utrymme och jagar löparen, men försvagar den egna kungens ställning, och senare försvagar f4 den ytterligare. Motorn föredrog 19.Nd4."
+    },
+    {
+      "ply": 52,
+      "en": "27.Nd3? lets Black play 27...c5, gaining space and hitting the knight on d4. The engine wanted 27.Nxd7, removing Black's knight. After a few more moves the queens come off, and Black should now be winning.",
+      "sv": "27.Nd3? låter Svart spela 27...c5, som vinner utrymme och angriper springaren på d4. Motorn ville spela 27.Nxd7, som tar bort Svarts springare. Några drag senare byts damerna av, och Svart bör nu stå till vinst.",
+      "line": {
+        "from": "before",
+        "san": ["Nxd7", "Qxd7", "Qd3", "Ra5"]
+      }
+    },
+    {
+      "ply": 60,
+      "en": "After the trades Black is still a pawn up and has a passed a-pawn, while White has doubled c-pawns. White's hope is the pawn on d6, deep in Black's camp and also passed.",
+      "sv": "Efter bytena har Svart fortfarande en bonde mer och en fribonde på a-linjen, medan Vit har dubbelbönder på c-linjen. Vits hopp är bonden på d6, långt inne i Svarts läger och också den en fribonde."
+    },
+    {
+      "ply": 73,
+      "en": "37...Rh8? is a big slip: the bishop on e5 attacks h8 along the diagonal, so White could win the exchange with 38.Bxh8. The engine thinks the game would then be close to level.",
+      "sv": "37...Rh8? är en stor miss: löparen på e5 angriper h8 längs diagonalen, så Vit kunde vinna kvalitet med 38.Bxh8. Motorn bedömer att partiet då hade varit nära jämnt.",
+      "line": {
+        "from": "after",
+        "san": ["Bxh8", "Rxh8", "Rfe1", "Rd8", "Kg3", "Rxd6"]
+      }
+    },
+    {
+      "ply": 74,
+      "en": "38.Bf6? does not take the rook. The engine still preferred 38.Bxh8, and now Black's a-pawn starts running.",
+      "sv": "38.Bf6? tar inte tornet. Motorn föredrog fortfarande 38.Bxh8, och nu börjar Svarts a-bonde springa."
+    },
+    {
+      "ply": 76,
+      "en": "39.Rf4? is the next mistake: 39...a2 brings the pawn one step from promotion. The engine wanted 39.Rfe1 or 39.Bxh8, keeping the game close.",
+      "sv": "39.Rf4? är nästa misstag: 39...a2 för bonden ett steg från förvandling. Motorn ville spela 39.Rfe1 eller 39.Bxh8, som håller partiet jämnt."
+    },
+    {
+      "ply": 81,
+      "en": "41...Bd5? lets much of the advantage slip. The engine wanted 41...e5, keeping a winning position. Now Spassky gets real drawing chances.",
+      "sv": "41...Bd5? släpper mycket av fördelen. Motorn ville spela 41...e5 och behålla en vinstställning. Nu får Spasskij verkliga remichanser.",
+      "line": {
+        "from": "before",
+        "san": ["e5", "Bxe5", "Rhd8", "Bf6", "Ke6"]
+      }
+    },
+    {
+      "ply": 106,
+      "en": "A rare endgame: White has rook, bishop and two pawns, Black has rook and five pawns. Material is level, and the engine sees it as a draw. Black's plan is to push the queenside pawns with the king's help; White must blockade them with king, rook and bishop.",
+      "sv": "Ett ovanligt slutspel: Vit har torn, löpare och två bönder, Svart har torn och fem bönder. Materialet är jämnt, och motorn ser det som remi. Svarts plan är att driva fram damflygelbönderna med kungens hjälp; Vit måste blockera dem med kung, torn och löpare."
+    },
+    {
+      "ply": 127,
+      "en": "64...h1=Q! Fischer promotes only to give the new queen away. After 65.Rxh1 White's rook is far from the d-file, and Black's king can walk towards the centre to support the f-pawn. The engine still sees a draw, and thinks 64...Kb5 was just as good.",
+      "sv": "64...h1=Q! Fischer förvandlar bara för att ge bort den nya damen. Efter 65.Rxh1 står Vits torn långt från d-linjen, och Svarts kung kan gå mot centrum för att stödja f-bonden. Motorn ser fortfarande remi, och tycker att 64...Kb5 var lika bra."
+    },
+    {
+      "ply": 136,
+      "en": "69.Rd1+? is the decisive mistake after a long, accurate defence. The king simply goes to e2, attacking the rook, and the f-pawn can run with the king beside it. The engine shows that 69.Rc3+ held the draw: after 69...Kd4 70.Rf3 the rook attacks the f-pawn and soon wins it.",
+      "sv": "69.Rd1+? är det avgörande misstaget efter ett långt och exakt försvar. Kungen går helt enkelt till e2 och angriper tornet, och f-bonden kan springa med kungen bredvid sig. Motorn visar att 69.Rc3+ höll remi: efter 69...Kd4 70.Rf3 angriper tornet f-bonden och vinner den snart.",
+      "line": {
+        "from": "before",
+        "san": ["Rc3+", "Kd4", "Rf3", "c3+", "Ka1", "c2", "Rxf4+"]
+      }
+    },
+    {
+      "ply": 141,
+      "en": "71.Bc5 stops the f-pawn for the moment by covering f2, but the bishop has left f8, so the g7 pawn falls with 71...Rxg7. Black's rook is free again.",
+      "sv": "71.Bc5 stoppar f-bonden för stunden genom att täcka f2, men löparen har lämnat f8, så g7-bonden faller med 71...Rxg7. Svarts torn är fritt igen."
+    },
+    {
+      "ply": 147,
+      "en": "74...f2 and Spassky resigned. The f-pawn is protected by the king on f1, Black's rook attacks the bishop on d4, and White's king is stuck on b2 holding back the a- and b-pawns.",
+      "sv": "74...f2 och Spasskij gav upp. f-bonden skyddas av kungen på f1, Svarts torn angriper löparen på d4, och Vits kung sitter fast på b2 för att hålla tillbaka a- och b-bönderna."
+    }
+  ],
+  "summary": {
+    "en": "This game shows how hard it is to convert an extra pawn: both players made big mistakes around move 40, and the evaluation swung several times. In the endgame, Fischer's pawns needed his king's help, and the one rook check that let the king forward decided everything. When defending against pawns, keep your rook attacking them, not just checking the king.",
+    "sv": "Partiet visar hur svårt det är att förvalta en merbonde: båda spelarna gjorde stora misstag runt drag 40, och värderingen svängde flera gånger. I slutspelet behövde Fischers bönder kungens hjälp, och det enda tornschack som släppte fram kungen avgjorde allt. När du försvarar dig mot bönder: låt tornet angripa dem, inte bara schacka kungen."
+  }
+}

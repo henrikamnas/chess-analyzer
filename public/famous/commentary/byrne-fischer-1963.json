@@ -1,0 +1,90 @@
+{
+  "id": "byrne-fischer-1963",
+  "intro": {
+    "en": "The US Championship of 1963/64, which Fischer won with a perfect score. Against Robert Byrne he reached a quiet, symmetrical position, then struck with a knight sacrifice on f2. Watch how Fischer's pieces gather around White's king once the pawns in front of it are gone, and how White resigned while still a piece up.",
+    "sv": "USA-mästerskapet 1963/64, som Fischer vann med full poäng. Mot Robert Byrne fick han en lugn, symmetrisk ställning och slog sedan till med ett springaroffer på f2. Se hur Fischers pjäser samlas runt Vits kung när bönderna framför den är borta, och hur Vit gav upp trots en pjäs mer."
+  },
+  "comments": [
+    {
+      "ply": 9,
+      "en": "The game began as a King's Indian with a fianchetto, but after 3...c6, 4...d5 and the exchange on d5 the pawn structure is symmetrical. With so little imbalance, the side with the more active pieces will have the edge.",
+      "sv": "Partiet började som en kungsindier med fianchetto, men efter 3...c6, 4...d5 och bytet på d5 är bondestrukturen symmetrisk. När obalansen är så liten får den sida som har aktivast pjäser övertaget."
+    },
+    {
+      "ply": 19,
+      "en": "10...Ba6 puts the bishop on a diagonal that aims at the knight on e2. White's 7.e3 and 8.Nge2 were solid but a little passive, and Black is already comfortable.",
+      "sv": "10...Ba6 ställer löparen på en diagonal som siktar mot springaren på e2. Vits 7.e3 och 8.Nge2 var solida men lite passiva, och Svart står redan bekvämt."
+    },
+    {
+      "ply": 23,
+      "en": "12...e5! The central break. After the exchange on e5 Black will have an isolated pawn on d5, but in return the pieces become very active: the rook on e8 presses along the e-file and the knight heads for d3.",
+      "sv": "12...e5! Centrumbrytningen. Efter bytet på e5 får Svart en isolerad bonde på d5, men i gengäld blir pjäserna mycket aktiva: tornet på e8 trycker längs e-linjen och springaren tar sikte på d3."
+    },
+    {
+      "ply": 26,
+      "en": "14.Rfd1? takes the rook away from f1, so the f2 pawn is now defended only by the king. The engine preferred 14.Rad1, keeping the other rook near the king.",
+      "sv": "14.Rfd1? tar bort tornet från f1, så att f2-bonden nu bara skyddas av kungen. Motorn föredrog 14.Rad1, som håller det andra tornet nära kungen.",
+      "line": {
+        "from": "before",
+        "san": ["Rad1", "Qc8", "Bb2", "Qg4"]
+      }
+    },
+    {
+      "ply": 27,
+      "en": "14...Nd3 plants the knight deep in White's camp, where it is protected by the bishop on a6 and is very annoying: it eyes f2 and blocks the d-file.",
+      "sv": "14...Nd3 placerar springaren djupt i Vits läger. Den skyddas av löparen på a6 och är mycket besvärlig: den siktar mot f2 och blockerar d-linjen."
+    },
+    {
+      "ply": 28,
+      "en": "15.Qc2? is the losing mistake. The queen attacks the knight, but on c2 it no longer guards e3, so the sacrifice on f2 now works. The engine wanted 15.Nf4, challenging the knight on d3 with a piece.",
+      "sv": "15.Qc2? är det förlorande misstaget. Damen angriper springaren, men på c2 skyddar den inte längre e3, så offret på f2 fungerar nu. Motorn ville spela 15.Nf4, som utmanar springaren på d3 med en pjäs.",
+      "line": {
+        "from": "before",
+        "san": ["Nf4", "Ne4", "Nxe4", "dxe4"]
+      }
+    },
+    {
+      "ply": 29,
+      "en": "15...Nxf2! The knight takes the pawn that only the king protected, and it also attacks the rook on d1. White can take it, but that opens the king.",
+      "sv": "15...Nxf2! Springaren tar bonden som bara kungen skyddade, och angriper samtidigt tornet på d1. Vit kan ta den, men då öppnas kungsställningen."
+    },
+    {
+      "ply": 31,
+      "en": "16...Ng4+ brings the second knight in with check, heading for e3. That pawn was defended only by the f2 pawn, which is now gone.",
+      "sv": "16...Ng4+ för in den andra springaren med schack, på väg mot e3. Den bonden skyddades bara av f2-bonden, som nu är borta."
+    },
+    {
+      "ply": 33,
+      "en": "17...Nxe3 forks the queen on c2 and the rook on d1, and also attacks the bishop on g2. White must move the queen and give up more.",
+      "sv": "17...Nxe3 är en gaffel mot damen på c2 och tornet på d1, och angriper också löparen på g2. Vit måste flytta damen och förlorar mer."
+    },
+    {
+      "ply": 35,
+      "en": "18...Nxg2 removes the bishop that shielded White's king on the light squares. After 19.Kxg2 White is a piece up for two pawns, but the long diagonal towards g2 is now empty of defenders.",
+      "sv": "18...Nxg2 tar bort löparen som skyddade Vits kung på de vita fälten. Efter 19.Kxg2 har Vit en pjäs mer mot två bönder, men den långa diagonalen mot g2 saknar nu försvarare."
+    },
+    {
+      "ply": 37,
+      "en": "19...d4! gives up another pawn to clear the diagonals. After 20.Nxd4 Black's light-squared bishop can come to b7 with check, and the bishop on g7 already bears down on the knight on d4.",
+      "sv": "19...d4! ger bort ännu en bonde för att öppna diagonalerna. Efter 20.Nxd4 kan Svarts vitfältslöpare komma till b7 med schack, och löparen på g7 trycker redan mot springaren på d4."
+    },
+    {
+      "ply": 40,
+      "en": "21.Kf1 is not the engine's choice (it preferred 21.Kg1), but White is lost in every line. The king has no pawn cover on the light squares, and Black's bishops rake the board.",
+      "sv": "21.Kf1 är inte motorns val (den föredrog 21.Kg1), men Vit är förlorad i alla varianter. Kungen saknar bondeskydd på de vita fälten, och Svarts löpare sveper över brädet."
+    },
+    {
+      "ply": 41,
+      "en": "21...Qd7! and Byrne resigned. The queen heads for h3, where, backed by the bishop on b7, it threatens to land on g2. In the engine's line White's queen must keep guarding g2 along the second rank, and 23...Bh6 attacks it to break that guard.",
+      "sv": "21...Qd7! och Byrne gav upp. Damen är på väg till h3, där den, med stöd av löparen på b7, hotar att gå in på g2. I motorns variant måste Vits dam fortsätta skydda g2 längs andra raden, och 23...Bh6 angriper den för att bryta det skyddet.",
+      "line": {
+        "from": "after",
+        "san": ["Kg1", "Qh3", "Ndb5", "Bh6", "Nd5", "Bxd2"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "A symmetrical opening does not mean a dull game: Fischer simply made his pieces more active, and the knight on d3 became a thorn in White's side. 14.Rfd1 and 15.Qc2 each removed a defender from the king's area, and the sacrifice on f2 punished it. Material counts less than piece activity when the enemy king has lost its pawn cover.",
+    "sv": "En symmetrisk öppning betyder inte ett tråkigt parti: Fischer gjorde helt enkelt sina pjäser aktivare, och springaren på d3 blev en tagg i Vits sida. 14.Rfd1 och 15.Qc2 tog var för sig bort en försvarare från kungens närhet, och offret på f2 straffade det. Material betyder mindre än pjäsaktivitet när motståndarens kung har förlorat sitt bondeskydd."
+  }
+}

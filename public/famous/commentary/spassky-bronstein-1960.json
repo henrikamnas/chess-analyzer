@@ -1,0 +1,86 @@
+{
+  "id": "spassky-bronstein-1960",
+  "intro": {
+    "en": "Leningrad 1960, the 27th USSR Championship: Boris Spassky against David Bronstein, two of the most creative players of their time, in a King's Gambit. The game later appeared, with the players' names changed, in the James Bond film From Russia with Love. Watch the battle between White's pieces aimed at the black king and Black's pawn that marches all the way to f1.",
+    "sv": "Leningrad 1960, det 27:e sovjetiska mästerskapet: Boris Spasskij mot David Bronstein, två av sin tids mest kreativa spelare, i en kungsgambit. Partiet dök senare upp, med spelarnas namn ändrade, i James Bond-filmen Agent 007 ser rött (From Russia with Love). Lägg märke till kampen mellan Vits pjäser som riktas mot den svarta kungen och Svarts bonde som marscherar ända fram till f1."
+  },
+  "comments": [
+    {
+      "ply": 2,
+      "en": "2.f4 is the King's Gambit. White offers the f-pawn to open the f-file and build a centre with d4. The engine is not a fan and prefers 2.Nf3, but in practice the gambit gives Black many chances to go wrong.",
+      "sv": "2.f4 är kungsgambit. Vit erbjuder f-bonden för att öppna f-linjen och bygga ett centrum med d4. Motorn är inte förtjust och föredrar 2.Nf3, men i praktiken ger gambiten Svart många chanser att gå fel."
+    },
+    {
+      "ply": 5,
+      "en": "3...d5 is the Modern Defence. Instead of holding on to the extra pawn with ...g5, Black strikes in the centre at once and aims for quick development. The engine slightly preferred 3...g5.",
+      "sv": "3...d5 är det moderna försvaret. I stället för att hålla fast vid merbonden med ...g5 slår Svart till i centrum direkt och siktar på snabb utveckling. Motorn föredrog en aning 3...g5."
+    },
+    {
+      "ply": 19,
+      "en": "10...Ne3 is a neat trick: the knight attacks the queen on d1 and the rook on f1, and it is protected by the pawn on f4. White must give up the dark-squared bishop for it, and Black gets a pawn on e3 deep in White's camp.",
+      "sv": "10...Ne3 är ett snyggt knep: springaren anfaller damen på d1 och tornet på f1, och den skyddas av bonden på f4. Vit måste ge upp sin svartfältiga löpare för den, och Svart får en bonde på e3 djupt inne i Vits läger."
+    },
+    {
+      "ply": 26,
+      "en": "14.Qd3 lines up the queen and the bishop on c2 against h7. For now the knight on e4 is in the way, but when it moves, Qh7+ becomes a threat.",
+      "sv": "14.Qd3 ställer upp damen och löparen på c2 mot h7. Än så länge står springaren på e4 i vägen, men när den flyttar blir Qh7+ ett hot."
+    },
+    {
+      "ply": 27,
+      "en": "14...e2? pushes the pawn to attack the rook on f1, but it ignores the danger to the king. The engine preferred 14...f5, which blocks the diagonal towards h7 and attacks the knight on e4.",
+      "sv": "14...e2? för fram bonden för att anfalla tornet på f1, men struntar i faran för kungen. Motorn föredrog 14...f5, som blockerar diagonalen mot h7 och anfaller springaren på e4.",
+      "line": { "from": "before", "san": ["f5", "Nc3", "Nxc5", "dxc5", "Qxd3"] }
+    },
+    {
+      "ply": 28,
+      "en": "15.Nd6!? is the famous move. The knight jumps away, opening the line from d3 to h7, and attacks the rook on e8 and the pawn on f7, while the rook on f1 is left to be captured. The engine is less impressed: the simple 15.Qxe2 kept a clear advantage, and after the knight move Black could have held the balance.",
+      "sv": "15.Nd6!? är det berömda draget. Springaren hoppar undan, öppnar linjen från d3 till h7 och anfaller tornet på e8 och bonden på f7, medan tornet på f1 lämnas att slås. Motorn är mindre imponerad: det enkla 15.Qxe2 behöll en klar fördel, och efter springardraget hade Svart kunnat hålla balansen."
+    },
+    {
+      "ply": 29,
+      "en": "15...Nf8? is the decisive mistake. It covers h7, but it gives White time: 16.Nxf7 now comes with an attack on the queen and the h6 pawn. Black should have taken the rook with check first, 15...exf1=Q+, and then the knight with 16...Bxd6: White has checks, but no more than a balanced game.",
+      "sv": "15...Nf8? är det avgörande misstaget. Det täcker h7, men ger Vit tid: 16.Nxf7 kommer nu med anfall på damen och bonden på h6. Svart borde först ha slagit tornet med schack, 15...exf1=Q+, och sedan springaren med 16...Bxd6: Vit har schackar, men inte mer än ett jämnt parti.",
+      "line": { "from": "before", "san": ["exf1=Q+", "Rxf1", "Bxd6", "Qh7+", "Kf8", "cxd6", "cxd6", "Qh8+", "Ke7", "Re1+"] }
+    },
+    {
+      "ply": 30,
+      "en": "16.Nxf7! takes the pawn next to the king and attacks the queen on d8 and the pawn on h6.",
+      "sv": "16.Nxf7! tar bonden bredvid kungen och anfaller damen på d8 och bonden på h6."
+    },
+    {
+      "ply": 32,
+      "en": "After 16...exf1=Q+ 17.Rxf1 Black is a whole rook up for a pawn, but his king is surrounded by White's pieces. The recapture with the rook mattered: the engine shows that 17.Kxf1 or 17.Qxf1 would only have kept a level game: the rook belongs on the f-file.",
+      "sv": "Efter 16...exf1=Q+ 17.Rxf1 har Svart ett helt torn mer mot en bonde, men kungen är omringad av Vits pjäser. Det var viktigt att ta tillbaka med tornet: motorn visar att 17.Kxf1 eller 17.Qxf1 bara hade gett ett jämnt parti: tornet hör hemma på f-linjen."
+    },
+    {
+      "ply": 33,
+      "en": "17...Bf5 blocks the queen's diagonal by giving back a bishop. The engine preferred 17...Qd5, but Black is already in serious trouble.",
+      "sv": "17...Bf5 blockerar damens diagonal genom att ge tillbaka en löpare. Motorn föredrog 17...Qd5, men Svart är redan i allvarliga problem."
+    },
+    {
+      "ply": 39,
+      "en": "20...Qe7? is a further mistake. The engine wanted 20...Bxe5, followed by ...Rxe5, giving back the exchange to remove both attacking knights.",
+      "sv": "20...Qe7? är ytterligare ett misstag. Motorn ville spela 20...Bxe5 följt av ...Rxe5 och ge tillbaka kvaliteten för att bli av med båda de anfallande springarna.",
+      "line": { "from": "before", "san": ["Bxe5", "Nxe5", "Rxe5", "dxe5", "Re8"] }
+    },
+    {
+      "ply": 40,
+      "en": "21.Bb3 puts the bishop on the diagonal towards g8, right behind the knight on f7. Every move of that knight will now be a discovered check.",
+      "sv": "21.Bb3 ställer löparen på diagonalen mot g8, precis bakom springaren på f7. Varje drag med den springaren blir nu en avdragsschack."
+    },
+    {
+      "ply": 42,
+      "en": "22.Nxe5+ is that discovered check: the knight takes the bishop, and the bishop on b3 gives check.",
+      "sv": "22.Nxe5+ är just den avdragsschacken: springaren slår löparen, och löparen på b3 ger schack."
+    },
+    {
+      "ply": 44,
+      "en": "23.Qe4+ drives the king further into the net, with the queen, knight, bishop and rook all around it. Black's extra material is useless, and Bronstein resigned.",
+      "sv": "23.Qe4+ driver kungen längre in i nätet, med dam, springare, löpare och torn runt omkring den. Svarts extra material är värdelöst, och Bronstein gav upp."
+    }
+  ],
+  "summary": {
+    "en": "Spassky's attack worked because his pieces were all pointed at the king while Black's extra material stood far away. The famous 15.Nd6 was more a practical than a correct move: Bronstein could have equalised, but the pressure made him go wrong with 15...Nf8. In attacking positions, count the attackers and defenders around the king, not just the material.",
+    "sv": "Spasskijs angrepp fungerade eftersom alla hans pjäser var riktade mot kungen medan Svarts extra material stod långt borta. Det berömda 15.Nd6 var mer ett praktiskt än ett korrekt drag: Bronstein hade kunnat utjämna, men trycket fick honom att gå fel med 15...Nf8. I anfallsställningar ska man räkna anfallare och försvarare runt kungen, inte bara materialet."
+  }
+}

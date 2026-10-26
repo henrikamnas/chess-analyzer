@@ -1,0 +1,102 @@
+{
+  "id": "karpov-unzicker-1974",
+  "intro": {
+    "en": "Nice Olympiad, 1974: Anatoly Karpov against the West German grandmaster Wolfgang Unzicker. It is a closed Ruy Lopez with no early fireworks; instead, watch how Karpov takes space, claims the only open file and slowly squeezes Black until he has no useful moves left. It is often shown as a model of Karpov's quiet, strategic style.",
+    "sv": "Schackolympiaden i Nice 1974: Anatolij Karpov mot den västtyske stormästaren Wolfgang Unzicker. Det är en stängd spansk utan tidiga fyrverkerier; se i stället hur Karpov tar utrymme, tar över den enda öppna linjen och långsamt kväver Svart tills han inte har några vettiga drag kvar. Partiet visas ofta som ett mönsterexempel på Karpovs lugna, strategiska stil."
+  },
+  "comments": [
+    {
+      "ply": 17,
+      "en": "9...Na5 is the Chigorin Defence of the closed Ruy Lopez. The knight chases White's bishop from b3, and Black follows up with ...c5 and ...Qc7 to gain space on the queenside and support the e5 pawn.",
+      "sv": "9...Na5 är Tjigorinförsvaret i stängd spanska. Springaren jagar bort Vits löpare från b3, och Svart följer upp med ...c5 och ...Qc7 för att vinna utrymme på damflygeln och stödja bonden på e5."
+    },
+    {
+      "ply": 23,
+      "en": "12...Nc6 puts more pressure on d4, but it invites 13.d5, which gains space and drives the knight back; it went to d8. The engine preferred 12...cxd4, opening the c-file for Black's pieces before White can close the centre.",
+      "sv": "12...Nc6 ökar trycket mot d4, men bjuder in till 13.d5, som vinner utrymme och driver tillbaka springaren; den gick till d8. Motorn föredrog 12...cxd4, som öppnar c-linjen för Svarts pjäser innan Vit hinner stänga centrum.",
+      "line": {
+        "from": "before",
+        "san": ["cxd4", "cxd4", "Bd7", "Nf1", "Rac8"]
+      }
+    },
+    {
+      "ply": 25,
+      "en": "With the centre closed, the game is about the wings. White has more space, and the knight on d8 needs time to find a good square. Karpov now starts play on the queenside with a4.",
+      "sv": "När centrum är stängt handlar partiet om flyglarna. Vit har mer utrymme, och springaren på d8 behöver tid för att hitta en bra ruta. Karpov inleder nu spel på damflygeln med a4."
+    },
+    {
+      "ply": 29,
+      "en": "After the exchange on b5 the a-file is open, and it is the only open file on the board. Whoever controls it will have the better chances, which is why both sides soon put their rooks there.",
+      "sv": "Efter bytet på b5 är a-linjen öppen, och den är den enda öppna linjen på brädet. Den som kontrollerar den får de bättre chanserna, och därför placerar båda sidor snart sina torn där."
+    },
+    {
+      "ply": 43,
+      "en": "22...c4 locks the queenside pawns in place. The engine's choice was 22...Rxa2, trading rooks on the open file. The cramped side should usually seek exchanges, since fewer pieces need less room.",
+      "sv": "22...c4 låser fast bönderna på damflygeln. Motorns val var 22...Rxa2, att byta torn på den öppna linjen. Den trångbodda sidan bör oftast söka byten, eftersom färre pjäser behöver mindre plats.",
+      "line": {
+        "from": "before",
+        "san": ["Rxa2", "Qxa2", "Rb8", "Be2"]
+      }
+    },
+    {
+      "ply": 45,
+      "en": "23.Bb1 was not the engine's favourite, and Black could still have traded rooks with 23...Rxa2. After 23...Qd8 Karpov takes control of the a-file for good.",
+      "sv": "23.Bb1 var inte motorns favorit, och Svart kunde fortfarande ha bytt torn med 23...Rxa2. Efter 23...Qd8 tar Karpov kontrollen över a-linjen för gott.",
+      "line": {
+        "from": "before",
+        "san": ["Rxa2", "Qxa2", "Nd8", "Bc2"]
+      }
+    },
+    {
+      "ply": 46,
+      "en": "24.Ba7! The bishop plants itself on a7, right in front of Black's rook and protected by the rook on a2. Black can no longer use the a-file, the bishop controls b8, and White can double rooks behind it. The engine agrees it is the best move.",
+      "sv": "24.Ba7! Löparen planteras på a7, mitt framför Svarts torn och skyddad av tornet på a2. Svart kan inte längre använda a-linjen, löparen kontrollerar b8, och Vit kan dubblera tornen bakom den. Motorn håller med om att det är det bästa draget."
+    },
+    {
+      "ply": 59,
+      "en": "With the queenside settled, Karpov turns to the other wing with f4. Black answered with 30...f6; the engine preferred 30...exf4, exchanging the e-pawn to free the e5 square for his pieces.",
+      "sv": "När damflygeln är avgjord vänder sig Karpov mot andra flygeln med f4. Svart svarade med 30...f6; motorn föredrog 30...exf4, att byta av e-bonden för att frigöra rutan e5 åt sina pjäser.",
+      "line": {
+        "from": "before",
+        "san": ["exf4", "Nxf4", "Bd7", "Nf3"]
+      }
+    },
+    {
+      "ply": 61,
+      "en": "31...g5? is the decisive strategic mistake. Black locks the kingside, but his bishop on g7 is now shut in by its own pawns on e5 and f6, and h5 becomes a hole that White's bishop will soon use. The engine's choice was 31...Nf7.",
+      "sv": "31...g5? är det avgörande strategiska misstaget. Svart låser kungsflygeln, men löparen på g7 är nu instängd av de egna bönderna på e5 och f6, och h5 blir ett hål som Vits löpare snart kommer att utnyttja. Motorns val var 31...Nf7.",
+      "line": {
+        "from": "before",
+        "san": ["Nf7", "Ng3", "Bh6", "Qf2", "Bg5"]
+      }
+    },
+    {
+      "ply": 68,
+      "en": "35.Bh5 uses the new hole to offer a trade of the light-squared bishops. Black's bishop is the main defender of the light squares around his king; once it is gone, White's queen and knights can come in on those squares.",
+      "sv": "35.Bh5 utnyttjar det nya hålet för att erbjuda byte av de vitfältiga löparna. Svarts löpare är den viktigaste försvararen av de vita rutorna runt kungen; när den är borta kan Vits dam och springare tränga in på de rutorna."
+    },
+    {
+      "ply": 79,
+      "en": "Black just shuffles his king between f8 and g8, while Karpov regroups without hurry. The engine finds faster wins along the way, and it thought Black's best was to trade bishops on h5 himself, but nothing changes the verdict: Black is lost.",
+      "sv": "Svart flyttar bara kungen fram och tillbaka mellan f8 och g8, medan Karpov omgrupperar utan brådska. Motorn hittar snabbare vinstvägar på vägen, och den ansåg att Svarts bästa var att själv byta löpare på h5, men ingenting ändrar omdömet: Svart är förlorad."
+    },
+    {
+      "ply": 80,
+      "en": "41.Bxf7+ finally removes Black's light-squared bishop. The engine preferred 41.Bg6, but the idea is the same: the light squares around Black's king now belong to White.",
+      "sv": "41.Bxf7+ tar till slut bort Svarts vitfältslöpare. Motorn föredrog 41.Bg6, men idén är densamma: de vita rutorna runt Svarts kung tillhör nu Vit."
+    },
+    {
+      "ply": 84,
+      "en": "43.Qg6 lands on the light square in front of Black's king and pins the bishop on g7. If Black trades queens, the recapture with the f-pawn gives White a passed pawn on g6. Unzicker resigned: he is still level in material, but his pieces are tied down.",
+      "sv": "43.Qg6 landar på den vita rutan framför Svarts kung och binder löparen på g7. Om Svart byter damer ger återtagningen med f-bonden Vit en fribonde på g6. Unzicker gav upp: materialet är fortfarande lika, men hans pjäser är fastlåsta.",
+      "line": {
+        "from": "after",
+        "san": ["Qxg6", "fxg6", "Bf8", "Nh5", "Nf7", "Nf5"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "Karpov won without a single sacrifice. He gained space with d5, took the only open file and sealed it with 24.Ba7, then provoked weaknesses on the kingside and traded off the bishop that guarded them. Black's chances lay in exchanging pieces, especially rooks on the a-file, and his decisive error was 31...g5, which buried his bishop and gave White the h5 square.",
+    "sv": "Karpov vann utan ett enda offer. Han vann utrymme med d5, tog den enda öppna linjen och förseglade den med 24.Ba7, framkallade sedan svagheter på kungsflygeln och bytte bort löparen som försvarade dem. Svarts chanser låg i att byta pjäser, särskilt torn på a-linjen, och hans avgörande fel var 31...g5, som begravde löparen och gav Vit rutan h5."
+  }
+}

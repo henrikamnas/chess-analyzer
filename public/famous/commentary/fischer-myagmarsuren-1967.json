@@ -1,0 +1,103 @@
+{
+  "id": "fischer-myagmarsuren-1967",
+  "intro": {
+    "en": "Sousse Interzonal, 1967: Bobby Fischer against the Mongolian master Lhamsuren Myagmarsuren. Fischer meets the French Defence with the King's Indian Attack, a quiet setup that leads to a race: White attacks on the kingside, Black storms on the queenside. Watch how White's pawn on e5 keeps Black's defenders away from the king, and how the race is decided by a queen sacrifice on h7.",
+    "sv": "Interzonturneringen i Sousse 1967: Bobby Fischer mot den mongoliske mästaren Lhamsuren Myagmarsuren. Fischer möter franskt försvar med kungsindiskt angrepp, en lugn uppställning som leder till en kapplöpning: Vit anfaller på kungsflygeln, Svart stormar fram på damflygeln. Se hur Vits bonde på e5 håller Svarts försvarare borta från kungen, och hur kapplöpningen avgörs med ett damoffer på h7."
+  },
+  "comments": [
+    {
+      "ply": 2,
+      "en": "2.d3 is the King's Indian Attack against the French: White plays Nd2, g3, Bg2 and castles, a King's Indian setup with colours reversed and an extra tempo. It is quieter than 2.d4, which the engine prefers, but it avoids the sharp main lines and leads to a rich middlegame.",
+      "sv": "2.d3 är kungsindiskt angrepp mot franskt: Vit spelar Nd2, g3, Bg2 och rockerar, en kungsindisk uppställning med ombytta färger och ett extra tempo. Det är lugnare än 2.d4, som motorn föredrar, men det undviker de skarpa huvudvarianterna och leder till ett rikt mittspel."
+    },
+    {
+      "ply": 14,
+      "en": "8.e5 is the typical plan in this structure. The pawn gains space, drives the knight from f6 to d7 and takes the f6 square away from Black's defenders. From now on White plays for an attack on the kingside, while Black answers with a pawn storm on the queenside.",
+      "sv": "8.e5 är den typiska planen i den här strukturen. Bonden vinner utrymme, driver bort springaren från f6 till d7 och tar rutan f6 från Svarts försvarare. Från och med nu spelar Vit på angrepp på kungsflygeln, medan Svart svarar med en bondestorm på damflygeln."
+    },
+    {
+      "ply": 20,
+      "en": "11.h4 is part of the same plan: the h-pawn supports a knight on g5 and can later advance to h5 to pry open Black's king. Black's b-pawn is already on b4 and the a-pawn is about to follow, so both sides have to hurry.",
+      "sv": "11.h4 är en del av samma plan: h-bonden stöder en springare på g5 och kan senare gå till h5 för att bryta upp ställningen runt Svarts kung. Svarts b-bonde står redan på b4 och a-bonden följer snart efter, så båda sidor måste skynda sig."
+    },
+    {
+      "ply": 30,
+      "en": "16.Bh3 was not the engine's choice. The bishop eyes e6, but it costs time, and 16...d4 at once drives the knight from e3 back to f1. The engine wanted 16.Ng5 with Qh5 next, going straight for Black's king.",
+      "sv": "16.Bh3 var inte motorns val. Löparen siktar på e6, men draget kostar tid, och 16...d4 driver direkt tillbaka springaren från e3 till f1. Motorn ville spela 16.Ng5 med Qh5 som nästa drag och gå rakt på den svarta kungen.",
+      "line": {
+        "from": "before",
+        "san": ["Ng5", "h6", "Qh5", "Nc6", "Nxd5"]
+      }
+    },
+    {
+      "ply": 41,
+      "en": "21...Rfc8? is a mistake. The rook leaves the kingside, so f7 loses a defender while White's queen on h5 is already aiming at it. The engine's choice was 21...Bb7, keeping the rook at home.",
+      "sv": "21...Rfc8? är ett misstag. Tornet lämnar kungsflygeln, så f7 förlorar en försvarare medan Vits dam på h5 redan siktar på den. Motorns val var 21...Bb7, som behåller tornet hemma."
+    },
+    {
+      "ply": 42,
+      "en": "22.Nd2 lets Black off the hook for a moment. The engine wanted 22.Nh2 and then the sacrifice Bf6: if Black takes the bishop, the pawn recaptures on f6 and the knight comes to g4.",
+      "sv": "22.Nd2 släpper Svart lös för ett ögonblick. Motorn ville spela 22.Nh2 och sedan offret Bf6: om Svart tar löparen tar bonden tillbaka på f6 och springaren kommer till g4.",
+      "line": {
+        "from": "before",
+        "san": ["Nh2", "Qe8", "Bf6", "gxf6", "exf6", "Kh8", "Ng4"]
+      }
+    },
+    {
+      "ply": 43,
+      "en": "22...Nc3? is the turning point. On d5 the knight guarded f6; on c3 it is far from the king, and now White's bishop can go to f6 with tremendous effect. The engine's choice was 22...c4, pressing on with the counterplay.",
+      "sv": "22...Nc3? är vändpunkten. På d5 bevakade springaren f6; på c3 står den långt från kungen, och nu kan Vits löpare gå till f6 med enorm verkan. Motorns val var 22...c4, som fortsätter motspelet.",
+      "line": {
+        "from": "before",
+        "san": ["c4", "Bf6", "Qe8", "dxc4", "Bxc4", "Ne4"]
+      }
+    },
+    {
+      "ply": 44,
+      "en": "23.Bf6! The bishop attacks g7, and the threat is Qg5 followed by Qxg7 mate. Taking the bishop would open lines in front of Black's king. The engine slightly preferred 23.Ne4 first, but the bishop move is very strong too.",
+      "sv": "23.Bf6! Löparen anfaller g7, och hotet är Qg5 följt av Qxg7 matt. Att ta löparen skulle öppna linjer framför Svarts kung. Motorn föredrog en aning 23.Ne4 först, men löpardraget är också mycket starkt."
+    },
+    {
+      "ply": 45,
+      "en": "23...Qe8 is the best defence: the queen can come to f8 to guard g7.",
+      "sv": "23...Qe8 är det bästa försvaret: damen kan komma till f8 och skydda g7."
+    },
+    {
+      "ply": 47,
+      "en": "24...g6? puts a pawn in the way of a queen coming to g5 to attack g7, but it leaves holes on the dark squares around the king, especially h6. No black pawn can ever attack the bishop on f6 now. The engine preferred 24...Bb7.",
+      "sv": "24...g6? ställer en bonde i vägen för en dam som kommer till g5 för att anfalla g7, men lämnar hål på de mörka rutorna runt kungen, särskilt h6. Ingen svart bonde kan längre någonsin anfalla löparen på f6. Motorn föredrog 24...Bb7."
+    },
+    {
+      "ply": 54,
+      "en": "28.Rh4 brings the rook to the h-file after the h-pawn has reached h5. White's plan is simple: Qh6 and then mate on g7, or opening the h-file. Black's counterplay is real, though: the pawns on the queenside are heading for White's back rank.",
+      "sv": "28.Rh4 för tornet till h-linjen efter att h-bonden har nått h5. Vits plan är enkel: Qh6 och sedan matt på g7, eller att öppna h-linjen. Svarts motspel är dock verkligt: bönderna på damflygeln är på väg mot Vits baslinje."
+    },
+    {
+      "ply": 57,
+      "en": "29...dxc2?? loses by force. The pawn is one step from queening, but White is quicker. The engine's choice was 29...Qf8, which covers h6 and g7 and avoids a quick mate, although White is still winning.",
+      "sv": "29...dxc2?? förlorar forcerat. Bonden är ett steg från att bli dam, men Vit är snabbare. Motorns val var 29...Qf8, som täcker h6 och g7 och undviker en snabb matt, även om Vit fortfarande vinner.",
+      "line": {
+        "from": "before",
+        "san": ["Qf8", "Be4", "dxc2", "hxg6", "fxg6"]
+      }
+    },
+    {
+      "ply": 58,
+      "en": "30.Qh6 threatens Qg7 mate, with the queen protected by the bishop on f6.",
+      "sv": "30.Qh6 hotar Qg7 matt, med damen skyddad av löparen på f6."
+    },
+    {
+      "ply": 60,
+      "en": "31.Qxh7+!! After 31...Kxh7, 32.hxg6+ is a double check, from the rook on h4 and the pawn on g6, and after 32...Kxg6 the bishop mates on e4. In the final picture the bishop on e4 covers f5, the bishop on f6 covers g5 and g7, the rook covers the h-file, and f6 is protected by the e5 pawn. Myagmarsuren resigned.",
+      "sv": "31.Qxh7+!! Efter 31...Kxh7 är 32.hxg6+ en dubbelschack, från tornet på h4 och bonden på g6, och efter 32...Kxg6 sätter löparen matt på e4. I slutbilden täcker löparen på e4 f5, löparen på f6 täcker g5 och g7, tornet täcker h-linjen, och f6 skyddas av bonden på e5. Myagmarsuren gav upp.",
+      "line": {
+        "from": "after",
+        "san": ["Kxh7", "hxg6+", "Kxg6", "Be4#"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "The King's Indian Attack often leads to exactly this race, and the e5 pawn was White's trump: it kept a knight off f6 and gave the bishop a permanent post there. Black's critical errors were pulling pieces away from the king, the rook from f8 and above all the knight from d5. In a race on opposite wings, count tempi, and don't pull defenders away from your own king.",
+    "sv": "Kungsindiskt angrepp leder ofta till precis den här kapplöpningen, och bonden på e5 var Vits trumf: den höll en springare borta från f6 och gav löparen en permanent post där. Svarts kritiska fel var att dra bort pjäser från kungen, tornet från f8 och framför allt springaren från d5. I en kapplöpning på var sin flygel gäller det att räkna tempon och inte dra bort försvarare från den egna kungen."
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "id": "petrosian-pachman-1961",
+  "intro": {
+    "en": "Bled 1961: Tigran Petrosian, known for careful, prophylactic chess, against the Czechoslovak grandmaster and opening writer Luděk Pachman. The opening is quiet, but Black's queen wanders around the board while White's pieces take up active squares. Watch the dark squares around Black's king once the bishop leaves g7, and look for a queen sacrifice followed by a quiet bishop move.",
+    "sv": "Bled 1961: Tigran Petrosjan, känd för försiktigt och profylaktiskt spel, mot den tjeckoslovakiske stormästaren och öppningsförfattaren Luděk Pachman. Öppningen är lugn, men Svarts dam vandrar runt på brädet medan Vits pjäser intar aktiva rutor. Lägg märke till de svarta rutorna runt den svarta kungen när löparen lämnar g7, och håll utkik efter ett damoffer följt av ett lugnt löpardrag."
+  },
+  "comments": [
+    {
+      "ply": 14,
+      "en": "White has set up a King's Indian Attack: knight on f3, bishop on g2, pawns on d3 and e4. 8.e5 gains space and takes the d6 and f6 squares from Black. Black challenges it at once with 8...d6.",
+      "sv": "Vit har ställt upp ett kungsindiskt angrepp: springare på f3, löpare på g2, bönder på d3 och e4. 8.e5 vinner utrymme och tar rutorna d6 och f6 från Svart. Svart utmanar den direkt med 8...d6."
+    },
+    {
+      "ply": 21,
+      "en": "11...Nd4 puts the knight on a fine central square, but it does nothing for Black's development: the bishop on c8 is still at home. The engine preferred 11...b6, preparing ...Bb7.",
+      "sv": "11...Nd4 ställer springaren på en fin central ruta, men den hjälper inte utvecklingen: löparen på c8 står fortfarande hemma. Motorn föredrog 11...b6, som förbereder ...Bb7."
+    },
+    {
+      "ply": 23,
+      "en": "12.Bf4 developed with gain of time against the queen, and 12...Qb6? moves it again. The engine wanted 12...Nxf3+, trading off a white attacker before going on.",
+      "sv": "12.Bf4 utvecklade med tempo mot damen, och 12...Qb6? flyttar den igen. Motorn ville spela 12...Nxf3+ och byta bort en vit anfallare innan Svart fortsätter."
+    },
+    {
+      "ply": 26,
+      "en": "13...Nxb3 grabbed a knight, but 14.Nc4 attacks the queen, and after it moves White takes back on b3. Material stays level, but Black's queen has made many moves while White's pieces have come to good squares. The engine preferred 13...Bxe5, removing White's strong knight.",
+      "sv": "13...Nxb3 tog en springare, men 14.Nc4 anfaller damen, och när den har flyttat tar Vit tillbaka på b3. Materialet är lika, men Svarts dam har gjort många drag medan Vits pjäser har kommit till bra rutor. Motorn föredrog 13...Bxe5, som tar bort Vits starka springare."
+    },
+    {
+      "ply": 30,
+      "en": "16.Bd6 plants the bishop deep in Black's camp. It attacks the knight on e7 and the pawn on c5, and it cramps Black's whole position. White is clearly better.",
+      "sv": "16.Bd6 placerar löparen djupt inne i Svarts läger. Den anfaller springaren på e7 och bonden på c5, och den trycker ihop hela Svarts ställning. Vit står klart bättre."
+    },
+    {
+      "ply": 31,
+      "en": "16...Bf6?? is the decisive mistake. The bishop leaves g7, its post next to the king, and on f6 it has no defender. The engine preferred 16...Re8, keeping the king's guard in place.",
+      "sv": "16...Bf6?? är det avgörande misstaget. Löparen lämnar g7, sin post bredvid kungen, och på f6 har den inget försvar. Motorn föredrog 16...Re8, som behåller kungens skydd."
+    },
+    {
+      "ply": 33,
+      "en": "17.Qf3 hit the bishop on f6 and the pawn on b7 together with the bishop on g2. 17...Kg7 defends f6 with the king, but now the king itself becomes the only guard of the bishop. The engine preferred 17...Nd5, which defends f6 with the knight.",
+      "sv": "17.Qf3 angrep löparen på f6 och, tillsammans med löparen på g2, bonden på b7. 17...Kg7 skyddar f6 med kungen, men nu är kungen själv löparens enda försvarare. Motorn föredrog 17...Nd5, som skyddar f6 med springaren."
+    },
+    {
+      "ply": 34,
+      "en": "18.Re4 brings the rook closer to the kingside, where it will cover the f4, g4 and h4 squares. The engine points out that 18.Qxf6+ at once was even stronger. Petrosian's move gives Black a chance to cover f6 with a knight (18...Nd5 or 18...Ng8).",
+      "sv": "18.Re4 för tornet närmare kungsflygeln, där det kommer att täcka rutorna f4, g4 och h4. Motorn påpekar att 18.Qxf6+ direkt var ännu starkare. Petrosjans drag ger Svart en chans att täcka f6 med en springare (18...Nd5 eller 18...Ng8).",
+      "line": { "from": "before", "san": ["Qxf6+", "Kxf6", "Be5+", "Kg5", "Bg7"] }
+    },
+    {
+      "ply": 35,
+      "en": "18...Rd8? misses that chance, and now White has a forced mate. 18...Nd5 or 18...Ng8, covering f6, would have avoided the mate, though White would still be winning easily.",
+      "sv": "18...Rd8? missar den chansen, och nu har Vit en forcerad matt. 18...Nd5 eller 18...Ng8, som täcker f6, hade undvikit matten, även om Vit fortfarande hade vunnit lätt."
+    },
+    {
+      "ply": 37,
+      "en": "19.Qxf6+!! Kxf6: the queen is gone, but Black's king has been dragged out to f6, in front of its own pawns, with White's bishop and rook ready to hunt it.",
+      "sv": "19.Qxf6+!! Kxf6: damen är borta, men den svarta kungen har dragits ut till f6, framför sina egna bönder, och Vits löpare och torn står redo att jaga den."
+    },
+    {
+      "ply": 39,
+      "en": "20.Be5+ drives the king forward to g5. Now the rook on e4 guards g4 and the pawn on g3 guards f4 and h4.",
+      "sv": "20.Be5+ driver kungen framåt till g5. Nu vaktar tornet på e4 rutan g4 och bonden på g3 vaktar f4 och h4."
+    },
+    {
+      "ply": 40,
+      "en": "21.Bg7!! is a quiet move with a queen down. The bishop takes away f6 and h6, and White threatens 22.h4+: after 22...Kh5 23.Bf3 is mate, and if the king goes to f5 instead, the knight mates with a check from e3. Some defences delay the mate by a move or two, but the engine finds a forced mate whatever Black does, so Pachman resigned.",
+      "sv": "21.Bg7!! är ett lugnt drag med en dam mindre. Löparen tar rutorna f6 och h6, och Vit hotar 22.h4+: efter 22...Kh5 är 23.Bf3 matt, och om kungen i stället går till f5 sätter springaren matt med schack från e3. Vissa försvar skjuter upp matten ett eller två drag, men motorn hittar en forcerad matt vad Svart än gör, så Pachman gav upp.",
+      "line": { "from": "after", "san": ["Rd7", "h4+", "Kh5", "Bf3#"] }
+    }
+  ],
+  "summary": {
+    "en": "Even a positional player like Petrosian sacrifices the queen when the position calls for it. The lessons: don't move your queen again and again while your pieces stay at home, and think twice before moving the bishop that guards your king. And when you attack, look for quiet moves that take away the king's last squares: 21.Bg7 gave no check, but it decided the game.",
+    "sv": "Även en positionsspelare som Petrosjan offrar damen när ställningen kräver det. Lärdomarna: flytta inte damen gång på gång medan pjäserna står hemma, och tänk efter två gånger innan du flyttar löparen som skyddar din kung. Och när du anfaller, leta efter lugna drag som tar kungens sista rutor: 21.Bg7 gav ingen schack, men avgjorde partiet."
+  }
+}

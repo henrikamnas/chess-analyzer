@@ -1,0 +1,85 @@
+{
+  "id": "spassky-petrosian-1969-g19",
+  "intro": {
+    "en": "Moscow 1969, game 19 of the World Championship match between the champion Tigran Petrosian and the challenger Boris Spassky, who went on to win the match and the title. Petrosian, famous for his defence, chose a Najdorf Sicilian. Watch how Spassky castles queenside, gives up a pawn to open the g-file and then throws everything at the black king.",
+    "sv": "Moskva 1969, parti 19 i VM-matchen mellan världsmästaren Tigran Petrosjan och utmanaren Boris Spasskij, som sedan vann matchen och titeln. Petrosjan, känd för sitt försvarsspel, valde en Najdorfsicilianare. Se hur Spasskij gör lång rockad, ger bort en bonde för att öppna g-linjen och sedan kastar allt mot den svarta kungen."
+  },
+  "comments": [
+    {
+      "ply": 9,
+      "en": "5...a6 is the Najdorf Variation of the Sicilian. The quiet pawn move keeps White's pieces off b5 and prepares ...b5 and ...e5 later. Black's plan is counterplay on the queenside and down the half-open c-file.",
+      "sv": "5...a6 är Najdorfvarianten i sicilianskt. Det lugna bondedraget håller Vits pjäser borta från b5 och förbereder ...b5 och ...e5 senare. Svarts plan är motspel på damflygeln och längs den halvöppna c-linjen."
+    },
+    {
+      "ply": 11,
+      "en": "6...Nbd7 is a less common reply to 6.Bg5; the engine prefers the main move 6...e6. With the knight on d7 instead of c6, Black keeps the option of ...Nc5 but develops the kingside a little more slowly.",
+      "sv": "6...Nbd7 är ett ovanligare svar på 6.Bg5; motorn föredrar huvuddraget 6...e6. Med springaren på d7 i stället för c6 behåller Svart möjligheten ...Nc5, men utvecklar kungsflygeln lite långsammare."
+    },
+    {
+      "ply": 18,
+      "en": "After 9.Bxf6 Nxf6 White gave up the bishop pair, but now castles queenside with a big lead in development. The kings will be on opposite wings, which usually means a race: each side storms the other king with pawns.",
+      "sv": "Efter 9.Bxf6 Nxf6 gav Vit upp löparparet, men gör nu lång rockad med ett stort försprång i utveckling. Kungarna hamnar på olika flyglar, vilket oftast betyder en kapplöpning: båda sidor stormar mot den andra kungen med bönder."
+    },
+    {
+      "ply": 23,
+      "en": "12...O-O puts the king on the side where White's f- and g-pawns are ready to storm forward. The engine preferred 12...Bd7 with the idea of castling queenside, keeping the king away from White's pawn storm.",
+      "sv": "12...O-O ställer kungen på den flygel där Vits f- och g-bönder står redo att storma fram. Motorn föredrog 12...Bd7 med idén att göra lång rockad, så att kungen hålls borta från Vits bondestorm.",
+      "line": {
+        "from": "before",
+        "san": ["Bd7", "Bb3", "O-O-O"]
+      }
+    },
+    {
+      "ply": 28,
+      "en": "15.g4! is a pawn sacrifice. Spassky does not mind losing the pawn if the g-file opens towards Black's king. The engine slightly preferred 15.e5, but White keeps the initiative either way.",
+      "sv": "15.g4! är ett bondeoffer. Spasskij bryr sig inte om att förlora bonden om g-linjen öppnas mot Svarts kung. Motorn föredrog 15.e5 en aning, men Vit behåller initiativet i båda fallen."
+    },
+    {
+      "ply": 30,
+      "en": "16.Qg2 attacks the knight on g4 and puts the queen on the g-file, where White has no pawn left. Black has won a pawn, but the knight should retreat and White's queen and rook will soon line up against g7.",
+      "sv": "16.Qg2 angriper springaren på g4 och ställer damen på g-linjen, där Vit inte längre har någon bonde. Svart har vunnit en bonde, men springaren bör retirera, och Vits dam och torn ställer sig snart på linje mot g7."
+    },
+    {
+      "ply": 34,
+      "en": "18.f5 attacks e6 and threatens to open the f-file as well. Black's pieces are cramped, and White's rooks are coming to the f- and g-files.",
+      "sv": "18.f5 angriper e6 och hotar att öppna även f-linjen. Svarts pjäser står trångt, och Vits torn kommer till f- och g-linjerna."
+    },
+    {
+      "ply": 37,
+      "en": "19...Qd8? brings the queen back to defend, but it is too slow. The engine wanted 19...exf5, trading off White's attacking pieces on f5 before White can open lines. Now 20.fxe6 fxe6 opens the f-file for White's rook on f1.",
+      "sv": "19...Qd8? tar tillbaka damen för att försvara, men det är för långsamt. Motorn ville spela 19...exf5, som byter av Vits angreppspjäser på f5 innan Vit hinner öppna linjer. Nu öppnar 20.fxe6 fxe6 f-linjen för Vits torn på f1.",
+      "line": {
+        "from": "before",
+        "san": ["exf5", "Nxf5", "Bxf5", "Rxf5", "Re5"]
+      }
+    },
+    {
+      "ply": 40,
+      "en": "21.e5! Another pawn offer. White wants to clear e4 for the knight on c3 and drive away the knight on f6, the main defender of Black's king.",
+      "sv": "21.e5! Ännu ett bondeoffer. Vit vill frigöra e4 för springaren på c3 och driva bort springaren på f6, Svarts kungs viktigaste försvarare."
+    },
+    {
+      "ply": 42,
+      "en": "22.Ne4! ignores that the knight on d4 is attacked by the pawn on e5. The engine agrees it is best. The knight on e4 hits f6 and is heading for g5, close to Black's king.",
+      "sv": "22.Ne4! struntar i att springaren på d4 är angripen av bonden på e5. Motorn håller med om att det är bäst. Springaren på e4 angriper f6 och är på väg till g5, nära Svarts kung."
+    },
+    {
+      "ply": 45,
+      "en": "23...exd4 takes the second knight. Black is now a knight and two pawns up, but White's queen, knight and rooks are all aimed at the king on h8. The engine preferred 23...Nf4, which hits the queen on g6 and blocks the f-file, though Black is lost either way.",
+      "sv": "23...exd4 tar den andra springaren. Svart har nu en springare och två bönder mer, men Vits dam, springare och torn siktar alla mot kungen på h8. Motorn föredrog 23...Nf4, som angriper damen på g6 och blockerar f-linjen, men Svart är förlorad i båda fallen."
+    },
+    {
+      "ply": 46,
+      "en": "24.Ng5! and Petrosian resigned. White threatens mate with the queen on h7: there it would be protected by the knight on g5 and would also cover g8. The engine's best defence is to give up the queen with 24...Qxg5 25.Rxg5, which leaves Black with no hope.",
+      "sv": "24.Ng5! och Petrosjan gav upp. Vit hotar matt med damen på h7: där skulle den skyddas av springaren på g5 och samtidigt täcka g8. Motorns bästa försvar är att ge bort damen med 24...Qxg5 25.Rxg5, vilket inte lämnar Svart något hopp.",
+      "line": {
+        "from": "after",
+        "san": ["Qxg5", "Rxg5", "Nf6", "Rxf6"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "With kings on opposite wings, speed matters more than material. Spassky gave a pawn on g4 to open the g-file, another with e5 to open lines in the centre, and then a whole knight to get his pieces close to Black's king. Petrosian's slow defensive moves, like 19...Qd8, gave White the time he needed; opening the position at once with ...exf5 and trading White's attackers was the better defence.",
+    "sv": "När kungarna står på olika flyglar betyder tempo mer än material. Spasskij gav en bonde på g4 för att öppna g-linjen, en till med e5 för att öppna linjer i centrum och sedan en hel springare för att få pjäserna nära Svarts kung. Petrosjans långsamma försvarsdrag, som 19...Qd8, gav Vit den tid han behövde; att direkt spela ...exf5 och byta av Vits angreppspjäser var det bättre försvaret."
+  }
+}
