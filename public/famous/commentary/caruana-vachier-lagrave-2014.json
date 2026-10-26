@@ -1,0 +1,85 @@
+{
+  "id": "caruana-vachier-lagrave-2014",
+  "intro": {
+    "en": "Saint Louis 2014: this game is from Fabiano Caruana's famous run of seven straight wins at the start of the Sinquefield Cup. Against Maxime Vachier-Lagrave's Caro-Kann, Caruana gives up two pawns on the queenside for a lead in development. Watch the black queen: it grabs material, but it ends up far from home, and a single careless move lets White's pieces catch the loose black bishops.",
+    "sv": "Saint Louis 2014: det här partiet kommer från Fabiano Caruanas berömda svit med sju raka vinster i början av Sinquefield Cup. Mot Maxime Vachier-Lagraves Caro-Kann ger Caruana bort två bönder på damflygeln för ett utvecklingsförsprång. Håll ögonen på den svarta damen: den plockar material men hamnar långt hemifrån, och ett enda slarvigt drag låter de vita pjäserna fånga Svarts lösa löpare."
+  },
+  "comments": [
+    {
+      "ply": 9,
+      "en": "This is the Short Variation of the Caro-Kann Advance: White develops quietly with Nf3 and Be2. Black has followed the Caro-Kann plan of bringing the light-squared bishop out to f5 before playing ...e6, and now hits the base of White's pawn chain with ...c5.",
+      "sv": "Det här är Shortvarianten av Caro-Kanns avancemangsvariant: Vit utvecklar lugnt med Nf3 och Be2. Svart har följt Caro-Kanns plan att få ut den vitfältiga löparen till f5 innan ...e6, och angriper nu basen av Vits bondekedja med ...c5."
+    },
+    {
+      "ply": 10,
+      "en": "6.Be3 protects d4 but leaves the b2 pawn hanging after ...Qb6. Caruana is happy to offer it: if the queen takes, White gains time by chasing it while bringing out his pieces.",
+      "sv": "6.Be3 skyddar d4 men lämnar bonden på b2 hängande efter ...Qb6. Caruana erbjuder den gärna: om damen slår vinner Vit tid genom att jaga den samtidigt som pjäserna kommer ut."
+    },
+    {
+      "ply": 15,
+      "en": "8...Qxb2 accepts the offer. The engine approves, but Black's queen is now on the other side of the board from her own pieces, and White can gain time by attacking it.",
+      "sv": "8...Qxb2 antar erbjudandet. Motorn godkänner draget, men den svarta damen står nu på andra sidan brädet, långt från de egna pjäserna, och Vit kan vinna tid genom att anfalla den."
+    },
+    {
+      "ply": 22,
+      "en": "12.Ndb5 brings the knight towards d6 and c7: Nd6+ is a check, and Nc7+ would fork the king and the rook on a8. The engine slightly preferred 12.Rb1, hitting the queen at once.",
+      "sv": "12.Ndb5 för springaren mot d6 och c7: Nd6+ är en schack, och Nc7+ skulle gaffla kungen och tornet på a8. Motorn föredrog en aning 12.Rb1, som anfaller damen direkt."
+    },
+    {
+      "ply": 25,
+      "en": "13...Qxc2 grabs a second pawn, and it was the only good move. Taking on c3 or on a2 instead would have lost material at once, because of the knight fork on c7.",
+      "sv": "13...Qxc2 tar en andra bonde, och det var det enda bra draget. Att i stället slå på c3 eller a2 hade förlorat material direkt, på grund av springargaffeln på c7.",
+      "line": {
+        "from": "before",
+        "san": ["Bxc3", "Rxb2", "Bxe1", "Nc7+", "Kf8", "Nxa8"]
+      }
+    },
+    {
+      "ply": 28,
+      "en": "15.g4 gains space and drives back the bishop, but the engine sees the position as level now. 15.Na4 was stronger: it hits the queen, and after the queens come off White keeps a small edge.",
+      "sv": "15.g4 vinner utrymme och driver tillbaka löparen, men motorn bedömer nu ställningen som jämn. 15.Na4 var starkare: det anfaller damen, och efter dambytet behåller Vit en liten fördel.",
+      "line": {
+        "from": "before",
+        "san": ["Na4", "Bxe1", "Nxb2", "Ba5", "Nd6+", "Ke7", "Nxb7"]
+      }
+    },
+    {
+      "ply": 33,
+      "en": "17...Nh6? is the decisive mistake. It develops the last minor piece, but it does nothing about Black's real problem: the queen and the bishop on a5 are loose, and the bishop on e4 is held only by the d5 pawn. 17...Kf8 was the way to hold, steering towards a queen trade and a level game.",
+      "sv": "17...Nh6? är det avgörande misstaget. Det utvecklar den sista lätta pjäsen men gör ingenting åt Svarts verkliga problem: damen och löparen på a5 står oskyddade, och löparen på e4 hålls bara av bonden på d5. 17...Kf8 var vägen att hålla, mot ett dambyte och ett jämnt parti.",
+      "line": {
+        "from": "before",
+        "san": ["Kf8", "Bd3", "Qb4", "Bxe4", "dxe4", "Qxe4", "Qxe4", "Nxe4"]
+      }
+    },
+    {
+      "ply": 36,
+      "en": "18.Bd3 and 19.Rb1 chase the queen again. Black has no good square: with the queen pushed away, the bishop on e4 needs help and the bishop on a5 is loose.",
+      "sv": "18.Bd3 och 19.Rb1 jagar damen igen. Svart har inget bra fält: när damen trycks undan behöver löparen på e4 hjälp, och löparen på a5 står oskyddad."
+    },
+    {
+      "ply": 38,
+      "en": "20.Nxe4! takes the bishop and attacks the queen on c5. At the same time the knight leaves c3, opening the diagonal from the queen on e1 to the bishop on a5. After 20...dxe4 21.Qxa5 White has won a piece.",
+      "sv": "20.Nxe4! slår löparen och anfaller damen på c5. Samtidigt lämnar springaren c3 och öppnar diagonalen från damen på e1 till löparen på a5. Efter 20...dxe4 21.Qxa5 har Vit vunnit en pjäs."
+    },
+    {
+      "ply": 43,
+      "en": "22...e3 pushes the pawn deep into White's camp, protected by the queen. It is a nuisance, but the extra piece counts for more, and White calmly brings the queen back to round it up.",
+      "sv": "22...e3 för bonden djupt in i det vita lägret, skyddad av damen. Den är besvärlig, men merpjäsen väger tyngre, och Vit för lugnt tillbaka damen för att plocka in den."
+    },
+    {
+      "ply": 54,
+      "en": "28.Rxf8+ trades rooks on the open f-file, and then 29.Qxe3 removes Black's advanced pawn. Simplifying is the easy way to win when you are a piece up.",
+      "sv": "28.Rxf8+ byter torn på den öppna f-linjen, och sedan tar 29.Qxe3 bort Svarts framskjutna bonde. Att förenkla är det enkla sättet att vinna när man har en pjäs mer."
+    },
+    {
+      "ply": 58,
+      "en": "A piece up for a pawn, with Black having no counterplay, Vachier-Lagrave resigned after 30.Nc3.",
+      "sv": "Med en pjäs mer mot en bonde, och utan svart motspel, gav Vachier-Lagrave upp efter 30.Nc3."
+    }
+  ],
+  "summary": {
+    "en": "Black's pawn grab was sound, and up to move 17 the engine thought Vachier-Lagrave was holding, but only with exact moves. When a queen goes hunting, the pieces left behind can become loose, and 17...Nh6 let White exploit that with a knight move that attacked the queen and opened a line to the bishop on a5. A good lesson: before grabbing material, check which of your pieces are left unprotected.",
+    "sv": "Svarts bondeplock var korrekt, och fram till drag 17 ansåg motorn att Vachier-Lagrave höll, men bara med exakta drag. När damen går på jakt kan pjäserna som lämnas kvar bli oskyddade, och 17...Nh6 lät Vit utnyttja det med ett springardrag som anföll damen och öppnade en linje mot löparen på a5. En bra läxa: innan du plockar material, kontrollera vilka av dina pjäser som blir oskyddade."
+  }
+}

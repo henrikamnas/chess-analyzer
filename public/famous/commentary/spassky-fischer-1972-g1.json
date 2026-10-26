@@ -1,0 +1,76 @@
+{
+  "id": "spassky-fischer-1972-g1",
+  "intro": {
+    "en": "Reykjavik, 1972: the first game of the World Championship match between the champion Boris Spassky and the challenger Bobby Fischer. The opening is calm, the queens come off early, and the game reaches a bishop endgame with equal pawns that looks like a certain draw. Then comes one of the most famous moves in match history, 29...Bxh2. Watch what really decided the game: it was not quite the move everyone remembers.",
+    "sv": "Reykjavik 1972: första partiet i VM-matchen mellan den regerande mästaren Boris Spasskij och utmanaren Bobby Fischer. Öppningen är lugn, damerna byts tidigt, och partiet når ett löparslutspel med lika många bönder som ser ut som en säker remi. Sedan kommer ett av de mest kända dragen i matchhistorien, 29...Bxh2. Se vad som faktiskt avgjorde partiet: det var inte riktigt det drag som alla minns."
+  },
+  "comments": [
+    {
+      "ply": 11,
+      "en": "The game has reached the Nimzo-Indian Defence, Normal Variation. Black pins the knight on c3 with the bishop and strikes at White's centre with both ...d5 and ...c5, a solid and classical set-up.",
+      "sv": "Partiet har nått nimzoindiskt försvar, normalvarianten. Svart binder springaren på c3 med löparen och slår mot Vits centrum med både ...d5 och ...c5, en solid och klassisk uppställning."
+    },
+    {
+      "ply": 21,
+      "en": "11...Qxd1 trades queens very early. The pawn structure is symmetrical and Black's pieces are well developed, so the position is level and the endgame holds no dangers for Black.",
+      "sv": "11...Qxd1 byter damer mycket tidigt. Bondestrukturen är symmetrisk och Svarts pjäser är väl utvecklade, så ställningen är jämn och slutspelet innebär inga faror för Svart."
+    },
+    {
+      "ply": 37,
+      "en": "One pair of pieces after another disappears: the knights on d4, the light-squared bishops on b3, now the rooks on d1. Every trade brings the game closer to a draw.",
+      "sv": "Det ena pjäsparet efter det andra försvinner: springarna på d4, de vitfältiga löparna på b3, nu tornen på d1. Varje byte för partiet närmare remi."
+    },
+    {
+      "ply": 55,
+      "en": "After 28...Bxd6 only same-coloured bishops and six pawns each are left, with the pawns placed almost symmetrically. This is a dead draw, and the engine sees it as completely level.",
+      "sv": "Efter 28...Bxd6 återstår bara löpare på samma färg och sex bönder var, nästan symmetriskt placerade. Det här är död remi, och motorn bedömer ställningen som helt jämn."
+    },
+    {
+      "ply": 57,
+      "en": "29...Bxh2 is the famous moment. After 30.g3 the bishop is shut in on h2: its only free square is g1, and White's king can come over to win it. But the engine is surprisingly calm: the move is only a small inaccuracy, because Black gets pawns for the bishop. The safe 29...a6 kept a total balance.",
+      "sv": "29...Bxh2 är det berömda ögonblicket. Efter 30.g3 är löparen instängd på h2: den enda lediga rutan är g1, och Vits kung kan gå dit och vinna den. Men motorn är förvånansvärt lugn: draget är bara en mindre onoggrannhet, eftersom Svart får bönder för löparen. Det säkra 29...a6 behöll full balans.",
+      "line": { "from": "before", "san": ["a6", "a4", "Ke7", "h3", "axb5", "axb5"] }
+    },
+    {
+      "ply": 61,
+      "en": "With 30...h5 and 31...h4 Fischer tries to break the bishop free by attacking the pawn on g3. White's king walks over to the kingside to win the bishop anyway.",
+      "sv": "Med 30...h5 och 31...h4 försöker Fischer få loss löparen genom att angripa bonden på g3. Vits kung går över till kungsflygeln för att vinna löparen ändå."
+    },
+    {
+      "ply": 68,
+      "en": "35.Kxg3: Black has given his bishop for three pawns (h2, and two on g3). Bishop against three pawns is not easy to win, and the engine still gives White only a small edge. Black's pawns must be kept together and advanced carefully.",
+      "sv": "35.Kxg3: Svart har gett sin löpare för tre bönder (h2 och två på g3). Löpare mot tre bönder är inte lätt att vinna, och motorn ger fortfarande Vit bara en liten fördel. Svarts bönder måste hållas samman och föras fram försiktigt."
+    },
+    {
+      "ply": 73,
+      "en": "37...Ke4? is the first real error. The king goes after the e3 pawn, but White answers 38.Bc5 and 39.b6, fixing the pawn on b7 and tying Black's queenside down. The engine preferred 37...e5, getting the pawns moving first.",
+      "sv": "37...Ke4? är det första riktiga felet. Kungen går mot e3-bonden, men Vit svarar 38.Bc5 och 39.b6, som låser fast bonden på b7 och binder Svarts damflygel. Motorn föredrog 37...e5, som först sätter bönderna i rörelse.",
+      "line": { "from": "before", "san": ["e5", "Kg4", "Ke4", "Bc5", "a6", "b6"] }
+    },
+    {
+      "ply": 77,
+      "en": "39...f5? is the decisive mistake. The pawn on f6 was guarding g5, and now White's king can use that square: 40.Kh4 heads for g5 and h5, and the lonely g7 pawn will fall. 39...e5 would have kept Black's drawing chances alive.",
+      "sv": "39...f5? är det avgörande misstaget. Bonden på f6 bevakade g5, och nu kan Vits kung använda den rutan: 40.Kh4 siktar på g5 och h5, och den ensamma g7-bonden kommer att falla. 39...e5 hade hållit Svarts remichanser vid liv.",
+      "line": { "from": "before", "san": ["e5", "Kg4", "Kd5", "Bf8", "g6", "Be7"] }
+    },
+    {
+      "ply": 79,
+      "en": "40...f4 makes things worse: after 41.exf4 Kxf4 42.Kh5 White's king reaches the g-pawn, while Black's king is far from the queenside. The engine's 40...Kd5 was more stubborn, but Black was already losing.",
+      "sv": "40...f4 gör saken värre: efter 41.exf4 Kxf4 42.Kh5 når Vits kung g-bonden, medan Svarts kung står långt från damflygeln. Motorns 40...Kd5 var segare, men Svart förlorade redan."
+    },
+    {
+      "ply": 91,
+      "en": "The black pawns are now far apart. White's bishop and king can deal with the e-pawn and the g-pawn one at a time, while the b6 pawn keeps Black's queenside frozen.",
+      "sv": "De svarta bönderna står nu långt isär. Vits löpare och kung kan ta hand om e-bonden och g-bonden en i taget, medan b6-bonden håller Svarts damflygel låst."
+    },
+    {
+      "ply": 110,
+      "en": "56.Kd6 and Fischer resigned. White's king heads for c7 to win the b7 pawn, and then the b-pawn will promote.",
+      "sv": "56.Kd6 och Fischer gav upp. Vits kung går mot c7 för att vinna b7-bonden, och sedan blir b-bonden dam."
+    }
+  ],
+  "summary": {
+    "en": "29...Bxh2 is remembered as the move that lost the game, and it did start Black's troubles. But the engine shows that bishop against three pawns was still close to a draw; the real damage came later with 37...Ke4 and especially 39...f5, which gave White's king the g5 square. Lessons for endgames: avoid trapping your own pieces, and do not push pawns that guard key squares in front of the enemy king.",
+    "sv": "29...Bxh2 minns som draget som förlorade partiet, och det inledde mycket riktigt Svarts problem. Men motorn visar att löpare mot tre bönder fortfarande var nära remi; den verkliga skadan kom senare med 37...Ke4 och framför allt 39...f5, som gav Vits kung rutan g5. Lärdomar för slutspel: undvik att stänga in dina egna pjäser, och flytta inte bönder som bevakar viktiga rutor framför motståndarens kung."
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "kasparov-karpov-1984-g48",
+  "intro": {
+    "en": "Moscow, 1984/85: game 48 of the marathon World Championship match. Karpov had led 5–0, but Kasparov had won games 32 and 47, and this win cut the score to 5–3. Soon afterwards the match was controversially stopped without a result. Karpov's solid Petrov Defence holds for a long time, until a pawn sacrifice opens his king; then watch the long rook endgame, where the advantage almost slips away before one passive rook move decides it.",
+    "sv": "Moskva 1984/85: parti 48 i den maratonlånga VM-matchen. Karpov hade lett med 5–0, men Kasparov hade vunnit parti 32 och 47, och den här vinsten minskade ställningen till 5–3. Kort därefter avbröts matchen på ett omstritt sätt utan resultat. Karpovs solida ryska parti håller länge, tills ett bondeoffer öppnar hans kung; se sedan på det långa tornslutspelet, där fördelen nästan glider bort innan ett passivt torndrag avgör."
+  },
+  "comments": [
+    {
+      "ply": 14,
+      "en": "This is Petrov's Defence, Classical Attack. Black copies White's first moves, and before taking on e4 he first drove the knight back with 3...d6, as the textbooks require. 8.c4 is the Jaenisch Variation: White attacks the d5 pawn, which supports Black's knight on e4.",
+      "sv": "Det här är ryskt parti (Petrovs försvar), klassiska angreppet. Svart härmar Vits första drag, och innan han slog på e4 drev han först tillbaka springaren med 3...d6, precis som läroböckerna kräver. 8.c4 är Jaenischvarianten: Vit angriper d5-bonden, som stöder Svarts springare på e4."
+    },
+    {
+      "ply": 32,
+      "en": "17.dxe5 puts a pawn on e5. It gains space, attacks the knight on f6 and takes the d6 and f6 squares from Black's pieces. It can also become a battering ram: an advance to e6 would break up Black's kingside pawns.",
+      "sv": "17.dxe5 placerar en bonde på e5. Den vinner utrymme, angriper springaren på f6 och tar rutorna d6 och f6 från Svarts pjäser. Den kan också bli en murbräcka: en framstöt till e6 skulle bryta upp Svarts kungsflygelbönder."
+    },
+    {
+      "ply": 41,
+      "en": "21.Bh6 attacked the rook on f8, and 21...Rfd8? is the first real mistake. It allows the pawn break 22.e6, which tears up Black's kingside pawns. 21...Rfe8 was the move: with the rook on the e-file, Black can answer 22.e6 with 22...Qd6 and keep his position together.",
+      "sv": "21.Bh6 angrep tornet på f8, och 21...Rfd8? är det första riktiga misstaget. Det tillåter bondegenombrottet 22.e6, som river upp Svarts kungsflygelbönder. 21...Rfe8 var draget: med tornet på e-linjen kan Svart svara på 22.e6 med 22...Qd6 och hålla ihop ställningen.",
+      "line": { "from": "before", "san": ["Rfe8", "e6", "Qd6", "exf7+", "Kxf7"] }
+    },
+    {
+      "ply": 44,
+      "en": "22.e6! fxe6 23.Bxg6: White gives the e-pawn to break open the pawns in front of Black's king. The g6 pawn has fallen, the h7 pawn is isolated, and White's pieces have open lines towards g7 and h7.",
+      "sv": "22.e6! fxe6 23.Bxg6: Vit ger e-bonden för att bryta upp bönderna framför Svarts kung. g6-bonden har fallit, h7-bonden är isolerad, och Vits pjäser har öppna linjer mot g7 och h7."
+    },
+    {
+      "ply": 45,
+      "en": "23...Bf8 offers to trade bishops, but after 24.Bxf8 Rxf8 Black's dark squares around the king are bare. The engine preferred 23...Bf6, keeping the bishop as a defender.",
+      "sv": "23...Bf8 erbjuder löparbyte, men efter 24.Bxf8 Rxf8 är de mörka rutorna runt Svarts kung blottade. Motorn föredrog 23...Bf6, som behåller löparen som försvarare.",
+      "line": { "from": "before", "san": ["Bf6", "Be4", "Kh8", "b4"] }
+    },
+    {
+      "ply": 54,
+      "en": "28.Rg3: both white rooks have swung up to the third rank, and one now stands on the g-file, where Black has no pawn left. This rook lift is a typical way to bring rooks into a kingside attack.",
+      "sv": "28.Rg3: båda vita tornen har svängt upp till tredje raden, och det ena står nu på g-linjen, där Svart inte har någon bonde kvar. Det här tornlyftet är ett typiskt sätt att föra in tornen i ett kungsangrepp."
+    },
+    {
+      "ply": 58,
+      "en": "30.Rde3 lets some of the advantage go. The engine wanted 30.h4, pushing the h-pawn to h6 to loosen Black's king still further. White remains clearly better.",
+      "sv": "30.Rde3 släpper en del av fördelen. Motorn ville spela 30.h4 och föra h-bonden till h6 för att lösa upp Svarts kungsställning ännu mer. Vit står fortfarande klart bättre.",
+      "line": { "from": "before", "san": ["h4", "Kg8", "h5", "Qd8", "h6"] }
+    },
+    {
+      "ply": 66,
+      "en": "A small combination: after 33.Bxd5 Qxe5 White does not recapture at once but first plays 34.Bxe6+ with check, and only then takes back the queen with 35.Rxe6. When the dust settles, White has won a pawn.",
+      "sv": "En liten kombination: efter 33.Bxd5 Qxe5 tar Vit inte tillbaka direkt utan spelar först 34.Bxe6+ med schack, och tar först därefter tillbaka damen med 35.Rxe6. När röken har lagt sig har Vit vunnit en bonde."
+    },
+    {
+      "ply": 68,
+      "en": "The rook endgame: White has five pawns against four, and Black's h-pawn is isolated. Rook endgames are famous for being hard to win, so the question is whether White can turn the extra pawn into a point.",
+      "sv": "Tornslutspelet: Vit har fem bönder mot fyra, och Svarts h-bonde är isolerad. Tornslutspel är kända för att vara svåra att vinna, så frågan är om Vit kan omvandla merbonden till en vinst."
+    },
+    {
+      "ply": 78,
+      "en": "40.f4? lets a good part of the advantage slip. The engine preferred 40.Rf3+, driving the king back and then attacking Black's queenside pawns with the rook.",
+      "sv": "40.f4? släpper en god del av fördelen. Motorn föredrog 40.Rf3+, som driver tillbaka kungen och sedan angriper Svarts damflygelbönder med tornet.",
+      "line": { "from": "before", "san": ["Rf3+", "Ke8", "Rf6", "Rc3", "Kg2", "Rxa3", "Rxc6"] }
+    },
+    {
+      "ply": 86,
+      "en": "44.Kf3? is the second slip, and now Black is close to a draw. After 44...b4 the a-pawns are traded and Black's rook can become active. 44.Rb3 was the move, putting the rook against the queenside pawns.",
+      "sv": "44.Kf3? är det andra snedsteget, och nu är Svart nära remi. Efter 44...b4 byts a-bönderna och Svarts torn kan bli aktivt. 44.Rb3 var draget, som ställer tornet mot damflygelbönderna.",
+      "line": { "from": "before", "san": ["Rb3", "Kf7", "Kf3", "Kf6"] }
+    },
+    {
+      "ply": 91,
+      "en": "46...Rb5?? is the decisive mistake. The rook becomes a passive guard of the b4 pawn, and after 47.Rb3 White's king and rook can go after it. 46...Ke6 was the move: Black's rook would later attack White's kingside pawns from behind, and the game would have been close to a draw.",
+      "sv": "46...Rb5?? är det avgörande misstaget. Tornet blir en passiv vakt åt b4-bonden, och efter 47.Rb3 kan Vits kung och torn gå på den. 46...Ke6 var draget: Svarts torn skulle senare angripa Vits kungsflygelbönder bakifrån, och partiet hade varit nära remi.",
+      "line": { "from": "before", "san": ["Ke6", "Kd4", "Rc1", "Re3+", "Kf6", "Rb3", "Rh1"] }
+    },
+    {
+      "ply": 98,
+      "en": "50.Rxb4: the b-pawn has fallen, and White has three kingside pawns against one. The rest is technique: the king supports the pawns while the rook keeps Black's king away.",
+      "sv": "50.Rxb4: b-bonden har fallit, och Vit har tre kungsflygelbönder mot en. Resten är teknik: kungen stöder bönderna medan tornet håller Svarts kung borta."
+    },
+    {
+      "ply": 132,
+      "en": "67.Kc3 and Karpov resigned. White's king has escaped the checks, the h7 pawn is about to fall, and then White's three connected passed pawns will be too much for Black.",
+      "sv": "67.Kc3 och Karpov gav upp. Vits kung har undkommit schackarna, h7-bonden står på tur att falla, och sedan blir Vits tre sammanhängande fribönder för mycket för Svart."
+    }
+  ],
+  "summary": {
+    "en": "The middlegame was decided by a classic idea: the pawn break 22.e6 tore open Black's king position, made possible by 21...Rfd8. The rook endgame then showed how hard it is to convert an extra pawn: White let much of the advantage slip with 40.f4 and 44.Kf3, but Karpov put his rook in a passive defensive role with 46...Rb5 and lost. Lesson for rook endgames: keep your rook active, even at the cost of a pawn.",
+    "sv": "Mittspelet avgjordes av en klassisk idé: bondegenombrottet 22.e6 rev upp Svarts kungsställning, vilket 21...Rfd8 möjliggjorde. Tornslutspelet visade sedan hur svårt det är att omvandla en merbonde: Vit släppte mycket av fördelen med 40.f4 och 44.Kf3, men Karpov ställde sitt torn i en passiv försvarsroll med 46...Rb5 och förlorade. Lärdom för tornslutspel: håll tornet aktivt, även om det kostar en bonde."
+  }
+}

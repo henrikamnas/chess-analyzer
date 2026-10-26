@@ -1,0 +1,84 @@
+{
+  "id": "spassky-fischer-1972-g3",
+  "intro": {
+    "en": "Reykjavik, 1972, game 3. Fischer had lost the first game and forfeited the second, and this game was played in a back room away from the cameras at his demand. It became his first ever win against Spassky. Fischer chooses the Benoni Defence, and the game is a lesson in light squares: watch how one weakening pawn move by White comes back to haunt him more than twenty moves later.",
+    "sv": "Reykjavik 1972, parti 3. Fischer hade förlorat första partiet och lämnat walkover i det andra, och det här partiet spelades i ett bakre rum bort från kamerorna på hans begäran. Det blev hans första vinst någonsin mot Spasskij. Fischer väljer Benoniförsvar, och partiet är en lektion i vita rutor: se hur ett försvagande bondedrag av Vit straffar sig mer än tjugo drag senare."
+  },
+  "comments": [
+    {
+      "ply": 12,
+      "en": "This is the Benoni Defence. White has an extra pawn in the centre and hopes to push e4-e5; Black has a queenside pawn majority, the bishop that will go to the long diagonal, and pressure down the e-file. 7.Nd2 sends the knight towards c4, where it will hit the weak pawn on d6.",
+      "sv": "Det här är Benoniförsvar. Vit har en extra bonde i centrum och hoppas kunna spela e4-e5; Svart har bondemajoritet på damflygeln, löparen som ska till den långa diagonalen, och tryck längs e-linjen. 7.Nd2 skickar springaren mot c4, där den kommer att angripa den svaga bonden på d6."
+    },
+    {
+      "ply": 21,
+      "en": "11...Nh5!? was a big surprise. Fischer invites 12.Bxh5, which wrecks the pawns in front of his king. In return he gets the bishop pair, and the bishop on g7 now has an open long diagonal. The engine has no objection: the position stays roughly as it was.",
+      "sv": "11...Nh5!? var en stor överraskning. Fischer bjuder in till 12.Bxh5, som förstör bönderna framför hans kung. I gengäld får han löparparet, och löparen på g7 får nu en öppen lång diagonal. Motorn har inga invändningar: ställningen förblir ungefär som den var."
+    },
+    {
+      "ply": 23,
+      "en": "12...gxh5: Black has doubled h-pawns and no g-pawn in front of his king. But White has no pieces ready to attack there, and Black's pieces have more scope than before.",
+      "sv": "12...gxh5: Svart har dubbelbönder på h-linjen och ingen g-bonde framför kungen. Men Vit har inga pjäser redo att angripa där, och Svarts pjäser har fått mer utrymme än tidigare."
+    },
+    {
+      "ply": 27,
+      "en": "14...Qh4 is aggressive but risky: the queen is far from her own pieces. The engine preferred 14...Ng4, trading off White's knight on e3 at once.",
+      "sv": "14...Qh4 är aggressivt men riskabelt: damen står långt från de egna pjäserna. Motorn föredrog 14...Ng4, som byter bort Vits springare på e3 direkt.",
+      "line": { "from": "before", "san": ["Ng4", "f3", "Nxe3", "Bxe3"] }
+    },
+    {
+      "ply": 28,
+      "en": "15.Bd2? lets Black off the hook. 15.f3 takes the g4 square from the knight and prepares to strike with Nf5 ideas against the exposed queen; the engine gives White a clear plus there. After the game move, 15...Ng4 trades knights and the h-pawns are untangled.",
+      "sv": "15.Bd2? släpper Svart ur kroken. 15.f3 tar rutan g4 från springaren och förbereder angrepp med idéer som Nf5 mot den utsatta damen; motorn ger Vit en klar fördel där. Efter partidraget byter 15...Ng4 springare och h-bönderna reder ut sig.",
+      "line": { "from": "before", "san": ["f3", "f5", "Kh1", "b6", "Nxf5", "Bxf5", "exf5"] }
+    },
+    {
+      "ply": 34,
+      "en": "18.g3? is the key strategic mistake. With a black pawn already on g4, it leaves permanent holes on f3 and h3 and weakens all the light squares around White's king. The engine preferred 18.Bg3, keeping the pawn structure intact. From now on Black is slightly better.",
+      "sv": "18.g3? är det avgörande strategiska misstaget. Med en svart bonde redan på g4 lämnar det permanenta hål på f3 och h3 och försvagar alla vita rutor runt Vits kung. Motorn föredrog 18.Bg3, som håller bondestrukturen intakt. Från och med nu står Svart något bättre.",
+      "line": { "from": "before", "san": ["Bg3", "Bd7", "f4", "h5", "f5"] }
+    },
+    {
+      "ply": 51,
+      "en": "After 25.axb5 axb5 26.b4 c4 Black has a protected passed pawn on c4, supported by the pawn on b5. The engine considered 25.axb5 a mistake and preferred 25.Qd2. Black's majority on the queenside has turned into a lasting asset.",
+      "sv": "Efter 25.axb5 axb5 26.b4 c4 har Svart en skyddad fribonde på c4, som stöds av bonden på b5. Motorn såg 25.axb5 som ett misstag och föredrog 25.Qd2. Svarts majoritet på damflygeln har blivit en bestående tillgång."
+    },
+    {
+      "ply": 57,
+      "en": "Black's rooks and queen are all aimed at e4, which only the knight on c3 and the rooks defend. Here 29...Bxc3 would already have won that pawn, but Fischer played 29...Kh7, and the engine counts that as a missed chance. Spassky shuffled his rook back and forth, and two moves later Fischer played 31...Bxc3 after all, winning the pawn next move.",
+      "sv": "Svarts torn och dam siktar alla mot e4, som bara försvaras av springaren på c3 och tornen. Här hade 29...Bxc3 redan vunnit bonden, men Fischer spelade 29...Kh7, och motorn räknar det som en missad chans. Spasskij flyttade tornet fram och tillbaka, och två drag senare spelade Fischer ändå 31...Bxc3 och vann bonden draget efter.",
+      "line": { "from": "before", "san": ["Bxc3", "Qxc3", "Rxe4", "Rxe4", "Rxe4", "Rxe4", "Qxe4"] }
+    },
+    {
+      "ply": 63,
+      "en": "31...Bxc3 removes the knight, the e4 pawn's only minor-piece defender. After 32.Qxc3 Rxe4 Black has won a pawn, and Fischer has given up his dark-squared bishop to get it: what matters now are the light squares.",
+      "sv": "31...Bxc3 tar bort springaren, e4-bondens enda lätta pjäs som försvarare. Efter 32.Qxc3 Rxe4 har Svart vunnit en bonde, och Fischer har gett upp sin mörkfältslöpare för att få den: det som räknas nu är de vita rutorna."
+    },
+    {
+      "ply": 66,
+      "en": "34.Rxe4? lets the black queen take on e4, right in the centre. From there it reaches the light squares around White's king and the weak d5 pawn. The engine preferred 34.Kf1.",
+      "sv": "34.Rxe4? låter den svarta damen slå på e4, mitt i centrum. Därifrån når den de vita rutorna runt Vits kung och den svaga d5-bonden. Motorn föredrog 34.Kf1.",
+      "line": { "from": "before", "san": ["Kf1", "Rxe1+", "Kxe1", "Qe4+", "Kd2", "Qxd5+"] }
+    },
+    {
+      "ply": 73,
+      "en": "37...Bf5: Black's bishop works on the light squares, exactly where White is weak since 18.g3. White's bishop on c1 runs on the dark squares and cannot help defend them.",
+      "sv": "37...Bf5: Svarts löpare arbetar på de vita rutorna, precis där Vit är svag sedan 18.g3. Vits löpare på c1 går på de mörka rutorna och kan inte hjälpa till att försvara dem."
+    },
+    {
+      "ply": 80,
+      "en": "41.Qd4? walks into 41...Bd3+, after which the b4 pawn falls with check. The engine preferred 41.Ke1, though Black was winning anyway.",
+      "sv": "41.Qd4? går rakt in i 41...Bd3+, varefter b4-bonden faller med schack. Motorn föredrog 41.Ke1, även om Svart vann i vilket fall som helst.",
+      "line": { "from": "after", "san": ["Bd3+", "Ke1", "Qxb4+"] }
+    },
+    {
+      "ply": 81,
+      "en": "41...Bd3+ and Spassky resigned. The bishop and queen dominate the light squares, the b4 pawn is lost, and Black's c-pawn is ready to run.",
+      "sv": "41...Bd3+ och Spasskij gav upp. Löparen och damen dominerar de vita rutorna, b4-bonden går förlorad, och Svarts c-bonde är redo att springa."
+    }
+  ],
+  "summary": {
+    "en": "Fischer's provocative 11...Nh5 gave him a ruined kingside but active pieces, and the engine thinks that trade was fine. White's weak light squares were the theme of the game: 18.g3 created holes that Black's queen and bishop later used, while White's dark-squared bishop could not help. Lessons: think twice before pushing pawns in front of your king, and count attackers and defenders of a key pawn like e4.",
+    "sv": "Fischers utmanande 11...Nh5 gav honom en förstörd kungsflygel men aktiva pjäser, och motorn har inget att invända mot det bytet. Vits svaga vita rutor var partiets tema: 18.g3 skapade hål som Svarts dam och löpare senare utnyttjade, medan Vits mörkfältslöpare inte kunde hjälpa till. Lärdomar: tänk efter två gånger innan du flyttar bönder framför din kung, och räkna angripare och försvarare kring en nyckelbonde som e4."
+  }
+}

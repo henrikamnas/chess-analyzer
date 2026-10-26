@@ -1,0 +1,90 @@
+{
+  "id": "carlsen-gukesh-2025",
+  "intro": {
+    "en": "Norway Chess 2025, round 1: Magnus Carlsen meets Gukesh Dommaraju, the new world champion. For a long time nothing much happens: the queens come off, and the engine sees the position as close to level for most of the game. Watch how Carlsen keeps posing small problems, how the ending turns into a sharp race where both sides promote a pawn, and how one wrong check decides the game.",
+    "sv": "Norway Chess 2025, rond 1: Magnus Carlsen möter Gukesh Dommaraju, den nye världsmästaren. Länge händer inte mycket: damerna byts av, och motorn bedömer ställningen som nära jämn under större delen av partiet. Lägg märke till hur Carlsen hela tiden ställer små problem, hur slutspelet förvandlas till en skarp kapplöpning där båda sidor får en ny dam, och hur en enda felaktig schack avgör partiet."
+  },
+  "comments": [
+    {
+      "ply": 4,
+      "en": "This is the Rapport–Jobava System: White combines Nc3 with an early Bf4, a London-style setup with the knight in front of the c-pawn. It is an offbeat choice that avoids the main theory and gives a fresh, unbalanced game.",
+      "sv": "Det här är Rapport–Jobava-systemet: Vit kombinerar Nc3 med ett tidigt Bf4, en Londonliknande uppställning med springaren framför c-bonden. Det är ett ovanligt val som undviker huvudteorin och ger ett nytt, obalanserat parti."
+    },
+    {
+      "ply": 10,
+      "en": "After the trade of light-squared bishops, 6.Ncxe2 reroutes the knight towards the kingside. The engine preferred 6.Qxe2, but the position stays balanced, and both sides develop calmly.",
+      "sv": "Efter bytet av de vitfältiga löparna dirigerar 6.Ncxe2 om springaren mot kungsflygeln. Motorn föredrog 6.Qxe2, men ställningen förblir balanserad, och båda sidor utvecklar lugnt."
+    },
+    {
+      "ply": 32,
+      "en": "Black offered a queen trade with 16...Qa6, and the engine's choice was to accept with 17.Qxa6. Carlsen keeps the queens on with 17.Qf3, a typical practical decision to keep more pieces on the board and more chances to outplay his opponent.",
+      "sv": "Svart erbjöd dambyte med 16...Qa6, och motorns val var att anta med 17.Qxa6. Carlsen behåller damerna med 17.Qf3, ett typiskt praktiskt beslut för att ha kvar fler pjäser på brädet och fler chanser att spela ut motståndaren."
+    },
+    {
+      "ply": 38,
+      "en": "20.Qg3 and the knight on h5 both attack g7. Black has to be careful: 20...Kf8? would lose to 21.Qxg7+. Gukesh answers with 20...Qg6, defending g7 and offering a queen trade that White now accepts.",
+      "sv": "20.Qg3 och springaren på h5 anfaller båda g7. Svart måste vara försiktig: 20...Kf8? hade förlorat efter 21.Qxg7+. Gukesh svarar med 20...Qg6, som skyddar g7 och erbjuder ett dambyte som Vit nu antar.",
+      "line": {
+        "from": "after",
+        "san": ["Kf8", "Qxg7+", "Ke7", "dxe5", "Qg6", "Qxg6", "fxg6"]
+      }
+    },
+    {
+      "ply": 45,
+      "en": "With 23...c4 Black puts his queenside pawn majority, three pawns against two, to work: the plan is to advance with ...b5 and ...b4. The engine still sees a small edge for White, but nothing serious.",
+      "sv": "Med 23...c4 sätter Svart sin bondemajoritet på damflygeln, tre bönder mot två, i arbete: planen är att avancera med ...b5 och ...b4. Motorn ser fortfarande en liten vit fördel, men inget allvarligt."
+    },
+    {
+      "ply": 59,
+      "en": "Most of the queenside pawns have been traded off and the rooks are active. The position is level, and from here both sides need to be precise, because the rooks can get behind the enemy pawns.",
+      "sv": "De flesta damflygelbönderna har bytts av och tornen är aktiva. Ställningen är jämn, och härifrån måste båda sidor spela exakt, eftersom tornen kan ta sig in bakom motståndarens bönder."
+    },
+    {
+      "ply": 65,
+      "en": "33...Rxg2 wins a pawn, and White wins one back at once with 34.Rxa5. The game stays balanced: Black's rook is active behind White's lines, while Black's doubled g-pawns are a small weakness.",
+      "sv": "33...Rxg2 vinner en bonde, och Vit vinner tillbaka en direkt med 34.Rxa5. Partiet förblir balanserat: det svarta tornet är aktivt bakom de vita linjerna, medan Svarts dubblerade g-bönder är en liten svaghet."
+    },
+    {
+      "ply": 78,
+      "en": "40.e4 starts a race. White wants to make a passed pawn in the centre, while Black pushes the h-pawn. The engine sees both sides' chances as equal, as long as they play exactly.",
+      "sv": "40.e4 inleder en kapplöpning. Vit vill skapa en fribonde i centrum, medan Svart driver fram h-bonden. Motorn bedömer chanserna som jämna, så länge båda spelar exakt."
+    },
+    {
+      "ply": 84,
+      "en": "43.exf6 takes the knight, and both sides now have a pawn two steps from promotion: White's f-pawn and Black's h-pawn. White will be a piece up, but Black's queen and rook will be close to the white king.",
+      "sv": "43.exf6 slår springaren, och båda sidor har nu en bonde två steg från förvandling: Vits f-bonde och Svarts h-bonde. Vit kommer att ha en pjäs mer, men Svarts dam och torn kommer att stå nära den vita kungen."
+    },
+    {
+      "ply": 90,
+      "en": "Both sides have a new queen. White is a knight up, but the white king is exposed, and Black's queen and rook can keep checking it.",
+      "sv": "Båda sidor har fått en ny dam. Vit har en springare mer, men den vita kungen står öppet, och Svarts dam och torn kan fortsätta schacka den."
+    },
+    {
+      "ply": 91,
+      "en": "46...Qh6+? is the decisive mistake. 46...Rg2+ would have forced a draw: the rook and queen chase the white king with checks and it cannot escape. After the queen check, the king walks to the queenside, and the checks run out.",
+      "sv": "46...Qh6+? är det avgörande misstaget. 46...Rg2+ hade tvingat fram remi: tornet och damen jagar den vita kungen med schackar, och den kan inte komma undan. Efter damschacken går kungen till damflygeln, och schackarna tar slut.",
+      "line": {
+        "from": "before",
+        "san": ["Rg2+", "Kd3", "Rg3+", "Kc2", "Qg2+", "Kb3", "Qd5+", "Kb2", "Qg2+", "Ka1"]
+      }
+    },
+    {
+      "ply": 101,
+      "en": "51...Qxc3 wins the knight, but now Black's own king is exposed. White's queen and rook join forces with checks, and the king is driven into the middle of the board.",
+      "sv": "51...Qxc3 vinner springaren, men nu står den svarta kungen själv öppet. Vits dam och torn samarbetar med schackar, och kungen drivs ut mitt på brädet.",
+      "line": {
+        "from": "after",
+        "san": ["Qh8+", "Kg6", "Ra6+", "Kf5", "Qf8+"]
+      }
+    },
+    {
+      "ply": 108,
+      "en": "55.Re6+ continues the hunt. Black's king has no shelter, and White's attack is decisive. Gukesh resigned.",
+      "sv": "55.Re6+ fortsätter jakten. Den svarta kungen har inget skydd, och Vits anfall är avgörande. Gukesh gav upp."
+    }
+  ],
+  "summary": {
+    "en": "For most of the game the engine saw nothing between the players, and the win came from Carlsen's willingness to keep posing problems in a level position. In the race at the end, the key question was whose king was safer: with 46...Rg2+ Black could have given perpetual check, but after 46...Qh6+ the white king escaped. When kings are open, look first for checks that keep the opponent's king trapped.",
+    "sv": "Under större delen av partiet såg motorn ingen skillnad mellan spelarna, och vinsten kom ur Carlsens vilja att fortsätta ställa problem i en jämn ställning. I kapplöpningen på slutet var huvudfrågan vems kung som stod säkrast: med 46...Rg2+ kunde Svart ha gett evig schack, men efter 46...Qh6+ kom den vita kungen undan. När kungarna står öppet, leta först efter schackar som håller motståndarens kung instängd."
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "id": "carlsen-karjakin-2016-g8",
+  "intro": {
+    "en": "New York, 2016, game 8 of the World Championship match between Magnus Carlsen and Sergey Karjakin. The first seven games were all drawn, and Carlsen, the champion, was keen to win with White. Watch how he keeps pressing in a level position, takes one risk too many, and how a passed a-pawn finally decides a queen-and-minor-piece ending.",
+    "sv": "New York 2016, parti 8 i VM-matchen mellan Magnus Carlsen och Sergej Karjakin. De sju första partierna hade slutat remi, och världsmästaren Carlsen ville gärna vinna med vit. Se hur han fortsätter att pressa i en jämn ställning, tar en risk för mycket, och hur en fri a-bonde till slut avgör ett slutspel med dam och lätta pjäser."
+  },
+  "comments": [
+    {
+      "ply": 4,
+      "en": "3.e3 is a quiet choice; the opening is classified as the Rubinstein Opening, with e3, Bd3 and b3. White avoids sharp theory and just develops, hoping to outplay the opponent later. The engine slightly preferred the more ambitious 3.c4.",
+      "sv": "3.e3 är ett lugnt val; öppningen klassas som Rubinsteins öppning, med e3, Bd3 och b3. Vit undviker skarp teori och utvecklar bara, i hopp om att spela ut motståndaren senare. Motorn föredrog något det mer ambitiösa 3.c4."
+    },
+    {
+      "ply": 13,
+      "en": "Both sides follow the same plan: queenside fianchetto, castle, and challenge the centre with the c-pawn. The position is almost symmetrical, and it is very hard for either side to create anything real.",
+      "sv": "Båda sidor följer samma plan: fianchetto på damflygeln, rockad och angrepp på centrum med c-bonden. Ställningen är nästan symmetrisk, och det är mycket svårt för någon av dem att skapa något verkligt."
+    },
+    {
+      "ply": 36,
+      "en": "19.Nb5 is a typical Carlsen try: the knight jumps forward to keep some tension. The engine thought 19.Ne2 was a little better; after the knight jump Black could have equalised comfortably with 19...Qg5, aiming at White's kingside.",
+      "sv": "19.Nb5 är ett typiskt Carlsenförsök: springaren hoppar fram för att behålla spänningen. Motorn tyckte att 19.Ne2 var något bättre; efter springarhoppet kunde Svart ha utjämnat bekvämt med 19...Qg5, riktad mot Vits kungsflygel.",
+      "line": {
+        "from": "after",
+        "san": ["Qg5", "h3", "N4e5", "Nxe5", "Nxe5", "Bxe5", "Qxe5"]
+      }
+    },
+    {
+      "ply": 46,
+      "en": "After the trades on c4 and d4, 24.bxc4 leaves White with pawns on a4 and c4 that will need protection. The engine preferred 24.Rxc4, but the position is still dead level.",
+      "sv": "Efter bytena på c4 och d4 lämnar 24.bxc4 Vit med bönder på a4 och c4 som måste skyddas. Motorn föredrog 24.Rxc4, men ställningen är fortfarande helt jämn."
+    },
+    {
+      "ply": 54,
+      "en": "28.f4 shows that Carlsen is playing for a win. The pawn gains space and chases the knight from e5, but it also loosens White's own king and the e3 pawn. The engine sees the position as equal either way.",
+      "sv": "28.f4 visar att Carlsen spelar på vinst. Bonden tar utrymme och jagar bort springaren från e5, men den försvagar också Vits egen kung och e3-bonden. Motorn bedömer ställningen som jämn i vilket fall."
+    },
+    {
+      "ply": 63,
+      "en": "32...Nxa4 wins the weak a-pawn, so Black is now a pawn up. White's knight on c6 and rook on the d-file are active, though, and the engine still sees full compensation.",
+      "sv": "32...Nxa4 vinner den svaga a-bonden, så Svart har nu en bonde mer. Vits springare på c6 och torn på d-linjen är dock aktiva, och motorn ser fortfarande full kompensation."
+    },
+    {
+      "ply": 68,
+      "en": "35.c5?? is the big mistake. Carlsen wanted to break up Black's queenside, but after 35...Rxd8 36.Nxd8 Nxc5 Black simply wins a second pawn and White's knight is stranded on d8. 35.Ne5, keeping the pieces centralised, would have held the balance.",
+      "sv": "35.c5?? är det stora misstaget. Carlsen ville bryta upp Svarts damflygel, men efter 35...Rxd8 36.Nxd8 Nxc5 vinner Svart helt enkelt en andra bonde och Vits springare står strandsatt på d8. 35.Ne5, med pjäserna kvar i centrum, hade hållit balansen.",
+      "line": {
+        "from": "before",
+        "san": ["Ne5", "Qc5", "Rd6", "Rc8", "g4", "Qxd4", "exd4"]
+      }
+    },
+    {
+      "ply": 73,
+      "en": "37...Qd3? lets White back into the game. The engine wanted 37...Qa4, keeping a winning advantage. Now White has a tactic based on the knight on f6, which is guarded only by the king.",
+      "sv": "37...Qd3? släpper in Vit i partiet igen. Motorn ville spela 37...Qa4 och behålla en vinnande fördel. Nu har Vit en taktik som bygger på springaren på f6, som bara skyddas av kungen.",
+      "line": {
+        "from": "before",
+        "san": ["Qa4", "Qxb6", "Ncd7", "Nxe6+", "fxe6", "Qxe6"]
+      }
+    },
+    {
+      "ply": 76,
+      "en": "38.Nxe6+! fxe6 39.Qe7+ is the point. With the f7 pawn gone, the queen checks along the seventh rank and attacks the knight on f6 at the same time. After the king moves, the knight falls and White wins the piece back.",
+      "sv": "38.Nxe6+! fxe6 39.Qe7+ är poängen. När f7-bonden är borta schackar damen längs sjunde raden och angriper samtidigt springaren på f6. När kungen har flyttat faller springaren, och Vit vinner tillbaka pjäsen."
+    },
+    {
+      "ply": 78,
+      "en": "After 40.Qxf6 White has queen, bishop and four pawns against queen, knight and five pawns. Black is a pawn up, but the black king is exposed, and the engine sees a draw.",
+      "sv": "Efter 40.Qxf6 har Vit dam, löpare och fyra bönder mot dam, springare och fem bönder. Svart har en bonde mer, men den svarta kungen är utsatt, och motorn bedömer ställningen som remi."
+    },
+    {
+      "ply": 94,
+      "en": "White has used the e- and f-pawns to win the b6 pawn with 48.Qxb6, and is now a pawn up. But Black's a-pawn on a3 is a dangerous passed pawn, and White's queen must keep an eye on it. The position is still a draw.",
+      "sv": "Vit har använt e- och f-bönderna för att vinna b6-bonden med 48.Qxb6 och har nu en bonde mer. Men Svarts a-bonde på a3 är en farlig fribonde, och Vits dam måste hålla koll på den. Ställningen är fortfarande remi."
+    },
+    {
+      "ply": 100,
+      "en": "51.Qe6? is a serious mistake. It takes the queen off the a-file, away from the a-pawn. 51.Qb7+ was needed: White keeps checking and holds the draw.",
+      "sv": "51.Qe6? är ett allvarligt misstag. Damen lämnar a-linjen, bort från a-bonden. 51.Qb7+ behövdes: Vit fortsätter att schacka och håller remi.",
+      "line": {
+        "from": "before",
+        "san": ["Qb7+", "Kf8", "Qb8+", "Ke7", "Qb7+", "Nd7"]
+      }
+    },
+    {
+      "ply": 102,
+      "en": "52.h4? is the final error. 52.Qa6, bringing the queen back, was the last chance to fight. Now 52...a2 puts the pawn one step from queening, and Carlsen resigned. Karjakin took the lead in the match.",
+      "sv": "52.h4? är det sista felet. 52.Qa6, som för tillbaka damen, var den sista chansen att kämpa. Nu ställer 52...a2 bonden ett steg från förvandling, och Carlsen gav upp. Karjakin tog ledningen i matchen.",
+      "line": {
+        "from": "after",
+        "san": ["a2", "Kh3", "a1=Q"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "Carlsen pressed in an equal position, and 35.c5 was one risk too many. Karjakin missed the cleanest win, but in the ending with queens his passed a-pawn kept White's queen busy until White slipped. In endings with queens, a far-advanced passed pawn is often worth more than an extra pawn elsewhere. Carlsen later levelled the match and won it in the rapid tiebreak.",
+    "sv": "Carlsen pressade i en jämn ställning, och 35.c5 var en risk för mycket. Karjakin missade den enklaste vinsten, men i slutspelet med damer höll hans fria a-bonde Vits dam sysselsatt tills Vit gjorde fel. I slutspel med damer är en långt framskjuten fribonde ofta värd mer än en merbonde någon annanstans. Carlsen kvitterade senare matchen och vann den i snabbschacksavgörandet."
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "id": "kramnik-anand-2008-g10",
+  "intro": {
+    "en": "Bonn, 2008, game 10 of the World Championship match between Vladimir Kramnik and Viswanathan Anand. Anand had a three-point lead, so Kramnik had to win. It was his only win of the match. Watch the long quiet middlegame with the queens still on, and how one slow pawn move and one blocking pawn move let White's rook and a-pawn break into Black's queenside.",
+    "sv": "Bonn 2008, parti 10 i VM-matchen mellan Vladimir Kramnik och Viswanathan Anand. Anand ledde med tre poäng, så Kramnik måste vinna. Det blev hans enda vinst i matchen. Se hur ett långt, lugnt mittspel med damerna kvar avgörs av ett långsamt bondedrag och ett låsande bondedrag, som låter Vits torn och a-bonde tränga in på Svarts damflygel."
+  },
+  "comments": [
+    {
+      "ply": 5,
+      "en": "3...Bb4 is the Nimzo-Indian Defence. Black pins the knight on c3 and is ready to give up the bishop for it, doubling White's c-pawns, in return for quick development and control of e4.",
+      "sv": "3...Bb4 är Nimzoindiskt försvar. Svart binder springaren på c3 och är beredd att ge löparen för den och dubbla Vits c-bönder, i utbyte mot snabb utveckling och kontroll över e4."
+    },
+    {
+      "ply": 8,
+      "en": "5.g3 sets up a fianchetto: the bishop on g2 will aim down the long diagonal at Black's queenside. After the coming exchanges in the centre the game becomes an open fight between pieces rather than a slow pawn battle.",
+      "sv": "5.g3 förbereder en fianchetto: löparen på g2 ska sikta längs den långa diagonalen mot Svarts damflygel. Efter de kommande bytena i centrum blir det en öppen kamp mellan pjäserna snarare än ett långsamt bondespel."
+    },
+    {
+      "ply": 17,
+      "en": "White's 9.Qb3 attacked both the bishop on b4 and the knight on d5. 9...Qa5 protects the bishop and keeps the pin on the knight on c3, which is tied to the king on e1. The engine slightly preferred 9...Bc5, but both are fine for Black.",
+      "sv": "Vits 9.Qb3 angrep både löparen på b4 och springaren på d5. 9...Qa5 skyddar löparen och behåller bindningen av springaren på c3 mot kungen på e1. Motorn föredrog något 9...Bc5, men båda är bra för Svart."
+    },
+    {
+      "ply": 23,
+      "en": "With 12...Bxc3 Black gives White the bishop pair, and after 13.bxc3 White has an isolated pawn on c3; Black has a weak, isolated pawn on c6 too. Both sides have targets on the c-file, and the position is level.",
+      "sv": "Med 12...Bxc3 ger Svart Vit löparparet, och efter 13.bxc3 har Vit en isolerad bonde på c3; Svart har också en svag, isolerad bonde på c6. Båda sidor har mål på c-linjen, och ställningen är jämn."
+    },
+    {
+      "ply": 28,
+      "en": "15.e4 grabs space in the centre and chases the knight from d5. Black answers by putting the bishop on c4, where it is active and eyes the e2 square.",
+      "sv": "15.e4 tar utrymme i centrum och jagar bort springaren från d5. Svart svarar med att ställa löparen på c4, där den står aktivt och siktar mot rutan e2."
+    },
+    {
+      "ply": 41,
+      "en": "21...e5 offers a pawn to make the knight and queen active. The engine says White could take it with 22.Bxe5, but after 22...Nc4 Black wins it back on c3 and White's edge is small.",
+      "sv": "21...e5 erbjuder en bonde för att aktivera springaren och damen. Motorn menar att Vit kunde ta den med 22.Bxe5, men efter 22...Nc4 vinner Svart tillbaka den på c3, och Vits fördel är liten.",
+      "line": {
+        "from": "after",
+        "san": ["Bxe5", "Nc4", "Qa6", "Qxe5", "Rxe2", "Qxc3"]
+      }
+    },
+    {
+      "ply": 43,
+      "en": "Kramnik retreated with 22.Be3, and the c5 pawn is now attacked. 22...Bg4 sends the bishop far from the queenside, where the real fight is. The engine wanted 22...Bd3, bringing it towards c4.",
+      "sv": "Kramnik drog tillbaka med 22.Be3, och c5-bonden är nu angripen. 22...Bg4 skickar löparen långt från damflygeln, där den verkliga kampen pågår. Motorn ville spela 22...Bd3, med löparen på väg mot c4."
+    },
+    {
+      "ply": 45,
+      "en": "23...f6? is the first real mistake. It protects e5 and prepares ...Qf7, but it is too slow: White's a-pawn will now run to a5 and chase the knight from b6. 23...Be6, bringing the bishop back to defend, kept the balance.",
+      "sv": "23...f6? är det första verkliga misstaget. Det skyddar e5 och förbereder ...Qf7, men det är för långsamt: Vits a-bonde springer nu till a5 och jagar bort springaren från b6. 23...Be6, där löparen återvänder till försvaret, höll balansen.",
+      "line": {
+        "from": "before",
+        "san": ["Be6", "Bf1", "Nd7", "Be2", "Bg4", "Bxg4", "Qxg4"]
+      }
+    },
+    {
+      "ply": 50,
+      "en": "26.Rab1 is an inaccuracy that halves White's advantage: the engine preferred 26.Reb1, keeping the a-rook behind the a-pawn. It gives Black a chance to fight with 26...Rab8, contesting the b-file.",
+      "sv": "26.Rab1 är en onoggrannhet som halverar Vits fördel: motorn föredrog 26.Reb1, så att a-tornet står kvar bakom a-bonden. Det ger Svart en chans att kämpa med 26...Rab8 och bestrida b-linjen."
+    },
+    {
+      "ply": 51,
+      "en": "26...c4? is the decisive mistake. The pawn takes away the c4 square, the best square for the knight. After 27.a5 the knight on b6 has only a4 and d7 left (d5 is covered by the e4 pawn), and White's rook gets to b7 with tempo on the queen.",
+      "sv": "26...c4? är det avgörande misstaget. Bonden tar bort rutan c4, springarens bästa ruta. Efter 27.a5 har springaren på b6 bara a4 och d7 kvar (d5 täcks av e4-bonden), och Vits torn kommer till b7 med tempo på damen.",
+      "line": {
+        "from": "before",
+        "san": ["Rab8", "a5", "Nc4", "Bxc5", "Nd2", "Rxb8", "Rxb8"]
+      }
+    },
+    {
+      "ply": 53,
+      "en": "27...Na4 puts the knight on the edge, far from the defence. The engine thought 27...Nd7 was more stubborn, although Black was already in deep trouble.",
+      "sv": "27...Na4 ställer springaren på kanten, långt från försvaret. Motorn ansåg att 27...Nd7 var segare, även om Svart redan låg mycket illa till."
+    },
+    {
+      "ply": 54,
+      "en": "28.Rb7! The rook reaches the seventh rank, attacking the queen on f7 and the pawn on a7. The queen has to retreat to e8.",
+      "sv": "28.Rb7! Tornet når sjunde raden och angriper damen på f7 och bonden på a7. Damen måste dra sig tillbaka till e8."
+    },
+    {
+      "ply": 56,
+      "en": "29.Qd6 brings the queen into the heart of Black's position. The knight on a4 is cut off and the c4 pawn is weak; in the engine's line White wins both. Anand resigned.",
+      "sv": "29.Qd6 för in damen i hjärtat av Svarts ställning. Springaren på a4 är avskuren och c4-bonden är svag; i motorns variant vinner Vit båda. Anand gav upp.",
+      "line": {
+        "from": "after",
+        "san": ["Bg4", "Qb4", "h6", "Ra1", "Rcb8", "Rxb8", "Rxb8", "Qxc4+", "Kh8", "Qxa4"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "For a long time this was a balanced game between two well-placed armies. Two pawn moves decided it: 23...f6 cost time, and 26...c4 took the knight's best square away. A knight that has no good squares is a serious weakness, and a rook on the seventh rank is a powerful attacker.",
+    "sv": "Länge var detta ett jämnt parti mellan två välplacerade arméer. Två bondedrag avgjorde: 23...f6 kostade tid, och 26...c4 tog bort springarens bästa ruta. En springare utan bra rutor är en allvarlig svaghet, och ett torn på sjunde raden är en kraftfull angripare."
+  }
+}

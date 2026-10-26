@@ -1,0 +1,88 @@
+{
+  "id": "tal-botvinnik-1960-g1",
+  "intro": {
+    "en": "Moscow, 1960: the first game of the World Championship match between the champion Mikhail Botvinnik and the 23-year-old challenger Mikhail Tal. Botvinnik chooses the sharp Winawer Variation of the French Defence, and the game quickly becomes a fight between White's extra pawns and Black's attack on White's king. Watch how both kings stay in the centre, and how Tal uses a rook on the third rank to press home his advantage.",
+    "sv": "Moskva 1960: första partiet i VM-matchen mellan den regerande mästaren Michail Botvinnik och den 23-årige utmanaren Michail Tal. Botvinnik väljer den skarpa Winawervarianten i franskt försvar, och partiet blir snabbt en kamp mellan Vits merbönder och Svarts angrepp mot den vita kungen. Se hur båda kungarna blir kvar i mitten, och hur Tal använder ett torn på tredje raden för att driva hem sin fördel."
+  },
+  "comments": [
+    {
+      "ply": 5,
+      "en": "3...Bb4 is the Winawer Variation of the French Defence. The bishop pins the knight on c3, which defends e4, so Black puts pressure on White's centre at once. The price is that Black usually has to give up this bishop for the knight, leaving the dark squares around his own king weaker.",
+      "sv": "3...Bb4 är Winawervarianten i franskt försvar. Löparen binder springaren på c3, som skyddar e4, så Svart sätter press på Vits centrum direkt. Priset är att Svart oftast måste byta bort löparen mot springaren, vilket gör de mörka rutorna runt den egna kungen svagare."
+    },
+    {
+      "ply": 12,
+      "en": "7.Qg4 is the sharpest answer. Black's dark-squared bishop has been traded for the knight, so g7 is hard to defend. White attacks it at once, accepting that his own queenside pawns are doubled and his queen may be chased around.",
+      "sv": "7.Qg4 är det skarpaste svaret. Svarts mörkfältslöpare har bytts mot springaren, så g7 är svår att försvara. Vit angriper den direkt och accepterar att de egna damflygelbönderna är dubblerade och att damen kan jagas runt."
+    },
+    {
+      "ply": 13,
+      "en": "7...f5 drives the queen away, but it does not save the g-pawn: after 8.Qg3 and 9.Qxg7 White wins it anyway, and the pawn on f5 leaves e6 and the light squares weak. The engine preferred 7...Ne7, giving up the kingside pawns at once in return for quick play against c3 and d4.",
+      "sv": "7...f5 driver bort damen, men räddar inte g-bonden: efter 8.Qg3 och 9.Qxg7 vinner Vit den ändå, och bonden på f5 lämnar e6 och de vita rutorna svaga. Motorn föredrog 7...Ne7, som ger upp kungsflygelbönderna direkt mot snabbt spel mot c3 och d4.",
+      "line": { "from": "before", "san": ["Ne7", "Qxg7", "Rg8", "Qxh7", "cxd4", "Ne2", "dxc3"] }
+    },
+    {
+      "ply": 18,
+      "en": "10.Qxh7: White has won the g- and h-pawns and a kingside majority with a passed h-pawn. In return Black has the half-open g-file, targets in White's weakened pawns, and White's king is still in the centre.",
+      "sv": "10.Qxh7: Vit har vunnit g- och h-bonden och en bondemajoritet på kungsflygeln med en fri h-bonde. I gengäld har Svart den halvöppna g-linjen, mål i Vits försvagade bönder, och Vits kung står fortfarande i mitten."
+    },
+    {
+      "ply": 20,
+      "en": "With the d4 pawn gone, the e5 pawn has lost its support, and ...Qxe5 would come with check down the open e-file. Tal sidesteps with the king. The engine preferred 11.Ne2, which develops a piece and blocks the e-file at the same time.",
+      "sv": "När d4-bonden är borta har e5-bonden förlorat sitt stöd, och ...Qxe5 skulle komma med schack längs den öppna e-linjen. Tal kliver åt sidan med kungen. Motorn föredrog 11.Ne2, som utvecklar en pjäs och samtidigt stänger e-linjen.",
+      "line": { "from": "before", "san": ["Ne2", "Nbc6", "Qh5+", "Ng6", "h4", "dxc3"] }
+    },
+    {
+      "ply": 25,
+      "en": "13...d3 gives back a pawn to tear open the lines in front of White's king. It is in the spirit of the position, though the engine slightly preferred 13...dxc3, winning back a pawn instead of giving one.",
+      "sv": "13...d3 ger tillbaka en bonde för att riva upp linjerna framför Vits kung. Det ligger i ställningens anda, även om motorn föredrog 13...dxc3 en aning, som vinner tillbaka en bonde i stället för att ge bort en."
+    },
+    {
+      "ply": 27,
+      "en": "14...Ba4+ drives the king back to e1, but the bishop on a4 does little after that. The engine wanted 14...d4 at once, followed by ...Nc6 and long castling, bringing Black's own king to safety.",
+      "sv": "14...Ba4+ driver tillbaka kungen till e1, men löparen på a4 gör inte mycket efter det. Motorn ville spela 14...d4 direkt, följt av ...Nc6 och lång rockad, så att den egna kungen kommer i säkerhet.",
+      "line": { "from": "before", "san": ["d4", "cxd4", "Nc6", "Bd2", "O-O-O"] }
+    },
+    {
+      "ply": 29,
+      "en": "15...Qxe5? is the turning point. Black wins back a pawn, but his queen now stands in the open where White's pieces can hit it with gain of time, and his king is stuck in the centre. 15...d4 was the move, opening the centre and preparing to castle long; after the queen move White's advantage becomes large.",
+      "sv": "15...Qxe5? är vändpunkten. Svart vinner tillbaka en bonde, men damen står nu öppet där Vits pjäser kan angripa den med tempovinst, och kungen sitter fast i mitten. 15...d4 var draget, som öppnar centrum och förbereder lång rockad; efter damdraget blir Vits fördel stor.",
+      "line": { "from": "before", "san": ["d4", "cxd4", "Nc6", "Bd2", "O-O-O", "Rc1"] }
+    },
+    {
+      "ply": 32,
+      "en": "17.d4 gains time on the queen and takes the e5 and c5 squares away from Black's pieces. White's development is catching up, and Black's king still has no safe home.",
+      "sv": "17.d4 vinner tempo på damen och tar rutorna e5 och c5 från Svarts pjäser. Vits utveckling kommer ikapp, och den svarta kungen har fortfarande inget säkert hem."
+    },
+    {
+      "ply": 40,
+      "en": "Tal's rook has travelled from h1 via h3 to e3, a typical rook lift along the third rank. On e3 it pins the knight on e5 against Black's king on e8, so Black has to spend a move on 21...Kd7 to unpin.",
+      "sv": "Tals torn har vandrat från h1 via h3 till e3, ett typiskt tornlyft längs tredje raden. På e3 binder det springaren på e5 mot Svarts kung på e8, så Svart måste lägga ett drag på 21...Kd7 för att häva bindningen."
+    },
+    {
+      "ply": 53,
+      "en": "27...Rxe3+ trades off Black's active rook, and after 28.fxe3 the e3 pawn also covers d4 and f4. The engine preferred 27...Kc7, first stepping the king away from the d-file, where White's rook and queen are lined up against d5.",
+      "sv": "27...Rxe3+ byter bort Svarts aktiva torn, och efter 28.fxe3 täcker e3-bonden dessutom d4 och f4. Motorn föredrog 27...Kc7, som först flyttar kungen bort från d-linjen, där Vits torn och dam riktas mot d5.",
+      "line": { "from": "before", "san": ["Kc7", "Be2", "Rxe3", "fxe3"] }
+    },
+    {
+      "ply": 57,
+      "en": "29...dxc4? opens the diagonal for White's bishop. After 30.Bxc4 it attacks the queen on f7, and the rook on g8 stands right behind it on the same diagonal. 29...Bd7 was the engine's choice.",
+      "sv": "29...dxc4? öppnar diagonalen för Vits löpare. Efter 30.Bxc4 angriper den damen på f7, och tornet på g8 står precis bakom på samma diagonal. 29...Bd7 var motorns val."
+    },
+    {
+      "ply": 60,
+      "en": "31.Bxg8 completes the skewer: the queen had to step aside, and the bishop takes the rook. After the recapture White is an exchange and a pawn up.",
+      "sv": "31.Bxg8 fullbordar spettet: damen var tvungen att flytta, och löparen tar tornet. Efter återtagningen har Vit en kvalitet och en bonde mer."
+    },
+    {
+      "ply": 62,
+      "en": "32.h5 chases the knight from g6, and Botvinnik resigned. He is an exchange and a pawn down, and White's queen, rook and bishop are far more active than Black's pieces.",
+      "sv": "32.h5 jagar springaren från g6, och Botvinnik gav upp. Han ligger en kvalitet och en bonde under, och Vits dam, torn och löpare är mycket aktivare än Svarts pjäser."
+    }
+  ],
+  "summary": {
+    "en": "A typical Winawer battle: White grabbed the kingside pawns, Black took aim at White's king in the centre. The game turned when Botvinnik took the e5 pawn with his queen instead of opening the centre and castling long. Tal then brought his king's rook into play along the third rank and finished with a skewer. Lesson: before grabbing material, make sure your own king is safe.",
+    "sv": "En typisk Winawerstrid: Vit tog kungsflygelbönderna, Svart siktade på den vita kungen i mitten. Partiet vände när Botvinnik tog e5-bonden med damen i stället för att öppna centrum och rockera långt. Tal tog sedan in kungstornet i spelet längs tredje raden och avslutade med ett spett. Lärdom: innan du tar material, se till att din egen kung står säkert."
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "id": "korchnoi-karpov-1978-g21",
+  "intro": {
+    "en": "Baguio, 1978, game 21 of the World Championship match between Viktor Korchnoi and Anatoly Karpov, played to six wins. Karpov was ahead in the match, so Korchnoi needed wins. Watch how Black's active but loose opening play costs a pawn, and how Korchnoi then grinds a rook-and-knight ending with a passed b-pawn until it decides the game.",
+    "sv": "Baguio 1978, parti 21 i VM-matchen mellan Viktor Kortjnoj och Anatolij Karpov, som spelades till sex vinster. Karpov ledde matchen, så Kortjnoj behövde vinster. Se hur Svarts aktiva men lösa öppningsspel kostar en bonde, och hur Kortjnoj sedan maler i ett slutspel med torn och springare och en fri b-bonde tills den avgör partiet."
+  },
+  "comments": [
+    {
+      "ply": 8,
+      "en": "5.Bf4 is the Harrwitz Attack in the Queen's Gambit Declined. The bishop develops outside the pawn chain on f4 instead of the usual g5, and Black's typical answer is to strike at the centre with ...c5, as Karpov does a move later.",
+      "sv": "5.Bf4 är Harrwitz-angreppet i avböjd damgambit. Löparen utvecklas utanför bondekedjan på f4 i stället för det vanliga g5, och Svarts typiska svar är att slå mot centrum med ...c5, precis som Karpov gör strax."
+    },
+    {
+      "ply": 23,
+      "en": "Karpov has played actively: ...e5 and now 12...Nd4, a knight jump into the centre that hits the queen. The pieces are lively, but the d5 pawn and the knight on d4 need care.",
+      "sv": "Karpov har spelat aktivt: ...e5 och nu 12...Nd4, ett springarhopp in i centrum som angriper damen. Pjäserna är aktiva, men d5-bonden och springaren på d4 kräver omsorg."
+    },
+    {
+      "ply": 27,
+      "en": "14...e4? is a mistake. The pawn attacks the bishop on d3, but the knight on d4 is still attacked by the e3 pawn. The engine shows that 15.Bf1 would have kept that threat, with a big advantage for White. 14...Bxd3 was safer.",
+      "sv": "14...e4? är ett misstag. Bonden angriper löparen på d3, men springaren på d4 är fortfarande angripen av e3-bonden. Motorn visar att 15.Bf1 hade behållit det hotet, med stor fördel för Vit. 14...Bxd3 var säkrare.",
+      "line": {
+        "from": "after",
+        "san": ["Bf1", "Ng4", "cxd5", "Ne5", "exd4", "Bxd4"]
+      }
+    },
+    {
+      "ply": 28,
+      "en": "Korchnoi missed it: 15.Bc2 allows 15...Nxc2+, and Black's knight escapes by trading itself for the bishop. White keeps only a small edge.",
+      "sv": "Kortjnoj missade det: 15.Bc2 tillåter 15...Nxc2+, och Svarts springare kommer undan genom att byta sig mot löparen. Vit har bara en liten fördel kvar."
+    },
+    {
+      "ply": 31,
+      "en": "16...Qa6? leaves the d5 pawn without enough support. After 17.Bxf6 Qxf6 the defender of d5 is gone, and White soon wins the pawn with 19.Rxd5. The engine preferred 16...dxc4, getting rid of the weak pawn at once.",
+      "sv": "16...Qa6? lämnar d5-bonden utan tillräckligt stöd. Efter 17.Bxf6 Qxf6 är försvararen av d5 borta, och Vit vinner snart bonden med 19.Rxd5. Motorn föredrog 16...dxc4, som blir av med den svaga bonden direkt.",
+      "line": {
+        "from": "before",
+        "san": ["dxc4", "Bxf6", "gxf6", "Nxc4", "Qa6"]
+      }
+    },
+    {
+      "ply": 37,
+      "en": "White is a clean pawn up, but the king is still in the centre. 19...Re5 offers a rook trade that helps White to castle in peace. The engine preferred 19...Qg6, keeping the queen near White's king and the pressure on g2.",
+      "sv": "Vit har en ren merbonde, men kungen står kvar i centrum. 19...Re5 erbjuder ett tornbyte som hjälper Vit att rockera i lugn och ro. Motorn föredrog 19...Qg6, där damen stannar nära Vits kung och trycket mot g2 består.",
+      "line": {
+        "from": "before",
+        "san": ["Qg6", "O-O", "Be5", "Nd4", "Bg4"]
+      }
+    },
+    {
+      "ply": 42,
+      "en": "22.Nxf5 gives away much of White's advantage. After the trade White's pawn on c4 is weak, and once White castles Black wins it back with 23...Rxc4, because the knight on c3 blocks the queen's defence of c4. The engine wanted 22.f4, gaining time by attacking the queen.",
+      "sv": "22.Nxf5 ger bort mycket av Vits fördel. Efter bytet är Vits bonde på c4 svag, och när Vit har rockerat vinner Svart tillbaka den med 23...Rxc4, eftersom springaren på c3 står i vägen för damens skydd av c4. Motorn ville spela 22.f4 och vinna tid genom att angripa damen.",
+      "line": {
+        "from": "before",
+        "san": ["f4", "Qf6", "Qe2", "Bc5", "Nd5"]
+      }
+    },
+    {
+      "ply": 47,
+      "en": "Material is level again, but 24...Qe5 is passive: White soon forces a queen trade on d5 and keeps the more active rook. The engine preferred 24...Be7, moving the bishop out of the rook's attack instead of tying the queen to its defence. From here Korchnoi has a small but lasting edge.",
+      "sv": "Materialet är jämnt igen, men 24...Qe5 är passivt: Vit tvingar snart fram ett dambyte på d5 och behåller det aktivare tornet. Motorn föredrog 24...Be7, som flyttar löparen undan tornets angrepp i stället för att binda damen vid försvaret. Härifrån har Kortjnoj en liten men varaktig fördel."
+    },
+    {
+      "ply": 59,
+      "en": "After the queen trade White has rook and knight against rook and bishop. 30...a5 lets White keep a passed pawn on b5. The engine preferred 30...axb5, trading it off; 30...Rxb2? would have lost at once to 31.bxa6.",
+      "sv": "Efter dambytet har Vit torn och springare mot torn och löpare. 30...a5 låter Vit behålla en fribonde på b5. Motorn föredrog 30...axb5, som byter bort den; 30...Rxb2? hade förlorat direkt efter 31.bxa6."
+    },
+    {
+      "ply": 64,
+      "en": "33.Rxa5 wins the a-pawn. White is now a pawn up, and the b-pawn is a passed pawn backed by rook and knight.",
+      "sv": "33.Rxa5 vinner a-bonden. Vit har nu en bonde mer, och b-bonden är en fribonde som stöds av torn och springare."
+    },
+    {
+      "ply": 75,
+      "en": "38...Bb8? puts the bishop passively in front of the pawn. The engine wanted 38...Rb4, keeping the rook active against the b-pawn. Korchnoi did not find the strongest reply, 39.Rc7, but kept a large edge.",
+      "sv": "38...Bb8? ställer löparen passivt framför bonden. Motorn ville spela 38...Rb4, med tornet aktivt mot b-bonden. Kortjnoj hittade inte det starkaste svaret, 39.Rc7, men behöll en stor fördel.",
+      "line": {
+        "from": "before",
+        "san": ["Rb4", "Nc3", "Rb2", "h4", "Ke6"]
+      }
+    },
+    {
+      "ply": 80,
+      "en": "41.b7 pushes the pawn to the seventh rank. Black's bishop must watch b8 all the time, and White's rook and knight are free to attack Black's kingside pawns.",
+      "sv": "41.b7 för fram bonden till sjunde raden. Svarts löpare måste hela tiden bevaka b8, och Vits torn och springare är fria att angripa Svarts bönder på kungsflygeln."
+    },
+    {
+      "ply": 86,
+      "en": "With 43.f4 and 44.Kxf3 White removes Black's e-pawn and activates the king. Now the king can march forward and support the e-pawn.",
+      "sv": "Med 43.f4 och 44.Kxf3 blir Vit av med Svarts e-bonde och aktiverar kungen. Nu kan kungen marschera framåt och stödja e-bonden."
+    },
+    {
+      "ply": 110,
+      "en": "56.e5! attacks the bishop on d6, the piece that guards b8. The bishop has no good square: c7 and b8 are covered by the rook on c8, and if it leaves the diagonal the pawn can queen.",
+      "sv": "56.e5! angriper löparen på d6, pjäsen som bevakar b8. Löparen har ingen bra ruta: c7 och b8 täcks av tornet på c8, och om den lämnar diagonalen kan bonden förvandlas."
+    },
+    {
+      "ply": 118,
+      "en": "After 59.Nd3 Rxd3+ 60.Kc4 the rook on d3 is attacked by the king and the bishop by the e5 pawn, while the b-pawn is ready to queen. Karpov resigned. The engine says 60.Ke4 was even stronger, but White wins either way.",
+      "sv": "Efter 59.Nd3 Rxd3+ 60.Kc4 är tornet på d3 angripet av kungen och löparen av e5-bonden, medan b-bonden står redo att förvandlas. Karpov gav upp. Motorn menar att 60.Ke4 var ännu starkare, men Vit vinner i båda fallen."
+    }
+  ],
+  "summary": {
+    "en": "Karpov's active opening left loose pawns and pieces, and a pawn was lost. Korchnoi gave back part of his edge, but the queen trade led to an ending where a passed b-pawn, backed by rook and knight, tied Black down. A passed pawn on the seventh rank keeps the defender busy and frees the other pieces and the king to win elsewhere.",
+    "sv": "Karpovs aktiva öppning lämnade lösa bönder och pjäser, och en bonde gick förlorad. Kortjnoj gav tillbaka en del av fördelen, men dambytet ledde till ett slutspel där en fri b-bonde, stödd av torn och springare, band Svart. En fribonde på sjunde raden håller försvararen sysselsatt och frigör de andra pjäserna och kungen för att vinna på annat håll."
+  }
+}

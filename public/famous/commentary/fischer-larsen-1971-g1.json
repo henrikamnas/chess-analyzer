@@ -1,0 +1,104 @@
+{
+  "id": "fischer-larsen-1971-g1",
+  "intro": {
+    "en": "The first game of the 1971 Candidates semi-final between Bobby Fischer and Bent Larsen, a match Fischer went on to win 6–0, just as he had beaten Taimanov in the previous round. Larsen chooses the sharp Winawer French, Fischer gets the bishop pair and attacks the black king, which never manages to castle. Watch how the game swings: Fischer's attack should have won outright, a slip lets Larsen bail out into an equal ending, and then a late mistake by Larsen tips the balance.",
+    "sv": "Det första partiet i kandidatsemifinalen 1971 mellan Bobby Fischer och Bent Larsen, en match som Fischer sedan vann med 6–0, precis som han hade slagit Tajmanov i rundan innan. Larsen väljer den skarpa Winawervarianten i franskt, och Fischer får löparparet och anfaller den svarta kungen, som aldrig hinner rockera. Lägg märke till hur partiet svänger: Fischers anfall borde ha vunnit direkt, ett snedsteg låter Larsen rädda sig till ett jämnt slutspel, och sedan fäller ett sent misstag av Larsen avgörandet."
+  },
+  "comments": [
+    {
+      "ply": 9,
+      "en": "This is the Winawer Variation of the French Defence. With 5...Bxc3+ Black gives up his dark-squared bishop to double White's c-pawns. In return White gets the bishop pair, and the dark squares around Black's king, especially on the kingside, become harder to defend.",
+      "sv": "Det här är Winawervarianten i franskt försvar. Med 5...Bxc3+ ger Svart bort sin svartfältslöpare för att dubbla Vits c-bönder. I gengäld får Vit löparparet, och de svarta fälten runt den svarta kungen, särskilt på kungsflygeln, blir svårare att försvara."
+    },
+    {
+      "ply": 12,
+      "en": "7.a4 is the positional approach, as the opening name says. The pawn makes room for the bishop to come to a3, where it will rake the dark squares that Black's missing bishop can no longer cover. The engine slightly prefers the sharper 7.Qg4, going straight for the g7 pawn.",
+      "sv": "7.a4 är det positionella upplägget, som öppningens namn antyder. Bonden gör plats för löparen att komma till a3, där den kan kontrollera de svarta fält som Svarts saknade löpare inte längre täcker. Motorn föredrar en aning det skarpare 7.Qg4, som går direkt på bonden på g7."
+    },
+    {
+      "ply": 16,
+      "en": "9.Bd3 is a small inaccuracy: Black can now gain a tempo with ...c4, and indeed after 10...c4 Fischer had to retreat with 11.Be2, the square the engine wanted for the bishop right away.",
+      "sv": "9.Bd3 är en liten onoggrannhet: Svart kan nu vinna ett tempo med ...c4, och mycket riktigt fick Fischer efter 10...c4 backa med 11.Be2, just det fält där motorn ville ha löparen direkt."
+    },
+    {
+      "ply": 24,
+      "en": "13.Ba3! The bishop arrives on the long a3–f8 diagonal. Now that the knight has left e7, the bishop covers f8, so Black can no longer castle kingside.",
+      "sv": "13.Ba3! Löparen kommer ut på den långa diagonalen a3–f8. Nu när springaren har lämnat e7 täcker löparen f8, så Svart kan inte längre rockera kort."
+    },
+    {
+      "ply": 25,
+      "en": "13...fxe5? is the first real mistake. Black wins a pawn, but opens the centre while his own king is stuck on e8. The engine wanted 13...O-O-O, getting the king to the queenside before the lines open.",
+      "sv": "13...fxe5? är det första riktiga misstaget. Svart vinner en bonde men öppnar centrum medan den egna kungen sitter fast på e8. Motorn ville spela 13...O-O-O och föra kungen till damflygeln innan linjerna öppnas.",
+      "line": {
+        "from": "before",
+        "san": ["O-O-O", "a5", "Be8", "Qc1", "Nxa5", "Bd6", "Rxd6", "exd6", "Qd8"]
+      }
+    },
+    {
+      "ply": 32,
+      "en": "17.Bh5 pins the knight on g6 to the king on e8, so it cannot move. Black is a pawn up, but his king is in the centre, the d5 pawn is weak and White's bishops dominate the board.",
+      "sv": "17.Bh5 binder springaren på g6 mot kungen på e8, så den kan inte flytta. Svart har en merbonde, men kungen står i centrum, bonden på d5 är svag och de vita löparna dominerar brädet."
+    },
+    {
+      "ply": 33,
+      "en": "17...Kf7 breaks the pin, but the king steps onto the f-file, and Fischer immediately answers with 18.f4, planning f5 to blow the position open. The engine preferred 17...a6, keeping the king where it was for now.",
+      "sv": "17...Kf7 bryter bindningen, men kungen kliver ut på f-linjen, och Fischer svarar direkt med 18.f4 för att med f5 slå upp ställningen. Motorn föredrog 17...a6 och lät kungen stå kvar tills vidare."
+    },
+    {
+      "ply": 36,
+      "en": "19.f5! The pawn break opens lines towards the black king. After 19...exf5 the d5 pawn falls with check, and White's queen and bishops pour in.",
+      "sv": "19.f5! Bondegenombrottet öppnar linjer mot den svarta kungen. Efter 19...exf5 faller bonden på d5 med schack, och Vits dam och löpare väller in."
+    },
+    {
+      "ply": 40,
+      "en": "21.Bf3? throws away a winning position. It lets the knight jump to e5, where it attacks the bishop and blocks the e-file. The engine's 21.Bd6 was much stronger: it hits the queen with tempo and plants the bishop on d6, where it watches e5, and Black's position soon collapses.",
+      "sv": "21.Bf3? kastar bort en vinstställning. Draget låter springaren hoppa till e5, där den anfaller löparen och spärrar e-linjen. Motorns 21.Bd6 var mycket starkare: det anfaller damen med tempo och placerar löparen på d6, där den bevakar e5, och Svarts ställning faller snart samman.",
+      "line": {
+        "from": "before",
+        "san": ["Bd6", "Qd8", "Bf3", "Be6", "Qd4+", "Kf7", "Bxb7"]
+      }
+    },
+    {
+      "ply": 44,
+      "en": "23.Rxe5 gives a rook for the strong knight, and after 24.Qxd7 White also collects the bishop, so he gets knight and bishop for the rook. It is a typical Fischer clarification, but the engine sees it as just one of several roads to an equal position.",
+      "sv": "23.Rxe5 ger ett torn för den starka springaren, och efter 24.Qxd7 plockar Vit också löparen, så han får springare och löpare för tornet. Det är en typisk Fischerförenkling, men motorn ser den bara som en av flera vägar till en jämn ställning."
+    },
+    {
+      "ply": 57,
+      "en": "29...Rxg2+! Larsen finds a forcing counterattack. After the rook sacrifice, the queen checks and the other rook takes White's queen, and the sequence ends in a balanced ending with queen against rook and two bishops. Every move Larsen played from 26...Rd2 to here was the engine's first choice.",
+      "sv": "29...Rxg2+! Larsen hittar ett forcerande motanfall. Efter tornoffret schackar damen och det andra tornet slår Vits dam, och följden slutar i ett balanserat slutspel med dam mot torn och två löpare. Varje drag Larsen spelade från 26...Rd2 hit var motorns förstaval.",
+      "line": {
+        "from": "after",
+        "san": ["Kxg2", "Qd2+", "Kh1", "Rxc6", "Bxc6", "Qxc3"]
+      }
+    },
+    {
+      "ply": 67,
+      "en": "34...g5? is the turning point of the ending. White's a-pawn is about to run, and Black needed his king to help stop it: 34...Ke6 heads for the queenside and holds the balance. Instead the pawn move costs a tempo and the g5 pawn itself becomes a target for the dark-squared bishop.",
+      "sv": "34...g5? är slutspelets vändpunkt. Vits a-bonde är på väg att springa, och Svart behövde kungen för att stoppa den: 34...Ke6 går mot damflygeln och håller balansen. I stället kostar bondedraget ett tempo, och bonden på g5 blir själv ett mål för den svartfältiga löparen.",
+      "line": {
+        "from": "before",
+        "san": ["Ke6", "a5", "Qxa5", "Bd4", "Qd2", "c3"]
+      }
+    },
+    {
+      "ply": 69,
+      "en": "35...Qxc2 grabs a pawn but lets the a-pawn advance freely. Two bishops and a rook working together with a passed pawn are very hard for a lone queen to stop.",
+      "sv": "35...Qxc2 tar en bonde men låter a-bonden avancera fritt. Två löpare och ett torn som samarbetar med en fribonde är mycket svåra för en ensam dam att stoppa."
+    },
+    {
+      "ply": 72,
+      "en": "37.Bd8+ is a slip by Fischer: 37.Be3, aiming at the loose g5 pawn, was clearly stronger. White still keeps a clear advantage.",
+      "sv": "37.Bd8+ är ett snedsteg av Fischer: 37.Be3, som siktar på den lösa bonden på g5, var klart starkare. Vit behåller ändå en klar fördel."
+    },
+    {
+      "ply": 80,
+      "en": "41.Bb6 attacks the queen and guards a7, so the a-pawn is ready to promote. Larsen resigned.",
+      "sv": "41.Bb6 anfaller damen och skyddar a7, så a-bonden är redo att förvandlas. Larsen gav upp."
+    }
+  ],
+  "summary": {
+    "en": "Larsen's 13...fxe5 opened the centre with his king still on e8, and Fischer's bishops and the f5 break built a winning attack. But 21.Bf3 let the knight into e5, and from there the engine sees nothing better than equality, which Larsen confirmed with an accurate counterattack. The game was decided in the ending: with a passed pawn on the board, the defender's king had to head for it, and 34...g5 was one tempo too slow, with 35...Qxc2 making things worse.",
+    "sv": "Larsens 13...fxe5 öppnade centrum med kungen kvar på e8, och Fischers löpare och genombrottet f5 byggde upp ett vinnande anfall. Men 21.Bf3 släppte in springaren på e5, och därefter ser motorn inget bättre än jämvikt, vilket Larsen bekräftade med ett exakt motanfall. Partiet avgjordes i slutspelet: med en fribonde på brädet måste den försvarande kungen gå mot den, och 34...g5 var ett tempo för långsamt, och 35...Qxc2 gjorde saken värre."
+  }
+}

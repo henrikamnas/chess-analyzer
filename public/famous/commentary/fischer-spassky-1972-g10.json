@@ -1,0 +1,98 @@
+{
+  "id": "fischer-spassky-1972-g10",
+  "intro": {
+    "en": "Reykjavik, 1972, game 10 of the World Championship match between Bobby Fischer and Boris Spassky. Fischer played his favourite Ruy Lopez, and Spassky answered with the solid Breyer system. Watch the queenside fight in the middlegame, the combination on f7 that turns it into an endgame of two rooks against rook and bishop, and how Spassky's slips in that endgame let Fischer's kingside pawns decide.",
+    "sv": "Reykjavik 1972, parti 10 i VM-matchen mellan Bobby Fischer och Boris Spasskij. Fischer spelade sin favoritöppning, spanskt, och Spasskij svarade med det solida Breyersystemet. Se kampen på damflygeln i mittspelet, kombinationen på f7 som leder till ett slutspel med två torn mot torn och löpare, och hur Spasskijs misstag i slutspelet låter Fischers bönder på kungsflygeln avgöra."
+  },
+  "comments": [
+    {
+      "ply": 17,
+      "en": "9...Nb8 is the Breyer Defence of the closed Ruy Lopez. The knight goes back to re-route to d7, where it supports e5 and frees the c-pawn, and the bishop will come to b7. It looks odd, but it is one of Black's most solid systems.",
+      "sv": "9...Nb8 är Breyerförsvaret i stängt spanskt. Springaren går tillbaka för att gå om till d7, där den stöder e5 och släpper fram c-bonden, och löparen kommer till b7. Det ser konstigt ut, men det är ett av Svarts mest solida system."
+    },
+    {
+      "ply": 24,
+      "en": "13.b4 is an ambitious way to gain space on the queenside. The more usual plan is 13.Nf1, heading for g3, and the engine slightly preferred that, but Fischer wanted to fight on the queenside.",
+      "sv": "13.b4 är ett ambitiöst sätt att ta utrymme på damflygeln. Den vanligare planen är 13.Nf1 med springaren mot g3, och motorn föredrog det något, men Fischer ville kämpa på damflygeln."
+    },
+    {
+      "ply": 33,
+      "en": "After the slightly passive 16...Qb8, Spassky strikes back with 17...c5. The pawn exchanges that follow open the position, and both sides' bishops become more active.",
+      "sv": "Efter det något passiva 16...Qb8 slår Spasskij tillbaka med 17...c5. Bondebytena som följer öppnar ställningen, och båda sidors löpare blir aktivare."
+    },
+    {
+      "ply": 45,
+      "en": "White's 23.cxb5 has won a pawn for the moment. 23...Red8 lets White keep it; the engine preferred 23...axb5 at once, when Black's active pieces give full equality.",
+      "sv": "Vits 23.cxb5 har vunnit en bonde för stunden. 23...Red8 låter Vit behålla den; motorn föredrog 23...axb5 direkt, då Svarts aktiva pjäser ger full utjämning.",
+      "line": {
+        "from": "before",
+        "san": ["axb5", "Rxb5", "Ba6", "e5", "Rxe5"]
+      }
+    },
+    {
+      "ply": 46,
+      "en": "24.Qc1 is a small slip. The engine wanted 24.bxa6 followed by e5, gaining time against Black's queen. In the game Black soon wins the pawn back.",
+      "sv": "24.Qc1 är en liten miss. Motorn ville spela 24.bxa6 följt av e5, som vinner tid mot Svarts dam. I partiet vinner Svart snart tillbaka bonden.",
+      "line": {
+        "from": "before",
+        "san": ["bxa6", "Bc8", "e5", "Qxa6"]
+      }
+    },
+    {
+      "ply": 50,
+      "en": "26.Bb3 puts the bishop on the diagonal towards f7, the weakest point near Black's king. The engine preferred 26.b6, but Fischer's plan of Qf4 and Ne5, piling up on f7, is easy to follow.",
+      "sv": "26.Bb3 ställer löparen på diagonalen mot f7, den svagaste punkten nära Svarts kung. Motorn föredrog 26.b6, men Fischers plan med Qf4 och Ne5, där allt riktas mot f7, är lätt att följa."
+    },
+    {
+      "ply": 58,
+      "en": "30.Bxf7+! is the point of White's set-up. Black was threatening to hit the bishop with ...c4, and the engine shows that other moves lose badly, so the combination is not only pretty but necessary. After 30...Rxf7 31.Qxf7+ Qxf7 32.Nxf7 the queens are gone and White has won the exchange.",
+      "sv": "30.Bxf7+! är poängen med Vits uppställning. Svart hotade att angripa löparen med ...c4, och motorn visar att andra drag förlorar mycket, så kombinationen är inte bara snygg utan nödvändig. Efter 30...Rxf7 31.Qxf7+ Qxf7 32.Nxf7 är damerna borta och Vit har vunnit kvalitet.",
+      "line": {
+        "from": "after",
+        "san": ["Rxf7", "Qxf7+", "Qxf7", "Nxf7"]
+      }
+    },
+    {
+      "ply": 65,
+      "en": "Black grabbed the e4 pawn and then took the knight. The balance: White has two rooks against rook and bishop, while Black has an extra pawn and connected passed pawns on b5 and c5. The engine sees only a small edge for White.",
+      "sv": "Svart tog e4-bonden och sedan springaren. Balansen: Vit har två torn mot torn och löpare, medan Svart har en merbonde och sammanhängande fribönder på b5 och c5. Motorn ser bara en liten fördel för Vit."
+    },
+    {
+      "ply": 75,
+      "en": "38...h5? is the first serious slip of the endgame. The pawn becomes a target: 39.g4! would attack it and win it. The engine wanted 38...Ra6, bringing the rook back to defend along the sixth rank.",
+      "sv": "38...h5? är det första allvarliga misstaget i slutspelet. Bonden blir ett mål: 39.g4! hade angripit den och vunnit den. Motorn ville spela 38...Ra6 och föra tillbaka tornet till försvar längs sjätte raden.",
+      "line": {
+        "from": "after",
+        "san": ["g4", "Rd1", "Rb6", "Rd2", "Kf3", "Rd5", "gxh5"]
+      }
+    },
+    {
+      "ply": 76,
+      "en": "39.Rb6 misses 39.g4, and the position is close to balanced again. In a long endgame both players make mistakes; the one who makes the last one usually loses.",
+      "sv": "39.Rb6 missar 39.g4, och ställningen är nästan jämn igen. I ett långt slutspel gör båda spelarna misstag; den som gör det sista förlorar oftast."
+    },
+    {
+      "ply": 79,
+      "en": "40...Kf7? is the decisive mistake, after the earlier 39...Rd1 had already made things harder. The king steps back instead of the rook staying active with 40...Rd3+. After 41.Ke2 White's king drives the rook away from d1, and White's kingside pawns can start rolling.",
+      "sv": "40...Kf7? är det avgörande misstaget, efter att 39...Rd1 redan hade gjort det svårare. Kungen backar i stället för att tornet håller sig aktivt med 40...Rd3+. Efter 41.Ke2 driver Vits kung bort tornet från d1, och Vits bönder på kungsflygeln kan börja rulla.",
+      "line": {
+        "from": "before",
+        "san": ["Rd3+", "Ke2", "Rd5", "Ke3", "g6"]
+      }
+    },
+    {
+      "ply": 92,
+      "en": "With f4, g4 and f5 White has gained space on the kingside, and now 47.Rexb4 wins the b-pawn. Black is left with only the pawns on c5 and g5, while White's rooks are free to attack.",
+      "sv": "Med f4, g4 och f5 har Vit tagit utrymme på kungsflygeln, och nu vinner 47.Rexb4 b-bonden. Svart har bara bönderna på c5 och g5 kvar, medan Vits torn är fria att angripa."
+    },
+    {
+      "ply": 110,
+      "en": "White has two rooks and a passed pawn on f6 against rook and bishop. 56.Rb1 prepares Rd1+ against the king on d4. If Black takes 56...Bxf6, 57.Rf5 wins the bishop. Spassky resigned.",
+      "sv": "Vit har två torn och en fribonde på f6 mot torn och löpare. 56.Rb1 förbereder Rd1+ mot kungen på d4. Om Svart tar 56...Bxf6 vinner 57.Rf5 löparen. Spasskij gav upp."
+    }
+  ],
+  "summary": {
+    "en": "Fischer's play against f7 was not only a nice combination: the engine shows it was the only good move. The resulting endgame was close to equal for a long time, and it was decided by small slips: a pawn move that created a target and a passive king move. In endgames with rooks, keep the rook active and avoid giving the opponent's pawns targets to attack.",
+    "sv": "Fischers spel mot f7 var inte bara en snygg kombination: motorn visar att det var det enda bra draget. Det slutspel som följde var nästan jämnt länge och avgjordes av små misstag: ett bondedrag som skapade ett mål och ett passivt kungsdrag. I slutspel med torn ska man hålla tornet aktivt och undvika att ge motståndarens bönder mål att angripa."
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "id": "ding-nepomniachtchi-2023-g4",
+  "intro": {
+    "en": "Astana 2023, game 4 of the World Championship match. Ian Nepomniachtchi had won game 2, and Ding Liren needed a win to level the score. This became Ding's first ever win in a world championship game. Watch how White's central pawns advance to d5 and e6, cramping Black, and how one careless knight move lets Ding give up the exchange for a dominant knight and a powerful pawn wedge on d5 and e6.",
+    "sv": "Astana 2023, parti 4 i VM-matchen. Ian Nepomnjasjtjij hade vunnit parti 2, och Ding Liren behövde en vinst för att kvittera. Det blev Dings första vinst någonsin i ett VM-parti. Lägg märke till hur Vits centrumbönder avancerar till d5 och e6 och tränger ihop Svart, och hur ett slarvigt springardrag låter Ding offra kvalitet för en dominerande springare och en stark bondekil på d5 och e6."
+  },
+  "comments": [
+    {
+      "ply": 10,
+      "en": "This is the Four Knights Variation of the King's English, in its quiet line with 4.e3. Black gives up the bishop for the knight on c3, and White recaptures towards the centre with the b-pawn. The doubled c-pawns are a long-term weakness, but they also support a big centre with d4 and e4.",
+      "sv": "Det här är fyrspringarvarianten i kungsengelskt, i den lugna varianten med 4.e3. Svart ger löparen mot springaren på c3, och Vit tar tillbaka mot centrum med b-bonden. De dubblerade c-bönderna är en långsiktig svaghet, men de stöder också ett stort centrum med d4 och e4."
+    },
+    {
+      "ply": 19,
+      "en": "Black's knight went from f6 via h5 to f4, hitting the bishop on e2, and White chose to trade off his dark-squared bishop for it. Now Black has a pawn on f4 that cramps White's kingside, while White keeps a strong pawn centre.",
+      "sv": "Svarts springare gick från f6 via h5 till f4, där den anföll löparen på e2, och Vit valde att byta bort sin svartfältslöpare mot den. Nu har Svart en bonde på f4 som tränger ihop Vits kungsflygel, medan Vit behåller ett starkt bondecentrum."
+    },
+    {
+      "ply": 27,
+      "en": "14...Na5 is the first small inaccuracy. The knight goes to the edge to attack the c4 pawn, but it is far from the kingside and the centre. The engine preferred 14...Rad8, simply bringing another piece to the centre.",
+      "sv": "14...Na5 är den första lilla onoggrannheten. Springaren går ut till kanten för att anfalla bonden på c4, men den hamnar långt från kungsflygeln och centrum. Motorn föredrog 14...Rad8, som helt enkelt för ännu en pjäs till centrum."
+    },
+    {
+      "ply": 28,
+      "en": "15.c5! Ding gives up the weak doubled pawn to get his central pawns rolling. After 15...dxc5 16.e5 and 17.d5, White has a big pawn wedge that takes squares away from Black's pieces. The engine rated 15.Rab1 a little higher, but the plan is easy to understand.",
+      "sv": "15.c5! Ding ger bort den svaga dubbelbonden för att få igång centrumbönderna. Efter 15...dxc5 16.e5 och 17.d5 har Vit en stor bondekil som tar fält från de svarta pjäserna. Motorn värderade 15.Rab1 lite högre, men planen är lätt att förstå."
+    },
+    {
+      "ply": 46,
+      "en": "24.e6 creates a protected passed pawn on e6, backed up by the pawn on d5. It cuts Black's position in two. Interestingly, the engine shows that the tempting alternatives 24.g4 and 24.d6 would both have backfired badly.",
+      "sv": "24.e6 skapar en skyddad fribonde på e6, uppbackad av bonden på d5. Den delar den svarta ställningen i två delar. Intressant nog visar motorn att de lockande alternativen 24.g4 och 24.d6 båda hade slagit tillbaka ordentligt."
+    },
+    {
+      "ply": 55,
+      "en": "28...Nd4? is the turning point. The knight attacks the queen, but White simply takes it with the rook. Black needed 28...g5, protecting the f4 pawn and keeping the position closed, after which the game is close to level.",
+      "sv": "28...Nd4? är vändpunkten. Springaren anfaller damen, men Vit slår den helt enkelt med tornet. Svart behövde 28...g5, som skyddar bonden på f4 och håller ställningen stängd, och då är partiet nära jämnt.",
+      "line": {
+        "from": "before",
+        "san": ["g5", "g4", "Nd6", "R4e2", "Rf8", "Qd3", "Kg7"]
+      }
+    },
+    {
+      "ply": 56,
+      "en": "29.Rxd4! gives up the exchange. After 29...cxd4 the knight comes to b3 and wins the d4 pawn back. White is the exchange down, but the knight will be a monster in the centre, the d5 and e6 pawns are strong, and Black's rooks are stuck passively in front of the e-pawn.",
+      "sv": "29.Rxd4! offrar kvalitet. Efter 29...cxd4 kommer springaren till b3 och vinner tillbaka bonden på d4. Vit har en kvalitet mindre, men springaren blir ett monster i centrum, bönderna på d5 och e6 är starka, och Svarts torn sitter passivt fast framför e-bonden.",
+      "line": {
+        "from": "after",
+        "san": ["cxd4", "Nb3", "g6", "Nxd4", "f5"]
+      }
+    },
+    {
+      "ply": 59,
+      "en": "30...g5 weakens the light squares around Black's king, and after 31.Nxd4 the knight has an easy road to f5. The engine preferred 30...d3, giving back the pawn to slow White's knight.",
+      "sv": "30...g5 försvagar de vita fälten runt den svarta kungen, och efter 31.Nxd4 har springaren en lätt väg till f5. Motorn föredrog 30...d3, som ger tillbaka bonden för att bromsa den vita springaren."
+    },
+    {
+      "ply": 66,
+      "en": "34.Nf5 puts the knight on a superb outpost, protected by the queen. From f5 it supports the e-pawn and watches e7, d6 and h6. White is winning.",
+      "sv": "34.Nf5 placerar springaren på en utmärkt utpost, skyddad av damen. Från f5 stöder den e-bonden och bevakar e7, d6 och h6. Vit står till vinst."
+    },
+    {
+      "ply": 70,
+      "en": "36.e7 pushes the pawn to the seventh rank, one step from promotion. The rook on e8 is now tied to stopping it.",
+      "sv": "36.e7 för fram bonden till sjunde raden, ett steg från förvandling. Tornet på e8 är nu bundet till att stoppa den."
+    },
+    {
+      "ply": 72,
+      "en": "37.d6! The second pawn breaks through. After 37...cxd6 38.Nxd6 the knight forks the queen on f7 and the rook on e8.",
+      "sv": "37.d6! Den andra bonden bryter igenom. Efter 37...cxd6 38.Nxd6 gafflar springaren damen på f7 och tornet på e8.",
+      "line": {
+        "from": "after",
+        "san": ["cxd6", "Nxd6"]
+      }
+    },
+    {
+      "ply": 77,
+      "en": "Material is now level, with queen and rook each, but the pawn on e7 is decisive. Black's queen has to keep watching the promotion square, and White's queen and rook are free to attack the black king.",
+      "sv": "Materialet är nu jämnt, dam och torn var, men bonden på e7 är avgörande. Svarts dam måste hela tiden bevaka förvandlingsfältet, och Vits dam och torn är fria att anfalla den svarta kungen."
+    },
+    {
+      "ply": 86,
+      "en": "44.Qxf5+ wins a pawn with check and drives the black king into the open. The checks and threats against the king, combined with the e-pawn, are too much.",
+      "sv": "44.Qxf5+ vinner en bonde med schack och driver ut den svarta kungen i det fria. Schackarna och hoten mot kungen, i kombination med e-bonden, blir för mycket."
+    },
+    {
+      "ply": 92,
+      "en": "47.Qf8 attacks the queen on e8, and the e7 pawn protects the white queen. Nepomniachtchi resigned, and the match was level.",
+      "sv": "47.Qf8 anfaller damen på e8, och bonden på e7 skyddar den vita damen. Nepomnjasjtjij gav upp, och matchen var åter jämn."
+    }
+  ],
+  "summary": {
+    "en": "Ding's win was built on space: the pawn sacrifice 15.c5 got his d- and e-pawns moving, and a protected passed pawn on e6 cramped Black for the rest of the game. Black could have held with 28...g5, but 28...Nd4 allowed the exchange sacrifice that turned a closed position into an attack with knight and pawns. A lesson for club players: a well-placed knight with a protected passed pawn and an advanced pawn wedge is often worth more than a rook.",
+    "sv": "Dings vinst byggde på utrymme: bondeoffret 15.c5 satte fart på d- och e-bönderna, och en skyddad fribonde på e6 trängde ihop Svart resten av partiet. Svart kunde ha hållit med 28...g5, men 28...Nd4 tillät kvalitetsoffret som förvandlade en stängd ställning till ett anfall med springare och bönder. En läxa för klubbspelare: en välplacerad springare med en skyddad fribonde och en långt framskjuten bondekil är ofta värd mer än ett torn."
+  }
+}

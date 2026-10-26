@@ -1,0 +1,85 @@
+{
+  "id": "spassky-tal-1973",
+  "intro": {
+    "en": "Tallinn 1973: Mikhail Tal, playing Black, faces Boris Spassky, who had lost his world title to Fischer the year before. Tal answers the Leningrad Variation of the Nimzo-Indian with a gambit and gives up pawns, and later the exchange, for open lines and active pieces. Watch how the material comes back, and how one careless queen move lets Tal's queen and bishops loose against the white king.",
+    "sv": "Tallinn 1973: Michail Tal, med svart, möter Boris Spasskij, som året innan hade förlorat världsmästartiteln till Fischer. Tal svarar på Leningradvarianten i nimzoindiskt med en gambit och ger bort bönder, och senare kvalitet, för öppna linjer och aktiva pjäser. Lägg märke till hur materialet kommer tillbaka, och hur ett slarvigt damdrag släpper loss Tals dam och löpare mot den vita kungen."
+  },
+  "comments": [
+    {
+      "ply": 6,
+      "en": "4.Bg5 is the Leningrad Variation of the Nimzo-Indian. White pins the knight on f6 at once instead of fighting for e4 with a quieter move. The engine prefers the solid 4.Nf3, but the pin is an established way to play for the initiative.",
+      "sv": "4.Bg5 är Leningradvarianten i nimzoindiskt. Vit binder springaren på f6 direkt i stället för att kämpa om e4 med ett lugnare drag. Motorn föredrar det solida 4.Nf3, men bindningen är ett etablerat sätt att spela på initiativet."
+    },
+    {
+      "ply": 11,
+      "en": "6...b5 is the Averbakh Gambit. Black offers a pawn to break up White's grip on the centre: if White takes, Black gets open lines and quick development. The engine slightly prefers the calm 6...d6, but the gambit fits Tal's style perfectly.",
+      "sv": "6...b5 är Averbachs gambit. Svart offrar en bonde för att bryta upp Vits grepp om centrum: om Vit slår får Svart öppna linjer och snabb utveckling. Motorn föredrar en aning det lugna 6...d6, men gambiten passar Tals stil perfekt."
+    },
+    {
+      "ply": 20,
+      "en": "11.Bxf6 gives up the bishop pair, and the rook recaptures and becomes active on the half-open f-file. The engine preferred 11.Qc2, keeping the bishop.",
+      "sv": "11.Bxf6 ger bort löparparet, och tornet tar tillbaka och blir aktivt på den halvöppna f-linjen. Motorn föredrog 11.Qc2, som behåller löparen."
+    },
+    {
+      "ply": 24,
+      "en": "13.bxa6 grabs another pawn, and White is now two pawns up. But White's king is still in the centre, and Black's pieces are ready to strike. The engine preferred 13.Be2, preparing to castle first.",
+      "sv": "13.bxa6 tar ännu en bonde, och Vit har nu två merbönder. Men den vita kungen står kvar i centrum, och Svarts pjäser är redo att slå till. Motorn föredrog 13.Be2, som förbereder rockad först.",
+      "line": {
+        "from": "before",
+        "san": ["Be2", "axb5", "O-O", "c4", "a3", "Bxc3", "bxc3"]
+      }
+    },
+    {
+      "ply": 27,
+      "en": "14...d4! Tal strikes in the centre. The knight on c3 is pinned against the queen on d2 by the bishop on b4, so it cannot simply step aside.",
+      "sv": "14...d4! Tal slår till i centrum. Springaren på c3 är bunden mot damen på d2 av löparen på b4, så den kan inte bara flytta undan."
+    },
+    {
+      "ply": 29,
+      "en": "15...Rxf3! A typical Tal exchange sacrifice, and the engine agrees it is the best move. After 16.Bxf3 cxd4 Black wins back material on c3, and soon most of the sacrificed material has returned while Black's pieces are much more active.",
+      "sv": "15...Rxf3! Ett typiskt kvalitetsoffer av Tal, och motorn håller med om att det är det bästa draget. Efter 16.Bxf3 cxd4 vinner Svart tillbaka material på c3, och snart har det mesta av det offrade materialet kommit tillbaka medan Svarts pjäser är betydligt aktivare.",
+      "line": {
+        "from": "after",
+        "san": ["Bxf3", "cxd4", "O-O", "dxc3", "bxc3", "Bxc3"]
+      }
+    },
+    {
+      "ply": 41,
+      "en": "After the trades, material is level: White has two rooks and an extra pawn against rook and two bishops. Black's bishops and active queen give him the slightly easier game.",
+      "sv": "Efter avbytena är materialet jämnt: Vit har två torn och en merbonde mot torn och två löpare. Svarts löpare och aktiva dam ger honom det något lättare spelet."
+    },
+    {
+      "ply": 48,
+      "en": "25.Qg3?? is the decisive mistake. The queen leaves b3, where it protected the rook on c2, and after 25...Qf5 the rook and the f2 pawn are both attacked. The engine's 25.h3 would have kept the game balanced.",
+      "sv": "25.Qg3?? är det avgörande misstaget. Damen lämnar b3, där den skyddade tornet på c2, och efter 25...Qf5 är både tornet och bonden på f2 anfallna. Motorns 25.h3 hade hållit partiet i balans.",
+      "line": {
+        "from": "before",
+        "san": ["h3", "Qf5", "Rfc1", "Bxf2+", "Kh1", "Rxc2", "Qxc2"]
+      }
+    },
+    {
+      "ply": 50,
+      "en": "26.Rfc1 saves the rook, but now both white rooks are on the c-file, far from their king. Black's light-squared bishop comes to b7, behind the rook on c6, ready to aim at g2 once the rook moves.",
+      "sv": "26.Rfc1 räddar tornet, men nu står båda de vita tornen på c-linjen, långt från sin kung. Svarts vitfältslöpare kommer till b7, bakom tornet på c6, redo att sikta på g2 när tornet flyttar."
+    },
+    {
+      "ply": 55,
+      "en": "28...Rc7 clears the long diagonal. Now the bishop on b7 and the queen on g5 both hit g2, and Black threatens mate with ...Qxg2. White chose to block with 29.g3, weakening his king; 29.Qg3 was a little more stubborn.",
+      "sv": "28...Rc7 öppnar den långa diagonalen. Nu träffar både löparen på b7 och damen på g5 g2, och Svart hotar matt med ...Qxg2. Vit valde att spärra med 29.g3, vilket försvagar kungen; 29.Qg3 var något segare."
+    },
+    {
+      "ply": 57,
+      "en": "29...Bxf2+! The bishop sacrifice removes the f2 pawn and drags the white king out. After 30.Kxf2 the queen and the bishop on b7 chase the king across the board.",
+      "sv": "29...Bxf2+! Löparoffret slår bort bonden på f2 och drar ut den vita kungen. Efter 30.Kxf2 jagar damen och löparen på b7 kungen över brädet."
+    },
+    {
+      "ply": 75,
+      "en": "38...Qe4+ The white king is out in the open with Black's queen, rook and bishop all around it. White is even the exchange up, but material does not matter when the king is this exposed. Spassky resigned.",
+      "sv": "38...Qe4+ Den vita kungen står ute i det fria med Svarts dam, torn och löpare runt omkring sig. Vit har till och med en kvalitet mer, men material spelar ingen roll när kungen står så utsatt. Spasskij gav upp."
+    }
+  ],
+  "summary": {
+    "en": "Tal gave pawns and then the exchange, and the engine agrees that his sacrifices were sound: the material came back, and his pieces were more active. The game was level until 25.Qg3 left the rook on c2 unprotected; from then on every Black piece joined an attack on the white king. A lesson: before moving a piece, check what it was guarding.",
+    "sv": "Tal gav bönder och sedan kvalitet, och motorn håller med om att offren var korrekta: materialet kom tillbaka, och hans pjäser var aktivare. Partiet var jämnt tills 25.Qg3 lämnade tornet på c2 oskyddat; därefter deltog varje svart pjäs i ett anfall mot den vita kungen. En läxa: innan du flyttar en pjäs, kontrollera vad den skyddade."
+  }
+}
