@@ -1,0 +1,80 @@
+{
+  "id": "carlsen-ernst-2004",
+  "intro": {
+    "en": "Wijk aan Zee, 2004: a thirteen-year-old Magnus Carlsen, playing in the C group of the Corus tournament, faces Sipke Ernst's Caro-Kann. The kings castle on opposite sides, and Black's queen goes to the queenside while White's pieces gather near Black's king. Watch how Carlsen sacrifices a knight, a bishop and a rook to reach that king.",
+    "sv": "Wijk aan Zee 2004: en trettonårig Magnus Carlsen, som spelar i C-gruppen i Corusturneringen, möter Sipke Ernsts Caro-Kann. Kungarna rockerar åt olika håll, och Svarts dam går till damflygeln medan Vits pjäser samlas nära Svarts kung. Se hur Carlsen offrar en springare, en löpare och ett torn för att nå den kungen."
+  },
+  "comments": [
+    {
+      "ply": 15,
+      "en": "This is the Classical Caro-Kann: Black develops the light-squared bishop to f5 before playing ...e6, so it is not shut in. White chases it with Ng3, h4 and h5, gaining space on the kingside, and the h5 pawn will matter later.",
+      "sv": "Detta är klassisk Caro-Kann: Svart utvecklar den vitfältiga löparen till f5 innan ...e6, så att den inte stängs inne. Vit jagar den med Ng3, h4 och h5 och vinner utrymme på kungsflygeln, och bonden på h5 kommer att bli viktig senare."
+    },
+    {
+      "ply": 21,
+      "en": "After 11.Bf4 the engine preferred the check 11...Qa5+, which disturbs White's development. After 11...Ngf6 White castles long without trouble.",
+      "sv": "Efter 11.Bf4 föredrog motorn schacken 11...Qa5+, som stör Vits utveckling. Efter 11...Ngf6 rockerar Vit långt utan problem.",
+      "line": { "from": "before", "san": ["Qa5+", "Qd2", "Bb4", "c3", "Be7"] }
+    },
+    {
+      "ply": 27,
+      "en": "With White castled long and Black castled short, both sides want to attack the other king. Black's queen on a5 points at the queenside where White's king lives, but it is a long way from its own king on g8.",
+      "sv": "När Vit har rockerat långt och Svart kort vill båda sidor angripa den andra kungen. Svarts dam på a5 siktar mot damflygeln där Vits kung bor, men den står långt från sin egen kung på g8."
+    },
+    {
+      "ply": 30,
+      "en": "16.Ne5 puts the knight on a strong central square. From there it eyes f7 and g6, close to Black's king.",
+      "sv": "16.Ne5 placerar springaren på en stark central ruta. Därifrån siktar den mot f7 och g6, nära Svarts kung."
+    },
+    {
+      "ply": 33,
+      "en": "17...c5? opens the centre, but it gives White time for a tactic. The engine preferred 17...Qb6, bringing the queen back towards the defence.",
+      "sv": "17...c5? öppnar centrum, men ger Vit tid för en kombination. Motorn föredrog 17...Qb6, som för damen tillbaka mot försvaret."
+    },
+    {
+      "ply": 34,
+      "en": "18.Ng6! The knight attacks the rook on f8 and the bishop on e7. If Black takes it, the f-pawn leaves the e6 pawn without support and White's h5 pawn recaptures on g6, right next to the king.",
+      "sv": "18.Ng6! Springaren anfaller tornet på f8 och löparen på e7. Om Svart tar den lämnar f-bonden e6-bonden utan stöd, och Vits h5-bonde tar tillbaka på g6, precis intill kungen."
+    },
+    {
+      "ply": 35,
+      "en": "18...fxg6?? loses. Black had to decline with 18...Rfe8: after 19.Nxe7+ Rxe7 White has only traded the knight for the bishop and keeps an edge, but the king is safe.",
+      "sv": "18...fxg6?? förlorar. Svart måste avböja med 18...Rfe8: efter 19.Nxe7+ Rxe7 har Vit bara bytt springaren mot löparen och behåller en fördel, men kungen är säker.",
+      "line": { "from": "before", "san": ["Rfe8", "Nxe7+", "Rxe7", "dxc5"] }
+    },
+    {
+      "ply": 38,
+      "en": "After 19.Qxe6+ Kh8 20.hxg6 the white pawn on g6 controls f7 and h7, so the black king is boxed in on h8. White is a piece down for two pawns but has a decisive attack.",
+      "sv": "Efter 19.Qxe6+ Kh8 20.hxg6 kontrollerar den vita bonden på g6 f7 och h7, så den svarta kungen är instängd på h8. Vit har en pjäs mindre mot två bönder men har ett avgörande angrepp."
+    },
+    {
+      "ply": 40,
+      "en": "21.Bxh6! The bishop is sacrificed to remove the h6 pawn that shields the king, and after 21...gxh6 the rook follows.",
+      "sv": "21.Bxh6! Löparen offras för att ta bort h6-bonden som skyddar kungen, och efter 21...gxh6 följer tornet."
+    },
+    {
+      "ply": 44,
+      "en": "After 22.Rxh6+ Nxh6 White wins the bishop back with 23.Qxe7, and now Qh7 would be mate, because the g6 pawn protects h7. Black has plenty of extra material, but the queen on a5 is far away.",
+      "sv": "Efter 22.Rxh6+ Nxh6 vinner Vit tillbaka löparen med 23.Qxe7, och nu vore Qh7 matt, eftersom bonden på g6 skyddar h7. Svart har gott om extra material, men damen på a5 står långt borta."
+    },
+    {
+      "ply": 45,
+      "en": "23...Nf7 is the engine's choice: the knight steps in between the queen and h7. White takes it with 24.gxf7, and the new pawn on f7 cramps Black even more.",
+      "sv": "23...Nf7 är motorns val: springaren ställer sig mellan damen och h7. Vit tar den med 24.gxf7, och den nya bonden på f7 tränger Svart ännu mer."
+    },
+    {
+      "ply": 48,
+      "en": "25.Rd3 swings the last rook over to the g-file via d3. The engine found the slightly stronger 25.Qe5+ first, but both win.",
+      "sv": "25.Rd3 svänger över det sista tornet till g-linjen via d3. Motorn hittade det något starkare 25.Qe5+ först, men båda vinner."
+    },
+    {
+      "ply": 56,
+      "en": "29.Qd7# is mate. The queen on d7 covers e6, e7 and e8, the rook on g3 covers g6, g7 and g8, and Black's own rooks block f6 and f8. 28...Ke7 would only have delayed the mate.",
+      "sv": "29.Qd7# är matt. Damen på d7 täcker e6, e7 och e8, tornet på g3 täcker g6, g7 och g8, och Svarts egna torn blockerar f6 och f8. 28...Ke7 hade bara fördröjt mattet."
+    }
+  ],
+  "summary": {
+    "en": "With kings on opposite sides, speed and piece placement matter more than material. Black's queen on a5 never took part in the defence, while White's queen, rooks, bishop and knight all joined the attack. Before you grab a sacrificed piece, ask what lines it opens towards your own king: 18...Rfe8 would have kept the game going.",
+    "sv": "Med kungarna på olika flyglar betyder fart och pjäsplacering mer än material. Svarts dam på a5 deltog aldrig i försvaret, medan Vits dam, torn, löpare och springare alla anslöt till angreppet. Innan du tar en offrad pjäs, fråga dig vilka linjer det öppnar mot din egen kung: 18...Rfe8 hade hållit partiet vid liv."
+  }
+}

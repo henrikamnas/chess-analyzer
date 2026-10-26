@@ -1,0 +1,94 @@
+{
+  "id": "korchnoi-spassky-1977-g3",
+  "intro": {
+    "en": "Belgrade, 1977: the Candidates final between Viktor Korchnoi, who had left the Soviet Union the year before, and the former world champion Boris Spassky. The winner would challenge Anatoly Karpov in 1978, and it was Korchnoi. The opening is an English that turns into a Sicilian-like structure. Watch the long diagonal from g2 to a8: it decides the game.",
+    "sv": "Belgrad 1977: kandidatfinalen mellan Viktor Kortjnoj, som hade lämnat Sovjetunionen året innan, och den förre världsmästaren Boris Spasskij. Vinnaren skulle utmana Anatolij Karpov 1978, och det blev Kortjnoj. Öppningen är en engelsk som övergår i en struktur som liknar sicilianskt. Håll ögonen på den långa diagonalen från g2 till a8: den avgör partiet."
+  },
+  "comments": [
+    {
+      "ply": 8,
+      "en": "With 4.d4 cxd4 5.Nxd4 the game looks like an Open Sicilian, except that White already has a pawn on c4. Together with the knight on c3 it gives White a firm hold on the d5 square.",
+      "sv": "Med 4.d4 cxd4 5.Nxd4 liknar partiet en öppen siciliansk, förutom att Vit redan har en bonde på c4. Tillsammans med springaren på c3 ger den Vit ett fast grepp om d5-rutan."
+    },
+    {
+      "ply": 11,
+      "en": "6...Qb6 attacks the knight on d4 at once and makes White decide where it goes. Korchnoi retreats with 7.Nb3; the engine slightly preferred the active 7.Ndb5.",
+      "sv": "6...Qb6 anfaller springaren på d4 direkt och tvingar Vit att bestämma sig för var den ska stå. Kortjnoj backar med 7.Nb3; motorn föredrog en aning det aktiva 7.Ndb5."
+    },
+    {
+      "ply": 17,
+      "en": "9...O-O is the first real inaccuracy. It lets White grab space with 10.f4 and threaten e5, which would drive the knight from f6. The engine preferred 9...d6, keeping control of e5 before castling.",
+      "sv": "9...O-O är den första verkliga onoggrannheten. Den låter Vit ta utrymme med 10.f4 och hota e5, som skulle jaga bort springaren från f6. Motorn föredrog 9...d6, som behåller kontrollen över e5 innan Svart rockerar.",
+      "line": { "from": "before", "san": ["d6", "Bd2", "O-O", "O-O-O", "a5", "f4", "Nc6"] }
+    },
+    {
+      "ply": 20,
+      "en": "11.Be3 is too slow. The consistent move was 11.e5, pushing the knight back to e8 at once; now Black gets time to organise a defence.",
+      "sv": "11.Be3 är för långsamt. Det konsekventa draget var 11.e5, som direkt trycker tillbaka springaren till e8; nu får Svart tid att organisera försvaret.",
+      "line": { "from": "before", "san": ["e5", "Ne8", "Be3", "Qc7"] }
+    },
+    {
+      "ply": 27,
+      "en": "14...Bxc3 gives up the dark-squared bishop and leaves White with the bishop pair. The engine preferred 14...Nxc3, when after 15.bxc3 Bxc3 Black even picks up the c3 pawn, although White gets play against d5.",
+      "sv": "14...Bxc3 ger bort den svartfältiga löparen och lämnar Vit med löparparet. Motorn föredrog 14...Nxc3, och efter 15.bxc3 Bxc3 vinner Svart till och med c3-bonden, även om Vit får spel mot d5.",
+      "line": { "from": "before", "san": ["Nxc3", "bxc3", "Bxc3", "cxd5", "exd5"] }
+    },
+    {
+      "ply": 31,
+      "en": "16...b6 is a mistake. It costs time, and it loosens the long diagonal where White's bishop on g2 sits behind the knight on e4 and the d5 pawn, aiming at c6 and a8. The engine wanted the simple developing move 16...Be6.",
+      "sv": "16...b6 är ett misstag. Det kostar tid, och det försvagar den långa diagonalen där Vits löpare på g2 står bakom springaren på e4 och d5-bonden och siktar mot c6 och a8. Motorn ville ha det enkla utvecklingsdraget 16...Be6."
+    },
+    {
+      "ply": 34,
+      "en": "After 17...f5 White takes en passant with 18.exf6, but this gives up the strong e5 pawn and frees Black's game. The engine preferred 18.g4!, attacking the f5 pawn that holds up the knight on e4.",
+      "sv": "Efter 17...f5 slår Vit en passant med 18.exf6, men det ger upp den starka e5-bonden och befriar Svarts spel. Motorn föredrog 18.g4!, som anfaller f5-bonden som stöder springaren på e4.",
+      "line": { "from": "before", "san": ["g4", "g6", "gxf5", "gxf5", "Bxe4", "fxe4"] }
+    },
+    {
+      "ply": 45,
+      "en": "23...Ba6 pins the knight on b5 against the queen on d3, but it lets White strike at the centre. The engine preferred 23...Bb7, keeping the bishop on the long diagonal.",
+      "sv": "23...Ba6 binder springaren på b5 mot damen på d3, men det låter Vit slå till mot centrum. Motorn föredrog 23...Bb7, som håller löparen kvar på den långa diagonalen."
+    },
+    {
+      "ply": 46,
+      "en": "24.a4 protects the pinned knight, but the engine liked 24.c4 better: it blocks the bishop's diagonal and attacks d5 at the same time. Black is now close to equal.",
+      "sv": "24.a4 skyddar den bundna springaren, men motorn gillade 24.c4 bättre: det stänger löparens diagonal och anfaller d5 på samma gång. Svart är nu nära utjämning.",
+      "line": { "from": "before", "san": ["c4", "Qc5+", "Bd4", "Qc6"] }
+    },
+    {
+      "ply": 49,
+      "en": "25...Nxe5 trades off White's bishop, but after 26.fxe5 White has a pawn on e5 again, cramping Black. The engine preferred 25...Bb7.",
+      "sv": "25...Nxe5 byter bort Vits löpare, men efter 26.fxe5 har Vit åter en bonde på e5 som tränger Svart. Motorn föredrog 25...Bb7."
+    },
+    {
+      "ply": 53,
+      "en": "27...Qxb5?? is the decisive blunder. Black wins a pawn, but the queen goes far from the centre, and the knight on e4 is held only by the d5 pawn while White's queen and bishop both attack it. 27...Qe6, keeping the queen near e5 and d5, would have held.",
+      "sv": "27...Qxb5?? är det avgörande bortsläppet. Svart vinner en bonde, men damen hamnar långt från centrum, och springaren på e4 hålls bara av d5-bonden medan Vits dam och löpare båda anfaller den. 27...Qe6, med damen nära e5 och d5, hade hållit.",
+      "line": { "from": "before", "san": ["Qe6", "c4", "Qxe5", "Qxe5", "Rxe5", "cxd5", "Nd6"] }
+    },
+    {
+      "ply": 54,
+      "en": "28.c4! attacks the queen and the d5 pawn together. If d5 falls or moves, the knight on e4 is lost, so Black must give up something.",
+      "sv": "28.c4! anfaller damen och d5-bonden på en gång. Om d5 faller eller flyttar går springaren på e4 förlorad, så Svart måste ge upp något."
+    },
+    {
+      "ply": 58,
+      "en": "After the queen trade 30.Bxd5+ is the point: the bishop checks the king on g8 and attacks the rook on a8 along the long diagonal that 16...b6 weakened. Recapturing with 29...bxc5 instead would not have saved Black either, because White's d-pawn would have run.",
+      "sv": "Efter dambytet är 30.Bxd5+ poängen: löparen schackar kungen på g8 och anfaller tornet på a8 längs den långa diagonalen som 16...b6 försvagade. Att ta tillbaka med 29...bxc5 hade inte heller räddat Svart, eftersom Vits d-bonde hade rusat fram."
+    },
+    {
+      "ply": 62,
+      "en": "Korchnoi first played 31.Ra1, but now takes the rook anyway: 32.Bxa8 wins the exchange. With two rooks against rook and knight and an advanced e-pawn, White is winning.",
+      "sv": "Kortjnoj spelade först 31.Ra1, men tar nu tornet ändå: 32.Bxa8 vinner kvaliteten. Med två torn mot torn och springare och en framskjuten e-bonde vinner Vit."
+    },
+    {
+      "ply": 68,
+      "en": "35.Rd6 activates the rook, attacks the knight on d4 and prepares e6. White is an exchange and a pawn up with a passed e-pawn, and Spassky resigned.",
+      "sv": "35.Rd6 aktiverar tornet, anfaller springaren på d4 och förbereder e6. Vit har en kvalitet och en bonde mer och en fribonde på e-linjen, och Spasskij gav upp."
+    }
+  ],
+  "summary": {
+    "en": "Both players made mistakes in a complex middlegame, but the game was decided by one long diagonal: once 16...b6 had loosened it, White's bishop on g2 was always lurking behind the d5 pawn and the knight on e4. The lesson of 27...Qxb5 is to check what your own pieces stop protecting when you grab a pawn.",
+    "sv": "Båda spelarna gjorde misstag i ett komplicerat mittspel, men partiet avgjordes av en enda lång diagonal: när 16...b6 hade försvagat den låg Vits löpare på g2 alltid på lur bakom d5-bonden och springaren på e4. Läxan från 27...Qxb5 är att kontrollera vad ens egna pjäser slutar skydda när man tar en bonde."
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "topalov-anand-2010-g1",
+  "intro": {
+    "en": "Sofia, 2010: the first game of the World Championship match between the champion Viswanathan Anand and the challenger Veselin Topalov, playing at home. The start of the match had been delayed after the volcanic ash cloud over Europe disrupted Anand's journey. In a Grünfeld, Topalov gives up a pawn for a kingside attack; watch how Black's king loses its defenders one by one.",
+    "sv": "Sofia 2010: första partiet i VM-matchen mellan världsmästaren Viswanathan Anand och utmanaren Veselin Topalov, som spelade på hemmaplan. Matchstarten hade skjutits upp efter att askmolnet från vulkanen över Europa stört Anands resa. I ett Grünfeldparti ger Topalov bort en bonde för ett kungsangrepp; se hur Svarts kung förlorar sina försvarare en efter en."
+  },
+  "comments": [
+    {
+      "ply": 14,
+      "en": "This is the Classical Exchange Variation of the Grünfeld. White puts the bishop on c4 and the knight on e2, where it supports d4 and cannot be pinned by ...Bg4 as it could on f3. Black attacks the centre with ...c5 and ...Nc6, the typical Grünfeld counterplay against d4.",
+      "sv": "Detta är den klassiska avbytesvarianten i Grünfeld. Vit ställer löparen på c4 och springaren på e2, där den stöder d4 och inte kan bindas av ...Bg4 som den kunde på f3. Svart angriper centrum med ...c5 och ...Nc6, det typiska Grünfeldmotspelet mot d4."
+    },
+    {
+      "ply": 29,
+      "en": "After 13.Bh6 the dark-squared bishops were traded, and Black's king has lost its best defender. Topalov has given up a pawn: Black now has a passed pawn on d4, but White has four pawns against three on the kingside, ready to advance with f4 and f5.",
+      "sv": "Efter 13.Bh6 byttes de svartfältiga löparna, och Svarts kung har förlorat sin bästa försvarare. Topalov har gett bort en bonde: Svart har nu en fribonde på d4, men Vit har fyra bönder mot tre på kungsflygeln, redo att avancera med f4 och f5."
+    },
+    {
+      "ply": 34,
+      "en": "18.f5 is the plan: the pawn presses against g6 and e6 and prepares to open lines towards the black king. 17...f6 blocked the f-pawn, but it also loosened the squares around Black's king, such as e6 and g6.",
+      "sv": "18.f5 är planen: bonden trycker mot g6 och e6 och förbereder att öppna linjer mot den svarta kungen. 17...f6 blockerade f-bonden, men försvagade också rutorna runt Svarts kung, som e6 och g6."
+    },
+    {
+      "ply": 37,
+      "en": "19...g5? is the first real mistake. It attacks the knight, but the g-pawn no longer controls h5, so the knight jumps there with check, and the pawn on g5 becomes a target for h4. The engine preferred to develop with 19...Bd7.",
+      "sv": "19...g5? är det första verkliga misstaget. Det anfaller springaren, men g-bonden kontrollerar inte längre h5, så springaren hoppar dit med schack, och bonden på g5 blir ett mål för h4. Motorn föredrog att utveckla med 19...Bd7.",
+      "line": { "from": "before", "san": ["Bd7", "Ba6", "g5", "Ne2"] }
+    },
+    {
+      "ply": 39,
+      "en": "20...Kg8? puts the king on a square where a knight on f6 would give check. The engine preferred 20...Kh8, out of reach of that knight.",
+      "sv": "20...Kg8? ställer kungen på en ruta där en springare på f6 skulle ge schack. Motorn föredrog 20...Kh8, utom räckhåll för den springaren.",
+      "line": { "from": "before", "san": ["Kh8", "h4", "Rg8"] }
+    },
+    {
+      "ply": 43,
+      "en": "With 21.h4 and 22.hxg5 White has opened the h-file. White's rooks can now swing over to it, while Black's knight on a5, bishop on c8 and rook on a8 are far from the kingside.",
+      "sv": "Med 21.h4 och 22.hxg5 har Vit öppnat h-linjen. Vits torn kan nu svänga över dit, medan Svarts springare på a5, löpare på c8 och torn på a8 står långt från kungsflygeln."
+    },
+    {
+      "ply": 44,
+      "en": "23.Rf3 heads for h3, but it gives Black time to consolidate. The engine preferred 23.Bb5, bringing the bishop to c6 to hit the rook on a8.",
+      "sv": "23.Rf3 är på väg till h3, men ger Svart tid att konsolidera. Motorn föredrog 23.Bb5, som för löparen till c6 för att angripa tornet på a8.",
+      "line": { "from": "before", "san": ["Bb5", "Kf7", "Bc6", "Bb7", "Bxb7", "Nxb7"] }
+    },
+    {
+      "ply": 45,
+      "en": "23...Kf7?? is the losing move. The king walks towards the knight sacrifice on f6. 23...Bd7! would have held: Black develops, and after the trade of White's bishop on c4 the position is roughly level.",
+      "sv": "23...Kf7?? är det förlorande draget. Kungen går rakt in i springaroffret på f6. 23...Bd7! hade hållit: Svart utvecklar, och efter bytet av Vits löpare på c4 är ställningen ungefär jämn.",
+      "line": { "from": "before", "san": ["Bd7", "Kf2", "Kf7", "Bc4+", "Nxc4", "Rxc4"] }
+    },
+    {
+      "ply": 46,
+      "en": "24.Nxf6! The knight gives itself up to tear away the pawn shield. After 24...Kxf6 25.Rh3 the black king stands in the open on f6, White's rook comes to the h-file and the queen is ready to join, and Black's queenside pieces are still too far away to help.",
+      "sv": "24.Nxf6! Springaren offras för att riva bort bondeskölden. Efter 24...Kxf6 25.Rh3 står den svarta kungen öppet på f6, Vits torn kommer till h-linjen och damen är redo att ansluta, och Svarts damflygelpjäser är fortfarande för långt borta för att hjälpa till."
+    },
+    {
+      "ply": 49,
+      "en": "25...Rg8 defends g5 but does nothing against the rook checks. The engine's best try was 25...Qf4, offering a queen trade, though White would still be winning.",
+      "sv": "25...Rg8 försvarar g5 men gör inget mot tornschackarna. Motorns bästa försök var 25...Qf4, som erbjuder dambyte, även om Vit fortfarande skulle vinna.",
+      "line": { "from": "before", "san": ["Qf4", "e5+", "Kxe5", "Qe2+", "Kd5", "Rf1"] }
+    },
+    {
+      "ply": 54,
+      "en": "28.Rcc7 doubles the rooks on the seventh rank, right next to Black's king. The engine found the even stronger 28.f6, but this wins too.",
+      "sv": "28.Rcc7 dubblerar tornen på sjunde raden, precis intill Svarts kung. Motorn hittade det ännu starkare 28.f6, men även detta vinner."
+    },
+    {
+      "ply": 57,
+      "en": "29...Qxe4 grabs a pawn, but Black has no time for that. The engine preferred 29...a6 to drive away the bishop, though Black is lost in any case.",
+      "sv": "29...Qxe4 tar en bonde, men Svart har inte tid med det. Motorn föredrog 29...a6 för att jaga bort löparen, även om Svart är förlorad i vilket fall som helst."
+    },
+    {
+      "ply": 58,
+      "en": "30.Rxc8+ removes the bishop. After 30...Kxc8 31.Qc1+ the queen joins with check and Black loses more material, so Anand resigned. Even so, Anand went on to win the match.",
+      "sv": "30.Rxc8+ slår bort löparen. Efter 30...Kxc8 31.Qc1+ ansluter damen med schack och Svart förlorar mer material, så Anand gav upp. Anand vann ändå matchen till slut."
+    }
+  ],
+  "summary": {
+    "en": "Trading the fianchetto bishop with 13.Bh6 left Black's king weak, and Topalov happily gave a pawn to attack it. Small king moves like 20...Kg8 and 23...Kf7 decided the game: before moving your king, check which squares the enemy knight can reach with check. And when you are under attack, finish your development; here 23...Bd7 would have saved the game.",
+    "sv": "Bytet av fianchettolöparen med 13.Bh6 lämnade Svarts kung svag, och Topalov gav gärna en bonde för att angripa den. Små kungsdrag som 20...Kg8 och 23...Kf7 avgjorde partiet: innan du flyttar kungen, kontrollera vilka rutor fiendens springare kan nå med schack. Och när du är under angrepp, slutför utvecklingen; här hade 23...Bd7 räddat partiet."
+  }
+}

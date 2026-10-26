@@ -1,0 +1,92 @@
+{
+  "id": "carlsen-karjakin-2016-g10",
+  "intro": {
+    "en": "New York, 2016: game 10 of the World Championship match between Magnus Carlsen and Sergey Karjakin. Karjakin had won game 8 and led the match, so Carlsen was under pressure to win. He chose a quiet Anti-Berlin and won a 75-move game from a small edge. Watch how Black twice misses a chance to force a draw early on, and how Carlsen keeps making small threats in the long ending until something breaks.",
+    "sv": "New York 2016: parti 10 i VM-matchen mellan Magnus Carlsen och Sergej Karjakin. Karjakin hade vunnit parti 8 och ledde matchen, så Carlsen var tvungen att jaga vinst. Han valde en lugn anti-berlinare och vann ett parti på 75 drag från en liten fördel. Se hur Svart två gånger missar en chans att tvinga fram remi tidigt, och hur Carlsen fortsätter att skapa små hot i det långa slutspelet tills något brister."
+  },
+  "comments": [
+    {
+      "ply": 6,
+      "en": "4.d3 is the Anti-Berlin. Instead of the main lines with 4.O-O, which can lead to the famous queenless Berlin endgame, White protects e4 with a pawn and keeps the pieces on for a slow manoeuvring game.",
+      "sv": "4.d3 är anti-berlinaren. I stället för huvudvarianterna med 4.O-O, som kan leda till det berömda damlösa berlinslutspelet, skyddar Vit e4 med en bonde och behåller pjäserna på brädet för ett långsamt manöverspel."
+    },
+    {
+      "ply": 25,
+      "en": "13...Nh3+ puts the knight on an annoying square near White's king. After 14.Kh1 the knight on h3 keeps an eye on f2 for a long time.",
+      "sv": "13...Nh3+ ställer springaren på en besvärlig ruta nära Vits kung. Efter 14.Kh1 håller springaren på h3 ögonen på f2 länge."
+    },
+    {
+      "ply": 36,
+      "en": "19.Bxe6 trades bishops, but after 19...fxe6 Black's rook and queen stand on the half-open f-file, aiming at f2. The engine preferred 19.Nd2, keeping the bishop.",
+      "sv": "19.Bxe6 byter löpare, men efter 19...fxe6 står Svarts torn och dam på den halvöppna f-linjen och siktar mot f2. Motorn föredrog 19.Nd2, som behåller löparen."
+    },
+    {
+      "ply": 39,
+      "en": "20...d5 misses 20...Nxf2+!. Taking with the rook would lose material to Black's queen and rook on the f-file, and after the king moves the engine's line ends in perpetual check by the knights.",
+      "sv": "20...d5 missar 20...Nxf2+!. Att ta med tornet skulle förlora material till Svarts dam och torn på f-linjen, och efter kungsflytten slutar motorns variant i evig schack med springarna.",
+      "line": { "from": "before", "san": ["Nxf2+", "Kg2", "Nh4+", "Kg1", "Nh3+", "Kh1", "Qf2", "Rxf2", "Nxf2+", "Kg1", "Nh3+", "Kh1", "Nf2+"] }
+    },
+    {
+      "ply": 41,
+      "en": "21.Qh5 allowed the same idea again, but 21...Ng5 missed it a second time; 21...Nxf2+ would still have drawn. White now has a small but lasting edge.",
+      "sv": "21.Qh5 tillät samma idé igen, men 21...Ng5 missade den en andra gång; 21...Nxf2+ hade fortfarande gett remi. Vit har nu en liten men bestående fördel.",
+      "line": { "from": "before", "san": ["Nxf2+", "Kg2", "Qf7", "Kg1", "Qf6"] }
+    },
+    {
+      "ply": 47,
+      "en": "The queens are off. White is only slightly better, but Black has doubled e-pawns on e6 and e5, and White's knight has good squares. This is the kind of position where Carlsen likes to press for hours.",
+      "sv": "Damerna är borta. Vit står bara något bättre, men Svart har dubbelbönder på e6 och e5, och Vits springare har bra rutor. Det är den sortens ställning där Carlsen gärna pressar i timmar."
+    },
+    {
+      "ply": 72,
+      "en": "37.e5+ gains space and takes the d6 and f6 squares away from Black's pieces. The engine slightly preferred playing e5 a move earlier, but the plan is the same.",
+      "sv": "37.e5+ vinner utrymme och tar rutorna d6 och f6 från Svarts pjäser. Motorn föredrog en aning att spela e5 ett drag tidigare, men planen är densamma."
+    },
+    {
+      "ply": 75,
+      "en": "38...Nh6 sends the knight to the edge, and White's rook invades with 39.Rf6, pressing on e6 and g6. The engine preferred 38...c5, hitting back in the centre.",
+      "sv": "38...Nh6 skickar springaren till kanten, och Vits torn tränger in med 39.Rf6 och trycker på e6 och g6. Motorn föredrog 38...c5, som slår tillbaka i centrum.",
+      "line": { "from": "before", "san": ["c5", "Nb5", "Rg8", "Rf6"] }
+    },
+    {
+      "ply": 80,
+      "en": "With 40.b4 axb4 41.cxb4 White opens a second front on the queenside. Black now has weaknesses on both wings, and the defender's pieces cannot be everywhere.",
+      "sv": "Med 40.b4 axb4 41.cxb4 öppnar Vit en andra front på damflygeln. Svart har nu svagheter på båda flyglarna, och försvararens pjäser kan inte vara överallt."
+    },
+    {
+      "ply": 88,
+      "en": "45.Nc5 is a slip that lets much of the advantage go. The engine preferred 45.Rc1, preparing to open the c-file towards Black's king. But Carlsen simply keeps manoeuvring.",
+      "sv": "45.Nc5 är en miss som släpper en stor del av fördelen. Motorn föredrog 45.Rc1, som förbereder att öppna c-linjen mot Svarts kung. Men Carlsen fortsätter helt enkelt att manövrera."
+    },
+    {
+      "ply": 111,
+      "en": "56...Rhh7?? is the decisive mistake after a long defence. With the rook passively placed on h7, White breaks open the queenside with 57.b5!. The engine preferred 56...Rf8, keeping the rook active on the f-file.",
+      "sv": "56...Rhh7?? är det avgörande misstaget efter ett långt försvar. Med tornet passivt placerat på h7 bryter Vit upp damflygeln med 57.b5!. Motorn föredrog 56...Rf8, som håller tornet aktivt på f-linjen.",
+      "line": { "from": "before", "san": ["Rf8", "b5", "cxb5", "Rxb5", "Rc8"] }
+    },
+    {
+      "ply": 118,
+      "en": "After 57.b5 cxb5 58.Rxb5 d4 59.Rb6 the rook attacks e6 along the sixth rank together with the knight, and 60.Nxe6 wins the pawn. White's e-pawn is now passed.",
+      "sv": "Efter 57.b5 cxb5 58.Rxb5 d4 59.Rb6 anfaller tornet e6 längs sjätte raden tillsammans med springaren, och 60.Nxe6 vinner bonden. Vits e-bonde är nu en fribonde."
+    },
+    {
+      "ply": 122,
+      "en": "62.Nd5 forks both black rooks on c3 and c7. After 62...Rxd3 63.Nxc7 a pair of rooks is traded, and White keeps an extra pawn and the dangerous e-pawn.",
+      "sv": "62.Nd5 gafflar båda svarta tornen på c3 och c7. Efter 62...Rxd3 63.Nxc7 byts ett tornpar, och Vit behåller en merbonde och den farliga e-bonden."
+    },
+    {
+      "ply": 141,
+      "en": "In the rook ending White is a pawn up. Black's king is stuck on the queenside, cut off by the rook on d5, so White's king can walk over to win the h5 pawn.",
+      "sv": "I tornslutspelet har Vit en bonde mer. Svarts kung sitter fast på damflygeln, avskuren av tornet på d5, så Vits kung kan gå över och vinna h5-bonden."
+    },
+    {
+      "ply": 148,
+      "en": "75.Kf6 heads for g7, driving the black rook off the h-file so that the rook can take on h5. After the pawn falls, White's g- and h-pawns will run with the king's support, and Karjakin resigned.",
+      "sv": "75.Kf6 är på väg mot g7 och driver bort det svarta tornet från h-linjen, så att tornet kan slå på h5. När bonden faller kommer Vits g- och h-bönder att rusa fram med kungens stöd, och Karjakin gav upp."
+    }
+  ],
+  "summary": {
+    "en": "Karjakin twice missed the drawing knight sacrifice on f2, and after that he had to defend a slightly worse ending for over fifty moves. Carlsen's advantage stayed modest for most of the ending; he won by creating new problems on both wings until Black's defence cracked. The lesson: in a long, slightly worse ending, one passive move can be enough to lose.",
+    "sv": "Karjakin missade två gånger springaroffret på f2 som gav remi, och därefter fick han försvara ett något sämre slutspel i över femtio drag. Carlsens fördel var måttlig under större delen av slutspelet; han vann genom att skapa nya problem på båda flyglarna tills Svarts försvar sprack. Läxan: i ett långt, något sämre slutspel kan ett enda passivt drag räcka för att förlora."
+  }
+}

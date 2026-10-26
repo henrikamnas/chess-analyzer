@@ -1,0 +1,89 @@
+{
+  "id": "topalov-shirov-1998",
+  "intro": {
+    "en": "Linares, 1998: Veselin Topalov against Alexei Shirov in a Grünfeld. White gets a dangerous kingside attack, misses the win, and the game slides into an ending with bishops of opposite colours, normally the most drawish ending there is. Watch how Black's king has to walk to the queenside, and how one bishop move makes the walk possible.",
+    "sv": "Linares 1998: Veselin Topalov mot Alexej Sjirov i ett Grünfeldparti. Vit får ett farligt kungsangrepp, missar vinsten, och partiet glider över i ett slutspel med olikfärgade löpare, normalt det mest remiartade slutspel som finns. Se hur Svarts kung måste vandra till damflygeln, och hur ett enda löpardrag gör vandringen möjlig."
+  },
+  "comments": [
+    {
+      "ply": 11,
+      "en": "This is the Exchange Variation of the Grünfeld. Black lets White build a big pawn centre on c3, d4 and e4, and plans to attack it with pieces, above all the bishop on g7, and with pawn breaks such as ...c5. Here Shirov chooses the slower ...c6 and ...e5 instead.",
+      "sv": "Detta är avbytesvarianten i Grünfeld. Svart låter Vit bygga ett stort bondecentrum på c3, d4 och e4 och planerar att angripa det med pjäser, framför allt löparen på g7, och med bondebrytningar som ...c5. Här väljer Sjirov i stället de långsammare ...c6 och ...e5."
+    },
+    {
+      "ply": 40,
+      "en": "After 20...a5 the engine wanted 21.a4!, hitting the b5 pawn that supports Black's knight on c4. Topalov's 21.h3 kicks the bishop instead, which gives Black a tactical chance.",
+      "sv": "Efter 20...a5 ville motorn ha 21.a4!, som slår mot b5-bonden som stöder Svarts springare på c4. Topalovs 21.h3 jagar i stället löparen, vilket ger Svart en taktisk chans.",
+      "line": { "from": "before", "san": ["a4", "Bc8", "e5", "Ba6", "axb5", "cxb5"] }
+    },
+    {
+      "ply": 41,
+      "en": "21...Bd7 retreats, but the engine found 21...a4!, leaving the bishop to be taken: after 22.hxg4 axb3 23.axb3 Na3 Black's knight and queen get active play against White's queen and the c3 pawn. After the quiet retreat White is clearly better again.",
+      "sv": "21...Bd7 drar sig tillbaka, men motorn hittade 21...a4!, där löparen lämnas att tas: efter 22.hxg4 axb3 23.axb3 Na3 får Svarts springare och dam aktivt spel mot Vits dam och c3-bonden. Efter den lugna reträtten står Vit återigen klart bättre.",
+      "line": { "from": "before", "san": ["a4", "hxg4", "axb3", "axb3", "Na3", "Qf2", "Qxc3"] }
+    },
+    {
+      "ply": 45,
+      "en": "23...Be8 is too passive. The bishop goes back to the back rank while White's e- and f-pawns are ready to roll towards the king. The engine preferred 23...Re8, which at least puts pressure on e4.",
+      "sv": "23...Be8 är för passivt. Löparen går tillbaka till baslinjen medan Vits e- och f-bönder är redo att rulla fram mot kungen. Motorn föredrog 23...Re8, som åtminstone sätter press på e4."
+    },
+    {
+      "ply": 48,
+      "en": "With 24.e5 and 25.f5 White's pawns have reached the fifth rank. The bishop on a2 aims at f7, the knight on d4 is strong, and White is winning.",
+      "sv": "Med 24.e5 och 25.f5 har Vits bönder nått femte raden. Löparen på a2 siktar mot f7, springaren på d4 står starkt, och Vit vinner."
+    },
+    {
+      "ply": 50,
+      "en": "26.Bd2?? throws the win away. It allows 26...Nb4!, attacking the queen on c2 and the bishop on a2 at once; taking the knight with cxb4 would open the c-file and lose the queen. The engine wanted 26.Rf3, bringing the rook towards the king, with a winning attack.",
+      "sv": "26.Bd2?? kastar bort vinsten. Det tillåter 26...Nb4!, som anfaller damen på c2 och löparen på a2 samtidigt; att ta springaren med cxb4 skulle öppna c-linjen och förlora damen. Motorn ville ha 26.Rf3, som för tornet mot kungen, med ett vinnande angrepp.",
+      "line": { "from": "before", "san": ["Rf3", "Bf8", "e6", "Ra7", "f6"] }
+    },
+    {
+      "ply": 55,
+      "en": "After 27.Qxa4 Nxa2 28.Qxa2 White's strong bishop has been traded for the knight, and 28...Bxe5 wins the e5 pawn, so Black is a pawn up. Without the e5 pawn the attack has faded, and the position is level.",
+      "sv": "Efter 27.Qxa4 Nxa2 28.Qxa2 har Vits starka löpare bytts mot springaren, och 28...Bxe5 vinner e5-bonden, så Svart har en bonde mer. Utan e5-bonden har angreppet ebbat ut, och ställningen är jämn."
+    },
+    {
+      "ply": 73,
+      "en": "Both sides miss chances here. 37.Bh6 was an error (the engine preferred 37.Bf6), but 37...Re5 let White off; 37...Qe5 would have kept a clear advantage for Black.",
+      "sv": "Båda sidor missar chanser här. 37.Bh6 var ett fel (motorn föredrog 37.Bf6), men 37...Re5 släppte Vit; 37...Qe5 hade behållit en klar fördel för Svart.",
+      "line": { "from": "before", "san": ["Qe5", "Qf3", "Be6", "Qxc6", "Bd5"] }
+    },
+    {
+      "ply": 82,
+      "en": "Black is two pawns up after the rook trade, but with queens and opposite-coloured bishops White still has hopes. 42.Qa2+ is a mistake; the engine preferred 42.Qa3, which does not invite a queen trade.",
+      "sv": "Svart har två bönder mer efter tornbytet, men med damer och olikfärgade löpare har Vit fortfarande hopp. 42.Qa2+ är ett misstag; motorn föredrog 42.Qa3, som inte bjuder in till dambyte."
+    },
+    {
+      "ply": 84,
+      "en": "43.Qxd5+ trades queens. Endings with bishops of opposite colours are famous for drawing even a pawn or two down, because the defending bishop can block pawns on squares the other bishop can never attack. But Black's passed pawns on the a- and d-files are far apart, and the engine's view of the ending gets steadily worse for White.",
+      "sv": "43.Qxd5+ byter damer. Slutspel med olikfärgade löpare är kända för att bli remi även med en eller två bönder mindre, eftersom den försvarande löparen kan blockera bönder på rutor som den andra löparen aldrig kan angripa. Men Svarts fribönder på a- och d-linjen står långt ifrån varandra, och motorns bedömning av slutspelet blir stadigt sämre för Vit."
+    },
+    {
+      "ply": 93,
+      "en": "47...Bh3!! Black's king wants to go to e4 and d3 to escort the d-pawn, but e5 is covered by White's bishop and f5 is blocked by Black's own bishop. Bh3 clears f5 with a threat against g2, so White has no time to bring the king to e3. The engine agrees it is by far the strongest move: after 47...Be4 White's king reaches e3 and Black's advantage shrinks a lot.",
+      "sv": "47...Bh3!! Svarts kung vill till e4 och d3 för att eskortera d-bonden, men e5 täcks av Vits löpare och f5 blockeras av Svarts egen löpare. Bh3 frigör f5 med ett hot mot g2, så Vit hinner inte föra kungen till e3. Motorn håller med om att det är det klart starkaste draget: efter 47...Be4 når Vits kung e3 och Svarts fördel krymper betydligt.",
+      "line": { "from": "before", "san": ["Be4", "g3", "Bc2", "Kf2", "Kf5", "Ke3"] }
+    },
+    {
+      "ply": 94,
+      "en": "48.gxh3 takes the bishop, and Black is a piece down. Declining does not help: after 48.Kf2 Kf5 49.Ke3 Bxg2 Black simply wins the pawn and stays winning.",
+      "sv": "48.gxh3 tar löparen, och Svart har en pjäs mindre. Att avböja hjälper inte: efter 48.Kf2 Kf5 49.Ke3 Bxg2 vinner Svart helt enkelt bonden och står fortfarande till vinst.",
+      "line": { "from": "before", "san": ["Kf2", "Kf5", "Ke3", "Bxg2"] }
+    },
+    {
+      "ply": 97,
+      "en": "49...Ke4 shows the idea: Black's king got to the centre first and stands in front of White's king, cutting it off from the d-pawn. White's h-pawns are far too slow to matter.",
+      "sv": "49...Ke4 visar idén: Svarts kung kom först till centrum och står framför Vits kung, som skärs av från d-bonden. Vits h-bönder är alldeles för långsamma för att spela någon roll."
+    },
+    {
+      "ply": 105,
+      "en": "Black's king has walked all the way to b3 to support the a-pawn, while the d-pawn keeps White's king busy. The bishop cannot stop both pawns alone, and Topalov resigned.",
+      "sv": "Svarts kung har vandrat hela vägen till b3 för att stödja a-bonden, medan d-bonden håller Vits kung sysselsatt. Löparen kan inte ensam stoppa båda bönderna, och Topalov gav upp."
+    }
+  ],
+  "summary": {
+    "en": "Topalov had a winning attack but let it go with one careless move, 26.Bd2, that allowed a knight fork. In the ending, Shirov showed that the king is a fighting piece: giving up a whole bishop was worth it because it won the race for the key squares. Two passed pawns far apart are the classic way to beat a bishop of the opposite colour.",
+    "sv": "Topalov hade ett vinnande angrepp men släppte det med ett slarvigt drag, 26.Bd2, som tillät en springargaffel. I slutspelet visade Sjirov att kungen är en stridande pjäs: att ge bort en hel löpare var värt det eftersom det vann kapplöpningen om nyckelrutorna. Två fribönder långt ifrån varandra är det klassiska sättet att slå en olikfärgad löpare."
+  }
+}
