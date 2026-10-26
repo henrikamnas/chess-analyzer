@@ -1,0 +1,93 @@
+{
+  "id": "alekhine-nimzowitsch-1930",
+  "intro": {
+    "en": "San Remo, 1930: world champion Alexander Alekhine against Aron Nimzowitsch, the great theorist of blockade and restriction, in a French Defence, Winawer Variation. Hardly any material is won; the game is decided by space and squares. Watch the c-file: Alekhine stacks both rooks and his queen on it, pins a knight, and leaves Black without a single useful move.",
+    "sv": "San Remo 1930: världsmästaren Alexander Aljechin mot Aron Nimzowitsch, den store teoretikern bakom blockad och inskränkning, i ett franskt försvar, Winawervarianten. Knappt något material vinns; partiet avgörs av utrymme och rutor. Håll ögonen på c-linjen: Aljechin staplar båda tornen och damen på den, binder en springare och lämnar Svart utan ett enda vettigt drag."
+  },
+  "comments": [
+    {
+      "ply": 5,
+      "en": "3...Bb4 is the Winawer Variation of the French. The bishop pins the knight on c3 and puts pressure on e4, and Black is often ready to give the bishop for the knight to damage White's pawns.",
+      "sv": "3...Bb4 är Winawervarianten i franskt. Löparen binder springaren på c3 och sätter tryck på e4, och Svart är ofta beredd att ge löparen mot springaren för att försämra Vits bondestruktur."
+    },
+    {
+      "ply": 10,
+      "en": "After 5.Bd2, the Bogoljubow Variation, Alekhine avoids doubled pawns altogether: 6.Nb5 heads for d6, a hole now that Black's c- and e-pawns have advanced, and invites a trade of dark-squared bishops. The engine prefers the main line with 6.a3, but the position is level.",
+      "sv": "Efter 5.Bd2, Bogoljubowvarianten, undviker Aljechin dubbelbönder helt: 6.Nb5 siktar mot d6, ett hål nu när Svarts c- och e-bönder har gått fram, och bjuder in till byte av svartfältslöparna. Motorn föredrar huvudvarianten med 6.a3, men ställningen är jämn.",
+      "line": {
+        "from": "before",
+        "san": ["a3", "Bxc3", "bxc3", "Nbc6", "Nf3", "Qc7"]
+      }
+    },
+    {
+      "ply": 15,
+      "en": "8...b6 prepares ...Ba6 to trade off Black's light-squared bishop, the 'bad bishop' that is shut in by the pawns on e6 and d5 in the French. It is a typical idea, but the engine preferred striking at White's centre at once with 8...f6.",
+      "sv": "8...b6 förbereder ...Ba6 för att byta bort Svarts vitfältslöpare, den 'dåliga löparen' som stängs in av bönderna på e6 och d5 i franskt. Det är en typisk idé, men motorn föredrog att genast slå mot Vits centrum med 8...f6.",
+      "line": {
+        "from": "before",
+        "san": ["f6", "exf6", "Rxf6", "f4", "cxd4", "Nxd4"]
+      }
+    },
+    {
+      "ply": 25,
+      "en": "13...Bb7 changes the plan: instead of giving the bishop for the knight on b5, Black retreats. The engine preferred 13...Bxb5, since now White's knight gets to d6 and the bishop on b7 stays passive behind the d5 pawn.",
+      "sv": "13...Bb7 byter plan: i stället för att ge löparen mot springaren på b5 drar Svart sig tillbaka. Motorn föredrog 13...Bxb5, eftersom Vits springare nu kommer till d6 och löparen på b7 förblir passiv bakom bonden på d5."
+    },
+    {
+      "ply": 27,
+      "en": "14...f5? is the real mistake. It gives up the ...f6 break, Black's main counterplay against White's pawn on e5, and leaves the e6 pawn and the light squares weak. 14...Nf5, challenging the knight on d6, kept White's advantage small.",
+      "sv": "14...f5? är det verkliga misstaget. Det ger upp brytningen ...f6, Svarts främsta motspel mot Vits bonde på e5, och lämnar bonden på e6 och de vita rutorna svaga. 14...Nf5, som utmanar springaren på d6, höll Vits fördel liten.",
+      "line": {
+        "from": "before",
+        "san": ["Nf5", "Nxf5", "exf5", "Bd3", "g6"]
+      }
+    },
+    {
+      "ply": 29,
+      "en": "Both sides slipped here. 15.a5 was weaker than 15.Qc3, which would have seized the c-file at once, and Black could have answered with 15...a6, stopping the a-pawn from advancing to a6 and cramping him. Instead 15...Nc8? allows White to trade off the bishop with 16.Nxb7 and then cramp Black with a6.",
+      "sv": "Båda sidor gjorde fel här. 15.a5 var svagare än 15.Qc3, som genast hade tagit c-linjen, och Svart kunde ha svarat med 15...a6, som hindrar a-bonden från att gå fram till a6 och tränga ihop honom. I stället tillåter 15...Nc8? Vit att byta bort löparen med 16.Nxb7 och sedan tränga ihop Svart med a6.",
+      "line": {
+        "from": "before",
+        "san": ["a6", "axb6", "Nc8", "b5", "axb5", "Rxa8", "Bxa8", "Bxb5"]
+      }
+    },
+    {
+      "ply": 32,
+      "en": "17.a6! attacks the queen and plants a pawn on a6, where it controls b7 for the rest of the game. Black's queenside is now frozen, and the c-file and the c6 square become the battleground.",
+      "sv": "17.a6! angriper damen och placerar en bonde på a6, där den kontrollerar b7 resten av partiet. Svarts damflygel är nu frusen, och c-linjen och rutan c6 blir slagfältet."
+    },
+    {
+      "ply": 34,
+      "en": "18.Bb5 takes control of c6 and eyes the knight there. White's bishop has no opponent on the light squares any more, and Black's pieces are reduced to guarding.",
+      "sv": "18.Bb5 tar kontroll över c6 och siktar på springaren där. Vits löpare har inte längre någon motståndare på de vita rutorna, och de svarta pjäserna har reducerats till att försvara."
+    },
+    {
+      "ply": 36,
+      "en": "19.O-O is a small inaccuracy by the engine's standards: it preferred 19.Kf2, which connects the rooks just as well while the king stays near the centre. White is winning either way; what matters is the plan of doubling on the c-file.",
+      "sv": "19.O-O är en liten onoggrannhet enligt motorn: den föredrog 19.Kf2, som förbinder tornen lika bra medan kungen stannar nära centrum. Vit står till vinst i båda fallen; det viktiga är planen att dubblera på c-linjen.",
+      "line": {
+        "from": "before",
+        "san": ["Kf2", "Rfc8", "Rac1", "h6", "Rc2"]
+      }
+    },
+    {
+      "ply": 50,
+      "en": "24.Rc3, 25.R1c2 and 26.Qc1: two rooks in front of the queen on the same file. This formation is known as 'Alekhine's gun' after this game. The knight on c6 is pinned against the queen on d7 by the bishop on b5, and White keeps adding pressure on it.",
+      "sv": "24.Rc3, 25.R1c2 och 26.Qc1: två torn framför damen på samma linje. Den formationen kallas 'Aljechins kanon' efter just det här partiet. Springaren på c6 är bunden mot damen på d7 av löparen på b5, och Vit ökar hela tiden trycket mot den."
+    },
+    {
+      "ply": 54,
+      "en": "27...b5 is a desperate attempt to break the bind by giving up a pawn. After 28.Bxb5 the pin is back, and Black's king walks over to d8 to help guard the c-file.",
+      "sv": "27...b5 är ett desperat försök att bryta greppet genom att ge upp en bonde. Efter 28.Bxb5 är bindningen tillbaka, och den svarta kungen går över till d8 för att hjälpa till att bevaka c-linjen."
+    },
+    {
+      "ply": 58,
+      "en": "30.h4 and Nimzowitsch resigned. Black has almost no useful moves: the knight on c6 is pinned by the bishop on a4, the rooks and queen are tied to its defence, and only a few pawn moves remain. White's idea is simply to push the b-pawn to b5 and win the pinned knight.",
+      "sv": "30.h4 och Nimzowitsch gav upp. Svart har nästan inga vettiga drag: springaren på c6 är bunden av löparen på a4, tornen och damen är bundna vid dess försvar, och bara några bondedrag återstår. Vits idé är helt enkelt att föra b-bonden till b5 och vinna den bundna springaren."
+    }
+  ],
+  "summary": {
+    "en": "Alekhine won without a single combination. Black's 14...f5 took away his own counterplay, and after the bishop trade on b7 and the pawn on a6 the queenside was frozen. From then on the c-file and the pin on c6 did all the work. The lesson: when the opponent has no active plan, there is no hurry; bring up every piece to the decisive point.",
+    "sv": "Aljechin vann utan en enda kombination. Svarts 14...f5 tog bort hans eget motspel, och efter löparbytet på b7 och bonden på a6 var damflygeln frusen. Därefter gjorde c-linjen och bindningen på c6 hela jobbet. Läxan: när motståndaren saknar en aktiv plan finns ingen brådska; för fram varje pjäs till den avgörande punkten."
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "samisch-nimzowitsch-1923",
+  "intro": {
+    "en": "Copenhagen, 1923: Aron Nimzowitsch, the great theorist of prophylaxis and restraint, has Black against Friedrich Sämisch. The game became famous as the \"Immortal Zugzwang Game\": it ends with pieces still on the board but White with almost no useful moves left. Watch how Black slowly gains space on the queenside, pushes White's pieces back, and then opens the f-file with a knight sacrifice.",
+    "sv": "Köpenhamn 1923: Aron Nimzowitsch, den store teoretikern bakom profylax och återhållning, har svart mot Friedrich Sämisch. Partiet blev berömt som \"det odödliga dragtvångspartiet\": det slutar med pjäserna kvar på brädet, men Vit har nästan inga nyttiga drag kvar. Se hur Svart långsamt vinner utrymme på damflygeln, trycker tillbaka de vita pjäserna och sedan öppnar f-linjen med ett springaroffer."
+  },
+  "comments": [
+    {
+      "ply": 7,
+      "en": "4...Bb7 is the traditional Queen's Indian set-up: the bishop on the long diagonal fights for the e4 square, and it meets White's bishop, which will come to g2.",
+      "sv": "4...Bb7 är den traditionella damindiska uppställningen: löparen på den långa diagonalen kämpar om e4-rutan och möter Vits löpare, som kommer till g2."
+    },
+    {
+      "ply": 15,
+      "en": "8...c6 is a little slow; the engine preferred 8...Nbd7, challenging the knight on e5. White could have opened the centre with 9.e4, but after 9.cxd5 cxd5 the c-file opens, the centre is symmetrical and the game is level.",
+      "sv": "8...c6 är lite långsamt; motorn föredrog 8...Nbd7, som utmanar springaren på e5. Vit kunde ha öppnat centrum med 9.e4, men efter 9.cxd5 cxd5 öppnas c-linjen, centrum blir symmetriskt och partiet är jämnt.",
+      "line": { "from": "after", "san": ["e4", "dxc4", "Nxc4", "Ba6", "b3"] }
+    },
+    {
+      "ply": 21,
+      "en": "With 10...a6 and 11...b5 Black gains space on the queenside. The idea is to push on with ...b4, driving the knight away from c3, where it watches the centre.",
+      "sv": "Med 10...a6 och 11...b5 vinner Svart utrymme på damflygeln. Idén är att fortsätta med ...b4 och driva bort springaren från c3, där den bevakar centrum."
+    },
+    {
+      "ply": 26,
+      "en": "14.h3 is too slow. The engine wanted the tactic 14.Ne4!, where after 14...dxe4 15.Rxc6 White wins the piece back at once; the d4 pawn falls, but White's rooks become active and the game stays level. After the quiet move Black gets time for his queenside plans.",
+      "sv": "14.h3 är för långsamt. Motorn ville spela taktiken 14.Ne4!, där Vit efter 14...dxe4 15.Rxc6 vinner tillbaka pjäsen direkt; d4-bonden faller visserligen, men Vits torn blir aktiva och partiet förblir jämnt. Efter det lugna draget får Svart tid för sina planer på damflygeln.",
+      "line": { "from": "before", "san": ["Ne4", "dxe4", "Rxc6", "Qxd4", "Rd1", "Qb4"] }
+    },
+    {
+      "ply": 28,
+      "en": "15.Kh2? is a real mistake: it prepares nothing, and 15...Nh5 at once hits the bishop on f4. The engine's 15.Nb1, rerouting the knight to d2 and f3, was the way to regroup.",
+      "sv": "15.Kh2? är ett verkligt misstag: draget förbereder ingenting, och 15...Nh5 anfaller direkt löparen på f4. Motorns 15.Nb1, som flyttar springaren via d2 till f3, var sättet att omgruppera.",
+      "line": { "from": "before", "san": ["Nb1", "Rfc8", "Nd2", "a5", "Qe3"] }
+    },
+    {
+      "ply": 31,
+      "en": "16...f5 is the start of the famous plan: the pawn covers g4, so the knight on h5 can't easily be chased away by g4, and it prepares to open the f-file. The engine is less impressed than the history books: it prefers 16...b4 first and thinks f5 gave away Black's whole advantage for now.",
+      "sv": "16...f5 är början på den berömda planen: bonden täcker g4, så att springaren på h5 inte så lätt kan jagas bort med g4, och den förbereder öppning av f-linjen. Motorn är mindre imponerad än historieböckerna: den föredrar 16...b4 först och anser att f5 tills vidare gav bort hela Svarts fördel.",
+      "line": { "from": "before", "san": ["b4", "Nb1", "a5", "Qf3", "Nf6"] }
+    },
+    {
+      "ply": 34,
+      "en": "After 17...b4 18.Nb1 the white knight has been pushed back to its starting square, and the queen on d1 is passive too. Black controls more space on both wings.",
+      "sv": "Efter 17...b4 18.Nb1 har den vita springaren trängts tillbaka till sin utgångsruta, och damen på d1 är också passiv. Svart har mer utrymme på båda flyglarna."
+    },
+    {
+      "ply": 38,
+      "en": "20.e4?? is the decisive mistake. White wants to break open the centre, but it allows 20...fxe4!, giving up the knight on h5 to open the f-file. The engine's choice was 20.Bf3, keeping the position closed.",
+      "sv": "20.e4?? är det avgörande misstaget. Vit vill bryta upp centrum, men det tillåter 20...fxe4!, där Svart ger bort springaren på h5 för att öppna f-linjen. Motorns val var 20.Bf3, som håller ställningen stängd."
+    },
+    {
+      "ply": 41,
+      "en": "21...Rxf2 For the knight Black has two pawns and a rook on the second rank. It attacks the bishops on g2 and d2, and White's queen is far away on h5. The engine gives Black a large advantage.",
+      "sv": "21...Rxf2 För springaren har Svart två bönder och ett torn på andra raden. Det anfaller löparna på g2 och d2, och den vita damen står långt borta på h5. Motorn ger Svart en stor fördel.",
+      "line": { "from": "after", "san": ["a3", "a5", "Kh1", "Bd3", "Qg4", "Bxb1"] }
+    },
+    {
+      "ply": 42,
+      "en": "22.Qg5 doesn't help: Black simply doubles rooks on the f-file, and the queen will soon be driven back by a rook on f5. The engine preferred 22.a3, trying to get some counterplay on the queenside.",
+      "sv": "22.Qg5 hjälper inte: Svart dubblerar helt enkelt tornen på f-linjen, och damen jagas snart tillbaka av ett torn på f5. Motorn föredrog 22.a3, ett försök att få motspel på damflygeln."
+    },
+    {
+      "ply": 47,
+      "en": "24...Bd3 puts the bishop on a fine square: it attacks the knight on b1 and covers e2, so White's pieces have no room. The engine slightly preferred 24...Re2, but Black is winning either way.",
+      "sv": "24...Bd3 placerar löparen på en utmärkt ruta: den anfaller springaren på b1 och täcker e2, så att de vita pjäserna saknar utrymme. Motorn föredrog en aning 24...Re2, men Svart vinner i vilket fall."
+    },
+    {
+      "ply": 49,
+      "en": "25...h6!! is the famous quiet move. Black makes a useful waiting move and gives his king air, and White is almost in zugzwang: nearly every move by a white piece loses material, and the engine's best tries, such as a queenside pawn move or a bishop retreat to c1, only delay the problem. Sämisch resigned.",
+      "sv": "25...h6!! är det berömda lugna draget. Svart gör ett nyttigt väntedrag och ger kungen luft, och Vit är nästan i dragtvång: nästan varje drag med en vit pjäs förlorar material, och motorns bästa försök, som ett bondedrag på damflygeln eller en löparreträtt till c1, skjuter bara upp problemet. Sämisch gav upp."
+    }
+  ],
+  "summary": {
+    "en": "Nimzowitsch won by restricting White's pieces: queenside pawn advances pushed the knight back to b1, and once the f-file opened, the white pieces had no good squares at all. The engine doesn't agree with every step, since 16...f5 was not the most precise, but 20.e4 was the move that really lost. The lesson is that zugzwang is not only an endgame idea: if your opponent's pieces have no useful moves, you can simply wait.",
+    "sv": "Nimzowitsch vann genom att begränsa de vita pjäserna: bondeframstötar på damflygeln trängde tillbaka springaren till b1, och när f-linjen väl öppnats hade de vita pjäserna inga bra rutor alls. Motorn håller inte med om varje steg, eftersom 16...f5 inte var det mest exakta, men det var 20.e4 som verkligen förlorade. Läxan är att dragtvång inte bara är en slutspelsidé: om motståndarens pjäser saknar nyttiga drag kan man helt enkelt vänta."
+  }
+}

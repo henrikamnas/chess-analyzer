@@ -1,0 +1,83 @@
+{
+  "id": "alekhine-lasker-1934",
+  "intro": {
+    "en": "Zurich, 1934: the reigning world champion Alexander Alekhine meets Emanuel Lasker, who had held the title for 27 years before losing it in 1921. The opening is a calm Orthodox Queen's Gambit Declined, but after Black frees his game with ...e5, Alekhine plants a knight on f5 and builds up threats against g7. Watch how every white piece joins the attack on the kingside while Black's queen wanders off to b6.",
+    "sv": "Zürich 1934: den regerande världsmästaren Alexander Aljechin möter Emanuel Lasker, som hade haft titeln i 27 år innan han förlorade den 1921. Öppningen är en lugn ortodox avböjd damgambit, men när Svart har befriat sitt spel med ...e5 placerar Aljechin en springare på f5 och bygger upp hot mot g7. Se hur varje vit pjäs ansluter till anfallet på kungsflygeln medan den svarta damen vandrar iväg till b6."
+  },
+  "comments": [
+    {
+      "ply": 17,
+      "en": "9...Nd5 is the classical freeing manoeuvre of the Orthodox Defence. Black is a little cramped, so he offers to trade the dark-squared bishops; with fewer pieces on the board it is easier to find squares for the rest.",
+      "sv": "9...Nd5 är den klassiska befriande manövern i det ortodoxa försvaret. Svart står lite trångt och erbjuder därför byte av de svartfältiga löparna; med färre pjäser på brädet är det lättare att hitta rutor för resten."
+    },
+    {
+      "ply": 23,
+      "en": "12...e5 is the freeing pawn break Black has been preparing: it strikes at White's centre and gives Black's pieces more room. The engine slightly preferred 12...Qb4+, offering a queen trade, which would have taken the sting out of any attack.",
+      "sv": "12...e5 är det befriande bondegenombrott som Svart har förberett: det slår mot Vits centrum och ger de svarta pjäserna mer utrymme. Motorn föredrog en aning 12...Qb4+, som erbjuder dambyte och hade tagit udden av varje anfall.",
+      "line": { "from": "before", "san": ["Qb4+", "Qd2", "Qxd2+", "Kxd2"] }
+    },
+    {
+      "ply": 26,
+      "en": "14.Nf5! Instead of recapturing the pawn at once, Alekhine jumps into f5 with tempo on the queen. The knight eyes g7 and d6, and the pawn on d4 will not run away.",
+      "sv": "14.Nf5! I stället för att ta tillbaka bonden direkt hoppar Aljechin in på f5 med tempo på damen. Springaren siktar på g7 och d6, och bonden på d4 springer inte iväg."
+    },
+    {
+      "ply": 33,
+      "en": "17...Qb6? is the first real mistake. The queen goes to the queenside, far from its own king, and leaves the d6 square to White. The engine's choice was 17...g6, kicking the strong knight away from f5 at once.",
+      "sv": "17...Qb6? är det första riktiga misstaget. Damen går till damflygeln, långt från den egna kungen, och lämnar d6-rutan åt Vit. Motorns val var 17...g6, som jagar bort den starka springaren från f5 direkt.",
+      "line": { "from": "before", "san": ["g6", "Ng3", "Qe7", "Qc2", "Rad8"] }
+    },
+    {
+      "ply": 34,
+      "en": "18.Qd6! The queen takes over the hole on d6 and attacks the knight on e5, which has no defender, so Black has to spend a move on it. Now White's queen and knight work together close to Black's king.",
+      "sv": "18.Qd6! Damen tar över hålet på d6 och anfaller springaren på e5, som saknar skydd, så Svart måste lägga ett drag på den. Nu samarbetar Vits dam och springare nära den svarta kungen."
+    },
+    {
+      "ply": 37,
+      "en": "19...Rad8? is natural, but it lets White go on with the attack undisturbed. The engine wanted counterplay with 19...a5, pushing the pawn to a4 to dislodge the bishop and win the b2 pawn: when you are under attack, active defence is usually best.",
+      "sv": "19...Rad8? är naturligt, men låter Vit fortsätta anfallet ostört. Motorn ville ha motspel med 19...a5, med bonden vidare till a4 för att rubba löparen och vinna bonden på b2: när man blir anfallen är aktivt försvar oftast bäst.",
+      "line": { "from": "before", "san": ["a5", "Qf4", "a4", "Bxa4", "Qxb2", "Bb3"] }
+    },
+    {
+      "ply": 38,
+      "en": "20.Qg3 threatens to take on g7 with mate, since the knight on f5 protects g7, so Black has to defend g7 and chooses 20...g6. The engine preferred 20.Qf4, but the idea is the same: queen and knight against g7.",
+      "sv": "20.Qg3 hotar att slå på g7 med matt, eftersom springaren på f5 skyddar g7, så Svart måste skydda g7 och väljer 20...g6. Motorn föredrog 20.Qf4, men idén är densamma: dam och springare mot g7."
+    },
+    {
+      "ply": 41,
+      "en": "21...Kh8? is the decisive mistake. The engine's choice was 21...Qb5, bringing the queen back to offer a trade: after 22.Nh6+ Kg7 23.Qxb5 Black would be worse, but the attack would be over. Now the knight jumps to d6 and attacks f7.",
+      "sv": "21...Kh8? är det avgörande misstaget. Motorns val var 21...Qb5, som för tillbaka damen och erbjuder byte: efter 22.Nh6+ Kg7 23.Qxb5 står Svart sämre, men anfallet är över. Nu hoppar springaren till d6 och anfaller f7.",
+      "line": { "from": "before", "san": ["Qb5", "Nh6+", "Kg7", "Qxb5", "cxb5"] }
+    },
+    {
+      "ply": 44,
+      "en": "23.e4 brings one more pawn into the attack, preparing e5 to drive the knight from f6. The engine thought the rook lift 23.Rc4, heading for h4 or d4, was even stronger, but White is winning either way.",
+      "sv": "23.e4 tar in ännu en bonde i anfallet och förbereder e5 för att driva bort springaren från f6. Motorn tyckte att tornlyftet 23.Rc4, på väg mot h4 eller d4, var ännu starkare, men Vit vinner i vilket fall."
+    },
+    {
+      "ply": 45,
+      "en": "23...Ng8 retreats the knight to the back rank before it is driven away, but now Black's pieces are packed together and passive.",
+      "sv": "23...Ng8 drar tillbaka springaren till baslinjen innan den jagas bort, men nu står de svarta pjäserna hopträngda och passiva."
+    },
+    {
+      "ply": 47,
+      "en": "24...f6?? attacks the queen, but it loses at once. With the f-pawn gone from f7, the pawn on g6 is protected only by the h7 pawn, and White has a forced mate. 24...Ndf6 would have held out much longer.",
+      "sv": "24...f6?? anfaller damen, men förlorar direkt. När f-bonden har lämnat f7 skyddas bonden på g6 bara av bonden på h7, och Vit har en forcerad matt. 24...Ndf6 hade hållit ut betydligt längre."
+    },
+    {
+      "ply": 48,
+      "en": "25.Nf5+ comes with check, so Black never gets time to take the queen on g5. From here the engine finds a forced mate.",
+      "sv": "25.Nf5+ kommer med schack, så Svart får aldrig tid att slå damen på g5. Härifrån hittar motorn en forcerad matt."
+    },
+    {
+      "ply": 50,
+      "en": "26.Qxg6! threatens mate on g7, where the knight on f5 protects the queen. If Black takes the queen with the h-pawn, the rook comes to h3 with check and mates on h6, again protected by the knight. Lasker resigned.",
+      "sv": "26.Qxg6! hotar matt på g7, där springaren på f5 skyddar damen. Om Svart slår damen med h-bonden kommer tornet till h3 med schack och gör matt på h6, återigen skyddat av springaren. Lasker gav upp.",
+      "line": { "from": "after", "san": ["Qxf2+", "Kxf2", "hxg6", "Rh3+", "Nh6", "Rxh6#"] }
+    }
+  ],
+  "summary": {
+    "en": "Lasker came out of the opening with a perfectly sound position, but 17...Qb6 sent his queen away from the king, and the knight on f5 and queen on d6 took over. From then on Black was always defending, and 21...Kh8 and 24...f6 were the moves that lost. The lesson: when your opponent's pieces gather around your king, trade the attacking pieces, above all the queen.",
+    "sv": "Lasker kom ur öppningen med en helt sund ställning, men 17...Qb6 skickade iväg damen från kungen, och springaren på f5 och damen på d6 tog över. Därefter fick Svart bara försvara sig, och 21...Kh8 och 24...f6 var dragen som förlorade. Läxan: när motståndarens pjäser samlas runt din kung, byt av de anfallande pjäserna, framför allt damen."
+  }
+}

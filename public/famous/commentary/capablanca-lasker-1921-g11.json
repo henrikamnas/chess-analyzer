@@ -1,0 +1,107 @@
+{
+  "id": "capablanca-lasker-1921-g11",
+  "intro": {
+    "en": "Havana, 1921, game 11 of the World Championship match in which José Raúl Capablanca took the title from Emanuel Lasker without losing a game. It is a Queen's Gambit Declined, Orthodox Defence, and there are no fireworks for a long time. Watch how Capablanca gains space, plants a knight on a square Black's pawns can never attack, and slowly turns small advantages into weaknesses around Black's king.",
+    "sv": "Havanna 1921, parti 11 i VM-matchen där José Raúl Capablanca tog titeln från Emanuel Lasker utan att förlora ett enda parti. Det är en avböjd damgambit, ortodoxa försvaret, och länge händer inget spektakulärt. Se hur Capablanca vinner utrymme, placerar en springare på en ruta som Svarts bönder aldrig kan angripa och långsamt förvandlar små fördelar till svagheter runt den svarta kungen."
+  },
+  "comments": [
+    {
+      "ply": 7,
+      "en": "4...Nbd7 leads to the Orthodox Defence of the Queen's Gambit Declined. It is solid, but the knight on d7 blocks Black's light-squared bishop, the piece that always gives Black trouble in this opening. The engine slightly prefers taking on c4 at once with 4...dxc4.",
+      "sv": "4...Nbd7 leder till ortodoxa försvaret i avböjd damgambit. Det är solitt, men springaren på d7 stänger in Svarts vitfältslöpare, den pjäs som alltid vållar Svart problem i den här öppningen. Motorn föredrar en aning att genast slå på c4 med 4...dxc4."
+    },
+    {
+      "ply": 19,
+      "en": "9...dxc4 and 10...Nd5 is the classic freeing idea in this line: Black gives up the centre for a moment in order to trade pieces, because a cramped position gets easier with every exchange. The engine agrees with both moves.",
+      "sv": "9...dxc4 och 10...Nd5 är den klassiska befriande idén i den här varianten: Svart släpper tillfälligt centrum för att kunna byta pjäser, eftersom en trång ställning blir lättare för varje byte. Motorn håller med om båda dragen."
+    },
+    {
+      "ply": 21,
+      "en": "11...Rxe7 is an unusual recapture. The normal 11...Qxe7 brings the queen to a useful square and keeps the rook on the back rank; with the rook on e7, Black's pieces get in each other's way.",
+      "sv": "11...Rxe7 är en ovanlig återtagning. Det normala 11...Qxe7 för damen till en bra ruta och behåller tornet på baslinjen; med tornet på e7 står de svarta pjäserna i vägen för varandra.",
+      "line": {
+        "from": "before",
+        "san": ["Qxe7", "Ne4", "b6", "O-O", "Bb7"]
+      }
+    },
+    {
+      "ply": 26,
+      "en": "14.e4 takes the whole centre and drives the knight away from d5. On the previous two moves the engine suggested that Black trade on c3 to ease the cramp; Lasker avoided it, and now White has more space and the freer pieces.",
+      "sv": "14.e4 tar hela centrum och driver bort springaren från d5. Under de två föregående dragen föreslog motorn att Svart skulle byta på c3 för att lätta på trångboddheten; Lasker undvek det, och nu har Vit mer utrymme och friare pjäser."
+    },
+    {
+      "ply": 28,
+      "en": "15.Bf1 is a modest retreat. The engine preferred 15.Bb3, keeping the bishop on the active diagonal towards Black's king and preparing e5. Capablanca's move is safe, and with 15...Be8 Black could have kept his disadvantage small.",
+      "sv": "15.Bf1 är ett anspråkslöst reträttdrag. Motorn föredrog 15.Bb3, som behåller löparen på den aktiva diagonalen mot den svarta kungen och förbereder e5. Capablancas drag är säkert, och med 15...Be8 hade Svart kunnat hålla nackdelen liten.",
+      "line": {
+        "from": "before",
+        "san": ["Bb3", "Rc8", "e5", "c5", "dxc5", "Rxc5"]
+      }
+    },
+    {
+      "ply": 36,
+      "en": "19.a5 is typical Capablanca: the queenside pawns gain space step by step, the knight is driven away from b6, and Black's pieces have fewer and fewer good squares. The engine agrees with the plan.",
+      "sv": "19.a5 är typiskt Capablanca: bönderna på damflygeln vinner utrymme steg för steg, springaren drivs bort från b6, och de svarta pjäserna får allt färre bra rutor. Motorn håller med om planen."
+    },
+    {
+      "ply": 38,
+      "en": "20.e5! fixes Black's centre and creates an outpost on d6. A pawn could only attack d6 from c7 or e7, and Black's c- and e-pawns have already gone past those squares, so a white knight on d6 can never be driven away by a pawn.",
+      "sv": "20.e5! låser Svarts centrum och skapar en utpost på d6. En bonde kan bara angripa d6 från c7 eller e7, och Svarts c- och e-bönder har redan passerat de rutorna, så en vit springare på d6 kan aldrig drivas bort av en bonde."
+    },
+    {
+      "ply": 44,
+      "en": "23.Nd6 and the knight has arrived. It eyes the bishop on e8 and the f7 square and ties Black's pieces to defence. Black's only way to get rid of it is to give up a piece for it.",
+      "sv": "23.Nd6 och springaren är framme. Den siktar på löparen på e8 och rutan f7 och binder de svarta pjäserna vid försvaret. Svarts enda sätt att bli av med den är att ge en pjäs för den."
+    },
+    {
+      "ply": 52,
+      "en": "27.b5 is a real inaccuracy: the engine thinks it gives away most of White's advantage, and preferred bringing the knight round with 27.Nd2. Black's best answer was 27...Qe7, offering a queen trade that would have taken the pressure off his open king. Lasker's 27...Rbc8 missed that chance.",
+      "sv": "27.b5 är en verklig onoggrannhet: motorn anser att det släpper det mesta av Vits fördel och föredrog att föra springaren runt med 27.Nd2. Svarts bästa svar var 27...Qe7, som erbjuder dambyte och hade lättat trycket mot den öppna kungen. Laskers 27...Rbc8 missade den chansen.",
+      "line": {
+        "from": "after",
+        "san": ["Qe7", "Qxe7", "Nxe7", "d5", "exd5", "bxc6", "Rxc6", "Rxc6", "Nxc6", "Rxd5"]
+      }
+    },
+    {
+      "ply": 59,
+      "en": "After the trades material is level, but the pawn structures tell the story. Black has an isolated pawn on b6, an isolated h-pawn, and no g-pawn in front of his king. White's only weakness is the isolated d4 pawn, which is easy to defend.",
+      "sv": "Efter bytena är materialet lika, men bondestrukturerna säger allt. Svart har en isolerad bonde på b6, en isolerad h-bonde och ingen g-bonde framför kungen. Vits enda svaghet är den isolerade bonden på d4, som är lätt att försvara."
+    },
+    {
+      "ply": 73,
+      "en": "37...Ra5? sends the rook away from the kingside. After 38.Nc3 the knights come off, and White's bishop, aiming at e6, is clearly better than Black's knight on f8. The engine preferred 37...Rd7, keeping the rook near the king.",
+      "sv": "37...Ra5? skickar bort tornet från kungsflygeln. Efter 38.Nc3 byts springarna av, och därefter är Vits löpare, som siktar på e6, klart bättre än Svarts springare på f8. Motorn föredrog 37...Rd7, som håller tornet nära kungen."
+    },
+    {
+      "ply": 84,
+      "en": "Both sides err here. 42...Kg6 put the king on an exposed square (42...Kg8 was safer), and then Capablanca missed the strongest reply, 43.h5+, which drives the king to h6 and brings the queen to f7 with a winning attack. After 43.Qc8 White is still clearly better, but the win is much harder.",
+      "sv": "Båda sidor gör fel här. 42...Kg6 ställde kungen på en utsatt ruta (42...Kg8 var säkrare), och sedan missade Capablanca det starkaste svaret, 43.h5+, som driver kungen till h6 och för damen till f7 med ett vinnande angrepp. Efter 43.Qc8 står Vit fortfarande klart bättre, men vinsten är betydligt svårare.",
+      "line": {
+        "from": "before",
+        "san": ["h5+", "Kh6", "Qf7", "e5", "Re4", "Rxc4", "Qxc4"]
+      }
+    },
+    {
+      "ply": 87,
+      "en": "44...Qe7?? is the decisive mistake. After 45.Bd3+ the c-file opens with check, and the rook comes to c7, protected by the queen on c8, with an attack on the black queen. 44...Ra7 was necessary, bringing the rook to the seventh rank to cover c7.",
+      "sv": "44...Qe7?? är det avgörande misstaget. Efter 45.Bd3+ öppnas c-linjen med schack, och tornet kommer till c7, skyddat av damen på c8, med angrepp på den svarta damen. 44...Ra7 var nödvändigt, för att föra tornet till sjunde raden och täcka c7.",
+      "line": {
+        "from": "before",
+        "san": ["Ra7", "d5", "Qa3", "Rb1", "exd5"]
+      }
+    },
+    {
+      "ply": 94,
+      "en": "48.Qxf8+! and Lasker resigned. Taking the queen with 48...Qxf8 allows 49.Rxh7 mate, because the bishop on d3 protects the rook on h7. The only other move, 48...Kh5, runs into 49.Rxh7+ Kg4 50.Qg8 mate.",
+      "sv": "48.Qxf8+! och Lasker gav upp. Att ta damen med 48...Qxf8 tillåter 49.Rxh7 matt, eftersom löparen på d3 skyddar tornet på h7. Det enda andra draget, 48...Kh5, leder till 49.Rxh7+ Kg4 50.Qg8 matt.",
+      "line": {
+        "from": "after",
+        "san": ["Qxf8", "Rxh7#"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "Capablanca won by accumulating small advantages: more space, the outpost on d6, then a better minor piece and a safer king. Lasker's position was cramped from the opening, and he repeatedly declined the exchanges on c3 that the engine recommended. The engine also finds slips by Capablanca, such as 27.b5 and 43.Qc8, but Lasker never took his chances, and the final mistake, 44...Qe7, let the rook reach the seventh rank with a mating attack.",
+    "sv": "Capablanca vann genom att samla små fördelar: mer utrymme, utposten på d6, sedan en bättre lätt pjäs och en säkrare kung. Laskers ställning var trång redan från öppningen, och han avstod gång på gång från de byten på c3 som motorn rekommenderade. Motorn hittar också snedsteg av Capablanca, som 27.b5 och 43.Qc8, men Lasker tog aldrig sina chanser, och det sista misstaget, 44...Qe7, lät tornet nå sjunde raden med ett mattangrepp."
+  }
+}

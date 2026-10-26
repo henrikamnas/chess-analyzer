@@ -1,0 +1,99 @@
+{
+  "id": "capablanca-tartakower-1924",
+  "intro": {
+    "en": "New York, 1924: the reigning world champion José Raúl Capablanca against Savielly Tartakower in one of the strongest tournaments of the decade. The middlegame is a quiet manoeuvring fight, but the game is remembered for its rook endgame. Watch how Capablanca lets two pawns go in order to march his king up the board, where king, rook and a passed pawn together are worth more than Black's extra material.",
+    "sv": "New York 1924: den regerande världsmästaren José Raúl Capablanca mot Savielly Tartakower i en av decenniets starkaste turneringar. Mittspelet är en lugn manöverstrid, men partiet är känt för sitt tornslutspel. Se hur Capablanca släpper två bönder för att marschera upp med kungen på brädet, där kung, torn och en fribonde tillsammans är värda mer än Svarts extra material."
+  },
+  "comments": [
+    {
+      "ply": 3,
+      "en": "After 1...e6 (the Horwitz Defence in the opening books), 2...f5 gives Black a Dutch-style setup: the f-pawn controls e4, but it also loosens the squares around Black's king and leaves the e6 pawn without the support of a neighbour on the f-file. The engine slightly prefers the calmer 2...Nf6 or 2...d5, but nothing is wrong yet.",
+      "sv": "Efter 1...e6 (Horwitz försvar i öppningsböckerna) ger 2...f5 Svart en holländsk uppställning: f-bonden kontrollerar e4, men försvagar samtidigt rutorna runt den svarta kungen och lämnar bonden på e6 utan stöd från en granne på f-linjen. Motorn föredrar en aning de lugnare 2...Nf6 eller 2...d5, men ännu är inget fel."
+    },
+    {
+      "ply": 19,
+      "en": "10...Nxc3 is an in-between move: instead of recapturing on e7 at once, Black first takes on c3 with an attack on the white queen. After 11.bxc3 White has doubled pawns on c3 and c4, a long-term weakness that Black's knight will later aim at.",
+      "sv": "10...Nxc3 är ett mellandrag: i stället för att genast ta tillbaka på e7 slår Svart först på c3 med angrepp på den vita damen. Efter 11.bxc3 har Vit dubbelbönder på c3 och c4, en långsiktig svaghet som den svarta springaren senare siktar på."
+    },
+    {
+      "ply": 31,
+      "en": "16...Na5 puts the knight on its natural square against White's doubled pawns: from a5 it attacks c4, which only the bishop on d3 defends. The position is roughly level; White has the centre, Black has a target.",
+      "sv": "16...Na5 ställer springaren på sin naturliga ruta mot de vita dubbelbönderna: från a5 angriper den c4, som bara löparen på d3 försvarar. Ställningen är ungefär jämn; Vit har centrum, Svart har ett mål att angripa."
+    },
+    {
+      "ply": 36,
+      "en": "19.e4 is the engine's choice too. White breaks in the centre while Black's knight is away on a5, and after the exchange on e4 the e-file is half-open, with the pawn on e6 standing on it as a target for White's queen and rook.",
+      "sv": "19.e4 är också motorns val. Vit bryter i centrum medan den svarta springaren står borta på a5, och efter bytet på e4 är e-linjen halvöppen, med bonden på e6 som ett mål för Vits dam och torn."
+    },
+    {
+      "ply": 45,
+      "en": "23...d5 is the first clear inaccuracy. Black rids himself of the weak e6 pawn, but after the trades on d5 and e8 the queens and a pair of rooks come off, and White's remaining rook can get into Black's camp along the h-file while the knight on a5 is far from the kingside. The engine preferred 23...Qc6, offering a queen trade on Black's own terms.",
+      "sv": "23...d5 är den första tydliga onoggrannheten. Svart blir av med den svaga bonden på e6, men efter bytena på d5 och e8 försvinner damerna och ett tornpar, och Vits kvarvarande torn kan ta sig in i Svarts läger längs h-linjen medan springaren på a5 står långt från kungsflygeln. Motorn föredrog 23...Qc6, som erbjuder dambyte på Svarts egna villkor.",
+      "line": {
+        "from": "before",
+        "san": ["Qc6", "h5", "Qxe4+", "Rxe4", "gxh5", "Rh1"]
+      }
+    },
+    {
+      "ply": 56,
+      "en": "29.Rh1 takes the open h-file that 27.h5 created. Rook endgames are usually decided by activity, and White's rook is heading for the seventh rank, where it attacks pawns from behind and confines Black's king.",
+      "sv": "29.Rh1 tar den öppna h-linjen som 27.h5 skapade. Tornslutspel avgörs oftast av aktivitet, och det vita tornet är på väg till sjunde raden, där det angriper bönder bakifrån och stänger in den svarta kungen."
+    },
+    {
+      "ply": 58,
+      "en": "30.Rh7 puts the rook on the seventh rank, the classic goal. The engine liked the check 30.Rh8+ a little better, chasing the king to g7 first and then going after the d5 pawn from d8.",
+      "sv": "30.Rh7 ställer tornet på sjunde raden, det klassiska målet. Motorn gillade schacken 30.Rh8+ lite bättre, som först jagar kungen till g7 och sedan går efter bonden på d5 från d8.",
+      "line": {
+        "from": "before",
+        "san": ["Rh8+", "Kg7", "Rd8", "Rc6", "Rxd5", "Rxc3"]
+      }
+    },
+    {
+      "ply": 60,
+      "en": "31.g4 starts the famous plan: g-pawn forward, king behind it. Objectively the engine thinks this lets the advantage go, and that 31.Rd7, attacking the d5 pawn at once, kept a small edge. The plan only succeeded because Black went wrong a little later.",
+      "sv": "31.g4 inleder den berömda planen: g-bonden framåt, kungen bakom den. Objektivt anser motorn att Vit därmed släpper fördelen, och att 31.Rd7, som genast angriper bonden på d5, behöll ett litet övertag. Planen lyckades bara för att Svart gick fel lite senare.",
+      "line": {
+        "from": "before",
+        "san": ["Rd7", "Nc4", "Kh3", "Nd2", "Kh4", "Ne4", "Rxd5"]
+      }
+    },
+    {
+      "ply": 65,
+      "en": "33...Nf5? is the decisive mistake. It allows 34.Bxf5 gxf5, and the resulting rook endgame is lost for Black even though material is level: White's g-pawn becomes a passed pawn, the rook is already on the seventh, and the white king has an open road to the kingside. 33...Nd1 was the engine's choice, sending the knight towards b2 to attack White's weak pawns, and that held the balance.",
+      "sv": "33...Nf5? är det avgörande misstaget. Det tillåter 34.Bxf5 gxf5, och det tornslutspel som uppstår är förlorat för Svart trots att materialet är lika: Vits g-bonde blir en fribonde, tornet står redan på sjunde raden och den vita kungen har fri väg till kungsflygeln. 33...Nd1 var motorns val, där springaren går mot b2 för att angripa Vits svaga bönder, och det höll jämvikten.",
+      "line": {
+        "from": "before",
+        "san": ["Nd1", "Rh6", "Kg7", "f5", "Nb2", "Bb1", "Rxc3+"]
+      }
+    },
+    {
+      "ply": 68,
+      "en": "35.Kg3! Here is the lesson the game is famous for. Capablanca does not defend the c3 pawn; the king heads for h4 and g5 instead, because an active king next to a passed pawn is worth more than a pawn on the queenside.",
+      "sv": "35.Kg3! Här kommer läxan som partiet är känt för. Capablanca försvarar inte bonden på c3; kungen går i stället mot h4 och g5, eftersom en aktiv kung bredvid en fribonde är värd mer än en bonde på damflygeln."
+    },
+    {
+      "ply": 72,
+      "en": "37.g6 gives up a second pawn, the one on f4. After 37...Rxf4+ 38.Kg5 Black is two pawns up, but his rook is busy grabbing material while White's king, rook and g-pawn close in on the black king.",
+      "sv": "37.g6 ger bort ytterligare en bonde, den på f4. Efter 37...Rxf4+ 38.Kg5 har Svart två merbönder, men tornet är upptaget med att plocka material medan Vits kung, torn och g-bonde närmar sig den svarta kungen."
+    },
+    {
+      "ply": 77,
+      "en": "39.Kf6 threatened Rh8 mate: the white king covers e7, f7 and g7, the pawn on g6 covers f7 and h7, and the rook would control the eighth rank. Black's king steps aside to g8, and after 40.Rg7+ Kh8 41.Rxc7 White starts winning the pawns back with tempo.",
+      "sv": "39.Kf6 hotade matt med tornet på h8: den vita kungen täcker e7, f7 och g7, bonden på g6 täcker f7 och h7, och tornet skulle kontrollera åttonde raden. Den svarta kungen viker undan till g8, och efter 40.Rg7+ Kh8 41.Rxc7 börjar Vit vinna tillbaka bönderna med tempo."
+    },
+    {
+      "ply": 90,
+      "en": "After 45.g7+ and 46.Rxa7 White is already a pawn up again, Black's king is stuck on g8 in front of the g7 pawn, and White's king is about to take d5 as well. The two pawns Capablanca gave away have come back with interest.",
+      "sv": "Efter 45.g7+ och 46.Rxa7 har Vit redan en merbonde igen, den svarta kungen sitter fast på g8 framför bonden på g7, och den vita kungen ska just ta d5 också. De två bönder som Capablanca gav bort har kommit tillbaka med ränta."
+    },
+    {
+      "ply": 102,
+      "en": "52.d6 and Tartakower resigned. The d-pawn is about to run through to d8, supported by the king on c6 and the rook on c7, while Black's king is stuck in front of the g7 pawn and cannot help.",
+      "sv": "52.d6 och Tartakower gav upp. d-bonden ska just springa fram till d8 med stöd av kungen på c6 och tornet på c7, medan den svarta kungen sitter fast framför bonden på g7 och inte kan hjälpa till."
+    }
+  ],
+  "summary": {
+    "en": "The middlegame was balanced for a long time; Black's first clear slip was 23...d5, which let White into a better endgame, and the decisive one was 33...Nf5, where 33...Nd1 would have held. After that, Capablanca showed the classic rook-endgame principles: rook on the seventh, king in front, passed pawn supported, and material can wait. Even the famous plan with 31.g4 was not the engine's first choice, but it set problems that Black did not solve.",
+    "sv": "Mittspelet var länge balanserat; Svarts första tydliga snedsteg var 23...d5, som släppte in Vit i ett bättre slutspel, och det avgörande var 33...Nf5, där 33...Nd1 hade hållit. Därefter visade Capablanca de klassiska principerna i tornslutspel: tornet på sjunde raden, kungen framåt, fribonden understödd, och materialet kan vänta. Inte ens den berömda planen med 31.g4 var motorns förstahandsval, men den ställde problem som Svart inte löste."
+  }
+}

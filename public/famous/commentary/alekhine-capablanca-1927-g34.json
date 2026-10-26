@@ -1,0 +1,87 @@
+{
+  "id": "alekhine-capablanca-1927-g34",
+  "intro": {
+    "en": "Buenos Aires, 1927: the 34th and final game of the World Championship match between José Raúl Capablanca, the champion, and Alexander Alekhine. The opening is a quiet Queen's Gambit Declined, and the game is decided by one extra pawn: a passed a-pawn that White wins in a queenside raid. Watch how that pawn ties Black down through a long queen-and-rook ending and then a rook ending, while White's king walks over to the other wing.",
+    "sv": "Buenos Aires 1927: det 34:e och sista partiet i VM-matchen mellan den regerande mästaren José Raúl Capablanca och Alexander Aljechin. Öppningen är en lugn avböjd damgambit, och partiet avgörs av en enda merbonde: en fri a-bonde som Vit vinner i en räd på damflygeln. Se hur den bonden binder Svart genom ett långt slutspel med dam och torn och sedan ett tornslutspel, medan den vita kungen vandrar över till andra flygeln."
+  },
+  "comments": [
+    {
+      "ply": 10,
+      "en": "6.a3 is the Anti-Cambridge Springs Variation. By taking the b4 square away from Black's bishop and queen, White avoids the Cambridge Springs Defence, where Black uses ...Bb4 and ...Qa5 to pin the knight on c3.",
+      "sv": "6.a3 är Anti-Cambridge Springs-varianten. Genom att ta b4-rutan från Svarts löpare och dam undviker Vit Cambridge Springs-försvaret, där Svart använder ...Bb4 och ...Qa5 för att binda springaren på c3."
+    },
+    {
+      "ply": 17,
+      "en": "9...Nd5 is the classical freeing idea in this kind of Queen's Gambit: Black is a little cramped, so he offers to trade the dark-squared bishops and lighten the position. The engine slightly prefers 9...h6 first, but both are sound.",
+      "sv": "9...Nd5 är den klassiska befriande idén i den här typen av damgambit: Svart står lite trångt och erbjuder därför byte av de svartfältiga löparna för att lätta på ställningen. Motorn föredrar 9...h6 först en aning, men båda är sunda."
+    },
+    {
+      "ply": 50,
+      "en": "The queenside raid is over. White's queen took on a7 and b7 while Black's knight took on b2, so White is a pawn up, and the pawn on a3 is a passed pawn, since Black has no pawns left on the queenside. The rest of the game is about that one pawn.",
+      "sv": "Räden på damflygeln är över. Den vita damen slog på a7 och b7 medan Svarts springare slog på b2, så Vit har en merbonde, och bonden på a3 är en fribonde eftersom Svart inte har några bönder kvar på damflygeln. Resten av partiet handlar om den enda bonden."
+    },
+    {
+      "ply": 51,
+      "en": "26...Nc4? is the first real mistake. The knight is less active on c4, and White could hit it at once with 27.Rc1. The engine preferred 26...Nd3, where the knight attacks f2 and can jump on to f4 towards White's king. Alekhine's 27.Qb4 also attacked the knight, but kept less of the advantage.",
+      "sv": "26...Nc4? är det första riktiga misstaget. Springaren är mindre aktiv på c4, och Vit kunde angripa den direkt med 27.Rc1. Motorn föredrog 26...Nd3, där springaren anfaller f2 och kan hoppa vidare till f4 mot den vita kungen. Aljechins 27.Qb4 angrep också springaren men behöll mindre av fördelen.",
+      "line": { "from": "before", "san": ["Nd3", "a4", "Rc3", "Nh4", "Nf4"] }
+    },
+    {
+      "ply": 57,
+      "en": "29...Nxe4? Capablanca wins back the pawn, but it is a mistake: White can trade knights on e4 and then push the a-pawn, which Black's remaining pieces will struggle to stop. The engine preferred the patient 29...Ne8, bringing the knight back towards d6.",
+      "sv": "29...Nxe4? Capablanca vinner tillbaka bonden, men det är ett misstag: Vit kan byta springare på e4 och sedan driva fram a-bonden, som Svarts återstående pjäser får svårt att stoppa. Motorn föredrog det tålmodiga 29...Ne8, som för springaren tillbaka mot d6."
+    },
+    {
+      "ply": 58,
+      "en": "The engine's answer was 30.Nxe4 Qxe4 31.a5: material is level, but the a-pawn is much faster than anything Black has, and White is close to winning. Alekhine's 30.Nxe5 is good enough to stay a pawn up after the trades, but it lets Black keep fighting.",
+      "sv": "Motorns svar var 30.Nxe4 Qxe4 31.a5: materialet är jämnt, men a-bonden är mycket snabbare än något Svart har, och Vit står nära vinst. Aljechins 30.Nxe5 räcker för att behålla en merbonde efter bytena, men låter Svart fortsätta kämpa.",
+      "line": { "from": "before", "san": ["Nxe4", "Qxe4", "a5", "Qd5", "a6", "e4"] }
+    },
+    {
+      "ply": 74,
+      "en": "38.Qc7? throws away a large part of the advantage. The engine wanted 38.Qa1, offering the queen trade on the long diagonal: in the rook endgame White's king could join the game, while Black's counterplay with the queen disappears.",
+      "sv": "38.Qc7? kastar bort en stor del av fördelen. Motorn ville spela 38.Qa1, som erbjuder dambyte på den långa diagonalen: i tornslutspelet kan den vita kungen komma med i spelet, medan Svarts motspel med damen försvinner.",
+      "line": { "from": "before", "san": ["Qa1", "Qxa1+", "Rxa1", "Kf6", "Kf1", "Ke5"] }
+    },
+    {
+      "ply": 81,
+      "en": "41...Qb1+? The checks lead nowhere: after 42.Kh2 Qb8+ 43.g3 the checks have run out, the black queen has ended up passively on b8, and White's rook on d7 is pressing on f7. The engine's choice was 41...Rf5, protecting f7 and attacking f2, with good drawing chances.",
+      "sv": "41...Qb1+? Schacken leder ingenstans: efter 42.Kh2 Qb8+ 43.g3 har schackarna tagit slut, den svarta damen står passivt på b8, och Vits torn på d7 trycker mot f7. Motorns val var 41...Rf5, som skyddar f7 och anfaller f2, med goda remichanser.",
+      "line": { "from": "before", "san": ["Rf5", "Qd4", "Qb1+", "Kh2", "Qc2", "f3"] }
+    },
+    {
+      "ply": 93,
+      "en": "47...Qa1? sends the queen far away, and White takes the chance. 48.Kg2 attacks the rook on f3, and after it retreats, 49.Qd4 attacks both the queen and the rook, so Black has to trade queens. The engine preferred 47...h5, keeping the queens on.",
+      "sv": "47...Qa1? skickar iväg damen långt bort, och Vit tar chansen. 48.Kg2 anfaller tornet på f3, och när det har dragit sig tillbaka anfaller 49.Qd4 både damen och tornet, så Svart måste byta damer. Motorn föredrog 47...h5, som behåller damerna på brädet."
+    },
+    {
+      "ply": 98,
+      "en": "The rook endgame: four pawns against three, with White's extra pawn a passed a-pawn. White's plan is classic: keep the a-pawn protected so that Black's rook and king have to watch it, then march the white king over to the kingside, where Black's pawns are left with only the rook to defend them.",
+      "sv": "Tornslutspelet: fyra bönder mot tre, där Vits merbonde är en fri a-bonde. Vits plan är klassisk: håll a-bonden skyddad så att Svarts torn och kung måste bevaka den, och marschera sedan den vita kungen över till kungsflygeln, där de svarta bönderna bara har tornet som försvarare."
+    },
+    {
+      "ply": 131,
+      "en": "The plan has worked. Black's king sits on a6 in front of the a-pawn, far from the action, while White's king has reached h6, right behind Black's kingside pawns. Black's rook can't guard everything on its own.",
+      "sv": "Planen har fungerat. Den svarta kungen står på a6 framför a-bonden, långt från striden, medan den vita kungen har nått h6, precis bakom Svarts bönder på kungsflygeln. Svarts torn kan inte vakta allt på egen hand."
+    },
+    {
+      "ply": 138,
+      "en": "70.f5 breaks open Black's pawn chain. The engine slightly preferred to keep manoeuvring with 70.Kh6, but White is winning either way: the black pawns become isolated and the king picks them off.",
+      "sv": "70.f5 bryter upp Svarts bondekedja. Motorn föredrog en aning att fortsätta manövrera med 70.Kh6, men Vit vinner hur som helst: de svarta bönderna blir isolerade och kungen plockar dem en efter en."
+    },
+    {
+      "ply": 151,
+      "en": "76...Rxa5 finally wins the a-pawn, but it changes nothing: with the rook gone from the kingside, White takes on h5 and f7 next.",
+      "sv": "76...Rxa5 vinner till slut a-bonden, men det ändrar ingenting: när tornet har lämnat kungsflygeln slår Vit på h5 och f7."
+    },
+    {
+      "ply": 162,
+      "en": "White has a rook and two pawns against a rook, and Black's king is far away on c6, cut off from the pawns. Capablanca resigned, and Alekhine became world champion.",
+      "sv": "Vit har torn och två bönder mot torn, och den svarta kungen står långt borta på c6, avskuren från bönderna. Capablanca gav upp, och Aljechin blev världsmästare."
+    }
+  ],
+  "summary": {
+    "en": "A single passed pawn won a world title. Black's queenside pawns disappeared in the raid, and from then on the a-pawn tied Black's pieces down. Both players made mistakes in the long queen-and-rook ending, but Black's 41...Qb1+ and 47...Qa1 let White force a rook endgame where the plan was simple: keep the passed pawn, and use the king on the other wing.",
+    "sv": "En enda fribonde vann en världsmästartitel. Svarts bönder på damflygeln försvann i räden, och från och med då band a-bonden de svarta pjäserna. Båda spelarna gjorde misstag i det långa slutspelet med dam och torn, men Svarts 41...Qb1+ och 47...Qa1 lät Vit tvinga fram ett tornslutspel där planen var enkel: behåll fribonden och använd kungen på den andra flygeln."
+  }
+}

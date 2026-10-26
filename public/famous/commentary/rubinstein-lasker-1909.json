@@ -1,0 +1,86 @@
+{
+  "id": "rubinstein-lasker-1909",
+  "intro": {
+    "en": "St Petersburg, 1909: Akiba Rubinstein against the world champion Emanuel Lasker, the two players who shared first place in the tournament. Lasker accepts an isolated d-pawn, then gives it up for activity and makes a speculative exchange sacrifice. Watch how Rubinstein punishes loose pawns and an exposed king, and then wins a rook endgame where his rook is active and Black's is stuck defending.",
+    "sv": "S:t Petersburg 1909: Akiba Rubinstein mot världsmästaren Emanuel Lasker, de två spelare som delade förstaplatsen i turneringen. Lasker accepterar en isolerad d-bonde, ger sedan bort den för aktivitet och gör ett spekulativt kvalitetsoffer. Se hur Rubinstein straffar lösa bönder och en blottad kung, och sedan vinner ett tornslutspel där hans torn är aktivt medan Svarts står fast i försvaret."
+  },
+  "comments": [
+    {
+      "ply": 7,
+      "en": "The game is a Queen's Gambit Declined, and 4...c5 strikes at White's centre straight away, in the spirit of the Tarrasch Defence. After the exchanges on d5 and d4 Black will have an isolated pawn on d5: it gives Black free development and open lines, but it can become a target.",
+      "sv": "Partiet är en avböjd damgambit, och 4...c5 angriper Vits centrum direkt, i Tarraschförsvarets anda. Efter bytena på d5 och d4 får Svart en isolerad bonde på d5: den ger fri utveckling och öppna linjer, men den kan bli ett mål."
+    },
+    {
+      "ply": 20,
+      "en": "10.Bxf6 removes the knight that defended d5, and 11.Nxd5 simply wins the isolated pawn. Black's compensation is quick development and open lines against White's still uncastled king.",
+      "sv": "10.Bxf6 slår bort springaren som skyddade d5, och 11.Nxd5 vinner helt enkelt den isolerade bonden. Svarts kompensation är snabb utveckling och öppna linjer mot den ännu orockerade vita kungen."
+    },
+    {
+      "ply": 23,
+      "en": "12...Qg5 is Lasker's attempt to stir things up: the queen attacks both the pawn on g2 and the undefended knight on d5. The engine preferred to castle first with 12...O-O, but White is only slightly better either way.",
+      "sv": "12...Qg5 är Laskers försök att röra om: damen anfaller både bonden på g2 och den oskyddade springaren på d5. Motorn föredrog att rockera först med 12...O-O, men Vit står bara något bättre i båda fallen."
+    },
+    {
+      "ply": 27,
+      "en": "14...O-O-O? is the first real mistake. Long castling puts the king on the c-file, which is already open, and after castling White can quickly put a rook on c1, aimed at the bishop on c6 and the king behind it. 14...Rd8 or 14...O-O kept the position balanced.",
+      "sv": "14...O-O-O? är det första riktiga misstaget. Lång rockad ställer kungen på c-linjen, som redan är öppen, och efter rockaden kan Vit snabbt ställa ett torn på c1, riktat mot löparen på c6 och kungen bakom den. 14...Rd8 eller 14...O-O höll ställningen i balans.",
+      "line": {
+        "from": "before",
+        "san": ["Rd8", "O-O", "O-O", "Rc1", "Qa5", "b3", "Qxa2"]
+      }
+    },
+    {
+      "ply": 31,
+      "en": "16...Rxe3!? Lasker gives up a rook for the knight to break up White's position. The engine agrees this is Black's best practical chance: after 17.Rxc6+ bxc6 18.Qc1 Rxd4 19.fxe3, material is level again.",
+      "sv": "16...Rxe3!? Lasker ger bort ett torn mot springaren för att slå sönder Vits ställning. Motorn håller med om att detta är Svarts bästa praktiska chans: efter 17.Rxc6+ bxc6 18.Qc1 Rxd4 19.fxe3 är materialet lika igen."
+    },
+    {
+      "ply": 36,
+      "en": "Material is equal: queen, rook and five pawns each. But the position is not: Black's king is exposed, and his pawns on a7, c6 and f7 are loose, while White's queen and rook are ready to attack them.",
+      "sv": "Materialet är lika: dam, torn och fem bönder var. Men ställningen är det inte: Svarts kung är blottad och bönderna på a7, c6 och f7 är lösa, medan Vits dam och torn står redo att angripa dem."
+    },
+    {
+      "ply": 37,
+      "en": "19...Rd7? is the decisive slip. The rook had to move, since the pawn on e3 attacks it, but on d7 it leaves the c6 pawn hanging, and 20.Qxc6+ wins it with check. 19...Rd6 kept c6 protected from the side.",
+      "sv": "19...Rd7? är det avgörande felsteget. Tornet var tvunget att flytta eftersom bonden på e3 anfaller det, men på d7 lämnar det c6-bonden i slag, och 20.Qxc6+ vinner den med schack. 19...Rd6 höll c6 skyddad från sidan.",
+      "line": {
+        "from": "before",
+        "san": ["Rd6", "Rxf7", "a5", "h3"]
+      }
+    },
+    {
+      "ply": 46,
+      "en": "After the queen trade and 24.Rxf5 White is two pawns up in a rook endgame. Rook endings are known for being hard to win, so Rubinstein's technique now matters.",
+      "sv": "Efter dambytet och 24.Rxf5 är Vit två bönder upp i ett tornslutspel. Tornslutspel är kända för att vara svåra att vinna, så nu gäller det Rubinsteins teknik."
+    },
+    {
+      "ply": 51,
+      "en": "26...Rxb2 is the right approach for the defender: Lasker activates his rook and wins a pawn back. White is still a pawn up, with four pawns against three.",
+      "sv": "26...Rxb2 är rätt inställning för försvararen: Lasker aktiverar tornet och vinner tillbaka en bonde. Vit är fortfarande en bonde upp, med fyra bönder mot tre."
+    },
+    {
+      "ply": 54,
+      "en": "28.Ra6! The key idea of the ending. The rook attacks a7 from in front, so Black's rook is tied to the seventh rank to guard it, and from a6 the white rook also keeps the black king off the sixth rank. White's rook is active and Black's rook is passive.",
+      "sv": "28.Ra6! Slutspelets nyckelidé. Tornet anfaller a7 framifrån, så Svarts torn är bundet vid sjunde raden för att skydda den, och från a6 håller det vita tornet också den svarta kungen borta från sjätte raden. Vits torn är aktivt och Svarts torn är passivt."
+    },
+    {
+      "ply": 64,
+      "en": "With the black rook tied down, White can advance freely: the king walks up to f4, and the e-, g- and h-pawns gain space. Black can only wait and react.",
+      "sv": "När det svarta tornet är bundet kan Vit avancera fritt: kungen går upp till f4, och e-, g- och h-bönderna vinner utrymme. Svart kan bara vänta och reagera."
+    },
+    {
+      "ply": 68,
+      "en": "35.e5 with the king on f5: White's king supports the pawns from in front, and the black king is pushed back to the last two ranks.",
+      "sv": "35.e5 med kungen på f5: Vits kung stöder bönderna framifrån, och den svarta kungen trycks tillbaka till de två sista raderna."
+    },
+    {
+      "ply": 78,
+      "en": "40.a3, and Lasker resigned. Black has no active plan: his rook has to keep guarding the seventh rank, and his king can only shuffle on the back two ranks, while White's king, rook and pawns keep improving.",
+      "sv": "40.a3, och Lasker gav upp. Svart har ingen aktiv plan: tornet måste fortsätta bevaka sjunde raden, och kungen kan bara flytta fram och tillbaka på de två bakersta raderna, medan Vits kung, torn och bönder fortsätter att förbättras."
+    }
+  ],
+  "summary": {
+    "en": "Lasker gave up his isolated d-pawn for activity and then sacrificed the exchange, which the engine considers Black's best practical try. The game turned on 14...O-O-O, which put the king on an open file, and 19...Rd7, which dropped the c6 pawn with check. In the rook endgame Rubinstein showed the classic recipe: an active rook that ties the defender's rook to a weak pawn, followed by a king march and a pawn advance.",
+    "sv": "Lasker gav bort sin isolerade d-bonde för aktivitet och offrade sedan kvalitet, vilket motorn anser vara Svarts bästa praktiska försök. Partiet avgjordes av 14...O-O-O, som ställde kungen på en öppen linje, och 19...Rd7, som släppte c6-bonden med schack. I tornslutspelet visade Rubinstein det klassiska receptet: ett aktivt torn som binder försvararens torn vid en svag bonde, följt av en kungsmarsch och en bondeframryckning."
+  }
+}

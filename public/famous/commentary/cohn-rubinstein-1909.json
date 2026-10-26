@@ -1,0 +1,71 @@
+{
+  "id": "cohn-rubinstein-1909",
+  "intro": {
+    "en": "St Petersburg, 1909: Erich Cohn against Akiba Rubinstein. The queens come off on move four, and for a long time the game is level. Watch the small structural details: giving up a bishop for a knight leaves White with doubled f-pawns and an isolated h-pawn, and one careless rook trade turns them into a lost king-and-pawn endgame.",
+    "sv": "S:t Petersburg 1909: Erich Cohn mot Akiba Rubinstein. Damerna byts redan i fjärde draget, och länge är partiet jämnt. Lägg märke till de små strukturdetaljerna: när Svart ger löparen mot springaren får Vit dubbla f-bönder och en isolerad h-bonde, och ett slarvigt tornbyte förvandlar dem till ett förlorat bondeslutspel."
+  },
+  "comments": [
+    {
+      "ply": 6,
+      "en": "The opening is classified as a Queen's Gambit Accepted. With 4.dxc5 White allows an immediate queen trade, and his king loses the right to castle. The engine preferred 4.e4, taking the centre.",
+      "sv": "Öppningen klassas som antagen damgambit. Med 4.dxc5 tillåter Vit ett omedelbart dambyte, och kungen förlorar rätten att rockera. Motorn föredrog 4.e4, som tar centrum."
+    },
+    {
+      "ply": 22,
+      "en": "Both kings step forward to e7 and e2. Without queens there is no danger of a mating attack, so the king belongs near the centre, where it guards important squares and is ready for the endgame.",
+      "sv": "Båda kungarna går fram till e7 och e2. Utan damer finns ingen risk för mattangrepp, så kungen hör hemma nära centrum, där den bevakar viktiga rutor och är redo för slutspelet."
+    },
+    {
+      "ply": 37,
+      "en": "19...Bxf3 gives up the bishop for the knight. The engine sees the position as equal either way, but the trade changes White's pawn structure: after 20.gxf3 White has doubled f-pawns and an isolated h-pawn.",
+      "sv": "19...Bxf3 ger bort löparen mot springaren. Motorn bedömer ställningen som jämn i båda fallen, men bytet förändrar Vits bondestruktur: efter 20.gxf3 har Vit dubbla f-bönder och en isolerad h-bonde."
+    },
+    {
+      "ply": 45,
+      "en": "After the trade on c4 a rook endgame is on the board, with six pawns each. The engine still sees it as level: with the rooks on, White's weak pawns are not yet fatal.",
+      "sv": "Efter bytet på c4 står ett tornslutspel på brädet, med sex bönder var. Motorn bedömer det fortfarande som jämnt: så länge tornen är kvar är Vits svaga bönder inte dödliga."
+    },
+    {
+      "ply": 46,
+      "en": "24.Rc1?? is the decisive mistake. Offering the rook trade leads to a pawn endgame, and in a pawn endgame the pawn structure and king activity decide everything. White's doubled f-pawns and isolated h-pawn now make it lost. Quiet moves such as 24.f4, 24.Rg1 or 24.Kd3 kept the balance.",
+      "sv": "24.Rc1?? är det avgörande misstaget. Att erbjuda tornbyte leder till ett bondeslutspel, och i ett bondeslutspel avgör bondestrukturen och kungens aktivitet allt. Vits dubbla f-bönder och isolerade h-bonde gör det nu förlorat. Lugna drag som 24.f4, 24.Rg1 eller 24.Kd3 behöll balansen.",
+      "line": {
+        "from": "before",
+        "san": ["f4", "g6", "Rg1", "Rc6", "a4", "b6"]
+      }
+    },
+    {
+      "ply": 55,
+      "en": "Rubinstein's king has marched f6, g5, h4 and h3, and now attacks the h2 pawn. White's king has to hurry back to g1 to defend it, and from there it is stuck guarding h2.",
+      "sv": "Rubinsteins kung har marscherat f6, g5, h4 och h3 och anfaller nu bonden på h2. Vits kung måste skynda tillbaka till g1 för att skydda den, och därifrån sitter den fast i bevakningen av h2."
+    },
+    {
+      "ply": 59,
+      "en": "30...b5 blocks White's b-pawn, so White's queenside pawns can no longer create anything. With the queenside quiet and White's king tied to h2, Black can take his time on the kingside.",
+      "sv": "30...b5 blockerar Vits b-bonde, så Vits damflygelbönder kan inte längre åstadkomma något. När damflygeln är stilla och Vits kung är bunden vid h2 kan Svart ta god tid på sig på kungsflygeln."
+    },
+    {
+      "ply": 65,
+      "en": "Now Black advances his pawns with ...e5, ...f5, ...g5 and ...h5. White's king has to stay on g1 or h1 to guard h2, so Black has all the time in the world to prepare a breakthrough.",
+      "sv": "Nu för Svart fram bönderna med ...e5, ...f5, ...g5 och ...h5. Vits kung måste stå kvar på g1 eller h1 för att skydda h2, så Svart har all tid i världen att förbereda ett genombrott."
+    },
+    {
+      "ply": 73,
+      "en": "37...g3! The breakthrough. The pawn on g3 attacks both f2 and h2, with the h4 pawn right behind it, and one of Black's pawns is going to force its way through.",
+      "sv": "37...g3! Genombrottet. Bonden på g3 anfaller både f2 och h2, med h4-bonden strax bakom, och en av Svarts bönder kommer att tränga igenom."
+    },
+    {
+      "ply": 75,
+      "en": "After 38...hxg3 Cohn resigned. If 39.fxg3, the black king takes on g3 and walks over to e4 to win the e-pawn too, leaving Black with a passed e-pawn and an easily winning endgame.",
+      "sv": "Efter 38...hxg3 gav Cohn upp. Om 39.fxg3 slår den svarta kungen på g3 och går över till e4 för att vinna även e-bonden, och Svart får en fribonde på e-linjen och ett lätt vunnet slutspel.",
+      "line": {
+        "from": "after",
+        "san": ["fxg3", "Kxg3", "Kf1", "Kf3", "Ke1", "Kxe4"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "For most of the game nothing much happened, but Rubinstein made sure White's pawn structure was slightly worse, with doubled f-pawns and an isolated h-pawn. Cohn's 24.Rc1 traded the last pieces into a pawn endgame where that structure was decisive. Black's king walked to h3, tied White's king to the defence of h2, and the healthier kingside pawns did the rest. Before trading into a pawn endgame, check the structure and how far each king has to walk.",
+    "sv": "Under större delen av partiet hände inte mycket, men Rubinstein såg till att Vits bondestruktur blev något sämre, med dubbla f-bönder och en isolerad h-bonde. Cohns 24.Rc1 bytte av de sista pjäserna till ett bondeslutspel där just den strukturen avgjorde. Svarts kung gick till h3, band Vits kung vid försvaret av h2, och de friskare bönderna på kungsflygeln gjorde resten. Innan man byter till ett bondeslutspel ska man kontrollera strukturen och hur långt varje kung har att gå."
+  }
+}

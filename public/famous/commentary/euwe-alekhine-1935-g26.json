@@ -1,0 +1,87 @@
+{
+  "id": "euwe-alekhine-1935-g26",
+  "intro": {
+    "en": "Zandvoort, 1935: game 26 of the World Championship match between Alexander Alekhine, the champion, and the Dutch challenger Max Euwe, who went on to win the title. Alekhine plays the Dutch Defence, and in the middlegame Euwe gives up a bishop for three pawns, getting two central passed pawns. The engine thinks the sacrifice was sound but no more than that; the game was decided by a series of mistakes from both sides in the sharp play that followed.",
+    "sv": "Zandvoort 1935: parti 26 i VM-matchen mellan den regerande mästaren Alexander Aljechin och den nederländske utmanaren Max Euwe, som till slut vann titeln. Aljechin spelar holländskt försvar, och i mittspelet ger Euwe bort en löpare mot tre bönder och får två fribönder i centrum. Motorn tycker att offret var korrekt men inte mer än så; partiet avgjordes av en rad misstag från båda sidor i det skarpa spelet som följde."
+  },
+  "comments": [
+    {
+      "ply": 3,
+      "en": "2...f5 makes it a Dutch Defence. The pawn on f5 fights for the e4 square and prepares play on the kingside, at the cost of slightly loosening Black's own king.",
+      "sv": "2...f5 gör det till holländskt försvar. Bonden på f5 kämpar om e4-rutan och förbereder spel på kungsflygeln, till priset av att den egna kungsställningen blir något lösare."
+    },
+    {
+      "ply": 13,
+      "en": "7...Ne4 is the typical Dutch idea: the knight sits on e4, supported by the f5 pawn. The engine slightly preferred to prepare it with 7...d5, which gives the knight a second supporter.",
+      "sv": "7...Ne4 är den typiska holländska idén: springaren står på e4, stödd av f5-bonden. Motorn föredrog en aning att förbereda det med 7...d5, som ger springaren ett andra stöd."
+    },
+    {
+      "ply": 15,
+      "en": "8...b6? is the first real mistake. The knight on e4 needs ...d5 for support (the engine's 8...d5). Without it, 9.Nxe4 fxe4 10.Ne5 leaves Black with a lonely pawn on e4 that the bishop on g2 can attack. Euwe missed this and played 9.Qc2.",
+      "sv": "8...b6? är det första riktiga misstaget. Springaren på e4 behöver ...d5 som stöd (motorns 8...d5). Utan det ger 9.Nxe4 fxe4 10.Ne5 Svart en ensam bonde på e4 som löparen på g2 kan angripa. Euwe missade detta och spelade 9.Qc2.",
+      "line": { "from": "after", "san": ["Nxe4", "fxe4", "Ne5", "Bb7", "Qc2", "d5"] }
+    },
+    {
+      "ply": 24,
+      "en": "13.d5 gains space and keeps the pawn on e6 under pressure, but the engine preferred 13.e4, opening the centre while Black's queen and knight are still on the back rank.",
+      "sv": "13.d5 vinner utrymme och håller trycket mot bonden på e6, men motorn föredrog 13.e4, som öppnar centrum medan Svarts dam och springare fortfarande står på baslinjen."
+    },
+    {
+      "ply": 40,
+      "en": "21.Nxf5! The famous sacrifice. After 21...Bxc3 22.Nxd6 and 23.Nxe4, White has three pawns for the bishop, and the d- and e-pawns are both passed. The engine doesn't think it changes the evaluation much: it is a sound practical decision that gives Black difficult problems.",
+      "sv": "21.Nxf5! Det berömda offret. Efter 21...Bxc3 22.Nxd6 och 23.Nxe4 har Vit tre bönder för löparen, och d- och e-bönderna är båda fribönder. Motorn tycker inte att det ändrar värderingen särskilt mycket: det är ett sunt praktiskt beslut som ställer Svart inför svåra problem."
+    },
+    {
+      "ply": 53,
+      "en": "27...Qe8? lets the e-pawn advance. The engine wanted 27...b5, striking at c4 to undermine the d5 pawn and open lines for Black's pieces. Against passed pawns, the side with the extra piece must create counterplay quickly.",
+      "sv": "27...Qe8? låter e-bonden avancera. Motorn ville spela 27...b5, som slår mot c4 för att underminera d5-bonden och öppna linjer för de svarta pjäserna. Mot fribönder måste sidan med merpjäsen skaffa motspel snabbt.",
+      "line": { "from": "before", "san": ["b5", "Rae1", "Qc7", "d6", "Qc6+"] }
+    },
+    {
+      "ply": 54,
+      "en": "28.e6 is natural, but too hasty: the engine preferred to bring in a rook first with 28.Rae1, so that the pawn advance would come with more support.",
+      "sv": "28.e6 är naturligt men förhastat: motorn föredrog att först ta in ett torn med 28.Rae1, så att bondeframstöten får mer stöd."
+    },
+    {
+      "ply": 60,
+      "en": "With 30.Rg1 and 31.Rxg1 Euwe gave up a rook for the strong bishop on d4. The engine agrees with the idea: Black's strongest piece, the bishop in the centre, is gone, and White's rook now controls the open g-file towards Black's king.",
+      "sv": "Med 30.Rg1 och 31.Rxg1 gav Euwe bort ett torn mot den starka löparen på d4. Motorn håller med om idén: Svarts starkaste pjäs, löparen i centrum, är borta, och Vits torn kontrollerar nu den öppna g-linjen mot den svarta kungen."
+    },
+    {
+      "ply": 63,
+      "en": "32...Rg7? is a serious mistake. White simply takes the knight with 33.exd7, and after 33...Rxd7 he has won a piece for the e-pawn. The engine's choice was 32...Rg6, after which the knight can escape to f8.",
+      "sv": "32...Rg7? är ett allvarligt misstag. Vit slår helt enkelt springaren med 33.exd7, och efter 33...Rxd7 har han vunnit en pjäs mot e-bonden. Motorns val var 32...Rg6, varefter springaren kan fly till f8."
+    },
+    {
+      "ply": 70,
+      "en": "36.Qe5? offers the queen trade, but it throws away most of the advantage. The engine wanted 36.Qg3, keeping the queens and Black's king under pressure. After the trade Black has a rook for the knight and two pawns, and a chance to give the exchange back on e6.",
+      "sv": "36.Qe5? erbjuder dambyte men kastar bort det mesta av fördelen. Motorn ville spela 36.Qg3, som behåller damerna och trycket mot den svarta kungen. Efter bytet har Svart ett torn mot springare och två bönder, och en chans att ge tillbaka kvaliteten på e6."
+    },
+    {
+      "ply": 73,
+      "en": "37...Rf5? misses the saving idea 37...Rxe6. Giving the rook back for the strong knight would have left White with doubled e-pawns that Black's other rook can attack, and the position would have been close to equal.",
+      "sv": "37...Rf5? missar den räddande idén 37...Rxe6. Att ge tillbaka tornet mot den starka springaren hade lämnat Vit med dubbelbönder på e-linjen som Svarts andra torn kan angripa, och ställningen hade varit nära jämn.",
+      "line": { "from": "before", "san": ["Rxe6", "dxe6", "Rf5", "Re1", "Kg7"] }
+    },
+    {
+      "ply": 75,
+      "en": "38...h6?? is the decisive blunder. Euwe's 38.Re1 had given Black a second chance to play ...Rxe6, but Alekhine missed it again. Now the knight steps aside and the e-pawn runs.",
+      "sv": "38...h6?? är den avgörande blundern. Euwes 38.Re1 hade gett Svart en andra chans att spela ...Rxe6, men Aljechin missade den igen. Nu kliver springaren undan och e-bonden springer.",
+      "line": { "from": "before", "san": ["Rxe6", "dxe6", "Kg7", "Kg1", "Kf8"] }
+    },
+    {
+      "ply": 76,
+      "en": "39.Nd8! clears the e6 square for the pawn, and the knight heads for c6, from where it will support the pawn on e7.",
+      "sv": "39.Nd8! frigör e6-rutan för bonden, och springaren går mot c6, varifrån den kommer att stödja bonden på e7."
+    },
+    {
+      "ply": 92,
+      "en": "47.Ne4+ forks the king and the rook on d2, while White's rook on e6 attacks the rook on e7. Black will lose a rook, and Alekhine resigned.",
+      "sv": "47.Ne4+ är en gaffel mot kungen och tornet på d2, samtidigt som Vits torn på e6 anfaller tornet på e7. Svart förlorar ett torn, och Aljechin gav upp."
+    }
+  ],
+  "summary": {
+    "en": "Euwe's piece sacrifice gave him two central passed pawns and an attack, but the engine shows that it was not decisive: the game swung back and forth, and both players missed chances between moves 27 and 38. The key lesson is about passed pawns: Black could have saved the game by giving back the exchange on e6, removing the knight that supported the pawns. When passed pawns are rolling, material often matters less than stopping them.",
+    "sv": "Euwes pjäsoffer gav honom två fribönder i centrum och ett anfall, men motorn visar att det inte var avgörande: partiet svängde fram och tillbaka, och båda spelarna missade chanser mellan drag 27 och 38. Den viktigaste läxan handlar om fribönder: Svart hade kunnat rädda partiet genom att ge tillbaka kvaliteten på e6 och ta bort springaren som stödde bönderna. När fribönderna rullar betyder materialet ofta mindre än att stoppa dem."
+  }
+}

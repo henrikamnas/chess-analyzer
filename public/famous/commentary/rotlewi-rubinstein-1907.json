@@ -1,0 +1,81 @@
+{
+  "id": "rotlewi-rubinstein-1907",
+  "intro": {
+    "en": "Lodz, 1907: Akiba Rubinstein, then a rising star, has Black against Georg Rotlewi. The game is known as \"Rubinstein's Immortal\". Watch how White loses time in the opening and then pushes the pawns in front of his own king, opening diagonals for Black's bishops. The finish is a cascade of sacrifices: first the queen is left hanging, then a rook is offered.",
+    "sv": "Łódź 1907: Akiba Rubinstein, då en stigande stjärna, har svart mot Georg Rotlewi. Partiet kallas \"Rubinsteins odödliga\". Se hur Vit förlorar tid i öppningen och sedan för fram bönderna framför sin egen kung, så att diagonaler öppnas för Svarts löpare. Slutet är en kaskad av offer: först lämnas damen i slag, sedan erbjuds ett torn."
+  },
+  "comments": [
+    {
+      "ply": 10,
+      "en": "The opening is classified as the Symmetrical Variation of the Tarrasch Defence. With 6.dxc5 White trades off his centre pawn, and Black develops the bishop to c5 in one move. The engine preferred 6.a3, keeping the tension.",
+      "sv": "Öppningen klassas som den symmetriska varianten av Tarraschförsvaret. Med 6.dxc5 byter Vit bort sin centrumbonde, och Svart utvecklar löparen till c5 i ett enda drag. Motorn föredrog 6.a3, som behåller spänningen."
+    },
+    {
+      "ply": 20,
+      "en": "11.Bd3 costs time: after 11...dxc4 the bishop has to move again to recapture. White's queen will also move a second time, from d2 to e2. The engine preferred 11.cxd5, clearing the centre first.",
+      "sv": "11.Bd3 kostar tid: efter 11...dxc4 måste löparen flytta igen för att slå tillbaka. Vits dam kommer också att flytta en andra gång, från d2 till e2. Motorn föredrog 11.cxd5, som först rensar upp i centrum."
+    },
+    {
+      "ply": 31,
+      "en": "After the knight trade Black's bishops point straight at the white king: the bishop on b7 looks down the long diagonal to g2, and the bishop on e5 aims at h2. Black is already slightly better and much more harmoniously placed.",
+      "sv": "Efter springarbytet pekar Svarts löpare rakt mot den vita kungen: löparen på b7 ser längs den långa diagonalen ner till g2, och löparen på e5 siktar på h2. Svart står redan något bättre och har pjäserna betydligt mer samordnade."
+    },
+    {
+      "ply": 32,
+      "en": "17.f4? is the first real mistake. It chases the bishop, but it weakens the e3 pawn and the diagonal from a7 to g1 in front of White's own king. Black's bishop simply retreats to c7 and will come back to b6 with check later. The engine preferred the quiet 17.Rfd1.",
+      "sv": "17.f4? är det första riktiga misstaget. Draget jagar löparen, men försvagar bonden på e3 och diagonalen från a7 till g1 framför Vits egen kung. Svarts löpare backar helt enkelt till c7 och kommer senare tillbaka till b6 med schack. Motorn föredrog det lugna 17.Rfd1."
+    },
+    {
+      "ply": 35,
+      "en": "18...Rac8 is good, but the engine found something slightly stronger: 18...Nh5, offering the knight. If the queen takes it, it stops guarding the bishop on d3, and the rook on d8 takes it.",
+      "sv": "18...Rac8 är bra, men motorn hittade något som är lite starkare: 18...Nh5, som erbjuder springaren. Om damen tar den slutar den skydda löparen på d3, och tornet på d8 slår den.",
+      "line": {
+        "from": "before",
+        "san": ["Nh5", "Qxh5", "Rxd3"]
+      }
+    },
+    {
+      "ply": 36,
+      "en": "19.e5? is the decisive mistake. The pawn chases the knight, but the knight jumps to g4, closer to the white king, and the e4 square is now empty, so the bishop on b7 sees all the way to g2. Together with 17.f4 and 18.e4, which opened the diagonal for 19...Bb6+, White has stripped his own king. 19.Rf3 was the engine's choice, covering the third rank.",
+      "sv": "19.e5? är det avgörande misstaget. Bonden jagar springaren, men springaren hoppar till g4, närmare den vita kungen, och rutan e4 är nu tom, så löparen på b7 ser ända ner till g2. Tillsammans med 17.f4 och 18.e4, som öppnade diagonalen för 19...Bb6+, har Vit blottat sin egen kung. 19.Rf3 var motorns val, som täcker tredje raden."
+    },
+    {
+      "ply": 41,
+      "en": "21...Qh4 threatens mate by taking on h2 with the queen, because the knight on g4 protects the queen on h2. White has to deal with this threat, and nearly every black piece is now aimed at the kingside.",
+      "sv": "21...Qh4 hotar matt genom att damen slår på h2, eftersom springaren på g4 skyddar damen på h2. Vit måste ta hand om hotet, och nästan alla svarta pjäser är nu riktade mot kungsflygeln."
+    },
+    {
+      "ply": 42,
+      "en": "22.g3 stops the mate and attacks the queen. It was also the engine's choice: White was already lost, and the alternative 22.h3 runs into the same idea, 22...Rxc3.",
+      "sv": "22.g3 stoppar matten och anfaller damen. Det var också motorns val: Vit var redan förlorad, och alternativet 22.h3 möter samma idé, 22...Rxc3."
+    },
+    {
+      "ply": 43,
+      "en": "22...Rxc3!! Rubinstein leaves his queen hanging. The rook removes the knight that guarded the bishop on e4, and it can take on g3 next. Only the queen on e2 still protects the bishop on e4, which blocks the long diagonal.",
+      "sv": "22...Rxc3!! Rubinstein lämnar damen i slag. Tornet slår bort springaren som skyddade löparen på e4, och kan slå på g3 i nästa drag. Bara damen på e2 skyddar fortfarande löparen på e4, som spärrar den långa diagonalen."
+    },
+    {
+      "ply": 44,
+      "en": "23.gxh4 takes the queen, and now Black has a forced mate. The engine's choice was 23.Bxb7, leaving the queen alone and removing the dangerous bishop instead; White would still be lost, but the game would go on.",
+      "sv": "23.gxh4 tar damen, och nu har Svart en forcerad matt. Motorns val var 23.Bxb7, som låter damen stå och i stället slår bort den farliga löparen; Vit hade fortfarande stått till förlust, men partiet hade fortsatt.",
+      "line": {
+        "from": "before",
+        "san": ["Bxb7", "Rxg3", "Rac1", "Re3", "Qg2", "Rh3"]
+      }
+    },
+    {
+      "ply": 45,
+      "en": "23...Rd2!! The second sacrifice. The rook attacks the queen, the only piece guarding the bishop on e4. If the queen takes the rook, 24...Bxe4+ follows with check down the long diagonal.",
+      "sv": "23...Rd2!! Det andra offret. Tornet anfaller damen, den enda pjäs som skyddar löparen på e4. Om damen slår tornet följer 24...Bxe4+ med schack längs den långa diagonalen."
+    },
+    {
+      "ply": 49,
+      "en": "25...Rh3, and White resigned. The threat is mate by the rook taking on h2: the queen on g2 cannot take on h2 because it is pinned to the king by the bishop on e4, the knight on g4 protects h2, and the bishop on b6 covers g1. Black has given up his queen and a rook, but every remaining black piece takes part in the mating net.",
+      "sv": "25...Rh3, och Vit gav upp. Hotet är matt genom att tornet slår på h2: damen på g2 kan inte slå på h2 eftersom den är bunden mot kungen av löparen på e4, springaren på g4 skyddar h2, och löparen på b6 täcker g1. Svart har gett bort damen och ett torn, men alla återstående svarta pjäser är med i mattnätet."
+    }
+  ],
+  "summary": {
+    "en": "Rotlewi lost time in the opening by moving his queen twice and his light-squared bishop three times, and then pushed f4, e4 and e5 in front of his own king. Each pawn move opened a diagonal for Rubinstein's bishops, on b6 towards g1 and on b7 towards h1. Once all of Black's pieces were aimed at the king, the sacrifices on c3 and d2 worked because they removed or deflected the last defenders of the long diagonal.",
+    "sv": "Rotlewi förlorade tid i öppningen genom att flytta damen två gånger och vitfältslöparen tre gånger, och förde sedan fram f4, e4 och e5 framför sin egen kung. Varje bondedrag öppnade en diagonal för Rubinsteins löpare, på b6 mot g1 och på b7 mot h1. När alla svarta pjäser väl var riktade mot kungen fungerade offren på c3 och d2, eftersom de slog bort eller ledde bort de sista försvararna av den långa diagonalen."
+  }
+}

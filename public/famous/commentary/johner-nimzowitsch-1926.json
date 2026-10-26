@@ -1,0 +1,75 @@
+{
+  "id": "johner-nimzowitsch-1926",
+  "intro": {
+    "en": "Dresden, 1926: Paul Johner against Aron Nimzowitsch, whose book \"My System\" was published around this time. The game is a model of his ideas: Black gives up a bishop to double White's c-pawns, blockades them, and stops every attempt by White to free his game. Only when White has run out of useful moves does Black open lines against the king.",
+    "sv": "Dresden 1926: Paul Johner mot Aron Nimzowitsch, vars bok \"My System\" gavs ut ungefär vid den här tiden. Partiet är ett skolexempel på hans idéer: Svart ger bort en löpare för att ge Vit dubbelbönder på c-linjen, blockerar dem och stoppar varje försök från Vit att befria sitt spel. Först när Vit har slut på nyttiga drag öppnar Svart linjer mot kungen."
+  },
+  "comments": [
+    {
+      "ply": 14,
+      "en": "With 7...Bxc3 8.bxc3 Black gives up the bishop pair to saddle White with doubled c-pawns. This is the Hübner Variation of the Nimzo-Indian: Black plans ...d6 and ...e5, putting his pawns on dark squares, where they restrict White's dark-squared bishop and make the doubled pawns hard to use.",
+      "sv": "Med 7...Bxc3 8.bxc3 ger Svart bort löparparet för att ge Vit dubbelbönder på c-linjen. Det här är Hübnervarianten i nimzoindiskt: Svart planerar ...d6 och ...e5 och ställer bönderna på svarta rutor, där de begränsar Vits svartfältslöpare och gör dubbelbönderna svåra att utnyttja."
+    },
+    {
+      "ply": 20,
+      "en": "11.f4? is the first real mistake. White wants to attack on the kingside, but after 11...e4 the bishop is driven off d3 and Black gets a strong pawn on e4 that cramps White's position. The engine preferred 11.e4, fighting for the centre.",
+      "sv": "11.f4? är det första riktiga misstaget. Vit vill anfalla på kungsflygeln, men efter 11...e4 drivs löparen bort från d3 och Svart får en stark bonde på e4 som gör den vita ställningen trång. Motorn föredrog 11.e4, som kämpar om centrum.",
+      "line": { "from": "before", "san": ["e4", "h6", "a4", "Re8", "f3"] }
+    },
+    {
+      "ply": 27,
+      "en": "14...h5 is typical Nimzowitsch restraint: the pawn controls g4, so it is much harder for White to expand with g2-g4, and later it can advance to h4 to open lines.",
+      "sv": "14...h5 är typisk nimzowitschsk återhållning: bonden kontrollerar g4, så det blir mycket svårare för Vit att expandera med g2-g4, och senare kan den gå vidare till h4 och öppna linjer."
+    },
+    {
+      "ply": 33,
+      "en": "After the manoeuvre ...Qd7-f5-h7 and ...Ne7-f5, the knight sits on a fine square protected by the queen, eyeing e3 and g3. White has no active plan, and the engine already prefers Black.",
+      "sv": "Efter manövern ...Qd7-f5-h7 och ...Ne7-f5 står springaren på en fin ruta, skyddad av damen, och siktar på e3 och g3. Vit saknar en aktiv plan, och motorn föredrar redan Svart."
+    },
+    {
+      "ply": 42,
+      "en": "22.d5? closes the centre completely. Now White has hardly any pawn breaks left, and Black can bring his pieces to the kingside without worrying about the centre. The engine preferred 22.Be2, waiting.",
+      "sv": "22.d5? stänger centrum helt. Nu har Vit knappt några bondebrytningar kvar, och Svart kan föra över sina pjäser till kungsflygeln utan att oroa sig för centrum. Motorn föredrog 22.Be2, ett väntedrag."
+    },
+    {
+      "ply": 47,
+      "en": "24...g5! Now that White is tied up, Nimzowitsch opens the attack. The rook on g8 is already waiting behind the pawn, and the g-file will open against White's king.",
+      "sv": "24...g5! Nu när Vit är fastlåst öppnar Nimzowitsch anfallet. Tornet på g8 väntar redan bakom bonden, och g-linjen kommer att öppnas mot den vita kungen."
+    },
+    {
+      "ply": 54,
+      "en": "28.Qd1? lets Black open the position. After 28...gxf4 29.exf4, the g-file is open and both black rooks aim at g3. The engine wanted 28.Rgg2, bringing a rook to g2 for defence.",
+      "sv": "28.Qd1? låter Svart öppna ställningen. Efter 28...gxf4 29.exf4 är g-linjen öppen och båda de svarta tornen siktar på g3. Motorn ville spela 28.Rgg2, som för ett torn till g2 för försvaret."
+    },
+    {
+      "ply": 57,
+      "en": "29...Bc8? Even Nimzowitsch misses something here. The engine shows that 29...Ng4+ would have broken through at once: after 30.Kg2 h4 31.Qxg4 Rxg4 32.hxg4 Rxg4 the attack continues with Black on the way to a win. The quiet bishop move gives White a chance to defend.",
+      "sv": "29...Bc8? Till och med Nimzowitsch missar något här. Motorn visar att 29...Ng4+ hade brutit igenom direkt: efter 30.Kg2 h4 31.Qxg4 Rxg4 32.hxg4 Rxg4 fortsätter anfallet och Svart är på väg mot vinst. Det lugna löpardraget ger Vit en chans att försvara sig.",
+      "line": { "from": "before", "san": ["Ng4+", "Kg2", "h4", "Qxg4", "Rxg4", "hxg4", "Rxg4"] }
+    },
+    {
+      "ply": 58,
+      "en": "30.Qb3? misses the chance. The engine's defence was 30.Qe1, bringing the queen back to the kingside; the queen on b3 is far from the king, and Black's advantage grows again.",
+      "sv": "30.Qb3? missar chansen. Motorns försvar var 30.Qe1, som för tillbaka damen till kungsflygeln; damen på b3 står långt från kungen, och Svarts fördel växer igen."
+    },
+    {
+      "ply": 65,
+      "en": "33...Bxh3! wins a pawn and strips away the cover in front of the white king. The bishop can't be taken: if the king captures on h3, a queen check on f5 starts a mating attack. The engine agrees it is the best move.",
+      "sv": "33...Bxh3! vinner en bonde och river bort skyddet framför den vita kungen. Löparen kan inte slås: om kungen tar på h3 inleder ett damschack på f5 ett mattanfall. Motorn håller med om att det är det bästa draget."
+    },
+    {
+      "ply": 75,
+      "en": "After 37...hxg3+ and 38...Qh3 the black queen has broken into White's position, with the pawn on g3 and both knights close by. White's pieces are scattered on the queenside and the back rank.",
+      "sv": "Efter 37...hxg3+ och 38...Qh3 har den svarta damen brutit sig in i den vita ställningen, med bonden på g3 och båda springarna i närheten. De vita pjäserna står utspridda på damflygeln och baslinjen."
+    },
+    {
+      "ply": 79,
+      "en": "40...Re8 brings the last piece into the attack, aiming at the knight on e3. The black queen and the knight on h4 both attack the rook on g2, and White's position is collapsing. Johner resigned.",
+      "sv": "40...Re8 tar in den sista pjäsen i anfallet och siktar på springaren på e3. Den svarta damen och springaren på h4 anfaller båda tornet på g2, och den vita ställningen rasar samman. Johner gav upp."
+    }
+  ],
+  "summary": {
+    "en": "Nimzowitsch played the whole game around one idea: fix White's doubled pawns and restrict his pieces, and attack only when White has nothing left to do. White helped with 11.f4, which gave Black the strong pawn on e4, and 22.d5, which closed the centre for good. Even in the attack Black was not perfect, but a bind like this gives you time to make up for small mistakes.",
+    "sv": "Nimzowitsch spelade hela partiet kring en idé: låsa fast Vits dubbelbönder och begränsa pjäserna, och anfalla först när Vit inte har något kvar att göra. Vit hjälpte till med 11.f4, som gav Svart den starka bonden på e4, och 22.d5, som stängde centrum för gott. Inte ens i anfallet var Svart felfri, men ett sådant grepp ger tid att reparera små misstag."
+  }
+}

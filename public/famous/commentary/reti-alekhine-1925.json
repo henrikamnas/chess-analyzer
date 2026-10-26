@@ -1,0 +1,93 @@
+{
+  "id": "reti-alekhine-1925",
+  "intro": {
+    "en": "Baden-Baden, 1925: Richard Réti, one of the leaders of the hypermodern school, against Alexander Alekhine, who won the tournament. For a long time the position is balanced and full of tension. Watch the g3 pawn: Alekhine's h-pawn loosens it, his rook attacks it from e3 with 26...Re3, and from then on every black piece joins in a long series of knight forks and discovered checks.",
+    "sv": "Baden-Baden 1925: Richard Réti, en av hypermodernismens ledargestalter, mot Alexander Aljechin, som vann turneringen. Länge är ställningen balanserad och full av spänning. Håll ögonen på bonden på g3: Aljechins h-bonde försvagar den, hans torn angriper den från e3 med 26...Re3, och därefter deltar varje svart pjäs i en lång serie springargafflar och avdragsschackar."
+  },
+  "comments": [
+    {
+      "ply": 3,
+      "en": "2...e4 chases the knight, and the opening is known as the Reversed Alekhine: White is in effect playing Alekhine's Defence with an extra tempo. Here it is Alekhine himself who, with Black, does the chasing.",
+      "sv": "2...e4 jagar springaren, och öppningen kallas omvänt Aljechinförsvar: Vit spelar i praktiken Aljechins försvar med ett extra tempo. Här är det Aljechin själv som, med de svarta pjäserna, står för jakten."
+    },
+    {
+      "ply": 19,
+      "en": "10...Nb4 goes the long way round to win back the pawn on d5, gaining time against the queen on the way. The engine prefers the simple 10...Nxd5, but both keep the position roughly level.",
+      "sv": "10...Nb4 tar en omväg för att vinna tillbaka bonden på d5 och vinner tid mot damen på vägen. Motorn föredrar det enkla 10...Nxd5, men båda håller ställningen ungefär jämn."
+    },
+    {
+      "ply": 38,
+      "en": "A curious dance: Alekhine's bishop has swung between g4 and h3, and Réti's bishop between g2 and f3, ending on h1. Each time the engine preferred taking on d5 with the bishop, giving it up for a knight to ease the pressure, but Réti kept his fianchettoed bishop each time.",
+      "sv": "En märklig dans: Aljechins löpare har pendlat mellan g4 och h3, och Rétis löpare mellan g2 och f3, för att till sist hamna på h1. Varje gång föredrog motorn att slå på d5 med löparen och ge den för en springare för att lätta trycket, men Réti behöll sin fianchetterade löpare varje gång.",
+      "line": {
+        "from": "before",
+        "san": ["Bxd5", "Nxd5", "f3", "Bh3", "Qb3", "Rb8"]
+      }
+    },
+    {
+      "ply": 39,
+      "en": "20...h5! Instead of repeating moves, Alekhine starts a new plan. The h-pawn marches towards g3 to break open the pawns in front of White's king. The engine agrees.",
+      "sv": "20...h5! I stället för att upprepa drag inleder Aljechin en ny plan. h-bonden marscherar mot g3 för att bryta upp bönderna framför den vita kungen. Motorn håller med."
+    },
+    {
+      "ply": 44,
+      "en": "23.a4 continues White's queenside play, but the engine preferred the central break 23.e4. After 23...hxg3 24.hxg3 the h-pawns are gone, and the g3 pawn in front of White's king is now a possible target.",
+      "sv": "23.a4 fortsätter Vits spel på damflygeln, men motorn föredrog centrumbrytningen 23.e4. Efter 23...hxg3 24.hxg3 är h-bönderna borta, och bonden på g3 framför den vita kungen är nu ett möjligt mål.",
+      "line": {
+        "from": "before",
+        "san": ["e4", "hxg3", "hxg3", "Nb6", "Qc3", "Qc7"]
+      }
+    },
+    {
+      "ply": 51,
+      "en": "26...Re3! is the famous move. The rook attacks g3, and it cannot be taken: capturing with the f-pawn opens the way for the queen on c7 to take on g3 with check, and Black's attack would be overwhelming. The engine agrees it is the best move, but the position is still level; it is a move that sets problems rather than one that wins.",
+      "sv": "26...Re3! är det berömda draget. Tornet angriper g3, och det kan inte slås: om f-bonden tar öppnas vägen för damen på c7 att slå på g3 med schack, och Svarts angrepp skulle bli överväldigande. Motorn håller med om att det är det bästa draget, men ställningen är fortfarande jämn; det är ett drag som ställer problem snarare än ett som vinner."
+    },
+    {
+      "ply": 52,
+      "en": "27.Nf3? is the real turning point. The knight leaves d4, where it guarded b5 and e2, and Black's pieces flood in. 27.Bf3 was the engine's choice: trading off Black's active bishop on g4 would have kept the balance.",
+      "sv": "27.Nf3? är den verkliga vändpunkten. Springaren lämnar d4, där den skyddade b5 och e2, och de svarta pjäserna väller in. 27.Bf3 var motorns val: att byta bort Svarts aktiva löpare på g4 hade hållit jämvikten.",
+      "line": {
+        "from": "before",
+        "san": ["Bf3", "Bxf3", "exf3", "cxb5", "Nxb5", "Qa5"]
+      }
+    },
+    {
+      "ply": 54,
+      "en": "28.Qxb5? makes things much worse. It allows 28...Nc3, a knight fork that hits the queen on b5 and the pawn on e2 at the same time. White had to play 28.Qd4, keeping the queen near the centre.",
+      "sv": "28.Qxb5? gör saken mycket värre. Det tillåter 28...Nc3, en springargaffel som träffar damen på b5 och bonden på e2 samtidigt. Vit måste spela 28.Qd4 och hålla damen nära centrum.",
+      "line": {
+        "from": "before",
+        "san": ["Qd4", "Ra4", "Nxa4", "Qxc1+", "Rd1"]
+      }
+    },
+    {
+      "ply": 61,
+      "en": "After the queens come off, material is level (White took b7, Black took e2), but Black's knights are swarming around White's king. 31...Ne4 heads for f2, where the knight will attack the bishop on h1.",
+      "sv": "Efter dambytet är materialet lika (Vit tog b7, Svart tog e2), men de svarta springarna svärmar kring den vita kungen. 31...Ne4 är på väg till f2, där springaren kommer att angripa löparen på h1."
+    },
+    {
+      "ply": 65,
+      "en": "33...Be6 attacks the rook on c4 and, just as importantly, clears g4 for a knight. From now on the knights jump around White's king with checks, and the bishop on e6 waits to give a discovered check along the diagonal to h3.",
+      "sv": "33...Be6 angriper tornet på c4 och, lika viktigt, frigör g4 för en springare. Från och med nu hoppar springarna runt den vita kungen med schackar, och löparen på e6 väntar på att ge avdragsschack längs diagonalen mot h3."
+    },
+    {
+      "ply": 71,
+      "en": "36...Rxf3! takes the knight even though the bishop on g2 can take back, because the final combination is ready. After 37.Rxe2 Ng4+ 38.Kh3 the knight jumps to e3, uncovering a check from the bishop on e6, and then takes the rook on c2.",
+      "sv": "36...Rxf3! slår springaren trots att löparen på g2 kan ta tillbaka, eftersom den avslutande kombinationen är klar. Efter 37.Rxe2 Ng4+ 38.Kh3 hoppar springaren till e3, vilket öppnar en schack från löparen på e6, och tar sedan tornet på c2.",
+      "line": {
+        "from": "after",
+        "san": ["Rxe2", "Ng4+", "Kh3", "Ne3+", "Kh2", "Nxc2"]
+      }
+    },
+    {
+      "ply": 79,
+      "en": "40...Nd4 and Réti resigned. The knight forks the rook on e2 and the bishop on f3, so Black will win another piece and be left far ahead in material.",
+      "sv": "40...Nd4 och Réti gav upp. Springaren gafflar tornet på e2 och löparen på f3, så Svart vinner ytterligare en pjäs och får ett stort materiellt övertag."
+    }
+  ],
+  "summary": {
+    "en": "Alekhine's play shows how to build pressure in a balanced position: the h-pawn loosened White's king, and the rook on e3 turned g3 into a permanent problem. But the engine is clear that the position was still level after 26...Re3; the game was decided by Réti's 27.Nf3 and 28.Qxb5, after which the knights did the rest. The finish is a lesson in knight forks combined with discovered checks.",
+    "sv": "Aljechins spel visar hur man bygger upp tryck i en balanserad ställning: h-bonden försvagade den vita kungen, och tornet på e3 gjorde g3 till ett ständigt problem. Men motorn är tydlig med att ställningen fortfarande var jämn efter 26...Re3; partiet avgjordes av Rétis 27.Nf3 och 28.Qxb5, varefter springarna gjorde resten. Slutet är en lektion i springargafflar kombinerade med avdragsschackar."
+  }
+}

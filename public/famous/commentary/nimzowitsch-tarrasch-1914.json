@@ -1,0 +1,90 @@
+{
+  "id": "nimzowitsch-tarrasch-1914",
+  "intro": {
+    "en": "St Petersburg, 1914: Aron Nimzowitsch against Siegbert Tarrasch, two great rivals with very different views on the opening and the centre. Tarrasch gets the 'hanging pawns' on c5 and d5. Watch how the advance of the d-pawn opens the diagonals for his two bishops, which then sacrifice themselves on h2 and g2 in the classic double bishop sacrifice.",
+    "sv": "S:t Petersburg 1914: Aron Nimzowitsch mot Siegbert Tarrasch, två stora rivaler med mycket olika syn på öppningen och centrum. Tarrasch får de 'hängande bönderna' på c5 och d5. Se hur d-bondens framryckning öppnar diagonalerna för hans två löpare, som sedan offrar sig på h2 och g2 i det klassiska dubbla löparoffret."
+  },
+  "comments": [
+    {
+      "ply": 3,
+      "en": "2...c5 is an active choice. Together with ...e6 it gives a Tarrasch-style set-up, and the game is classified as the Pseudo-Tarrasch line of the Queen's Gambit Declined. Black aims for free piece play and accepts that his d5 pawn may later become isolated or part of a pawn pair.",
+      "sv": "2...c5 är ett aktivt val. Tillsammans med ...e6 ger det en Tarraschuppställning, och partiet klassas som Pseudo-Tarrasch i avböjd damgambit. Svart vill ha fritt pjässpel och accepterar att d5-bonden senare kan bli isolerad eller del av ett bondepar."
+    },
+    {
+      "ply": 14,
+      "en": "White builds a quiet set-up with the bishop on b2 and soon the knight on d2. Again and again the engine prefers taking on c5 first, as with 8.dxc5, which would make Black decide about his centre pawns before he is fully developed.",
+      "sv": "Vit bygger en lugn uppställning med löparen på b2 och snart springaren på d2. Gång på gång föredrar motorn att först slå på c5, som med 8.dxc5, vilket hade tvingat Svart att bestämma sig om sina centrumbönder innan utvecklingen är klar."
+    },
+    {
+      "ply": 27,
+      "en": "After 14...bxc5 Black has the classic hanging pawns on c5 and d5, with no black pawns on the b- or e-file to support them. They control important central squares and can advance, but if they get stuck they are targets.",
+      "sv": "Efter 14...bxc5 har Svart de klassiska hängande bönderna på c5 och d5, utan svarta bönder på b- eller e-linjen som kan stödja dem. De kontrollerar viktiga centrumrutor och kan avancera, men om de fastnar blir de måltavlor."
+    },
+    {
+      "ply": 30,
+      "en": "16.Bxc6 gives up the bishop for the knight, and Black now has the two bishops. The engine preferred 16.Re1, keeping the bishop and bringing the rook to e1.",
+      "sv": "16.Bxc6 ger bort löparen mot springaren, och Svart har nu löparparet. Motorn föredrog 16.Re1, som behåller löparen och för tornet till e1."
+    },
+    {
+      "ply": 35,
+      "en": "18...d4! The hanging pawns come to life. The pawn leaves d5, so the bishop on c6 now looks straight down the diagonal to g2, while the bishop on d6 already aims at h2. Both of Black's bishops are pointing at the white king.",
+      "sv": "18...d4! De hängande bönderna vaknar till liv. Bonden lämnar d5, så löparen på c6 ser nu rakt längs diagonalen ner till g2, medan löparen på d6 redan siktar på h2. Båda svarta löparna pekar mot den vita kungen."
+    },
+    {
+      "ply": 36,
+      "en": "19.exd4?? is the losing move. It takes the pawn but does nothing about the two bishops. White had to block them: 19.g3 shuts the d6 bishop's diagonal on g3 and moves the pawn off g2, and 19.e4 would have blocked the c6 bishop's diagonal.",
+      "sv": "19.exd4?? är förlustdraget. Det slår bonden men gör ingenting åt de två löparna. Vit var tvungen att blockera dem: 19.g3 stänger d6-löparens diagonal på g3 och flyttar bort bonden från g2, och 19.e4 hade spärrat c6-löparens diagonal.",
+      "line": {
+        "from": "before",
+        "san": ["g3", "Ba8", "Nc4", "Qb7", "f3"]
+      }
+    },
+    {
+      "ply": 37,
+      "en": "19...Bxh2+! The first bishop sacrifice tears away the pawn in front of the king. After 20.Kxh2 the queen comes to h4 with check, and the second bishop is ready to take on g2. This is the same pattern Lasker used against Bauer in 1889.",
+      "sv": "19...Bxh2+! Det första löparoffret river bort bonden framför kungen. Efter 20.Kxh2 kommer damen till h4 med schack, och den andra löparen är redo att slå på g2. Det är samma mönster som Lasker använde mot Bauer 1889."
+    },
+    {
+      "ply": 41,
+      "en": "21...Bxg2! The second bishop goes, and now both the g- and h-pawns in front of the white king are gone. The queen and the rook on d8, which can swing over along the fifth rank, are ready to finish the job.",
+      "sv": "21...Bxg2! Den andra löparen offras, och nu är både g- och h-bonden framför den vita kungen borta. Damen och tornet på d8, som kan svänga över längs femte raden, står redo att avsluta jobbet."
+    },
+    {
+      "ply": 42,
+      "en": "Taking the second bishop was the engine's choice, but it costs White the queen: after 22.Kxg2 Qg4+ 23.Kh2 Rd5 the rook swings to h5, and White has to give up the queen for the rook. Nimzowitsch declined with 22.f3, which is even worse.",
+      "sv": "Att ta den andra löparen var motorns val, men det kostar Vit damen: efter 22.Kxg2 Qg4+ 23.Kh2 Rd5 svänger tornet över till h5, och Vit måste ge bort damen mot tornet. Nimzowitsch avböjde med 22.f3, som är ännu sämre.",
+      "line": {
+        "from": "before",
+        "san": ["Kxg2", "Qg4+", "Kh2", "Rd5", "Qxc5", "Rh5+", "Qxh5", "Qxh5+"]
+      }
+    },
+    {
+      "ply": 43,
+      "en": "22...Rfe8 brings the rook to the e-file. Here 19.exd4 hurts a second time: with both e-pawns gone, the file is fully open for Black's rooks.",
+      "sv": "22...Rfe8 för in tornet på e-linjen. Här svider 19.exd4 en andra gång: när båda e-bönderna är borta är linjen helt öppen för Svarts torn."
+    },
+    {
+      "ply": 47,
+      "en": "After 23...Qh1+ 24.Kf2 Bxf1 Black has won a rook and is ahead in material, and the white king is out in the open. The rest is a king hunt.",
+      "sv": "Efter 23...Qh1+ 24.Kf2 Bxf1 har Svart vunnit ett torn och ligger före i material, och den vita kungen står ute i det fria. Resten är en kungsjakt."
+    },
+    {
+      "ply": 55,
+      "en": "28...f4+ is not the quickest win. The engine finds a mate in three: 28...Qg3+ drives the king to d1, where 30...Qe2 is mate, with the bishop on f1 guarding the queen. Tarrasch's move still mates, only a few moves later.",
+      "sv": "28...f4+ är inte den snabbaste vinsten. Motorn hittar matt i tre drag: 28...Qg3+ driver kungen till d1, där 30...Qe2 är matt, eftersom löparen på f1 skyddar damen. Tarraschs drag leder också till matt, bara några drag senare.",
+      "line": {
+        "from": "before",
+        "san": ["Qg3+", "Kd2", "Qf2+", "Kd1", "Qe2#"]
+      }
+    },
+    {
+      "ply": 63,
+      "en": "32...Bb5# The bishop that recaptured on c6 gives the final mate. The rook on e8 covers e7, e6, d8 and c8, the queen on h2 covers d6 and c7, and the bishop covers c6 and also e8 behind the king, so the king cannot take the rook.",
+      "sv": "32...Bb5# Löparen som slog tillbaka på c6 sätter den avslutande matten. Tornet på e8 täcker e7, e6, d8 och c8, damen på h2 täcker d6 och c7, och löparen täcker c6 och även e8 bakom kungen, så att kungen inte kan slå tornet."
+    }
+  ],
+  "summary": {
+    "en": "Tarrasch's hanging pawns were not a weakness here: the push 18...d4 opened the long diagonal and left both bishops aimed at the white king. Nimzowitsch's 19.exd4 grabbed a pawn instead of blocking the bishops with 19.g3 or 19.e4, and the double bishop sacrifice on h2 and g2 stripped his king of its pawn cover. The lesson is to check what the opponent's pieces are aiming at before taking material.",
+    "sv": "Tarraschs hängande bönder var ingen svaghet här: framstöten 18...d4 öppnade den långa diagonalen och lämnade båda löparna riktade mot den vita kungen. Nimzowitschs 19.exd4 tog en bonde i stället för att blockera löparna med 19.g3 eller 19.e4, och det dubbla löparoffret på h2 och g2 skalade av kungens bondeskydd. Läxan är att kontrollera vad motståndarens pjäser siktar på innan man tar material."
+  }
+}

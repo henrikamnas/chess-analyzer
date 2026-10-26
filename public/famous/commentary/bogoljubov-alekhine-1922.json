@@ -1,0 +1,89 @@
+{
+  "id": "bogoljubov-alekhine-1922",
+  "intro": {
+    "en": "Hastings, 1922: Efim Bogoljubov against Alexander Alekhine in a Dutch Defence. The game turns on pawn structure: White's f-pawn moves leave the light squares in his camp weak, and a black knight eventually settles on d3. Then comes one of Alekhine's best-known ideas, a queen sacrifice that lets a pawn run through to promote.",
+    "sv": "Hastings 1922: Efim Bogoljubov mot Alexander Aljechin i ett holländskt försvar. Partiet avgörs av bondestrukturen: Vits f-bondedrag lämnar de vita rutorna i hans läger svaga, och till slut slår sig en svart springare ner på d3. Sedan kommer en av Aljechins mest kända idéer, ett damoffer som låter en bonde springa hela vägen fram och förvandlas."
+  },
+  "comments": [
+    {
+      "ply": 7,
+      "en": "4...Bb4+ gives the Nimzo-Dutch Variation: the bishop comes out with check, as in the Nimzo-Indian, and Black is happy to trade it. With his pawns on e6 and f5, Black's play will be on the light squares, especially e4.",
+      "sv": "4...Bb4+ ger Nimzo-holländskan: löparen kommer ut med schack, som i nimzoindiskt, och Svart byter gärna bort den. Med bönderna på e6 och f5 kommer Svarts spel att ske på de vita rutorna, särskilt e4."
+    },
+    {
+      "ply": 18,
+      "en": "Both sides drift here. 9...Kh8 was slow, and White could have punished it with 10.d5, hitting the knight on c6 and gaining space in the centre. After 10.Qc3 Black frees his game with ...e5, and the position is level again.",
+      "sv": "Båda sidor driver här. 9...Kh8 var långsamt, och Vit kunde ha straffat det med 10.d5, som angriper springaren på c6 och vinner utrymme i centrum. Efter 10.Qc3 befriar Svart spelet med ...e5, och ställningen är jämn igen.",
+      "line": {
+        "from": "before",
+        "san": ["d5", "exd5", "cxd5", "Ne7", "Nd4"]
+      }
+    },
+    {
+      "ply": 30,
+      "en": "16.f3? is the first serious mistake. It drives the knight back, but White's f-pawn will need another move to reach f4, and the pawn moves weaken the light squares around White's king. The engine wanted 16.b4, getting on with play on the queenside.",
+      "sv": "16.f3? är det första allvarliga misstaget. Det driver tillbaka springaren, men Vits f-bonde kommer att behöva ännu ett drag för att nå f4, och bondedragen försvagar de vita rutorna runt den vita kungen. Motorn ville spela 16.b4 och komma igång med spelet på damflygeln.",
+      "line": {
+        "from": "before",
+        "san": ["b4", "h6", "Nh3", "axb4", "axb4", "Rae8"]
+      }
+    },
+    {
+      "ply": 33,
+      "en": "After 17.f4 e4 the structure is fixed in Black's favour. The pawn on e4 is firmly supported, the white pawn on e3 is stuck behind it, and with White's c- and e-pawns gone from c2 and e2, no white pawn can ever control d3. That square is now a permanent hole for a black knight.",
+      "sv": "Efter 17.f4 e4 är strukturen låst till Svarts fördel. Bonden på e4 har ett stabilt stöd, den vita bonden på e3 sitter fast bakom den, och eftersom Vits c- och e-bönder har lämnat c2 och e2 kan ingen vit bonde någonsin kontrollera d3. Den rutan är nu ett permanent hål för en svart springare."
+    },
+    {
+      "ply": 43,
+      "en": "20...Ne7, 21...Nc6 and 22...Nb4: the knight is on its way to d3, the hole that White's pawn moves created. Meanwhile White's knights have gone to h3 and f1, far from the queenside where the game will be decided.",
+      "sv": "20...Ne7, 21...Nc6 och 22...Nb4: springaren är på väg till d3, det hål som Vits bondedrag skapade. Samtidigt har Vits springare gått till h3 och f1, långt från damflygeln där partiet kommer att avgöras."
+    },
+    {
+      "ply": 49,
+      "en": "24...dxc4 and 25...Bxa4 open the queenside and win a pawn. White's rook on g2, bishop on h1 and knights on h3 and f1 are all far from the action.",
+      "sv": "24...dxc4 och 25...Bxa4 öppnar damflygeln och vinner en bonde. Vits torn på g2, löpare på h1 och springare på h3 och f1 står alla långt från händelserna."
+    },
+    {
+      "ply": 55,
+      "en": "28...Nd3 and the knight has arrived. From d3 it hits the f4 pawn and controls c1 and e1, it cannot be chased away by a pawn, and it will play a key part in the combination that follows.",
+      "sv": "28...Nd3 och springaren är framme. Från d3 angriper den bonden på f4 och kontrollerar c1 och e1, den kan inte drivas bort av en bonde, och den kommer att spela en nyckelroll i kombinationen som följer."
+    },
+    {
+      "ply": 57,
+      "en": "29...b4! is the famous idea. Black ignores the attack on the rook a8 and attacks the white queen; when White takes the rook, the pawn takes the queen and races towards c1. The engine actually rates the quiet 29...Qh5 a little higher, but Black is winning either way.",
+      "sv": "29...b4! är den berömda idén. Svart bryr sig inte om angreppet mot tornet på a8 och angriper den vita damen; när Vit tar tornet slår bonden damen och rusar mot c1. Motorn värderar faktiskt det lugna 29...Qh5 något högre, men Svart vinner i båda fallen.",
+      "line": {
+        "from": "before",
+        "san": ["Qh5", "g4", "fxg4", "Nf1", "g3"]
+      }
+    },
+    {
+      "ply": 59,
+      "en": "30...bxc3! Alekhine leaves his queen on e8 to be taken. After 31.Rxe8 c2 the pawn is one step from queening: the knight on d3 covers c1, and the pawn can also promote by taking the knight on d1. The engine notes that simply recapturing with 30...Qxa8 was also winning, and even a bit stronger.",
+      "sv": "30...bxc3! Aljechin låter damen på e8 stå kvar för att tas. Efter 31.Rxe8 c2 är bonden ett steg från förvandling: springaren på d3 täcker c1, och bonden kan också förvandlas genom att slå springaren på d1. Motorn påpekar att det enkla 30...Qxa8 också vann, och till och med var lite starkare.",
+      "line": {
+        "from": "after",
+        "san": ["Rxe8", "c2", "Rxf8+", "Kh7", "Nf2", "c1=Q+", "Nf1"]
+      }
+    },
+    {
+      "ply": 67,
+      "en": "34...Ne1! On paper White has more material, but his pieces are tangled up. The knight attacks the rook on g2 and threatens a check on f3, and Black's new queen will soon collect the c4 pawn.",
+      "sv": "34...Ne1! På papperet har Vit mer material, men pjäserna är hopsnärjda. Springaren angriper tornet på g2 och hotar schack på f3, och Svarts nya dam kommer snart att plocka bonden på c4."
+    },
+    {
+      "ply": 77,
+      "en": "After 38...Nf3+ 39.Bxf3 exf3 Black has a passed pawn on f3, close to White's king. With queen and knight against White's rook and two knights, Black is clearly winning.",
+      "sv": "Efter 38...Nf3+ 39.Bxf3 exf3 har Svart en fribonde på f3, nära den vita kungen. Med dam och springare mot Vits torn och två springare står Svart klart till vinst."
+    },
+    {
+      "ply": 99,
+      "en": "After the last pieces come off, Bogoljubov resigned. In the pawn endgame Black is a pawn up, and the passed d-pawn will pull White's king away from the kingside pawns.",
+      "sv": "När de sista pjäserna har bytts av gav Bogoljubov upp. I bondeslutspelet har Svart en merbonde, och den fria d-bonden kommer att dra bort den vita kungen från bönderna på kungsflygeln."
+    }
+  ],
+  "summary": {
+    "en": "The game was decided by structure before the tactics began: 16.f3 and 17.f4 allowed ...e4, and the hole on d3 became a home for Alekhine's knight. The famous queen sacrifice was not strictly necessary, since the engine finds simpler wins, but it is a beautiful illustration of a passed pawn backed by a well-placed knight. The lesson for White: pawn moves cannot be taken back, and the squares they stop guarding stay weak.",
+    "sv": "Partiet avgjordes av strukturen innan taktiken började: 16.f3 och 17.f4 tillät ...e4, och hålet på d3 blev ett hem för Aljechins springare. Det berömda damoffret var inte strikt nödvändigt, eftersom motorn hittar enklare vinster, men det är en vacker illustration av en fribonde med stöd av en välplacerad springare. Läxan för Vit: bondedrag kan inte tas tillbaka, och de rutor de slutar skydda förblir svaga."
+  }
+}
