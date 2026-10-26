@@ -1,0 +1,109 @@
+{
+  "id": "kramnik-anand-2008-g5",
+  "intro": {
+    "en": "Bonn 2008, game 5 of the World Championship match between Vladimir Kramnik and Viswanathan Anand. Anand had won game 3 with Black in the Meran, and here the same sharp line appeared again, with Anand changing his move order on move 15. The game stays balanced for a long time; watch how one natural-looking capture on move 29 decides it.",
+    "sv": "Bonn 2008, parti 5 i VM-matchen mellan Vladimir Kramnik och Viswanathan Anand. Anand hade vunnit parti 3 med svart i Meranvarianten, och här kom samma skarpa variant igen, där Anand ändrade dragordningen i drag 15. Partiet är i balans länge; se hur ett naturligt slag i drag 29 avgör det."
+  },
+  "comments": [
+    {
+      "ply": 23,
+      "en": "The same forcing sequence as in game 3: the knights have been traded, Black has an extra pawn on d4, but his kingside pawns are split and his king has no safe home.",
+      "sv": "Samma forcerande följd som i parti 3: springarna har bytts, Svart har en extra bonde på d4, men bönderna på kungsflygeln är splittrade och kungen saknar ett säkert hem."
+    },
+    {
+      "ply": 29,
+      "en": "15...Rg8 is where Anand deviates: in game 3 he first developed the bishop to d6. The rook goes straight to the half-open g-file, aiming at g2.",
+      "sv": "15...Rg8 är där Anand avviker: i parti 3 utvecklade han först löparen till d6. Tornet går direkt till den halvöppna g-linjen och siktar på g2."
+    },
+    {
+      "ply": 30,
+      "en": "16.Bf4 develops the bishop, but the engine preferred 16.a4, using the a-pawn to open lines against Black's pieces.",
+      "sv": "16.Bf4 utvecklar löparen, men motorn föredrog 16.a4, där a-bonden används för att öppna linjer mot Svarts pjäser.",
+      "line": {
+        "from": "before",
+        "san": [
+          "a4",
+          "Bd6",
+          "g3",
+          "Ke7"
+        ]
+      }
+    },
+    {
+      "ply": 35,
+      "en": "17...f5 and 18...f4 drive the bishop away to h4 and take the e3 and g3 squares from White's pieces. The engine slightly preferred 17...Ke7, and 18.Rfc1 was a little imprecise (18.a4 was better), but the balance holds.",
+      "sv": "17...f5 och 18...f4 driver bort löparen till h4 och tar rutorna e3 och g3 från Vits pjäser. Motorn föredrog en aning 17...Ke7, och 18.Rfc1 var något oprecist (18.a4 var bättre), men balansen håller."
+    },
+    {
+      "ply": 41,
+      "en": "21...Ke7 again keeps the king in the centre, sheltered by the pawns on e6 and f7, and connects the rooks. The engine preferred 21...Qd6, but this is a small difference.",
+      "sv": "21...Ke7 håller återigen kungen i centrum, skyddad av bönderna på e6 och f7, och förbinder tornen. Motorn föredrog 21...Qd6, men skillnaden är liten."
+    },
+    {
+      "ply": 42,
+      "en": "22.Ra3 lets Black trade a pair of rooks on the c-file with 22...Rac8, and the game is level. The engine liked 22.Bxd7, giving up the bishop to pull Black's king forward.",
+      "sv": "22.Ra3 låter Svart byta ett tornpar på c-linjen med 22...Rac8, och partiet är jämnt. Motorn gillade 22.Bxd7, där löparen ges för att dra fram Svarts kung.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Bxd7",
+          "Kxd7",
+          "Qh5",
+          "Rg7"
+        ]
+      }
+    },
+    {
+      "ply": 55,
+      "en": "28...Rc3 activates the rook: it attacks the knight on f3, and Black's queen on f6 guards the d4 pawn along the diagonal. The position is still balanced.",
+      "sv": "28...Rc3 aktiverar tornet: det angriper springaren på f3, och Svarts dam på f6 skyddar d4-bonden längs diagonalen. Ställningen är fortfarande i balans."
+    },
+    {
+      "ply": 56,
+      "en": "29.Nxd4?? is the blunder that decides the game. It looks like a simple pawn grab, but the queen on f6 guards d4, and 29...Qxd4 just takes the knight. 29.Qh5 kept the balance.",
+      "sv": "29.Nxd4?? är blundern som avgör partiet. Det ser ut som ett enkelt bondeslag, men damen på f6 skyddar d4, och 29...Qxd4 tar helt enkelt springaren. 29.Qh5 höll balansen.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qh5",
+          "Bxf3",
+          "gxf3",
+          "Qg6+"
+        ]
+      }
+    },
+    {
+      "ply": 59,
+      "en": "30.Rd1 was White's idea: the rook hits the queen and lines up on the knight on d7. But 30...Nf6! moves the knight away with an attack on White's queen. After 31.Rxd4 Nxg4 the queens are gone and Black is a knight for a pawn up.",
+      "sv": "30.Rd1 var Vits idé: tornet angriper damen och siktar mot springaren på d7. Men 30...Nf6! flyttar undan springaren med angrepp på Vits dam. Efter 31.Rxd4 Nxg4 är damerna borta och Svart har en springare mot en bonde."
+    },
+    {
+      "ply": 64,
+      "en": "33.Rxb7 takes the bishop, and on material White is now even a pawn ahead, but it walks into the finish because White's back rank is weak. The engine preferred 33.Rd1, bringing the rook back to guard the first rank.",
+      "sv": "33.Rxb7 tar löparen, och i material har Vit nu till och med en bonde mer, men draget går rakt in i avslutningen eftersom Vits baklinje är svag. Motorn föredrog 33.Rd1, där tornet går tillbaka för att vakta första raden.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Rd1",
+          "Rb3",
+          "h3",
+          "Nh6"
+        ]
+      }
+    },
+    {
+      "ply": 67,
+      "en": "33...Rc1+ 34.Bf1 pins the bishop to the king, and 34...Ne3! gives up the knight to bring a pawn to e3.",
+      "sv": "33...Rc1+ 34.Bf1 binder löparen mot kungen, och 34...Ne3! ger springaren för att få fram en bonde till e3."
+    },
+    {
+      "ply": 69,
+      "en": "After 35.fxe3 fxe3 Kramnik resigned. The bishop on f1 is pinned by the rook on c1, the pawn on e3 takes f2 from White's king so it can only go to h1, and the e-pawn is heading for e2. White is still a bishop up, but cannot hold on to it: the threat of ...e2 costs White at least a whole rook, and Black's extra rook decides.",
+      "sv": "Efter 35.fxe3 fxe3 gav Kramnik upp. Löparen på f1 är bunden av tornet på c1, bonden på e3 tar f2 från Vits kung så att den bara kan gå till h1, och e-bonden är på väg mot e2. Vit har fortfarande en löpare mer men kan inte behålla den: hotet ...e2 kostar Vit minst ett helt torn, och Svarts extra torn avgör."
+    }
+  ],
+  "summary": {
+    "en": "For 28 moves this was a balanced fight in which both kings were exposed and both sides made only small inaccuracies. Then 29.Nxd4 missed a simple defender, the queen on f6, and Anand's 30...Nf6 and 34...Ne3 finished the job by using White's weak back rank. The lesson: before taking a pawn, check every piece that guards it, even one far away on a diagonal. With this second win with Black, Anand took a two-point lead in the match.",
+    "sv": "I 28 drag var detta en jämn kamp där båda kungarna stod öppet och båda sidor bara gjorde små felaktigheter. Sedan missade 29.Nxd4 en enkel försvarare, damen på f6, och Anands 30...Nf6 och 34...Ne3 avslutade arbetet genom att utnyttja Vits svaga baklinje. Lärdomen: innan du tar en bonde, kontrollera varje pjäs som skyddar den, även en som står långt bort på en diagonal. Med denna andra vinst med svart tog Anand två poängs ledning i matchen."
+  }
+}

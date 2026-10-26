@@ -1,0 +1,108 @@
+{
+  "id": "karpov-topalov-1994",
+  "intro": {
+    "en": "Dos Hermanas, 1994: FIDE world champion Anatoly Karpov against the young Veselin Topalov. After an early exchange in the centre the position is open and roughly level for a long time. Watch how Karpov keeps making small improvements until Black's king steps onto the wrong square, and then finishes with one of his most famous combinations.",
+    "sv": "Dos Hermanas 1994: FIDE-världsmästaren Anatolij Karpov mot den unge Veselin Topalov. Efter ett tidigt byte i centrum är ställningen öppen och ungefär jämn länge. Se hur Karpov hela tiden gör små förbättringar tills den svarta kungen kliver in på fel ruta, och sedan avslutar med en av sina mest berömda kombinationer."
+  },
+  "comments": [
+    {
+      "ply": 10,
+      "en": "After 3.d5 e6 4.Nc3 Nxd5 5.Nxd5 exd5 6.Qxd5 the central pawns have been traded and White's queen stands in the middle of the board. This is no longer a typical Benoni with locked pawns; it is an open position where development decides. The engine preferred 4.c4, which leads to a more normal Benoni structure.",
+      "sv": "Efter 3.d5 e6 4.Nc3 Nxd5 5.Nxd5 exd5 6.Qxd5 är centrumbönderna bytta och Vits dam står mitt på brädet. Det är inte längre ett typiskt Benoni med låsta bönder, utan en öppen ställning där utvecklingen avgör. Motorn föredrog 4.c4, som leder till en mer normal Benonistruktur."
+    },
+    {
+      "ply": 29,
+      "en": "15...d5 frees Black's game. Black gets rid of the backward pawn on d6, and after the exchange on d5 both sides have open lines for their rooks and bishops. The position is level.",
+      "sv": "15...d5 befriar Svarts spel. Svart blir av med den efterblivna bonden på d6, och efter bytet på d5 har båda sidor öppna linjer för torn och löpare. Ställningen är jämn."
+    },
+    {
+      "ply": 40,
+      "en": "21.Bc7 is typical Karpov: the bishop slips into Black's position and attacks the rook on d8, pushing Black off the d-file. It is not a big threat, but it makes Black's pieces a little less comfortable.",
+      "sv": "21.Bc7 är typiskt Karpov: löparen smyger in i den svarta ställningen och angriper tornet på d8, så att Svart trycks bort från d-linjen. Det är inget stort hot, men det gör de svarta pjäserna lite mindre bekväma."
+    },
+    {
+      "ply": 45,
+      "en": "23...Re4? is the first real mistake. The rook looks active, but after 24.Ne3 the knight hits the bishop on f5, and Black must spend time retreating. The engine's choice was the calm 23...Be6.",
+      "sv": "23...Re4? är det första riktiga misstaget. Tornet ser aktivt ut, men efter 24.Ne3 angriper springaren löparen på f5, och Svart måste lägga tid på att backa. Motorns val var det lugna 23...Be6.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Be6",
+          "Rd1",
+          "Re7",
+          "a4",
+          "Bxc4",
+          "Bxc4"
+        ]
+      }
+    },
+    {
+      "ply": 47,
+      "en": "24...Bc8 shows how passive Black has become: the bishop goes all the way back home. White's knight and bishop are both active, and Black's pieces are short of good squares.",
+      "sv": "24...Bc8 visar hur passiv Svart har blivit: löparen går ända hem igen. Vits springare och löpare är båda aktiva, och de svarta pjäserna saknar bra rutor."
+    },
+    {
+      "ply": 53,
+      "en": "27...Kg7? is a serious mistake. The king steps closer to White's pieces and onto the dark squares, where it will soon be a target; in the finish it is lured forward to f6. The engine wanted 27...Be6, developing the bishop.",
+      "sv": "27...Kg7? är ett allvarligt misstag. Kungen kliver närmare de vita pjäserna och ut på de mörka rutorna, där den snart blir ett mål; i slutet lockas den fram till f6. Motorn ville ha 27...Be6, som utvecklar löparen."
+    },
+    {
+      "ply": 54,
+      "en": "28.Bf4 hits the queen and brings the bishop to the diagonal towards h6. The black queen has to find a new square, and every square is a little worse than the last.",
+      "sv": "28.Bf4 angriper damen och för löparen till diagonalen mot h6. Den svarta damen måste hitta en ny ruta, och varje ruta är lite sämre än den förra."
+    },
+    {
+      "ply": 55,
+      "en": "28...Qe7? makes things worse. The engine's choice was 28...Qh5, offering a queen trade that takes the sting out of White's attack, even though Black would still be close to lost.",
+      "sv": "28...Qe7? gör saken värre. Motorns val var 28...Qh5, som erbjuder dambyte och tar udden av Vits anfall, även om Svart fortfarande står nära förlust.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qh5",
+          "g4",
+          "Qh4",
+          "Bc4",
+          "Qe7"
+        ]
+      }
+    },
+    {
+      "ply": 57,
+      "en": "29.Nd5 drives the queen again, and 29...Qe4? walks into the combination. The queen on e4 is attacked by White's queen on f3 and defended only by the rook on e8. The engine's defence was 29...Qh4.",
+      "sv": "29.Nd5 jagar damen igen, och 29...Qe4? går rakt in i kombinationen. Damen på e4 är angripen av Vits dam på f3 och skyddas bara av tornet på e8. Motorns försvar var 29...Qh4."
+    },
+    {
+      "ply": 58,
+      "en": "30.Nf6!! The knight attacks both the queen on e4 and the rook on e8. If Black trades queens on f3, the knight takes on e8 with check and White wins material. Taking the knight with the king is Black's best try, but it walks into the next blow.",
+      "sv": "30.Nf6!! Springaren angriper både damen på e4 och tornet på e8. Om Svart byter damer på f3 tar springaren på e8 med schack, och Vit vinner material. Att ta springaren med kungen är Svarts bästa försök, men då kommer nästa slag."
+    },
+    {
+      "ply": 60,
+      "en": "31.Be5+ is a double check: the bishop gives check, and moving it opens the f-file for White's queen on f3. The king must move: 31...Ke7 (or the king stepping to e6) allows 32.Qf6#, and 31...Kg5 allows 32.Bf6#, so Topalov took the bishop and his king came forward to e5.",
+      "sv": "31.Be5+ är en dubbelschack: löparen ger schack, och när den flyttar öppnas f-linjen för Vits dam på f3. Kungen måste flytta: 31...Ke7 (eller ett kungsdrag till e6) tillåter 32.Qf6#, och 31...Kg5 tillåter 32.Bf6#, så Topalov tog löparen och kungen kom fram till e5."
+    },
+    {
+      "ply": 64,
+      "en": "32.Qxe4+ Kxe4 33.Re1+ is the practical way to cash in: the rook checks the king and wins the rook on e8 behind it. The engine actually preferred 32.Qxf7, keeping the queens and hunting the king, but Karpov's choice leads to a simple winning endgame.",
+      "sv": "32.Qxe4+ Kxe4 33.Re1+ är det praktiska sättet att realisera fördelen: tornet ger schack och vinner tornet på e8 bakom kungen. Motorn föredrog faktiskt 32.Qxf7, som behåller damerna och jagar kungen, men Karpovs val leder till ett enkelt vunnet slutspel."
+    },
+    {
+      "ply": 70,
+      "en": "After 34.Rxe8 and 35.Rxf8 White has rook and bishop against Black's bishop and knight, the exchange for a pawn, and 36.Rc8 brings the rook in behind Black's pawns. Topalov resigned.",
+      "sv": "Efter 34.Rxe8 och 35.Rxf8 har Vit torn och löpare mot Svarts löpare och springare, en kvalitet mot en bonde, och 36.Rc8 tar in tornet bakom de svarta bönderna. Topalov gav upp.",
+      "line": {
+        "from": "after",
+        "san": [
+          "Ke6",
+          "Rc7",
+          "Na5",
+          "Rxc5"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "en": "For a long time this was a level game, and Black lost it through small retreats and one bad king move: 27...Kg7 brought the king closer to White's pieces, which made the 30.Nf6 and 31.Be5+ combination possible. The lesson is that tactics grow out of positional weaknesses: Karpov did not go looking for a combination, he improved his pieces until one appeared. Note too that the most practical win is not always the engine's first choice.",
+    "sv": "Länge var detta ett jämnt parti, och Svart förlorade det genom små reträtter och ett dåligt kungsdrag: 27...Kg7 förde kungen närmare de vita pjäserna, vilket gjorde kombinationen med 30.Nf6 och 31.Be5+ möjlig. Lärdomen är att taktik växer fram ur positionella svagheter: Karpov letade inte efter en kombination, han förbättrade sina pjäser tills en dök upp. Lägg också märke till att den mest praktiska vinsten inte alltid är motorns förstaval."
+  }
+}

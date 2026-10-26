@@ -1,0 +1,94 @@
+{
+  "id": "karpov-kasparov-1985-g24",
+  "intro": {
+    "en": "Moscow, 1985, the last game of the World Championship match. Kasparov led by a point, so Anatoly Karpov had to win with White to draw the match and keep his title. Karpov attacks on the kingside with his pawns, Kasparov answers with a Sicilian Scheveningen and well-timed counterplay, and the game swings back and forth before the finish.",
+    "sv": "Moskva 1985, sista partiet i VM-matchen. Kasparov ledde med en poäng, så Anatolij Karpov måste vinna med vit för att få oavgjort i matchen och behålla titeln. Karpov anfaller med bönderna på kungsflygeln, Kasparov svarar med en siciliansk Scheveningen och välavvägt motspel, och partiet svänger fram och tillbaka innan avgörandet."
+  },
+  "comments": [
+    {
+      "ply": 11,
+      "en": "6...e6 turns the Najdorf move order into the Scheveningen: Black sets up a 'small centre' with pawns on d6 and e6. It looks modest, but it is solid and flexible, and Black waits for the right moment to strike back with ...b5, ...d5 or ...e5.",
+      "sv": "6...e6 gör om Najdorfs dragordning till Scheveningen: Svart bygger ett 'litet centrum' med bönder på d6 och e6. Det ser blygsamt ut men är solitt och flexibelt, och Svart väntar på rätt ögonblick att slå tillbaka med ...b5, ...d5 eller ...e5."
+    },
+    {
+      "ply": 18,
+      "en": "White follows the classical plan against the Scheveningen: f4, Kh1, and now 10.a4, which stops Black's queenside expansion with ...b5. With the queenside quiet, White can prepare a pawn storm on the other wing.",
+      "sv": "Vit följer den klassiska planen mot Scheveningen: f4, Kh1 och nu 10.a4, som stoppar Svarts expansion på damflygeln med ...b5. När damflygeln är lugn kan Vit förbereda en bondestorm på den andra flygeln."
+    },
+    {
+      "ply": 30,
+      "en": "15.g4 and 16.g5 are the storm. The pawn drives the knight away from f6, its best defensive square, and gains space in front of Black's king. The position is still close to balanced, but Black must find counterplay.",
+      "sv": "15.g4 och 16.g5 är stormen. Bonden driver bort springaren från f6, dess bästa försvarsruta, och vinner utrymme framför den svarta kungen. Ställningen är fortfarande nära balans, men Svart måste hitta motspel."
+    },
+    {
+      "ply": 40,
+      "en": "21.Rd3 starts a rook lift: the rook goes to h3 to aim at h7. It is slow, though, and the engine says Black could now strike in the centre with 21...d5. That is the classic answer to a flank attack: open the centre while the attacker's pieces are on the wing.",
+      "sv": "21.Rd3 inleder en tornlyft: tornet går till h3 för att sikta mot h7. Draget är dock långsamt, och motorn säger att Svart nu kunde slå till i centrum med 21...d5. Det är det klassiska svaret på ett flankanfall: öppna centrum medan anfallarens pjäser står på flygeln."
+    },
+    {
+      "ply": 41,
+      "en": "21...Nb4 hits the rook on d3, but it is an inaccuracy: the engine's central break 21...d5 would have given Black the better game. Keep an eye on this knight, though: it will land on c2 later and play a big part in the finish.",
+      "sv": "21...Nb4 anfaller tornet på d3, men det är en onoggrannhet: motorns centrumgenombrott 21...d5 hade gett Svart det bättre spelet. Håll ändå ögonen på den här springaren: den hamnar senare på c2 och spelar en stor roll i slutet.",
+      "line": {
+        "from": "before",
+        "san": ["d5", "f5", "Nde5", "fxg6", "fxg6", "Rdd1", "d4"]
+      }
+    },
+    {
+      "ply": 49,
+      "en": "25...f5! Kasparov hits back. If White takes on f6, the knight returns to f6 and the f-file opens for Black's rooks, aimed at the white pawn on f4.",
+      "sv": "25...f5! Kasparov slår tillbaka. Om Vit slår på f6 återvänder springaren till f6, och f-linjen öppnas för Svarts torn, riktade mot den vita bonden på f4."
+    },
+    {
+      "ply": 54,
+      "en": "28.Bxb6 wins a pawn, but the engine calls the position equal. The bishop has left the defence of White's king, and Black's pieces are becoming active.",
+      "sv": "28.Bxb6 vinner en bonde, men motorn bedömer ställningen som jämn. Löparen har lämnat försvaret av den vita kungen, och Svarts pjäser blir allt aktivare."
+    },
+    {
+      "ply": 61,
+      "en": "31...g5! gives up a pawn to open lines. After 32.fxg5 the f-file is open, and 32...Ng4 is a discovered attack: the knight hits the queen on f2 and the bishop on e3, and by leaving f6 it lets the rook on f7 attack the queen too. So the rook on h4 has no time to take the knight: the queen on f2 would be lost.",
+      "sv": "31...g5! offrar en bonde för att öppna linjer. Efter 32.fxg5 är f-linjen öppen, och 32...Ng4 är ett avdragsanfall: springaren anfaller damen på f2 och löparen på e3, och när den lämnar f6 anfaller även tornet på f7 damen. Tornet på h4 hinner därför inte slå springaren: damen på f2 skulle gå förlorad."
+    },
+    {
+      "ply": 67,
+      "en": "34...Nxc2 wins back a pawn and attacks the queen on e3. White is still a pawn up, but the rook on h4 is far from the action, and Black has the more active pieces.",
+      "sv": "34...Nxc2 vinner tillbaka en bonde och anfaller damen på e3. Vit har fortfarande en merbonde, men tornet på h4 står långt från händelserna, och Svart har de aktivare pjäserna."
+    },
+    {
+      "ply": 70,
+      "en": "36.Rxd6? is a serious mistake. After 36...Rb7 the rook hits the queen, and the knight on b3 is protected only by the queen. The engine shows that 36.Qxb8, trading queens, would have kept the balance.",
+      "sv": "36.Rxd6? är ett allvarligt misstag. Efter 36...Rb7 anfaller tornet damen, och springaren på b3 skyddas bara av damen. Motorn visar att 36.Qxb8, med dambyte, hade behållit balansen.",
+      "line": {
+        "from": "before",
+        "san": ["Qxb8", "Rxb8", "Bh3", "Rxb3", "Bxe6", "Bd4+", "Kh1", "Rxb2"]
+      }
+    },
+    {
+      "ply": 75,
+      "en": "But Kasparov lets much of his advantage slip. After 37...Rxb3 and now 38...Rxb2 the engine calls the position level again. It preferred 38...Ne3, keeping the knight close to White's king and keeping Black clearly on top.",
+      "sv": "Men Kasparov släpper mycket av sitt övertag. Efter 37...Rxb3 och nu 38...Rxb2 bedömer motorn ställningen som jämn igen. Den föredrog 38...Ne3, som håller springaren nära den vita kungen och Svart klart bättre.",
+      "line": {
+        "from": "before",
+        "san": ["Ne3", "Bf3", "Rxb2", "Rxe8+", "Qxe8", "Ne2"]
+      }
+    },
+    {
+      "ply": 78,
+      "en": "40.e5?? is the real decisive mistake. The pawn on e4 was shielding the long diagonal, and now the bishop on a8 sees all the way to g2. The engine shows that 40.Rxe8+ would have held the balance.",
+      "sv": "40.e5?? är det verkligt avgörande misstaget. Bonden på e4 skärmade av den långa diagonalen, och nu ser löparen på a8 hela vägen till g2. Motorn visar att 40.Rxe8+ hade hållit balansen.",
+      "line": {
+        "from": "before",
+        "san": ["Rxe8+", "Qxe8", "Nd1", "Na3", "Qd3", "Ra2"]
+      }
+    },
+    {
+      "ply": 83,
+      "en": "42...Nd4+ is a discovered check: the knight leaves c2 and the rook on b2 now checks the king on g2. At the same time the knight attacks the rook on e6, and Karpov resigned. Kasparov won the match and became world champion at 22.",
+      "sv": "42...Nd4+ är ett avdragsschack: springaren lämnar c2 och tornet på b2 ger nu schack mot kungen på g2. Samtidigt anfaller springaren tornet på e6, och Karpov gav upp. Kasparov vann matchen och blev världsmästare som 22-åring."
+    }
+  ],
+  "summary": {
+    "en": "Karpov's kingside pawn storm gained space, but each slow move gave Kasparov time to organise counterplay with ...f5 and the pawn sacrifice ...g5. The ending was far from clean: both players missed chances near the time control, and the last mistake, 40.e5, decided the game. The lesson: against a flank attack, look for central breaks and open files, and keep checking which diagonals your pawns are blocking.",
+    "sv": "Karpovs bondestorm på kungsflygeln vann utrymme, men varje långsamt drag gav Kasparov tid att organisera motspel med ...f5 och bondeoffret ...g5. Slutet var långt ifrån felfritt: båda spelarna missade chanser i närheten av tidskontrollen, och det sista misstaget, 40.e5, avgjorde partiet. Läxan: mot ett flankanfall ska man leta efter genombrott i centrum och öppna linjer, och hela tiden kontrollera vilka diagonaler de egna bönderna blockerar."
+  }
+}

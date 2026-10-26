@@ -1,0 +1,97 @@
+{
+  "id": "kasparov-karpov-1987-g24",
+  "intro": {
+    "en": "Seville, 1987, the last game of the World Championship match. Karpov led by a point, so Kasparov had to win with White to level the match and keep his title. There are no early fireworks: Kasparov chooses a slow English set-up, keeps the pieces on and waits for mistakes. Watch how both players stumble before move 40, and then how White grinds out a long ending with queen and bishop against queen and knight, a pawn up.",
+    "sv": "Sevilla 1987, sista partiet i VM-matchen. Karpov ledde med en poäng, så Kasparov måste vinna med vit för att kvittera matchen och behålla titeln. Här finns inget tidigt fyrverkeri: Kasparov väljer en lugn engelsk uppställning, behåller pjäserna på brädet och väntar på misstag. Se hur båda spelarna snubblar före drag 40, och sedan hur Vit nöter ut ett långt slutspel med dam och löpare mot dam och springare, med en merbonde."
+  },
+  "comments": [
+    {
+      "ply": 6,
+      "en": "4.b3 shows Kasparov's approach: a double fianchetto with bishops on b2 and g2, a slow and flexible set-up that avoids forcing lines and keeps plenty of pieces on the board. The engine thinks Black could now grab space with 4...d4, but Karpov chose quiet development.",
+      "sv": "4.b3 visar Kasparovs upplägg: en dubbel fianchetto med löpare på b2 och g2, en långsam och flexibel uppställning som undviker forcerade varianter och behåller många pjäser på brädet. Motorn anser att Svart nu kunde ta utrymme med 4...d4, men Karpov valde lugn utveckling.",
+      "line": {
+        "from": "after",
+        "san": ["d4", "Bg2", "c5", "e3", "Nc6", "O-O", "Bd6"]
+      }
+    },
+    {
+      "ply": 24,
+      "en": "The dark-squared bishops have been traded on b2. The position is level, and with so much material on the board White's chances lie in slow manoeuvring rather than a direct attack.",
+      "sv": "De svartfältiga löparna har bytts på b2. Ställningen är jämn, och med så mycket material på brädet ligger Vits chanser i långsamt manövrerande snarare än i ett direkt anfall."
+    },
+    {
+      "ply": 48,
+      "en": "After the trade of a pair of rooks, each side has a queen, a rook and two minor pieces (White a knight and a bishop, Black two knights), with pawns on both wings. The engine calls it equal, but Kasparov keeps enough material on the board to give Karpov problems to solve.",
+      "sv": "Efter ett tornbyte har båda sidor dam, torn och två lätta pjäser (Vit springare och löpare, Svart två springare), med bönder på båda flyglarna. Motorn bedömer det som jämnt, men Kasparov behåller tillräckligt med material för att ge Karpov problem att lösa."
+    },
+    {
+      "ply": 60,
+      "en": "31.Ne5 is not the engine's first choice, which was the simpler 31.Nxc5, but it sets a problem. The pawn on a4 looks free, and Black has to calculate carefully before taking it.",
+      "sv": "31.Ne5 är inte motorns förstaval, som var det enklare 31.Nxc5, men draget ställer ett problem. Bonden på a4 ser gratis ut, och Svart måste räkna noga innan han tar den."
+    },
+    {
+      "ply": 61,
+      "en": "31...Nxa4?? is a serious blunder. After 32.Rxc8+ Nxc8 the knight on d6 has been pulled back, and the knight on a4 is stranded. With 33.Qb5 White would attack it and also threaten to bring the queen to e8 and go after f7, and Black cannot cover everything. Taking with the queen, 31...Qxa4, or the quiet 31...Rf8 would have kept the balance.",
+      "sv": "31...Nxa4?? är en allvarlig blunder. Efter 32.Rxc8+ Nxc8 har springaren på d6 dragits tillbaka, och springaren på a4 står isolerad. Med 33.Qb5 skulle Vit anfalla den och samtidigt hota att föra damen till e8 och gå på f7, och Svart kan inte täcka allt. Att ta med damen, 31...Qxa4, eller det lugna 31...Rf8 hade behållit balansen.",
+      "line": {
+        "from": "before",
+        "san": ["Rf8", "Rd1", "Nf5", "Qb4", "Qxa4", "Qxb6"]
+      }
+    },
+    {
+      "ply": 64,
+      "en": "33.Qd1? lets the win slip. The engine shows that 33.Qb5 would attack the knight on a4 and win material. Now Black can hold with 33...Nc5, bringing the stranded knight back into play.",
+      "sv": "33.Qd1? släpper vinsten. Motorn visar att 33.Qb5 skulle anfalla springaren på a4 och vinna material. Nu kan Svart hålla med 33...Nc5, som för tillbaka den isolerade springaren i spel.",
+      "line": {
+        "from": "before",
+        "san": ["Qb5", "Nd6", "Qc6", "Qe7", "Qxa4"]
+      }
+    },
+    {
+      "ply": 65,
+      "en": "33...Ne7? returns the favour. The engine's 33...Nc5 would have rescued the knight and kept the balance. Now the f7 pawn is under fire, and the engine's best was 34.Bh5, hitting f7 again.",
+      "sv": "33...Ne7? ger tillbaka gentjänsten. Motorns 33...Nc5 hade räddat springaren och behållit balansen. Nu står bonden på f7 under eld, och motorns bästa var 34.Bh5, som anfaller f7 ännu en gång.",
+      "line": {
+        "from": "before",
+        "san": ["Nc5", "Qd8+", "Kh7", "Kg2", "f6", "Qxc8", "fxe5"]
+      }
+    },
+    {
+      "ply": 66,
+      "en": "34.Qd8+ is a second slip by Kasparov: the engine much preferred 34.Bh5. After the exchanges that follow, material is level again, and White is only a little better.",
+      "sv": "34.Qd8+ är Kasparovs andra snedsteg: motorn föredrog klart 34.Bh5. Efter bytena som följer är materialet jämnt igen, och Vit står bara något bättre.",
+      "line": {
+        "from": "before",
+        "san": ["Bh5", "Kh7", "Bxf7", "Nc5", "h4", "Qc7"]
+      }
+    },
+    {
+      "ply": 78,
+      "en": "40.Qxb6 wins a pawn. White has queen and bishop against queen and knight, with four pawns against three, all on the same side of the board. The engine sees only a small advantage, and Black should be able to defend, but it is a long, unpleasant job.",
+      "sv": "40.Qxb6 vinner en bonde. Vit har dam och löpare mot dam och springare, med fyra bönder mot tre, alla på samma sida av brädet. Motorn ser bara en liten fördel, och Svart borde kunna försvara sig, men det är ett långt och otrevligt arbete."
+    },
+    {
+      "ply": 89,
+      "en": "45...h5? is the decisive slip. The pawn on h6 used to control g5; now the white queen can come to g5 and attack the pawn on g6. The engine's 45...Qf6 would have kept the position close to a draw.",
+      "sv": "45...h5? är det avgörande snedsteget. Bonden på h6 kontrollerade tidigare g5; nu kan den vita damen gå till g5 och anfalla bonden på g6. Motorns 45...Qf6 hade hållit ställningen nära remi.",
+      "line": {
+        "from": "before",
+        "san": ["Qf6", "Qc8", "g5", "h5", "Qf7", "Bf3"]
+      }
+    },
+    {
+      "ply": 112,
+      "en": "57.e5 gains more space. The pawn takes the d6 and f6 squares away from Black's queen and keeps the knight from coming to f6 via d7 or h7, so it stays stuck on f8 defending, while the bishop on c6 and the queen probe Black's weak pawns.",
+      "sv": "57.e5 vinner ännu mer utrymme. Bonden tar rutorna d6 och f6 från den svarta damen och hindrar springaren från att nå f6 via d7 eller h7, så den sitter kvar på f8 i försvaret, medan löparen på c6 och damen känner på Svarts svaga bönder."
+    },
+    {
+      "ply": 126,
+      "en": "64.Kg2 and Karpov resigned. Black's pawns on e6, g6 and h5 are all targets and his knight is tied to f8. Kasparov won the game, levelled the match 12-12 and kept his title.",
+      "sv": "64.Kg2 och Karpov gav upp. Svarts bönder på e6, g6 och h5 är alla mål, och springaren är bunden vid f8. Kasparov vann partiet, kvitterade matchen till 12-12 och behöll titeln."
+    }
+  ],
+  "summary": {
+    "en": "In a must-win game Kasparov chose a quiet opening that kept the pieces on and the tension alive, rather than forcing matters. Both players made big mistakes around moves 31 to 34, which shows how hard it is to calculate under pressure. After that, Kasparov won a pawn and slowly squeezed the queen-and-minor-piece ending, and Karpov's one loose pawn move, 45...h5, gave White the squares he needed.",
+    "sv": "I ett parti han måste vinna valde Kasparov en lugn öppning som behöll pjäserna och spänningen, i stället för att forcera. Båda spelarna gjorde stora misstag kring drag 31 till 34, vilket visar hur svårt det är att räkna under press. Därefter vann Kasparov en bonde och kramade långsamt ur slutspelet med dam och löpare mot dam och springare, och Karpovs enda lösa bondedrag, 45...h5, gav Vit de rutor han behövde."
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "id": "karpov-spassky-1974-g9",
+  "intro": {
+    "en": "1974, game 9 of the Candidates semi-final between the young Anatoly Karpov and the former world champion Boris Spassky. Spassky chose the Scheveningen Sicilian, and Karpov answered with a quiet, positional setup. There is no big sacrifice here: watch how Karpov leaves Black with weak pawns, trades the right pieces, and slowly improves every piece until Black's position cracks.",
+    "sv": "1974, parti 9 i kandidatsemifinalen mellan den unge Anatolij Karpov och förre världsmästaren Boris Spasskij. Spasskij valde Scheveningenvarianten i sicilianskt, och Karpov svarade med en lugn, positionell uppställning. Här finns inget stort offer: se hur Karpov ger Svart svaga bönder, byter rätt pjäser och långsamt förbättrar varje pjäs tills den svarta ställningen spricker."
+  },
+  "comments": [
+    {
+      "ply": 10,
+      "en": "5...d6 gives the Scheveningen: Black's small pawn centre on d6 and e6 is hard to break down. The engine's favourite reply is the sharp 6.g4, but Karpov chose 6.Be2, the Classical Variation: White castles short, plays f4 and Be3, and aims for slow pressure rather than an early attack.",
+      "sv": "5...d6 ger Scheveningen: Svarts lilla bondecentrum på d6 och e6 är svårt att bryta ner. Motorns favoritsvar är det skarpa 6.g4, men Karpov valde 6.Be2, den klassiska varianten: Vit rockerar kort, spelar f4 och Be3 och siktar på långsamt tryck snarare än ett tidigt anfall."
+    },
+    {
+      "ply": 21,
+      "en": "After 10...a5 11.a4 Nb4 Black's knight gets a fine outpost on b4, where the a-pawn can no longer chase it. The price is the pawn on a5, which can later become a target. The engine preferred the flexible 10...a6.",
+      "sv": "Efter 10...a5 11.a4 Nb4 får den svarta springaren en fin utpost på b4, där a-bonden inte längre kan jaga bort den. Priset är bonden på a5, som senare kan bli ett mål. Motorn föredrog det flexibla 10...a6."
+    },
+    {
+      "ply": 23,
+      "en": "12...Bc6 is the first real inaccuracy. The bishop is exposed to Nd4, and Black never gets in the freeing central break on good terms. The engine's choice was 12...e5 at once, hitting f4 and taking space before White is ready.",
+      "sv": "12...Bc6 är den första riktiga onoggrannheten. Löparen blir utsatt för Nd4, och Svart får aldrig till det befriande genombrottet i centrum på bra villkor. Motorns val var 12...e5 direkt, som angriper f4 och tar utrymme innan Vit är redo.",
+      "line": {
+        "from": "before",
+        "san": [
+          "e5",
+          "Nb5",
+          "Be6",
+          "c3",
+          "Nc6"
+        ]
+      }
+    },
+    {
+      "ply": 31,
+      "en": "After 15.Nxc6 bxc6 16.fxe5 dxe5 the structure has changed in White's favour. Black's pawns on a5 and c6 are both isolated, the d-file is open for White's rooks, and the c5 square is a fine post for a white piece. The engine actually preferred 15.Ndb5, but Karpov chose the clear, long-term edge.",
+      "sv": "Efter 15.Nxc6 bxc6 16.fxe5 dxe5 har strukturen ändrats till Vits fördel. Svarts bönder på a5 och c6 är båda isolerade, d-linjen är öppen för Vits torn, och rutan c5 är en fin post för en vit pjäs. Motorn föredrog faktiskt 15.Ndb5, men Karpov valde den tydliga, långsiktiga fördelen."
+    },
+    {
+      "ply": 32,
+      "en": "17.Qf1 is a typical Karpov manoeuvre: the queen heads for c4, from where it hits the weak pawn on c6 and the f7 square at the same time.",
+      "sv": "17.Qf1 är en typisk Karpovmanöver: damen är på väg till c4, där den angriper den svaga bonden på c6 och rutan f7 på samma gång."
+    },
+    {
+      "ply": 38,
+      "en": "19.Bg4 and 20.Bxd7 trade White's bishop for the knight on d7. That knight was Black's most useful defender, since it could reach c5 and sit there; now White is left with a knight and a dark-squared bishop against Black's knight on b4 and bishop.",
+      "sv": "19.Bg4 och 20.Bxd7 byter Vits löpare mot springaren på d7. Den springaren var Svarts nyttigaste försvarare, eftersom den kunde nå c5 och stå där; nu har Vit kvar springare och svartfältslöpare mot Svarts springare på b4 och löpare."
+    },
+    {
+      "ply": 41,
+      "en": "21...Bh4 looks active but does little. The engine preferred 21...Qe6, offering a queen trade: when you have the worse pawn structure, trading queens takes away much of the opponent's pressure.",
+      "sv": "21...Bh4 ser aktivt ut men gör inte mycket. Motorn föredrog 21...Qe6, som erbjuder dambyte: när man har den sämre bondestrukturen tar ett dambyte bort mycket av motståndarens tryck.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qe6",
+          "Qxe6",
+          "fxe6",
+          "Raf1",
+          "Rxf2"
+        ]
+      }
+    },
+    {
+      "ply": 43,
+      "en": "22...Qe7? is a real mistake: the queen now stands on the same diagonal as the rook on f8. The engine's choice was 22...Qb7.",
+      "sv": "22...Qe7? är ett riktigt misstag: damen står nu på samma diagonal som tornet på f8. Motorns val var 22...Qb7."
+    },
+    {
+      "ply": 44,
+      "en": "Even Karpov misses things. 23.Bc5! would have hit the queen, with the rook on f8 behind it, and the knight on b4, driving Black into a much worse position. 23.Rf1 is good, but much less strong.",
+      "sv": "Även Karpov missar saker. 23.Bc5! hade angripit damen, med tornet på f8 bakom, och springaren på b4, och tvingat Svart in i en mycket sämre ställning. 23.Rf1 är bra, men betydligt svagare.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Bc5",
+          "Qg5",
+          "Rad1",
+          "Rad8",
+          "Rxd8",
+          "Rxd8"
+        ]
+      }
+    },
+    {
+      "ply": 51,
+      "en": "26.c3 chases the knight from its outpost, and after 26...Na6 it stands on the rim, far from the action. White's knight will now travel via d2 to f3, where it hits e5 and eyes g5.",
+      "sv": "26.c3 jagar bort springaren från utposten, och efter 26...Na6 står den på kanten, långt från händelserna. Vits springare ska nu vandra via d2 till f3, där den angriper e5 och siktar på g5."
+    },
+    {
+      "ply": 55,
+      "en": "28...Bd8 is another mistake. The engine wanted 28...Nb8, bringing the stray knight from the rim back into play via d7.",
+      "sv": "28...Bd8 är ännu ett misstag. Motorn ville ha 28...Nb8, som tar tillbaka den vilsna springaren från kanten och in i spelet via d7.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Nb8",
+          "Nf3",
+          "Bf6",
+          "Ref2",
+          "Nd7"
+        ]
+      }
+    },
+    {
+      "ply": 57,
+      "en": "29...f6? is the decisive weakening. Without the pawn on f7, no black piece or pawn guards e6, and the black king's shelter is loosened. The engine's best was 30.Ng5, heading for e6; Karpov instead put his queen on that square two moves later.",
+      "sv": "29...f6? är den avgörande försvagningen. Utan bonden på f7 skyddar ingen svart pjäs eller bonde e6, och skyddet runt den svarta kungen blir glesare. Motorns bästa var 30.Ng5, på väg mot e6; Karpov ställde i stället sin dam på den rutan två drag senare.",
+      "line": {
+        "from": "after",
+        "san": [
+          "Ng5",
+          "Rg8",
+          "Ref2",
+          "Qd7",
+          "Ne6+"
+        ]
+      }
+    },
+    {
+      "ply": 60,
+      "en": "31.Qe6 lands on the hole. The queen attacks the bishop on e7 and the pawn on f6, and Black's pieces are tied up in defence.",
+      "sv": "31.Qe6 landar i hålet. Damen angriper löparen på e7 och bonden på f6, och de svarta pjäserna är bundna vid försvaret."
+    },
+    {
+      "ply": 68,
+      "en": "35.Rxd8 takes the bishop. If 35...Rxd8, then 36.Be7 attacks the rook and the f6 pawn, and Black's position collapses. Spassky resigned.",
+      "sv": "35.Rxd8 tar löparen. Om 35...Rxd8 följer 36.Be7, som angriper tornet och bonden på f6, och den svarta ställningen faller ihop. Spasskij gav upp.",
+      "line": {
+        "from": "after",
+        "san": [
+          "Rxd8",
+          "Be7",
+          "Rf8",
+          "Bxf8+",
+          "Kxf8",
+          "Qxf6+"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "en": "This is Karpov's style in a nutshell: create a lasting weakness (the isolated pawns on a5 and c6), trade off the opponent's best defender, then improve piece by piece. Black's mistakes were small but added up, especially 29...f6, which gave White the e6 square. Notice too that even Karpov missed 23.Bc5; in slow positions, the side with the better structure can afford such slips.",
+    "sv": "Det här är Karpovs stil i ett nötskal: skapa en bestående svaghet (de isolerade bönderna på a5 och c6), byt bort motståndarens bästa försvarare och förbättra sedan pjäs för pjäs. Svarts misstag var små men summerades, särskilt 29...f6, som gav Vit rutan e6. Lägg också märke till att även Karpov missade 23.Bc5; i långsamma ställningar har sidan med bättre struktur råd med sådana snedsteg."
+  }
+}

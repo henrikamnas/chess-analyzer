@@ -1,0 +1,94 @@
+{
+  "id": "karpov-kasparov-1985-g16",
+  "intro": {
+    "en": "Moscow, 1985: game 16 of the World Championship match between the champion Anatoly Karpov and the challenger Garry Kasparov. In a Taimanov Sicilian, Kasparov sacrifices a pawn early to get his pieces out quickly while one white knight sits on a3. Watch the black knight that lands on d3: it cannot be driven away by pawns, and for the rest of the game it ties White's pieces in knots.",
+    "sv": "Moskva 1985: parti 16 i VM-matchen mellan världsmästaren Anatolij Karpov och utmanaren Garri Kasparov. I en Taimanovvariant i sicilianskt offrar Kasparov tidigt en bonde för att snabbt få ut sina pjäser medan en vit springare står på a3. Lägg märke till den svarta springaren som landar på d3: den kan inte jagas bort av bönder, och resten av partiet binder den de vita pjäserna."
+  },
+  "comments": [
+    {
+      "ply": 14,
+      "en": "In this Taimanov line White has set up a grip on d5 with c4, but the knight had to go to a3, a poor square on the rim. Black now has a choice between slow development and a sharp pawn sacrifice.",
+      "sv": "I den här Taimanovvarianten har Vit greppat om d5 med c4, men springaren fick gå till a3, en dålig ruta på kanten. Svart kan nu välja mellan lugn utveckling och ett skarpt bondeoffer."
+    },
+    {
+      "ply": 15,
+      "en": "8...d5 is the Gary Gambit, named after Kasparov. Black gives a pawn to open the centre while the knight on a3 is out of play and White's king is still in the middle. The engine is sceptical, preferring the calm 8...Qa5, but in practice the gambit gave White real problems.",
+      "sv": "8...d5 är Gary-gambiten, uppkallad efter Kasparov. Svart ger en bonde för att öppna centrum medan springaren på a3 är ur spel och Vits kung fortfarande står i mitten. Motorn är skeptisk och föredrar det lugna 8...Qa5, men i praktiken gav gambiten Vit verkliga problem.",
+      "line": {
+        "from": "before",
+        "san": ["Qa5", "Bd2", "Be7", "Nc2", "Qc7"]
+      }
+    },
+    {
+      "ply": 19,
+      "en": "After 9.cxd5 exd5 10.exd5 Nb4 White is a pawn up, but Black's pieces come out fast. The knight on b4 attacks d5 and eyes the d3 square, and Black's bishops will soon be on c5 and f5.",
+      "sv": "Efter 9.cxd5 exd5 10.exd5 Nb4 har Vit en bonde mer, men de svarta pjäserna kommer snabbt ut. Springaren på b4 angriper d5 och siktar på rutan d3, och Svarts löpare hamnar snart på c5 och f5."
+    },
+    {
+      "ply": 31,
+      "en": "16...Nd3! The knight lands deep in White's camp, supported by the bishop on f5. White has no c- or e-pawn, so no pawn can ever drive it away, and from d3 it attacks b2, f2 and the e1 and c1 squares.",
+      "sv": "16...Nd3! Springaren landar djupt i Vits läger, stödd av löparen på f5. Vit har ingen c- eller e-bonde, så ingen bonde kan någonsin jaga bort den, och från d3 angriper den b2, f2 och rutorna e1 och c1."
+    },
+    {
+      "ply": 32,
+      "en": "17.Nab1? is the turning point. The knight retreats to the back rank, which is far too slow, and 17...b4 would hit the knight on c3 at once. The engine's 17.d6! was the right idea: give back the pawn to open the long diagonal for the bishop on f3, and after 17...Qxd6 18.Bxf6 Qxf6 19.Bxa8 White wins the exchange.",
+      "sv": "17.Nab1? är vändpunkten. Springaren drar sig tillbaka till första raden, vilket är alldeles för långsamt, och 17...b4 hade angripit springaren på c3 direkt. Motorns 17.d6! var rätt idé: ge tillbaka bonden för att öppna den långa diagonalen för löparen på f3, och efter 17...Qxd6 18.Bxf6 Qxf6 19.Bxa8 vinner Vit kvaliteten.",
+      "line": {
+        "from": "before",
+        "san": ["d6", "Qxd6", "Bxf6", "Qxf6", "Bxa8", "Rxa8"]
+      }
+    },
+    {
+      "ply": 36,
+      "en": "After 18...b4 the knight on c3 is driven to a4, and now both white knights stand on the edge or on the back rank. The engine preferred 19.Ne2, at least keeping the knight near the centre. Meanwhile Black's knight on d3 and bishop on f5 dominate.",
+      "sv": "Efter 18...b4 jagas springaren på c3 till a4, och nu står båda vita springare på kanten eller på första raden. Motorn föredrog 19.Ne2, som åtminstone håller springaren nära centrum. Under tiden dominerar Svarts springare på d3 och löpare på f5."
+    },
+    {
+      "ply": 45,
+      "en": "With 23...Nd7 Black brings the second knight towards e5, where it will support its partner on d3. Black is still a pawn down, but White's pieces have almost no useful moves.",
+      "sv": "Med 23...Nd7 för Svart den andra springaren mot e5, där den ska stödja sin kollega på d3. Svart har fortfarande en bonde mindre, men de vita pjäserna har nästan inga nyttiga drag."
+    },
+    {
+      "ply": 46,
+      "en": "24.Bg2? is a serious mistake. The engine's 24.Nb2 was the moment to attack the knight on d3 and try to trade it off. After the bishop move the knight stays, and White's position gets steadily worse.",
+      "sv": "24.Bg2? är ett allvarligt misstag. Motorns 24.Nb2 var tillfället att angripa springaren på d3 och försöka byta bort den. Efter löpardraget står springaren kvar, och Vits ställning blir stadigt sämre.",
+      "line": {
+        "from": "before",
+        "san": ["Nb2", "Qf6", "Nc4", "N7e5", "Nxe5", "Nxe5"]
+      }
+    },
+    {
+      "ply": 59,
+      "en": "30.f3 weakens White's king further, and after 30...Qxd6 Black has won back the gambit pawn. Material is now level, but Black's pieces are far more active and White's king is exposed. The engine slightly preferred 30...Qd4+ first.",
+      "sv": "30.f3 försvagar den vita kungen ytterligare, och efter 30...Qxd6 har Svart vunnit tillbaka gambitbonden. Materialet är nu jämnt, men de svarta pjäserna är mycket aktivare och den vita kungen är blottad. Motorn föredrog något 30...Qd4+ först."
+    },
+    {
+      "ply": 65,
+      "en": "33...Ne4 brings the other knight into the attack. It hits White's queen on d2, and it can jump to f2 with check.",
+      "sv": "33...Ne4 för in den andra springaren i anfallet. Den angriper Vits dam på d2 och kan hoppa till f2 med schack."
+    },
+    {
+      "ply": 69,
+      "en": "After 34.Qxd3 Nf2+ the knight forks the king on h1, the queen on d3 and the rook on d1. After 35.Rxf2 Bxd3 Black has won the queen for two knights, and the d3 square is occupied by a black piece once more.",
+      "sv": "Efter 34.Qxd3 Nf2+ gafflar springaren kungen på h1, damen på d3 och tornet på d1. Efter 35.Rxf2 Bxd3 har Svart vunnit damen mot två springare, och rutan d3 är återigen besatt av en svart pjäs."
+    },
+    {
+      "ply": 74,
+      "en": "38.Nb2 allows a forced mate. Black's queen comes to f2, close to White's king, and the rooks join in on the first rank.",
+      "sv": "38.Nb2 tillåter en forcerad matt. Den svarta damen kommer till f2, nära den vita kungen, och tornen ansluter på första raden."
+    },
+    {
+      "ply": 79,
+      "en": "40...Re1+ forces mate: 41.Nf1 Rxf1+ 42.Bxf1 Qxf1#. Karpov resigned. Kasparov went on to win the match and became world champion.",
+      "sv": "40...Re1+ tvingar fram matt: 41.Nf1 Rxf1+ 42.Bxf1 Qxf1#. Karpov gav upp. Kasparov vann sedan matchen och blev världsmästare.",
+      "line": {
+        "from": "after",
+        "san": ["Nf1", "Rxf1+", "Bxf1", "Qxf1#"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "A knight on a protected square deep in enemy territory, where no pawn can attack it, can be worth more than a rook. Kasparov's gambit gave up a pawn for time and activity, and once the knight reached d3, White's pieces were reduced to defending. The lesson for White: when your opponent gets such an outpost, react at once, with counterplay or by challenging it (the engine's 17.d6 and 24.Nb2), before it paralyses your position.",
+    "sv": "En springare på en skyddad ruta djupt inne i fiendens läger, där ingen bonde kan angripa den, kan vara värd mer än ett torn. Kasparovs gambit gav en bonde för tid och aktivitet, och när springaren väl nått d3 var de vita pjäserna reducerade till att försvara sig. Lärdomen för Vit: när motståndaren får en sådan utpost, reagera direkt, med motspel eller genom att utmana den (motorns 17.d6 och 24.Nb2), innan den förlamar ställningen."
+  }
+}

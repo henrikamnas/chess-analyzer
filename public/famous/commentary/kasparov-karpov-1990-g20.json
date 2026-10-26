@@ -1,0 +1,103 @@
+{
+  "id": "kasparov-karpov-1990-g20",
+  "intro": {
+    "en": "1990, game 20 of the fifth World Championship match between Garry Kasparov and Anatoly Karpov. The opening is a closed Ruy Lopez, the Flohr System, where Black's pieces press against White's e4 pawn. Watch White's rook swing from a3 over to the kingside, the knight sacrifice on h6, and the tactics at the end. The engine shows the attack was not flawless, but Black did not find the best defence.",
+    "sv": "1990, parti 20 i den femte VM-matchen mellan Garry Kasparov och Anatolij Karpov. Öppningen är en stängd spansk, Flohr-systemet, där Svarts pjäser trycker mot Vits bonde på e4. Se hur det vita tornet svänger från a3 över till kungsflygeln, springaroffret på h6 och taktiken i slutet. Motorn visar att anfallet inte var felfritt, men Svart hittade inte det bästa försvaret."
+  },
+  "comments": [
+    {
+      "ply": 21,
+      "en": "In the Flohr System Black puts the bishop on b7 and the rook on e8 to put pressure on e4, and the bishop drops back to f8 to guard the kingside. White keeps the centre solid and looks for play with a4 against b5.",
+      "sv": "I Flohr-systemet ställer Svart löparen på b7 och tornet på e8 för att trycka mot e4, och löparen backar till f8 för att skydda kungsflygeln. Vit håller centrum stabilt och söker spel med a4 mot b5."
+    },
+    {
+      "ply": 30,
+      "en": "16.d5 closes the centre and gains space. Black's knight has a good square on b4 and Black has a queenside pawn majority, while White will try to use the extra space to attack on the kingside.",
+      "sv": "16.d5 stänger centrum och vinner utrymme. Svarts springare har en bra ruta på b4 och Svart har en bondemajoritet på damflygeln, medan Vit försöker använda sitt extra utrymme till ett anfall på kungsflygeln."
+    },
+    {
+      "ply": 32,
+      "en": "17.Ra3! The rook comes out sideways along the third rank. From a3 it can swing to e3 and then to the kingside, a typical idea when the a-pawn has advanced.",
+      "sv": "17.Ra3! Tornet kommer ut i sidled längs tredje raden. Från a3 kan det svänga till e3 och sedan till kungsflygeln, en typisk idé när a-bonden har gått fram."
+    },
+    {
+      "ply": 33,
+      "en": "17...f5 hits back at e4 but loosens Black's king. The engine preferred 17...c4, getting the queenside pawns going first.",
+      "sv": "17...f5 slår tillbaka mot e4 men försvagar den svarta kungsställningen. Motorn föredrog 17...c4, som först sätter igång bönderna på damflygeln.",
+      "line": {
+        "from": "before",
+        "san": ["c4", "Ree3", "Nc5", "axb5", "axb5", "b3"]
+      }
+    },
+    {
+      "ply": 45,
+      "en": "After 22...fxe4 23.Nxe4 Nfxd5 Black has won the d5 pawn, but the position has opened up around his king. White's rook can go to g3, the bishop on b2 aims down the long diagonal at g7, and the knight on h2 can jump to g4.",
+      "sv": "Efter 22...fxe4 23.Nxe4 Nfxd5 har Svart vunnit bonden på d5, men ställningen har öppnats runt kungen. Vits torn kan gå till g3, löparen på b2 siktar längs den långa diagonalen mot g7, och springaren på h2 kan hoppa till g4."
+    },
+    {
+      "ply": 48,
+      "en": "25.Ng4 prepares the sacrifice on h6, but the engine is not convinced. It shows that Black could now defend with 25...Nd3!, trading the knight for White's dangerous bishop on b1 and level the game. The engine's choice for White was 25.Nf3.",
+      "sv": "25.Ng4 förbereder offret på h6, men motorn är inte övertygad. Den visar att Svart nu kunde försvara sig med 25...Nd3!, som byter springaren mot den farliga löparen på b1 och utjämna spelet. Motorns val för Vit var 25.Nf3.",
+      "line": {
+        "from": "after",
+        "san": ["Nd3", "Bxd3", "cxd3", "Kh2", "Qe7", "Nxh6", "Rxe4", "Nf5", "Rxe1", "Qh5+"]
+      }
+    },
+    {
+      "ply": 49,
+      "en": "25...Qe8? misses that chance and is the turning point of the game. Now 26.Nxh6 works, and White is clearly better again.",
+      "sv": "25...Qe8? missar den chansen och är partiets vändpunkt. Nu fungerar 26.Nxh6, och Vit står klart bättre igen."
+    },
+    {
+      "ply": 50,
+      "en": "26.Nxh6! The knight takes the pawn in front of the king. The engine's best defence was to take it, 26...Rxh6, and then White plays 27.Ng5, and the attack goes on.",
+      "sv": "26.Nxh6! Springaren slår bonden framför kungen. Motorns bästa försvar var att ta den, 26...Rxh6, och då spelar Vit 27.Ng5, och anfallet fortsätter.",
+      "line": {
+        "from": "after",
+        "san": ["Rxh6", "Ng5", "Qh5", "Qg4", "Nf6", "Bxf6"]
+      }
+    },
+    {
+      "ply": 51,
+      "en": "26...c3? attacks the bishop on b2, which was aiming down the long diagonal at g7. It looks like counterplay, but White simply ignores it: the knight goes to f5 and the attack is faster than Black's pawn. This makes White's task much easier.",
+      "sv": "26...c3? anfaller löparen på b2, som siktade längs den långa diagonalen mot g7. Det ser ut som motspel, men Vit bryr sig helt enkelt inte om det: springaren går till f5 och anfallet går snabbare än Svarts bonde. Det gör Vits uppgift mycket lättare."
+    },
+    {
+      "ply": 54,
+      "en": "Black has won a bishop, but now the queen, the rook on g3 and the knight on f5 are aimed at g7, which only the bishop on f8 and the king defend.",
+      "sv": "Svart har vunnit en löpare, men nu siktar damen, tornet på g3 och springaren på f5 mot g7, som bara försvaras av löparen på f8 och kungen."
+    },
+    {
+      "ply": 55,
+      "en": "28...Bc8? speeds up the end. After 29.Qh4+ Rh6 30.Nxh6 gxh6 Black has given up the exchange, and the king's pawn cover is gone. The engine's 28...Nc2 would have put up more resistance, though White would still be winning.",
+      "sv": "28...Bc8? påskyndar slutet. Efter 29.Qh4+ Rh6 30.Nxh6 gxh6 har Svart gett upp kvaliteten, och kungens bondeskydd är borta. Motorns 28...Nc2 hade gjort mer motstånd, även om Vit fortfarande hade stått till vinst.",
+      "line": {
+        "from": "before",
+        "san": ["Nc2", "Bxc2", "Rc8", "Nxg7", "Qg6", "Qxe6", "Qxe6", "Nxe6"]
+      }
+    },
+    {
+      "ply": 64,
+      "en": "33.Re8! The rook goes to the back rank and attacks the bishop on f8, which is now held only by the queen. The engine already sees a forced mate.",
+      "sv": "33.Re8! Tornet går till baslinjen och anfaller löparen på f8, som nu bara hålls av damen. Motorn ser redan en forcerad matt."
+    },
+    {
+      "ply": 66,
+      "en": "34.Qxh6+ wins easily, but it is not the fastest. The engine found a forced mate with 34.Nf7+ first, and only then the queen check on h6.",
+      "sv": "34.Qxh6+ vinner enkelt, men det är inte det snabbaste. Motorn hittade en forcerad matt med 34.Nf7+ först, och först därefter damschacken på h6.",
+      "line": {
+        "from": "before",
+        "san": ["Nf7+", "Qxf7", "Qxh6+", "Bh7", "Rxa8", "Nf6", "Rxf8+", "Qxf8", "Qxf8+", "Ng8"]
+      }
+    },
+    {
+      "ply": 80,
+      "en": "41.Bxd5+ and Karpov resigned. After 41...Nxd5 42.Rxb2 White has two rooks against a bishop and a knight, with more pawns, and the black king has no shelter.",
+      "sv": "41.Bxd5+ och Karpov gav upp. Efter 41...Nxd5 42.Rxb2 har Vit två torn mot löpare och springare, med fler bönder, och den svarta kungen saknar skydd."
+    }
+  ],
+  "summary": {
+    "en": "Kasparov's plan was a classic one: gain space in the centre, bring the rook over via a3 and e3, and open lines in front of Black's king. The engine shows Karpov could have defended with 25...Nd3, but after he missed it, his counterplay on the queenside with ...c3 came too late. The lesson: when your king is under attack, look for ways to trade off the attacking pieces before grabbing material elsewhere.",
+    "sv": "Kasparovs plan var klassisk: vinn utrymme i centrum, för över tornet via a3 och e3 och öppna linjer framför den svarta kungen. Motorn visar att Karpov kunde ha försvarat sig med 25...Nd3, men när han missade det kom motspelet på damflygeln med ...c3 för sent. Läxan: när din kung är under anfall ska du leta efter sätt att byta bort de anfallande pjäserna innan du tar material på annat håll."
+  }
+}

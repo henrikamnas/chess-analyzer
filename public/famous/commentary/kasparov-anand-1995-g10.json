@@ -1,0 +1,94 @@
+{
+  "id": "kasparov-anand-1995-g10",
+  "intro": {
+    "en": "New York, 1995, game 10 of the PCA World Championship match between Garry Kasparov and Viswanathan Anand. Anand had won the previous game, and Kasparov answered with deep home preparation in the Open Ruy Lopez. Watch the rook sacrifice 17.Qg4, which leaves Black's king stuck in the centre, and then how White turns the attack into a won endgame.",
+    "sv": "New York 1995, parti 10 i PCA:s VM-match mellan Garry Kasparov och Viswanathan Anand. Anand hade vunnit partiet innan, och Kasparov svarade med djup hemmaanalys i öppen spansk. Se tornoffret 17.Qg4, som lämnar den svarta kungen fast i centrum, och sedan hur Vit förvandlar anfallet till ett vunnet slutspel."
+  },
+  "comments": [
+    {
+      "ply": 9,
+      "en": "5...Nxe4 is the Open Ruy Lopez. Black takes the e4 pawn and gets free, active piece play. White will win the pawn back, and the fight is about whether Black's pieces or White's lead in the centre count for more.",
+      "sv": "5...Nxe4 är öppen spansk. Svart tar bonden på e4 och får fritt och aktivt pjässpel. Vit vinner tillbaka bonden, och kampen handlar om ifall Svarts aktiva pjäser eller Vits övertag i centrum väger tyngst."
+    },
+    {
+      "ply": 20,
+      "en": "11.Ng5 is the Karpov Gambit: the knight is offered on g5 to remove the bishop on e6. The engine's top answer was to take it with 11...Qxg5, with roughly equal chances.",
+      "sv": "11.Ng5 är Karpovgambiten: springaren erbjuds på g5 för att byta bort löparen på e6. Motorns främsta svar var att ta den med 11...Qxg5, med ungefär lika chanser.",
+      "line": {
+        "from": "after",
+        "san": ["Qxg5", "Qf3", "O-O-O", "Bxe6+", "fxe6", "Qxc6", "Qxe5"]
+      }
+    },
+    {
+      "ply": 27,
+      "en": "Black has grabbed a pawn with 14...Qxc3, and the queen is far up the board. In return White has a lead in development, and Black's king is still on e8.",
+      "sv": "Svart har tagit en bonde med 14...Qxc3, och damen står långt fram på brädet. I gengäld har Vit ett utvecklingsförsprång, och den svarta kungen står kvar på e8."
+    },
+    {
+      "ply": 32,
+      "en": "17.Qg4!! is the point of Kasparov's home preparation: he simply leaves the rook on a1 to be taken. The queen hits the weak e6 pawn and the g7 pawn. Interestingly, the engine at first preferred 17.Rb1, but once 17.Qg4 is on the board it rates White's chances clearly higher, a sign of how hard the sacrifice is to judge.",
+      "sv": "17.Qg4!! är kärnan i Kasparovs hemmaförberedelse: han lämnar helt enkelt tornet på a1 att slås. Damen anfaller den svaga bonden på e6 och bonden på g7. Intressant nog föredrog motorn först 17.Rb1, men när 17.Qg4 väl står på brädet värderar den Vits chanser klart högre, ett tecken på hur svårt offret är att bedöma."
+    },
+    {
+      "ply": 33,
+      "en": "17...Qxa1 accepts the rook. The engine preferred 17...Be7, developing and getting the king closer to safety, though White would keep the better game.",
+      "sv": "17...Qxa1 tar emot tornet. Motorn föredrog 17...Be7, som utvecklar och för kungen närmare säkerhet, även om Vit skulle behålla det bättre spelet.",
+      "line": {
+        "from": "before",
+        "san": ["Be7", "Rb1", "Qd3", "Be3", "Nxb3", "Rxb3", "Qf5", "Qxg7", "Qf8"]
+      }
+    },
+    {
+      "ply": 34,
+      "en": "18.Bxe6 picks up the e6 pawn. The bishop now controls d7 and f7, keeping Black's king boxed in, and Black's queen on a1 is far away from the defence.",
+      "sv": "18.Bxe6 tar bonden på e6. Löparen kontrollerar nu d7 och f7, vilket håller den svarta kungen instängd, och den svarta damen på a1 står långt från försvaret."
+    },
+    {
+      "ply": 36,
+      "en": "19.Bh6! brings the other bishop in, attacking the pawn on g7; after Bxg7 the rook on h8 is next. The engine agrees it is the best move.",
+      "sv": "19.Bh6! tar in den andra löparen, och anfaller bonden på g7; efter Bxg7 står tornet på h8 näst på tur. Motorn håller med om att det är det bästa draget."
+    },
+    {
+      "ply": 37,
+      "en": "19...Qc3? lets White in. The engine's 19...Qb2 would have brought the queen to e2 to force a queen trade, keeping White's advantage much smaller.",
+      "sv": "19...Qc3? släpper in Vit. Motorns 19...Qb2 hade fört damen till e2 för att tvinga fram dambyte, och Vits fördel hade blivit betydligt mindre.",
+      "line": {
+        "from": "before",
+        "san": ["Qb2", "Bxg7", "Qe2", "Bxh8", "Qxg4", "Bxg4", "Be7", "e6"]
+      }
+    },
+    {
+      "ply": 40,
+      "en": "After 20.Bxg7 and 21.Bxh8 White has won back the rook and is a pawn up, with Black's king still in the centre.",
+      "sv": "Efter 20.Bxg7 och 21.Bxh8 har Vit vunnit tillbaka tornet och har en merbonde, medan den svarta kungen står kvar i centrum."
+    },
+    {
+      "ply": 47,
+      "en": "The queens are gone, and White has a winning endgame. He is only a pawn up, but has four pawns on the kingside against one, and they can roll forward, while Black's queenside pawns are easier to stop.",
+      "sv": "Damerna är borta, och Vit har ett vunnet slutspel. Vit har bara en merbonde, men fyra bönder på kungsflygeln mot en, och de kan rulla fram, medan Svarts bönder på damflygeln är lättare att stoppa."
+    },
+    {
+      "ply": 54,
+      "en": "28.Ke3 brings the king to the centre, a key rule in endgames. Next the bishop goes to d1 to guard b3 against Black's pawns, and the kingside pawns start to advance.",
+      "sv": "28.Ke3 för kungen till centrum, en viktig regel i slutspel. Därefter går löparen till d1 för att bevaka b3 mot Svarts bönder, och bönderna på kungsflygeln börjar marschera."
+    },
+    {
+      "ply": 64,
+      "en": "33.Rxc5 wins another pawn. Black's counterplay with the a- and b-pawns is going nowhere, while White's e-, f- and g-pawns are ready to march.",
+      "sv": "33.Rxc5 vinner ännu en bonde. Svarts motspel med a- och b-bönderna leder ingenstans, medan Vits e-, f- och g-bönder är redo att marschera."
+    },
+    {
+      "ply": 74,
+      "en": "38.Rd6 and Anand resigned. If 38...Rxd1, then 39.Rxd1, and White's connected pawns on e5, f5 and g5 decide the game.",
+      "sv": "38.Rd6 och Anand gav upp. Om 38...Rxd1 följer 39.Rxd1, och Vits sammanhängande bönder på e5, f5 och g5 avgör partiet.",
+      "line": {
+        "from": "after",
+        "san": ["Rxd1", "Rxd1", "Ke8", "Kd4"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "This game shows the power of opening preparation: Kasparov's 17.Qg4 gave up a rook to keep Black's king in the centre, and over the board it was very hard to find the right defence. Anand's 19...Qc3 let the bishops take the kingside apart, and the queen trade led to an endgame where White's kingside pawn majority decided. The lesson: an uncastled king and a queen far from home are a dangerous combination, and in the endgame, a healthy pawn majority plus an active king wins.",
+    "sv": "Partiet visar kraften i öppningsförberedelser: Kasparovs 17.Qg4 gav bort ett torn för att hålla den svarta kungen i centrum, och vid brädet var det mycket svårt att hitta rätt försvar. Anands 19...Qc3 lät löparna slå sönder kungsflygeln, och dambytet ledde till ett slutspel där Vits bondemajoritet på kungsflygeln avgjorde. Läxan: en orockerad kung och en dam långt hemifrån är en farlig kombination, och i slutspelet vinner en sund bondemajoritet tillsammans med en aktiv kung."
+  }
+}

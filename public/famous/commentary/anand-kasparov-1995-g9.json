@@ -1,0 +1,110 @@
+{
+  "id": "anand-kasparov-1995-g9",
+  "intro": {
+    "en": "New York 1995, game 9 of the PCA World Championship match between Viswanathan Anand and Garry Kasparov. The first eight games were drawn, so this was the first decisive game of the match. Kasparov chose the Scheveningen Sicilian; watch how Anand gains space on the queenside, takes control of the d5 square and then gives up the exchange there for a powerful passed pawn.",
+    "sv": "New York 1995, parti 9 i PCA:s VM-match mellan Viswanathan Anand och Garri Kasparov. De första åtta partierna slutade remi, så detta var matchens första avgjorda parti. Kasparov valde Scheveningenvarianten i sicilianskt; se hur Anand vinner utrymme på damflygeln, tar kontroll över rutan d5 och sedan offrar kvalitet där för en kraftfull fribonde."
+  },
+  "comments": [
+    {
+      "ply": 11,
+      "en": "6...e6 gives a Scheveningen: Black builds a small centre with pawns on d6 and e6. It is solid and flexible, but a little passive. White's Classical set-up with Be2, castling and later f4 is one of the main ways to meet it.",
+      "sv": "6...e6 ger en Scheveningen: Svart bygger ett litet centrum med bönder på d6 och e6. Det är solitt och flexibelt, men en aning passivt. Vits klassiska uppställning med Be2, rockad och senare f4 är ett av huvudsätten att möta det."
+    },
+    {
+      "ply": 14,
+      "en": "8.a4 is a typical move in this structure: it stops ...b5, Black's usual way of gaining space on the queenside.",
+      "sv": "8.a4 är ett typiskt drag i den här strukturen: det hindrar ...b5, Svarts vanliga sätt att vinna utrymme på damflygeln."
+    },
+    {
+      "ply": 20,
+      "en": "10.f4 and 11.Kh1 are standard. The f-pawn gives White more space in the centre and on the kingside, and the king steps off the g1–a7 diagonal so that Black's queen and bishop can't use it for checks or pins.",
+      "sv": "10.f4 och 11.Kh1 är standard. f-bonden ger Vit mer utrymme i centrum och på kungsflygeln, och kungen kliver av diagonalen g1–a7 så att Svarts dam och löpare inte kan använda den för schackar eller bindningar."
+    },
+    {
+      "ply": 27,
+      "en": "13.Nb3 avoids a knight trade on d4, so Black offers one on a5 instead. After 14.Nxa5 Qxa5 the queen is active, but on a5 it can be hit by a white pawn on b4, as happens soon.",
+      "sv": "13.Nb3 undviker springarbyte på d4, så Svart erbjuder ett på a5 i stället. Efter 14.Nxa5 Qxa5 är damen aktiv, men på a5 kan den angripas av en vit bonde på b4, vilket snart sker."
+    },
+    {
+      "ply": 31,
+      "en": "16...Bc6 is a small inaccuracy that lets White gain space with tempo: 17.b4 hits the queen and 18.b5 hits the bishop. The engine preferred 16...h6.",
+      "sv": "16...Bc6 är en liten felaktighet som låter Vit vinna utrymme med tempo: 17.b4 angriper damen och 18.b5 angriper löparen. Motorn föredrog 16...h6."
+    },
+    {
+      "ply": 39,
+      "en": "20...Bxb5? is the first real mistake. With Black's queen on c7 and rook on d8, the b6 square is a danger: White can reply 21.Rxb5 and then 22.Bb6, skewering the queen and the rook behind it (Anand chose 21.Qxb5, which kept a clear edge too). 20...Qa5 first moved the queen off that diagonal and kept Black only slightly worse.",
+      "sv": "20...Bxb5? är det första verkliga misstaget. Med Svarts dam på c7 och tornet på d8 är rutan b6 farlig: Vit kan svara 21.Rxb5 och sedan 22.Bb6, ett spett mot damen och tornet bakom den (Anand valde 21.Qxb5, som också behöll en klar fördel). 20...Qa5 flyttade först damen från diagonalen och höll Svart bara något sämre.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qa5",
+          "c4",
+          "Bxb5",
+          "axb5"
+        ]
+      }
+    },
+    {
+      "ply": 43,
+      "en": "22...e5 gains space, and the engine agrees with it, but it has a long-term cost: no black pawn can ever cover d5 again. Remember that square.",
+      "sv": "22...e5 vinner utrymme, och motorn håller med, men det har ett långsiktigt pris: ingen svart bonde kan längre täcka d5. Kom ihåg den rutan."
+    },
+    {
+      "ply": 44,
+      "en": "23.Bb6 uses the other hole: the bishop hits the queen on c7 and takes the c7 and d8 squares away from Black's pieces.",
+      "sv": "23.Bb6 utnyttjar det andra hålet: löparen angriper damen på c7 och tar rutorna c7 och d8 från Svarts pjäser."
+    },
+    {
+      "ply": 49,
+      "en": "25...Bf8? misses the chance to trade White's best piece. 25...Bd8 would offer to swap off the bishop on b6, and a cramped side should welcome exchanges, especially of the opponent's most active piece. 25.a5 had allowed this (25.c5 was more precise), but Kasparov didn't take the chance.",
+      "sv": "25...Bf8? missar chansen att byta bort Vits bästa pjäs. 25...Bd8 hade erbjudit byte av löparen på b6, och den som står trångt ska välkomna byten, särskilt av motståndarens mest aktiva pjäs. 25.a5 hade tillåtit detta (25.c5 var mer exakt), men Kasparov tog inte chansen.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Bd8",
+          "c5",
+          "Bxb6",
+          "cxb6"
+        ]
+      }
+    },
+    {
+      "ply": 52,
+      "en": "27.Rd5!? is the famous exchange sacrifice on the d5 hole. The engine is honest: 27.c5 was stronger, and if Black had declined the rook with 27...h5, White would have kept only a modest edge.",
+      "sv": "27.Rd5!? är det berömda kvalitetsoffret på hålet d5. Motorn är ärlig: 27.c5 var starkare, och om Svart hade avböjt tornet med 27...h5 hade Vit bara behållit en måttlig fördel.",
+      "line": {
+        "from": "after",
+        "san": [
+          "h5",
+          "c5",
+          "Rac8",
+          "Qb4"
+        ]
+      }
+    },
+    {
+      "ply": 54,
+      "en": "Kasparov took, and after 28.exd5 White is clearly better despite being the exchange down. The new d5 pawn is a passed pawn protected by c4, it attacks the queen on e6, and White's two bishops are very active.",
+      "sv": "Kasparov slog, och efter 28.exd5 står Vit klart bättre trots kvalitet mindre. Den nya d5-bonden är en fribonde skyddad av c4, den angriper damen på e6, och Vits två löpare är mycket aktiva."
+    },
+    {
+      "ply": 61,
+      "en": "31.Qd7 invades. Kasparov lines up rook and queen on the g-file against g2 with 31...Rg5, and 32.Rg1 calmly defends. The engine preferred 31...e3, but Black is already losing.",
+      "sv": "31.Qd7 tränger in. Kasparov ställer upp torn och dam på g-linjen mot g2 med 31...Rg5, och 32.Rg1 försvarar lugnt. Motorn föredrog 31...e3, men Svart är redan förlorad."
+    },
+    {
+      "ply": 64,
+      "en": "33.d6 pushes the passed pawn. The engine prefers grabbing first with 33.Qxb7, but either way White's pawns on c5 and d6, backed by the queen and the bishop on b6, are far too strong.",
+      "sv": "33.d6 flyttar fram fribonden. Motorn föredrar att först ta med 33.Qxb7, men oavsett är Vits bönder på c5 och d6, med stöd av damen och löparen på b6, alldeles för starka."
+    },
+    {
+      "ply": 68,
+      "en": "35.Kh2 and Kasparov resigned. The king attacks the rook on g3, the queen on b7 attacks the rook on a8, and the d-pawn is ready to advance to d7.",
+      "sv": "35.Kh2 och Kasparov gav upp. Kungen angriper tornet på g3, damen på b7 angriper tornet på a8, och d-bonden är redo att gå till d7."
+    }
+  ],
+  "summary": {
+    "en": "Anand won with a clear plan: restrain Black's queenside with a4, b4 and b5, take over the d5 and b6 holes, and then use d5 for an exchange sacrifice that created a protected passed pawn. Kasparov's key errors were 20...Bxb5, 25...Bf8 (missing the trade of White's strong bishop) and accepting the rook on d5. The lesson: holes in your pawn structure are permanent, and a passed pawn supported by active pieces can be worth more than the exchange. Kasparov hit back soon afterwards and won the match.",
+    "sv": "Anand vann med en tydlig plan: hålla tillbaka Svarts damflygel med a4, b4 och b5, ta över hålen på d5 och b6 och sedan använda d5 till ett kvalitetsoffer som gav en skyddad fribonde. Kasparovs viktigaste fel var 20...Bxb5, 25...Bf8 (som missade bytet av Vits starka löpare) och att ta tornet på d5. Lärdomen: hål i bondestrukturen är permanenta, och en fribonde med stöd av aktiva pjäser kan vara värd mer än kvaliteten. Kasparov slog snart tillbaka och vann matchen."
+  }
+}

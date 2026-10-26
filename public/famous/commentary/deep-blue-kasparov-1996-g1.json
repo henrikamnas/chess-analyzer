@@ -1,0 +1,122 @@
+{
+  "id": "deep-blue-kasparov-1996-g1",
+  "intro": {
+    "en": "Philadelphia, February 1996, game 1 of the six-game match between IBM's Deep Blue and world champion Garry Kasparov. It was the first time a computer beat a reigning world champion in a game at classical time control. Watch how the machine handles a quiet position with an isolated queen's pawn, damages Black's pawn structure, and then grabs a pawn under fire because it has calculated that Kasparov's attack falls just short.",
+    "sv": "Philadelphia, februari 1996, parti 1 i matchen över sex partier mellan IBM:s Deep Blue och världsmästaren Garri Kasparov. Det var första gången en dator besegrade en regerande världsmästare i ett parti med klassisk betänketid. Se hur maskinen hanterar en lugn ställning med isolerad dambonde, förstör Svarts bondestruktur och sedan tar en bonde mitt under angrepp, eftersom den har räknat ut att Kasparovs anfall inte riktigt räcker."
+  },
+  "comments": [
+    {
+      "ply": 2,
+      "en": "2.c3 is the Alapin Variation. Instead of the open Sicilian, White prepares d4 so that a capture on d4 can be met with the c-pawn, keeping a full pawn centre. 2...d5 is one of Black's main answers: hit the centre at once.",
+      "sv": "2.c3 är Alapinvarianten. I stället för den öppna sicilianskan förbereder Vit d4, så att ett slag på d4 kan besvaras med c-bonden och Vit behåller ett fullt bondecentrum. 2...d5 är ett av Svarts huvudsvar: slå mot centrum direkt."
+    },
+    {
+      "ply": 5,
+      "en": "Bringing the queen out this early is usually risky, but here it works: White's pawn stands on c3, so there is no Nc3 to chase the queen away with gain of time.",
+      "sv": "Att ta ut damen så tidigt är oftast riskabelt, men här fungerar det: Vits bonde står på c3, så det finns inget Nc3 som kan jaga bort damen med tempovinst."
+    },
+    {
+      "ply": 18,
+      "en": "After 9...cxd4 10.cxd4 White has an isolated queen's pawn: no pawns on the c- or e-files can ever support d4. In return White gets space and outposts on e5 and c5 for the knights. Black's long-term plan is to blockade the pawn and trade pieces until it becomes a weakness.",
+      "sv": "Efter 9...cxd4 10.cxd4 har Vit en isolerad dambonde: inga bönder på c- eller e-linjen kan någonsin stödja d4. I gengäld får Vit utrymme och utposter på e5 och c5 för springarna. Svarts långsiktiga plan är att blockera bonden och byta pjäser tills den blir en svaghet."
+    },
+    {
+      "ply": 26,
+      "en": "14.Ne5 plants a knight on the outpost that the d4 pawn supports. Kasparov answers by trading off White's bishop on e2 and castling. The opening is over and the position is balanced.",
+      "sv": "14.Ne5 placerar en springare på utposten som d4-bonden stöder. Kasparov svarar med att byta bort Vits löpare på e2 och göra rockad. Öppningen är över och ställningen är i balans."
+    },
+    {
+      "ply": 35,
+      "en": "18.Bxf6 gives up the bishop for the knight to damage Black's kingside. After 18...gxf6 Black has doubled f-pawns and has lost the g-pawn that sheltered his king. The engine agrees with the exchange.",
+      "sv": "18.Bxf6 ger löparen mot springaren för att skada Svarts kungsflygel. Efter 18...gxf6 har Svart dubbelbönder på f-linjen och har förlorat g-bonden som skyddade kungen. Motorn håller med om bytet."
+    },
+    {
+      "ply": 39,
+      "en": "20.Nxb6 removes Black's last bishop, and after 20...axb6 Black has doubled b-pawns as well. Black's structure is worse, but his pieces are active and his rooks can use the g-file, so White's advantage is only small.",
+      "sv": "20.Nxb6 tar bort Svarts sista löpare, och efter 20...axb6 har Svart dubbelbönder även på b-linjen. Svarts struktur är sämre, men pjäserna är aktiva och tornen kan använda g-linjen, så Vits fördel är bara liten."
+    },
+    {
+      "ply": 44,
+      "en": "23.d5! gets rid of the isolated pawn before it can be blockaded. After 23...Rxd5 24.Rxd5 exd5 Black is a pawn up for the moment, but now he has an isolated d-pawn of his own on top of the doubled b- and f-pawns, and White wins the pawn back with 26.Qxb6.",
+      "sv": "23.d5! gör sig av med den isolerade bonden innan den kan blockeras. Efter 23...Rxd5 24.Rxd5 exd5 har Svart för stunden en bonde mer, men nu har han en egen isolerad d-bonde utöver dubbelbönderna på b- och f-linjen, och Vit vinner tillbaka bonden med 26.Qxb6."
+    },
+    {
+      "ply": 53,
+      "en": "Kasparov plays for activity and pushes his passed d-pawn. The engine preferred 27...Qg5, first bringing the queen to the g-file beside the rook on g8, which kept the game level. After 27...d4 White has a small edge again.",
+      "sv": "Kasparov spelar för aktivitet och flyttar fram sin fribonde på d-linjen. Motorn föredrog 27...Qg5, där damen först kommer till g-linjen bredvid tornet på g8, vilket höll partiet jämnt. Efter 27...d4 har Vit åter en liten fördel.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qg5",
+          "g3",
+          "f4",
+          "Nd6",
+          "Qf6"
+        ]
+      }
+    },
+    {
+      "ply": 56,
+      "en": "29.Nxb7 is the moment everyone remembers. With Black's pieces gathering against its king, the computer calmly takes a pawn on the other side of the board, trusting its calculation that the attack does not break through. The engine slightly prefers 29.Re1, but both moves keep a small edge.",
+      "sv": "29.Nxb7 är ögonblicket alla minns. Medan Svarts pjäser samlas mot dess kung tar datorn lugnt en bonde på andra sidan brädet, i förlitan på sin beräkning att anfallet inte bryter igenom. Motorn föredrar en aning 29.Re1, men båda dragen behåller en liten fördel."
+    },
+    {
+      "ply": 59,
+      "en": "30...f3? is the real mistake. It looks dangerous, but after 31.g3 the pawn on f3 is blocked and no lines open in front of White's king, which stays safe, while Black's pieces are just loose. 30...Qg5 kept the queen active and Black only slightly worse.",
+      "sv": "30...f3? är det verkliga misstaget. Det ser farligt ut, men efter 31.g3 är bonden på f3 blockerad och inga linjer öppnas framför Vits kung, som förblir säker, medan Svarts pjäser bara hänger löst. 30...Qg5 höll damen aktiv och Svart bara något sämre.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qg5",
+          "h4",
+          "Qh5",
+          "Qxd4",
+          "f6"
+        ]
+      }
+    },
+    {
+      "ply": 63,
+      "en": "Black was already in trouble, but 32...Re8? loses quickly. 33.Nd6 attacks the rook and adds a third attacker on f7: the rook on c7, the knight on d6 and the queen on d5 all hit it, while only Black's queen defends. The engine wanted 32...Qe5, offering a queen trade to take the sting out of the attack.",
+      "sv": "Svart var redan illa ute, men 32...Re8? förlorar snabbt. 33.Nd6 angriper tornet och lägger till en tredje angripare mot f7: tornet på c7, springaren på d6 och damen på d5 siktar alla dit, medan bara Svarts dam försvarar. Motorn ville spela 32...Qe5 och erbjuda damavbyte för att ta udden av anfallet.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qe5",
+          "Qxe5+",
+          "Nxe5",
+          "Re7"
+        ]
+      }
+    },
+    {
+      "ply": 67,
+      "en": "Kasparov's counterattack is real: after 34...Nxf2 Black threatens ...Rh1 mate. The knight on f2 covers h1, the rook would cover g1 along the first rank, and the pawn on f3 covers g2. So White must keep giving checks, and it can.",
+      "sv": "Kasparovs motangrepp är på allvar: efter 34...Nxf2 hotar Svart ...Rh1 matt. Springaren på f2 täcker h1, tornet skulle täcka g1 längs första raden och bonden på f3 täcker g2. Vit måste alltså fortsätta schacka, och det går."
+    },
+    {
+      "ply": 69,
+      "en": "35.Nxf7+ starts the checks. The engine's choice was 35...Qxf7, giving up the queen to end the attack, though Black would still be lost. 35...Kg8 would even allow 36.Nh6+ and 37.Qg8 mate. After 35...Kg7 the king is driven into the open.",
+      "sv": "35.Nxf7+ inleder schackserien. Motorns val var 35...Qxf7, där Svart ger damen för att stoppa anfallet, men Svart skulle ändå vara förlorad. 35...Kg8 hade till och med tillåtit 36.Nh6+ och 37.Qg8 matt. Efter 35...Kg7 drivs kungen ut i det öppna.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Qxf7",
+          "Qd8+",
+          "Kg7",
+          "Rxf7+",
+          "Kxf7"
+        ]
+      }
+    },
+    {
+      "ply": 72,
+      "en": "37.Rxh7+ leaves only 37...Kg6, and Kasparov resigned. His king is out in the open, and White's checks win decisive material long before Black gets time for ...Rh1 mate.",
+      "sv": "Efter 37.Rxh7+ återstår bara 37...Kg6, och Kasparov gav upp. Kungen står helt öppet, och Vits schackar vinner avgörande material långt innan Svart hinner med ...Rh1 matt."
+    }
+  ],
+  "summary": {
+    "en": "Deep Blue won by collecting small structural gains, doubled pawns and an isolated pawn, and then calculating exactly when Kasparov went for the attack. Black's counterattack was risky but playable until 30...f3, which let White keep the kingside closed; after that the black pieces were loose, and White's rook, knight and queen reached f7 first. The lesson: before you throw everything into an attack, check what your opponent can do against your own king. Kasparov recovered to win the match 4–2.",
+    "sv": "Deep Blue vann genom att samla små strukturella fördelar, dubbelbönder och en isolerad bonde, och sedan räkna exakt när Kasparov gick till anfall. Svarts motangrepp var riskabelt men spelbart fram till 30...f3, som lät Vit hålla kungsflygeln stängd; därefter hängde de svarta pjäserna löst, och Vits torn, springare och dam hann först till f7. Lärdomen: innan du kastar allt i ett anfall, kontrollera vad motståndaren kan göra mot din egen kung. Kasparov hämtade sig och vann matchen med 4–2."
+  }
+}

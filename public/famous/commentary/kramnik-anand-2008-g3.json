@@ -1,0 +1,125 @@
+{
+  "id": "kramnik-anand-2008-g3",
+  "intro": {
+    "en": "Bonn 2008, game 3 of the World Championship match between Vladimir Kramnik and Viswanathan Anand. After two draws, Anand went into one of the sharpest lines of the Semi-Slav, the Meran, where both sides accept a broken position for active play. Watch the kings: Black's never castles, and in the end it is White's king that gets caught in the open.",
+    "sv": "Bonn 2008, parti 3 i VM-matchen mellan Vladimir Kramnik och Viswanathan Anand. Efter två remier gick Anand in i en av de skarpaste varianterna i semislaviskt, Meranvarianten, där båda sidor accepterar en trasig ställning för aktivt spel. Håll ögonen på kungarna: Svarts gör aldrig rockad, och till slut är det Vits kung som blir fångad i det öppna."
+  },
+  "comments": [
+    {
+      "ply": 13,
+      "en": "7...b5 is the Meran: Black takes on c4 and then gains time by hitting the bishop. The plan is ...Bb7, ...a6 and ...c5 to fight for the centre.",
+      "sv": "7...b5 är Meranvarianten: Svart slår på c4 och vinner sedan tid genom att angripa löparen. Planen är ...Bb7, ...a6 och ...c5 för att kämpa om centrum."
+    },
+    {
+      "ply": 23,
+      "en": "9.e4 c5 10.e5 cxd4 11.Nxb5 axb5 12.exf6 is a forcing sequence of this line. The knights have been traded off for each other, and Black has an extra pawn on d4, but his kingside pawns are split and his king has no safe home. White will soon win back the pawn on b5.",
+      "sv": "9.e4 c5 10.e5 cxd4 11.Nxb5 axb5 12.exf6 är en forcerande följd i den här varianten. Springarna har bytts mot varandra och Svart har en extra bonde på d4, men bönderna på kungsflygeln är splittrade och kungen saknar ett säkert hem. Vit vinner snart tillbaka bonden på b5."
+    },
+    {
+      "ply": 27,
+      "en": "The engine preferred 14...b4, but 14...Bb7 is playable: the bishop aims down the long diagonal towards White's king, and the rooks will use the g-file. White keeps a small edge.",
+      "sv": "Motorn föredrog 14...b4, men 14...Bb7 är spelbart: löparen siktar längs den långa diagonalen mot Vits kung, och tornen ska använda g-linjen. Vit behåller en liten fördel."
+    },
+    {
+      "ply": 33,
+      "en": "Black doesn't castle. Kingside castling is no longer possible, and on the queenside there are no pawns left to shelter the king (the engine rates 17...O-O-O much worse). Instead 17...Rg4 puts the rook on the half-open g-file, where it works against White's king.",
+      "sv": "Svart gör inte rockad. Kort rockad går inte längre, och på damflygeln finns inga bönder kvar som kan skydda kungen (motorn bedömer 17...O-O-O som mycket sämre). I stället ställer 17...Rg4 tornet på den halvöppna g-linjen, där det arbetar mot Vits kung."
+    },
+    {
+      "ply": 34,
+      "en": "18.Bf4 lets Black trade off the bishop with 18...Bxf4 and throws away most of White's advantage. The engine preferred 18.b4, opening lines on the queenside.",
+      "sv": "18.Bf4 låter Svart byta bort löparen med 18...Bxf4 och kastar bort det mesta av Vits fördel. Motorn föredrog 18.b4, som öppnar linjer på damflygeln.",
+      "line": {
+        "from": "before",
+        "san": [
+          "b4",
+          "Ke7",
+          "a4",
+          "Rb8"
+        ]
+      }
+    },
+    {
+      "ply": 36,
+      "en": "19.Nxd4 starts a wild sequence: the knight collects two pawns on d4 and e6 before it is taken, and then the rook takes Black's knight on d7, protected by the bishop on b5. The engine preferred the quieter 19.Rxd4, which kept a small edge; after the game move the position is level.",
+      "sv": "19.Nxd4 inleder en vild följd: springaren tar två bönder, på d4 och e6, innan den slås, och sedan tar tornet Svarts springare på d7, skyddat av löparen på b5. Motorn föredrog det lugnare 19.Rxd4, som behöll en liten fördel; efter partidraget är ställningen jämn.",
+      "line": {
+        "from": "after",
+        "san": [
+          "h5",
+          "Nxe6",
+          "fxe6",
+          "Rxd7",
+          "Kf8"
+        ]
+      }
+    },
+    {
+      "ply": 46,
+      "en": "After the trades White is two pawns up, yet the engine calls the position equal. White's g-pawn has gone to f4, so the king stands on an open g-file, and Black's queen and bishop aim at the squares around it, while White's extra pawns include doubled f-pawns that are hard to use.",
+      "sv": "Efter bytena har Vit två bönder mer, men motorn bedömer ställningen som jämn. Vits g-bonde har gått till f4, så kungen står på en öppen g-linje, och Svarts dam och löpare siktar mot rutorna runt den, medan Vits merbönder bland annat är dubbelbönder på f-linjen som är svåra att utnyttja."
+    },
+    {
+      "ply": 56,
+      "en": "29.Ra3? is the first move that tips the balance against White. The rook leaves the first rank, and after 29...Rg1+ Black's pieces invade with checks. 29.Rd1 was the way to hold the balance.",
+      "sv": "29.Ra3? är det första draget som tippar balansen till Vits nackdel. Tornet lämnar första raden, och efter 29...Rg1+ tränger Svarts pjäser in med schackar. 29.Rd1 var vägen att hålla balansen.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Rd1",
+          "Bf5",
+          "h3",
+          "Rg1+"
+        ]
+      }
+    },
+    {
+      "ply": 61,
+      "en": "31...Bg4 is not Black's most precise; 31...Bf5+ kept up the pressure. Now 32.Rd3, bringing the rook back to defend, would have kept White in the game.",
+      "sv": "31...Bg4 är inte Svarts mest exakta; 31...Bf5+ höll trycket uppe. Nu hade 32.Rd3, där tornet går tillbaka för att försvara, hållit Vit kvar i partiet.",
+      "line": {
+        "from": "after",
+        "san": [
+          "Rd3",
+          "Qc5+",
+          "Rc3",
+          "Qd5"
+        ]
+      }
+    },
+    {
+      "ply": 62,
+      "en": "32.f3?? is the decisive blunder. The bishop simply retreats with check, 32...Bf5+, and White's king on c2 is caught: blocking with a piece costs material, and running to b3 lets the rook join the attack with 33...Rc1.",
+      "sv": "32.f3?? är den avgörande blundern. Löparen går helt enkelt tillbaka med schack, 32...Bf5+, och Vits kung på c2 är fast: att blockera med en pjäs kostar material, och att fly till b3 låter tornet ansluta till anfallet med 33...Rc1."
+    },
+    {
+      "ply": 65,
+      "en": "After 33.Bd3 Anand missed a quicker win: 33...Bxd3+ 34.Rxd3 Qc4+ forces the rook to block on c3, and then 35...Qxe2+ takes White's unprotected queen. 33...Bh3 is still winning, just more slowly.",
+      "sv": "Efter 33.Bd3 missade Anand en snabbare vinst: 33...Bxd3+ 34.Rxd3 Qc4+ tvingar tornet att blockera på c3, och sedan tar 35...Qxe2+ Vits oskyddade dam. 33...Bh3 vinner ändå, bara långsammare.",
+      "line": {
+        "from": "before",
+        "san": [
+          "Bxd3+",
+          "Rxd3",
+          "Qc4+",
+          "Rc3",
+          "Qxe2+"
+        ]
+      }
+    },
+    {
+      "ply": 69,
+      "en": "35...Rxe2+ gives the rook for White's queen. After 36.Bxe2 Bf5+ Black's queen and bishop keep hunting the king, and the bishop on e2 falls a few moves later.",
+      "sv": "35...Rxe2+ ger tornet för Vits dam. Efter 36.Bxe2 Bf5+ fortsätter Svarts dam och löpare att jaga kungen, och löparen på e2 faller några drag senare."
+    },
+    {
+      "ply": 81,
+      "en": "39.a7 comes too late, and after 41...Bb1+ Kramnik resigned. Going to the corner allows mate in two, and stepping out to b3 only invites more checks from the queen and bishop.",
+      "sv": "39.a7 kommer för sent, och efter 41...Bb1+ gav Kramnik upp. Att gå till hörnet tillåter matt i två drag, och att kliva ut till b3 bjuder bara in till fler schackar från dam och löpare."
+    }
+  ],
+  "summary": {
+    "en": "Anand's opening choice gave a position where material counted less than activity: even two pawns down, Black was fine because White's king was exposed. Kramnik held the balance until 29.Ra3 and then collapsed with 32.f3, which let Black's bishop come back with check and catch his king in the open. The lesson: in an unbalanced position, king safety and active pieces can matter more than extra pawns.",
+    "sv": "Anands öppningsval gav en ställning där material betydde mindre än aktivitet: även med två bönder mindre stod Svart bra eftersom Vits kung var blottad. Kramnik höll balansen fram till 29.Ra3 och föll sedan ihop med 32.f3, som lät Svarts löpare komma tillbaka med schack och fånga hans kung i det öppna. Lärdomen: i en obalanserad ställning kan kungens säkerhet och aktiva pjäser betyda mer än extra bönder."
+  }
+}

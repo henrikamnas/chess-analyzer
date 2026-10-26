@@ -1,0 +1,112 @@
+{
+  "id": "kasparov-portisch-1983",
+  "intro": {
+    "en": "Nikšić, 1983: the 20-year-old Garry Kasparov against Lajos Portisch, one of the strongest players of the time. The opening is a Queen's Indian with 4.Nc3 and 5.a3. Watch how White aims both bishops at Black's king, opens the centre with the d-pawn, and then sacrifices both bishops to strip the king bare.",
+    "sv": "Nikšić 1983: den 20-årige Garry Kasparov mot Lajos Portisch, en av tidens starkaste spelare. Öppningen är ett damindiskt med 4.Nc3 och 5.a3. Se hur Vit riktar båda löparna mot den svarta kungen, öppnar centrum med d-bonden och sedan offrar båda löparna för att klä av kungen dess skydd."
+  },
+  "comments": [
+    {
+      "ply": 8,
+      "en": "5.a3 gives the opening its name, the Kasparov-Petrosian Variation. The quiet pawn move stops ...Bb4, so the knight on c3 cannot be pinned by ...Bb4 and keeps its grip on e4 and d5.",
+      "sv": "5.a3 ger öppningen dess namn, Kasparov-Petrosian-varianten. Det lugna bondedraget förhindrar ...Bb4, så att springaren på c3 inte kan bindas av ...Bb4 och behåller sitt grepp om e4 och d5."
+    },
+    {
+      "ply": 14,
+      "en": "After the knight trade on c3, White has a broad pawn centre with c3, d4 and e3. Later the c-pawn can go to c4 to support a d4-d5 break, and the bishop on c1 will find a long diagonal on b2.",
+      "sv": "Efter springarbytet på c3 har Vit ett brett bondecentrum med c3, d4 och e3. Senare kan c-bonden gå till c4 och stödja ett genombrott med d4-d5, och löparen på c1 får en lång diagonal på b2."
+    },
+    {
+      "ply": 28,
+      "en": "15.c4 completes White's set-up. The bishop on b2 is aimed at g7 and waits for the d-pawn to move, the bishop on d3 at h7, and the rook on d1 supports the d4-d5 break. The position is still balanced, but White's pieces are lined up against Black's king.",
+      "sv": "15.c4 fullbordar den vita uppställningen. Löparen på b2 siktar mot g7 och väntar på att d-bonden ska flytta, löparen på d3 mot h7, och tornet på d1 stöder genombrottet d4-d5. Ställningen är fortfarande i balans, men de vita pjäserna är uppställda mot den svarta kungen."
+    },
+    {
+      "ply": 29,
+      "en": "15...cxd4? is the first real mistake. After 16.exd4 White's c- and d-pawns are mobile, and the d5 push will open lines for both bishops. The engine wanted 15...Na5 at once, hitting c4 and meeting 16.d5 with simplifications that keep Black close to equal.",
+      "sv": "15...cxd4? är det första riktiga misstaget. Efter 16.exd4 är Vits c- och d-bönder rörliga, och framstöten d5 kommer att öppna linjer för båda löparna. Motorn ville spela 15...Na5 direkt, som anfaller c4 och möter 16.d5 med förenklingar som håller Svart nära utjämning.",
+      "line": {
+        "from": "before",
+        "san": ["Na5", "d5", "exd5", "Be5", "Bd6", "Bxd6", "Qxd6", "cxd5", "Bxd5"]
+      }
+    },
+    {
+      "ply": 32,
+      "en": "17.d5! The pawn breaks through in the centre. It opens the long diagonal for the bishop on b2, and if the pawn is taken, the d-file opens, and the rook on d1 will join in as soon as the bishop on d3 moves.",
+      "sv": "17.d5! Bonden bryter igenom i centrum. Den öppnar den långa diagonalen för löparen på b2, och om bonden slås öppnas d-linjen, och tornet på d1 kommer med i spelet så snart löparen på d3 flyttar."
+    },
+    {
+      "ply": 33,
+      "en": "17...exd5? opens the d-file and lets White's pieces in. Black was already in trouble, but the engine preferred 17...Qf4, bringing the queen over to the kingside where the danger is, which would have resisted better.",
+      "sv": "17...exd5? öppnar d-linjen och släpper in de vita pjäserna. Svart låg redan illa till, men motorn föredrog 17...Qf4, som för damen över till kungsflygeln där faran finns och hade gjort bättre motstånd.",
+      "line": {
+        "from": "before",
+        "san": ["Qf4", "Ne5", "exd5", "cxd5", "Bxd5", "Nd7", "Be6", "Nxf8", "Bxf8"]
+      }
+    },
+    {
+      "ply": 36,
+      "en": "19.Bxh7+! The bishop leaves d3 with check, and that uncovers the rook on d1 against the bishop on d5. After 19...Kxh7 20.Rxd5 White has won back the piece, and the h-pawn in front of Black's king is gone. The engine actually rates the quiet 19.Nd4 a little higher, but both moves leave White clearly better.",
+      "sv": "19.Bxh7+! Löparen lämnar d3 med schack, och då blottas tornet på d1 mot löparen på d5. Efter 19...Kxh7 20.Rxd5 har Vit vunnit tillbaka pjäsen, och h-bonden framför den svarta kungen är borta. Motorn värderar faktiskt det lugna 19.Nd4 något högre, men båda dragen ger Vit klart bättre spel.",
+      "line": {
+        "from": "before",
+        "san": ["Nd4", "g6", "Nf5", "Rfe8", "Be5", "Bf8", "Bxc7"]
+      }
+    },
+    {
+      "ply": 40,
+      "en": "21.Bxg7! The second bishop goes too. This is the classic double bishop sacrifice, known since Lasker vs Bauer, 1889: with the h- and g-pawns gone, Black's king is left almost bare. White is a piece for a pawn down, but Black's knight on a5 and rook on c8 are far from the defence.",
+      "sv": "21.Bxg7! Även den andra löparen offras. Det är det klassiska dubbla löparoffret, känt sedan Lasker mot Bauer 1889: när h- och g-bönderna är borta står den svarta kungen nästan naken. Vit ligger under med en pjäs mot en bonde, men Svarts springare på a5 och torn på c8 står långt från försvaret."
+    },
+    {
+      "ply": 42,
+      "en": "22.Ne5 brings the knight towards the king and clears the way for the queen to check on g4. The engine agrees with every white move in this phase.",
+      "sv": "22.Ne5 för springaren mot kungen och banar väg för damen att ge schack på g4. Motorn håller med om varje vitt drag i den här fasen."
+    },
+    {
+      "ply": 46,
+      "en": "24.Qf5 threatens Qxf7 mate, with the queen protected by the knight on e5. Black blocks with 24...f6, which loosens the king's position even more.",
+      "sv": "24.Qf5 hotar Qxf7 matt, med damen skyddad av springaren på e5. Svart spärrar med 24...f6, vilket försvagar kungsställningen ännu mer."
+    },
+    {
+      "ply": 48,
+      "en": "25.Nd7+! The knight gives check, and Black gives back material: after 25...Rxd7 26.Rxd7 material is level again. But now White's rook stands on the seventh rank, hitting the queen on c7 and the bishop on e7, and the black king has almost no pawn cover.",
+      "sv": "25.Nd7+! Springaren ger schack, och Svart lämnar tillbaka material: efter 25...Rxd7 26.Rxd7 är materialet jämnt igen. Men nu står det vita tornet på sjunde raden och anfaller damen på c7 och löparen på e7, och den svarta kungen har nästan inget bondeskydd."
+    },
+    {
+      "ply": 51,
+      "en": "26...Qc5 lets White's queen in. 27.Qh7 follows, heading for h8 with check. The engine preferred 26...Qe5, putting the queen in the centre where it helps defend the king.",
+      "sv": "26...Qc5 släpper in den vita damen. 27.Qh7 följer, på väg mot h8 med schack. Motorn föredrog 26...Qe5, som ställer damen i centrum där den hjälper till att försvara kungen.",
+      "line": {
+        "from": "before",
+        "san": ["Qe5", "Qh3", "f5", "Qh6+", "Kg8", "Rd3"]
+      }
+    },
+    {
+      "ply": 59,
+      "en": "30...Ne5? speeds up the end. The queen now drives the king forward with checks on h7 and g8. If 32...Nf7, then 33.Re1+ Qe5 34.Rxe5+ wins the queen for a rook. The engine wanted 30...Bd6, keeping the pieces close to the king, though White would still be winning.",
+      "sv": "30...Ne5? påskyndar slutet. Damen driver nu kungen framåt med schackar på h7 och g8. Om 32...Nf7 vinner 33.Re1+ Qe5 34.Rxe5+ damen mot ett torn. Motorn ville spela 30...Bd6, som håller pjäserna nära kungen, även om Vit fortfarande hade stått till vinst.",
+      "line": {
+        "from": "after",
+        "san": ["Qh7+", "Ke6", "Qg8+", "Nf7", "Re1+", "Qe5", "Rxe5+", "Kxe5"]
+      }
+    },
+    {
+      "ply": 63,
+      "en": "32...Kf5 walks straight into a forced mate. 32...Nf7 would have lost the queen but lasted longer.",
+      "sv": "32...Kf5 går rakt in i en forcerad matt. 32...Nf7 hade kostat damen men hållit ut längre."
+    },
+    {
+      "ply": 68,
+      "en": "35.Qb3+ and Portisch resigned. The king has been chased from g8 to f3, and after 35...Qc3 36.Qd5+ Ke2 37.Qe4+ Qe3 38.Qxe3 it is mate.",
+      "sv": "35.Qb3+ och Portisch gav upp. Kungen har jagats från g8 till f3, och efter 35...Qc3 36.Qd5+ Ke2 37.Qe4+ Qe3 38.Qxe3 är det matt.",
+      "line": {
+        "from": "after",
+        "san": ["Qc3", "Qd5+", "Ke2", "Qe4+", "Qe3", "Qxe3#"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "Kasparov built up quietly, aiming every piece at the king, and then opened the position with d4-d5 at the right moment. Portisch's 15...cxd4 and 17...exd5 opened lines for White's pieces, and the double bishop sacrifice removed the king's pawn cover. The lesson: when the opponent's pieces are far from the king, sacrificing material to open lines around it is often worth it.",
+    "sv": "Kasparov byggde upp lugnt, riktade alla pjäser mot kungen och öppnade sedan ställningen med d4-d5 i rätt ögonblick. Portischs 15...cxd4 och 17...exd5 öppnade linjer för de vita pjäserna, och det dubbla löparoffret tog bort kungens bondeskydd. Läxan: när motståndarens pjäser står långt från kungen är det ofta värt att offra material för att öppna linjer runt den."
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "id": "karpov-korchnoi-1974-g2",
+  "intro": {
+    "en": "Moscow, 1974: game 2 of the Candidates final between Anatoly Karpov and Viktor Korchnoi, the match that decided who would challenge Fischer. Korchnoi chose the sharp Dragon Sicilian, and Karpov answered with the Yugoslav Attack, where both sides castle on opposite wings and race to attack. Watch how White uses the h-file and the trade of dark-squared bishops against the black king, and how one loose rook move turns a tense race into a rout.",
+    "sv": "Moskva 1974: parti 2 i kandidatfinalen mellan Anatolij Karpov och Viktor Kortjnoj, matchen som avgjorde vem som skulle utmana Fischer. Kortjnoj valde den skarpa drakvarianten i sicilianskt, och Karpov svarade med jugoslaviska angreppet, där sidorna rockerar åt olika håll och tävlar om att anfalla först. Se hur Vit använder h-linjen och bytet av de svartfältiga löparna mot den svarta kungen, och hur ett enda slarvigt torndrag förvandlar en spänd kapplöpning till en katastrof."
+  },
+  "comments": [
+    {
+      "ply": 9,
+      "en": "5...g6 is the Dragon Variation. Black's bishop will go to g7, where it aims down the long diagonal at White's queenside, and the open c-file will be Black's main road for counterplay.",
+      "sv": "5...g6 är drakvarianten. Den svarta löparen ska till g7, där den siktar längs den långa diagonalen mot Vits damflygel, och den öppna c-linjen blir Svarts huvudväg till motspel."
+    },
+    {
+      "ply": 16,
+      "en": "With f3, Qd2 and now 9.Bc4 White has set up the Yugoslav Attack. The plan is textbook: castle queenside, push the h-pawn to open the h-file, and play Bh6 to trade off Black's best defender, the Dragon bishop. The bishop on c4 also keeps an eye on d5 and f7 so that Black cannot free himself easily.",
+      "sv": "Med f3, Qd2 och nu 9.Bc4 har Vit ställt upp jugoslaviska angreppet. Planen är klassisk: lång rockad, h-bonden framåt för att öppna h-linjen, och Bh6 för att byta bort Svarts bästa försvarare, draklöparen. Löparen på c4 håller också koll på d5 och f7 så att Svart inte lätt kan befria sig."
+    },
+    {
+      "ply": 19,
+      "en": "10...Rc8 puts the rook on the c-file, the usual Dragon plan. The engine preferred 10...h5, which stops White's h-pawn in its tracks; in a race on opposite wings, slowing the opponent's attack can be worth as much as speeding up your own.",
+      "sv": "10...Rc8 ställer tornet på c-linjen, den vanliga drakplanen. Motorn föredrog 10...h5, som stoppar Vits h-bonde direkt; i en kapplöpning på olika flyglar kan det vara lika mycket värt att bromsa motståndarens anfall som att skynda på sitt eget.",
+      "line": {
+        "from": "before",
+        "san": ["h5", "O-O-O", "Ne5", "Bb3", "Rc8"]
+      }
+    },
+    {
+      "ply": 23,
+      "en": "12...Nc4 is a typical Dragon move, but here it lets White simplify: after 13.Bxc4 Rxc4 Black has traded his active knight for White's bishop, and White can push h5 at once. Once more the engine wanted 12...h5, holding up the h-pawn.",
+      "sv": "12...Nc4 är ett typiskt drag i draken, men här låter det Vit förenkla: efter 13.Bxc4 Rxc4 har Svart bytt bort sin aktiva springare mot Vits löpare, och Vit kan direkt spela h5. Återigen ville motorn ha 12...h5, som håller tillbaka h-bonden.",
+      "line": {
+        "from": "before",
+        "san": ["h5", "Bg5", "Nc4", "Qd3"]
+      }
+    },
+    {
+      "ply": 28,
+      "en": "14.h5 Nxh5 15.g4 is the classic way to open the h-file: White gives a pawn, then kicks the knight away with the g-pawn. The h-file now points straight at h7, where White's rook and queen will soon combine.",
+      "sv": "14.h5 Nxh5 15.g4 är det klassiska sättet att öppna h-linjen: Vit ger en bonde och jagar sedan bort springaren med g-bonden. h-linjen pekar nu rakt mot h7, där Vits torn och dam snart samverkar."
+    },
+    {
+      "ply": 30,
+      "en": "16.Nde2 is a well-known Karpov move: the knight protects c3 against the exchange sacrifice ...Rxc3 and can later come to f4 or d5. The engine is not convinced, though. It preferred 16.Kb1, and after the text Black had a good chance to hit back in the centre.",
+      "sv": "16.Nde2 är ett välkänt Karpovdrag: springaren skyddar c3 mot kvalitetsoffret ...Rxc3 och kan senare gå till f4 eller d5. Motorn är dock inte övertygad. Den föredrog 16.Kb1, och efter partidraget hade Svart en bra chans att slå tillbaka i centrum."
+    },
+    {
+      "ply": 31,
+      "en": "16...Qa5 misses that chance. The engine's choice was 16...Re8, and if 17.e5 then 17...Nxg4 18.fxg4 Bxg4, using the loose white pawns for counterplay. After the queen move White simply carries on with Bh6.",
+      "sv": "16...Qa5 missar den chansen. Motorns val var 16...Re8, och om 17.e5 så 17...Nxg4 18.fxg4 Bxg4, där Svart utnyttjar de lösa vita bönderna till motspel. Efter damdraget fortsätter Vit helt enkelt med Bh6.",
+      "line": {
+        "from": "before",
+        "san": ["Re8", "e5", "Nxg4", "fxg4", "Bxg4"]
+      }
+    },
+    {
+      "ply": 34,
+      "en": "After 17.Bh6 Bxh6 18.Qxh6 the Dragon bishop is gone and the white queen sits on h6, right in front of the black king. Apart from the king, the only defender of h7 is the knight on f6, and everything White does next aims to remove it.",
+      "sv": "Efter 17.Bh6 Bxh6 18.Qxh6 är draklöparen borta och den vita damen står på h6, mitt framför den svarta kungen. Förutom kungen är springaren på f6 den enda försvararen av h7, och allt Vit gör härnäst går ut på att få bort den."
+    },
+    {
+      "ply": 37,
+      "en": "19...R4c5? is the decisive mistake. Black wants to meet g5 with ...Rxg5, but this costs the time Black needed for defence. The engine's 19...Be6 keeps the game tense: after 20.g5 Nh5 21.Nf4 Black can fight for e5 and the kingside.",
+      "sv": "19...R4c5? är det avgörande misstaget. Svart vill möta g5 med ...Rxg5, men det kostar tid som Svart behövde till försvaret. Motorns 19...Be6 håller partiet spänt: efter 20.g5 Nh5 21.Nf4 kan Svart kämpa om e5 och kungsflygeln.",
+      "line": {
+        "from": "before",
+        "san": ["Be6", "g5", "Nh5", "Nf4", "Qe5"]
+      }
+    },
+    {
+      "ply": 40,
+      "en": "20...Rxg5 grabs the pawn, but 21.Rd5! is the point. The rook offers itself on d5, blocks the queen's protection of the rook on g5, and after the exchange on d5 White's knight lands on d5, attacking the knight on f6, the key defender of h7.",
+      "sv": "20...Rxg5 tar bonden, men 21.Rd5! är poängen. Tornet ställer sig på d5, blockerar damens skydd av tornet på g5, och efter bytet på d5 hamnar Vits springare på d5 och angriper springaren på f6, h7:s viktigaste försvarare."
+    },
+    {
+      "ply": 43,
+      "en": "Black is two pawns up, but his king is lost. The engine's best defence, 22...Qc5, also fails. After 22...Re8 the second knight joins in with 23.Nef4, eyeing h5 and g6 next to the black king's shelter.",
+      "sv": "Svart har två bönder mer, men kungen går inte att rädda. Motorns bästa försvar, 22...Qc5, räcker inte heller. Efter 22...Re8 ansluter den andra springaren med 23.Nef4 och siktar på h5 och g6 i kungens skydd."
+    },
+    {
+      "ply": 46,
+      "en": "24.e5! is the only winning move. The pawn attacks f6 a second time, so the defender of h7 cannot hold. Other moves, such as 24.Nxf6+ at once, would let Black escape with roughly equal chances.",
+      "sv": "24.e5! är det enda vinnande draget. Bonden angriper f6 en andra gång, så att h7:s försvarare inte kan hålla. Andra drag, som 24.Nxf6+ direkt, skulle låta Svart komma undan med ungefär lika chanser."
+    },
+    {
+      "ply": 52,
+      "en": "After 25.exf6 exf6 26.Qxh7+ Kf8 27.Qh8+ the black king is driven out into the open, and Korchnoi resigned. The engine's line shows the king being chased across the board while White collects material with check.",
+      "sv": "Efter 25.exf6 exf6 26.Qxh7+ Kf8 27.Qh8+ jagas den svarta kungen ut i det fria, och Kortjnoj gav upp. Motorns variant visar hur kungen jagas över brädet medan Vit plockar material med schack.",
+      "line": {
+        "from": "after",
+        "san": ["Ke7", "Nxd5+", "Kd8", "Qxf6+", "Kc8", "Rd1"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "In opposite-side castling races, time is everything: Black's quiet moves (10...Rc8, 12...Nc4) let White's h-pawn through, while the engine kept recommending ...h5 to stop it. Karpov's attack followed the textbook recipe: open the h-file, trade the Dragon bishop with Bh6, then remove the last defender of h7. Material counts little when the king is under fire, as the two extra black pawns showed.",
+    "sv": "I kapplöpningar med rockad åt olika håll är tiden allt: Svarts lugna drag (10...Rc8, 12...Nc4) släppte igenom Vits h-bonde, medan motorn hela tiden rekommenderade ...h5 för att stoppa den. Karpovs anfall följde läroboken: öppna h-linjen, byt bort draklöparen med Bh6 och eliminera sedan den sista försvararen av h7. Material betyder lite när kungen är under eld, som Svarts två merbönder visade."
+  }
+}

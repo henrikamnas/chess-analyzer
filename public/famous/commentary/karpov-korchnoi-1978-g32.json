@@ -1,0 +1,94 @@
+{
+  "id": "karpov-korchnoi-1978-g32",
+  "intro": {
+    "en": "Baguio, 1978: game 32 of the World Championship match between Anatoly Karpov and Viktor Korchnoi, played to six wins. Karpov had led 5–2, but Korchnoi fought back to 5–5, so whoever won this game would be world champion. Korchnoi chose the Pirc Defence; watch how Karpov gains space, breaks open the centre with e5, and then pushes his passed queenside pawn up the board. Under that pressure both players make mistakes in the middlegame.",
+    "sv": "Baguio 1978: parti 32 i VM-matchen mellan Anatolij Karpov och Viktor Kortjnoj, som spelades till sex vinster. Karpov hade lett med 5–2, men Kortjnoj kämpade sig tillbaka till 5–5, så den som vann detta parti skulle bli världsmästare. Kortjnoj valde Pirc-försvaret; se hur Karpov tar utrymme, bryter upp centrum med e5 och sedan för fram sin damflygelbonde. Under den pressen gör båda spelarna misstag i mittspelet."
+  },
+  "comments": [
+    {
+      "ply": 12,
+      "en": "In the Pirc, Black lets White build a big centre and plans to attack it later. Here 6...c5 7.d5 turns the game into a Benoni-like structure: White has more space, and Black hopes for queenside play with ...b5. The engine preferred the classical 6...e5.",
+      "sv": "I Pirc låter Svart Vit bygga ett stort centrum och planerar att angripa det senare. Här förvandlar 6...c5 7.d5 partiet till en Benonilik struktur: Vit har mer utrymme, och Svart hoppas på spel på damflygeln med ...b5. Motorn föredrog det klassiska 6...e5."
+    },
+    {
+      "ply": 15,
+      "en": "7...Na6 and 8...Nc7 is a standard idea in such structures: from c7 the knight supports the ...b5 break and keeps an eye on d5.",
+      "sv": "7...Na6 och 8...Nc7 är en standardidé i sådana strukturer: från c7 stöder springaren genombrottet ...b5 och håller koll på d5."
+    },
+    {
+      "ply": 23,
+      "en": "12...Nf6 is a real inaccuracy. The knight has gone to h5 and straight back, so Black has lost time, and on f6 it can be hit by the e5 break. The engine preferred 12...Qd7.",
+      "sv": "12...Nf6 är en verklig onoggrannhet. Springaren har gått till h5 och direkt tillbaka, så Svart har förlorat tid, och på f6 kan den träffas av genombrottet e5. Motorn föredrog 12...Qd7.",
+      "line": {
+        "from": "before",
+        "san": ["Qd7", "Ra3", "Ba6", "Ba2", "Bb7"]
+      }
+    },
+    {
+      "ply": 35,
+      "en": "With 17.Bh6 and 18.Bxg7 White trades off Black's strong fianchetto bishop. Black's king on g7 has lost its most important defender.",
+      "sv": "Med 17.Bh6 och 18.Bxg7 byter Vit bort Svarts starka fianchettolöpare. Den svarta kungen på g7 har förlorat sin viktigaste försvarare."
+    },
+    {
+      "ply": 41,
+      "en": "21...Bb7? is a clear mistake. White's pawn on d5 cramps Black by controlling c6 and e6, and the engine's 21...e6 was the moment to challenge it. Instead the bishop just goes back to b7, and White gets time to bring the knight to g3 and prepare e5.",
+      "sv": "21...Bb7? är ett klart misstag. Vits bonde på d5 trycker in Svart genom att kontrollera c6 och e6, och motorns 21...e6 var tillfället att utmana den. I stället går löparen bara tillbaka till b7, och Vit får tid att föra springaren till g3 och förbereda e5.",
+      "line": {
+        "from": "before",
+        "san": ["e6", "dxe6", "Nxe6", "Ng3", "Qc7"]
+      }
+    },
+    {
+      "ply": 47,
+      "en": "24...Qa8 is another mistake: the queen joins the attack on the d5 pawn, but it leaves the kingside. The engine wanted 24...c4, driving the bishop away from d3.",
+      "sv": "24...Qa8 är ännu ett misstag: damen ansluter till angreppet på d5-bonden, men lämnar kungsflygeln. Motorn ville ha 24...c4, som jagar bort löparen från d3."
+    },
+    {
+      "ply": 52,
+      "en": "25.e5! breaks open the centre. After 25...dxe5 26.Qxe5 Nxd5 27.Bxb5 material is level again, but White's queen on e5 pins the knight on f6 to the king on g7, and White's pieces are far more active.",
+      "sv": "25.e5! bryter upp centrum. Efter 25...dxe5 26.Qxe5 Nxd5 27.Bxb5 är materialet jämnt igen, men Vits dam på e5 binder springaren på f6 mot kungen på g7, och de vita pjäserna är betydligt aktivare."
+    },
+    {
+      "ply": 54,
+      "en": "28.Nh4? is a serious slip by Karpov. 28.c4 would have chased the knight from d5 and won the pawn on e7 with a large advantage. After the knight move Black could have nearly equalised.",
+      "sv": "28.Nh4? är ett allvarligt snedsteg av Karpov. 28.c4 hade jagat bort springaren från d5 och vunnit bonden på e7 med stor fördel. Efter springardraget kunde Svart nästan ha utjämnat.",
+      "line": {
+        "from": "before",
+        "san": ["c4", "Nc7", "Nh4", "Bc8", "Qxe7"]
+      }
+    },
+    {
+      "ply": 55,
+      "en": "28...Bc8? gives the chance straight back. The engine's 28...Qb8 offers a queen trade and keeps Black close to level; after the bishop retreat, 29.c4 would again win the e7 pawn. Both players were feeling the tension of the deciding game.",
+      "sv": "28...Bc8? ger tillbaka chansen direkt. Motorns 28...Qb8 erbjuder dambyte och håller Svart nära jämvikt; efter löparreträtten hade 29.c4 återigen vunnit e7-bonden. Båda spelarna kände av spänningen i det avgörande partiet.",
+      "line": {
+        "from": "before",
+        "san": ["Qb8", "Qg5", "e6", "c4", "Nf4"]
+      }
+    },
+    {
+      "ply": 60,
+      "en": "Karpov played 29.Be2 instead of 29.c4, but after 30.c4 Nb4 31.Qxc5 he has won a pawn anyway. The c-pawn is gone, and White's b-pawn now has a free road ahead of it.",
+      "sv": "Karpov spelade 29.Be2 i stället för 29.c4, men efter 30.c4 Nb4 31.Qxc5 har han ändå vunnit en bonde. c-bonden är borta, och Vits b-bonde har nu fri väg framför sig."
+    },
+    {
+      "ply": 63,
+      "en": "32...Rc8 attacks the queen but loses time; the engine preferred the quiet 32...h6, giving the king some air. The game continues to swing: Karpov's 34.Rd2 also missed the stronger 34.Ne4.",
+      "sv": "32...Rc8 angriper damen men förlorar tid; motorn föredrog det lugna 32...h6, som ger kungen lite luft. Partiet fortsätter att svänga: Karpovs 34.Rd2 missade också det starkare 34.Ne4."
+    },
+    {
+      "ply": 78,
+      "en": "With 39.b4 and 40.b5 the passed b-pawn starts to roll, and 40.b5 attacks the black knight on c6. At the same time the knight on g5 eyes e6 and f7 near Black's king, so Black cannot defend both sides of the board.",
+      "sv": "Med 39.b4 och 40.b5 börjar den fria b-bonden rulla, och 40.b5 angriper den svarta springaren på c6. Samtidigt siktar springaren på g5 på e6 och f7 nära den svarta kungen, så Svart kan inte försvara båda sidorna av brädet."
+    },
+    {
+      "ply": 81,
+      "en": "After 41.b6 Rb7 the pawn on b6 ties Black's rook down, and White's pieces are ready to break through on the kingside, for example with 42.Nxf7. The game was adjourned here, and Korchnoi resigned without resuming play, so Karpov kept his title by 6–5.",
+      "sv": "Efter 41.b6 Rb7 binder bonden på b6 det svarta tornet, och de vita pjäserna är redo att bryta igenom på kungsflygeln, till exempel med 42.Nxf7. Partiet blev uppskjutet här, och Kortjnoj gav upp utan att återuppta spelet, så Karpov behöll titeln med 6–5."
+    }
+  ],
+  "summary": {
+    "en": "Karpov's plan was clear: use his space, break with e5 at the right moment, and turn an extra queenside pawn into a passed pawn. The middlegame was far from clean: both sides missed big chances around moves 28 and 29, which shows how hard it is to play well when a world title depends on one game. In the end the side with the more active pieces and the passed pawn won.",
+    "sv": "Karpovs plan var tydlig: utnyttja utrymmet, bryta med e5 i rätt ögonblick och förvandla en extra damflygelbonde till en fribonde. Mittspelet var långt ifrån felfritt: båda sidor missade stora chanser kring drag 28 och 29, vilket visar hur svårt det är att spela bra när en världsmästartitel hänger på ett enda parti. Till slut vann sidan med de aktivare pjäserna och fribonden."
+  }
+}
