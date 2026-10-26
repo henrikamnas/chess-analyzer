@@ -1,0 +1,108 @@
+{
+  "id": "polgar-karpov-2003",
+  "intro": {
+    "en": "Hoogeveen, 2003: Judit Polgar has White against the former world champion Anatoly Karpov, who answers 1.e4 with the solid Petrov's Defence. For a long time nothing much happens, but watch the e-file and the diagonal from d3 to h7. Black's pieces drift to the queenside, and Polgar finishes with the classic bishop sacrifice on h7.",
+    "sv": "Hoogeveen 2003: Judit Polgar har vit mot förre världsmästaren Anatolij Karpov, som svarar på 1.e4 med det solida Petrovs försvar. Länge händer inte mycket, men håll ögonen på e-linjen och diagonalen från d3 till h7. De svarta pjäserna glider över till damflygeln, och Polgar avgör med det klassiska löparoffret på h7."
+  },
+  "comments": [
+    {
+      "ply": 3,
+      "en": "2...Nf6 is Petrov's Defence. Instead of defending the e5 pawn, Black counterattacks White's e4 pawn. It is known as one of the most solid answers to 1.e4, often leading to symmetrical positions where White's first move counts for little.",
+      "sv": "2...Nf6 är Petrovs försvar. I stället för att skydda bonden på e5 går Svart till motangrepp mot Vits bonde på e4. Det räknas som ett av de mest solida svaren på 1.e4 och leder ofta till symmetriska ställningar där Vits första drag betyder lite."
+    },
+    {
+      "ply": 5,
+      "en": "3...d6 is the important detail of the Petrov: Black first drives the knight away and only then takes on e4. Grabbing the pawn at once is a well-known mistake, because White's queen comes to e2 with nasty threats along the e-file.",
+      "sv": "3...d6 är den viktiga detaljen i Petrovs försvar: Svart jagar först bort springaren och tar först därefter på e4. Att ta bonden direkt är ett välkänt misstag, eftersom den vita damen kommer till e2 med otäcka hot längs e-linjen."
+    },
+    {
+      "ply": 14,
+      "en": "With 5.d4 d5 6.Bd3 the game is in the Classical Attack. Black's knight on e4 is a strong piece, supported by the pawn on d5, so 8.c4 attacks that pawn to undermine the knight. The engine slightly prefers 8.Nbd2, but both are normal plans.",
+      "sv": "Med 5.d4 d5 6.Bd3 är partiet inne i den klassiska attacken. Den svarta springaren på e4 är en stark pjäs som stöds av bonden på d5, så 8.c4 angriper den bonden för att underminera springaren. Motorn föredrar en aning 8.Nbd2, men båda är normala planer."
+    },
+    {
+      "ply": 24,
+      "en": "After the exchanges on d5 and c3, White has an isolated pawn on a3, but also a firm pawn on d4, supported by the pawn on c3, and the half-open b-file, which the rook will use from b1. Black's position is solid, but every black piece must still find a good square.",
+      "sv": "Efter bytena på d5 och c3 har Vit en isolerad bonde på a3, men också en stabil bonde på d4, som stöds av bonden på c3, och den halvöppna b-linjen, som tornet snart använder från b1. Den svarta ställningen är solid, men varje svart pjäs måste fortfarande hitta en bra ruta."
+    },
+    {
+      "ply": 25,
+      "en": "13...Qd6 is a small inaccuracy. The engine wanted 13...Bf5, developing the last minor piece to an active square, from where it also covers d3, the natural square for White's bishop.",
+      "sv": "13...Qd6 är en liten onoggrannhet. Motorn ville spela 13...Bf5, som utvecklar den sista lätta pjäsen till en aktiv ruta, varifrån den också kontrollerar d3, den naturliga rutan för Vits löpare.",
+      "line": {
+        "from": "before",
+        "san": ["Bf5", "Bf4", "Rac8", "Re1", "Rfe8"]
+      }
+    },
+    {
+      "ply": 29,
+      "en": "15...Be6 puts the bishop on the e-file, right in front of the bishop on e7 and on the same file as White's rook on e1, which will face it once the bishop on e2 moves. That gives White tactical ideas, such as giving up the exchange on e6. The engine preferred 15...Bf6, pressing on d4.",
+      "sv": "15...Be6 ställer löparen på e-linjen, precis framför löparen på e7 och på samma linje som Vits torn på e1, som kommer att stå mitt emot den så snart löparen på e2 flyttar. Det ger Vit taktiska idéer, till exempel att offra kvaliteten på e6. Motorn föredrog 15...Bf6, som trycker mot d4."
+    },
+    {
+      "ply": 32,
+      "en": "Here the engine's choice was 17.Rxe6!, giving up the exchange: after 17...fxe6 18.Qc2 Black's pawns are broken and the queen and bishop line up against h7. Polgar's rook lift 17.Rb5, heading for e5, is slower and would have let Black equalise with 17...Bf6.",
+      "sv": "Här var motorns val 17.Rxe6!, ett kvalitetsoffer: efter 17...fxe6 18.Qc2 är de svarta bönderna sönderslagna och dam och löpare riktas mot h7. Polgars tornlyft 17.Rb5, på väg mot e5, är långsammare och hade låtit Svart utjämna med 17...Bf6.",
+      "line": {
+        "from": "before",
+        "san": ["Rxe6", "fxe6", "Qc2", "Rxf3", "Bxh7+", "Kf8", "gxf3"]
+      }
+    },
+    {
+      "ply": 33,
+      "en": "17...Na5? is a serious mistake. On c6 the knight guarded e5; on the edge it does nothing, and the rook jumps to e5 at once, piling up on the e-file against Black's bishops. 17...Bf6 was correct, hitting d4 and covering e5.",
+      "sv": "17...Na5? är ett allvarligt misstag. På c6 skyddade springaren e5; vid kanten gör den ingenting, och tornet hoppar genast till e5 och ökar trycket på e-linjen mot de svarta löparna. 17...Bf6 var rätt, med tryck mot d4 och kontroll över e5.",
+      "line": {
+        "from": "before",
+        "san": ["Bf6", "Ng5", "Bxg5", "Rxg5", "Bb3"]
+      }
+    },
+    {
+      "ply": 36,
+      "en": "19.R5e2 pulls the rook back. Once again 19.Rxe6 was the engine's choice, with the same idea of breaking up Black's pawns and aiming at h7. White still keeps a clear advantage, though.",
+      "sv": "19.R5e2 drar tillbaka tornet. Återigen var 19.Rxe6 motorns val, med samma idé att slå sönder de svarta bönderna och sikta mot h7. Vit har ändå kvar en klar fördel."
+    },
+    {
+      "ply": 38,
+      "en": "20.d5 gains space and drives the knight back to a5, where it is far away from its king. This matters a lot a few moves later.",
+      "sv": "20.d5 vinner utrymme och driver tillbaka springaren till a5, där den står långt från sin kung. Det får stor betydelse några drag senare."
+    },
+    {
+      "ply": 45,
+      "en": "23...Qxa3 wins a pawn, and the engine even rates it as Black's best move. But the queen is now on the edge of the board, far away from its king.",
+      "sv": "23...Qxa3 vinner en bonde, och motorn bedömer det till och med som Svarts bästa drag. Men damen står nu vid brädets kant, långt från sin kung."
+    },
+    {
+      "ply": 47,
+      "en": "24...Qc5? is the decisive mistake. The queen attacks the rook on e3, but does nothing for the king. Black had to play 24...g6, which closes the diagonal from d3 to h7; now White has a forced win.",
+      "sv": "24...Qc5? är det avgörande misstaget. Damen angriper tornet på e3 men gör ingenting för kungen. Svart måste spela 24...g6, som stänger diagonalen från d3 till h7; nu har Vit en forcerad vinst.",
+      "line": {
+        "from": "before",
+        "san": ["g6", "c4", "Qc5", "Qc1", "f6"]
+      }
+    },
+    {
+      "ply": 48,
+      "en": "25.Bxh7+! is the classic bishop sacrifice. It works because more attackers are ready: the queen comes to h5, the bishop on e5 can strike on g7, and the rook on e3 can swing over to g3. Black's knight on a5 is too far away to help.",
+      "sv": "25.Bxh7+! är det klassiska löparoffret. Det fungerar eftersom fler anfallare står redo: damen kommer till h5, löparen på e5 kan slå till på g7, och tornet på e3 kan svänga över till g3. Den svarta springaren på a5 står för långt bort för att hjälpa till."
+    },
+    {
+      "ply": 49,
+      "en": "Taking the bishop loses quickly, but declining it with 25...Kh8 would not have saved Black either: the engine finds a forced mate in both cases.",
+      "sv": "Att ta löparen förlorar snabbt, men att avböja med 25...Kh8 hade inte heller räddat Svart: motorn hittar en forcerad matt i båda fallen."
+    },
+    {
+      "ply": 50,
+      "en": "26.Qh5+ and Karpov resigned. After the only move 26...Kg8, 27.Bxg7! removes the g-pawn in front of the king, and the rook joins with check on g3.",
+      "sv": "26.Qh5+ och Karpov gav upp. Efter det enda draget 26...Kg8 tar 27.Bxg7! bort g-bonden framför kungen, och tornet ansluter med schack på g3.",
+      "line": {
+        "from": "after",
+        "san": ["Kg8", "Bxg7", "f6", "Bxf6", "Rxf6", "Rg3+", "Bg4", "Qxg4+", "Rg6", "Qxg6+"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "Karpov's Petrov was solid for a long time, but small inaccuracies put his bishops on the e-file and his knight on the edge. Polgar missed a strong exchange sacrifice on e6 twice; the first time Black could have equalised, but Karpov answered with 17...Na5?. In the end, one careless queen move, 24...Qc5 instead of closing the diagonal with 24...g6, allowed the bishop sacrifice on h7. The lesson: when your queen is far from your king, count your defenders on the kingside before every move.",
+    "sv": "Karpovs Petrovs försvar var länge solitt, men små onoggrannheter placerade hans löpare på e-linjen och hans springare vid kanten. Polgar missade två gånger ett starkt kvalitetsoffer på e6; första gången kunde Svart ha utjämnat, men Karpov svarade med 17...Na5?. Till slut tillät ett enda slarvigt damdrag, 24...Qc5 i stället för att stänga diagonalen med 24...g6, löparoffret på h7. Läxan: när din dam står långt från kungen, räkna dina försvarare på kungsflygeln före varje drag."
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "kramnik-leko-2004-g14",
+  "intro": {
+    "en": "Brissago, 2004: the last game of the World Championship match. Leko led by a point, so Kramnik had to win with White to level the match and keep his title. Watch how Kramnik steers the game into a quiet endgame where he has more space and the better bishop, and then uses his queenside pawns and his rook on the c-file to break through.",
+    "sv": "Brissago 2004: matchens sista parti i VM. Leko ledde med en poäng, så Kramnik måste vinna med vit för att kvittera matchen och behålla titeln. Lägg märke till hur Kramnik styr in partiet i ett lugnt slutspel där han har mer utrymme och den bättre löparen, och sedan bryter igenom med damflygelbönderna och tornet på c-linjen."
+  },
+  "comments": [
+    {
+      "ply": 6,
+      "en": "4.h4 is the Tal Variation of the Caro-Kann Advance. White grabs space on the kingside and threatens to chase the bishop on f5 with h5 and g4. It is a sharp choice for a must-win game; the engine slightly prefers the calmer 4.Nf3.",
+      "sv": "4.h4 är Talvarianten i Caro-Kanns framstötsvariant. Vit tar utrymme på kungsflygeln och hotar att jaga löparen på f5 med h5 och g4. Det är ett skarpt val i ett parti som måste vinnas; motorn föredrar en aning det lugnare 4.Nf3."
+    },
+    {
+      "ply": 7,
+      "en": "The usual answer is 4...h5, which stops White's h-pawn and keeps a safe square for the bishop. After 4...h6 White can gain more space at once with 5.g4, and the bishop has to step back.",
+      "sv": "Det vanliga svaret är 4...h5, som stoppar den vita h-bonden och behåller en säker ruta för löparen. Efter 4...h6 kan Vit direkt ta mer utrymme med 5.g4, och löparen måste backa.",
+      "line": {
+        "from": "before",
+        "san": ["h5", "c4", "e6", "Nc3", "dxc4", "Bxc4"]
+      }
+    },
+    {
+      "ply": 17,
+      "en": "A neat trick: 9...Qa5+ checks the king and attacks the knight on c5 at the same time, so Black wins back the piece. Material is level again, and Black has struck at White's centre with ...c5 as the Caro-Kann player always wants to.",
+      "sv": "Ett snyggt trick: 9...Qa5+ ger schack och angriper samtidigt springaren på c5, så Svart vinner tillbaka pjäsen. Materialet är jämnt igen, och Svart har slagit mot det vita centrumet med ...c5, precis som en Caro-Kann-spelare alltid vill."
+    },
+    {
+      "ply": 31,
+      "en": "16...Qxd2+ trades queens and takes the sting out of any attack, but the endgame suits White. The pawns on d4 and e5 give White space, and Black's bishop on d7 is the 'bad' bishop: Black's own pawns on d5 and e6 stand on light squares and block it. The engine preferred 16...Qb6, keeping the queens, though the difference is small.",
+      "sv": "16...Qxd2+ byter damer och tar udden av alla anfall, men slutspelet passar Vit. Bönderna på d4 och e5 ger Vit utrymme, och den svarta löparen på d7 är den 'dåliga' löparen: Svarts egna bönder på d5 och e6 står på ljusa rutor och stänger in den. Motorn föredrog 16...Qb6 och att behålla damerna, men skillnaden är liten."
+    },
+    {
+      "ply": 39,
+      "en": "After 20...Nxh5 the knight stands on the edge of the board, far from the queenside where the game will be decided. Kramnik now starts to advance his queenside pawns with b4 and a4.",
+      "sv": "Efter 20...Nxh5 står springaren på brädets kant, långt från damflygeln där partiet kommer att avgöras. Kramnik börjar nu föra fram sina damflygelbönder med b4 och a4."
+    },
+    {
+      "ply": 43,
+      "en": "22...Kd8? is the first real mistake. The king walks towards the queenside just as White is about to open it with b5. The engine wanted 22...Ke7, keeping the king closer to the centre and connecting the rooks.",
+      "sv": "22...Kd8? är det första riktiga misstaget. Kungen går mot damflygeln precis när Vit ska öppna den med b5. Motorn ville spela 22...Ke7, som håller kungen närmare centrum och förbinder tornen.",
+      "line": {
+        "from": "after",
+        "san": ["b5", "axb5", "axb5", "Bd7", "b6"]
+      }
+    },
+    {
+      "ply": 47,
+      "en": "24...Nf4? is the decisive mistake. The engine wanted 24...axb5 at once; instead White plays 25.b6 and the pawn freezes Black's queenside. It takes the c7 and a7 squares from Black's pieces, fixes the pawn on b7 as a target, and gives White's rooks a free hand on the c-file.",
+      "sv": "24...Nf4? är det avgörande misstaget. Motorn ville ta på b5 direkt med 24...axb5; i stället spelar Vit 25.b6, och bonden fryser den svarta damflygeln. Den tar rutorna c7 och a7 från de svarta pjäserna, låser bonden på b7 som mål och ger de vita tornen fritt spel på c-linjen.",
+      "line": {
+        "from": "before",
+        "san": ["axb5", "Bxb5", "Nf4", "Bxe8", "Kxe8"]
+      }
+    },
+    {
+      "ply": 54,
+      "en": "After the rook trade on c8, 28.Rc1+ is met by 28...Bc6, and the bishop is now pinned to the king on c8 by White's rook. The bishop cannot move, and the knight on g5 is free to take on f7 next.",
+      "sv": "Efter tornbytet på c8 besvaras 28.Rc1+ med 28...Bc6, och löparen är nu bunden mot kungen på c8 av det vita tornet. Löparen kan inte röra sig, och springaren på g5 kan ta på f7 i nästa drag."
+    },
+    {
+      "ply": 58,
+      "en": "29.Nxf7 and 30.Nd6+ win a pawn and bring the knight to a powerful square deep in Black's camp. Black has picked up the h-pawn in return, but White's pieces are far more active and Black is already lost.",
+      "sv": "29.Nxf7 och 30.Nd6+ vinner en bonde och för springaren till en stark ruta djupt i det svarta lägret. Svart har tagit h-bonden i gengäld, men de vita pjäserna är mycket aktivare och Svart är redan förlorad."
+    },
+    {
+      "ply": 64,
+      "en": "33.Rxg7: the rook reaches the seventh rank. Black's rook goes hunting White's pawns on the queenside, but it is too far away to help defend the king.",
+      "sv": "33.Rxg7: tornet når sjunde raden. Det svarta tornet jagar vita bönder på damflygeln, men det står för långt bort för att hjälpa till att försvara kungen."
+    },
+    {
+      "ply": 76,
+      "en": "With few pieces left the king becomes an attacker. 39.Kf6 marches up next to the e-pawn and helps build a mating net; the engine already sees a forced mate.",
+      "sv": "Med få pjäser kvar blir kungen en anfallare. 39.Kf6 marscherar fram bredvid e-bonden och hjälper till att bygga ett mattnät; motorn ser redan en forcerad matt."
+    },
+    {
+      "ply": 80,
+      "en": "41.Nf7+ and Leko resigned: after 41...Ke8 42.Rc8+ Kd7 43.Rd8# is mate. On d8 the rook is guarded by the knight on f7, the king on f6 covers e7, the pawn on b6 covers c7 and the pawn on e5 covers d6. Kramnik had won on demand and kept his title.",
+      "sv": "41.Nf7+ och Leko gav upp: efter 41...Ke8 42.Rc8+ Kd7 43.Rd8# är det matt. På d8 skyddas tornet av springaren på f7, kungen på f6 täcker e7, bonden på b6 täcker c7 och bonden på e5 täcker d6. Kramnik hade vunnit när det krävdes och behöll titeln.",
+      "line": {
+        "from": "after",
+        "san": ["Ke8", "Rc8+", "Kd7", "Rd8#"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "Kramnik did not need a wild attack: he welcomed the queen trade and reached an endgame where his space and better bishop gave lasting pressure. Leko's slips were small-looking king and knight moves, but they let 25.b6 freeze his queenside and hand White the c-file. A lesson in how a pawn on the sixth rank and an open file can decide an endgame, and how the king turns into an attacking piece once the queens are gone.",
+    "sv": "Kramnik behövde inget vilt anfall: han välkomnade dambytet och fick ett slutspel där mer utrymme och den bättre löparen gav ett varaktigt tryck. Lekos misstag var till synes små kung- och springardrag, men de lät 25.b6 frysa hans damflygel och gav Vit c-linjen. En läxa i hur en bonde på sjätte raden och en öppen linje kan avgöra ett slutspel, och hur kungen blir en anfallspjäs när damerna är borta."
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "id": "anand-gelfand-2012-g8",
+  "intro": {
+    "en": "Moscow, 2012: game 8 of the World Championship match between Viswanathan Anand and Boris Gelfand. Gelfand had just won game 7 to take the lead, and Anand answered the next day with a 17-move win, the shortest decisive game ever played in a world championship match. Watch the black knight that wanders to h5: its trouble sets off a chain of events that ends with Black's queen trapped in the corner.",
+    "sv": "Moskva 2012: parti 8 i VM-matchen mellan Viswanathan Anand och Boris Gelfand. Gelfand hade just vunnit parti 7 och tagit ledningen, och Anand svarade dagen efter med en vinst på 17 drag, det kortaste avgjorda parti som någonsin spelats i en VM-match. Håll ögonen på den svarta springaren som vandrar till h5: dess problem sätter igång en kedja av händelser som slutar med att Svarts dam blir instängd i hörnet."
+  },
+  "comments": [
+    {
+      "ply": 4,
+      "en": "3.f3 is the Anti-Grünfeld. White prepares e4 to build a big pawn centre and makes the usual Grünfeld strike ...d5 less attractive. After 3...c5 4.d5 the game takes on a Benoni-like structure, with White having more space.",
+      "sv": "3.f3 är anti-Grünfeld. Vit förbereder e4 för att bygga ett stort bondecentrum och gör det vanliga Grünfeldutspelet ...d5 mindre lockande. Efter 3...c5 4.d5 får partiet en Benoniliknande struktur, där Vit har mer utrymme."
+    },
+    {
+      "ply": 13,
+      "en": "7...Nh5 puts the knight on the edge, aiming for f4 and preparing ...f5 against White's centre. It is a double-edged idea: on h5 the knight has few safe squares if White can chase it. The engine preferred the quieter 7...a6 or 7...e6.",
+      "sv": "7...Nh5 ställer springaren på kanten, med sikte på f4 och för att förbereda ...f5 mot Vits centrum. Det är en tveeggad idé: på h5 har springaren få säkra rutor om Vit kan jaga den. Motorn föredrog de lugnare 7...a6 eller 7...e6."
+    },
+    {
+      "ply": 14,
+      "en": "8.Bg5 develops the bishop and eyes the e7 pawn. The engine preferred 8.g4 at once, kicking the knight, and Black could now have answered with 8...f6, gaining time against the bishop.",
+      "sv": "8.Bg5 utvecklar löparen och siktar på e7-bonden. Motorn föredrog 8.g4 direkt, som jagar springaren, och Svart hade nu kunnat svara med 8...f6 och vinna tid mot löparen."
+    },
+    {
+      "ply": 15,
+      "en": "8...Bf6? is the first real mistake. Black trades off his strong fianchettoed bishop, and after 9...exf6 he has doubled f-pawns and weak dark squares around his king. The engine's 8...f6 kept the bishop and chased White's bishop away.",
+      "sv": "8...Bf6? är det första riktiga misstaget. Svart byter bort sin starka fianchetterade löpare, och efter 9...exf6 har han dubbelbönder på f-linjen och svaga mörka rutor runt kungen. Motorns 8...f6 behöll löparen och jagade bort Vits löpare.",
+      "line": { "from": "before", "san": ["f6", "Bc1", "f5", "exf5", "gxf5"] }
+    },
+    {
+      "ply": 22,
+      "en": "12.g4 attacks both the bishop on f5 and the knight on h5. Black has piece activity, but the knight on the rim is becoming a real problem.",
+      "sv": "12.g4 angriper både löparen på f5 och springaren på h5. Svart har aktiva pjäser, men springaren på kanten håller på att bli ett verkligt problem."
+    },
+    {
+      "ply": 23,
+      "en": "12...Re8+? chases the king, but it does not help the knight. The engine's choice was 12...Qh4+, and after a queen trade and ...Ng7 the knight would have found a safe home.",
+      "sv": "12...Re8+? jagar kungen, men hjälper inte springaren. Motorns val var 12...Qh4+, och efter ett dambyte och ...Ng7 hade springaren hittat ett säkert hem.",
+      "line": { "from": "before", "san": ["Qh4+", "Kd1", "Bxb1", "Rxb1", "Ng7", "Qe1", "Qxe1+", "Kxe1"] }
+    },
+    {
+      "ply": 24,
+      "en": "13.Kd1 is the engine's choice too. White gives up castling, but his king is safe enough in the centre while Black's knight on h5 is still hanging in the air.",
+      "sv": "13.Kd1 är också motorns val. Vit avstår från rockad, men kungen står tillräckligt säkert i centrum, medan Svarts springare på h5 fortfarande hänger i luften."
+    },
+    {
+      "ply": 27,
+      "en": "14...Qf6?? is the losing move. Gelfand gives up the knight, hoping the queen raid on f3 and h1 will bring enough counterplay. The engine wanted the simple retreat 14...Nf6: White is better, but the game goes on.",
+      "sv": "14...Qf6?? är förlustdraget. Gelfand ger bort springaren i hopp om att damräden mot f3 och h1 ska ge tillräckligt motspel. Motorn ville ha den enkla reträtten 14...Nf6: Vit står bättre, men partiet fortsätter.",
+      "line": { "from": "before", "san": ["Nf6", "Be2", "Nbd7", "Kc2"] }
+    },
+    {
+      "ply": 30,
+      "en": "16.Kc2 is the only good move. The king steps out of the way, and the engine shows that retreating to c1 instead would have handed Black the advantage.",
+      "sv": "16.Kc2 är det enda bra draget. Kungen kliver undan, och motorn visar att en reträtt till c1 i stället hade gett Svart fördelen."
+    },
+    {
+      "ply": 31,
+      "en": "16...Qxh1 completes the raid: Black has won a rook and a pawn for the knight and is ahead in material. But the queen now sits deep in White's camp, far from her own king.",
+      "sv": "16...Qxh1 fullbordar räden: Svart har vunnit torn och bonde mot springaren och ligger före i material. Men damen står nu djupt inne i Vits läger, långt från den egna kungen."
+    },
+    {
+      "ply": 32,
+      "en": "17.Qf2! traps the queen. White's queen covers g1, g2, f3 and h2, the knight covers e4 and d5, and as soon as the bishop on f1 moves, the rook on b1 attacks along the first rank. The only way out is to give up more material, and the engine agrees that 17.Qf2 is the only winning move. Gelfand resigned.",
+      "sv": "17.Qf2! stänger in damen. Vits dam täcker g1, g2, f3 och h2, springaren täcker e4 och d5, och så fort löparen på f1 flyttar angriper tornet på b1 längs första raden. Den enda vägen ut är att ge bort mer material, och motorn håller med om att 17.Qf2 är det enda vinnande draget. Gelfand gav upp.",
+      "line": { "from": "after", "san": ["Nc6", "dxc6", "Qxc6", "Bd3"] }
+    }
+  ],
+  "summary": {
+    "en": "A knight on the rim is dim: Black's troubles all came from the knight on h5. Trading off your fianchettoed bishop weakens the squares around your own king. And beware of queen raids that win material deep in the enemy camp, because a queen with no way back can be trapped.",
+    "sv": "En springare på kanten är sällan bra: alla Svarts problem kom från springaren på h5. Att byta bort sin fianchetterade löpare försvagar rutorna runt den egna kungen. Och akta dig för damräder som vinner material djupt inne i motståndarens läger, för en dam utan reträttväg kan bli instängd."
+  }
+}

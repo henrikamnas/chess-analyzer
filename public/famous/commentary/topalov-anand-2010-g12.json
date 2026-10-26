@@ -1,0 +1,92 @@
+{
+  "id": "topalov-anand-2010-g12",
+  "intro": {
+    "en": "Sofia, 2010: the twelfth and last regular game of the World Championship match between Veselin Topalov and Viswanathan Anand, with the scores level. Anand chooses the solid Lasker Defence of the Queen's Gambit Declined, and for a long time nothing happens. Watch the black bishop on the long diagonal: when Topalov opens the centre to play for a win, that bishop and the black queen suddenly aim straight at his king.",
+    "sv": "Sofia 2010: det tolfte och sista ordinarie partiet i VM-matchen mellan Veselin Topalov och Viswanathan Anand, med matchen helt jämn. Anand väljer det solida Laskerförsvaret i avböjd damgambit, och länge händer ingenting. Håll ögonen på den svarta löparen på den långa diagonalen: när Topalov öppnar centrum för att spela på vinst siktar den löparen och den svarta damen plötsligt rakt mot hans kung."
+  },
+  "comments": [
+    {
+      "ply": 13,
+      "en": "7...Ne4 is the Lasker Defence. Black's problem in the Queen's Gambit Declined is a lack of space, so Lasker's idea is to trade pieces: after the knight exchange on c3 and the bishop trade on e7, Black has fewer pieces to fit into his cramped position.",
+      "sv": "7...Ne4 är Laskerförsvaret. Svarts problem i avböjd damgambit är brist på utrymme, så Laskers idé är att byta pjäser: efter springarbytet på c3 och löparbytet på e7 har Svart färre pjäser att trycka in i sin trånga ställning."
+    },
+    {
+      "ply": 27,
+      "en": "14...c5 is the freeing break that Black's whole set-up aims for. It challenges White's d4 pawn and makes room for the light-squared bishop on b7. The engine would have played 14...Bb7 first, but the plan is the same.",
+      "sv": "14...c5 är det befriande genombrott som hela Svarts uppställning siktar mot. Det utmanar Vits d4-bonde och ger plats åt den vitfältiga löparen på b7. Motorn hade spelat 14...Bb7 först, men planen är densamma."
+    },
+    {
+      "ply": 35,
+      "en": "After the trades the position is level: queen, two rooks and a minor piece each, with six pawns on each side. Black has a bishop against a knight, while his c-pawn has no neighbours and can become a target. A draw here would have meant a tiebreak, so Topalov now starts to manoeuvre and look for chances.",
+      "sv": "Efter bytena är ställningen jämn: dam, två torn och en lätt pjäs var, och sex bönder på varje sida. Svart har löpare mot springare, medan c-bonden saknar grannar och kan bli ett mål. Remi här hade betytt särspel, så Topalov börjar nu manövrera och leta efter chanser."
+    },
+    {
+      "ply": 46,
+      "en": "With 21.f3, 23.g3 and 24.Kg2 White takes the e4 square away from Black and gets ready to advance in the centre with e4. The price is that his king now stands on the long light-squared diagonal, where Black's bishop lives.",
+      "sv": "Med 21.f3, 23.g3 och 24.Kg2 tar Vit e4-rutan från Svart och förbereder en framstöt i centrum med e4. Priset är att kungen nu står på den långa vita diagonalen, där Svarts löpare hör hemma."
+    },
+    {
+      "ply": 55,
+      "en": "28...Ba8 tucks the bishop into the corner, on the same long diagonal as White's king on g2. For now White's own pawn on f3 is in the way, but if it ever leaves, the bishop will bear down on the king.",
+      "sv": "28...Ba8 placerar löparen i hörnet, på samma långa diagonal som Vits kung på g2. Än så länge står Vits egen bonde på f3 i vägen, men om den någon gång flyttar kommer löparen att trycka mot kungen."
+    },
+    {
+      "ply": 59,
+      "en": "30...f5 hits White's e4 pawn at once. The engine still sees a balanced game: the calm answer was to bring the knight back to d2 to support e4 and trade into a quiet position.",
+      "sv": "30...f5 angriper Vits e4-bonde direkt. Motorn ser fortfarande ett jämnt parti: det lugna svaret var att föra tillbaka springaren till d2 för att stödja e4 och byta av till en stilla ställning."
+    },
+    {
+      "ply": 60,
+      "en": "31.exf5? wins a pawn, but it lets Black play ...e4 and break open the lines in front of White's king. The engine's choice was 31.Nd2, keeping the centre closed and the game level.",
+      "sv": "31.exf5? vinner en bonde, men det låter Svart spela ...e4 och bryta upp linjerna framför Vits kung. Motorns val var 31.Nd2, som håller centrum stängt och partiet jämnt.",
+      "line": { "from": "before", "san": ["Nd2", "fxe4", "Nxe4", "Bxe4", "fxe4"] }
+    },
+    {
+      "ply": 62,
+      "en": "32.fxe4?? is the decisive mistake. It clears the f3 square, and after the queen recaptures on e4 the long diagonal from a8 leads straight to White's king. After 32.Re3, putting the rook in front of the e4 pawn, Black would have been clearly better but the game would have gone on.",
+      "sv": "32.fxe4?? är det avgörande misstaget. Det tömmer f3-rutan, och när damen tar tillbaka på e4 leder den långa diagonalen från a8 rakt mot Vits kung. Efter 32.Re3, som ställer tornet framför e4-bonden, hade Svart stått klart bättre men partiet hade fortsatt.",
+      "line": { "from": "before", "san": ["Re3", "exf3+", "Kf1", "Qf7", "Qc2"] }
+    },
+    {
+      "ply": 63,
+      "en": "32...Qxe4+ and now queen and bishop stand on the long diagonal together, pointing at the king. White has only a handful of legal replies, and 33.Kh3 sends the king forward, away from its pawn cover. White is already lost.",
+      "sv": "32...Qxe4+ och nu står dam och löpare tillsammans på den långa diagonalen och pekar mot kungen. Vit har bara en handfull lagliga svar, och 33.Kh3 skickar kungen framåt, bort från bondeskyddet. Vit är redan förlorad."
+    },
+    {
+      "ply": 65,
+      "en": "33...Rd4! brings another piece into the attack, aiming at the fourth rank and the squares around the white king. The engine rates it far stronger than the alternatives, which would have left White only somewhat worse.",
+      "sv": "33...Rd4! för in ytterligare en pjäs i anfallet och siktar på fjärde raden och rutorna runt den vita kungen. Motorn bedömer det som långt starkare än alternativen, som bara hade lämnat Vit något sämre."
+    },
+    {
+      "ply": 71,
+      "en": "36...g5+ is answered by 37.fxg6, taking en passant, and the g-file opens. The engine preferred the queen check 36...Qd8+, but Anand's move also keeps a winning attack against the king on h4.",
+      "sv": "36...g5+ besvaras med 37.fxg6, som slår en passant, och g-linjen öppnas. Motorn föredrog damschacken 36...Qd8+, men Anands drag behåller också ett vinnande angrepp mot kungen på h4.",
+      "line": { "from": "before", "san": ["Qd8+", "f6", "hxg4"] }
+    },
+    {
+      "ply": 81,
+      "en": "41...Kh7! is the only winning move. Taking the rook with 41...Kxf8? would allow 42.Nxe7+, a discovered check from the queen on f1, and the engine shows White escaping with a draw. Topalov's tricks ran out here.",
+      "sv": "41...Kh7! är det enda vinnande draget. Att ta tornet med 41...Kxf8? hade tillåtit 42.Nxe7+, en avdragsschack från damen på f1, och motorn visar att Vit klarar remi. Här tog Topalovs fällor slut.",
+      "line": { "from": "before", "san": ["Kxf8", "Nxe7+", "Qf7", "Ng6+", "Rxg6", "Qxf7+", "Kxf7"] }
+    },
+    {
+      "ply": 89,
+      "en": "45...Rg2+ gives up rook and bishop for White's queen. After 47.Kxg2 Black has a queen against a rook and a knight, and White's king is still exposed.",
+      "sv": "45...Rg2+ ger bort torn och löpare mot Vits dam. Efter 47.Kxg2 har Svart dam mot torn och springare, och Vits kung står fortfarande blottad."
+    },
+    {
+      "ply": 109,
+      "en": "55...Qxb2+ takes White's b-pawn, and the c-pawn becomes a passed pawn. The engine preferred 55...Qe7 here, but Black stays clearly winning.",
+      "sv": "55...Qxb2+ tar Vits b-bonde, och c-bonden blir en fribonde. Motorn föredrog 55...Qe7 här, men Svart står fortfarande klart på vinst."
+    },
+    {
+      "ply": 111,
+      "en": "56...Qg7 attacks the knight on f7, and the c-pawn is ready to run. Topalov resigned, and Anand kept his world title.",
+      "sv": "56...Qg7 angriper springaren på f7, och c-bonden är redo att springa. Topalov gav upp, och Anand behöll sin världsmästartitel."
+    }
+  ],
+  "summary": {
+    "en": "In a level position, the side that must win is tempted to open the game, and opening it near your own king is dangerous. Topalov's pawn grab with 31.exf5 and the capture 32.fxe4 opened the long diagonal for Anand's patient bishop. Note also how Black's queen, rooks and bishop all joined the attack before the decisive blow.",
+    "sv": "I en jämn ställning frestas den som måste vinna att öppna spelet, och att öppna det nära sin egen kung är farligt. Topalovs bondeslag 31.exf5 och slaget 32.fxe4 öppnade den långa diagonalen för Anands tålmodiga löpare. Lägg också märke till hur Svarts dam, torn och löpare alla anslöt till anfallet före det avgörande slaget."
+  }
+}

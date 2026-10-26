@@ -1,0 +1,106 @@
+{
+  "id": "polgar-spassky-1993-g2",
+  "intro": {
+    "en": "Budapest, 1993: the second game of a match between the 16-year-old Judit Polgar and the former world champion Boris Spassky, a match she went on to win. Spassky chooses the Breyer Defence of the Closed Ruy Lopez, one of the most solid systems for Black. Watch how the centre gets locked, the play moves to the kingside, and how a pin along the seventh rank decides the game.",
+    "sv": "Budapest 1993: andra partiet i en match mellan 16-åriga Judit Polgar och förre världsmästaren Boris Spasskij, en match hon till slut vann. Spasskij väljer Breyerförsvaret i stängd spansk, ett av de mest solida systemen för Svart. Se hur centrum låses, hur spelet flyttar till kungsflygeln och hur en bindning längs sjunde raden avgör partiet."
+  },
+  "comments": [
+    {
+      "ply": 17,
+      "en": "9...Nb8 is the Breyer Defence. The knight goes back to b8 to come again via d7, where it supports the e5 pawn and leaves the c-pawn free to advance. It looks like a loss of time, but in this closed position the regrouping is well worth it.",
+      "sv": "9...Nb8 är Breyerförsvaret. Springaren går tillbaka till b8 för att komma ut igen via d7, där den stöder bonden på e5 och låter c-bonden gå fram. Det ser ut som tidsförlust, men i den här stängda ställningen är omgrupperingen väl värd det."
+    },
+    {
+      "ply": 31,
+      "en": "16.d5 closes the centre. Now the bishop on g7 only looks at Black's own e5 pawn, so Spassky brings it back to f8. The engine preferred 16...Rc8, preparing ...c6 to fight for the queenside.",
+      "sv": "16.d5 stänger centrum. Nu tittar löparen på g7 bara på Svarts egen bonde på e5, så Spasskij för tillbaka den till f8. Motorn föredrog 16...Rc8, som förbereder ...c6 för att kämpa om damflygeln.",
+      "line": {
+        "from": "before",
+        "san": ["Rc8", "Bg5", "c6", "c4", "a5"]
+      }
+    },
+    {
+      "ply": 41,
+      "en": "21...b4 locks the queenside as well. That removes Black's chances of opening lines there, so the only play left is on the kingside, where White's pieces are ready. The engine preferred 21...a4, keeping the tension.",
+      "sv": "21...b4 låser även damflygeln. Därmed försvinner Svarts chanser att öppna linjer där, och det enda spel som återstår finns på kungsflygeln, där de vita pjäserna står redo. Motorn föredrog 21...a4, som behåller spänningen.",
+      "line": {
+        "from": "before",
+        "san": ["a4", "Bd3", "bxc4", "bxc4", "Qc7"]
+      }
+    },
+    {
+      "ply": 45,
+      "en": "22.Ng4 let Black trade knights, and after 23.hxg4 White's pawns on g2 and g4 are doubled. Spassky's queen jumps to h4 at once, close to White's king. The engine preferred the quiet 22.a3.",
+      "sv": "22.Ng4 lät Svart byta springare, och efter 23.hxg4 har Vit dubbelbönder på g2 och g4. Spasskijs dam hoppar genast till h4, nära den vita kungen. Motorn föredrog det lugna 22.a3."
+    },
+    {
+      "ply": 47,
+      "en": "24...c5? closes the position for good: the bishop on b7 stays buried behind the d5 pawn, and the g5 pawn keeps cramping Black's king. The engine wanted 24...hxg5 first, getting rid of that pawn.",
+      "sv": "24...c5? stänger ställningen för gott: löparen på b7 förblir begravd bakom d5-bonden, och g5-bonden fortsätter att tränga den svarta kungen. Motorn ville spela 24...hxg5 först och bli av med den bonden.",
+      "line": {
+        "from": "before",
+        "san": ["hxg5", "dxc6", "Bxc6", "Bxg5", "Bh6"]
+      }
+    },
+    {
+      "ply": 54,
+      "en": "28.Re2 gives Black time for 28...Nf6, bringing the knight towards the kingside. The engine preferred 28.Bd1, and from here White's advantage starts to shrink.",
+      "sv": "28.Re2 ger Svart tid för 28...Nf6, som för springaren mot kungsflygeln. Motorn föredrog 28.Bd1, och härifrån börjar Vits fördel krympa."
+    },
+    {
+      "ply": 56,
+      "en": "29.g4 lets the f3 pawn go. Polgar's idea is to chase the queen with Nh2 and Rf1 and then use the open f-file, but the engine says the position is now level; 29.Bxg5 would have kept an edge.",
+      "sv": "29.g4 släpper bonden på f3. Polgars idé är att jaga damen med Nh2 och Rf1 och sedan använda den öppna f-linjen, men motorn säger att ställningen nu är lika; 29.Bxg5 hade behållit ett litet övertag.",
+      "line": {
+        "from": "before",
+        "san": ["Bxg5", "Nh5", "Rh2", "Qd7", "Ne3"]
+      }
+    },
+    {
+      "ply": 62,
+      "en": "After 31...Nxg4 Black is three pawns up, but White's pieces are very active, and 32.Rf7+ brings the rook to the seventh rank with check. The engine still calls the position level.",
+      "sv": "Efter 31...Nxg4 har Svart tre merbönder, men de vita pjäserna är mycket aktiva, och 32.Rf7+ för tornet till sjunde raden med schack. Motorn bedömer fortfarande ställningen som lika."
+    },
+    {
+      "ply": 63,
+      "en": "32...Bg7? is the turning point. The bishop is now pinned to the king by the rook on f7, so White can trade knights on g4 and then take the bishop on b7, and the material is level again with White much more active. 32...Kg8 was correct: it attacks the rook, and Black keeps the balance.",
+      "sv": "32...Bg7? är vändpunkten. Löparen är nu bunden mot kungen av tornet på f7, så Vit kan byta springare på g4 och sedan ta löparen på b7, och materialet är lika igen med betydligt aktivare vita pjäser. 32...Kg8 var rätt: draget angriper tornet, och Svart behåller balansen.",
+      "line": {
+        "from": "before",
+        "san": ["Kg8", "Rxb7", "Nxe3", "Rxe3", "Qc8"]
+      }
+    },
+    {
+      "ply": 69,
+      "en": "35...Rf8 lets Polgar strike on g5. The engine wanted 35...Rab8, challenging the rook on b7, which is the piece that keeps the bishop on g7 pinned.",
+      "sv": "35...Rf8 låter Polgar slå till på g5. Motorn ville spela 35...Rab8, som utmanar tornet på b7, den pjäs som håller löparen på g7 bunden.",
+      "line": {
+        "from": "before",
+        "san": ["Rab8", "Rc7", "Rec8", "Ra7", "Ra8"]
+      }
+    },
+    {
+      "ply": 70,
+      "en": "36.Bxg5! The bishop takes the g5 pawn, even though the h6 pawn can take it. If Black takes back, the queen comes to g5, close to Black's king, and the bishop on g7 is still pinned along the seventh rank by the rook on b7.",
+      "sv": "36.Bxg5! Löparen tar bonden på g5, fast h6-bonden kan slå den. Om Svart tar igen kommer damen till g5 nära den svarta kungen, och löparen på g7 är fortfarande bunden längs sjunde raden av tornet på b7."
+    },
+    {
+      "ply": 71,
+      "en": "36...hxg5? is the decisive mistake. The engine wanted 36...Kg8, stepping off the seventh rank to unpin the bishop. White would still have had a large advantage, but the game would have gone on.",
+      "sv": "36...hxg5? är det avgörande misstaget. Motorn ville spela 36...Kg8, som kliver av sjunde raden och häver bindningen av löparen. Vit hade fortfarande haft en stor fördel, men partiet hade fortsatt.",
+      "line": {
+        "from": "before",
+        "san": ["Kg8", "Be3", "Rf6", "Bd1", "Raf8"]
+      }
+    },
+    {
+      "ply": 79,
+      "en": "After 37.Qxg5 Spassky's best was the queen trade 37...Qh6, but then 39.Rh2+ drove his king away from the bishop and 40.Rxg7 won it. White is a bishop for a pawn ahead, and after 40...Rf3 Spassky resigned.",
+      "sv": "Efter 37.Qxg5 var Spasskijs bästa försvar dambytet 37...Qh6, men sedan drev 39.Rh2+ bort hans kung från löparen och 40.Rxg7 vann den. Vit har vunnit en löpare mot en bonde, och efter 40...Rf3 gav Spasskij upp."
+    }
+  ],
+  "summary": {
+    "en": "Spassky's Breyer was solid, but by closing both the centre and the queenside he left himself with no play except on the kingside, where Polgar's pieces were ready. The game swung back and forth, and even after 29.g4 the position was level. It was decided by a pin along the seventh rank: 32...Bg7 walked into it and 36...hxg5 made it fatal. The lessons: be careful about closing every part of the board, and when a piece is pinned, unpinning it is often more urgent than winning material.",
+    "sv": "Spasskijs Breyerförsvar var solitt, men genom att stänga både centrum och damflygeln lämnade han sig utan spel utom på kungsflygeln, där Polgars pjäser stod redo. Partiet svängde fram och tillbaka, och även efter 29.g4 var ställningen lika. Det avgjordes av en bindning längs sjunde raden: 32...Bg7 gick rakt in i den och 36...hxg5 gjorde den dödlig. Läxorna: var försiktig med att stänga alla delar av brädet, och när en pjäs är bunden är det ofta viktigare att häva bindningen än att vinna material."
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "id": "shirov-polgar-1994",
+  "intro": {
+    "en": "Buenos Aires, 1994: a thematic tournament where every game had to start with the Sicilian. Alexei Shirov, one of the most dangerous attackers of the time, throws his kingside pawns forward, but the young Judit Polgar answers with pawn breaks of her own. Watch for the knight that appears on f5 and the long diagonal from b7 to g2: they decide the game.",
+    "sv": "Buenos Aires 1994: en tematurnering där varje parti måste börja med sicilianskt. Alexej Shirov, en av tidens farligaste anfallsspelare, kastar fram sina kungsflygelbönder, men den unga Judit Polgar svarar med egna bondebrytningar. Håll ögonen på springaren som dyker upp på f5 och den långa diagonalen från b7 till g2: de avgör partiet."
+  },
+  "comments": [
+    {
+      "ply": 10,
+      "en": "6.g4 is a typical aggressive thrust against the Sicilian set-up with ...e6 and ...d6. White grabs space on the kingside and wants to push on with g5 and f4.",
+      "sv": "6.g4 är en typisk aggressiv framstöt mot den sicilianska uppställningen med ...e6 och ...d6. Vit tar utrymme på kungsflygeln och vill fortsätta med g5 och f4."
+    },
+    {
+      "ply": 18,
+      "en": "10.Qf3? is a real mistake. It invites 10...g5!, which attacks the f4 pawn and prepares ...Ne5 with gain of time against the queen on f3. The engine wanted 10.Qe2, out of reach of a black knight on e5.",
+      "sv": "10.Qf3? är ett verkligt misstag. Draget inbjuder till 10...g5!, som angriper bonden på f4 och förbereder ...Ne5 med tempo mot damen på f3. Motorn ville spela 10.Qe2, utom räckhåll för en svart springare på e5."
+    },
+    {
+      "ply": 21,
+      "en": "11...Ne5 takes the central e5 square with tempo on the queen, and also eyes the pawn on g4. Black's pieces are coming to life, while White has used many moves on pawns.",
+      "sv": "11...Ne5 tar den centrala rutan e5 med tempo mot damen och siktar också på bonden på g4. De svarta pjäserna vaknar till liv, medan Vit har lagt många drag på bönder."
+    },
+    {
+      "ply": 26,
+      "en": "14.gxh5? is the turning point. The engine's choice was 14.gxh6, taking the h-pawn en passant, which keeps the position balanced. After the game move Black gets a powerful idea on f5.",
+      "sv": "14.gxh5? är vändpunkten. Motorns val var 14.gxh6, att ta h-bonden en passant, vilket håller ställningen i balans. Efter partidraget får Svart en kraftfull idé på f5.",
+      "line": {
+        "from": "before",
+        "san": ["gxh6", "N7g6", "O-O-O", "Nc4", "Bd4", "Bxh6+"]
+      }
+    },
+    {
+      "ply": 27,
+      "en": "14...Nf5! offers the knight. It attacks the bishop on e3 and clears the way for the queen to come to g5. If 15.exf5, the e4 pawn no longer blocks the long diagonal, and 15...Bxg2 wins White's queen for knight and bishop.",
+      "sv": "14...Nf5! erbjuder springaren. Den angriper löparen på e3 och öppnar vägen för damen till g5. Om 15.exf5 blockerar e4-bonden inte längre den långa diagonalen, och 15...Bxg2 vinner den vita damen mot springare och löpare.",
+      "line": {
+        "from": "after",
+        "san": ["exf5", "Bxg2", "Bxg2", "Rc8"]
+      }
+    },
+    {
+      "ply": 28,
+      "en": "Even so, giving up the queen with 15.exf5 was White's best option according to the engine. After 15.Bf2 Black simply wins back a pawn with 15...Qxg5, and her queen and knights are very active.",
+      "sv": "Trots allt var 15.exf5 och att ge upp damen Vits bästa möjlighet enligt motorn. Efter 15.Bf2 vinner Svart helt enkelt tillbaka en bonde med 15...Qxg5, och hennes dam och springare är mycket aktiva."
+    },
+    {
+      "ply": 30,
+      "en": "16.Na5?? attacks the bishop on b7 but ignores the danger to White's own king and queen. The engine wanted 16.h4, kicking the black queen.",
+      "sv": "16.Na5?? angriper löparen på b7 men bortser från faran mot den egna kungen och damen. Motorn ville spela 16.h4 och jaga bort den svarta damen."
+    },
+    {
+      "ply": 31,
+      "en": "16...Ne3! The knight attacks White's queen on g2, is protected by the queen on g5, and threatens 17...Nxc2+, forking the king and the rook on a1.",
+      "sv": "16...Ne3! Springaren angriper den vita damen på g2, skyddas av damen på g5 och hotar 17...Nxc2+, en gaffel mot kungen och tornet på a1."
+    },
+    {
+      "ply": 33,
+      "en": "Polgar trades queens, and 18...Nxc2+ will win the rook on a1 anyway. The engine preferred 17...Nxc2+ at once, keeping the queens on against the exposed white king, but both moves win easily.",
+      "sv": "Polgar byter damer, och 18...Nxc2+ vinner ändå tornet på a1. Motorn föredrog 17...Nxc2+ direkt och att behålla damerna mot den blottade vita kungen, men båda dragen vinner lätt.",
+      "line": {
+        "from": "before",
+        "san": ["Nxc2+", "Kd1", "Qxh5", "Rc1", "Bxe4"]
+      }
+    },
+    {
+      "ply": 39,
+      "en": "The knight on a1 looked trapped, but 20...b3! frees it: after 21.axb3 Nxb3 it escapes to safety. The engine liked 20...Rc8 even more, but Polgar's practical solution keeps a clear extra exchange.",
+      "sv": "Springaren på a1 såg instängd ut, men 20...b3! befriar den: efter 21.axb3 Nxb3 tar den sig i säkerhet. Motorn gillade 20...Rc8 ännu mer, men Polgars praktiska lösning behåller en klar kvalitet mer."
+    },
+    {
+      "ply": 57,
+      "en": "Black is an exchange up, rook against bishop, with active pieces and a safe king. Shirov resigned.",
+      "sv": "Svart har en kvalitet mer, torn mot löpare, med aktiva pjäser och en säker kung. Shirov gav upp."
+    }
+  ],
+  "summary": {
+    "en": "Shirov's pawn storm used many tempi, and Polgar punished it with central and flank pawn breaks that gave her knights the e5 and f5 squares. The key tactical motif was the long diagonal: a pawn on e4 that shields the queen on g2 cannot also capture a knight on f5. Once White's king and queen were stuck in the centre, the knight fork on c2 decided the game.",
+    "sv": "Shirovs bondestorm kostade många tempon, och Polgar straffade den med bondebrytningar som gav hennes springare rutorna e5 och f5. Det taktiska nyckelmotivet var den långa diagonalen: en bonde på e4 som skyddar damen på g2 kan inte samtidigt slå en springare på f5. När den vita kungen och damen fastnat i centrum avgjorde springargaffeln på c2 partiet."
+  }
+}

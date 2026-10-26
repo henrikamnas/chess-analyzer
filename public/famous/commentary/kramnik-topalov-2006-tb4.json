@@ -1,0 +1,76 @@
+{
+  "id": "kramnik-topalov-2006-tb4",
+  "intro": {
+    "en": "Elista, 2006: the match to reunify the world title after thirteen years with two champions. The classical games ended 6–6, and this was the fourth and last rapid tiebreak game. The queens come off early and the position is equal for a long time; watch how Kramnik wins a pawn, gets two passed pawns on the queenside and slowly pushes them, while Topalov's rooks wander.",
+    "sv": "Elista 2006: matchen som skulle återförena världsmästartiteln efter tretton år med två mästare. De klassiska partierna slutade 6–6, och detta var det fjärde och sista snabbschackspartiet i särspelet. Damerna byts tidigt och ställningen är länge jämn; se hur Kramnik vinner en bonde, får två fribönder på damflygeln och långsamt för fram dem, medan Topalovs torn irrar runt."
+  },
+  "comments": [
+    {
+      "ply": 13,
+      "en": "7...b5 is the Meran Variation of the Semi-Slav. Black takes on c4, gains time by hitting the bishop with the b-pawn, and plans to put his own bishop on b7 and later break with ...c5 or ...b4.",
+      "sv": "7...b5 är Meranvarianten i halvslaviskt. Svart tar på c4, vinner tid genom att angripa löparen med b-bonden och planerar att ställa sin egen löpare på b7 och senare bryta med ...c5 eller ...b4."
+    },
+    {
+      "ply": 22,
+      "en": "A sharp sequence typical of the Meran: 10.e4 b4 11.e5 bxc3 12.exf6, and both sides have taken a knight with a pawn. The dust settles with level material after 12...Bxf6 13.bxc3.",
+      "sv": "En skarp följd som är typisk för Meran: 10.e4 b4 11.e5 bxc3 12.exf6, och båda sidor har slagit en springare med en bonde. När dammet lagt sig efter 12...Bxf6 13.bxc3 är materialet jämnt."
+    },
+    {
+      "ply": 30,
+      "en": "After 15.Bb5+ Kf8 Black can no longer castle, and 16.Qxd8+ trades queens. Without queens the king on f8 is no real problem; it can walk to the centre. The engine calls the position equal, but White's pieces are a little more active.",
+      "sv": "Efter 15.Bb5+ Kf8 kan Svart inte längre rockera, och 16.Qxd8+ byter damer. Utan damer är kungen på f8 inget verkligt problem; den kan gå mot centrum. Motorn bedömer ställningen som jämn, men de vita pjäserna är lite aktivare."
+    },
+    {
+      "ply": 51,
+      "en": "26...Rc6? is the first real slip. White answers 27.Nxc5 Rxc5 28.Rxa6, winning the a-pawn. The engine wanted 26...Nxb3, trading knights first, after which a pair of rooks comes off on the d-file and the endgame stays level.",
+      "sv": "26...Rc6? är det första riktiga felsteget. Vit svarar 27.Nxc5 Rxc5 28.Rxa6 och vinner a-bonden. Motorn ville spela 26...Nxb3 och byta springare först, varefter ett tornpar byts av på d-linjen och slutspelet förblir jämnt.",
+      "line": {
+        "from": "before",
+        "san": ["Nxb3", "axb3", "Rhd8", "Rxd8", "Rxd8"]
+      }
+    },
+    {
+      "ply": 54,
+      "en": "After 28.Rxa6 White has two passed pawns on the queenside, on a2 and c4, and Black has no pawns there to stop them. One extra pawn with rooks on the board is often hard to convert, but passed pawns that far apart stretch the defence.",
+      "sv": "Efter 28.Rxa6 har Vit två fribönder på damflygeln, på a2 och c4, och Svart har inga bönder där som kan stoppa dem. En merbonde med torn kvar på brädet är ofta svår att omsätta, men fribönder som står så långt isär tänjer ut försvaret."
+    },
+    {
+      "ply": 61,
+      "en": "31...Rf5? is a real mistake. The rook leaves the defence of the queenside, where White's passed pawns are, to look for play on the other wing. The engine preferred 31...Bb1, bringing the bishop towards the queenside instead.",
+      "sv": "31...Rf5? är ett verkligt misstag. Tornet överger försvaret av damflygeln, där de vita fribönderna står, för att söka spel på andra flygeln. Motorn föredrog 31...Bb1, som för löparen mot damflygeln i stället."
+    },
+    {
+      "ply": 65,
+      "en": "33...Rc2? makes things worse. After 34.Rb3 White's rooks get active on the b-file and the a-pawn starts to run. The engine's choice was 33...Rd2, though Black was already in trouble.",
+      "sv": "33...Rc2? gör saken värre. Efter 34.Rb3 blir de vita tornen aktiva på b-linjen och a-bonden börjar springa. Motorn valde 33...Rd2, även om Svart redan var i knipa."
+    },
+    {
+      "ply": 74,
+      "en": "With 38.a6 the pawn is one step from a7, and Black's rook on a7 has to stay there as a blockader. A rook that only blocks a pawn is a passive rook, and White's other pieces are now free to act.",
+      "sv": "Med 38.a6 står bonden ett steg från a7, och det svarta tornet på a7 måste stanna där som blockerare. Ett torn som bara blockerar en bonde är ett passivt torn, och de andra vita pjäserna är nu fria att agera."
+    },
+    {
+      "ply": 76,
+      "en": "39.c5 is not the most precise: the engine preferred 39.h4, gaining space on the kingside before pushing the c-pawn. White is still clearly winning, but it shows that even Kramnik was not perfect in a rapid game.",
+      "sv": "39.c5 är inte det mest precisa: motorn föredrog 39.h4, som tar utrymme på kungsflygeln innan c-bonden förs fram. Vit vinner fortfarande klart, men det visar att inte ens Kramnik spelade felfritt i ett snabbparti."
+    },
+    {
+      "ply": 87,
+      "en": "44...Rxc5?? takes the pawn but walks into a tactic. The engine had 44...Rc3+, keeping the checks going, though Black was losing in any case.",
+      "sv": "44...Rxc5?? tar bonden men går rakt in i en taktik. Motorn hade 44...Rc3+, som fortsätter schackandet, även om Svart förlorade i vilket fall som helst."
+    },
+    {
+      "ply": 88,
+      "en": "45.Rb7+, protected by the pawn on a6, gives check and attacks the rook on a7, while the rook on a5 already attacks the rook on c5. Black cannot hold on to both rooks: after 45...Kd6 46.Rxc5 Rxa6 47.Bxa6 Kxc5 White is a rook up. Topalov resigned, and Kramnik became the undisputed world champion.",
+      "sv": "45.Rb7+, skyddat av bonden på a6, ger schack och angriper tornet på a7, medan tornet på a5 redan angriper tornet på c5. Svart kan inte behålla båda tornen: efter 45...Kd6 46.Rxc5 Rxa6 47.Bxa6 Kxc5 har Vit ett torn mer. Topalov gav upp, och Kramnik blev obestridd världsmästare.",
+      "line": {
+        "from": "after",
+        "san": ["Kd6", "Rxc5", "Rxa6", "Bxa6", "Kxc5"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "A quiet, equal endgame was decided by small things: one careless rook move cost the a-pawn, and two more inaccurate rook moves (31...Rf5 and 33...Rc2) gave White's passed pawns room to advance. Kramnik's technique was simple: keep the rooks active, push the passed pawns, and tie the opponent's pieces to blockading them. Under rapid time control, the pressure finally produced a tactical oversight.",
+    "sv": "Ett lugnt, jämnt slutspel avgjordes av små saker: ett slarvigt torndrag kostade a-bonden, och två till onoggranna torndrag (31...Rf5 och 33...Rc2) gav de vita fribönderna utrymme att avancera. Kramniks teknik var enkel: håll tornen aktiva, för fram fribönderna och bind motståndarens pjäser vid att blockera dem. Under snabbschackets tidskontroll ledde trycket till slut till en taktisk miss."
+  }
+}

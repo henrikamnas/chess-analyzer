@@ -1,0 +1,76 @@
+{
+  "id": "topalov-kramnik-2006-g9",
+  "intro": {
+    "en": "Elista, 2006: game 9 of the match that reunified the world title. Topalov takes the bishop pair early in a quiet Slav and then plays ambitiously with f4 and e4, gaining space in the centre. The game is full of small mistakes on both sides, as tense match games often are; watch how White's space and the pressure on f7 finally decide.",
+    "sv": "Elista 2006: parti 9 i matchen som återförenade världsmästartiteln. Topalov tar löparparet tidigt i ett lugnt slaviskt och spelar sedan ambitiöst med f4 och e4 för att vinna utrymme i centrum. Partiet är fullt av små misstag på båda sidor, som spända matchpartier ofta är; se hur Vits utrymme och trycket mot f7 till slut avgör."
+  },
+  "comments": [
+    {
+      "ply": 13,
+      "en": "In the Schallopp line of the Slav Black develops the bishop to f5 before playing ...e6, and 6.Nh4 is the standard way to hunt it. After 6...Bg6 7.Nxg6 hxg6 White has the bishop pair, while Black has a solid pawn structure and a half-open h-file for his rook.",
+      "sv": "I Schallopp-varianten av slaviskt utvecklar Svart löparen till f5 innan ...e6, och 6.Nh4 är standardsättet att jaga den. Efter 6...Bg6 7.Nxg6 hxg6 har Vit löparparet, medan Svart har en solid bondestruktur och en halvöppen h-linje för tornet."
+    },
+    {
+      "ply": 18,
+      "en": "10.f4 is ambitious: White wants e4 with a big centre. But it loosens White's king position, and the engine prefers the quieter 10.Rb1; after 10.f4 Black has nothing to fear.",
+      "sv": "10.f4 är ambitiöst: Vit vill spela e4 och få ett stort centrum. Men draget luckrar upp den vita kungsställningen, och motorn föredrar det lugnare 10.Rb1; efter 10.f4 har Svart inget att frukta."
+    },
+    {
+      "ply": 29,
+      "en": "15...Qb6 is the first real inaccuracy. Black should strike at the centre at once with 15...c5, before White has castled and brought the bishop to e3. After the queen move White castles and develops in peace.",
+      "sv": "15...Qb6 är den första riktiga onoggrannheten. Svart borde slå mot centrum direkt med 15...c5, innan Vit hunnit rockera och föra löparen till e3. Efter damdraget rockerar Vit och utvecklar i lugn och ro.",
+      "line": {
+        "from": "before",
+        "san": ["c5", "Be3", "Rc8", "O-O", "Nb6"]
+      }
+    },
+    {
+      "ply": 37,
+      "en": "19...exf4 lets the bishop recapture on f4 with an active diagonal, and White keeps his strong pawn pair on d4 and e4. The engine preferred 19...exd4, taking on the other side so that only the e4 pawn is left in the centre.",
+      "sv": "19...exf4 låter löparen ta tillbaka på f4 med en aktiv diagonal, och Vit behåller sitt starka bondepar på d4 och e4. Motorn föredrog 19...exd4, att slå åt andra hållet så att bara bonden på e4 blir kvar i centrum."
+    },
+    {
+      "ply": 43,
+      "en": "Both sides slip here. The engine wanted 22.e5, gaining more space, instead of 22.Bg5; and after it Black's best was 22...Nf8, bringing the knight towards e6, rather than 22...Be7.",
+      "sv": "Båda sidor snubblar här. Motorn ville spela 22.e5 och vinna mer utrymme i stället för 22.Bg5; och därefter var Svarts bästa 22...Nf8, som för springaren mot e6, snarare än 22...Be7."
+    },
+    {
+      "ply": 47,
+      "en": "24...Bg5? is the real mistake. Black offers a bishop trade, but White simply retreats with 25.Bg1, and after 26.h4 the bishop on g5 retreats to e7. Black has lost two tempi, and White has gained space on the kingside. 24...Ndf6 was better, putting pressure on e4.",
+      "sv": "24...Bg5? är det verkliga misstaget. Svart erbjuder löparbyte, men Vit backar helt enkelt med 25.Bg1, och efter 26.h4 drar sig löparen på g5 tillbaka till e7. Svart har förlorat två tempon, och Vit har vunnit utrymme på kungsflygeln. 24...Ndf6 var bättre och satte tryck på e4."
+    },
+    {
+      "ply": 52,
+      "en": "27.e5 gains more space: it takes the d6 and f6 squares from Black's knights, and it opens the diagonal of the bishop on f3 towards c6.",
+      "sv": "27.e5 vinner ännu mer utrymme: bonden tar rutorna d6 och f6 från de svarta springarna och öppnar diagonalen för löparen på f3 mot c6."
+    },
+    {
+      "ply": 58,
+      "en": "A messy phase. The engine wanted 29.Ne4 and then 30.Ne4, putting the knight on a strong central square, but Topalov played 29.Qg2 and 30.Rc1. Kramnik also missed the chance to trade off the knight at once with 29...Bxc3. White stays clearly better, but less so than he could have been.",
+      "sv": "En rörig fas. Motorn ville spela 29.Ne4 och sedan 30.Ne4 och ställa springaren på en stark central ruta, men Topalov spelade 29.Qg2 och 30.Rc1. Även Kramnik missade chansen att byta av springaren direkt med 29...Bxc3. Vit står fortfarande klart bättre, men inte så mycket som han kunnat göra."
+    },
+    {
+      "ply": 69,
+      "en": "35...Nf8?? is the decisive blunder. The knight on e6 was blocking the diagonal from White's queen on a2 to f7. Once it leaves, the queen, the rook on f3 and soon the second rook all aim at the f7 pawn. The engine's choice was 35...c5, hitting back in the centre.",
+      "sv": "35...Nf8?? är det avgörande misstaget. Springaren på e6 blockerade diagonalen från den vita damen på a2 till f7. När den lämnar rutan siktar damen, tornet på f3 och snart det andra tornet alla mot bonden på f7. Motorns val var 35...c5, som slår tillbaka i centrum."
+    },
+    {
+      "ply": 74,
+      "en": "38.Rxf7 collects the pawn and breaks open the position in front of Black's king. The rook on f7 is backed up by the rook on f1.",
+      "sv": "38.Rxf7 tar bonden och bryter upp ställningen framför den svarta kungen. Tornet på f7 får stöd av tornet på f1."
+    },
+    {
+      "ply": 76,
+      "en": "After 38...Nd5 blocked the queen's diagonal, 39.R7f3 retreats, and Kramnik resigned. The engine found an even cleaner path with 39.Be6, trading pieces on f7 and taking the a7 pawn with the queen, but White is winning either way: he is a pawn up, Black's king is exposed and the bishops are ready to join the attack.",
+      "sv": "Efter att 38...Nd5 blockerat damens diagonal backar 39.R7f3, och Kramnik gav upp. Motorn hittade en ännu renare väg med 39.Be6, som byter pjäser på f7 och tar bonden på a7 med damen, men Vit vinner i vilket fall: han har en merbonde, den svarta kungen är blottad och löparna är redo att ansluta till anfallet.",
+      "line": {
+        "from": "before",
+        "san": ["Be6", "Rxf7", "Rxf7", "Qxf7", "Bxf7+", "Kxf7", "Qxa7+"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "Topalov's ambitious set-up with f4 and e4 was not objectively better than quiet development, but it gave him space, and Black's small slips turned that space into a lasting edge. The key lessons: strike at the centre before the opponent completes development, don't waste tempi with bishop moves that can be chased back, and be careful when moving a piece that blocks a line to your weakest pawn.",
+    "sv": "Topalovs ambitiösa uppställning med f4 och e4 var objektivt inte bättre än lugn utveckling, men den gav honom utrymme, och Svarts små misstag gjorde det utrymmet till en varaktig fördel. De viktigaste läxorna: slå mot centrum innan motståndaren hunnit utveckla klart, slösa inte tempon på löpardrag som kan jagas tillbaka, och var försiktig när du flyttar en pjäs som blockerar en linje mot din svagaste bonde."
+  }
+}

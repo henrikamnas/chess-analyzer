@@ -1,0 +1,89 @@
+{
+  "id": "polgar-anand-1999",
+  "intro": {
+    "en": "Dos Hermanas, 1999: Judit Polgar against Viswanathan Anand, one of the best players in the world at the time. Polgar answers his Sicilian with the sharp Perenyi Gambit, giving up a knight early for a pawn and a lasting attack. Watch the open g-file, the pressure on g7 and how Black's queenside pieces never get into the game.",
+    "sv": "Dos Hermanas 1999: Judit Polgar mot Viswanathan Anand, en av världens bästa spelare vid den tiden. Polgar möter hans sicilianska försvar med den skarpa Perenyi-gambiten och ger tidigt bort en springare mot en bonde och ett långvarigt angrepp. Lägg märke till den öppna g-linjen, trycket mot g7 och hur de svarta pjäserna på damflygeln aldrig kommer i spel."
+  },
+  "comments": [
+    {
+      "ply": 12,
+      "en": "After 5...a6 (the Najdorf) and 6...e6 the game is in Scheveningen territory, and 7.g4 is the Delayed Keres Attack. White wants to chase the knight from f6 with g4-g5 and attack on the kingside.",
+      "sv": "Efter 5...a6 (Najdorf) och 6...e6 är partiet inne i Scheveningen-terräng, och 7.g4 är den fördröjda Keres-attacken. Vit vill jaga bort springaren från f6 med g4-g5 och anfalla på kungsflygeln."
+    },
+    {
+      "ply": 18,
+      "en": "7...e5 8.Nf5 g6 9.g5 is the Perenyi Gambit. After 9...gxf5 10.exf5 White has given a knight for a pawn, but the g5 pawn attacks the knight on f6, the pawn on f5 cramps Black, and Black's king will find it hard to castle safely. The engine rates the position as roughly equal.",
+      "sv": "7...e5 8.Nf5 g6 9.g5 är Perenyi-gambiten. Efter 9...gxf5 10.exf5 har Vit gett en springare för en bonde, men g5-bonden angriper springaren på f6, bonden på f5 gör det trångt för Svart, och den svarta kungen får svårt att rockera i säkerhet. Motorn bedömer ställningen som ungefär lika."
+    },
+    {
+      "ply": 22,
+      "en": "11...d4 attacks the knight on c3 and the bishop on e3 at the same time. Polgar ignores the fork and castles long: her king gets away, and the rook arrives on d1, opposite the d4 pawn.",
+      "sv": "11...d4 angriper springaren på c3 och löparen på e3 samtidigt. Polgar struntar i gaffeln och rockerar långt: kungen kommer i säkerhet och tornet hamnar på d1, mitt emot d4-bonden."
+    },
+    {
+      "ply": 24,
+      "en": "13.Bd2? lets Black take the knight on c3 as well, and after it Black is better. The engine wanted another sacrifice, 13.Bxd4!, giving the bishop for two central pawns and opening the d-file against Black's king, which is still in the centre.",
+      "sv": "13.Bd2? låter Svart ta även springaren på c3, och efter det står Svart bättre. Motorn ville ha ännu ett offer, 13.Bxd4!, där löparen ges för två centrumbönder och d-linjen öppnas mot den svarta kungen, som fortfarande står i centrum.",
+      "line": {
+        "from": "before",
+        "san": ["Bxd4", "exd4", "Rxd4", "Bc5", "Rd1", "Qc7", "gxf6", "Nxf6"]
+      }
+    },
+    {
+      "ply": 27,
+      "en": "14...Bg7? is the turning point. The bishop goes to the g-file, which opens as soon as White takes on f6, and it invites Black's king to castle into the same file. The engine's choice was 14...Rg8, putting the rook on the file first.",
+      "sv": "14...Bg7? är vändpunkten. Löparen hamnar på g-linjen, som öppnas så fort Vit slår på f6, och den lockar den svarta kungen att rockera till samma linje. Motorns val var 14...Rg8, som ställer tornet på linjen först.",
+      "line": {
+        "from": "before",
+        "san": ["Rg8", "gxf6", "Qxf6", "Bd3", "Be7"]
+      }
+    },
+    {
+      "ply": 29,
+      "en": "15...O-O looks like castling into the attack, but the engine agrees it is Black's best move: the king had no better home. Polgar now opens the g-file with gxf6.",
+      "sv": "15...O-O ser ut som att rockera rakt in i angreppet, men motorn håller med om att det är Svarts bästa drag: kungen hade inget bättre hem. Polgar öppnar nu g-linjen med gxf6."
+    },
+    {
+      "ply": 35,
+      "en": "18...Qb6? offers a queen trade, which is normally a good idea for the defender. But White simply avoids it with 19.Qg3, which threatens mate on g7 because the rook on g1 backs up the queen. The engine wanted 18...Re8, bringing another piece into play.",
+      "sv": "18...Qb6? erbjuder dambyte, vilket normalt är en bra idé för den som försvarar sig. Men Vit undviker det helt enkelt med 19.Qg3, som hotar matt på g7 eftersom tornet på g1 står bakom damen. Motorn ville spela 18...Re8, som för in ännu en pjäs i spelet.",
+      "line": {
+        "from": "before",
+        "san": ["Re8", "Kb1", "b5", "a3", "Qb6"]
+      }
+    },
+    {
+      "ply": 38,
+      "en": "20.Rd6! attacks the queen on h6 along the sixth rank. 20...Bf6 would lose to 21.Rxf6, so Black blocks with 20...f6, which leaves the bishop on g7 shut in by its own pawn.",
+      "sv": "20.Rd6! angriper damen på h6 längs sjätte raden. 20...Bf6 hade förlorat på 21.Rxf6, så Svart blockerar med 20...f6, vilket lämnar löparen på g7 instängd bakom sin egen bonde."
+    },
+    {
+      "ply": 44,
+      "en": "23.Be6 plants the bishop deep in Black's camp, where it is defended by the rook on d6. The engine preferred 23.Bd5, but White keeps a clear advantage either way: Black's queenside pieces, the rook on a8, the bishop on c8 and the knight on d7, are badly tangled up.",
+      "sv": "23.Be6 planterar löparen djupt i det svarta lägret, där tornet på d6 skyddar den. Motorn föredrog 23.Bd5, men Vit har en klar fördel i båda fallen: de svarta pjäserna på damflygeln, tornet på a8, löparen på c8 och springaren på d7, står illa hoptrasslade."
+    },
+    {
+      "ply": 45,
+      "en": "23...Ra7? only makes it worse. The engine wanted 23...Nc5, getting the knight out of the way so that the bishop on c8 can challenge the intruder on e6. After the rook move, 24.Rc6 attacks the bishop and keeps everything tied up.",
+      "sv": "23...Ra7? gör bara saken värre. Motorn ville spela 23...Nc5, som flyttar springaren ur vägen så att löparen på c8 kan utmana inkräktaren på e6. Efter tornflytten angriper 24.Rc6 löparen och håller allt bundet.",
+      "line": {
+        "from": "before",
+        "san": ["Nc5", "Bd5", "Ra7", "Rc6", "Na4"]
+      }
+    },
+    {
+      "ply": 60,
+      "en": "Polgar cashes in: after 30.Rxc8 Rxc8, 31.Bxd7 attacks both black rooks at once, on c8 and f5. The engine slightly preferred taking on d7 first, but the result is the same, and once the dust settles material is level while Black's king is still exposed.",
+      "sv": "Polgar omsätter fördelen i material: efter 30.Rxc8 Rxc8 angriper 31.Bxd7 båda svarta tornen samtidigt, på c8 och f5. Motorn föredrog en aning att slå på d7 först, men resultatet blir detsamma, och när röken lagt sig är materialet lika medan den svarta kungen fortfarande står öppet."
+    },
+    {
+      "ply": 66,
+      "en": "34.Qg2 and Anand resigned. The queen pins the bishop on g7 to the king and attacks the e4 pawn, while the rook is ready to invade on d8. Material is level, but Black's king cannot be defended. The engine slightly preferred 34.Rd8+ at once.",
+      "sv": "34.Qg2 och Anand gav upp. Damen binder löparen på g7 mot kungen och angriper bonden på e4, medan tornet är redo att tränga in på d8. Materialet är lika, men den svarta kungen går inte att försvara. Motorn föredrog en aning 34.Rd8+ direkt."
+    }
+  ],
+  "summary": {
+    "en": "Polgar gave up a knight in the opening and played the whole game for the initiative. The engine is honest about it: 13.Bd2 let Black take over for a moment, but 14...Bg7 and 18...Qb6 handed the attack back. The lessons: open files against the king are worth more than a piece if the defender's other pieces cannot help, and a defender should bring pieces into play rather than offer trades that the attacker can simply avoid.",
+    "sv": "Polgar gav bort en springare i öppningen och spelade hela partiet på initiativet. Motorn är ärlig: 13.Bd2 lät Svart ta över för ett ögonblick, men 14...Bg7 och 18...Qb6 gav tillbaka angreppet. Läxorna: öppna linjer mot kungen är värda mer än en pjäs om försvararens övriga pjäser inte kan hjälpa till, och den som försvarar sig bör föra in pjäser i spelet hellre än att erbjuda byten som angriparen bara kan undvika."
+  }
+}

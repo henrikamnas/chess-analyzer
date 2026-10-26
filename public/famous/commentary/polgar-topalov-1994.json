@@ -1,0 +1,106 @@
+{
+  "id": "polgar-topalov-1994",
+  "intro": {
+    "en": "Dos Hermanas, 1994: Judit Polgar against Veselin Topalov in a French Defence, Advance Variation. For most of the game the balance swings back and forth, and both sides miss chances. Watch the black rooks on White's second rank, the weak e6 pawn, and how a knight in front of the queen sets up a deadly discovered check.",
+    "sv": "Dos Hermanas 1994: Judit Polgar mot Veselin Topalov i franskt försvar, avancemangsvarianten. Under större delen av partiet svänger balansen fram och tillbaka, och båda sidor missar chanser. Lägg märke till de svarta tornen på Vits andra rad, den svaga bonden på e6 och hur en springare framför damen förbereder ett dödligt avdragsschack."
+  },
+  "comments": [
+    {
+      "ply": 9,
+      "en": "3.e5 is the Advance Variation: White grabs space and cramps Black's kingside, while Black attacks the base of the pawn chain, d4, with ...c5 and ...Nc6. 5...Bd7 is the Euwe Variation, developing the bishop first and keeping Black's options open.",
+      "sv": "3.e5 är avancemangsvarianten: Vit tar utrymme och gör det trångt för Svart på kungsflygeln, medan Svart angriper basen i bondekedjan, d4, med ...c5 och ...Nc6. 5...Bd7 är Euwes variant, där löparen utvecklas först och Svart håller sina möjligheter öppna."
+    },
+    {
+      "ply": 11,
+      "en": "6...f6 attacks the other end of White's pawn chain, the e5 pawn. It is a typical French idea, but the engine preferred to develop first with 6...Nge7, since Black's king is still in the centre.",
+      "sv": "6...f6 angriper den andra änden av Vits bondekedja, bonden på e5. Det är en typisk fransk idé, men motorn föredrog att utveckla först med 6...Nge7, eftersom den svarta kungen fortfarande står i centrum."
+    },
+    {
+      "ply": 13,
+      "en": "7...Qb6 puts pressure on d4, but White simply gives up the centre with 8.dxc5 and follows up with 9.b4, gaining space on the queenside with tempo against the bishop. The engine preferred to clear the centre with 7...fxe5.",
+      "sv": "7...Qb6 sätter press på d4, men Vit ger helt enkelt upp centrum med 8.dxc5 och följer upp med 9.b4, som vinner utrymme på damflygeln med tempo mot löparen. Motorn föredrog att rensa centrum med 7...fxe5.",
+      "line": {
+        "from": "before",
+        "san": ["fxe5", "Nxe5", "cxd4", "Nxc6", "bxc6", "cxd4"]
+      }
+    },
+    {
+      "ply": 35,
+      "en": "After the trades on the queenside the a-file is open, and 18...Ra2 puts Black's rook on White's second rank, where it attacks the knight on d2. The position is balanced, but this rook will be a thorn in White's side for the rest of the game.",
+      "sv": "Efter bytena på damflygeln är a-linjen öppen, och 18...Ra2 ställer det svarta tornet på Vits andra rad, där det angriper springaren på d2. Ställningen är i balans, men tornet blir en tagg i köttet för Vit resten av partiet."
+    },
+    {
+      "ply": 42,
+      "en": "22.g3 drives the queen away from f4, but it loosens the light squares around White's king, such as f3 and h3. The engine preferred 22.Nf3, and after the pawn move Black is somewhat better.",
+      "sv": "22.g3 driver bort damen från f4, men det försvagar de vita rutorna runt den vita kungen, till exempel f3 och h3. Motorn föredrog 22.Nf3, och efter bondedraget står Svart något bättre."
+    },
+    {
+      "ply": 44,
+      "en": "23.f4? weakens White's king position even more. The engine wanted 23.Bxf6, removing the knight and trading rooks on the a-file to get rid of the rook on a2.",
+      "sv": "23.f4? försvagar den vita kungsställningen ännu mer. Motorn ville spela 23.Bxf6, som tar bort springaren och byter torn på a-linjen för att bli av med tornet på a2.",
+      "line": {
+        "from": "before",
+        "san": ["Bxf6", "Rxf6", "Ra1", "Rxa1", "Qxa1"]
+      }
+    },
+    {
+      "ply": 45,
+      "en": "Topalov misses his chance. 23...g5! attacks the f4 pawn at once and opens lines against White's loosened king; the engine rates Black clearly better after it. After 23...Qd3 the position is close to level again.",
+      "sv": "Topalov missar sin chans. 23...g5! angriper bonden på f4 direkt och öppnar linjer mot den försvagade vita kungen; motorn bedömer att Svart står klart bättre efter det. Efter 23...Qd3 är ställningen nästan lika igen.",
+      "line": {
+        "from": "before",
+        "san": ["g5", "Bxf6", "Rxf6", "fxg5", "Bc5+", "Kg2"]
+      }
+    },
+    {
+      "ply": 61,
+      "en": "31...Bf8? is a real mistake. On d6 the bishop watched e5 and attacked the f4 pawn; now 32.Bxf6 gxf6 breaks open Black's king position, and White's queen and rook are lined up on the e-file against the e6 pawn. The engine preferred 31...Raa2, doubling the rooks.",
+      "sv": "31...Bf8? är ett riktigt misstag. På d6 bevakade löparen e5 och angrep bonden på f4; nu bryter 32.Bxf6 gxf6 upp den svarta kungsställningen, och Vits dam och torn står uppradade på e-linjen mot bonden på e6. Motorn föredrog 31...Raa2, som dubblerar tornen.",
+      "line": {
+        "from": "before",
+        "san": ["Raa2", "Bxf6", "gxf6", "f5", "Be5"]
+      }
+    },
+    {
+      "ply": 64,
+      "en": "33.Ne4 heads for f6, but the engine preferred 33.f5!, opening the e-file at once: after 33...exf5 34.Qe6+ the queen breaks in. After the knight move White's advantage almost disappears, if Black reacts correctly.",
+      "sv": "33.Ne4 siktar på f6, men motorn föredrog 33.f5!, som öppnar e-linjen direkt: efter 33...exf5 34.Qe6+ bryter damen in. Efter springardraget försvinner nästan hela Vits fördel, om Svart reagerar rätt.",
+      "line": {
+        "from": "before",
+        "san": ["f5", "exf5", "Qe6+", "Kh8", "Qxf6+", "Bg7"]
+      }
+    },
+    {
+      "ply": 65,
+      "en": "33...Raa2?? is the losing blunder. Doubling the rooks on the second rank looks menacing, but it ignores the knight. Black had to play 33...Rxf2, trading off a pair of rooks, and then offer the queen trade on e6.",
+      "sv": "33...Raa2?? är bortsättningen som förlorar. Att dubblera tornen på andra raden ser hotfullt ut, men det struntar i springaren. Svart måste spela 33...Rxf2, som byter bort ett tornpar, och sedan erbjuda dambyte på e6.",
+      "line": {
+        "from": "before",
+        "san": ["Rxf2", "Nxf2", "Qf5", "Qxe6+", "Qxe6", "Rxe6"]
+      }
+    },
+    {
+      "ply": 68,
+      "en": "After 34.Nxf6+ Kh8, 35.Qe5! sets up the key pattern: the knight on f6 stands between the queen and the king on the long diagonal, so every knight move will be a discovered check.",
+      "sv": "Efter 34.Nxf6+ Kh8 förbereder 35.Qe5! det avgörande mönstret: springaren på f6 står mellan damen och kungen på den långa diagonalen, så varje springardrag blir ett avdragsschack."
+    },
+    {
+      "ply": 69,
+      "en": "35...Rxf2 threatens mate on g2 and on h2, but White gives check after check, so Black never has time. The engine preferred 35...Qf5, offering a queen trade, although White would be winning anyway.",
+      "sv": "35...Rxf2 hotar matt på g2 och på h2, men Vit ger schack efter schack, så Svart får aldrig tid. Motorn föredrog 35...Qf5, som erbjuder dambyte, även om Vit hade vunnit ändå."
+    },
+    {
+      "ply": 72,
+      "en": "36.Ng4+ was the discovered check, and the knight now also guards f2 and h2. After 37.Qxe6+ Topalov resigned: White keeps checking, picks up the d5 pawn and then takes the rook on f2, and Black's attack is over.",
+      "sv": "36.Ng4+ var avdragsschacket, och springaren skyddar nu även f2 och h2. Efter 37.Qxe6+ gav Topalov upp: Vit fortsätter att schacka, plockar bonden på d5 och tar sedan tornet på f2, och det svarta angreppet är över.",
+      "line": {
+        "from": "after",
+        "san": ["Kh8", "Qe5+", "Kg8", "Qxd5+", "Kg7", "Nxf2", "Rxf2", "Qd4+", "Kg8", "Qxf2"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "This was a tense, double-edged game: Polgar loosened her own king with 22.g3 and 23.f4, and Topalov missed the strong 23...g5. In the end it was decided by one moment of greed: 33...Raa2 ignored White's threats, and the knight and queen battery on the long diagonal did the rest. The lessons: count your opponent's checks before you go for your own attack, and remember the power of a discovered check.",
+    "sv": "Det här var ett spänt, tveeggat parti: Polgar försvagade sin egen kung med 22.g3 och 23.f4, och Topalov missade det starka 23...g5. Till slut avgjordes det av ett enda ögonblick av girighet: 33...Raa2 struntade i Vits hot, och batteriet av springare och dam på den långa diagonalen gjorde resten. Läxorna: räkna motståndarens schackar innan du satsar på ditt eget angrepp, och kom ihåg kraften i ett avdragsschack."
+  }
+}

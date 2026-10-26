@@ -1,0 +1,72 @@
+{
+  "id": "kramnik-kasparov-2000-g10",
+  "intro": {
+    "en": "London, 2000: game 10 of the World Championship match, with Kramnik a point ahead. Kasparov plays the Nimzo-Indian, and the game turns into a classic position with an isolated queen's pawn for White. Watch how Kramnik uses his active pieces for a bishop sacrifice on e6, and how one greedy queen move lets the white knight and queen hunt Black's king.",
+    "sv": "London 2000: parti 10 i VM-matchen, med Kramnik en poäng före. Kasparov spelar nimzoindiskt, och partiet övergår i en klassisk ställning med isolerad dambonde för Vit. Se hur Kramnik använder sina aktiva pjäser till ett löparoffer på e6, och hur ett enda girigt damdrag låter den vita springaren och damen jaga Svarts kung."
+  },
+  "comments": [
+    {
+      "ply": 5,
+      "en": "3...Bb4 is the Nimzo-Indian Defence. The bishop pins the knight on c3, so Black fights for the e4 square with pieces instead of pawns, and is ready to give up the bishop for the knight if it saddles White with doubled pawns.",
+      "sv": "3...Bb4 är nimzoindiskt försvar. Löparen binder springaren på c3, så att Svart kämpar om e4-rutan med pjäser i stället för bönder, och är beredd att byta löparen mot springaren om det ger Vit dubbelbönder."
+    },
+    {
+      "ply": 16,
+      "en": "After the exchanges on d4 and c4 White has an isolated queen's pawn on d4. It is a classic structure: White gets free lines and active pieces and should play for an attack, while Black wants to blockade the pawn and trade pieces until it becomes a weakness.",
+      "sv": "Efter bytena på d4 och c4 har Vit en isolerad dambonde på d4. Det är en klassisk struktur: Vit får öppna linjer och aktiva pjäser och bör spela på angrepp, medan Svart vill blockera bonden och byta pjäser tills den blir en svaghet."
+    },
+    {
+      "ply": 24,
+      "en": "13.Qb3 lines up the queen behind the bishop on c4, both aiming at e6 and f7. White's rooks on c1 and e1 also stand ready on the open c-file and the half-open e-file.",
+      "sv": "13.Qb3 ställer damen bakom löparen på c4, och båda siktar mot e6 och f7. Vits torn på c1 och e1 står också redo på den öppna c-linjen och den halvöppna e-linjen."
+    },
+    {
+      "ply": 28,
+      "en": "15.Bxe6! After trading bishop for knight with 14.Bxf6, Kramnik sacrifices the bishop to tear open Black's king position. The engine agrees that it is White's best, and the alternatives would leave White worse. The point is that after 15...fxe6 the queen checks on e6 and then takes the bishop on e7, so White wins the piece back and is two pawns up for the moment.",
+      "sv": "15.Bxe6! Efter att ha bytt löpare mot springare med 14.Bxf6 offrar Kramnik löparen för att slita upp Svarts kungsställning. Motorn håller med om att det är Vits bästa drag, och alternativen hade lämnat Vit sämre. Poängen är att efter 15...fxe6 schackar damen på e6 och tar sedan löparen på e7, så att Vit vinner tillbaka pjäsen och för tillfället ligger två bönder över.",
+      "line": { "from": "after", "san": ["fxe6", "Qxe6+", "Kh8", "Qxe7"] }
+    },
+    {
+      "ply": 29,
+      "en": "15...fxe6 accepts the sacrifice. The engine preferred 15...Rc7, declining it and counterattacking the d4 pawn, with a balanced game. After the capture White gets dangerous play, though the position is still roughly level.",
+      "sv": "15...fxe6 antar offret. Motorn föredrog 15...Rc7, som avböjer det och går till motangrepp mot d4-bonden, med jämnt spel. Efter slaget får Vit farligt spel, även om ställningen fortfarande är ungefär jämn.",
+      "line": { "from": "before", "san": ["Rc7", "Ng5", "Qxd4", "Rc2", "Bd6"] }
+    },
+    {
+      "ply": 35,
+      "en": "18...Qxd4 wins back a pawn, and White is now only one pawn up. But White's queen on e7 is deep in Black's camp, and Black's king on h8 has few defenders.",
+      "sv": "18...Qxd4 vinner tillbaka en bonde, och Vit har nu bara en bonde mer. Men Vits dam på e7 står djupt inne i Svarts läger, och Svarts kung på h8 har få försvarare."
+    },
+    {
+      "ply": 37,
+      "en": "19...Qxb2?? is the decisive mistake. Grabbing a second pawn takes the queen far from the defence and gives up control of d6. The engine's 19...Qd3 kept the queen watching d6, and the game would have stayed level.",
+      "sv": "19...Qxb2?? är det avgörande misstaget. Att ta en andra bonde för damen långt från försvaret och släpper kontrollen över d6. Motorns 19...Qd3 höll damen vaktande över d6, och partiet hade förblivit jämnt.",
+      "line": { "from": "before", "san": ["Qd3", "Rxc8", "Rxc8", "Nd6", "Ra8", "Nf7+", "Kg8"] }
+    },
+    {
+      "ply": 40,
+      "en": "21.Nd6! The knight attacks the rook on c8 and heads for f7, close to Black's king. This is the move the engine wants; grabbing the a7 pawn instead would let Black off the hook.",
+      "sv": "21.Nd6! Springaren angriper tornet på c8 och är på väg mot f7, nära Svarts kung. Det är draget motorn vill ha; att i stället ta bonden på a7 hade låtit Svart slippa undan."
+    },
+    {
+      "ply": 44,
+      "en": "23.Qe6! now the knight on f7 and the queen behind it work together. White threatens a double check from h6, followed by a queen sacrifice on g8 and a smothered mate with the knight returning to f7.",
+      "sv": "23.Qe6! nu samarbetar springaren på f7 och damen bakom den. Vit hotar en dubbelschack från h6, följd av ett damoffer på g8 och kvävningsmatt när springaren återvänder till f7."
+    },
+    {
+      "ply": 46,
+      "en": "24.Nd8+ is a discovered check: the knight moves and the queen on e6 checks the king along the diagonal to g8. The engine preferred 23...h6 as the defence, but even then White wins the rook on b8.",
+      "sv": "24.Nd8+ är en avdragsschack: springaren flyttar och damen på e6 schackar kungen längs diagonalen mot g8. Motorn föredrog 23...h6 som försvar, men även då vinner Vit tornet på b8."
+    },
+    {
+      "ply": 48,
+      "en": "25.Qe7 attacks the rook on f8 and threatens to take it with check, after which a knight check on f7 would be mate. Black's best is to give up the exchange by taking the knight with the rook, leaving White with a rook against a knight. Kasparov resigned, Kramnik now led by two points, and Kasparov did not win a single game in the match.",
+      "sv": "25.Qe7 angriper tornet på f8 och hotar att ta det med schack, varefter en springarschack på f7 vore matt. Svarts bästa är att ge kvalitet genom att ta springaren med tornet, så att Vit får torn mot springare. Kasparov gav upp, Kramnik ledde nu med två poäng, och Kasparov vann inte ett enda parti i matchen.",
+      "line": { "from": "after", "san": ["Rxd8", "Qxd8+", "Ng8", "Qd5"] }
+    }
+  ],
+  "summary": {
+    "en": "With an isolated queen's pawn, the side with the pawn should play actively and attack before the endgame arrives, as Kramnik did with 15.Bxe6. When your king is under fire, don't send your queen away to grab pawns: Kasparov's 19...Qxb2 turned a level game into a lost one. And remember the queen-and-knight patterns: double check, discovered check and smothered mate.",
+    "sv": "Med isolerad dambonde ska den som har bonden spela aktivt och anfalla innan slutspelet kommer, som Kramnik gjorde med 15.Bxe6. När kungen är under eld ska man inte skicka iväg damen för att ta bönder: Kasparovs 19...Qxb2 gjorde ett jämnt parti till ett förlorat. Och kom ihåg mönstren med dam och springare: dubbelschack, avdragsschack och kvävningsmatt."
+  }
+}

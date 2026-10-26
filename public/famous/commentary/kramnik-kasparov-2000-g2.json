@@ -1,0 +1,79 @@
+{
+  "id": "kramnik-kasparov-2000-g2",
+  "intro": {
+    "en": "London, 2000: game 2 of the World Championship match between Garry Kasparov and his challenger Vladimir Kramnik. Kasparov chooses his trusted Grünfeld, and Kramnik answers with a pawn grab on b7 that leads to a slightly better endgame. It became the first decisive game of the match, which Kramnik went on to win without losing a game. Watch how a single extra passed pawn on the a-file slowly ties Black down.",
+    "sv": "London 2000: parti 2 i VM-matchen mellan Garry Kasparov och utmanaren Vladimir Kramnik. Kasparov väljer sitt beprövade Grünfeldförsvar, och Kramnik svarar med ett bondeslag på b7 som leder till ett något bättre slutspel. Det blev matchens första avgjorda parti, och Kramnik vann sedan matchen utan att förlora ett enda parti. Se hur en enda extra fribonde på a-linjen långsamt binder Svart."
+  },
+  "comments": [
+    {
+      "ply": 11,
+      "en": "This is the Exchange Variation of the Grünfeld. White has a big pawn centre on c3, d4 and e4; Black has given it to him on purpose and will attack it with pieces and the ...c5 break, with the bishop on g7 aiming down the long diagonal.",
+      "sv": "Detta är avbytesvarianten i Grünfeldförsvaret. Vit har ett stort bondecentrum på c3, d4 och e4; Svart har gett honom det med flit och tänker angripa det med pjäser och genombrottet ...c5, med löparen på g7 riktad längs den långa diagonalen."
+    },
+    {
+      "ply": 20,
+      "en": "10.Rb1 and 11.Rxb7 grab the b7 pawn, and the rook lands on the seventh rank. In return Black takes on f3 and breaks up White's kingside pawns, and he hopes to win back material in the centre.",
+      "sv": "10.Rb1 och 11.Rxb7 tar bonden på b7, och tornet landar på sjunde raden. I gengäld slår Svart på f3 och splittrar Vits bönder på kungsflygeln, och han hoppas vinna tillbaka material i centrum."
+    },
+    {
+      "ply": 31,
+      "en": "Black has won back the pawn on d4. The engine's choice here was the queen trade 16...Qxd2, leading to an equal endgame. Kasparov keeps the queens on with 16...Bc3, chasing White's queen to c1.",
+      "sv": "Svart har vunnit tillbaka bonden på d4. Motorns val här var dambytet 16...Qxd2, som leder till ett jämnt slutspel. Kasparov behåller damerna med 16...Bc3 och jagar Vits dam till c1.",
+      "line": { "from": "before", "san": ["Qxd2", "Bxd2", "Rfc8", "Bg5", "e6"] }
+    },
+    {
+      "ply": 33,
+      "en": "17...Nd4 forces trades, but the knight on c6 was guarding e7, and now the rook on b7 can take that pawn. The engine preferred 17...Rac8, keeping the knight where it was.",
+      "sv": "17...Nd4 tvingar fram byten, men springaren på c6 skyddade e7, och nu kan tornet på b7 ta den bonden. Motorn föredrog 17...Rac8, som lät springaren stå kvar.",
+      "line": { "from": "before", "san": ["Rac8", "Bb6", "Qb4", "a3", "Qb2"] }
+    },
+    {
+      "ply": 39,
+      "en": "After the trades White is a pawn up, with queen, rook and bishop each. White's kingside pawns are broken up, but he has connected pawns on e4 and f3 that can start rolling.",
+      "sv": "Efter bytena ligger Vit en bonde över, med dam, torn och löpare var. Vits bönder på kungsflygeln är splittrade, men han har sammanhängande bönder på e4 och f3 som kan börja rulla."
+    },
+    {
+      "ply": 51,
+      "en": "With 24...g5 and 25...Qxf4 Black wins back the pawn and the queens come off. Material is level, and it is a rook and bishop endgame with opposite-coloured bishops, White's light-squared and Black's dark-squared. Such bishops favour the defender, but with rooks still on the board the stronger side keeps real chances.",
+      "sv": "Med 24...g5 och 25...Qxf4 vinner Svart tillbaka bonden och damerna byts av. Materialet är jämnt, och det är ett slutspel med torn och olikfärgade löpare, Vits på vita fält och Svarts på svarta. Sådana löpare gynnar försvararen, men med tornen kvar på brädet behåller den starkare sidan verkliga chanser."
+    },
+    {
+      "ply": 52,
+      "en": "27.e6! sacrifices a pawn to break up Black's pawns. After 28.Rxe6 White has the pawn back, and the rook goes on to win the a6 pawn, leaving White with an outside passed pawn on the a-file.",
+      "sv": "27.e6! offrar en bonde för att splittra Svarts bönder. Efter 28.Rxe6 har Vit fått tillbaka bonden, och tornet fortsätter med att vinna bonden på a6, så att Vit får en fribonde på a-linjen, långt från kungarna."
+    },
+    {
+      "ply": 56,
+      "en": "29.Rxa6 and White has an a-pawn that is passed, against Black's two scattered pawns on f4 and h7. It is still close to a draw, but Black must defend precisely.",
+      "sv": "29.Rxa6 och Vit har en fri a-bonde mot Svarts två utspridda bönder på f4 och h7. Det är fortfarande nära remi, men Svart måste försvara sig exakt."
+    },
+    {
+      "ply": 67,
+      "en": "34...Rd7? is the first serious mistake. The rook leaves the a-file, where it stood in front of White's passed pawn. The engine's 34...Bd6 kept the rook on guard and the position close to a draw.",
+      "sv": "34...Rd7? är det första allvarliga misstaget. Tornet lämnar a-linjen, där det stod framför Vits fribonde. Motorns 34...Bd6 höll tornet på vakt och ställningen nära remi.",
+      "line": { "from": "before", "san": ["Bd6", "Rc4", "Ra5", "Kg2", "Rg5+"] }
+    },
+    {
+      "ply": 71,
+      "en": "36...h5? costs more time. The engine's 36...Ra2 puts the rook behind the passed pawn, the classic place for it, whether you are pushing the pawn or stopping it.",
+      "sv": "36...h5? kostar mer tid. Motorns 36...Ra2 placerar tornet bakom fribonden, den klassiska platsen för tornet, oavsett om man driver fram bonden eller stoppar den.",
+      "line": { "from": "before", "san": ["Ra2", "Bd5", "Rd2", "Rb7+"] }
+    },
+    {
+      "ply": 77,
+      "en": "39...Ke7?? is the final blunder. The king steps onto the e-file, where a rook check on e6, once that square is covered, will also hit the bishop on e5. The engine's 39...Kg7 would have kept the bishop, though White would still be clearly winning.",
+      "sv": "39...Ke7?? är den slutliga blundern. Kungen kliver ut på e-linjen, där en tornschack på e6, när den rutan väl är täckt, samtidigt träffar löparen på e5. Motorns 39...Kg7 hade behållit löparen, även om Vit ändå hade stått klart på vinst.",
+      "line": { "from": "before", "san": ["Kg7", "a6", "Bd4", "Rg6+"] }
+    },
+    {
+      "ply": 78,
+      "en": "40.Bd5! guards e6, so White threatens 41.Re6+, winning the bishop. The engine sees no defence, and Kasparov resigned.",
+      "sv": "40.Bd5! täcker e6, så Vit hotar 41.Re6+, som vinner löparen. Motorn ser inget försvar, och Kasparov gav upp.",
+      "line": { "from": "after", "san": ["Rd2", "Re6+", "Kf7", "Rxe5"] }
+    }
+  ],
+  "summary": {
+    "en": "A small, lasting advantage like an outside passed pawn can be enough to win, even with opposite-coloured bishops, if the rooks stay on. Rooks belong behind passed pawns, and a defending rook should not leave its post without good reason. And in long endgames, the king's square matters: one careless king move to the e-file lost the bishop.",
+    "sv": "En liten men varaktig fördel, som en fribonde långt ut på flanken, kan räcka för att vinna, även med olikfärgade löpare, så länge tornen är kvar. Tornen hör hemma bakom fribönder, och ett försvarande torn ska inte lämna sin post utan goda skäl. Och i långa slutspel spelar kungens ruta roll: ett slarvigt kungsdrag till e-linjen förlorade löparen."
+  }
+}

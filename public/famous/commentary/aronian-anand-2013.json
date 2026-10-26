@@ -1,0 +1,77 @@
+{
+  "id": "aronian-anand-2013",
+  "intro": {
+    "en": "Wijk aan Zee, 2013: Levon Aronian against Viswanathan Anand in a Semi-Slav. Aronian goes for Black's king with a knight raid on h7, but Anand ignores the threat and counterattacks with both knights and both bishops. Watch the diagonal from c5 to White's king on g1, and the long diagonal of the bishop on b7: together they decide the game in only 23 moves.",
+    "sv": "Wijk aan Zee 2013: Levon Aronian mot Viswanathan Anand i halvslaviskt försvar. Aronian går mot den svarta kungen med en springarräd mot h7, men Anand struntar i hotet och går till motangrepp med båda springarna och båda löparna. Håll ögonen på diagonalen från c5 mot Vits kung på g1, och den långa diagonalen för löparen på b7: tillsammans avgör de partiet på bara 23 drag."
+  },
+  "comments": [
+    {
+      "ply": 13,
+      "en": "7...b5 is the typical Semi-Slav plan: Black first gives up the centre with ...dxc4, then gains time by chasing the bishop with ...b5. Next come ...Bb7 on the long diagonal and the freeing break ...c5.",
+      "sv": "7...b5 är den typiska halvslaviska planen: Svart ger först upp centrum med ...dxc4 och vinner sedan tid genom att jaga löparen med ...b5. Därefter kommer ...Bb7 på den långa diagonalen och det befriande genombrottet ...c5."
+    },
+    {
+      "ply": 23,
+      "en": "12.Ng5 aims at h7, which is also hit by the bishop on d3, backed up by the queen on c2. Anand answers with 12...c5, hitting the centre instead of defending, the engine's choice too: an attack on the wing is best met by action in the centre.",
+      "sv": "12.Ng5 siktar på h7, som också angrips av löparen på d3, med damen på c2 bakom sig. Anand svarar med 12...c5 och slår mot centrum i stället för att försvara sig, vilket också är motorns val: ett flankangrepp bemöts bäst med motspel i centrum."
+    },
+    {
+      "ply": 25,
+      "en": "13.Nxh7 takes the pawn with the knight (the engine slightly preferred the bishop capture), and 13...Ng4! is the bold reply. Black leaves the knight on h7 alone and sends his own knight towards White's king, where it works together with the bishop on d6 against h2.",
+      "sv": "13.Nxh7 tar bonden med springaren (motorn föredrog en aning att ta med löparen), och 13...Ng4! är det djärva svaret. Svart lämnar springaren på h7 ifred och skickar sin egen springare mot Vits kung, där den samarbetar med löparen på d6 mot h2."
+    },
+    {
+      "ply": 26,
+      "en": "14.f4 blocks the bishop's diagonal to h2, but it loosens the squares around White's king, especially the diagonal from c5 to g1. The engine preferred 14.h3, which leads to sharp but level play.",
+      "sv": "14.f4 stänger löparens diagonal mot h2, men försvagar rutorna runt Vits kung, särskilt diagonalen från c5 till g1. Motorn föredrog 14.h3, som leder till skarpt men jämnt spel.",
+      "line": { "from": "before", "san": ["h3", "Bh2+", "Kh1", "Qh4", "Be4", "Bxe4", "Qxe4", "f5", "Qxe6+", "Kxh7"] }
+    },
+    {
+      "ply": 29,
+      "en": "15...Bc5! puts the bishop where it can be taken, on the weakened diagonal. It pins the d4 pawn to the king on g1, since e3 and f2 are now empty. The engine thought 15.Nxf8 was a better try for White than recapturing with the pawn.",
+      "sv": "15...Bc5! ställer löparen där den kan tas, på den försvagade diagonalen. Den binder d4-bonden mot kungen på g1, eftersom e3 och f2 nu är tomma. Motorn tyckte att 15.Nxf8 var ett bättre försök för Vit än att ta tillbaka med bonden."
+    },
+    {
+      "ply": 30,
+      "en": "16.Be2?? is the decisive mistake. White had to accept the bishop with 16.dxc5; Black then has strong knight play, but the engine sees White only slightly worse. Now Black brings in the second knight.",
+      "sv": "16.Be2?? är det avgörande misstaget. Vit måste anta löparen med 16.dxc5; Svart får då starkt springarspel, men motorn ser Vit bara lite sämre. Nu tar Svart in den andra springaren.",
+      "line": { "from": "before", "san": ["dxc5", "Nxc5", "h3", "Nxd3", "Nxf8", "Qd4+", "Kh1", "Ndf2+", "Rxf2", "Nxf2+"] }
+    },
+    {
+      "ply": 31,
+      "en": "16...Nde5! The knight goes to a square attacked by two pawns, but the d4 pawn cannot take because it is pinned by the bishop on c5. Black's pieces pour towards the king.",
+      "sv": "16...Nde5! Springaren går till en ruta som angrips av två bönder, men d4-bonden kan inte slå eftersom den är bunden av löparen på c5. De svarta pjäserna väller fram mot kungen."
+    },
+    {
+      "ply": 33,
+      "en": "17...Bxd4+ wins the pinned pawn with check. The bishop now dominates the diagonal to g1, and White's king steps into the corner on h1, at the end of the long diagonal of the bishop on b7.",
+      "sv": "17...Bxd4+ vinner den bundna bonden med schack. Löparen dominerar nu diagonalen mot g1, och Vits kung kliver in i hörnet på h1, i slutet av den långa diagonal som löparen på b7 står på."
+    },
+    {
+      "ply": 37,
+      "en": "19.Nxf8 wins the exchange, though the engine preferred 19.Ng5, bringing the knight back to defend. Anand does not hurry to recapture: 19...f5 first shuts the white queen out of h7, and the stranded knight can be dealt with later.",
+      "sv": "19.Nxf8 vinner kvalitet, även om motorn föredrog 19.Ng5, som för tillbaka springaren till försvaret. Anand har ingen brådska att ta tillbaka: 19...f5 stänger först ute den vita damen från h7, och den strandsatta springaren kan tas om hand senare."
+    },
+    {
+      "ply": 41,
+      "en": "White is the exchange up, two rooks against a rook and a bishop, but his pieces on c1, c3 and a1 do nothing for the king. Black's queen, knight and two bishops are all aimed at the kingside, and the engine considers White lost.",
+      "sv": "Vit ligger en kvalitet över, två torn mot torn och löpare, men pjäserna på c1, c3 och a1 gör ingenting för kungen. Svarts dam, springare och båda löpare siktar alla mot kungsflygeln, och motorn bedömer Vit som förlorad."
+    },
+    {
+      "ply": 44,
+      "en": "23.Qd3 guards the third rank and so the h3 pawn, but it walks into the final blow. The engine's choice was 23.Rf3, giving back the exchange to break up Black's attack, although Black would still be winning.",
+      "sv": "23.Qd3 vaktar tredje raden och därmed h3-bonden, men går rakt in i slutslaget. Motorns val var 23.Rf3, som ger tillbaka kvaliteten för att bryta Svarts anfall, även om Svart ändå hade stått på vinst.",
+      "line": { "from": "before", "san": ["Rf3", "Bxf3", "Qxf3", "Nf2+", "Kh2", "Qxf3", "gxf3"] }
+    },
+    {
+      "ply": 45,
+      "en": "23...Be3! cuts the queen off from h3. The g2 pawn cannot defend h3 because it is pinned to the king by the bishop on b7, so Black threatens to take on h3 with mate. The engine even rated 23...Qh4 slightly higher, but in its lines after 23...Be3 White has to give up the queen, and Aronian resigned.",
+      "sv": "23...Be3! skär av damen från h3. Bonden på g2 kan inte försvara h3 eftersom den är bunden mot kungen av löparen på b7, så Svart hotar att slå på h3 med matt. Motorn värderade till och med 23...Qh4 något högre, men i dess varianter efter 23...Be3 måste Vit ge upp damen, och Aronian gav upp.",
+      "line": { "from": "after", "san": ["Nd5", "Bxd5", "Qxd5", "exd5", "Bxe3", "Nxe3"] }
+    }
+  ],
+  "summary": {
+    "en": "When your opponent attacks on the wing, counterattack in the centre: Anand's ...c5 and ...Ng4 turned Aronian's raid on h7 into a liability. Notice how pins decided the game: first the d4 pawn pinned by the bishop on c5, then the g2 pawn pinned by the bishop on b7. A material advantage means little when the extra pieces are far from the king.",
+    "sv": "När motståndaren anfaller på flanken, gå till motangrepp i centrum: Anands ...c5 och ...Ng4 gjorde Aronians räd mot h7 till en belastning. Lägg märke till hur bindningar avgjorde partiet: först d4-bonden bunden av löparen på c5, sedan g2-bonden bunden av löparen på b7. En materiell fördel betyder lite när de extra pjäserna står långt från kungen."
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "polgar-kasparov-2002",
+  "intro": {
+    "en": "Moscow, 2002: the Russia vs Rest of the World match, played at a rapid time control. Judit Polgar, the strongest woman player in history, faces the world number one Garry Kasparov, who chooses the Berlin Defence, the same endgame-like line Kramnik had used against him in their 2000 world title match. Watch how Polgar uses her kingside pawn majority to gain space, pins and wins a pawn, and then doubles her rooks on the seventh rank. It was her first win against Kasparov.",
+    "sv": "Moskva 2002: matchen Ryssland mot resten av världen, spelad med snabbschacksbetänketid. Judit Polgar, historiens starkaste kvinnliga spelare, möter världsettan Garry Kasparov, som väljer Berlinförsvaret, samma slutspelsliknande variant som Kramnik använt mot honom i deras VM-match år 2000. Se hur Polgar använder sin bondemajoritet på kungsflygeln för att vinna utrymme, binder och vinner en bonde och sedan dubblerar tornen på sjunde raden. Det var hennes första vinst mot Kasparov."
+  },
+  "comments": [
+    {
+      "ply": 15,
+      "en": "After 8.Qxd8+ Kxd8 we have the 'Berlin Wall' endgame. Black's king has lost the right to castle and his c-pawns are doubled, but he has the bishop pair and a solid position. White's trump is the kingside, where four pawns face three, and the e5 pawn gives space.",
+      "sv": "Efter 8.Qxd8+ Kxd8 har vi 'Berlinmuren'-slutspelet. Den svarta kungen har förlorat rätten att rockera och c-bönderna är dubblerade, men Svart har löparparet och en solid ställning. Vits trumf är kungsflygeln, där fyra bönder står mot tre, och bonden på e5 ger utrymme."
+    },
+    {
+      "ply": 29,
+      "en": "15...Bh7? is the first real mistake. After 16.g4 the bishop on h7 is shut out of play, staring at White's pawns. The engine wanted 15...Bd7, keeping the bishop flexible on the queenside.",
+      "sv": "15...Bh7? är det första riktiga misstaget. Efter 16.g4 är löparen på h7 utestängd från spelet och stirrar på de vita bönderna. Motorn ville spela 15...Bd7 och hålla löparen flexibel på damflygeln.",
+      "line": {
+        "from": "before",
+        "san": ["Bd7", "a4", "Be7", "g4", "g6"]
+      }
+    },
+    {
+      "ply": 34,
+      "en": "18.Nf5 plants the knight on a strong square in front of Black's bishop. From there it presses on g7 and d6. Note that White could already have played this a move earlier with 17.Nf5.",
+      "sv": "18.Nf5 placerar springaren på en stark ruta framför den svarta löparen. Därifrån trycker den mot g7 och d6. Notera att Vit kunde ha spelat detta redan ett drag tidigare med 17.Nf5."
+    },
+    {
+      "ply": 37,
+      "en": "19...Bg6? is a serious mistake. Black needed counterplay with 19...f6 at once, attacking the e5 pawn before White consolidates. Polgar's reply 20.Rd2 let some of the advantage slip; the engine's 20.Bg5 was stronger.",
+      "sv": "19...Bg6? är ett allvarligt misstag. Svart behövde motspel med 19...f6 direkt och angripa bonden på e5 innan Vit konsoliderat. Polgars svar 20.Rd2 släppte en del av fördelen; motorns 20.Bg5 var starkare.",
+      "line": {
+        "from": "before",
+        "san": ["f6", "exf6", "gxf6", "Bf4", "hxg4+", "hxg4", "Bxf5", "gxf5"]
+      }
+    },
+    {
+      "ply": 49,
+      "en": "With 24...Bxf5 25.gxf5 Black finally gets rid of the knight, and after 25...fxe5 he even wins a pawn for a moment. But White's bishop and rooks are very active, and the pawn will come back on e5.",
+      "sv": "Med 24...Bxf5 25.gxf5 blir Svart äntligen av med springaren, och efter 25...fxe5 vinner han till och med en bonde för ett ögonblick. Men den vita löparen och tornen är mycket aktiva, och bonden kommer tillbaka på e5."
+    },
+    {
+      "ply": 53,
+      "en": "27...Kd7? walks into a pin: the bishop on d6 is now pinned against the king by the rook on d2, and White's bishop on e5 attacks it. The engine preferred 27...Kf8, keeping the king off the d-file.",
+      "sv": "27...Kd7? går rakt in i en bindning: löparen på d6 är nu bunden mot kungen av tornet på d2, och den vita löparen på e5 angriper den. Motorn föredrog 27...Kf8 och att hålla kungen borta från d-linjen."
+    },
+    {
+      "ply": 54,
+      "en": "28.c4! threatens c5, attacking the pinned bishop a second time. Black stops it with 28...c5, and after 29.Bxd6 cxd6 30.Re6 the pawn on d6 is attacked by both rooks and defended only by the king.",
+      "sv": "28.c4! hotar c5 och att angripa den bundna löparen en andra gång. Svart stoppar det med 28...c5, och efter 29.Bxd6 cxd6 30.Re6 angrips bonden på d6 av båda tornen och försvaras bara av kungen."
+    },
+    {
+      "ply": 60,
+      "en": "White wins the d6 pawn and is a pawn up with very active rooks. The engine slightly preferred taking with the other rook, 31.Rdxd6+, but it makes no real difference: Black is losing.",
+      "sv": "Vit vinner bonden på d6 och har en merbonde med mycket aktiva torn. Motorn föredrog en aning att ta med det andra tornet, 31.Rdxd6+, men det spelar ingen verklig roll: Svart förlorar."
+    },
+    {
+      "ply": 68,
+      "en": "Black's doubled rooks on the h-file give a few checks, but the white king simply walks up the board towards the centre. Checks that lead nowhere are not counterplay.",
+      "sv": "De dubblerade svarta tornen på h-linjen ger några schackar, men den vita kungen går helt enkelt uppåt på brädet mot centrum. Schackar som inte leder någonstans är inget motspel."
+    },
+    {
+      "ply": 76,
+      "en": "39.Rcc7: both white rooks are now on the seventh rank, the classic sign of a winning rook endgame. They attack the pawns on a7 and g7 and keep Black's king tied to the back rank.",
+      "sv": "39.Rcc7: båda vita tornen står nu på sjunde raden, det klassiska tecknet på ett vunnet tornslutspel. De angriper bönderna på a7 och g7 och binder den svarta kungen vid baslinjen."
+    },
+    {
+      "ply": 83,
+      "en": "After 42.Rxg7 the rooks have eaten the g-pawn, and the a7 pawn is next. Black is hopelessly lost, and Kasparov resigned.",
+      "sv": "Efter 42.Rxg7 har tornen ätit upp g-bonden, och bonden på a7 står på tur. Svart är hopplöst förlorad, och Kasparov gav upp."
+    }
+  ],
+  "summary": {
+    "en": "In the Berlin endgame the side with the kingside majority wants space and active pieces, and Polgar got both. Kasparov's bishop retreat to h7 put a piece out of play, and his king move to d7 walked into a pin that cost a pawn. From there it was textbook rook-endgame technique: active rooks, the king walking up the board, and both rooks on the seventh rank.",
+    "sv": "I Berlinslutspelet vill sidan med majoriteten på kungsflygeln ha utrymme och aktiva pjäser, och Polgar fick båda. Kasparovs löparreträtt till h7 ställde en pjäs utanför spelet, och kungsdraget till d7 gick in i en bindning som kostade en bonde. Därifrån var det lärobokens teknik i tornslutspel: aktiva torn, kungen som vandrar uppåt på brädet och båda tornen på sjunde raden."
+  }
+}
