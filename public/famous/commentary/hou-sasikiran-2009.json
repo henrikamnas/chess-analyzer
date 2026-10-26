@@ -1,0 +1,95 @@
+{
+  "id": "hou-sasikiran-2009",
+  "intro": {
+    "en": "Wijk aan Zee, 2009, the Corus B group: fourteen-year-old Hou Yifan, who would become women's world champion the following year, has White against the experienced Indian grandmaster Krishnan Sasikiran. The middlegame is sharp, and Black is actually better for a while, but two slips hand White an extra pawn, and then a tactical oversight costs a piece. The rest is a long, instructive ending of two bishops against a rook, in which both sides make mistakes before White finally gets it right.",
+    "sv": "Wijk aan Zee 2009, Corus B-gruppen: fjortonåriga Hou Yifan, som skulle bli världsmästarinna året därpå, har vit mot den rutinerade indiske stormästaren Krishnan Sasikiran. Mittspelet är skarpt, och Svart står faktiskt bättre en stund, men två snedsteg ger Vit en merbonde, och sedan kostar ett taktiskt förbiseende en pjäs. Resten är ett långt och lärorikt slutspel med två löpare mot torn, där båda sidor gör misstag innan Vit till slut gör allt rätt."
+  },
+  "comments": [
+    {
+      "ply": 7,
+      "en": "4...Nd7 is the Karpov Variation of the Caro-Kann. Black prepares ...Ngf6, so that if White trades knights on f6, Black can recapture with the other knight and keep a healthy pawn structure.",
+      "sv": "4...Nd7 är Karpovvarianten i Caro-Kann. Svart förbereder ...Ngf6, så att Svart kan ta tillbaka med den andra springaren om Vit byter på f6, och behålla en sund bondestruktur."
+    },
+    {
+      "ply": 8,
+      "en": "5.Ng5 is an aggressive try: the knight eyes the e6 and f7 squares and makes Black think about every move. The engine slightly prefers the calmer 5.Bd3, but the knight jump is a well-known main line.",
+      "sv": "5.Ng5 är ett aggressivt försök: springaren siktar på e6 och f7 och tvingar Svart att tänka sig för vid varje drag. Motorn föredrar en aning det lugnare 5.Bd3, men springarhoppet är en välkänd huvudvariant."
+    },
+    {
+      "ply": 23,
+      "en": "12.Qg4 hits the pawn on g7, and 12...Kf8 is Black's answer: he gives up castling, and the king itself protects g7. It looks odd, but the engine is happy with it, and the rook can later use the g-file behind Black's kingside pawns.",
+      "sv": "12.Qg4 angriper bonden på g7, och 12...Kf8 är Svarts svar: han avstår från rockaden, och kungen skyddar själv g7. Det ser konstigt ut, men motorn är nöjd, och tornet kan senare använda g-linjen bakom de svarta kungsflygelbönderna."
+    },
+    {
+      "ply": 33,
+      "en": "With 16...g5 and 17...Nf4 Black has pushed the white queen back and planted a knight on f4, where it hits the bishop on d3 and the pawn on g2. The position is balanced, but Black's pieces are becoming active.",
+      "sv": "Med 16...g5 och 17...Nf4 har Svart trängt tillbaka den vita damen och placerat en springare på f4, där den angriper löparen på d3 och bonden på g2. Ställningen är i balans, men de svarta pjäserna börjar bli aktiva."
+    },
+    {
+      "ply": 38,
+      "en": "20.Be4? is the first real mistake. The bishop now stands where Black's f-pawn can hit it with tempo, and the g-pawn is ready to follow against the queen. The engine wanted 20.Rad1, bringing the last rook to the centre first.",
+      "sv": "20.Be4? är det första riktiga misstaget. Löparen står nu där Svarts f-bonde kan angripa den med tempo, och g-bonden står beredd att följa efter mot damen. Motorn ville spela 20.Rad1 och först föra in det sista tornet i centrum.",
+      "line": { "from": "before", "san": ["Rad1", "c5", "Be4", "Bxe4", "Qxe4", "f5"] }
+    },
+    {
+      "ply": 41,
+      "en": "After 20...f5 White's best was to take on c6, and now 21...Bxc6 would have given Black the upper hand: after the knight takes back, ...g4 drives the queen away and the knight on c6 runs short of defenders. Instead 21...Bxe5? lets White off the hook, and the game is level again.",
+      "sv": "Efter 20...f5 var Vits bästa att slå på c6, och nu hade 21...Bxc6 gett Svart övertaget: när springaren tar tillbaka driver ...g4 bort damen, och springaren på c6 får för få försvarare. I stället släpper 21...Bxe5? Vit ur greppet, och partiet är jämnt igen.",
+      "line": { "from": "before", "san": ["Bxc6", "Nxc6", "g4", "Qc3", "Rc8", "d5", "Nxd5"] }
+    },
+    {
+      "ply": 43,
+      "en": "22...g4? is a second slip. Black should simply have won back his pawn with 22...Bxd4. After the game move, 23.Qc6 forces the queens off and White keeps the extra pawn.",
+      "sv": "22...g4? är ett andra snedsteg. Svart borde helt enkelt ha vunnit tillbaka bonden med 22...Bxd4. Efter partidraget tvingar 23.Qc6 fram dambyte, och Vit behåller merbonden.",
+      "line": { "from": "before", "san": ["Bxd4", "Bxd4", "Rxd4"] }
+    },
+    {
+      "ply": 47,
+      "en": "24...Bxd4?? wins the pawn back but loses a piece. After 25.Rad1 the bishop on d4 is attacked by the rook and the bishop on b2 and defended only by the rook on d8. If it takes on b2, the rook on d1 captures on d8 with check. 24...Bf6 was necessary.",
+      "sv": "24...Bxd4?? vinner tillbaka bonden men förlorar en pjäs. Efter 25.Rad1 är löparen på d4 angripen av tornet och löparen på b2 och försvaras bara av tornet på d8. Slår den på b2 tar tornet på d1 på d8 med schack. 24...Bf6 var nödvändigt.",
+      "line": { "from": "after", "san": ["Rad1", "Bxb2", "Rxd8+", "Kg7", "Rxg8+", "Kxg8"] }
+    },
+    {
+      "ply": 58,
+      "en": "After a forced sequence three rooks come off, and we reach the main ending: two bishops against a rook, with five pawns each. White is clearly winning, since two bishops are worth more than a rook on an open board. White wants to create a passed pawn on the queenside; Black wants to trade pawns, because the fewer pawns remain, the harder it is for the bishops to win.",
+      "sv": "Efter en forcerad följd byts tre torn av, och vi når huvudslutspelet: två löpare mot torn, med fem bönder var. Vit står klart till vinst, eftersom två löpare är värda mer än ett torn på ett öppet bräde. Vit vill skapa en fribonde på damflygeln; Svart vill byta bönder, för ju färre bönder som är kvar, desto svårare är det för löparna att vinna."
+    },
+    {
+      "ply": 90,
+      "en": "46.Be5? is a big slip in a long ending. The bishop leaves b2, and Black could now take on h3 at once. Even though White then picks up the f-pawn, no kingside pawns are left, and White has only a small edge. The engine wanted 46.h4. Black misses the chance with 46...axb3, and the advantage swings back towards White.",
+      "sv": "46.Be5? är ett stort snedsteg i ett långt slutspel. Löparen lämnar b2, och Svart kunde nu ta på h3 direkt. Även om Vit sedan vinner f-bonden finns inga kungsflygelbönder kvar, och Vit har bara en liten fördel. Motorn ville spela 46.h4. Svart missar chansen med 46...axb3, och fördelen svänger tillbaka till Vit.",
+      "line": { "from": "after", "san": ["Rxh3", "Bxf4", "Kc3", "Bd5", "Kd4"] }
+    },
+    {
+      "ply": 95,
+      "en": "The ending is hard for both players. 48.Bxf4 let much of White's win slip, and 48...Kd4 handed it straight back; 48...Rh5 was the engine's choice, keeping the rook active and the king aimed at White's last queenside pawns.",
+      "sv": "Slutspelet är svårt för båda spelarna. 48.Bxf4 släppte mycket av den vita vinsten, och 48...Kd4 gav genast tillbaka den; 48...Rh5 var motorns val, som håller tornet aktivt och kungen riktad mot Vits sista damflygelbönder.",
+      "line": { "from": "before", "san": ["Rh5", "Bf3", "Rf5", "Kg3", "Kc3", "Kg4", "Ra5"] }
+    },
+    {
+      "ply": 101,
+      "en": "51.Bg3? allowed 51...b5!, and Black trades off the queenside pawns. After the exchanges on c4 White has only one pawn left, and the engine judges the position a draw. 51.b4 would have kept White's pawns together and the win intact.",
+      "sv": "51.Bg3? tillät 51...b5!, och Svart byter av damflygelbönderna. Efter bytena på c4 har Vit bara en bonde kvar, och motorn bedömer ställningen som remi. 51.b4 hade hållit ihop de vita bönderna och vinsten intakt."
+    },
+    {
+      "ply": 105,
+      "en": "53...Kc5?? is the decisive slip. On c5 the king can be checked by the bishop from f2, and White's king gets time to walk over and support the c-pawn. 53...Kd3, keeping the king next to the pawn, was one of several moves that held the draw.",
+      "sv": "53...Kc5?? är det avgörande snedsteget. På c5 kan kungen schackas av löparen från f2, och den vita kungen får tid att gå över och stödja c-bonden. 53...Kd3, som håller kungen intill bonden, var ett av flera drag som höll remi.",
+      "line": { "from": "before", "san": ["Kd3", "Kg4", "Rh8", "Bf2", "Rd8"] }
+    },
+    {
+      "ply": 112,
+      "en": "Now the plan works smoothly: the bishops push Black's king away with checks, and White's king marches to the queenside to escort the c-pawn.",
+      "sv": "Nu fungerar planen smidigt: löparna driver bort den svarta kungen med schackar, och den vita kungen marscherar till damflygeln för att eskortera c-bonden."
+    },
+    {
+      "ply": 134,
+      "en": "68.c6 and Black resigned. The pawn is supported by the king and both bishops: the bishop on d6 covers c7 and the bishop on d7 covers c8, so the rook cannot stop it.",
+      "sv": "68.c6 och Svart gav upp. Bonden stöds av kungen och båda löparna: löparen på d6 täcker c7 och löparen på d7 täcker c8, så tornet kan inte stoppa den."
+    }
+  ],
+  "summary": {
+    "en": "The middlegame turned on one tactic: 24...Bxd4 ran into a pin on the d-file and cost a piece. The ending shows how hard two bishops against a rook can be in practice: White let the win slip with 46.Be5 and 51.Bg3, and Black could have saved the game by keeping his king close to the last pawn. In such endings, the defender should trade pawns and keep the king close; the attacker should keep pawns on the board.",
+    "sv": "Mittspelet avgjordes av en enda taktik: 24...Bxd4 gick in i en bindning på d-linjen och kostade en pjäs. Slutspelet visar hur svårt två löpare mot torn kan vara i praktiken: Vit släppte vinsten med 46.Be5 och 51.Bg3, och Svart kunde ha räddat partiet genom att hålla kungen nära den sista bonden. I sådana slutspel ska försvararen byta bönder och hålla kungen nära; angriparen ska behålla bönder på brädet."
+  }
+}

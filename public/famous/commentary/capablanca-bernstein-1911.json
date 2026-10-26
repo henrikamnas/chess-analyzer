@@ -1,0 +1,83 @@
+{
+  "id": "capablanca-bernstein-1911",
+  "intro": {
+    "en": "San Sebastián, 1911: the young Cuban José Raúl Capablanca plays his first great international tournament, and Ossip Bernstein had been among the masters who objected to his participation. Capablanca won this game, the brilliancy prize for it, and the tournament. Watch how White gives up queenside pawns to gather his knights around Black's king, and how the knight sacrifice on g7 breaks through.",
+    "sv": "San Sebastián 1911: den unge kubanen José Raúl Capablanca spelar sin första stora internationella turnering, och Ossip Bernstein hade varit bland de mästare som protesterade mot att han fick delta. Capablanca vann partiet, skönhetspriset för det och turneringen. Se hur Vit ger upp bönder på damflygeln för att samla springarna kring den svarta kungen, och hur springaroffret på g7 bryter igenom."
+  },
+  "comments": [
+    {
+      "ply": 7,
+      "en": "3...Nf6 is the Berlin Defence of the Ruy Lopez. The engine's choice now is the classical 4...Nxe4, taking the centre pawn; 4...Be7 followed by ...d6 is a more solid but rather passive set-up.",
+      "sv": "3...Nf6 är Berlinförsvaret i spanskt. Motorns val här är det klassiska 4...Nxe4, som tar centrumbonden; 4...Be7 följt av ...d6 är en mer solid men ganska passiv uppställning.",
+      "line": { "from": "before", "san": ["Nxe4", "Re1", "Nd6", "Nxe5", "Be7"] }
+    },
+    {
+      "ply": 10,
+      "en": "6.Bxc6+ gives up the bishop for the knight to double Black's c-pawns. Black gets the bishop pair in return, while the doubled pawns are a long-term target. The engine slightly preferred 6.d4 at once.",
+      "sv": "6.Bxc6+ ger bort löparen mot springaren för att ge Svart dubbelbönder på c-linjen. Svart får löparparet i gengäld, medan dubbelbönderna är ett långsiktigt mål. Motorn föredrog en aning 6.d4 direkt."
+    },
+    {
+      "ply": 34,
+      "en": "18.Nf5 plants a knight on a strong square in front of Black's king, where it eyes g7, h6 and d6. Black can only challenge it with ...g6, which weakens his own king, or by giving up his light-squared bishop for it.",
+      "sv": "18.Nf5 placerar en springare på en stark ruta framför den svarta kungen, där den siktar på g7, h6 och d6. Svart kan bara utmana den med ...g6, som försvagar den egna kungen, eller genom att ge upp sin vitfältslöpare för den."
+    },
+    {
+      "ply": 35,
+      "en": "18...Nc5 moves the knight away from the kingside just as White's pieces gather there. After 19.Ned4 the second knight comes closer, and White has a clear edge. 18...Rfe8 was the engine's choice.",
+      "sv": "18...Nc5 flyttar springaren bort från kungsflygeln just när de vita pjäserna samlas där. Efter 19.Ned4 kommer den andra springaren närmare, och Vit har en klar fördel. 18...Rfe8 var motorns val."
+    },
+    {
+      "ply": 38,
+      "en": "20.g4 is ambitious: it supports the knight on f5 and prepares to storm the kingside, but it also loosens White's own king. The engine preferred the calm 20.c3, and after the pawn move the position is roughly level again.",
+      "sv": "20.g4 är ambitiöst: draget stöder springaren på f5 och förbereder en stormning på kungsflygeln, men luckrar också upp Vits egen kung. Motorn föredrog det lugna 20.c3, och efter bondedraget är ställningen ungefär jämn igen."
+    },
+    {
+      "ply": 45,
+      "en": "Black's queen has taken two pawns on a2 and c2. Black is now two pawns up, and the engine even slightly prefers Black. But the queen is far from her king, and White's knights are coming: the whole game now depends on whether Black can defend g7.",
+      "sv": "Den svarta damen har tagit två bönder på a2 och c2. Svart har nu två bönder mer, och motorn föredrar till och med Svart en aning. Men damen står långt från sin kung, och de vita springarna är på väg: hela partiet hänger nu på om Svart kan försvara g7."
+    },
+    {
+      "ply": 49,
+      "en": "With knights on f5 and h5, White's pieces aim straight at g7. 25...Rh8? is too slow. The engine wanted 25...g5!, closing the position around the king and preparing to challenge the knights, and Black would have kept the better game.",
+      "sv": "Med springare på f5 och h5 siktar de vita pjäserna rakt mot g7. 25...Rh8? är för långsamt. Motorn ville spela 25...g5!, som stänger ställningen runt kungen och förbereder att utmana springarna, och Svart hade behållit det bättre spelet.",
+      "line": { "from": "before", "san": ["g5", "e5", "Nf4", "Nxf4", "Bxf5"] }
+    },
+    {
+      "ply": 53,
+      "en": "27...Qb5? keeps the queen away from the defence. The engine's 27...Nxf4, giving back material to break up White's attack, was the lesser evil. Now the knight sacrifice on g7 crashes through.",
+      "sv": "27...Qb5? håller damen borta från försvaret. Motorns 27...Nxf4, som ger tillbaka material för att bryta upp det vita anfallet, var det mindre onda. Nu slår springaroffret på g7 igenom.",
+      "line": { "from": "before", "san": ["Nxf4", "Nxf4", "c5"] }
+    },
+    {
+      "ply": 54,
+      "en": "28.Nfxg7! The knight takes the g7 pawn and attacks both the knight on e6 and the rook on e8. If Black takes it, 29.Nf6+ forks the king, the rook on e8 and the bishop on d7. The engine agrees that this is the best move.",
+      "sv": "28.Nfxg7! Springaren slår bonden på g7 och angriper både springaren på e6 och tornet på e8. Slår Svart den gafflar 29.Nf6+ kungen, tornet på e8 och löparen på d7. Motorn håller med om att detta är det bästa draget.",
+      "line": { "from": "after", "san": ["Nxg7", "Nf6+", "Kg6", "Nxd7"] }
+    },
+    {
+      "ply": 55,
+      "en": "28...Nc5? loses the exchange at once to 29.Nxe8. 28...Reg8 was more stubborn, although White would still be clearly winning.",
+      "sv": "28...Nc5? förlorar genast kvaliteten efter 29.Nxe8. 28...Reg8 var segare, även om Vit fortfarande skulle stå klart till vinst."
+    },
+    {
+      "ply": 60,
+      "en": "31.Nxf6+ The knight takes another pawn with check and drags Black's king out of its shelter. White's queen, rooks and remaining knight now hunt the king.",
+      "sv": "31.Nxf6+ Springaren tar ännu en bonde med schack och drar ut den svarta kungen ur sitt skydd. Vits dam, torn och kvarvarande springare jagar nu kungen."
+    },
+    {
+      "ply": 65,
+      "en": "33...Kg5? walks into a forced mate. 33...Kh7 was the only way to fight on, though White is winning anyway; 33...Kf7 would have allowed 34.Qf6# at once.",
+      "sv": "33...Kg5? går rakt in i en forcerad matt. 33...Kh7 var enda sättet att kämpa vidare, även om Vit vinner ändå; 33...Kf7 hade tillåtit 34.Qf6# direkt."
+    },
+    {
+      "ply": 66,
+      "en": "34.Qe3+ and Bernstein resigned. The king has to go further up the board, and White's queen and rooks mate it within a few moves.",
+      "sv": "34.Qe3+ och Bernstein gav upp. Kungen måste gå ännu längre upp på brädet, och Vits dam och torn sätter den matt inom några drag.",
+      "line": { "from": "after", "san": ["Kxg4", "Rg2+", "Kh4", "Rxg8", "Qf1+", "Rxf1", "Bg6", "Qg3+", "Kxh5", "Qxg6+"] }
+    }
+  ],
+  "summary": {
+    "en": "Capablanca's play shows the power of knights on outposts near the enemy king: from f5 and h5 they tied Black to the defence of g7. The engine is honest here: Black's queen raid won two pawns and was objectively fine, but it left the king without enough defenders, and after 25...Rh8 and 27...Qb5 the sacrifice on g7 broke through. Grabbing pawns with the queen is only safe if the king can hold on alone.",
+    "sv": "Capablancas spel visar kraften hos springare på utposter nära den fientliga kungen: från f5 och h5 band de Svart vid försvaret av g7. Motorn är ärlig här: Svarts damräd vann två bönder och var objektivt i sin ordning, men lämnade kungen utan tillräckligt med försvarare, och efter 25...Rh8 och 27...Qb5 slog offret på g7 igenom. Att plocka bönder med damen är bara säkert om kungen klarar sig på egen hand."
+  }
+}

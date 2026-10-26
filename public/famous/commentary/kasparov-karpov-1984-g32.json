@@ -1,0 +1,107 @@
+{
+  "id": "kasparov-karpov-1984-g32",
+  "intro": {
+    "en": "Moscow, 1984: game 32 of the marathon World Championship match. Karpov was leading 5–0 and needed one more win, and this was Kasparov's first victory of the match. Kasparov plays a sharp Queen's Indian with a3 and an early h-pawn advance against Black's uncastled king. The game is not a clean attack: watch how the advantage comes and goes, and how a queen endgame that should have been drawn slips away move by move until one careless pawn push decides it.",
+    "sv": "Moskva 1984: parti 32 i den maratonlånga VM-matchen. Karpov ledde med 5–0 och behövde en vinst till, och det här var Kasparovs första seger i matchen. Kasparov spelar en skarp damindisk med a3 och en tidig h-bondeframstöt mot Svarts orockerade kung. Partiet är inget rent angrepp: se hur fördelen kommer och går, och hur ett damslutspel som borde ha slutat remi glider iväg drag för drag tills ett enda slarvigt bondedrag avgör."
+  },
+  "comments": [
+    {
+      "ply": 8,
+      "en": "5.a3 is the idea behind the Kasparov-Petrosian Variation of the Queen's Indian. The modest pawn move stops ...Bb4, so the knight on c3 can never be pinned, and it keeps its grip on e4 and d5.",
+      "sv": "5.a3 är idén bakom Kasparov-Petrosian-varianten i damindiskt. Det blygsamma bondedraget förhindrar ...Bb4, så springaren på c3 kan aldrig bindas, och den behåller sitt grepp om e4 och d5."
+    },
+    {
+      "ply": 13,
+      "en": "7...Nd7 is a small inaccuracy. It allows 8.Nxd5, and Black's best is to take back with the e-pawn (8...Bxd5 9.e4 gains time on the bishop), which leaves a fixed pawn on d5 and takes away the e6 pawn that shielded the king. The engine preferred 7...Nxc3, simplifying at once.",
+      "sv": "7...Nd7 är en liten onöjaktighet. Draget tillåter 8.Nxd5, och Svarts bästa är att ta tillbaka med e-bonden (8...Bxd5 9.e4 vinner tid på löparen), vilket ger en fast bonde på d5 och tar bort bonden på e6 som skyddade kungen. Motorn föredrog 7...Nxc3, som förenklar direkt.",
+      "line": {
+        "from": "before",
+        "san": ["Nxc3", "bxc3", "Be7", "e4", "O-O"]
+      }
+    },
+    {
+      "ply": 17,
+      "en": "9.Bg5 attacked the queen on d8, and 9...f6 blocks the attack with a pawn. It works, but it weakens the squares around Black's king, especially e6. 9...Qc8 was the engine's choice.",
+      "sv": "9.Bg5 angrep damen på d8, och 9...f6 blockerar angreppet med en bonde. Det fungerar, men försvagar rutorna runt den svarta kungen, särskilt e6. 9...Qc8 var motorns val."
+    },
+    {
+      "ply": 26,
+      "en": "With 12.h4 and 14.h5 Kasparov uses his h-pawn as a battering ram. Black's king is still in the centre, and White wants to open the h-file before Black can get organised.",
+      "sv": "Med 12.h4 och 14.h5 använder Kasparov sin h-bonde som murbräcka. Den svarta kungen står kvar i centrum, och Vit vill öppna h-linjen innan Svart hinner organisera sig."
+    },
+    {
+      "ply": 29,
+      "en": "15...Bf6? is the first real mistake. Black needed to act in the centre with 15...cxd4, opening lines for his own pieces. After the passive bishop move, White has time to bring the queen's rook into the attack.",
+      "sv": "15...Bf6? är det första riktiga misstaget. Svart behövde agera i centrum med 15...cxd4, som öppnar linjer för de egna pjäserna. Efter det passiva löpardraget får Vit tid att ta in damtornet i angreppet.",
+      "line": {
+        "from": "before",
+        "san": ["cxd4", "Bg5", "Qf7", "Nxd4", "Nc5"]
+      }
+    },
+    {
+      "ply": 34,
+      "en": "16.Rc1, 17.Rc3 and 18.Re3: the rook swings along the third rank to the e-file, where it pins the queen on e7 against the uncastled king on e8. Black has to block with 18...Re6, and his active rook is traded off.",
+      "sv": "16.Rc1, 17.Rc3 och 18.Re3: tornet svänger längs tredje raden till e-linjen, där det binder damen på e7 mot den orockerade kungen på e8. Svart måste blockera med 18...Re6, och hans aktiva torn byts av."
+    },
+    {
+      "ply": 38,
+      "en": "20.Ng5 attacks the queen on e6 and eyes h7 and f7. White is clearly better: the black king is stuck in the centre and the h-file is about to open.",
+      "sv": "20.Ng5 angriper damen på e6 och siktar på h7 och f7. Vit står klart bättre: den svarta kungen sitter fast i centrum och h-linjen är på väg att öppnas."
+    },
+    {
+      "ply": 44,
+      "en": "23.g7? throws away most of White's advantage. The pawn on g7 is simply taken. 23.Bxb7 Qxb7 24.f3 was the right way: White blocks the long diagonal so the queen cannot reach the rook on h1, and after the exchange on g6 the h-file opens with White well on top.",
+      "sv": "23.g7? kastar bort det mesta av Vits fördel. Bonden på g7 tas helt enkelt. 23.Bxb7 Qxb7 24.f3 var rätt väg: Vit stänger den långa diagonalen så att damen inte når tornet på h1, och efter bytet på g6 öppnas h-linjen med Vit klart överlägsen.",
+      "line": {
+        "from": "before",
+        "san": ["Bxb7", "Qxb7", "f3", "hxg6", "Rxh8+", "Bxh8"]
+      }
+    },
+    {
+      "ply": 53,
+      "en": "27...Qb3? lets White back into the game. The engine's 27...d3 was the way to hold the balance, pushing the d-pawn to break open White's position around the uncastled king.",
+      "sv": "27...Qb3? släpper tillbaka Vit i partiet. Motorns 27...d3 var sättet att behålla balansen, där d-bonden går fram och bryter upp Vits ställning runt den orockerade kungen.",
+      "line": {
+        "from": "before",
+        "san": ["d3", "b4", "Qb3", "Qd1", "Bc3+", "Bd2"]
+      }
+    },
+    {
+      "ply": 71,
+      "en": "After the trades the queen endgame is roughly level: three pawns each, and the engine gives White only a tiny edge. Both sides will look for checks and passed pawns, and the side that drifts first will be punished.",
+      "sv": "Efter bytena är damslutspelet ungefär jämnt: tre bönder var, och motorn ger Vit bara en mycket liten fördel. Båda sidor kommer att leta efter schackar och fribönder, och den som glider iväg först blir straffad."
+    },
+    {
+      "ply": 73,
+      "en": "37...Kd7 starts a long walk to the queenside, away from White's kingside pawns. The engine preferred 37...Kf8, keeping the king close to them. In queen endgames the king can be a target, but it also has to stop passed pawns.",
+      "sv": "37...Kd7 inleder en lång vandring mot damflygeln, bort från de vita kungsflygelbönderna. Motorn föredrog 37...Kf8, som håller kungen nära dem. I damslutspel kan kungen bli ett mål, men den måste också stoppa fribönder."
+    },
+    {
+      "ply": 77,
+      "en": "39...b5 is another small step in the wrong direction. Black pushes his passed pawn, but his king is now far away from White's kingside pawns. The engine preferred 39...a5.",
+      "sv": "39...b5 är ytterligare ett litet steg i fel riktning. Svart trycker fram sin fribonde, men kungen står nu långt från de vita kungsflygelbönderna. Motorn föredrog 39...a5."
+    },
+    {
+      "ply": 79,
+      "en": "40...b4?? is the decisive mistake. With the black queen far away on a3 and the king on c6, the g-pawn can no longer be stopped in time. 40...Qe7 was the move: the queen comes back to watch g5, and Black would still have had good drawing chances.",
+      "sv": "40...b4?? är det avgörande misstaget. Med den svarta damen långt borta på a3 och kungen på c6 kan g-bonden inte längre stoppas i tid. 40...Qe7 var draget: damen kommer tillbaka och bevakar g5, och Svart hade fortfarande haft goda remichanser.",
+      "line": {
+        "from": "before",
+        "san": ["Qe7", "e4", "a5", "e5", "a4"]
+      }
+    },
+    {
+      "ply": 80,
+      "en": "41.g5 and Karpov resigned. The g-pawn runs, and White's queen can give checks that gain time. Black's b-pawn is slower, and his king is too far away to help.",
+      "sv": "41.g5 och Karpov gav upp. G-bonden springer, och den vita damen kan ge schackar som vinner tid. Svarts b-bonde är långsammare, och kungen står för långt bort för att hjälpa till.",
+      "line": {
+        "from": "after",
+        "san": ["b3", "Qe4+", "Kd6", "Qg6+", "Kd5", "Qf7+", "Kd4", "g6", "b2"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "Kasparov's first win of the match was anything but clean. His h-pawn advance and rook lift built a strong attack against the uncastled king, but 23.g7 gave most of it back, and the game drifted into a level queen endgame. Karpov then made the last mistake: by marching his king and pawns to the queenside he left White's g-pawn unopposed. The lesson for queen endgames: keep your king and queen near the opponent's most advanced passed pawn.",
+    "sv": "Kasparovs första vinst i matchen var långt ifrån ren. Hans h-bondeframstöt och tornlyft byggde upp ett starkt angrepp mot den orockerade kungen, men 23.g7 gav bort det mesta, och partiet gled över i ett jämnt damslutspel. Sedan gjorde Karpov det sista misstaget: genom att marschera med kungen och bönderna mot damflygeln lämnade han den vita g-bonden utan motstånd. Läxan för damslutspel: håll kungen och damen nära motståndarens mest avancerade fribonde."
+  }
+}

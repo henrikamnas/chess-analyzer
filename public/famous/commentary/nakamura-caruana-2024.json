@@ -1,0 +1,77 @@
+{
+  "id": "nakamura-caruana-2024",
+  "intro": {
+    "en": "Toronto, 2024: Hikaru Nakamura and Fabiano Caruana meet in the FIDE Candidates Tournament, where both were among the contenders. It is a slow, modern Ruy Lopez, and for nearly thirty moves the engine sees the position as close to equal. Watch how White gets an isolated d-pawn but active pieces, how both sides miss chances in the middlegame, and how one loose move by Black lets a white knight finish the game.",
+    "sv": "Toronto 2024: Hikaru Nakamura och Fabiano Caruana möts i FIDE:s kandidatturnering, där båda hörde till utmanarna. Det är en långsam, modern spansk öppning, och i nästan trettio drag ser motorn ställningen som nära lika. Se hur Vit får en isolerad d-bonde men aktiva pjäser, hur båda sidor missar chanser i mittspelet och hur ett enda löst drag av Svart låter en vit springare avgöra partiet."
+  },
+  "comments": [
+    {
+      "ply": 8,
+      "en": "5.d3 is the Anderssen Variation of the Ruy Lopez. Instead of the sharp main lines White protects e4 with a pawn and keeps the centre closed for now. Many top players use it to get a long manoeuvring game with few forcing lines.",
+      "sv": "5.d3 är Anderssenvarianten i spanskt. I stället för de skarpa huvudvarianterna skyddar Vit e4 med en bonde och håller centrum stängt så länge. Många toppspelare använder den för att få ett långt manövrerande parti med få forcerade varianter."
+    },
+    {
+      "ply": 17,
+      "en": "With 8...Ne7 and 9...Ng6 Caruana reroutes his knight toward the kingside, a typical idea in these slow Ruy Lopez positions. White does the same with Nbd2 and Nf1, heading for g3.",
+      "sv": "Med 8...Ne7 och 9...Ng6 flyttar Caruana om sin springare mot kungsflygeln, en typisk idé i de här långsamma spanska ställningarna. Vit gör samma sak med Nbd2 och Nf1, på väg mot g3."
+    },
+    {
+      "ply": 19,
+      "en": "10...d5 is the natural central break, opening the position while White's queenside pieces are still at home. The engine slightly preferred to keep the tension with 10...Bb6, but the move is entirely reasonable.",
+      "sv": "10...d5 är den naturliga brytningen i centrum, som öppnar ställningen medan Vits damflygelpjäser fortfarande står hemma. Motorn föredrog en aning att behålla spänningen med 10...Bb6, men draget är helt rimligt."
+    },
+    {
+      "ply": 30,
+      "en": "After 16.cxd4 White has an isolated pawn on d4: no white pawn on the c- or e-file can ever protect it. In return White has the two bishops and open lines for his rooks. The classic plan with an isolated pawn is to use that activity before the endgame, where the pawn becomes a weakness.",
+      "sv": "Efter 16.cxd4 har Vit en isolerad bonde på d4: ingen vit bonde på c- eller e-linjen kan någonsin skydda den. I gengäld har Vit löparparet och öppna linjer för tornen. Den klassiska planen med en isolerad bonde är att utnyttja aktiviteten före slutspelet, där bonden blir en svaghet."
+    },
+    {
+      "ply": 36,
+      "en": "19.Re4 lifts the rook along the fourth rank, where it can swing toward the kingside. This kind of active rook is exactly what the isolated d-pawn gives White in return for the weakness.",
+      "sv": "19.Re4 lyfter tornet längs fjärde raden, där det kan svänga över mot kungsflygeln. Ett sådant aktivt torn är precis vad den isolerade d-bonden ger Vit som ersättning för svagheten."
+    },
+    {
+      "ply": 53,
+      "en": "27...Ng6 retreats the knight. The engine wanted the bold 27...Nxg2, grabbing a pawn in front of White's king, but it is a risky line that is hard to judge over the board. Now White can bring his last rook to the e-file.",
+      "sv": "27...Ng6 drar tillbaka springaren. Motorn ville ha det djärva 27...Nxg2, som tar en bonde framför den vita kungen, men det är en riskabel variant som är svår att bedöma vid brädet. Nu kan Vit föra in sitt sista torn på e-linjen."
+    },
+    {
+      "ply": 57,
+      "en": "29...Qd8? is a real mistake. The queen goes back to the back rank, and White gets the chance to attack the king: the engine's 30.Qf4 brings the queen to the kingside, where it works together with the knight and the bishop on c2, which aims at h7. The engine wanted 29...Qd7 instead.",
+      "sv": "29...Qd8? är ett riktigt misstag. Damen går tillbaka till baslinjen, och Vit får chansen att angripa kungen: motorns 30.Qf4 för damen till kungsflygeln, där den samarbetar med springaren och löparen på c2, som siktar mot h7. Motorn ville i stället ha 29...Qd7.",
+      "line": { "from": "after", "san": ["Qf4", "Nh7", "Nh5", "Nf6", "Nxf6+", "Qxf6", "Qe4", "Rad8", "Qh7+", "Kf8"] }
+    },
+    {
+      "ply": 58,
+      "en": "30.h5 misses that chance, and the position becomes only slightly better for White again.",
+      "sv": "30.h5 missar den chansen, och ställningen blir åter bara något bättre för Vit."
+    },
+    {
+      "ply": 59,
+      "en": "30...Bd7? is the second mistake in a row. The bishop leaves e6, where it guarded the f5 square, and after the rook trade White's knight jumps to f5 with a strong attack. The engine's choice was 30...Qd7, keeping the bishop on e6.",
+      "sv": "30...Bd7? är det andra misstaget i rad. Löparen lämnar e6, där den bevakade rutan f5, och efter tornbytet hoppar Vits springare till f5 med ett starkt angrepp. Motorns val var 30...Qd7, som behåller löparen på e6.",
+      "line": { "from": "before", "san": ["Qd7", "R1e3", "Red8", "R3e4", "Re8", "Qe3", "f6"] }
+    },
+    {
+      "ply": 62,
+      "en": "32.Nf5 puts the knight on its dream square. It eyes h6 and e7, and the bishop on c2 supports it from behind. Black's queen and minor pieces are all on the back rank.",
+      "sv": "32.Nf5 placerar springaren på drömrutan. Den siktar mot h6 och e7, och löparen på c2 stöder den bakifrån. Svarts dam och lätta pjäser står alla på baslinjen."
+    },
+    {
+      "ply": 65,
+      "en": "33...b5?? is the decisive blunder. The engine's 33...Bd7 leads to a wild line where Black gives up a pawn and a rook but takes White's knight and bishop, getting rid of the dangerous knight on f5 with ...Bxf5. White would still be better, but Black would be fighting. Now the knight gets to deliver a double attack.",
+      "sv": "33...b5?? är den avgörande blundern. Motorns 33...Bd7 leder till en vild variant där Svart ger en bonde och ett torn men tar Vits springare och löpare, och blir av med den farliga springaren på f5 genom ...Bxf5. Vit hade fortfarande stått bättre, men Svart hade varit kvar i kampen. Nu får springaren utföra ett dubbelangrepp.",
+      "line": { "from": "before", "san": ["Bd7", "Qxb7", "Bxf5", "Qxa8", "Bxc2", "Re8", "Qd6"] }
+    },
+    {
+      "ply": 68,
+      "en": "34.Ne7+ Kh8 35.Nd5! and Caruana resigned. The knight attacks the queen on f6, and taking the knight with the c-pawn runs into mate: the queen takes on f8 with check, covering g8 along the back rank, while the bishop on c2 covers h7. After the engine's 35...c5 White still wins a piece.",
+      "sv": "34.Ne7+ Kh8 35.Nd5! och Caruana gav upp. Springaren angriper damen på f6, och att ta springaren med c-bonden leder till matt: damen slår på f8 med schack och täcker g8 längs baslinjen, medan löparen på c2 täcker h7. Efter motorns 35...c5 vinner Vit ändå en pjäs.",
+      "line": { "from": "after", "san": ["c5", "Qxc5", "Nd7", "Nxf6", "Nxc5", "Nxe8"] }
+    }
+  ],
+  "summary": {
+    "en": "For a long time this was a balanced fight around White's isolated d-pawn, with White's active rooks and minor pieces against Black's solid structure. In the critical phase both sides went wrong: Black twice let White's pieces toward the king, and White once missed the strongest attack. The final lesson is about loose pieces: with the knight on f8 undefended and the back rank weak, one careless pawn move let the white knight decide the game.",
+    "sv": "Länge var det en balanserad kamp kring Vits isolerade d-bonde, med Vits aktiva torn och lätta pjäser mot Svarts solida struktur. I den kritiska fasen gick båda sidor fel: Svart släppte två gånger fram Vits pjäser mot kungen, och Vit missade en gång det starkaste angreppet. Den sista läxan handlar om lösa pjäser: med springaren på f8 oskyddad och svag baslinje lät ett enda slarvigt bondedrag den vita springaren avgöra partiet."
+  }
+}

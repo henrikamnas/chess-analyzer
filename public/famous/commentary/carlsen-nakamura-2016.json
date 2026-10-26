@@ -1,0 +1,90 @@
+{
+  "id": "carlsen-nakamura-2016",
+  "intro": {
+    "en": "Bilbao, 2016: Magnus Carlsen, the world champion, has White against Hikaru Nakamura, who had lost many classical games to him and never beaten him. Carlsen avoids the main lines of the Sicilian with 2.Ne2, and for a long time the game is quiet. Watch how White's kingside pawn advances, meant to attack, end up loosening his own king, and how Nakamura then grinds out the win with steady pressure.",
+    "sv": "Bilbao 2016: världsmästaren Magnus Carlsen har Vit mot Hikaru Nakamura, som hade förlorat många långpartier mot honom och aldrig slagit honom. Carlsen undviker sicilianskans huvudvarianter med 2.Ne2, och länge är partiet lugnt. Se hur Vits bondeframstötar på kungsflygeln, tänkta som angrepp, i stället försvagar hans egen kung, och hur Nakamura sedan tar hem vinsten med stadigt tryck."
+  },
+  "comments": [
+    {
+      "ply": 2,
+      "en": "2.Ne2 is the Keres Variation of the Sicilian. The knight keeps the f-pawn free and keeps White's options open: he can still play d4 later, or set up with g3 and Bg2. It is a way to steer away from the heavily analysed main lines.",
+      "sv": "2.Ne2 är Keresvarianten i sicilianskt. Springaren lämnar f-bonden fri och håller Vits möjligheter öppna: han kan fortfarande spela d4 senare, eller ställa upp med g3 och Bg2. Det är ett sätt att styra bort från de hårt analyserade huvudvarianterna."
+    },
+    {
+      "ply": 10,
+      "en": "6.d4 opens the centre after all. With a pawn on d6 and the bishop fianchettoed on g7, Black has a Dragon-like setup, while White's bishop on g2 looks at the long diagonal. The position is roughly balanced.",
+      "sv": "6.d4 öppnar centrum trots allt. Med bonden på d6 och löparen fianchetterad på g7 har Svart en drakliknande uppställning, medan Vits löpare på g2 siktar längs den långa diagonalen. Ställningen är ungefär i balans."
+    },
+    {
+      "ply": 25,
+      "en": "13...Qh5 avoids the queen trade and takes the queen to the kingside, next to the bishop on g4. The engine preferred to trade with 13...Qxe1, and it shows a strong answer: 14.e5! opens the long diagonal for the bishop on b2 and breaks up Black's centre.",
+      "sv": "13...Qh5 undviker dambytet och för damen till kungsflygeln, bredvid löparen på g4. Motorn föredrog att byta med 13...Qxe1, och den visar ett starkt svar: 14.e5! öppnar den långa diagonalen för löparen på b2 och bryter upp Svarts centrum.",
+      "line": { "from": "after", "san": ["e5", "Nd7", "exd6", "exd6", "Bxg7", "Kxg7", "Qc3+", "Kg8"] }
+    },
+    {
+      "ply": 26,
+      "en": "Carlsen plays the more cautious 14.f3 instead, driving the bishop from g4. It is a reasonable move, but it loosens the squares around his king, and the following kingside pawn moves will loosen them further.",
+      "sv": "Carlsen spelar i stället det försiktigare 14.f3, som driver bort löparen från g4. Draget är rimligt, men det försvagar rutorna runt hans kung, och de följande bondedragen på kungsflygeln försvagar dem ännu mer."
+    },
+    {
+      "ply": 31,
+      "en": "16...g5 fixes the g4 pawn and keeps the dark square f4 for Black. The engine preferred simply to trade bishops with 16...Bxg2, but the idea is clear: White's kingside pawns have moved forward, and the squares behind them are weak.",
+      "sv": "16...g5 låser fast bonden på g4 och håller den mörka rutan f4 åt Svart. Motorn föredrog att helt enkelt byta löpare med 16...Bxg2, men idén är tydlig: Vits kungsflygelbönder har gått framåt, och rutorna bakom dem är svaga."
+    },
+    {
+      "ply": 38,
+      "en": "20.Qxh4 is the turning point. White wins back the pawn, but his queen goes to the edge of the board and he no longer has a pawn on the h-file next to his king. The engine preferred 20.Nb6, bringing the knight from the rim toward the centre, and Black answers at once with a central strike.",
+      "sv": "20.Qxh4 är vändpunkten. Vit tar tillbaka bonden, men damen hamnar vid brädets kant och han har inte längre någon bonde på h-linjen bredvid sin kung. Motorn föredrog 20.Nb6, som för springaren från kanten mot centrum, och Svart svarar direkt med ett slag i centrum."
+    },
+    {
+      "ply": 39,
+      "en": "20...d5! is the classical answer to play on the wing: strike in the centre. Black wants to open lines for the bishop on g7 and the rooks while White's queen is far away on h4.",
+      "sv": "20...d5! är det klassiska svaret på spel på flygeln: slå till i centrum. Svart vill öppna linjer för löparen på g7 och tornen medan Vits dam står långt borta på h4."
+    },
+    {
+      "ply": 40,
+      "en": "21.g5? kicks the knight, but it gives up the centre. The engine wanted 21.exd5, keeping the balance. After 21...dxe4 the pawn on e4 hits f3, and if White now takes the knight with gxf6, the reply ...exf3+ comes with check against the king on g2.",
+      "sv": "21.g5? jagar springaren men ger upp centrum. Motorn ville ha 21.exd5, som håller balansen. Efter 21...dxe4 angriper bonden på e4 f3, och om Vit nu tar springaren med gxf6 kommer svaret ...exf3+ med schack mot kungen på g2.",
+      "line": { "from": "before", "san": ["exd5", "cxd5", "c3", "Rac8", "Qg5", "e6", "Qxg6", "hxg6"] }
+    },
+    {
+      "ply": 48,
+      "en": "25.Nc5 brings the knight to a nice square, but it does nothing for the king and Black's advantage grows. The engine's suggestion was 25.f5, trying to open lines against Black's king before Black consolidates. From here Black is clearly better.",
+      "sv": "25.Nc5 för springaren till en fin ruta, men den gör ingenting för kungen, och Svarts fördel växer. Motorns förslag var 25.f5, som försöker öppna linjer mot den svarta kungen innan Svart hinner konsolidera. Härifrån står Svart klart bättre."
+    },
+    {
+      "ply": 51,
+      "en": "26...f5 seals the kingside. The engine preferred 26...h6 to open the h-file, but Nakamura's choice is practical: with White's pawns stopped, the pawn on e4 is protected and White's attack is over.",
+      "sv": "26...f5 stänger kungsflygeln. Motorn föredrog 26...h6 för att öppna h-linjen, men Nakamuras val är praktiskt: när Vits bönder är stoppade är bonden på e4 skyddad och Vits angrepp är över."
+    },
+    {
+      "ply": 61,
+      "en": "After the trade of a pair of rooks Black is winning. The black queen, rook and knight are more active, and White's king has few pawns left in front of it.",
+      "sv": "Efter bytet av ett tornpar vinner Svart. Svarts dam, torn och springare är mer aktiva, och den vita kungen har få bönder kvar framför sig."
+    },
+    {
+      "ply": 70,
+      "en": "36.Qg3 lets Black keep the tension. The engine preferred 36.fxe5, opening the position while White still has some activity; after the game move, Black's grip on the white king tightens.",
+      "sv": "36.Qg3 låter Svart behålla spänningen. Motorn föredrog 36.fxe5, som öppnar ställningen medan Vit fortfarande har lite aktivitet; efter partidraget drar Svart åt greppet om den vita kungen."
+    },
+    {
+      "ply": 81,
+      "en": "41...Nxg5 wins the g5 pawn, and Black is now two pawns up. White's queen can give a few checks, but Black's king finds shelter.",
+      "sv": "41...Nxg5 vinner bonden på g5, och Svart har nu två merbönder. Den vita damen kan ge några schackar, men den svarta kungen hittar skydd."
+    },
+    {
+      "ply": 96,
+      "en": "49.Qxf5 takes a pawn but allows a forced mate. The engine's best was 49.Qxg8+, giving the queen for the rook, which also loses but lasts longer. Now 49...Nf3+ starts the final attack.",
+      "sv": "49.Qxf5 tar en bonde men tillåter en forcerad matt. Motorns bästa var 49.Qxg8+, som ger damen för tornet, vilket också förlorar men håller längre. Nu inleder 49...Nf3+ slutangreppet."
+    },
+    {
+      "ply": 99,
+      "en": "After 50...Qd6 Carlsen resigned, facing a mating attack against his king on h3. The engine shows mate in a few more moves.",
+      "sv": "Efter 50...Qd6 gav Carlsen upp, inför ett mattangrepp mot kungen på h3. Motorn visar matt inom några drag till."
+    }
+  ],
+  "summary": {
+    "en": "For a long time the game was balanced, but White's pawn moves on the kingside (f3, g4, h4) weakened his own king more than Black's. When the queen went to h4 and 21.g5 gave up the centre, Black's central break took over. Lessons: answer play on the wing with action in the centre, and think twice before advancing the pawns in front of your own king.",
+    "sv": "Länge var partiet i balans, men Vits bondedrag på kungsflygeln (f3, g4, h4) försvagade hans egen kung mer än Svarts. När damen gick till h4 och 21.g5 gav upp centrum tog Svarts brytning i centrum över. Läxor: svara på flygelspel med aktivitet i centrum, och tänk efter två gånger innan du flyttar fram bönderna framför din egen kung."
+  }
+}

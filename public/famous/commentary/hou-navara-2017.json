@@ -1,0 +1,81 @@
+{
+  "id": "hou-navara-2017",
+  "intro": {
+    "en": "Biel, 2017: Hou Yifan has White against the Czech grandmaster David Navara in a Najdorf Sicilian. The kings castle on opposite sides, which usually means a race of pawn storms. Watch how the fight turns on the f-file and in the centre rather than on the kings, and how White's passed a-pawn finally decides the game.",
+    "sv": "Biel 2017: Hou Yifan har Vit mot den tjeckiske stormästaren David Navara i en Najdorfsiciliansk. Kungarna rockerar åt olika håll, vilket brukar betyda en kapplöpning med bondestormar. Se hur kampen avgörs på f-linjen och i centrum snarare än vid kungarna, och hur Vits fribonde på a-linjen till slut avgör partiet."
+  },
+  "comments": [
+    {
+      "ply": 11,
+      "en": "6.Be3 is the English Attack against the Najdorf, where White usually follows with f3, Qd2 and a kingside pawn storm. 6...Ng4 is the direct answer: the knight hits the bishop at once, before White has time for f3.",
+      "sv": "6.Be3 är det engelska angreppet mot Najdorf, där Vit oftast fortsätter med f3, Qd2 och en bondestorm på kungsflygeln. 6...Ng4 är det direkta svaret: springaren angriper löparen direkt, innan Vit hinner spela f3."
+    },
+    {
+      "ply": 14,
+      "en": "After 7.Bg5 h6 8.Bc1 White's bishop is back on its starting square. Both sides have spent time, but Black has gained the useful move ...h6, and the knight on g4 will have to go back as well.",
+      "sv": "Efter 7.Bg5 h6 8.Bc1 står Vits löpare tillbaka på utgångsrutan. Båda sidor har lagt tid, men Svart har fått in det användbara draget ...h6, och springaren på g4 måste också gå tillbaka."
+    },
+    {
+      "ply": 17,
+      "en": "After 9.Nxc6 bxc6 Black has an extra central pawn on c6 that supports a later ...d5. The price is a pawn on a6 that can become a target.",
+      "sv": "Efter 9.Nxc6 bxc6 har Svart en extra centrumbonde på c6 som stöder ett senare ...d5. Priset är en bonde på a6 som kan bli ett mål."
+    },
+    {
+      "ply": 26,
+      "en": "14.O-O-O: the kings are now on opposite wings. In such positions both sides usually throw their pawns at the enemy king, and time is everything. The engine preferred 13...Qb6 for Black on the move before, putting the queen on the half-open b-file aimed at White's future king position.",
+      "sv": "14.O-O-O: kungarna står nu på olika flyglar. I sådana ställningar brukar båda sidor kasta fram sina bönder mot den motsatta kungen, och tiden är allt. Motorn föredrog 13...Qb6 för Svart i draget innan, med damen på den halvöppna b-linjen riktad mot den blivande vita kungsställningen."
+    },
+    {
+      "ply": 29,
+      "en": "After 15.Bxe6 fxe6 Black has doubled e-pawns, but the f-file is now half-open for the rook on f8, and the pawn on e6 controls d5 and f5.",
+      "sv": "Efter 15.Bxe6 fxe6 har Svart dubbelbönder på e-linjen, men f-linjen är nu halvöppen för tornet på f8, och bonden på e6 kontrollerar d5 och f5."
+    },
+    {
+      "ply": 30,
+      "en": "16.f4 is too hasty. The engine wanted the pawn storm 16.h4, in the spirit of opposite-side castling. After 16.f4 the e5 pawn can simply take on f4, and the engine shows that Black equalises with 16...exf4.",
+      "sv": "16.f4 är för förhastat. Motorn ville ha bondestormen 16.h4, i andan av rockad åt olika håll. Efter 16.f4 kan bonden på e5 helt enkelt ta på f4, och motorn visar att Svart utjämnar med 16...exf4.",
+      "line": { "from": "after", "san": ["exf4", "e5", "Nd5", "Qg4", "Rf5", "Qg6", "Qd7", "exd6"] }
+    },
+    {
+      "ply": 33,
+      "en": "17...Nb6? sends the knight far away from the kingside and lets White keep the tension. The engine's 17...exf5 resolved it at once: after 18.Qc4+ Black gives up the c6 pawn, but the queens come off and Black's pieces become active.",
+      "sv": "17...Nb6? skickar springaren långt bort från kungsflygeln och låter Vit behålla spänningen. Motorns 17...exf5 löste den direkt: efter 18.Qc4+ ger Svart bort bonden på c6, men damerna byts och Svarts pjäser blir aktiva.",
+      "line": { "from": "before", "san": ["exf5", "Qc4+", "Rf7", "Qxc6", "Qc8", "Qxc8+", "Rxc8", "exf5", "Rxf5"] }
+    },
+    {
+      "ply": 35,
+      "en": "18...Qd7 is a second chance missed; the engine again preferred 18...exf5. As long as the pawn on f5 stays, White can choose when to take on e6 and open the f-file for her rook.",
+      "sv": "18...Qd7 är ännu en missad chans; motorn föredrog återigen 18...exf5. Så länge bonden på f5 står kvar kan Vit själv välja när hon ska ta på e6 och öppna f-linjen för sitt torn."
+    },
+    {
+      "ply": 45,
+      "en": "23...Bxf8? recaptures with the bishop, so Black's remaining rook stays passive on b8. The engine wanted 23...Rxf8, putting the rook on the open f-file. Now White exchanges on d5, and her knight heads via b5 for the strong square d4, right in front of Black's centre pawns.",
+      "sv": "23...Bxf8? tar tillbaka med löparen, så att Svarts kvarvarande torn blir stående passivt på b8. Motorn ville ha 23...Rxf8, som för tornet till den öppna f-linjen. Nu byter Vit på d5, och hennes springare går via b5 mot den starka rutan d4, precis framför Svarts centrumbönder.",
+      "line": { "from": "before", "san": ["Rxf8", "exd5", "cxd5", "Nb5", "Bf6"] }
+    },
+    {
+      "ply": 60,
+      "en": "After the trade on d4 White's bishop stands on a fine central square, and 31.Qxa5 wins a pawn. White's a-pawn is now a passed pawn: Black has no pawns left on the a- or b-file to stop it.",
+      "sv": "Efter bytet på d4 står Vits löpare på en fin centralruta, och 31.Qxa5 vinner en bonde. Vits a-bonde är nu en fribonde: Svart har inga bönder kvar på a- eller b-linjen som kan stoppa den."
+    },
+    {
+      "ply": 65,
+      "en": "Navara tries to create counterplay with his e-pawn and wins back a pawn on h3, but White's rook on e1 blocks the e-pawn, and the a-pawn is much faster.",
+      "sv": "Navara försöker skapa motspel med sin e-bonde och vinner tillbaka en bonde på h3, men Vits torn på e1 blockerar e-bonden, och a-bonden är mycket snabbare."
+    },
+    {
+      "ply": 77,
+      "en": "39...Qh4?? walks into a simple tactic. On g4 the queen protected the knight on d7 along the diagonal; now that knight is loose.",
+      "sv": "39...Qh4?? går rakt in i en enkel taktik. På g4 skyddade damen springaren på d7 längs diagonalen; nu står springaren oskyddad."
+    },
+    {
+      "ply": 78,
+      "en": "40.Qxd7 wins the knight, and Navara resigned. The pawn on a7 is protected by the queen and the bishop, and the e-pawn is stopped by the rook on e1.",
+      "sv": "40.Qxd7 vinner springaren, och Navara gav upp. Bonden på a7 skyddas av damen och löparen, och e-bonden stoppas av tornet på e1."
+    }
+  ],
+  "summary": {
+    "en": "With kings on opposite wings, the game was decided not by a pawn storm but by the f-file and the centre. Black twice missed the chance to take on f5 and free the position, and 23...Bxf8 left the black rook out of play. After that, first Hou's knight and then her bishop dominated from d4, and a passed a-pawn did the rest. Lessons: in tense pawn structures, decide the tension at the right moment, and keep your rooks on the open files.",
+    "sv": "Med kungarna på olika flyglar avgjordes partiet inte av en bondestorm utan på f-linjen och i centrum. Svart missade två gånger chansen att ta på f5 och befria ställningen, och 23...Bxf8 lämnade det svarta tornet utanför spelet. Därefter dominerade först Hous springare och sedan hennes löpare från d4, och en fribonde på a-linjen gjorde resten. Läxor: i spända bondestrukturer, lös upp spänningen vid rätt tillfälle, och håll tornen på de öppna linjerna."
+  }
+}

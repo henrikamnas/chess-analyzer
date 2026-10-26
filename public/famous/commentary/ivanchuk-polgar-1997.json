@@ -1,0 +1,98 @@
+{
+  "id": "ivanchuk-polgar-1997",
+  "intro": {
+    "en": "Linares, 1997: Judit Polgar, playing Black against Vassily Ivanchuk, one of the world's very best players at the time. The opening is a Neo-Grünfeld: Black fianchettoes the king's bishop and strikes at the centre with ...d5 and ...dxc4. Watch how a few loose White moves give Black a pawn, a knight on d3 and open lines towards White's king, and how quickly Polgar turns that into a mating attack.",
+    "sv": "Linares 1997: Judit Polgar har svart mot Vasilij Ivantjuk, en av världens allra bästa spelare vid den tiden. Öppningen är en neo-grünfeld: Svart fianchetterar kungslöparen och slår mot centrum med ...d5 och ...dxc4. Se hur några lösa vita drag ger Svart en bonde, en springare på d3 och öppna linjer mot den vita kungen, och hur snabbt Polgar förvandlar det till ett mattangrepp."
+  },
+  "comments": [
+    {
+      "ply": 9,
+      "en": "5...d5 gives the game its Neo-Grünfeld character. As in the Grünfeld, Black does not build a pawn wall but attacks White's centre, with the bishop on g7 pressing against d4 along the long diagonal.",
+      "sv": "5...d5 ger partiet dess neo-grünfeldkaraktär. Som i grünfeldindiskt bygger Svart ingen bondemur utan angriper Vits centrum, och löparen på g7 trycker mot d4 längs den långa diagonalen."
+    },
+    {
+      "ply": 13,
+      "en": "7...dxc4 takes a pawn. The position is still balanced, but White has to play actively to get the pawn back or show enough for it.",
+      "sv": "7...dxc4 tar en bonde. Ställningen är fortfarande jämn, men Vit måste spela aktivt för att vinna tillbaka bonden eller visa tillräcklig kompensation."
+    },
+    {
+      "ply": 14,
+      "en": "8.d5? is the first real inaccuracy. It chases the knight, but the knight jumps to b4, where it attacks d5 and eyes the d3 square. The engine preferred the quiet 8.h3, keeping the bishop on c8 out of g4 and preparing e4.",
+      "sv": "8.d5? är den första riktiga onöjaktigheten. Draget jagar springaren, men den hoppar till b4, där den angriper d5 och siktar på rutan d3. Motorn föredrog det lugna 8.h3, som håller löparen på c8 borta från g4 och förbereder e4.",
+      "line": {
+        "from": "before",
+        "san": ["h3", "Nd5", "e4", "Nxc3", "bxc3", "b5"]
+      }
+    },
+    {
+      "ply": 16,
+      "en": "9.e4? is a real mistake. 9.Ne5 was the best try: tactics against f7 drag Black's king into the open, and White stays close to equal. After the game move, 9...e6 hits the d5 pawn again and White is simply a pawn down with an exposed centre.",
+      "sv": "9.e4? är ett riktigt misstag. 9.Ne5 var det bästa försöket: taktik mot f7 drar ut den svarta kungen i det öppna, och Vit håller sig nära utjämning. Efter partidraget angriper 9...e6 bonden på d5 igen, och Vit har helt enkelt en bonde mindre och ett utsatt centrum.",
+      "line": {
+        "from": "before",
+        "san": ["Ne5", "Nfxd5", "Nxd5", "Nxd5", "Nxf7", "Kxf7", "Bxd5+", "Be6", "Bxe6+", "Kxe6"]
+      }
+    },
+    {
+      "ply": 21,
+      "en": "11...Nd3 plants the knight deep in White's camp, protected by the pawn on c4. From d3 it hits b2 and f2 and cuts White's position in two. The engine preferred 11...exd5 first, which would have kept a clearly bigger advantage, but the knight on d3 becomes the key piece of the game.",
+      "sv": "11...Nd3 planterar springaren djupt i det vita lägret, skyddad av bonden på c4. Från d3 angriper den b2 och f2 och klyver den vita ställningen i två delar. Motorn föredrog 11...exd5 först, som hade behållit en klart större fördel, men springaren på d3 blir partiets nyckelpjäs."
+    },
+    {
+      "ply": 22,
+      "en": "12.dxe6? only helps Black: the bishop recaptures on e6 and comes into play, aiming at the kingside. 12.Qd2 was better, developing and preparing to challenge the knight.",
+      "sv": "12.dxe6? hjälper bara Svart: löparen tar tillbaka på e6 och kommer i spel, med sikte på kungsflygeln. 12.Qd2 var bättre, som utvecklar och förbereder att utmana springaren."
+    },
+    {
+      "ply": 25,
+      "en": "13...Qd7 lines up the queen and bishop against h3. The engine thought 13...Nxb2 was even stronger, simply grabbing a second pawn, but Polgar goes for the king.",
+      "sv": "13...Qd7 ställer upp damen och löparen mot h3. Motorn tyckte att 13...Nxb2 var ännu starkare, som helt enkelt tar en andra bonde, men Polgar går på kungen.",
+      "line": {
+        "from": "before",
+        "san": ["Nxb2", "Qc2", "Nd3", "Rad1", "c6"]
+      }
+    },
+    {
+      "ply": 26,
+      "en": "14.Qd2 sets up a battery against h6, but it leaves h3 to its fate. 14.Kh2 was the engine's choice, guarding the pawn with the king.",
+      "sv": "14.Qd2 bygger ett batteri mot h6, men lämnar h3 åt sitt öde. 14.Kh2 var motorns val, som skyddar bonden med kungen."
+    },
+    {
+      "ply": 27,
+      "en": "14...Bxh3! The queen on d7 backs up the bishop, so if White's bishop takes on h3, the black queen recaptures and lands on h3, close to White's king. The pawn cover around the king starts to disappear.",
+      "sv": "14...Bxh3! Damen på d7 stöder löparen, så om Vits löpare slår på h3 tar den svarta damen tillbaka och hamnar på h3, nära den vita kungen. Bondeskyddet runt kungen börjar försvinna."
+    },
+    {
+      "ply": 30,
+      "en": "16.Bxg7? trades off the bishop that guarded Black's king, but with both h-pawns already gone, the recapture 16...Kxg7 lets Black's rooks use the open h-file rather than White's. The engine preferred 16.b3, striking at the c4 pawn that supports the knight on d3.",
+      "sv": "16.Bxg7? byter av löparen som skyddade den svarta kungen, men eftersom båda h-bönderna redan är borta låter återtagningen 16...Kxg7 Svarts torn använda den öppna h-linjen i stället för Vits. Motorn föredrog 16.b3, som slår mot bonden på c4 som stöder springaren på d3."
+    },
+    {
+      "ply": 31,
+      "en": "16...Kxg7 is the right recapture. Grabbing on g2 first would be a blunder: after 17.Qh6 White threatens Qh8 mate, and Black has to give up material to stop it.",
+      "sv": "16...Kxg7 är rätt sätt att ta tillbaka. Att först slå på g2 vore en grov blunder: efter 17.Qh6 hotar Vit matt med Qh8, och Svart måste ge bort material för att stoppa det.",
+      "line": {
+        "from": "before",
+        "san": ["Bxg2", "Qh6", "Qh3", "Qxh3", "Bxh3", "Bxf6"]
+      }
+    },
+    {
+      "ply": 35,
+      "en": "After 17...Bxg2 18.Kxg2 the white king has lost its bishop and its h-pawn. 18...Nh5 brings the knight towards f4, where it will work together with the knight on d3.",
+      "sv": "Efter 17...Bxg2 18.Kxg2 har den vita kungen förlorat sin löpare och sin h-bonde. 18...Nh5 för springaren mot f4, där den ska samarbeta med springaren på d3."
+    },
+    {
+      "ply": 37,
+      "en": "19...Ndf4+ and Ivanchuk resigned. If the queen takes on f4, the other knight takes it with check; after the king steps to f3, ...f6 attacks the knight on g5 and the king is left in the open. Black's knights and queen swarm around the king, while White's pieces are scattered.",
+      "sv": "19...Ndf4+ och Ivantjuk gav upp. Om damen slår på f4 tar den andra springaren den med schack; efter att kungen gått till f3 angriper ...f6 springaren på g5 och kungen står kvar i det öppna. Svarts springare och dam svärmar runt kungen, medan de vita pjäserna är utspridda.",
+      "line": {
+        "from": "after",
+        "san": ["Kf3", "f6", "gxf4", "fxg5", "Rad1", "Qh3+", "Ke2", "Nxf4+"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "Ivanchuk lost this game with a handful of loose moves early on: 8.d5 and 9.e4 left White a pawn down for nothing and let a black knight settle on d3. Polgar then used every open line against the king, taking the h-pawn with tactical backing and bringing her knights to f4. The lesson: a knight deep in the enemy camp and open lines near the king are worth more than a pawn, and they don't wait for the opponent to finish developing.",
+    "sv": "Ivantjuk förlorade partiet genom några lösa drag tidigt: 8.d5 och 9.e4 lämnade Vit med en bonde mindre utan kompensation och lät en svart springare slå sig ner på d3. Polgar använde sedan varje öppen linje mot kungen, tog h-bonden med taktiskt stöd och förde sina springare till f4. Läxan: en springare djupt i fiendens läger och öppna linjer nära kungen är värda mer än en bonde, och de väntar inte på att motståndaren ska bli färdig med utvecklingen."
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "anand-carlsen-2013-g9",
+  "intro": {
+    "en": "Chennai, 2013, game 9 of the World Championship match. Magnus Carlsen led Viswanathan Anand by two points with four games left, so Anand had to play for a win. He chose the sharp Sämisch line against Carlsen's Nimzo-Indian and attacked on the kingside, while Carlsen raced his b-pawn down the other wing. Watch the race: both sides' plans are clear, and a single defensive move decides it.",
+    "sv": "Chennai 2013, parti 9 i VM-matchen. Magnus Carlsen ledde över Viswanathan Anand med två poäng när fyra partier återstod, så Anand var tvungen att spela för vinst. Han valde den skarpa Sämischvarianten mot Carlsens nimzoindiska och anföll på kungsflygeln, medan Carlsen lät sin b-bonde springa på andra flygeln. Följ racet: båda sidornas planer är tydliga, och ett enda försvarsdrag avgör."
+  },
+  "comments": [
+    {
+      "ply": 10,
+      "en": "This is the Sämisch Variation of the Nimzo-Indian. White has played f3 to prepare e4, and after the trade on c3 White has the bishop pair but doubled c-pawns. White wants to build a big centre and use the bishops; Black wants to target the weak pawns.",
+      "sv": "Detta är Sämischvarianten i nimzoindiskt. Vit har spelat f3 för att förbereda e4, och efter bytet på c3 har Vit löparparet men dubbelbönder på c-linjen. Vit vill bygga ett stort centrum och använda löparna; Svart vill angripa de svaga bönderna."
+    },
+    {
+      "ply": 15,
+      "en": "8...c4 closes the queenside. It fixes White's doubled pawns and keeps the position blocked, which takes some power from White's bishops. The price is that the pressure on d4 disappears, so White can calmly prepare e4 and play on the kingside. The engine slightly preferred 8...O-O.",
+      "sv": "8...c4 stänger damflygeln. Draget låser fast Vits dubbelbönder och håller ställningen sluten, vilket tar en del av kraften från de vita löparna. Priset är att trycket mot d4 försvinner, så att Vit i lugn och ro kan förbereda e4 och spela på kungsflygeln. Motorn föredrog en aning 8...O-O."
+    },
+    {
+      "ply": 18,
+      "en": "10.g4 shows Anand's plan: gain space on the kingside, bring the knight to g3 and break with e4. The two players are now playing on opposite wings, and every tempo counts.",
+      "sv": "10.g4 visar Anands plan: ta utrymme på kungsflygeln, föra springaren till g3 och bryta med e4. Spelarna spelar nu på var sin flygel, och varje tempo räknas."
+    },
+    {
+      "ply": 23,
+      "en": "12...Nb3 lands deep in White's camp, attacking the rook on a1 and eyeing the bishop on c1. White answers with the clumsy-looking 13.Ra2 (13.Rb1 was just as good), and later Black trades the knight for the bishop on c1, taking away White's bishop pair.",
+      "sv": "12...Nb3 landar djupt i Vits läger, angriper tornet på a1 och siktar på löparen på c1. Vit svarar med det till synes klumpiga 13.Ra2 (13.Rb1 var lika bra), och senare byter Svart springaren mot löparen på c1 och tar därmed bort Vits löparpar."
+    },
+    {
+      "ply": 26,
+      "en": "14.Ng3 is a little slow. The engine wanted the central break 14.e4 at once, while Black's pieces are still on the queenside. Anand keeps preparing, and the game stays roughly balanced.",
+      "sv": "14.Ng3 är lite långsamt. Motorn ville spela centrumbrytningen 14.e4 direkt, medan de svarta pjäserna fortfarande står på damflygeln. Anand fortsätter att förbereda, och partiet förblir ungefär jämnt.",
+      "line": { "from": "before", "san": ["e4", "dxe4", "fxe4", "Nxc1", "Qxc1", "Nxg4"] }
+    },
+    {
+      "ply": 35,
+      "en": "18...Nc7 is the first real inaccuracy. The knight goes to the queenside, away from its king. The engine's 18...g6 followed by ...Ng7 would have covered f5, exactly the square White's f-pawn is heading for.",
+      "sv": "18...Nc7 är den första verkliga felaktigheten. Springaren går till damflygeln, bort från kungen. Motorns 18...g6 följt av ...Ng7 hade täckt f5, precis den ruta som Vits f-bonde är på väg mot.",
+      "line": { "from": "before", "san": ["g6", "f4", "Ng7", "h4"] }
+    },
+    {
+      "ply": 43,
+      "en": "The race is on. White's f-pawn has reached f5, and Black's b-pawn is heading for b1. The engine slightly preferred 22...g6, challenging the f5 pawn first, but Carlsen trusts his passed pawn.",
+      "sv": "Racet är i gång. Vits f-bonde har nått f5, och Svarts b-bonde är på väg mot b1. Motorn föredrog en aning 22...g6, som först utmanar bonden på f5, men Carlsen litar på sin fribonde."
+    },
+    {
+      "ply": 47,
+      "en": "24.f6 lets Black take with 24...gxf6, and the engine says that was equal. Carlsen's 24...g6 was a mistake: the pawn on f6 now stays as a wedge deep in Black's kingside, and the dark squares g7 and h6 become targets for White's queen.",
+      "sv": "24.f6 låter Svart slå med 24...gxf6, och motorn säger att det var jämnt. Carlsens 24...g6 var ett misstag: bonden på f6 står kvar som en kil djupt inne på Svarts kungsflygel, och de mörka rutorna g7 och h6 blir mål för den vita damen.",
+      "line": { "from": "before", "san": ["gxf6", "exf6", "Kh8"] }
+    },
+    {
+      "ply": 50,
+      "en": "26.Qh6 sets up a mating threat: if Black's knight leaves e8, Qg7 is mate. White also plans to bring the rook to h4 and take on h7. The engine preferred 26.Ne2, heading for f4 to bring more pieces in first.",
+      "sv": "26.Qh6 ställer upp ett matthot: om den svarta springaren lämnar e8 är Qg7 matt. Vit planerar också att föra tornet till h4 och slå på h7. Motorn föredrog 26.Ne2 med kurs mot f4 för att först ta in fler pjäser."
+    },
+    {
+      "ply": 53,
+      "en": "27...b1=Q+ Black promotes with check. Realistically White has to block on f1 with the bishop or the knight (the king move 28.Kf2 and blocking with the rook both lose), and the choice decides the game.",
+      "sv": "27...b1=Q+ Svart gör dam med schack. I praktiken måste Vit spärra på f1 med löparen eller springaren (kungsdraget 28.Kf2 och att spärra med tornet förlorar båda), och valet avgör partiet."
+    },
+    {
+      "ply": 54,
+      "en": "28.Nf1?? is the losing blunder. The knight on g3 was blocking the diagonal from e1 to h4. Now 28...Qe1 pins the knight to the king and covers h4, so White's plan of Rh4 and Qxh7 mate no longer works. After 28.Bf1 the knight stays on g3, Black has to give up a queen to stop the mate, and the position is level.",
+      "sv": "28.Nf1?? är den förlorande blundern. Springaren på g3 spärrade diagonalen från e1 till h4. Nu binder 28...Qe1 springaren mot kungen och täcker h4, så Vits plan med Rh4 och Qxh7 matt fungerar inte längre. Efter 28.Bf1 står springaren kvar på g3, Svart måste ge tillbaka en dam för att stoppa matten, och ställningen är jämn.",
+      "line": { "from": "before", "san": ["Bf1", "Qd1", "Rh4", "Qh5", "Nxh5", "gxh5", "Rxh5"] }
+    },
+    {
+      "ply": 55,
+      "en": "28...Qe1 and Anand resigned. Black has an extra queen, and if the rook goes to h4 to renew the mating threat, the queen on e1 simply takes it. Carlsen now led 6-3 and needed only one more draw to become world champion.",
+      "sv": "28...Qe1 och Anand gav upp. Svart har en extra dam, och går tornet till h4 för att förnya matthotet slår damen på e1 helt enkelt. Carlsen ledde nu med 6-3 och behövde bara en remi till för att bli världsmästare.",
+      "line": { "from": "after", "san": ["Rh4", "Qxh4", "Qxh4"] }
+    }
+  ],
+  "summary": {
+    "en": "A classic race on opposite wings: Anand attacked the king with g4, e5 and f4-f5, while Carlsen's b-pawn marched to b1. Carlsen's 24...g6 gave White real chances, but after the promotion Anand blocked the check with the wrong piece. The lesson: when blocking a check, look at which lines your pieces were closing before they moved.",
+    "sv": "Ett klassiskt race på var sin flygel: Anand anföll kungen med g4, e5 och f4-f5, medan Carlsens b-bonde marscherade till b1. Carlsens 24...g6 gav Vit verkliga chanser, men efter bondeförvandlingen spärrade Anand schacken med fel pjäs. Läxan: när du spärrar en schack, se efter vilka linjer dina pjäser stängde innan de flyttade."
+  }
+}

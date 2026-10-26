@@ -1,0 +1,80 @@
+{
+  "id": "kasparov-karpov-1985-g11",
+  "intro": {
+    "en": "Moscow, 1985: game 11 of the World Championship match in which Garry Kasparov took the title from Anatoly Karpov. The opening is a Nimzo-Indian that turns into a classic isolated queen's pawn position. For twenty moves it is a model of careful, balanced play, so watch for the one moment where a natural-looking move leaves a piece overloaded.",
+    "sv": "Moskva 1985: parti 11 i VM-matchen där Garri Kasparov tog titeln från Anatolij Karpov. Öppningen är en nimzoindisk som övergår i en klassisk ställning med isolerad dambonde. I tjugo drag är det ett föredöme av noggrant och balanserat spel, så håll utkik efter det enda ögonblick då ett naturligt drag gör en pjäs överbelastad."
+  },
+  "comments": [
+    {
+      "ply": 12,
+      "en": "The Nimzo-Indian, Three Knights Variation. With 5.Bg5 White pinned the knight on f6, and Black answered by striking at the centre with ...c5. After the exchange on d4, White has recaptured with the e-pawn and keeps a pawn on d4.",
+      "sv": "Nimzoindiskt, treespringarvarianten. Med 5.Bg5 band Vit springaren på f6, och Svart svarade med att slå mot centrum med ...c5. Efter bytet på d4 har Vit tagit tillbaka med e-bonden och behåller en bonde på d4."
+    },
+    {
+      "ply": 18,
+      "en": "After 9...dxc4 10.Bxc4 White has an isolated queen's pawn on d4. It gives White space and free lines for the pieces, but in an endgame it can become a weakness. Black wants to blockade d5 and trade pieces; White wants activity and, at the right moment, the break d4-d5. The engine slightly preferred 9...Nc6, keeping the tension.",
+      "sv": "Efter 9...dxc4 10.Bxc4 har Vit en isolerad dambonde på d4. Den ger Vit utrymme och fria linjer för pjäserna, men i ett slutspel kan den bli en svaghet. Svart vill blockera d5 och byta pjäser; Vit vill ha aktivitet och, i rätt ögonblick, genombrottet d4-d5. Motorn föredrog en aning 9...Nc6, som behåller spänningen."
+    },
+    {
+      "ply": 28,
+      "en": "15.Ba2 is a typical regrouping in these positions. From a2 the bishop aims through d5, ready to support the advance d4-d5 and to hit f7 once the centre opens.",
+      "sv": "15.Ba2 är en typisk omgruppering i sådana ställningar. Från a2 siktar löparen genom d5, redo att stödja framstöten d4-d5 och att träffa f7 när centrum öppnas."
+    },
+    {
+      "ply": 30,
+      "en": "16.d5! is the thematic break, and the engine's top choice. White trades the isolated pawn before it can become a target and opens lines for the bishop on a2 and the rooks. Black must react accurately: 16...Bxg3 would run into 17.dxc6, winning material.",
+      "sv": "16.d5! är det tematiska genombrottet och motorns förstaval. Vit byter bort den isolerade bonden innan den blir ett mål och öppnar linjer för löparen på a2 och tornen. Svart måste reagera exakt: 16...Bxg3 skulle stöta på 17.dxc6, som vinner material.",
+      "line": {
+        "from": "after",
+        "san": ["Bxg3", "dxc6", "Bxf2+", "Kxf2", "Rxc6", "Qxd8", "Rxd8"]
+      }
+    },
+    {
+      "ply": 36,
+      "en": "After the exchanges the isolated pawn is gone and the position is level. White's pieces are slightly more active, with the bishop centralised on d5, but Black has no weaknesses. This is the kind of position where both world-class players were expected to draw comfortably.",
+      "sv": "Efter bytena är den isolerade bonden borta och ställningen är jämn. De vita pjäserna är något aktivare, med löparen centraliserad på d5, men Svart har inga svagheter. Det är den sortens ställning där båda spelarna i världsklass förväntades remisera bekvämt."
+    },
+    {
+      "ply": 41,
+      "en": "21...Rd7 prepares to double rooks on the d-file and challenge the bishop. The engine slightly preferred 21...Rc7, but nothing serious has happened yet.",
+      "sv": "21...Rd7 förbereder att dubblera tornen på d-linjen och utmana löparen. Motorn föredrog en aning 21...Rc7, men ännu har inget allvarligt hänt."
+    },
+    {
+      "ply": 42,
+      "en": "22.Qg4 attacks the rook on d7, which has no defender. Black has several ways to deal with it; 22...Rd6 was the engine's choice, and the position would have stayed balanced.",
+      "sv": "22.Qg4 angriper tornet på d7, som saknar försvarare. Svart har flera sätt att hantera det; 22...Rd6 var motorns val, och ställningen hade förblivit jämn."
+    },
+    {
+      "ply": 43,
+      "en": "22...Rcd8?? defends the rook in the most natural way, and loses at once. The rook on d8 now has two jobs: protecting the rook on d7 and guarding the back rank. A piece with two jobs is an overloaded piece, and Kasparov sees it immediately.",
+      "sv": "22...Rcd8?? skyddar tornet på det mest naturliga sättet och förlorar direkt. Tornet på d8 har nu två uppgifter: att skydda tornet på d7 och att bevaka baslinjen. En pjäs med två uppgifter är överbelastad, och Kasparov ser det direkt.",
+      "line": {
+        "from": "before",
+        "san": ["Rd6", "Bb3", "Rxd1", "Rxd1", "Rf8"]
+      }
+    },
+    {
+      "ply": 44,
+      "en": "23.Qxd7! gives up the queen for a rook. When the rook on d8 takes back, the back rank is left unguarded, and White's rook on e1 can check on e8.",
+      "sv": "23.Qxd7! ger bort damen mot ett torn. När tornet på d8 tar tillbaka lämnas baslinjen obevakad, och Vits torn på e1 kan ge schack på e8."
+    },
+    {
+      "ply": 46,
+      "en": "24.Re8+ forces the king to h7, Black's only legal move: nothing can capture the rook, and the pawn on f7 stops the queen from blocking on f8.",
+      "sv": "24.Re8+ tvingar kungen till h7, Svarts enda lagliga drag: ingenting kan slå tornet, och bonden på f7 hindrar damen från att blockera på f8."
+    },
+    {
+      "ply": 48,
+      "en": "25.Be4+ and Karpov resigned. The bishop gives check and at the same time uncovers the rook on d1 against the rook on d7. After 25...g6 (blocking with the queen would just lose it), 26.Rxd7 wins the rook back and also hits the bishop on b7, while the bishop on e4 attacks the knight on c6. In the engine's line White ends up with two rooks and two minor pieces against queen and bishop.",
+      "sv": "25.Be4+ och Karpov gav upp. Löparen ger schack och avtäcker samtidigt tornet på d1 mot tornet på d7. Efter 25...g6 (att blockera med damen skulle bara förlora den) vinner 26.Rxd7 tillbaka tornet och angriper dessutom löparen på b7, medan löparen på e4 angriper springaren på c6. I motorns variant får Vit två torn och två lätta pjäser mot dam och löpare.",
+      "line": {
+        "from": "after",
+        "san": ["g6", "Rxd7", "Ba6", "Bxc6", "Bc4"]
+      }
+    }
+  ],
+  "summary": {
+    "en": "For most of the game this was a textbook isolated-pawn fight: White built up behind the d-pawn and released the tension with 16.d5 at the right moment, reaching a level position. Then one natural move, 22...Rcd8, gave a rook two jobs at once, and a short combination with a queen sacrifice, a back-rank check and a check that uncovers an attack on the rook decided the game. The lesson: before defending a piece, ask what else the defender is already guarding.",
+    "sv": "Under större delen av partiet var det en läroboksstrid kring en isolerad bonde: Vit byggde upp bakom d-bonden och löste upp spänningen med 16.d5 i rätt ögonblick, och ställningen blev jämn. Sedan gav ett enda naturligt drag, 22...Rcd8, ett torn två uppgifter samtidigt, och en kort kombination med damoffer, schack på baslinjen och en schack som samtidigt avtäcker ett angrepp på tornet avgjorde. Läxan: innan du skyddar en pjäs, fråga dig vad försvararen redan bevakar."
+  }
+}

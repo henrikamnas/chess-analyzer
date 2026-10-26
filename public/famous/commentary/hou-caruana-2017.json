@@ -1,0 +1,77 @@
+{
+  "id": "hou-caruana-2017",
+  "intro": {
+    "en": "GRENKE Chess Classic, 2017: Hou Yifan, the several-time Women's World Champion, has White against Fabiano Caruana, one of the very best players in the world. Caruana chooses the solid Berlin Defence, but later he loosens his own kingside with pawn moves. Watch how Hou keeps her pieces flexible, waits for the open lines to appear and then swings her rooks and queen against the black king.",
+    "sv": "GRENKE Chess Classic 2017: Hou Yifan, flerfaldig världsmästarinna, har Vit mot Fabiano Caruana, en av världens allra bästa spelare. Caruana väljer det solida berlinerförsvaret, men senare försvagar han sin egen kungsflygel med bondedrag. Se hur Hou håller sina pjäser flexibla, väntar på att linjerna ska öppnas och sedan svänger över torn och dam mot den svarta kungen."
+  },
+  "comments": [
+    {
+      "ply": 7,
+      "en": "4...Nxe4 is the main line of the Berlin Defence (3...Nf6); Lichess calls this line the Rio Gambit Accepted. Black takes the e4 pawn, but it is not a real pawn win: with Re1 and Nxe5 White gets it back, and the game becomes a calm, symmetrical fight.",
+      "sv": "4...Nxe4 är huvudvarianten i berlinerförsvaret (3...Nf6); Lichess kallar den här varianten Rio-gambit antagen. Svart tar bonden på e4, men det är ingen riktig bondevinst: med Re1 och Nxe5 tar Vit tillbaka den, och partiet blir en lugn, symmetrisk kamp."
+    },
+    {
+      "ply": 13,
+      "en": "7...O-O lets White keep the knight on e5 for a while. The engine slightly preferred 7...Nxe5, trading off White's active knight at once, but both moves are normal and the position stays balanced.",
+      "sv": "7...O-O låter Vit behålla springaren på e5 en stund till. Motorn föredrog en aning 7...Nxe5, som byter bort Vits aktiva springare direkt, men båda dragen är normala och ställningen förblir i balans."
+    },
+    {
+      "ply": 27,
+      "en": "13...g6 and 14...f6 build a wall against White's pieces, but they also weaken the squares around the black king. This loosening will matter later.",
+      "sv": "13...g6 och 14...f6 bygger en mur mot Vits pjäser, men de försvagar också rutorna runt den svarta kungen. Den försvagningen kommer att spela roll senare."
+    },
+    {
+      "ply": 33,
+      "en": "17...c5? is the first real mistake. It opens the position at the wrong moment: after the exchange on c5 Black is left with an isolated pawn on d5, and White's bishops and rooks get open lines against a king that is already loosened. The engine wanted the quiet 17...Ng7, keeping everything protected.",
+      "sv": "17...c5? är det första riktiga misstaget. Det öppnar ställningen vid fel tillfälle: efter bytet på c5 får Svart en isolerad bonde på d5, och Vits löpare och torn får öppna linjer mot en kung som redan är försvagad. Motorn ville ha det lugna 17...Ng7, som håller allt skyddat.",
+      "line": { "from": "before", "san": ["Ng7", "Rae1", "Bf5", "Ne3", "Bxd3", "Qxd3", "Kh8"] }
+    },
+    {
+      "ply": 39,
+      "en": "20...g5 chases the bishop from f4, but it is yet another pawn move in front of Black's own king. White's rooks are already doubled on the open e-file, and Black's pieces are tied to defending the knight on e7.",
+      "sv": "20...g5 jagar bort löparen från f4, men det är ännu ett bondedrag framför Svarts egen kung. Vits torn står redan dubblerade på den öppna e-linjen, och Svarts pjäser är bundna till att försvara springaren på e7."
+    },
+    {
+      "ply": 45,
+      "en": "22...a5 and 23...a4 try to create play on the queenside, but they cost time. Hou answers calmly with 24.b4, and after the exchange on b3 the a-file opens without any real gain for Black.",
+      "sv": "22...a5 och 23...a4 försöker skapa spel på damflygeln, men de kostar tid. Hou svarar lugnt med 24.b4, och efter bytet på b3 öppnas a-linjen utan någon verklig vinst för Svart."
+    },
+    {
+      "ply": 50,
+      "en": "26.h4 opens the kingside, which is natural against Black's loose pawns. The engine preferred 26.b4, driving the bishop away from c5 first, but White stays clearly better either way.",
+      "sv": "26.h4 öppnar kungsflygeln, vilket är naturligt mot Svarts lösa bönder. Motorn föredrog 26.b4, som först driver bort löparen från c5, men Vit står klart bättre i båda fallen."
+    },
+    {
+      "ply": 56,
+      "en": "29.Qf4 is a missed chance. The engine's 29.b4! drives the bishop from c5, and then White's queen goes to a2 and wins the isolated d5 pawn. After the game move White is still better, but Black is back in the fight.",
+      "sv": "29.Qf4 är en missad chans. Motorns 29.b4! driver bort löparen från c5, och sedan går den vita damen till a2 och vinner den isolerade bonden på d5. Efter partidraget står Vit fortfarande bättre, men Svart är tillbaka i kampen.",
+      "line": { "from": "before", "san": ["b4", "Ba7", "Qa2", "Bb8", "Qxd5", "Qd6", "Qxd6", "Bxd6"] }
+    },
+    {
+      "ply": 59,
+      "en": "30...Rd8? is the decisive mistake. With the g-pawn gone, the g-file leads straight to Black's king, and the engine's 30...Qg7 would have guarded it. Now 31.Re3 prepares to swing the rook to g3 with check.",
+      "sv": "30...Rd8? är det avgörande misstaget. Med g-bonden borta leder g-linjen rakt mot den svarta kungen, och motorns 30...Qg7 hade bevakat den. Nu förbereder 31.Re3 att svänga över tornet till g3 med schack.",
+      "line": { "from": "before", "san": ["Qg7", "g3", "Be5", "Qxd5", "Bc6", "Qa5", "Qg4"] }
+    },
+    {
+      "ply": 63,
+      "en": "With 32...Kg7 the king tries to cover the g-file itself, but now White's pieces take over. Hou's bishop comes to b5 and her rook to e8, and Black's pieces end up tied to the back rank.",
+      "sv": "Med 32...Kg7 försöker kungen själv täcka g-linjen, men nu tar Vits pjäser över. Hous löpare kommer till b5 och hennes torn till e8, och Svarts pjäser blir bundna vid baslinjen."
+    },
+    {
+      "ply": 74,
+      "en": "38.Qf5 brings the queen close to the black king, ready for checks on g4 and h3. Black's queen is far away on b6 and cannot help the king.",
+      "sv": "38.Qf5 för damen nära den svarta kungen, redo för schackar på g4 och h3. Svarts dam står långt borta på b6 och kan inte hjälpa kungen."
+    },
+    {
+      "ply": 78,
+      "en": "After 38...Bxg3 39.Qg4+ Kh6 40.Qh3+ Caruana resigned. The king is driven up the board, and the engine finds a forced mate. Black could have lasted longer with 38...Qc6, but the game was lost anyway.",
+      "sv": "Efter 38...Bxg3 39.Qg4+ Kh6 40.Qh3+ gav Caruana upp. Kungen drivs upp på brädet, och motorn hittar en forcerad matt. Svart kunde ha hållit ut längre med 38...Qc6, men partiet var förlorat ändå.",
+      "line": { "from": "after", "san": ["Kg5", "Qxg3+", "Kh5", "R1e5+", "f5", "Rg8", "Qg6"] }
+    }
+  ],
+  "summary": {
+    "en": "Caruana's Berlin was fine out of the opening, but the pawn moves g6, f6 and later g5 left his king without cover, and 17...c5 opened lines at the wrong moment. Hou missed one clear chance with 29.Qf4, yet kept her pieces active, and when 30...Rd8 left the g-file unguarded she turned straight to the king. Lessons: every pawn move in front of your king leaves holes, and open files lead your opponent's rooks right to them.",
+    "sv": "Caruanas berlinerförsvar höll bra ur öppningen, men bondedragen g6, f6 och senare g5 lämnade kungen utan skydd, och 17...c5 öppnade linjer vid fel tillfälle. Hou missade en tydlig chans med 29.Qf4, men höll pjäserna aktiva, och när 30...Rd8 lämnade g-linjen obevakad gick hon direkt på kungen. Läxor: varje bondedrag framför den egna kungen lämnar hål, och öppna linjer leder motståndarens torn rakt dit."
+  }
+}

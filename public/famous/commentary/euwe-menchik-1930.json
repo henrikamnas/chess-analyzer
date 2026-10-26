@@ -1,0 +1,83 @@
+{
+  "id": "euwe-menchik-1930",
+  "intro": {
+    "en": "Hastings 1930/31: Max Euwe, a few years before he became world champion, has White against Vera Menchik, the women's world champion. Players who lost to her were jokingly said to join the 'Menchik Club', and Euwe was one of them. The game is a long, balanced Queen's Gambit Declined that turns into an ending with bishops of the same colour, where one careless king move decides everything.",
+    "sv": "Hastings 1930/31: Max Euwe, några år innan han blev världsmästare, har vit mot Vera Menchik, regerande världsmästarinna. De som förlorade mot henne sades skämtsamt bli medlemmar i 'Menchikklubben', och Euwe var en av dem. Partiet är en lång och jämn avböjd damgambit som övergår i ett slutspel med likfärgade löpare, där ett enda slarvigt kungsdrag avgör allt."
+  },
+  "comments": [
+    {
+      "ply": 15,
+      "en": "After the exchange on d5 we have the Carlsbad pawn structure of the Queen's Gambit Declined. White's classic plan is the minority attack: push the b- and a-pawns to create a weak pawn on Black's queenside. Black usually looks for play on the kingside.",
+      "sv": "Efter bytet på d5 har vi Karlsbadstrukturen i avböjd damgambit. Vits klassiska plan är minoritetsangreppet: att föra fram b- och a-bönderna för att skapa en svag bonde på Svarts damflygel. Svart söker oftast spel på kungsflygeln."
+    },
+    {
+      "ply": 19,
+      "en": "10...Ne4 is a typical freeing idea in the Queen's Gambit Declined: Black's position is a little cramped, and trading a pair of knights gives the other pieces more room.",
+      "sv": "10...Ne4 är en typisk befriande idé i avböjd damgambit: Svarts ställning är något trång, och ett springarbyte ger de andra pjäserna mer utrymme."
+    },
+    {
+      "ply": 26,
+      "en": "14.b4 starts the minority attack. White will follow with a4 and b5, aiming to break open Black's queenside pawns, and the engine agrees it is the best plan.",
+      "sv": "14.b4 inleder minoritetsangreppet. Vit följer upp med a4 och b5 för att bryta upp Svarts damflygelbönder, och motorn håller med om att det är den bästa planen."
+    },
+    {
+      "ply": 38,
+      "en": "With 19.b5 and the exchanges on b5 the a-file is open and Black's c6 pawn is under pressure. Black's position is a bit passive, but Menchik defends calmly, and the engine sees only a small edge for White.",
+      "sv": "Efter 19.b5 och bytena på b5 är a-linjen öppen och Svarts bonde på c6 under tryck. Svarts ställning är lite passiv, men Menchik försvarar sig lugnt, och motorn ser bara en liten fördel för Vit."
+    },
+    {
+      "ply": 63,
+      "en": "32...Qc8? offers the queen trade at the wrong moment. Black's d5 pawn is isolated, and after the queens come off, White's bishop can attack it from a2 at once. 32...Bc6 kept the position level.",
+      "sv": "32...Qc8? erbjuder dambyte i fel ögonblick. Svarts bonde på d5 är isolerad, och när damerna försvinner kan Vits löpare genast angripa den från a2. 32...Bc6 höll ställningen jämn.",
+      "line": { "from": "after", "san": ["Qxc8+", "Bxc8", "Ba2"] }
+    },
+    {
+      "ply": 72,
+      "en": "In an ending with bishops of the same colour, the kings become important pieces. Both players walk them towards the centre, and the engine still considers the position close to equal.",
+      "sv": "I ett slutspel med likfärgade löpare blir kungarna viktiga pjäser. Båda spelarna går mot centrum med dem, och motorn bedömer fortfarande ställningen som nästan jämn."
+    },
+    {
+      "ply": 84,
+      "en": "After a short skirmish on the kingside, White has won the d5 pawn and Black a g-pawn. Material is level, but Black now has a passed h-pawn, as White has no pawns left on the g- or h-file.",
+      "sv": "Efter en kort drabbning på kungsflygeln har Vit vunnit bonden på d5 och Svart en g-bonde. Materialet är lika, men Svart har nu en fri h-bonde, eftersom Vit inte har några bönder kvar på g- eller h-linjen."
+    },
+    {
+      "ply": 85,
+      "en": "43...Bc8? is a real mistake. Black needed 43...h5, getting the passed pawn moving before White's king can come over and attack it.",
+      "sv": "43...Bc8? är ett verkligt misstag. Svart behövde 43...h5 för att få fribonden i rörelse innan den vita kungen hinner komma över och angripa den.",
+      "line": { "from": "before", "san": ["h5", "Bxb7", "Ke7", "Ke4", "h4"] }
+    },
+    {
+      "ply": 86,
+      "en": "44.Bf3? misses the chance. The engine shows 44.Ke4, marching the king towards the h-pawn, with good winning chances. After the bishop move the game is level again.",
+      "sv": "44.Bf3? missar chansen. Motorn visar 44.Ke4, där kungen marscherar mot h-bonden, med goda vinstchanser. Efter löpardraget är partiet jämnt igen.",
+      "line": { "from": "before", "san": ["Ke4", "Ke7", "Kf3", "f6", "Kg3", "Ke8", "Kh4"] }
+    },
+    {
+      "ply": 101,
+      "en": "A race has started: White's king has gone deep into Black's kingside, while Black's b-pawn runs down the board. With precise play it is still a draw, but everything depends on whether White's bishop can get back to stop the pawn.",
+      "sv": "Ett race har börjat: den vita kungen har gått djupt in på Svarts kungsflygel, medan Svarts b-bonde springer nedför brädet. Med exakt spel är det fortfarande remi, men allt hänger på om Vits löpare hinner tillbaka och stoppa bonden."
+    },
+    {
+      "ply": 102,
+      "en": "52.Kxh7?? loses. After 52...Bc2! Black's bishop controls the b1–h7 diagonal, the f5 pawn hangs with check because the king is on h7, and the b-pawn runs. 52.Bh5 was the drawing move: the bishop heads for d1 and c2 and takes control of the b1 square in time.",
+      "sv": "52.Kxh7?? förlorar. Efter 52...Bc2! kontrollerar den svarta löparen diagonalen b1–h7, bonden på f5 hänger med schack eftersom kungen står på h7, och b-bonden springer. 52.Bh5 var remidraget: löparen går mot d1 och c2 och hinner ta kontroll över rutan b1.",
+      "line": { "from": "before", "san": ["Bh5", "Bc4", "Kxh7", "Kxc6", "Kg7", "b3", "Bd1", "b2", "Bc2"] }
+    },
+    {
+      "ply": 115,
+      "en": "58...Bd5+! is the only winning move. White's bishop on a2 guards b1, so Menchik deflects it: after 59.Bxd5 the pawn queens. Promoting at once with 58...b1=Q would only have drawn, because the bishop simply takes the new queen.",
+      "sv": "58...Bd5+! är det enda vinstdraget. Vits löpare på a2 bevakar b1, så Menchik avleder den: efter 59.Bxd5 blir bonden dam. Att direkt göra dam med 58...b1=Q hade bara gett remi, eftersom löparen helt enkelt slår den nya damen.",
+      "line": { "from": "after", "san": ["Bxd5", "b1=Q"] }
+    },
+    {
+      "ply": 121,
+      "en": "61...Kxd5 and Euwe resigned. Black has a queen against a lone pawn on f6, and the queen and king will easily stop it and then mate the white king.",
+      "sv": "61...Kxd5 och Euwe gav upp. Svart har dam mot en ensam bonde på f6, och dam och kung stoppar den enkelt och sätter sedan den vita kungen matt."
+    }
+  ],
+  "summary": {
+    "en": "For most of the game Euwe pressed with the textbook minority attack and Menchik defended well. The decisive phase came in the bishop ending: both sides missed chances around moves 43–44, and in the pawn race 52.Kxh7 left White's bishop too slow to stop the b-pawn. In such races, count the moves first, and remember tricks like 58...Bd5+ that deflect the last defender.",
+    "sv": "Under större delen av partiet pressade Euwe med det klassiska minoritetsangreppet, och Menchik försvarade sig väl. Den avgörande fasen kom i löparslutspelet: båda sidor missade chanser kring drag 43–44, och i bonderacet gjorde 52.Kxh7 att Vits löpare kom för sent för att stoppa b-bonden. Räkna dragen först i sådana race, och kom ihåg knep som 58...Bd5+ som avleder den sista försvararen."
+  }
+}

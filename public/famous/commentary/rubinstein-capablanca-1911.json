@@ -1,0 +1,117 @@
+{
+  "id": "rubinstein-capablanca-1911",
+  "intro": {
+    "en": "San Sebastián, 1911: the young José Raúl Capablanca won this strong tournament, and this game against Akiba Rubinstein was his only loss there. Black chooses the Tarrasch Defence, accepting an isolated pawn on d5 in return for free piece play, and Rubinstein answers with the fianchetto system that carries his name. Watch how White's pieces gang up on d5, how a small material edge is turned into an endgame, and how that endgame is ground down.",
+    "sv": "San Sebastián 1911: den unge José Raúl Capablanca vann denna starka turnering, och det här partiet mot Akiba Rubinstein var hans enda förlust där. Svart väljer Tarraschförsvaret och accepterar en isolerad bonde på d5 i utbyte mot fritt pjässpel, och Rubinstein svarar med fianchettosystemet som bär hans namn. Se hur de vita pjäserna samlas mot d5, hur en liten materiell fördel förs över till ett slutspel och hur slutspelet sedan nöts ner."
+  },
+  "comments": [
+    {
+      "ply": 10,
+      "en": "6.g3 is Rubinstein's system against the Tarrasch Defence. The bishop goes to g2, where it bears down on the long diagonal and on the d5 pawn, which Black will often have to keep isolated. The idea is simple and lasting: blockade and attack the isolated pawn.",
+      "sv": "6.g3 är Rubinsteins system mot Tarraschförsvaret. Löparen går till g2, där den trycker längs den långa diagonalen och mot bonden på d5, som Svart ofta får behålla isolerad. Idén är enkel och långsiktig: blockera och angrip den isolerade bonden."
+    },
+    {
+      "ply": 20,
+      "en": "11.Nxe6 takes the bishop pair. After 11...fxe6 the pawn on e6 supports d5, but it is itself a new target, and the half-open f-file gives Black something in return. With 12.Bh3 White's bishop turns at once against e6.",
+      "sv": "11.Nxe6 tar löparparet. Efter 11...fxe6 stöder bonden på e6 d5, men den blir själv ett nytt mål, och den halvöppna f-linjen ger Svart något i gengäld. Med 12.Bh3 vänder sig Vits löpare direkt mot e6."
+    },
+    {
+      "ply": 25,
+      "en": "13...O-O? is the first real mistake, and it is a tactical one. With the rook still on c8, the bishop on h3 lies in wait behind the e6 pawn. The engine wanted 13...Rd8, adding a guard to d5 and taking the rook off that diagonal before castling.",
+      "sv": "13...O-O? är det första riktiga misstaget, och det är taktiskt. Med tornet kvar på c8 ligger löparen på h3 och lurar bakom bonden på e6. Motorn ville spela 13...Rd8, som ger d5 ett extra skydd och flyttar tornet från diagonalen innan rockaden.",
+      "line": {
+        "from": "before",
+        "san": ["Rd8", "Qb3", "O-O", "Na4", "Bb4", "a3", "Bd6"]
+      }
+    },
+    {
+      "ply": 26,
+      "en": "Rubinstein misses his chance. 14.Nxd5! was the strong move: if 14...exd5, the e6 pawn has left the diagonal, so after 15.Bxf6 the bishop on h3 can take the rook on c8, and White wins material. 14.Bxf6 first gives Black time to recapture with the queen.",
+      "sv": "Rubinstein missar sin chans. 14.Nxd5! var det starka draget: om 14...exd5 har bonden på e6 lämnat diagonalen, så efter 15.Bxf6 kan löparen på h3 ta tornet på c8, och Vit vinner material. 14.Bxf6 först ger Svart tid att ta tillbaka med damen.",
+      "line": {
+        "from": "before",
+        "san": ["Nxd5", "exd5", "Bxf6", "gxf6", "Qxd5+", "Kg7", "Bxc8", "Rxc8"]
+      }
+    },
+    {
+      "ply": 29,
+      "en": "15...Qh6? lets White keep the pawn won on d5. Black had 15...Bxf2+!, winning the pawn back with check: the queen on f6 and the rook behind it on f8 both bear on f2, so 16.Rxf2 Qxf2+ would cost White the exchange. Capablanca's move attacks the bishop on h3 instead, but White has a calm answer.",
+      "sv": "15...Qh6? låter Vit behålla bonden som vanns på d5. Svart hade 15...Bxf2+!, som vinner tillbaka bonden med schack: damen på f6 och tornet bakom den på f8 riktar sig båda mot f2, så 16.Rxf2 Qxf2+ skulle kosta Vit kvalitet. Capablancas drag angriper i stället löparen på h3, men Vit har ett lugnt svar.",
+      "line": {
+        "from": "before",
+        "san": ["Bxf2+", "Kh1", "Qh6", "Kg2", "g5"]
+      }
+    },
+    {
+      "ply": 32,
+      "en": "17.Qc1! is a neat solution. The queen offers a trade and at the same time attacks the bishop on c5. Black takes the knight on d5, White takes the bishop, and White stays a pawn up with a bishop against a knight.",
+      "sv": "17.Qc1! är en elegant lösning. Damen erbjuder byte och angriper samtidigt löparen på c5. Svart tar springaren på d5, Vit tar löparen, och Vit har kvar en merbonde med löpare mot springare."
+    },
+    {
+      "ply": 35,
+      "en": "18...Qd2? goes after the pawns on e2 and b2, but it gives White a strong reply. 18...Qh5 was the engine's choice, keeping the queen near the king and eyeing White's kingside.",
+      "sv": "18...Qd2? går efter bönderna på e2 och b2, men ger Vit ett starkt svar. 18...Qh5 var motorns val, som håller damen nära kungen och siktar mot den vita kungsflygeln."
+    },
+    {
+      "ply": 36,
+      "en": "19.Qb5? returns the favour. 19.Bg4! was much stronger: the bishop guards e2 and is ready to check on e6, where it would also hit d5. After the game move, 19...Nd4 attacks the queen and the e2 pawn with gain of time.",
+      "sv": "19.Qb5? ger tillbaka tjänsten. 19.Bg4! var mycket starkare: löparen skyddar e2 och är redo att ge schack på e6, där den också skulle angripa d5. Efter partidraget angriper 19...Nd4 damen och bonden på e2 med tempovinst.",
+      "line": {
+        "from": "before",
+        "san": ["Bg4", "d4", "Rad1", "Qh6", "Bf3"]
+      }
+    },
+    {
+      "ply": 40,
+      "en": "After 20.Qd3 Qxd3 21.exd3 the queens are gone. White has a bishop against a knight and an extra pawn, and Black's d5 pawn is isolated. The engine preferred 20.Qa4, but this endgame is pleasant and risk-free for White, exactly the kind of position Rubinstein was famous for.",
+      "sv": "Efter 20.Qd3 Qxd3 21.exd3 är damerna borta. Vit har löpare mot springare och en merbonde, och Svarts bonde på d5 är isolerad. Motorn föredrog 20.Qa4, men slutspelet är behagligt och riskfritt för Vit, precis den sortens ställning som Rubinstein var berömd för."
+    },
+    {
+      "ply": 41,
+      "en": "21...Rfe8 lets White fight for the e-file on good terms. The engine preferred 21...h5, gaining space on the kingside and keeping the bishop on h3 out of g4.",
+      "sv": "21...Rfe8 låter Vit kämpa om e-linjen på goda villkor. Motorn föredrog 21...h5, som tar utrymme på kungsflygeln och håller löparen på h3 borta från g4."
+    },
+    {
+      "ply": 47,
+      "en": "24...Rb6? goes after the b2 pawn at once, and 25.Re5 hits d5. 24...Kf7 was better: the d5 pawn falls in the engine's line too, but Black's king first comes towards the centre, and that tempo matters in the race that follows.",
+      "sv": "24...Rb6? går direkt efter bonden på b2, och 25.Re5 angriper d5. 24...Kf7 var bättre: bonden på d5 faller i motorns variant också, men den svarta kungen kommer först mot centrum, och det tempot spelar roll i kapplöpningen som följer."
+    },
+    {
+      "ply": 59,
+      "en": "30...a6? is the decisive slip. It allows 31.Rf7+, and after 31...Kd6 the rook takes on g7 and lands on Black's second rank. 30...Re2, activating the rook, was the way to keep fighting.",
+      "sv": "30...a6? är det avgörande misstaget. Det tillåter 31.Rf7+, och efter 31...Kd6 slår tornet på g7 och hamnar på Svarts andra rad. 30...Re2, som aktiverar tornet, var sättet att kämpa vidare.",
+      "line": {
+        "from": "after",
+        "san": ["Rf7+", "Kd6", "Rxg7"]
+      }
+    },
+    {
+      "ply": 62,
+      "en": "White is now two pawns up, and the h7 pawn will soon fall too, giving White a passed h-pawn. Black's only hope is the queenside pawns, and he pushes them as fast as he can.",
+      "sv": "Vit har nu två merbönder, och bonden på h7 faller snart också, vilket ger Vit en fribonde på h-linjen. Svarts enda hopp är damflygelbönderna, och han trycker fram dem så fort han kan."
+    },
+    {
+      "ply": 74,
+      "en": "38.Bd5? is a serious slip in a won position. It attacks the knight, but the engine shows that Black can now take on a2 and get real counterplay with his queenside pawns. 38.Rf5 kept everything under control.",
+      "sv": "38.Bd5? är en allvarlig miss i en vunnen ställning. Draget angriper springaren, men motorn visar att Svart nu kan slå på a2 och få verkligt motspel med sina damflygelbönder. 38.Rf5 höll allt under kontroll."
+    },
+    {
+      "ply": 75,
+      "en": "38...b3? misses the chance at once. 38...Rxa2! would have left Black with two connected passed pawns on a4 and b4, and White would only have kept an edge. Now 39.axb3 removes the danger, and the knight on c6 soon falls.",
+      "sv": "38...b3? missar chansen direkt. 38...Rxa2! hade gett Svart två förbundna fribönder på a4 och b4, och Vit hade bara behållit en fördel. Nu tar 39.axb3 bort faran, och springaren på c6 faller snart.",
+      "line": {
+        "from": "before",
+        "san": ["Rxa2", "Rh8", "b3", "h5", "Ra1", "Rc8", "b2"]
+      }
+    },
+    {
+      "ply": 82,
+      "en": "42.Rh6+ and Capablanca resigned. After 42...Kc5 the rook swings to a6 and wins the last passed pawn; even if Black's king then takes the bishop on d5, White is left with rook and four pawns against a lone rook, an easy win.",
+      "sv": "42.Rh6+ och Capablanca gav upp. Efter 42...Kc5 svänger tornet till a6 och vinner den sista fribonden; även om den svarta kungen sedan tar löparen på d5 har Vit kvar torn och fyra bönder mot ett ensamt torn, en enkel vinst."
+    }
+  ],
+  "summary": {
+    "en": "Rubinstein's system worked as intended: pressure on d5 first won a pawn, and then the trade of queens left him a safe endgame with bishop against knight. Both players made mistakes in the middlegame, including a missed tactic on d5 for White and a missed 15...Bxf2+ for Black, but in the endgame Rubinstein's active rook did the work. The lesson: an isolated pawn gives activity in the middlegame, but if the pieces come off it becomes a long-term weakness.",
+    "sv": "Rubinsteins system fungerade som tänkt: trycket mot d5 vann först en bonde, och sedan gav dambytet honom ett säkert slutspel med löpare mot springare. Båda spelarna gjorde misstag i mittspelet, bland annat en missad taktik på d5 för Vit och ett missat 15...Bxf2+ för Svart, men i slutspelet gjorde Rubinsteins aktiva torn jobbet. Läxan: en isolerad bonde ger aktivitet i mittspelet, men när pjäserna byts av blir den en långsiktig svaghet."
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "id": "hou-polgar-2012",
+  "intro": {
+    "en": "Gibraltar, 2012: Hou Yifan, the reigning Women's World Champion, has White against Judit Polgar, for many years the strongest female player in the world. The queens come off early, so this is not a game of attacks on the king. Watch how White uses the weak dark squares in Black's camp, how a well-timed pawn sacrifice opens the centre, and how Hou converts her extra pawns with active rooks.",
+    "sv": "Gibraltar 2012: Hou Yifan, regerande världsmästarinna, har Vit mot Judit Polgar, under många år världens starkaste kvinnliga spelare. Damerna byts tidigt, så det här är inget parti med kungsangrepp. Se hur Vit utnyttjar de svaga mörka rutorna i Svarts läger, hur ett vältajmat bondeoffer öppnar centrum och hur Hou omsätter sina merbönder med aktiva torn."
+  },
+  "comments": [
+    {
+      "ply": 9,
+      "en": "With ...e6, ...Nc6 and ...a6 we have the Taimanov Variation of the Sicilian. Black keeps the pawn structure flexible and often brings the queen to c7. The weak point in this setup is the d6 square, and White will aim straight at it.",
+      "sv": "Med ...e6, ...Nc6 och ...a6 har vi Taimanovvarianten i sicilianskt. Svart håller bondestrukturen flexibel och för ofta damen till c7. Den svaga punkten i uppställningen är rutan d6, och Vit kommer att sikta rakt mot den."
+    },
+    {
+      "ply": 11,
+      "en": "6...Nge7 heads for g6, but it blocks the bishop on f8 for a while. The engine preferred the usual 6...Qc7, which also covers the d6 square. Now 7.Bf4 aims the bishop right at d6.",
+      "sv": "6...Nge7 är på väg mot g6, men springaren stänger in löparen på f8 en stund. Motorn föredrog det vanliga 6...Qc7, som också täcker rutan d6. Nu siktar 7.Bf4 med löparen rakt mot d6."
+    },
+    {
+      "ply": 18,
+      "en": "After the trade of dark-squared bishops White's queen lands on d6, deep in Black's camp. From there it covers f8, so Black cannot castle short, the pawn on d7 is blocked, and the bishop on c8 has little scope.",
+      "sv": "Efter bytet av de mörkfältade löparna landar Vits dam på d6, djupt inne i Svarts läger. Därifrån täcker den f8, så Svart kan inte rockera kort, bonden på d7 är blockerad och löparen på c8 har lite utrymme."
+    },
+    {
+      "ply": 20,
+      "en": "10...Qe7 offers a queen trade, and Hou accepts it with 11.O-O-O. The engine preferred to keep the queens with 11.Qg3, since Black's king is still in the centre. Still, in the endgame White keeps an edge: her rook arrives on d6 at once, and Black's pawns on a6, c6 and d7 are targets.",
+      "sv": "10...Qe7 erbjuder dambyte, och Hou går med på det med 11.O-O-O. Motorn föredrog att behålla damerna med 11.Qg3, eftersom den svarta kungen fortfarande står i centrum. Ändå behåller Vit ett litet övertag i slutspelet: tornet kommer direkt till d6, och Svarts bönder på a6, c6 och d7 är mål."
+    },
+    {
+      "ply": 31,
+      "en": "16...d5 finally frees Black's position, but the pawn is now committed and can become a target in the centre. The engine preferred to keep the pawn back and play on the kingside with 16...h5.",
+      "sv": "16...d5 befriar till slut Svarts ställning, men bonden är nu låst vid sitt val och kan bli ett mål i centrum. Motorn föredrog att hålla bonden kvar och spela på kungsflygeln med 16...h5."
+    },
+    {
+      "ply": 39,
+      "en": "20...d4? is the turning point. It chases the knight, but now the d-pawn no longer controls e4, and the black king on f6 can be hit by e4-e5+. The engine's 20...Rb7 kept the position closed.",
+      "sv": "20...d4? är vändpunkten. Draget jagar springaren, men nu kontrollerar d-bonden inte längre e4, och den svarta kungen på f6 kan träffas av e4-e5+. Motorns 20...Rb7 höll ställningen stängd.",
+      "line": { "from": "before", "san": ["Rb7", "a3", "Ne5", "Be2", "Rd7"] }
+    },
+    {
+      "ply": 40,
+      "en": "21.e5+! gives up a pawn with check. After 21...Nxe5 the knight jumps to e4 with another check and then takes on g5, and White's pieces swarm around the black king.",
+      "sv": "21.e5+! offrar en bonde med schack. Efter 21...Nxe5 hoppar springaren till e4 med ännu en schack och tar sedan på g5, och Vits pjäser svärmar runt den svarta kungen."
+    },
+    {
+      "ply": 45,
+      "en": "23...h6? lets White strike. The knight on g5 attacks e6 and f7, and the engine's 23...f6 would have driven it away at once. Now 24.Nxe6 follows.",
+      "sv": "23...h6? låter Vit slå till. Springaren på g5 angriper e6 och f7, och motorns 23...f6 hade jagat bort den direkt. Nu följer 24.Nxe6.",
+      "line": { "from": "before", "san": ["f6", "Ne4", "Ra4", "a3", "Nc4"] }
+    },
+    {
+      "ply": 48,
+      "en": "After 24...Bxe6 25.Rxe5 White has won back the piece and is a pawn up, and the bishop on e6 is pinned to the king on e7. The engine's 24...Kxe6 would have avoided the pin, though White was better in any case.",
+      "sv": "Efter 24...Bxe6 25.Rxe5 har Vit vunnit tillbaka pjäsen och har en merbonde, och löparen på e6 är bunden till kungen på e7. Motorns 24...Kxe6 hade undvikit bindningen, men Vit stod bättre i vilket fall som helst."
+    },
+    {
+      "ply": 50,
+      "en": "26.f4 is a natural move, preparing f5 to attack the pinned bishop. The engine preferred 26.Be2, keeping Black's pieces tied up without loosening anything, and the game move lets Black untangle a little. White is still winning.",
+      "sv": "26.f4 är ett naturligt drag som förbereder f5 för att angripa den bundna löparen. Motorn föredrog 26.Be2, som håller Svarts pjäser bundna utan att försvaga något, och partidraget låter Svart lösgöra sig lite. Vit vinner fortfarande."
+    },
+    {
+      "ply": 58,
+      "en": "30.Rxc5 wins a second pawn. Black takes back the a-pawn, but White's rooks are much more active, and the isolated d4 pawn will fall later.",
+      "sv": "30.Rxc5 vinner en andra bonde. Svart tar tillbaka a-bonden, men Vits torn är mycket mer aktiva, och den isolerade bonden på d4 faller längre fram."
+    },
+    {
+      "ply": 78,
+      "en": "40.Rexd4 collects the d-pawn, and White is two pawns up. The rest is technique: keep the rooks active and the king close to the queenside pawns.",
+      "sv": "40.Rexd4 plockar d-bonden, och Vit har två merbönder. Resten är teknik: håll tornen aktiva och kungen nära bönderna på damflygeln."
+    },
+    {
+      "ply": 92,
+      "en": "47.f5 and Polgar resigned. The pawn attacks the bishop on e6, and it has no safe square left: every retreat is covered by White's rooks, bishop or pawns.",
+      "sv": "47.f5 och Polgar gav upp. Bonden angriper löparen på e6, och den har ingen säker ruta kvar: varje reträtt täcks av Vits torn, löpare eller bönder."
+    }
+  ],
+  "summary": {
+    "en": "This game was won on the dark squares and in the endgame, not with an attack on the king. Black's setup left d6 weak, the queen trade kept White's pressure, and 20...d4 gave White the e4 square and the pawn sacrifice 21.e5+. After that, an active knight, a pin on the e-file and patient rook play were enough. A good lesson in how small weaknesses grow when the queens come off.",
+    "sv": "Det här partiet vanns på de mörka rutorna och i slutspelet, inte med kungsangrepp. Svarts uppställning lämnade d6 svag, dambytet behöll Vits tryck, och 20...d4 gav Vit rutan e4 och bondeoffret 21.e5+. Därefter räckte en aktiv springare, en bindning på e-linjen och tålmodigt tornspel. En bra läxa i hur små svagheter växer när damerna är borta."
+  }
+}

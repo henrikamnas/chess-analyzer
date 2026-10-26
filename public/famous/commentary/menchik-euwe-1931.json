@@ -1,0 +1,84 @@
+{
+  "id": "menchik-euwe-1931",
+  "intro": {
+    "en": "Hastings 1931/32: Vera Menchik, the first women's world champion, has White against Max Euwe, who would win the world title from Alekhine in 1935. The game is decided early: Black opens the centre with his king still at home, and Menchik wins a piece with a simple pawn fork. Watch how she then converts calmly, trading queens and rounding up Black's passed pawns one by one.",
+    "sv": "Hastings 1931/32: Vera Menchik, den första världsmästarinnan, har vit mot Max Euwe, som skulle ta världsmästartiteln från Aljechin 1935. Partiet avgörs tidigt: Svart öppnar centrum medan kungen står kvar hemma, och Menchik vinner en pjäs med en enkel bondegaffel. Lägg märke till hur lugnt hon sedan förvaltar fördelen, byter damer och plockar upp Svarts fribönder en efter en."
+  },
+  "comments": [
+    {
+      "ply": 8,
+      "en": "4...dxc4 takes the pawn, and 5.a4 is the standard reply: it stops ...b5, which would hold on to the extra pawn, so White can win it back with Bxc4. The price is that the b4 square is no longer covered by a pawn.",
+      "sv": "4...dxc4 tar bonden, och 5.a4 är standardsvaret: det hindrar ...b5, som skulle hålla kvar merbonden, så att Vit kan vinna tillbaka den med Bxc4. Priset är att rutan b4 inte längre täcks av någon bonde."
+    },
+    {
+      "ply": 11,
+      "en": "5...Bf5 is the Czech Variation: Black develops the light-squared bishop outside the pawn chain before playing ...e6. 6...Na6 is the Lasker Variation, and the idea is clear: the knight heads for b4, the hole created by a4.",
+      "sv": "5...Bf5 är den tjeckiska varianten: Svart utvecklar vitfältslöparen utanför bondekedjan innan ...e6 spelas. 6...Na6 är Laskervarianten, och idén är tydlig: springaren är på väg till b4, hålet som a4 skapade."
+    },
+    {
+      "ply": 19,
+      "en": "10...c5? is the first serious mistake. Black opens the centre while his king is still on e8, and White's pieces are all ready. The engine's choice was 10...h6, giving the bishop a retreat on h7 and getting ready to castle.",
+      "sv": "10...c5? är det första allvarliga misstaget. Svart öppnar centrum medan kungen fortfarande står på e8, och alla vita pjäser står redo. Motorns val var 10...h6, som ger löparen en reträtt till h7 och förbereder rockad.",
+      "line": { "from": "before", "san": ["h6", "e4", "Bh7", "Bf4", "O-O"] }
+    },
+    {
+      "ply": 21,
+      "en": "11.Bb5+ practically forces the king to move, because every block loses material (the engine clearly preferred 11.e4 at once), and 11...Ke7? makes things worse. The king now stands in the middle of the board, right where the e- and d-files are about to open. 11...Kf8 was the lesser evil.",
+      "sv": "11.Bb5+ tvingar i praktiken kungen att flytta, eftersom varje spärr förlorar material (motorn föredrog klart 11.e4 direkt), och 11...Ke7? gör saken värre. Kungen står nu mitt på brädet, precis där e- och d-linjerna snart öppnas. 11...Kf8 var det mindre onda."
+    },
+    {
+      "ply": 23,
+      "en": "12.e4 hits the bishop on f5. Black's best was to strike back with 12...cxd4, attacking the knight on c3 in return. The retreat 12...Bg6 allows the knight to take on g6 with check, and the white e-pawn keeps rolling.",
+      "sv": "12.e4 angriper löparen på f5. Svarts bästa var att slå tillbaka med 12...cxd4 och i sin tur angripa springaren på c3. Reträtten 12...Bg6 låter springaren slå på g6 med schack, och den vita e-bonden fortsätter framåt.",
+      "line": { "from": "before", "san": ["cxd4", "exf5", "dxc3", "bxc3"] }
+    },
+    {
+      "ply": 26,
+      "en": "14.e5! is a pawn fork: it attacks both the bishop on d6 and the knight on f6, and Black cannot save both. After 16.exf6+ White has won a piece for two pawns, and Black's king is still stuck in the centre.",
+      "sv": "14.e5! är en bondegaffel: den angriper både löparen på d6 och springaren på f6, och Svart kan inte rädda båda. Efter 16.exf6+ har Vit vunnit en pjäs mot två bönder, och den svarta kungen sitter fortfarande fast i centrum.",
+      "line": { "from": "after", "san": ["Bc7", "exf6+", "gxf6"] }
+    },
+    {
+      "ply": 36,
+      "en": "The engine finds a sharper win here with 19.Rxd4, giving back material to rip open Black's position. Menchik prefers the quiet 19.Bc4, keeping her extra piece. It is less precise, but White stays clearly winning, and the safe path is often the right practical choice.",
+      "sv": "Motorn hittar en skarpare vinst här med 19.Rxd4, som ger tillbaka material för att slita upp den svarta ställningen. Menchik föredrar det lugna 19.Bc4 och behåller merpjäsen. Det är mindre exakt, men Vit står kvar klart till vinst, och den säkra vägen är ofta rätt val i praktiken.",
+      "line": { "from": "before", "san": ["Rxd4", "Bxd4", "Rd1", "Qa5", "Rxd4", "axb5", "Rxb4"] }
+    },
+    {
+      "ply": 54,
+      "en": "28.Qxc6 trades queens. This is the classic rule: when you are a piece up, exchange pieces, especially the queens. Without queens Black has no attacking chances against the white king, and the extra piece counts for even more.",
+      "sv": "28.Qxc6 byter damer. Detta är den klassiska regeln: när du har en pjäs mer ska du byta pjäser, särskilt damerna. Utan damer har Svart inga anfallschanser mot den vita kungen, och merpjäsen väger ännu tyngre."
+    },
+    {
+      "ply": 64,
+      "en": "33.Rxc7 trades a pair of rooks as well, and soon the bishop picks off the pawn on b7. Every exchange brings White closer to a simple ending where the extra piece decides.",
+      "sv": "33.Rxc7 byter också ett par torn, och snart plockar löparen bonden på b7. Varje byte för Vit närmare ett enkelt slutspel där merpjäsen avgör."
+    },
+    {
+      "ply": 87,
+      "en": "44.Bc4 was not the most accurate (the engine wanted 44.fxg4), and Euwe uses the chance: 44...Rxd2 gives up the exchange, and after 45...gxf3 Black has a group of passed pawns. It is his best try, but White is still winning.",
+      "sv": "44.Bc4 var inte det mest exakta (motorn ville spela 44.fxg4), och Euwe tar chansen: 44...Rxd2 ger bort kvaliteten, och efter 45...gxf3 har Svart en grupp fribönder. Det är hans bästa försök, men Vit står fortfarande till vinst.",
+      "line": { "from": "after", "san": ["Kxd2", "gxf3"] }
+    },
+    {
+      "ply": 98,
+      "en": "With 47.Bxf7 and now 50.Bxf3 the bishop has removed the most dangerous pawns. White is a whole rook up for a single pawn and needs only to stop the remaining pawns on the queenside and in the centre.",
+      "sv": "Med 47.Bxf7 och nu 50.Bxf3 har löparen slagit bort de farligaste bönderna. Vit har ett helt torn mer mot en enda bonde och behöver bara stoppa de kvarvarande bönderna på damflygeln och i centrum."
+    },
+    {
+      "ply": 108,
+      "en": "55.Nxe5 picks off another pawn. White's rook has chased the black king to the edge of the board, far away from its own passed pawns.",
+      "sv": "55.Nxe5 plockar ännu en bonde. Vits torn har jagat den svarta kungen till brädkanten, långt bort från de egna fribönderna."
+    },
+    {
+      "ply": 110,
+      "en": "56.Kd3 and Euwe resigned. The king blockades the d-pawn, and if the a-pawn runs, the knight and rook are in time to stop it. White has a whole extra rook, against just one extra pawn for Black. The engine's 56.Rg4+ was a little faster, but the result is the same.",
+      "sv": "56.Kd3 och Euwe gav upp. Kungen blockerar d-bonden, och om a-bonden springer hinner springaren och tornet stoppa den. Vit har ett helt torn mer, mot bara en merbonde för Svart. Motorns 56.Rg4+ var lite snabbare, men resultatet blir detsamma.",
+      "line": { "from": "after", "san": ["a2", "Nf3+", "Kh5", "Ra6", "Bd6", "Nxd4", "Nxe4", "Kxe4", "a1=R", "Rxa1"] }
+    }
+  ],
+  "summary": {
+    "en": "Euwe's 10...c5 and 11...Ke7 show how dangerous it is to open the centre before castling: within a few moves the pawn fork 14.e5 cost him a piece. Menchik then followed the textbook rule for converting an extra piece: trade queens, trade rooks, and pick off the opponent's pawns. Euwe's exchange sacrifice made it tricky, but White always kept control.",
+    "sv": "Euwes 10...c5 och 11...Ke7 visar hur farligt det är att öppna centrum innan man har rockerat: inom några drag kostade bondegaffeln 14.e5 honom en pjäs. Menchik följde sedan läroboksregeln för att förvalta en merpjäs: byt damer, byt torn och plocka motståndarens bönder. Euwes kvalitetsoffer gjorde det knepigt, men Vit behöll hela tiden kontrollen."
+  }
+}
