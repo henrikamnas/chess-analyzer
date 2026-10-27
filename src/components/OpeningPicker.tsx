@@ -7,13 +7,18 @@ import { BANDS, bandOf, lichessRating } from '../explorer'
 import { maiaRating } from '../maia'
 import { lineDifficulty, type Difficulty } from '../lineDifficulty'
 
+const LIST_RATED = 30 // openings in the list of all openings that get a difficulty, from the top
 const linesText = (n: number) => (n === 1 ? t('1 line') : t('{n} lines', { n }))
 const pct = (x: number) => (x < 0.01 ? '<1' : String(Math.round(100 * x)))
 
 /** The difficulty as a small coloured label. */
 function DiffBadge({ d }: { d: Difficulty | undefined }) {
   if (!d) return null
-  return <span className={`diff ${d.rating}`}>{t(d.rating)}</span>
+  return (
+    <span className={`diff ${d.rating}`} title={t('Difficulty from 1 (easy) to 10 (hard)')}>
+      {t(d.rating)} {d.score}/10
+    </span>
+  )
 }
 
 export interface TrainingStart {
@@ -66,22 +71,25 @@ export function OpeningPicker({ onStart }: { onStart: (s: TrainingStart) => void
     return [...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
   }, [all, family])
 
-  // Rates the chosen selection first, then the family and each variation, one at a time in the background
-  const diffKey = (sel: string) => `${sel}|${side}|${strength}`
+  // Rates the chosen selection first, then the family and each variation, one at a time in the background. In the
+  // list of all openings, each opening is rated for the side that usually plays it (Black for defences).
+  const diffKey = (sel: string, s: 'w' | 'b' = side) => `${sel}|${s}|${strength}`
   useEffect(() => {
-    if (!all || !family) return
+    if (!all) return
     let cancelled = false
     const level = strength === 'max' ? null : Number(strength)
     const band = level === null ? BANDS.length : bandOf(lichessRating(level))
     const net = (level === null ? null : maiaRating(lichessRating(level))) ?? 1900
-    const todo = [...new Set([...(selection ? [selection] : []), family, ...variations.map(([v]) => `${family}: ${v}`)])]
+    const todo: [string, 'w' | 'b'][] = family
+      ? [...new Set([...(selection ? [selection] : []), family, ...variations.map(([v]) => `${family}: ${v}`)])].map((sel) => [sel, side])
+      : families.slice(0, LIST_RATED).map(([name]) => [name, suggestedSide(name)])
     void (async () => {
-      for (const sel of todo) {
-        const key = `${sel}|${side}|${strength}`
+      for (const [sel, s] of todo) {
+        const key = diffKey(sel, s)
         if (cancelled) return
         if (working.current.has(key)) continue
         working.current.add(key)
-        const d = await lineDifficulty(linesFor(all, sel), side, band, net, () => cancelled)
+        const d = await lineDifficulty(linesFor(all, sel), s, band, net, () => cancelled)
         if (!d) {
           working.current.delete(key) // cancelled half-way: rate it again next time
           return
@@ -92,7 +100,8 @@ export function OpeningPicker({ onStart }: { onStart: (s: TrainingStart) => void
     return () => {
       cancelled = true
     }
-  }, [all, family, variations, selection, side, strength])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [all, family, families, variations, selection, side, strength])
 
   const choose = (sel: string) => {
     setSelection(sel)
@@ -120,6 +129,11 @@ export function OpeningPicker({ onStart }: { onStart: (s: TrainingStart) => void
               onChange={(e) => setQuery(e.target.value)}
               autoFocus
             />
+            <div className="muted small">
+              {t('Difficulty for {who}, playing the side the opening belongs to (Black in defences).', {
+                who: strength === 'max' ? t('strong players') : t('players rated about {rating}', { rating: strength }),
+              })}
+            </div>
             <div className="opening-list">
               {families.slice(0, 60).map(([name, n]) => (
                 <button
@@ -130,7 +144,9 @@ export function OpeningPicker({ onStart }: { onStart: (s: TrainingStart) => void
                   }}
                 >
                   <span>{name}</span>
-                  <span className="muted">{linesText(n)}</span>
+                  <span className="muted">
+                    <DiffBadge d={difficulty.get(diffKey(name, suggestedSide(name)))} /> {linesText(n)}
+                  </span>
                 </button>
               ))}
               {families.length === 0 && <div className="muted">{t('No openings match.')}</div>}

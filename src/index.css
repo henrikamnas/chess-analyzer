@@ -1916,8 +1916,14 @@ cg-board square.last-move {
 .opening-list button {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 10px;
   text-align: left;
+}
+
+.opening-list button > span:last-child {
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .training-note p {

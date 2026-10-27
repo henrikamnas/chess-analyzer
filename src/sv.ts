@@ -451,6 +451,9 @@ export const SV: Record<string, string> = {
   'What a human of this rating would most likely play here (Maia)': 'Vad en människa med den här ratingen troligast spelar här (Maia)',
   'Human moves: off': 'Mänskliga drag: av',
   'Human ~{rating}': 'Människa ~{rating}',
+  'Difficulty for {who}, playing the side the opening belongs to (Black in defences).':
+    'Svårighet för {who}, med den sida öppningen hör till (svart i försvar).',
+  'Difficulty from 1 (easy) to 10 (hard)': 'Svårighet från 1 (lätt) till 10 (svår)',
   easy: 'lätt',
   medium: 'medel',
   hard: 'svår',

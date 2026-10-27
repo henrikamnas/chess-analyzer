@@ -112,6 +112,7 @@ export interface TrickyMove {
 
 export interface Difficulty {
   rating: 'easy' | 'medium' | 'hard'
+  score: number // 1 (easy) to 10 (hard)
   tricky: TrickyMove[] // most often reached first
   /** Chance a player at the level plays the whole line without a move that doesn't work. */
   clean: number
@@ -124,13 +125,18 @@ export interface Difficulty {
  */
 export async function lineDifficulty(lines: OpeningLine[], side: 'w' | 'b', band: number, net: number, isCancelled = () => false): Promise<Difficulty | null> {
   const tricky = new Map<string, TrickyMove>()
+  // The selection's own line, its shortest (1.e4 e5 2.Bc4 for the Bishop's Opening): you play its moves by
+  // choosing the opening, so they don't count as tricky, and you don't leave it for a transposition
+  const own = lines.reduce<OpeningLine | null>((a, l) => (!a || l.moves.length < a.moves.length ? l : a), null)?.moves ?? []
+  const onOwn = (played: string[]) => played.length < own.length && played.every((m, i) => own[i] === m)
   const walk = async (played: string[], fens: string[], sans: string[], reach: number): Promise<number> => {
-    const replies = bookReplies(lines, played)
+    let replies = bookReplies(lines, played)
     if (!replies.size || reach < MIN_REACH || isCancelled()) return 1
     const fen = fens[fens.length - 1]
     const mine = fen.split(' ')[1] === side
     let p = 1
-    if (mine) {
+    if (mine && onOwn(played)) replies = new Map([[own[played.length], 1]])
+    else if (mine) {
       const f = await findShare(fens.slice(-8), [...replies.keys()], band, net)
       p = f?.p ?? 1
       if (p < TRICKY) {
@@ -153,10 +159,12 @@ export async function lineDifficulty(lines: OpeningLine[], side: 'w' | 'b', band
   const clean = await walk([], [start], [], 1)
   if (isCancelled()) return null
   const list = [...tricky.values()].filter((m) => m.reach >= MIN_REACH).sort((a, b) => b.reach - a.reach || a.ply - b.ply)
-  // Rated by how many tricky moves you can expect to meet in a game, and the chance of a clean run
+  // Scored by the chance of a slip somewhere in the line, or by how many tricky moves you can expect to meet in
+  // a game when that is worse (0.8 of them scores 10)
   const expected = list.reduce((a, m) => a + m.reach, 0)
-  const rating = expected >= 0.6 || clean < 0.25 ? 'hard' : expected >= 0.2 || clean < 0.5 ? 'medium' : 'easy'
-  return { rating, tricky: list, clean }
+  const score = Math.min(10, Math.max(1, Math.round(10 * Math.max(1 - clean, 1.25 * expected))))
+  const rating = score >= 7 ? 'hard' : score >= 4 ? 'medium' : 'easy'
+  return { rating, score, tricky: list, clean }
 }
 
 /** "4. Nc3" or "4... dxc4" for the move at a 0-based ply from the starting position. */
