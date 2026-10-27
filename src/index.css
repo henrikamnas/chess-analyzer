@@ -2024,3 +2024,27 @@ cg-board square.last-move {
 .commentary > div:not(:last-child) {
   margin-bottom: 10px;
 }
+
+.commentary .grades {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.commentary .grade {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  line-height: 1.4;
+}
+
+.commentary .grade-score {
+  flex-shrink: 0;
+  min-width: 64px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: var(--border);
+  font-weight: 700;
+  text-align: center;
+}

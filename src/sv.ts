@@ -589,6 +589,7 @@ export const SV: Record<string, string> = {
   '{n} line cut short at an illegal move.': '{n} variant kortades vid ett otillåtet drag.',
   '{n} lines cut short at an illegal move.': '{n} varianter kortades vid ett otillåtet drag.',
   'The AI’s own line, not checked by the engine': 'AI:ns egen variant, inte kontrollerad av motorn',
+  'Played like': 'Spelade som',
   'Most of the moves in the answer are not in this game. Paste it into the same game you copied the prompt from.':
     'De flesta dragen i svaret finns inte i det här partiet. Klistra in det i samma parti som du kopierade prompten från.',
   '{n} move mentioned in the text is not in the engine’s lines; it is marked ⚠.': '{n} drag som nämns i texten finns inte i motorns varianter; det är markerat med ⚠.',

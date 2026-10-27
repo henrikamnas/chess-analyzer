@@ -15,11 +15,17 @@ export interface MoveComment extends Text {
   line?: { from: 'before' | 'after'; san: string[]; own?: boolean } // own: AI commentary's own line, not the engine's
 }
 
+/** AI commentary only: the Chess.com-style rating a player's play in this game corresponds to, and why. */
+export interface PlayerGrade extends Text {
+  rating: number
+}
+
 export interface Commentary {
   id: string
   intro: Text
   summary: Text
   comments: MoveComment[]
+  grades?: { w?: PlayerGrade; b?: PlayerGrade }
 }
 
 const cache = new Map<string, Promise<Commentary | null>>()

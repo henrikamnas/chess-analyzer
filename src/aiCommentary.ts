@@ -6,7 +6,7 @@
 import { useSyncExternalStore } from 'react'
 import { Chess } from 'chess.js'
 import type { Game, Review } from './analysis'
-import type { Commentary, MoveComment } from './commentary'
+import type { Commentary, MoveComment, PlayerGrade } from './commentary'
 
 export interface ImportReport {
   comments: number
@@ -56,7 +56,7 @@ function extractJson(text: string): unknown {
 }
 
 export function parseAiCommentary(text: string, game: Game, review: Review): ParseResult {
-  const data = extractJson(text) as { intro?: unknown; summary?: unknown; comments?: unknown } | null
+  const data = extractJson(text) as { intro?: unknown; summary?: unknown; comments?: unknown; players?: Record<string, { rating?: unknown; text?: unknown }> } | null
   if (!data || typeof data !== 'object') return { error: 'no-json' }
   if (!Array.isArray(data.comments) || !data.comments.length) return { error: 'no-comments' }
 
@@ -116,7 +116,19 @@ export function parseAiCommentary(text: string, game: Game, review: Review): Par
     const s = str(v)
     return { en: s, sv: s, ...check(s, known) }
   }
-  return { commentary: { id: 'ai', intro: text2(data.intro), summary: text2(data.summary), comments }, report }
+  // How well each player played: the rating their play corresponds to (to the nearest 50) and a short reason
+  const grade = (raw: { rating?: unknown; text?: unknown } | undefined): PlayerGrade | undefined => {
+    const rating = Number(String(raw?.rating ?? '').replace(/[^\d.]/g, ''))
+    if (!raw || !Number.isFinite(rating) || rating < 100 || rating > 3500) return undefined
+    return { rating: Math.round(rating / 50) * 50, ...text2(raw.text) }
+  }
+  const players = data.players && typeof data.players === 'object' ? data.players : {}
+  const grades = { w: grade(players.white), b: grade(players.black) }
+
+  return {
+    commentary: { id: 'ai', intro: text2(data.intro), summary: text2(data.summary), comments, ...(grades.w || grades.b ? { grades } : {}) },
+    report,
+  }
 }
 
 /**

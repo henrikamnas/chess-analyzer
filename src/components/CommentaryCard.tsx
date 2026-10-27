@@ -1,5 +1,5 @@
 import { Chess } from 'chess.js'
-import type { Commentary, MoveComment, Text } from '../commentary'
+import type { Commentary, MoveComment, PlayerGrade, Text } from '../commentary'
 import type { Game } from '../analysis'
 import { t, useLang } from '../i18n'
 
@@ -59,6 +59,24 @@ export function CommentaryCard({ commentary, game, ply, ai, onShowLine }: Props)
           {ai ? icon : '📜'} <strong>{t('Summary')}:</strong> {summary}
           <Unchecked text={commentary.summary} />
         </p>
+      )}
+      {summary && commentary.grades && (
+        <div className="grades">
+          {(['w', 'b'] as const).map((c) => {
+            const g: PlayerGrade | undefined = commentary.grades![c]
+            if (!g) return null
+            const elo = c === 'w' ? game.meta.whiteElo : game.meta.blackElo
+            return (
+              <div key={c} className="grade">
+                <span className="grade-score" title={t('Played like')}>~{g.rating}</span>
+                <div>
+                  <strong>{c === 'w' ? game.meta.white : game.meta.black}</strong> <span className="muted">({t(c === 'w' ? 'White' : 'Black')}{elo ? `, ${t('rated {n}', { n: elo })}` : ''})</span>
+                  {g[lang] && <div>{g[lang]}<Unchecked text={g} /></div>}
+                </div>
+              </div>
+            )
+          })}
+        </div>
       )}
     </div>
   )
