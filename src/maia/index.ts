@@ -43,17 +43,3 @@ export function maiaMoves(history: string[], rating: number): Promise<{ uci: str
   })
 }
 
-/**
- * Picks a move the way a player at the rating might: in proportion to its probability, leaving out the very
- * unlikely ones (under 2%), which are mostly noise.
- */
-export function pickMaiaMove(moves: { uci: string; p: number }[], random = Math.random): string | null {
-  const likely = moves.filter((m) => m.p >= 0.02)
-  const pool = likely.length ? likely : moves.slice(0, 1)
-  let r = random() * pool.reduce((a, m) => a + m.p, 0)
-  for (const m of pool) {
-    r -= m.p
-    if (r < 0) return m.uci
-  }
-  return pool.at(-1)?.uci ?? null
-}

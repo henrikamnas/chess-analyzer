@@ -3,7 +3,7 @@ import { Chess, DEFAULT_POSITION } from 'chess.js'
 import type { DrawShape } from 'chessground/draw'
 import type { Key } from 'chessground/types'
 import { availableThreads, Engine, type EngineFlavor, type EngineLine, type Score } from './engine'
-import { basisName, GLYPH, judgeMove, lineCost, lineLabels, parseGame, rateReview, REVIEW_DEPTHS, REVIEW_LIMITS, reviewGame, terminalEval, type Game, type Label, type MoveReview, type Ply, type PositionEval, type Review } from './analysis'
+import { acplForRating, basisName, GLYPH, judgeMove, lineCost, lineLabels, parseGame, rateReview, REVIEW_DEPTHS, REVIEW_LIMITS, reviewGame, terminalEval, type Game, type Label, type MoveReview, type Ply, type PositionEval, type Review } from './analysis'
 import { explainGood, explainMove, explainPlayed, formatLine, moveName, moveNumber, type MoveExplanation } from './explain'
 import { Board } from './components/Board'
 import { EvalBar } from './components/EvalBar'
@@ -20,8 +20,8 @@ import { PlayCard, PlaySetup, humanAvailable, type PlaySettings, type TrainingIn
 import { OpeningPicker, type TrainingStart } from './components/OpeningPicker'
 import { bookReplies, bookStatus, nameAt, pickBookMove } from './openingLines'
 import { BANDS, bandOf, lichessRating, movesAt, pickHumanMove, type MoveStat } from './explorer'
-import { maiaMoves, maiaRating, pickMaiaMove } from './maia'
-import { BOT_LINES, botMove } from './bot'
+import { maiaMoves, maiaRating } from './maia'
+import { BOT_LINES, botMove, humanCheckLines, maiaSharpness, pickMaiaMove } from './bot'
 import type { PositionContext } from './aiPrompt'
 import { SummaryCard, type DeepState } from './components/SummaryCard'
 import { restoreSession, saveSession, type RestoredSession } from './session'
@@ -908,25 +908,26 @@ export default function App() {
       if (wait > 0) await new Promise((r) => setTimeout(r, wait))
       if (!cancelled && uci) onBoardMoveRef.current(uci)
     }
-    const stockfishMove = () => {
-      botEngine.current ??= new Engine({
+    const engine = () =>
+      (botEngine.current ??= new Engine({
         multiPv: BOT_LINES,
         onError: (m) => setEngineError(t('Lite engine failed to start: {error}', { error: m })),
-      })
-      void botMove(botEngine.current, fen, play.strength, game.meta).then(reply)
-    }
-    // Human-like: Maia's prediction for a player of that rating, with the game so far as its history
-    const net = play.human && play.strength !== null ? maiaRating(lichessRating(play.strength)) : null
+      }))
+    const stockfishMove = () => void botMove(engine(), fen, play.strength, game.meta).then(reply)
+    // Human-like: Maia's prediction for a player of that rating, with the game so far as its history, checked
+    // by the engine so it doesn't leave free material alone (or drop its own) more often than such players do
+    const strength = play.strength
+    const net = play.human && strength !== null ? maiaRating(lichessRating(strength)) : null
     const engineMove = () => {
-      if (!net) return stockfishMove()
+      if (!net || strength === null) return stockfishMove()
       const chess = new Chess(game.startFen)
       const history = [chess.fen()]
       for (const uci of playedFromStart) {
         chess.move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] })
         history.push(chess.fen())
       }
-      void maiaMoves(history, net)
-        .then((moves) => reply(pickMaiaMove(moves)))
+      void Promise.all([maiaMoves(history, net), humanCheckLines(engine(), fen, strength)])
+        .then(([moves, lines]) => reply(pickMaiaMove(moves, lines, fen.split(' ')[1] === 'w', acplForRating(strength, game.meta), maiaSharpness(strength, fen))))
         .catch(() => !cancelled && stockfishMove())
     }
     const cleanup = () => {
