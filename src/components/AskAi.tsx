@@ -108,7 +108,7 @@ export function AskAi({ game, review, book, pgn, defaultSide, brilliant, great }
           {commentary && (
             <div className="ask-ai-row">
               <span>
-                ✓ {tn('This game has AI commentary on {n} move.', 'This game has AI commentary on {n} moves.', commentary.comments.length)}{' '}
+                ✓ {tn('This game has AI commentary on {n} move.', 'This game has AI commentary on {n} moves.', new Set(commentary.comments.map((c) => c.ply)).size)}{' '}
                 {t('Step through the game to read it.')}
               </span>
               <button

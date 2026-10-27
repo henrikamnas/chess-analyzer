@@ -79,14 +79,16 @@ export function parseAiCommentary(text: string, game: Game, review: Review): Par
     const move = str(raw?.move)
     const body = str(raw?.text)
     if (!body) continue
-    const i = findPly(game, move)
-    if (i === null) {
+    const found = findPly(game, move)
+    if (!found) {
       report.skipped.push(move || '?')
       continue
     }
+    const i = found.ply
     const own = new Set(known)
     let line: MoveComment['line']
-    const from = raw.line?.from === 'before' || raw.line?.from === 'after' ? raw.line.from : null
+    // A comment on a position ("17...") is shown after the move that led to it, and its line starts there
+    const from = raw.line?.from === 'before' || raw.line?.from === 'after' ? (found.position ? 'after' : raw.line.from) : null
     if (from && Array.isArray(raw.line!.moves) && raw.line!.moves.length) {
       const start = from === 'before' ? i : i + 1
       // Lines that follow the engine's line from there, or the game itself, are checked; others are the AI's own
@@ -107,39 +109,37 @@ export function parseAiCommentary(text: string, game: Game, review: Review): Par
   // Mostly moves this game doesn't have: the answer is for another game
   if (report.skipped.length > comments.length) return { error: 'other-game' }
   if (!comments.length) return { error: 'no-comments' }
-  comments.sort((a, b) => a.ply - b.ply)
-  // One comment per move: merge any that point at the same one
-  const merged: MoveComment[] = []
-  for (const c of comments) {
-    const prev = merged[merged.length - 1]
-    if (!prev || prev.ply !== c.ply) {
-      merged.push(c)
-      continue
-    }
-    prev.en = prev.sv = `${prev.en} ${c.en}`
-    prev.line ??= c.line
-    if (c.unchecked) prev.unchecked = [...(prev.unchecked ?? []), ...c.unchecked]
-  }
-  report.comments = merged.length
+  comments.sort((a, b) => a.ply - b.ply) // stable: comments on the same move keep the AI's order
+  report.comments = comments.length
 
   const text2 = (v: unknown) => {
     const s = str(v)
     return { en: s, sv: s, ...check(s, known) }
   }
-  return { commentary: { id: 'ai', intro: text2(data.intro), summary: text2(data.summary), comments: merged }, report }
+  return { commentary: { id: 'ai', intro: text2(data.intro), summary: text2(data.summary), comments }, report }
 }
 
-/** The 0-based ply of a move written "14.Nf3", "14...Nxe4" or "14. Nf3"; null if the game has no such move. */
-function findPly(game: Game, move: string): number | null {
+/**
+ * The 0-based ply of a move written "14.Nf3", "14...Nxe4" or "14. Nf3"; null if the game has no such move. A bare
+ * "17..." (or "17.") is the position with that side to move, e.g. after the last move when the game ended there:
+ * the ply of the move that led to it, with `position` set.
+ */
+function findPly(game: Game, move: string): { ply: number; position?: true } | null {
+  const bare = move.replace(/…/g, '...').match(/^(\d+)\s*\.(\.\.)?\s*$/)
+  if (bare) {
+    const turn = bare[2] ? 'b' : 'w'
+    const k = game.plies.findIndex((p) => p.fenAfter.split(' ')[1] === turn && p.fenAfter.split(' ')[5] === bare[1])
+    return k >= 0 ? { ply: k, position: true } : null
+  }
   const m = move.replace(/…/g, '...').match(/^(\d+)\s*\.(\.\.)?\s*(\S+)/)
   if (!m) return null
   const no = m[1]
   const san = norm(m[3])
   const at = (color: 'w' | 'b') => game.plies.findIndex((p) => p.color === color && p.fenBefore.split(' ')[5] === no && norm(p.san) === san)
   const i = at(m[2] ? 'b' : 'w')
-  if (i >= 0) return i
+  if (i >= 0) return { ply: i }
   const other = at(m[2] ? 'w' : 'b') // "14.Nxe4" written for Black's move
-  return other >= 0 ? other : null
+  return other >= 0 ? { ply: other } : null
 }
 
 /** A SAN line's legal start, and how many of its moves agree move for move with one of the reference lines (UCI). */

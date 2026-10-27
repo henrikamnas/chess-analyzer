@@ -1,5 +1,5 @@
 import { Chess } from 'chess.js'
-import type { Commentary, Text } from '../commentary'
+import type { Commentary, MoveComment, Text } from '../commentary'
 import type { Game } from '../analysis'
 import { t, useLang } from '../i18n'
 
@@ -15,14 +15,13 @@ interface Props {
 /** The commentary at the current move: the introduction at the start, the summary at the end. */
 export function CommentaryCard({ commentary, game, ply, ai, onShowLine }: Props) {
   const lang = useLang() === 'sv' ? 'sv' : 'en'
-  const comment = ply > 0 ? commentary.comments.find((c) => c.ply === ply - 1) : undefined
+  const comments = ply > 0 ? commentary.comments.filter((c) => c.ply === ply - 1) : []
   const intro = ply === 0 && commentary.intro[lang]
   const summary = ply === game.plies.length && commentary.summary[lang]
-  if (!intro && !comment && !summary) return null
+  if (!intro && !comments.length && !summary) return null
   const icon = ai ? '🤖' : '💬'
 
-  const show = () => {
-    const line = comment!.line!
+  const show = (line: NonNullable<MoveComment['line']>) => {
     const fromPly = line.from === 'before' ? ply - 1 : ply
     const chess = new Chess(fromPly === 0 ? game.startFen : game.plies[fromPly - 1].fenAfter)
     const moves: string[] = []
@@ -41,20 +40,20 @@ export function CommentaryCard({ commentary, game, ply, ai, onShowLine }: Props)
           <Unchecked text={commentary.intro} />
         </p>
       )}
-      {comment && (
-        <>
+      {comments.map((comment, k) => (
+        <div key={k}>
           <p>
             {icon} {comment[lang]}
             <Unchecked text={comment} />
           </p>
           {comment.line && (
             <div className="row">
-              <button onClick={show}>▶ {comment.line.from === 'before' ? t('Show the alternative') : t('Show what follows')}</button>
+              <button onClick={() => show(comment.line!)}>▶ {comment.line.from === 'before' ? t('Show the alternative') : t('Show what follows')}</button>
               {comment.line.own && <span className="muted own-line">{t('The AI’s own line, not checked by the engine')}</span>}
             </div>
           )}
-        </>
-      )}
+        </div>
+      ))}
       {summary && (
         <p>
           {ai ? icon : '📜'} <strong>{t('Summary')}:</strong> {summary}

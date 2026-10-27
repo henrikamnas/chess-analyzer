@@ -2020,3 +2020,7 @@ cg-board square.last-move {
 .commentary .row button {
   flex-shrink: 0;
 }
+
+.commentary > div:not(:last-child) {
+  margin-bottom: 10px;
+}
