@@ -5,6 +5,8 @@
 export interface Text {
   en: string
   sv: string
+  /** AI commentary only: numbered moves it mentions that are neither game moves nor in the engine's lines. */
+  unchecked?: string[]
 }
 
 export interface MoveComment extends Text {

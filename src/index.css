@@ -1993,3 +1993,21 @@ cg-board square.last-move {
 .commentary p:last-child {
   margin-bottom: 0;
 }
+
+.ask-ai-answer {
+  height: 90px;
+}
+
+.ask-ai-row.warn {
+  color: var(--mistake);
+}
+
+.ask-ai-report {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.commentary .unchecked {
+  color: var(--mistake);
+  font-size: 12px;
+}

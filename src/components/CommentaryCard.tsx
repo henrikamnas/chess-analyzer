@@ -1,5 +1,5 @@
 import { Chess } from 'chess.js'
-import type { Commentary } from '../commentary'
+import type { Commentary, Text } from '../commentary'
 import type { Game } from '../analysis'
 import { t, useLang } from '../i18n'
 
@@ -7,16 +7,19 @@ interface Props {
   commentary: Commentary
   game: Game
   ply: number // position in the game: 0 = start, i = after move i
+  ai?: boolean // commentary pasted in from the user's AI chat rather than the app's own
   /** Shows a line on the board: the moves (UCI) played from the position after `fromPly` moves. */
   onShowLine: (fromPly: number, moves: string[]) => void
 }
 
-/** The commentary at the current move of a famous game: the introduction at the start, the summary at the end. */
-export function CommentaryCard({ commentary, game, ply, onShowLine }: Props) {
+/** The commentary at the current move: the introduction at the start, the summary at the end. */
+export function CommentaryCard({ commentary, game, ply, ai, onShowLine }: Props) {
   const lang = useLang() === 'sv' ? 'sv' : 'en'
   const comment = ply > 0 ? commentary.comments.find((c) => c.ply === ply - 1) : undefined
-  const atEnd = ply === game.plies.length
-  if (ply > 0 && !comment && !atEnd) return null
+  const intro = ply === 0 && commentary.intro[lang]
+  const summary = ply === game.plies.length && commentary.summary[lang]
+  if (!intro && !comment && !summary) return null
+  const icon = ai ? '🤖' : '💬'
 
   const show = () => {
     const line = comment!.line!
@@ -32,10 +35,18 @@ export function CommentaryCard({ commentary, game, ply, onShowLine }: Props) {
 
   return (
     <div className="card commentary">
-      {ply === 0 && <p>📜 {commentary.intro[lang]}</p>}
+      {intro && (
+        <p>
+          {ai ? icon : '📜'} {intro}
+          <Unchecked text={commentary.intro} />
+        </p>
+      )}
       {comment && (
         <>
-          <p>💬 {comment[lang]}</p>
+          <p>
+            {icon} {comment[lang]}
+            <Unchecked text={comment} />
+          </p>
           {comment.line && (
             <div className="row">
               <button onClick={show}>▶ {comment.line.from === 'before' ? t('Show the alternative') : t('Show what follows')}</button>
@@ -43,11 +54,23 @@ export function CommentaryCard({ commentary, game, ply, onShowLine }: Props) {
           )}
         </>
       )}
-      {atEnd && (
+      {summary && (
         <p>
-          📜 <strong>{t('Summary')}:</strong> {commentary.summary[lang]}
+          {ai ? icon : '📜'} <strong>{t('Summary')}:</strong> {summary}
+          <Unchecked text={commentary.summary} />
         </p>
       )}
     </div>
+  )
+}
+
+/** Moves the AI mentions that the engine's lines don't back up. */
+function Unchecked({ text }: { text: Text }) {
+  if (!text.unchecked?.length) return null
+  return (
+    <span className="unchecked" title={t("The engine's lines don't include these moves, so this part may be wrong.")}>
+      {' '}
+      ⚠ {t('Not checked by the engine: {moves}', { moves: text.unchecked.join(', ') })}
+    </span>
   )
 }

@@ -15,6 +15,7 @@ import { PositionChat } from './components/PositionChat'
 import { HumanMoves, type HumanTop } from './components/HumanMoves'
 import { CommentaryCard } from './components/CommentaryCard'
 import { loadCommentary, type Commentary } from './commentary'
+import { useAiCommentary } from './aiCommentary'
 import { Captured } from './components/Captured'
 import { PlayCard, PlaySetup, humanAvailable, type PlaySettings, type TrainingInfo } from './components/PlayCard'
 import { OpeningPicker, type TrainingStart } from './components/OpeningPicker'
@@ -599,7 +600,8 @@ export default function App() {
       live = false
     }
   }, [famousId])
-  const commentary = famousId && loadedCommentary?.id === famousId ? loadedCommentary.c : null
+  const aiCommentary = useAiCommentary(famousId ? null : game) // pasted in from the user's AI chat (see AskAi)
+  const commentary = famousId && loadedCommentary?.id === famousId ? loadedCommentary.c : aiCommentary
   // While a line from a comment is on the board, its comment stays up
   const [commentLine, setCommentLine] = useState<{ at: number; from: number; first: string } | null>(null)
   const commentPly = commentLine && inVariation && ply === commentLine.from && variation[0] === commentLine.first ? commentLine.at : ply
@@ -1520,6 +1522,7 @@ export default function App() {
           {!play && commentary && (
             <CommentaryCard
               commentary={commentary}
+              ai={!famousId}
               game={game}
               ply={commentPly}
               onShowLine={(from, moves) => {

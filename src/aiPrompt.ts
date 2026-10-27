@@ -17,7 +17,20 @@ const ERRORS: Label[] = ['inaccuracy', 'mistake', 'blunder']
 const PLURAL: Partial<Record<Label, string>> = { inaccuracy: 'inaccuracies', mistake: 'mistakes', blunder: 'blunders' }
 const LINE_MOVES = 8 // engine lines are cut to this many moves (deeper moves are less reliable at review depth)
 
-export function buildAiPrompt(game: Game, review: Review, book: BookInfo | null, me: Side, pgn: string, brilliant: Set<number>, great: Map<number, GreatMove>): string {
+/**
+ * `mode` 'review' asks for a short coaching review to read in the chat; 'commentary' asks for move-by-move
+ * commentary as JSON, which the user pastes back into the app (see aiCommentary.ts).
+ */
+export function buildAiPrompt(
+  game: Game,
+  review: Review,
+  book: BookInfo | null,
+  me: Side,
+  pgn: string,
+  brilliant: Set<number>,
+  great: Map<number, GreatMove>,
+  mode: 'review' | 'commentary' = 'review',
+): string {
   const { meta } = game
   const name = (c: 'w' | 'b') => (c === 'w' ? meta.white : meta.black)
   const colour = (c: 'w' | 'b') => (c === 'w' ? 'White' : 'Black')
@@ -25,8 +38,8 @@ export function buildAiPrompt(game: Game, review: Review, book: BookInfo | null,
 
   out.push(
     me
-      ? `I played this chess game as ${colour(me)} (${name(me)}). Please act as my chess coach and review it with me.`
-      : 'Please act as a chess coach and review this chess game with me.',
+      ? `I played this chess game as ${colour(me)} (${name(me)}). Please act as my chess coach and ${mode === 'review' ? 'review it with me' : 'annotate it for me'}.`
+      : `Please act as a chess coach and ${mode === 'review' ? 'review this chess game with me' : 'annotate this chess game for me'}.`,
     '',
     `Below is an engine review (Stockfish 19, depth ${review.depth ?? REVIEW_LIMITS.depth}). Treat the engine data as ground truth: ` +
       'do not invent your own variations or evaluations. When you show a line, use the lines given here. ' +
@@ -89,10 +102,17 @@ export function buildAiPrompt(game: Game, review: Review, book: BookInfo | null,
       )
       if (before.pv.length) out.push(`  - Better: ${formatLine(ply.fenBefore, before.pv, LINE_MOVES)}`)
       if (after.pv.length) out.push(`  - Engine's reply after the move played: ${formatLine(ply.fenAfter, after.pv, LINE_MOVES)}`)
-      out.push(`  - Board link (the position before ${moveName(game, i)}): ${positionLinkBase(ply.fenBefore)}`)
+      if (mode === 'review') out.push(`  - Board link (the position before ${moveName(game, i)}): ${positionLinkBase(ply.fenBefore)}`)
     }
     out.push('')
+  }
 
+  if (mode === 'commentary') {
+    out.push(engineLinesSection(game, review, bookPlies), '', '## PGN', '```', pgn.trim(), '```', '', commentaryAsk(me ? elo(me) : undefined))
+    return out.join('\n')
+  }
+
+  if (errors.length) {
     // Links that show lines on the user's board, since following lines blind is hard
     const first = errors.find(({ i }) => review.evals[i].pv.length >= 2)
     const example = first ? (() => {
@@ -128,6 +148,46 @@ export function buildAiPrompt(game: Game, review: Review, book: BookInfo | null,
       `Plain language a club player understands. I can ask follow-up questions if I want more. Answer in ${LANGUAGE[getLang()] ?? 'English'}.`,
   )
   return out.join('\n')
+}
+
+/** The engine's best line from every position after the opening, so the AI can quote lines instead of inventing them. */
+function engineLinesSection(game: Game, review: Review, bookPlies: number): string {
+  const out = ["## The engine's best line from each position", '(Before each move, what the engine would play from there; the last row is after the final move.)']
+  const n = game.plies.length
+  for (let i = bookPlies; i <= n; i++) {
+    const pv = review.evals[i]?.pv
+    if (!pv?.length) continue
+    const fen = i < n ? game.plies[i].fenBefore : game.plies[n - 1].fenAfter
+    const where = i < n ? `Before ${moveName(game, i)}` : 'After the last move'
+    out.push(`- ${where} (${formatScore(review.evals[i].score)}): ${formatLine(fen, pv, LINE_MOVES)}`)
+  }
+  return out.join('\n')
+}
+
+function commentaryAsk(rating: string | undefined): string {
+  return [
+    '## How to answer',
+    'Write move-by-move commentary on this game, like the notes in a good annotated games book, ' +
+      `for ${rating ? `a player rated about ${rating}` : 'a club player'}. ` +
+      'My chess app shows it next to the board while I step through the game, so reply with only one JSON code block in exactly this shape:',
+    '```json',
+    '{',
+    '  "intro": "2–3 sentences: the opening and what to watch for in this game.",',
+    '  "comments": [',
+    '    { "move": "9.Nxe5", "text": "1–3 sentences on this move." },',
+    '    { "move": "14...Qd4", "text": "...", "line": { "from": "before", "moves": ["<move>", "<move>", "<move>"] } }',
+    '  ],',
+    '  "summary": "2–3 sentences: how the game was decided and the lessons."',
+    '}',
+    '```',
+    '- **comments:** 8–15, in game order, on the moments that matter: the opening idea, where the game left theory, the first real inaccuracy, the turning point, each serious mistake and what should have been played instead, and the finish.',
+    '- **move:** the move commented on, written as in the move list: "14.Nf3" for White, "14...Nxe4" for Black. The comment is shown right after that move is played.',
+    '- **text:** explain ideas (development, king safety, open files, pins, weak squares, initiative, threats) rather than reading out numbers. Mention an evaluation only occasionally, in words ("White is winning now").',
+    '- **line** (optional): moves I can step through on the board, in standard notation without move numbers. "from": "before" shows an alternative to the move, starting with the move that should have been played; "from": "after" shows what follows the move. Copy lines from the engine lines above (you may cut them short); never make up your own.',
+    '- **Grounding:** treat the engine data as correct. Any move you mention with a number (like 15.Qh5) must be a move played in the game, or one from the engine lines above at that number. Do not claim tactics, threats or piece positions the engine data does not show; describe ideas in words instead.',
+    '',
+    `Write the texts in ${LANGUAGE[getLang()] ?? 'English'}. Output only the JSON code block, nothing else.`,
+  ].join('\n')
 }
 
 /** "12. Nf3 +0.35 | Qd2 −0.10 ?!" — one row per move number; book moves marked, errors glyphed. */
