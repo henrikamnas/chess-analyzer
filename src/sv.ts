@@ -79,6 +79,7 @@ export const SV: Record<string, string> = {
   'slightly better for {side}': 'något bättre för {side}',
   'clearly better for {side}': 'klart bättre för {side}',
   'a best move': 'ett bästa drag',
+  'an excellent move': 'ett utmärkt drag',
   'a good move': 'ett bra drag',
   'an inaccuracy': 'en felaktighet',
   'a mistake': 'ett misstag',
@@ -227,6 +228,7 @@ export const SV: Record<string, string> = {
 
   // ---- Analysis screen (App.tsx) ----
   'Best move': 'Bästa draget',
+  'Excellent move': 'Utmärkt drag',
   'Good move': 'Bra drag',
   Inaccuracy: 'Felaktighet',
   Mistake: 'Misstag',
@@ -306,6 +308,7 @@ export const SV: Record<string, string> = {
   'Back to game': 'Tillbaka till partiet',
   'Start of line': 'Variantens början',
   'As good as the best move': 'Lika bra som bästa draget',
+  'Nearly as good as the best move': 'Nästan lika bra som bästa draget',
   'Slightly worse than the best move': 'Något sämre än bästa draget',
   'Inaccuracy compared with the best move': 'Felaktighet jämfört med bästa draget',
   'Mistake compared with the best move': 'Misstag jämfört med bästa draget',

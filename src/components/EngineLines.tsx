@@ -12,6 +12,7 @@ interface Props {
 
 const QUALITY: Record<Label, { glyph: string; text: string }> = {
   best: { glyph: '★', text: 'As good as the best move' },
+  excellent: { glyph: '✓', text: 'Nearly as good as the best move' },
   good: { glyph: '✓', text: 'Slightly worse than the best move' },
   inaccuracy: { glyph: '?!', text: 'Inaccuracy compared with the best move' },
   mistake: { glyph: '?', text: 'Mistake compared with the best move' },

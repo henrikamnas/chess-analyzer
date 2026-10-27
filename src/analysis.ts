@@ -61,9 +61,9 @@ export interface Game {
   plies: Ply[]
 }
 
-export type Label = 'best' | 'good' | 'inaccuracy' | 'mistake' | 'blunder'
+export type Label = 'best' | 'excellent' | 'good' | 'inaccuracy' | 'mistake' | 'blunder'
 
-export const GLYPH: Record<Label, string> = { best: '★', good: '', inaccuracy: '?!', mistake: '?', blunder: '??' }
+export const GLYPH: Record<Label, string> = { best: '★', excellent: '', good: '', inaccuracy: '?!', mistake: '?', blunder: '??' }
 
 export interface PositionEval {
   score: Score
@@ -166,15 +166,19 @@ export function lineLabels(scores: Score[], whiteToMove: boolean): Label[] {
 /**
  * Walking into a forced mate is never a small slip, even when the position was already bad: win% barely moves
  * from "lost" to "mated", but the move still throws the game away. A blunder unless the mover was already
- * hopelessly lost (then a mistake). Null when the mover could already be mated before, or isn't now.
+ * hopelessly lost (then a mistake). Null when the mover could already be mated before, or isn't now, or when
+ * a long mate turns up in a position that was already lost (the engine just seeing deeper, not a new error).
  */
 function allowsMate(before: Score, after: Score, mover: 'w' | 'b'): 'blunder' | 'mistake' | null {
   const s = mover === 'w' ? 1 : -1
   if (after.mate === undefined || after.mate * s >= 0) return null
   if (before.mate !== undefined && before.mate * s < 0) return null
   const moverWin = mover === 'w' ? winPercent(before) : 100 - winPercent(before)
+  if (moverWin < 10 && Math.abs(after.mate) > LONG_MATE) return null
   return moverWin < 10 ? 'mistake' : 'blunder'
 }
+
+const LONG_MATE = 5 // moves; a mate further away than this is no new error in a position that was already lost
 
 /** Centipawns for the side to move; mates count as huge values so they compare correctly. */
 function moverCp(score: Score, whiteToMove: boolean) {
@@ -202,12 +206,33 @@ function moveAccuracy(winLoss: number) {
   return Math.max(0, Math.min(100, 103.1668 * Math.exp(-0.04354 * winLoss) - 3.1669))
 }
 
-function labelFor(winLoss: number, playedBest: boolean): Label {
+const NEAR_BEST_CP = 10 // centipawns a move may lose and still count as the best move
+const EXCELLENT_CP = 50 // ... and still count as excellent
+const THROWN_CP = 300 // advantage given away that is an inaccuracy even where win% hardly moves (decided games)
+
+/**
+ * Win% decides the errors, but once a game is decided almost every move loses ~0 win%, so the positive labels
+ * (and giving away a big chunk of a decisive advantage) are judged by the evaluation itself.
+ */
+function labelFor(winLoss: number, playedBest: boolean, before: Score, after: Score, mover: 'w' | 'b'): Label {
   if (playedBest) return 'best'
   if (winLoss >= 20) return 'blunder'
   if (winLoss >= 10) return 'mistake'
   if (winLoss >= 5) return 'inaccuracy'
-  if (winLoss < 1) return 'best'
+  const s = mover === 'w' ? 1 : -1
+  const mb = before.mate !== undefined ? before.mate * s : undefined // > 0: the mover has a forced mate
+  const ma = after.mate !== undefined ? after.mate * s : undefined
+  if (mb !== undefined && mb > 0) {
+    // The best move brings the mate a move closer; a slower mate is fine, letting it go only if still crushing.
+    if (ma !== undefined && ma > 0) return ma < mb ? 'best' : ma === mb ? 'excellent' : 'good'
+    return after.cp !== undefined && after.cp * s >= 1000 ? 'good' : 'inaccuracy'
+  }
+  if (mb !== undefined) return ma === undefined || ma > 0 || ma <= mb ? 'best' : 'good' // being mated: stalling is all there is
+  if (before.mate !== undefined || after.mate !== undefined) return (ma ?? 0) > 0 ? 'best' : 'good' // found a mate; or allowed one (allowsMate decides that label)
+  const drop = s * (before.cp - after.cp)
+  if (drop >= THROWN_CP && drop >= Math.abs(before.cp) / 4) return 'inaccuracy'
+  if (drop <= NEAR_BEST_CP) return 'best'
+  if (drop < EXCELLENT_CP && winLoss < 2) return 'excellent'
   return 'good'
 }
 
@@ -270,7 +295,7 @@ export async function reviewGame(
   }
   if (isCancelled()) return null
 
-  const empty = (): Record<Label, number> => ({ best: 0, good: 0, inaccuracy: 0, mistake: 0, blunder: 0 })
+  const empty = (): Record<Label, number> => ({ best: 0, excellent: 0, good: 0, inaccuracy: 0, mistake: 0, blunder: 0 })
   const counts = { w: empty(), b: empty() }
   const accs: { w: number[]; b: number[] } = { w: [], b: [] }
 
@@ -302,7 +327,7 @@ export function judgeMove(ply: Pick<Ply, 'uci' | 'color' | 'fenBefore'>, before:
   const winLoss = Math.max(0, sign * (winPercent(before.score) - winPercent(after.score)))
   const playedBest = before.bestMove === ply.uci
   const floor = playedBest ? null : allowsMate(before.score, after.score, ply.color)
-  const label = labelFor(winLoss, playedBest)
+  const label = labelFor(winLoss, playedBest, before.score, after.score, ply.color)
   return {
     label: floor === 'blunder' || (floor === 'mistake' && label !== 'blunder') ? floor : label,
     winLoss,
@@ -317,7 +342,7 @@ export function judgeMove(ply: Pick<Ply, 'uci' | 'color' | 'fenBefore'>, before:
  */
 export function rateReview(review: Review, game: Game): Review {
   const moves = (c: 'w' | 'b') => game.plies.filter((p) => p.color === c).length
-  const empty = (): Record<Label, number> => ({ best: 0, good: 0, inaccuracy: 0, mistake: 0, blunder: 0 })
+  const empty = (): Record<Label, number> => ({ best: 0, excellent: 0, good: 0, inaccuracy: 0, mistake: 0, blunder: 0 })
   const counts = { w: empty(), b: empty() }
   const judged = review.moves.map((m, i) => {
     const ply = game.plies[i]

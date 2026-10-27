@@ -169,6 +169,7 @@ function useInView(ref: React.RefObject<HTMLElement | null>) {
 
 const LABEL_TEXT: Record<Label, string> = {
   best: 'Best move',
+  excellent: 'Excellent move',
   good: 'Good move',
   inaccuracy: 'Inaccuracy',
   mistake: 'Mistake',
@@ -180,6 +181,7 @@ const GREAT_COLOR = '#5b9be0'
 
 const LABEL_COLOR: Record<Label, string> = {
   best: '#5fb35a',
+  excellent: '#76ad63',
   good: '#8aa66d',
   inaccuracy: '#e6b53c',
   mistake: '#e08a2c',
@@ -195,6 +197,7 @@ const emptyGame = (): Game => ({
 /** Arrow brush per line quality (brushes are defined in Board). */
 const LINE_BRUSH: Record<Label, string> = {
   best: 'paleGreen',
+  excellent: 'lineGood',
   good: 'lineGood',
   inaccuracy: 'lineInaccuracy',
   mistake: 'lineMistake',
@@ -203,6 +206,7 @@ const LINE_BRUSH: Record<Label, string> = {
 
 const BADGE_COLOR: Record<Label, [string, string]> = {
   best: ['#5fb35a', '#10200d'],
+  excellent: ['#7fb069', '#10200d'],
   good: ['#7fb069', '#10200d'],
   inaccuracy: ['#e6b53c', '#2a1f05'],
   mistake: ['#e08a2c', '#ffffff'],
@@ -1538,7 +1542,7 @@ export default function App() {
                   )}
                 </strong>{' '}
                 — {card.brilliant ? t('Brilliant move') : card.great ? t('Great move') : t(LABEL_TEXT[card.rv.label])}
-                {!card.explanation && card.rv.label === 'good' && card.rv.bestSan && (
+                {!card.explanation && (card.rv.label === 'good' || card.rv.label === 'excellent') && card.rv.bestSan && (
                   <span className="muted"> · {t('best was {move}', { move: card.rv.bestSan })}</span>
                 )}
               </div>

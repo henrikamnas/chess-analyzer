@@ -131,7 +131,7 @@ function sameBandShift(mover: 'w' | 'b', score: Score, swing: string) {
 
 /** Move label with article: "a mistake" / "ett misstag". */
 export function labelWithArticle(label: Label) {
-  return t({ best: 'a best move', good: 'a good move', inaccuracy: 'an inaccuracy', mistake: 'a mistake', blunder: 'a blunder' }[label])
+  return t({ best: 'a best move', excellent: 'an excellent move', good: 'a good move', inaccuracy: 'an inaccuracy', mistake: 'a mistake', blunder: 'a blunder' }[label])
 }
 
 export interface MoveExplanation {
@@ -305,7 +305,7 @@ export function explainGood(
   after: PositionEval,
   prev?: { uci: string; rv?: MoveReview }, // the opponent's move just before (its verdict if judged)
 ): string | null {
-  if (rv.label !== 'best' && rv.label !== 'good') return null
+  if (rv.label !== 'best' && rv.label !== 'excellent' && rv.label !== 'good') return null
   const s = ply.color === 'w' ? 1 : -1
   const opp = ply.color === 'w' ? 'b' : 'w'
   const opponent = ply.color === 'w' ? meta.black : meta.white
