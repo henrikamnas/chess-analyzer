@@ -12,7 +12,7 @@ export interface Text {
 export interface MoveComment extends Text {
   ply: number // 0-based index of the move commented on
   /** A line to show: from the position before the move (an alternative) or after it (what follows), in SAN. */
-  line?: { from: 'before' | 'after'; san: string[] }
+  line?: { from: 'before' | 'after'; san: string[]; own?: boolean } // own: AI commentary's own line, not the engine's
 }
 
 export interface Commentary {

@@ -1,8 +1,8 @@
 // AI commentary for any game: the user copies a prompt (aiPrompt.ts, mode 'commentary') into their own AI chat
 // and pastes the JSON answer back. Before the app shows it, the answer is checked against the game and the
-// engine review, the same way the famous games' commentary was (scripts/check-commentary.mjs): comments must
-// point at moves of the game, lines must be legal and follow the engine's (or the game's) moves, and numbered
-// moves in the text that are neither played nor in the engine's lines are flagged. Kept in this browser only.
+// engine review, much like the famous games' commentary was (scripts/check-commentary.mjs): comments must point
+// at moves of the game and lines must be legal; lines that leave the engine's (or the game's) moves are kept but
+// labelled as the AI's own, and numbered moves in the text that nothing backs up are flagged. Kept in this browser only.
 import { useSyncExternalStore } from 'react'
 import { Chess } from 'chess.js'
 import type { Game, Review } from './analysis'
@@ -11,8 +11,9 @@ import type { Commentary, MoveComment } from './commentary'
 export interface ImportReport {
   comments: number
   skipped: string[] // comments whose move isn't in the game
-  linesShortened: number // lines cut where they left the engine's line
-  linesDropped: number // lines that didn't follow the engine or the game at all
+  linesOwn: number // legal lines that leave the engine's and the game's moves: kept, labelled as the AI's own
+  linesShortened: number // lines cut at an illegal move
+  linesDropped: number // lines whose first move is illegal
   unchecked: number // numbered moves in the texts that couldn't be checked
 }
 
@@ -65,7 +66,7 @@ export function parseAiCommentary(text: string, game: Game, review: Review): Par
   const known = new Set(game.plies.map((p) => keyOf(p.fenBefore, p.san)))
   for (let i = 0; i <= n; i++) for (const m of playUci(fenAt(i), review.evals[i]?.pv ?? [])) known.add(keyOf(m.fen, m.san))
 
-  const report: ImportReport = { comments: 0, skipped: [], linesShortened: 0, linesDropped: 0, unchecked: 0 }
+  const report: ImportReport = { comments: 0, skipped: [], linesOwn: 0, linesShortened: 0, linesDropped: 0, unchecked: 0 }
   const check = (txt: string, own: Set<string>) => {
     const bad = [...txt.matchAll(MOVE)].filter((m) => !own.has(`${m[1]}${m[2] ? 'b' : 'w'} ${norm(m[3])}`)).map((m) => m[0])
     report.unchecked += bad.length
@@ -88,19 +89,23 @@ export function parseAiCommentary(text: string, game: Game, review: Review): Par
     const from = raw.line?.from === 'before' || raw.line?.from === 'after' ? raw.line.from : null
     if (from && Array.isArray(raw.line!.moves) && raw.line!.moves.length) {
       const start = from === 'before' ? i : i + 1
-      // The line may follow the engine's line from there, or the game itself; it is cut where it leaves both
+      // Lines that follow the engine's line from there, or the game itself, are checked; others are the AI's own
       const refs = [review.evals[start]?.pv ?? [], game.plies.slice(start).map((p) => p.uci)]
       const sans = (raw.line!.moves as unknown[]).map(str)
-      const kept = groundedPrefix(fenAt(start), sans, refs)
+      const { played: kept, grounded } = legalLine(fenAt(start), sans, refs)
       if (!kept.length) report.linesDropped++
       else {
         if (kept.length < sans.length) report.linesShortened++
-        line = { from, san: kept.map((m) => m.san) }
+        const ownLine = grounded < kept.length
+        if (ownLine) report.linesOwn++
+        line = { from, san: kept.map((m) => m.san), ...(ownLine ? { own: true } : {}) }
         for (const m of kept) own.add(keyOf(m.fen, m.san))
       }
     }
     comments.push({ ply: i, en: body, sv: body, ...(line ? { line } : {}), ...check(body, own) })
   }
+  // Mostly moves this game doesn't have: the answer is for another game
+  if (report.skipped.length > comments.length) return { error: 'other-game' }
   if (!comments.length) return { error: 'no-comments' }
   comments.sort((a, b) => a.ply - b.ply)
   // One comment per move: merge any that point at the same one
@@ -137,8 +142,8 @@ function findPly(game: Game, move: string): number | null {
   return other >= 0 ? other : null
 }
 
-/** The longest start of a SAN line that is legal and agrees move for move with one of the reference lines (UCI). */
-function groundedPrefix(fen: string, sans: string[], refs: string[][]) {
+/** A SAN line's legal start, and how many of its moves agree move for move with one of the reference lines (UCI). */
+function legalLine(fen: string, sans: string[], refs: string[][]) {
   const chess = new Chess(fen)
   const played: { fen: string; san: string; uci: string }[] = []
   for (const san of sans) {
@@ -156,7 +161,7 @@ function groundedPrefix(fen: string, sans: string[], refs: string[][]) {
     while (k < played.length && k < ref.length && played[k].uci === ref[k]) k++
     best = Math.max(best, k)
   }
-  return played.slice(0, best)
+  return { played, grounded: best }
 }
 
 // --- Storage: one commentary per game, in localStorage -------------------------

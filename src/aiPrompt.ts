@@ -41,8 +41,10 @@ export function buildAiPrompt(
       ? `I played this chess game as ${colour(me)} (${name(me)}). Please act as my chess coach and ${mode === 'review' ? 'review it with me' : 'annotate it for me'}.`
       : `Please act as a chess coach and ${mode === 'review' ? 'review this chess game with me' : 'annotate this chess game for me'}.`,
     '',
-    `Below is an engine review (Stockfish 19, depth ${review.depth ?? REVIEW_LIMITS.depth}). Treat the engine data as ground truth: ` +
-      'do not invent your own variations or evaluations. When you show a line, use the lines given here. ' +
+    `Below is an engine review (Stockfish 19, depth ${review.depth ?? REVIEW_LIMITS.depth}). ` +
+      (mode === 'review'
+        ? 'Treat the engine data as ground truth: do not invent your own variations or evaluations. When you show a line, use the lines given here. '
+        : 'Trust it for evaluations and for which moves were good or bad; beyond that, bring your own chess understanding (see "How to answer"). ') +
       'Evaluations are from White\'s point of view (+ is good for White; "M3" means White mates in 3, "-M3" Black mates in 3).',
     '',
   )
@@ -174,17 +176,17 @@ function commentaryAsk(rating: string | undefined): string {
     '{',
     '  "intro": "2–3 sentences: the opening and what to watch for in this game.",',
     '  "comments": [',
-    '    { "move": "9.Nxe5", "text": "1–3 sentences on this move." },',
+    '    { "move": "9.Nxe5", "text": "A few sentences on this move." },',
     '    { "move": "14...Qd4", "text": "...", "line": { "from": "before", "moves": ["<move>", "<move>", "<move>"] } }',
     '  ],',
     '  "summary": "2–3 sentences: how the game was decided and the lessons."',
     '}',
     '```',
-    '- **comments:** 8–15, in game order, on the moments that matter: the opening idea, where the game left theory, the first real inaccuracy, the turning point, each serious mistake and what should have been played instead, and the finish.',
+    '- **comments:** about 10–20, in game order, on the moments that matter: the opening and its typical plans, where the game left theory, the middlegame plans of both sides, the turning points, each serious mistake and what should have been played instead, the endgame technique, and the finish. Quiet moves that show a plan or a typical idea deserve a comment too.',
     '- **move:** the move commented on, written as in the move list: "14.Nf3" for White, "14...Nxe4" for Black. The comment is shown right after that move is played.',
-    '- **text:** explain ideas (development, king safety, open files, pins, weak squares, initiative, threats) rather than reading out numbers. Mention an evaluation only occasionally, in words ("White is winning now").',
-    '- **line** (optional): moves I can step through on the board, in standard notation without move numbers. "from": "before" shows an alternative to the move, starting with the move that should have been played; "from": "after" shows what follows the move. Copy lines from the engine lines above (you may cut them short); never make up your own.',
-    '- **Grounding:** treat the engine data as correct. Any move you mention with a number (like 15.Qh5) must be a move played in the game, or one from the engine lines above at that number. Do not claim tactics, threats or piece positions the engine data does not show; describe ideas in words instead.',
+    '- **text:** 1–4 sentences, longer at the key moments. Write like a strong player explaining the game: plans, pawn structure, good and bad pieces, king safety, initiative, typical patterns and known opening ideas, what each side was probably thinking, and the practical side (time, pressure, simple vs. risky choices). Explain ideas rather than reading out numbers; mention an evaluation only occasionally, in words ("White is winning now").',
+    '- **line** (optional): moves I can step through on the board, in standard notation without move numbers. "from": "before" shows an alternative to the move, starting with the move that should have been played; "from": "after" shows what follows the move. Prefer the engine lines above (you may cut them short). You may also give a short line of your own to show an idea, such as a plan or a typical manoeuvre; my app checks every line on the board and labels the ones that are not the engine\'s.',
+    '- **Accuracy:** the engine is right about evaluations and about which moves were good or bad, so never contradict it. Its lines are the safest source for concrete tactics; when you describe a tactic or a threat yourself, check it carefully against the position (where the pieces actually are) before you claim it.',
     '',
     `Write the texts in ${LANGUAGE[getLang()] ?? 'English'}. Output only the JSON code block, nothing else.`,
   ].join('\n')

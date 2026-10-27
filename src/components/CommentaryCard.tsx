@@ -50,6 +50,7 @@ export function CommentaryCard({ commentary, game, ply, ai, onShowLine }: Props)
           {comment.line && (
             <div className="row">
               <button onClick={show}>▶ {comment.line.from === 'before' ? t('Show the alternative') : t('Show what follows')}</button>
+              {comment.line.own && <span className="muted own-line">{t('The AI’s own line, not checked by the engine')}</span>}
             </div>
           )}
         </>

@@ -140,7 +140,9 @@ export function AskAi({ game, review, book, pgn, defaultSide, brilliant, great }
             <div className="ask-ai-row warn">
               {result.error === 'no-json'
                 ? t("Couldn't find the commentary in the answer. Paste the AI's whole answer, including the part between the ``` marks.")
-                : t('The answer has no comments on moves of this game.')}
+                : result.error === 'other-game'
+                  ? t('Most of the moves in the answer are not in this game. Paste it into the same game you copied the prompt from.')
+                  : t('The answer has no comments on moves of this game.')}
             </div>
           )}
           {result && 'report' in result && <ReportView report={result.report} />}
@@ -156,8 +158,9 @@ function ReportView({ report }: { report: ImportReport }) {
       tn('{n} comment skipped: its move ({moves}) is not in this game.', '{n} comments skipped: their moves ({moves}) are not in this game.', report.skipped.length, {
         moves: report.skipped.join(', '),
       }),
-    report.linesDropped > 0 && tn("{n} line removed: it didn't follow the engine.", "{n} lines removed: they didn't follow the engine.", report.linesDropped),
-    report.linesShortened > 0 && tn('{n} line cut short where it left the engine’s line.', '{n} lines cut short where they left the engine’s line.', report.linesShortened),
+    report.linesOwn > 0 && tn('{n} line is the AI’s own, not the engine’s; it is labelled.', '{n} lines are the AI’s own, not the engine’s; they are labelled.', report.linesOwn),
+    report.linesDropped > 0 && tn('{n} line removed: its first move is not legal.', '{n} lines removed: their first move is not legal.', report.linesDropped),
+    report.linesShortened > 0 && tn('{n} line cut short at an illegal move.', '{n} lines cut short at an illegal move.', report.linesShortened),
     report.unchecked > 0 &&
       tn('{n} move mentioned in the text is not in the engine’s lines; it is marked ⚠.', '{n} moves mentioned in the text are not in the engine’s lines; they are marked ⚠.', report.unchecked),
   ].filter(Boolean)
