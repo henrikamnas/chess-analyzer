@@ -110,7 +110,7 @@ export function buildAiPrompt(
   }
 
   if (mode === 'commentary') {
-    out.push(engineLinesSection(game, review, bookPlies), '', '## PGN', '```', pgn.trim(), '```', '', commentaryAsk(me ? elo(me) : undefined))
+    out.push(engineLinesSection(game, review, bookPlies), '', '## PGN', '```', pgn.trim(), '```', '', commentaryAsk(me ? elo(me) : undefined, Math.ceil(game.plies.length / 2)))
     return out.join('\n')
   }
 
@@ -166,7 +166,10 @@ function engineLinesSection(game: Game, review: Review, bookPlies: number): stri
   return out.join('\n')
 }
 
-function commentaryAsk(rating: string | undefined): string {
+function commentaryAsk(rating: string | undefined, moves: number): string {
+  // Plenty of comments: most moves of the game, at least 15
+  const few = Math.max(15, Math.round(0.7 * moves))
+  const many = Math.max(25, moves)
   return [
     '## How to answer',
     'Write move-by-move commentary on this game, like the notes in a good annotated games book, ' +
@@ -186,9 +189,9 @@ function commentaryAsk(rating: string | undefined): string {
     '  }',
     '}',
     '```',
-    '- **comments:** about 10–20, in game order, on the moments that matter: the opening and its typical plans, where the game left theory, the middlegame plans of both sides, the turning points, each serious mistake and what should have been played instead, the endgame technique, and the finish. Quiet moves that show a plan or a typical idea deserve a comment too.',
+    `- **comments:** ${few}–${many} for this ${moves}-move game, in game order, so I have something to read at most moves while I step through it. Cover the moments that matter: the opening and its typical plans, where the game left theory, the middlegame plans of both sides, the turning points, each serious mistake and what should have been played instead, the endgame technique, and the finish. In between, comment on quieter moves too: what a move prepares, a plan or typical idea, what the opponent is threatening, or a short remark from either side's point of view. Comment on moves of both players, not only one.`,
     '- **move:** the move commented on, written as in the move list: "14.Nf3" for White, "14...Nxe4" for Black. The comment is shown right after that move is played. To comment on the final position (for example when a player resigned), write just the number of the move that was not played, like "17..." for Black\'s 17th move.',
-    '- **text:** 1–4 sentences, longer at the key moments. Write like a strong player explaining the game: plans, pawn structure, good and bad pieces, king safety, initiative, typical patterns and known opening ideas, what each side was probably thinking, and the practical side (time, pressure, simple vs. risky choices). Explain ideas rather than reading out numbers; mention an evaluation only occasionally, in words ("White is winning now").',
+    '- **text:** 1–4 sentences: one is enough on quiet moves, more at the key moments. Write like a strong player explaining the game: plans, pawn structure, good and bad pieces, king safety, initiative, typical patterns and known opening ideas, what each side was probably thinking, and the practical side (time, pressure, simple vs. risky choices). Explain ideas rather than reading out numbers; mention an evaluation only occasionally, in words ("White is winning now").',
     '- **line** (optional): moves I can step through on the board, in standard notation without move numbers. "from": "before" shows an alternative to the move, starting with the move that should have been played; "from": "after" shows what follows the move. Prefer the engine lines above (you may cut them short). You may also give a short line of your own to show an idea, such as a plan or a typical manoeuvre; my app checks every line on the board and labels the ones that are not the engine\'s.',
     "- **players:** for each player, the Chess.com rating their play in this game corresponds to (\"played like a 1150\"), like Chess.com's Game Review does. Start from the engine's estimate above (\"played like ~…\") and adjust it with your own judgement: plans, handling of critical moments, practical decisions, converting or defending. It may be well above or below their actual rating. Be honest; the text should say what decided the rating.",
     '- **Accuracy:** the engine is right about evaluations and about which moves were good or bad, so never contradict it. Its lines are the safest source for concrete tactics; when you describe a tactic or a threat yourself, check it carefully against the position (where the pieces actually are) before you claim it.',
