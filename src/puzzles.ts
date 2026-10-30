@@ -117,16 +117,17 @@ export function puzzleHint(p: Puzzle): string {
 /** Tactical puzzles first: punishing a blunder, then ones with a named tactic. */
 const priority = (p: Puzzle) => (p.kind === 'punish' ? 2 : 0) + (p.theme || p.allowed ? 1 : 0)
 
-/** Next puzzle: due ones first (oldest due first), then new ones, most instructive and most recent first. */
+/** Next puzzle: new ones first (most instructive and most recent first), then due reviews (oldest due first),
+ *  so puzzles you've already done only come back once there's nothing new left. */
 export function nextPuzzle(puzzles: Puzzle[], progress: Map<string, PuzzleProgress>, skip: Set<string>, now = Date.now()) {
-  const due = puzzles
-    .filter((p) => !skip.has(p.id) && progress.has(p.id) && progress.get(p.id)!.due <= now)
-    .sort((a, b) => progress.get(a.id)!.due - progress.get(b.id)!.due)
-  if (due.length) return due[0]
+  const fresh = puzzles
+    .filter((p) => !skip.has(p.id) && !progress.has(p.id))
+    .sort((a, b) => priority(b) - priority(a) || b.date - a.date || a.ply - b.ply)
+  if (fresh.length) return fresh[0]
   return (
     puzzles
-      .filter((p) => !skip.has(p.id) && !progress.has(p.id))
-      .sort((a, b) => priority(b) - priority(a) || b.date - a.date || a.ply - b.ply)[0] ?? null
+      .filter((p) => !skip.has(p.id) && progress.has(p.id) && progress.get(p.id)!.due <= now)
+      .sort((a, b) => progress.get(a.id)!.due - progress.get(b.id)!.due)[0] ?? null
   )
 }
 

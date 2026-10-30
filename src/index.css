@@ -1670,6 +1670,24 @@ cg-board square.last-move {
   color: #111;
 }
 
+.puzzle-review {
+  margin-left: 8px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--border);
+  color: var(--text);
+}
+
+.puzzle-playon {
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+  padding-top: 8px;
+}
+
+.puzzle-playon p {
+  margin: 4px 0;
+}
+
 .puzzle-why {
   border-top: 1px solid var(--border);
   margin-top: 8px;
