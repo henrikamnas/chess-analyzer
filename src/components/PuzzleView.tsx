@@ -6,7 +6,7 @@ import { Board } from './Board'
 import { Engine, type Score } from '../engine'
 import { formatScore, pvToSan } from '../analysis'
 import { formatLine } from '../explain'
-import { buildPuzzles, moverWin, nextPuzzle, puzzleHint, puzzlePrompt, schedule, type Puzzle } from '../puzzles'
+import { buildPuzzles, moverWin, nextPuzzle, puzzleHint, puzzlePrompt, schedule, solutionPlies, type Puzzle } from '../puzzles'
 import { allPuzzleProgress, putPuzzleProgress, storedGamesFor, type PuzzleProgress, type StoredGame } from '../store'
 import type { Source } from '../imports'
 import { bookInfo, loadOpenings } from '../openings'
@@ -21,8 +21,16 @@ interface Props {
 }
 
 // 'intro': the opponent's last move is being played on the board before the puzzle starts
-type Phase = 'intro' | 'solving' | 'checking' | 'wrong' | 'solved' | 'revealed'
+// 'reply': a correct move in a multi-move puzzle; the opponent's answer follows
+type Phase = 'intro' | 'solving' | 'checking' | 'reply' | 'wrong' | 'solved' | 'revealed'
 const INTRO_MS = 700
+const REPLY_MS = 600
+
+/** How a move you play on with after the puzzle compares with the engine's best. */
+interface Verdict {
+  tone: 'best' | 'good' | 'inaccuracy' | 'mistake' | 'blunder'
+  text: string
+}
 type Status = 'new' | 'due' | 'solved' | 'mastered'
 const MASTERED_BOX = 3 // repetition box from which a puzzle counts as mastered
 const BOXES = 5
@@ -76,6 +84,7 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
   const [suggest, setSuggest] = useState<string | null>(null) // engine's best move for you in the play-on position
   const [showSuggest, setShowSuggest] = useState(false)
   const [playEval, setPlayEval] = useState<Score | null>(null)
+  const [verdict, setVerdict] = useState<Verdict | null>(null)
   const [session, setSession] = useState({ solved: 0, tried: 0 })
   const [clock, setClock] = useState(() => Date.now()) // "now" for due counts, refreshed after each attempt
   const [tab, setTab] = useState<'train' | 'list'>('train')
@@ -110,6 +119,7 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
     setSuggest(null)
     setShowSuggest(false)
     setPlayEval(null)
+    setVerdict(null)
     puzzleToken.current++
     if (introTimer.current) clearTimeout(introTimer.current)
     // Show the position before the opponent's move, then play it, so you see what just happened.
@@ -131,6 +141,8 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
 
   // Load puzzles from the player's reviewed games and their repetition state, then pick the first one.
   // Also rebuilt when the language changes (hints and explanations are generated text); the open puzzle stays.
+  const solPlies = useMemo(() => (current ? solutionPlies(current) : 1), [current])
+
   const lang = useLang()
   const currentId = useRef<string | null>(null)
   useEffect(() => {
@@ -188,10 +200,11 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
     return () => window.removeEventListener('keydown', onKey)
   }, [tab, next])
 
-  /** After the answer (or a move of yours while playing on), let the opponent reply: the stored engine line while
-   *  you follow it, otherwise a fresh engine search. */
-  const answer = async (moves: string[]) => {
-    if (!current) return
+  /** After the solution (or a move of yours while playing on), let the opponent reply: the stored engine line while
+   *  you follow it, otherwise a fresh engine search. Resolves with the evaluation after your move, or null if the
+   *  game is over or another puzzle was started meanwhile. */
+  const answer = async (moves: string[]): Promise<Score | null> => {
+    if (!current) return null
     const token = puzzleToken.current
     const chess = replay(current.fen, moves)
     setPlayed(moves)
@@ -199,82 +212,141 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
     setLastMove(moves[moves.length - 1])
     setShowSuggest(false)
     setSuggest(null)
-    if (chess.isGameOver()) return
+    if (chess.isGameOver()) return null
     setThinking(true)
     let reply: string | undefined
     let after: string | null = null
+    let score: Score
     if (moves.every((m, i) => current.line[i] === m) && current.line[moves.length]) {
       await new Promise((r) => setTimeout(r, 500))
       reply = current.line[moves.length]
       after = current.line[moves.length + 1] ?? null
-      setPlayEval(current.score)
+      score = current.score
     } else {
       const r = await engine.current!.analyze(chess.fen(), { depth: PLAY_ON_DEPTH })
       reply = r.pv[0]
       after = r.pv[1] ?? null
-      if (token === puzzleToken.current) setPlayEval(r.score)
+      score = r.score
     }
-    if (token !== puzzleToken.current) return
+    if (token !== puzzleToken.current) return null
     setThinking(false)
-    if (!reply) return
+    setPlayEval(score)
+    if (!reply) return score
     const next = [...moves, reply]
     setPlayed(next)
     setFen(replay(current.fen, next).fen())
     setLastMove(reply)
     setSuggest(after)
+    return score
   }
 
-  /** Take back your last play-on move and the reply to it. */
-  const undo = () => {
-    if (!current || played.length < 4) return
+  /** A move of yours after the puzzle: the opponent replies, and the move is judged against the engine's best. */
+  const playOnMove = async (uci: string) => {
+    if (!current) return
+    const before = playEval
+    const best = suggest
+    const fenBefore = replay(current.fen, played).fen()
+    const [san] = pvToSan(fenBefore, [uci])
+    const bestSan = best ? pvToSan(fenBefore, [best])[0] : null
+    setVerdict(null)
+    const moves = [...played, uci]
+    const after = await answer(moves)
+    if (replay(current.fen, moves).isCheckmate()) return setVerdict({ tone: 'best', text: t('✓ {move} is checkmate!', { move: san }) })
+    if (!after) return
+    if (uci === best) return setVerdict({ tone: 'best', text: t('✓ {move} is the best move.', { move: san }) })
+    if (!before) return
+    const loss = moverWin(before, current.color) - moverWin(after, current.color)
+    const better = { move: san, best: bestSan ?? '?' }
+    if (loss >= 20) setVerdict({ tone: 'blunder', text: t('✗ {move} is a blunder. {best} was much better.', better) })
+    else if (loss >= 10) setVerdict({ tone: 'mistake', text: t('✗ {move} is a mistake. {best} was better.', better) })
+    else if (loss >= 5) setVerdict({ tone: 'inaccuracy', text: t('{move} is an inaccuracy. {best} was stronger.', better) })
+    else setVerdict({ tone: 'good', text: t('✓ {move} is a good move.', { move: san }) })
+  }
+
+  /** Take back your last play-on move and the reply to it, and ask the engine about the position again. */
+  const undo = async () => {
+    if (!current || played.length < solPlies + 3) return
+    const token = puzzleToken.current
     const back = played.slice(0, -2)
+    const chess = replay(current.fen, back)
     setPlayed(back)
-    setFen(replay(current.fen, back).fen())
+    setFen(chess.fen())
     setLastMove(back[back.length - 1])
     setSuggest(null)
     setShowSuggest(false)
-    setPlayEval(null)
+    setVerdict(null)
+    setThinking(true)
+    const r = await engine.current!.analyze(chess.fen(), { depth: PLAY_ON_DEPTH })
+    if (token !== puzzleToken.current) return
+    setThinking(false)
+    setSuggest(r.pv[0] ?? null)
+    setPlayEval(r.score)
   }
 
   const onMove = async (uci: string) => {
     if (!current) return
     if (phase === 'solved' || phase === 'revealed') {
-      if (!thinking) void answer([...played, uci])
+      if (!thinking) void playOnMove(uci)
       return
     }
     if (phase !== 'solving') return
     const token = puzzleToken.current
-    const chess = new Chess(current.fen)
-    const move = chess.move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] })
+    const moves = [...played, uci]
+    const chess = replay(current.fen, moves)
+    const san = chess.history().at(-1)!
     setFen(chess.fen())
     setLastMove(uci)
     const solved = (how: string) => {
       setPhase('solved')
       setFeedback(how)
       finish(!missed && hint < 2)
-      void answer([uci])
+      void answer(moves)
     }
-    if (uci === current.best) return solved(t('Correct! {move} is the best move.', { move: current.bestSan }))
+    const expected = current.line[played.length]
+    if (uci === expected) {
+      if (moves.length >= solPlies) {
+        return solved(
+          solPlies === 1
+            ? t('Correct! {move} is the best move.', { move: current.bestSan })
+            : t('Solved! {line}', { line: formatLine(current.fen, moves, moves.length) }),
+        )
+      }
+      // One step of a longer combination: the opponent answers from the line and you go on.
+      const reply = current.line[moves.length]
+      setPlayed(moves)
+      setPhase('reply')
+      setFeedback(t('✓ {move}. Keep going…', { move: san }))
+      setTimeout(() => {
+        if (token !== puzzleToken.current) return
+        const next = [...moves, reply]
+        setPlayed(next)
+        setFen(replay(current.fen, next).fen())
+        setLastMove(reply)
+        setPhase('solving')
+      }, REPLY_MS)
+      return
+    }
 
     // A different move may be just as good: ask the engine.
+    const expectedSan = pvToSan(replay(current.fen, played).fen(), [expected])[0]
     setPhase('checking')
     setFeedback(t('Checking your move…'))
     const r = await engine.current!.analyze(chess.fen(), { depth: 14 })
     if (token !== puzzleToken.current) return
     const loss = moverWin(current.score, current.color) - moverWin(r.score, current.color)
     if (chess.isCheckmate() || loss <= ACCEPT_LOSS) {
-      return solved(t("Good move! {move} works too. The engine's top choice was {best}.", { move: move.san, best: current.bestSan }))
+      return solved(t("Good move! {move} works too. The engine's top choice was {best}.", { move: san, best: expectedSan }))
     }
     const reply = r.pv[0]
     const replySan = reply ? pvToSan(chess.fen(), [reply])[0] : null
     setMissed(true)
     setPhase('wrong')
     setReplyArrow(reply ?? null)
-    setFeedback(t('Not quite. After {move}, your opponent can answer {reply}. Try again.', { move: move.san, reply: replySan ?? t('strongly') }))
+    setFeedback(t('Not quite. After {move}, your opponent can answer {reply}. Try again.', { move: san, reply: replySan ?? t('strongly') }))
     setTimeout(() => {
       if (token !== puzzleToken.current) return
-      setFen(current.fen)
-      setLastMove(current.prev?.uci)
+      setFen(replay(current.fen, played).fen())
+      setLastMove(played.at(-1) ?? current.prev?.uci)
       setReplyArrow(null)
       setPhase('solving')
     }, 1800)
@@ -282,21 +354,27 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
 
   const reveal = () => {
     if (!current) return
+    const solution = current.line.slice(0, solPlies)
     setMissed(true)
     setPhase('revealed')
-    setFeedback(t('The answer was {move}.', { move: current.bestSan }))
+    setFeedback(
+      solPlies === 1
+        ? t('The answer was {move}.', { move: current.bestSan })
+        : t('The solution was {line}.', { line: formatLine(current.fen, solution, solution.length) }),
+    )
     finish(false)
-    void answer([current.best])
+    void answer(solution)
   }
 
   const shapes = useMemo(() => {
     const out: DrawShape[] = []
     if (!current) return out
-    if (phase === 'solving' && hint >= 2) out.push({ orig: current.best.slice(0, 2) as Key, brush: 'green' })
+    const expected = current.line[played.length]
+    if (phase === 'solving' && hint >= 2 && expected) out.push({ orig: expected.slice(0, 2) as Key, brush: 'green' })
     if (replyArrow) out.push({ orig: replyArrow.slice(0, 2) as Key, dest: replyArrow.slice(2, 4) as Key, brush: 'red' })
     if (showSuggest && suggest) out.push({ orig: suggest.slice(0, 2) as Key, dest: suggest.slice(2, 4) as Key, brush: 'green' })
     return out
-  }, [current, phase, hint, replyArrow, showSuggest, suggest])
+  }, [current, played, phase, hint, replyArrow, showSuggest, suggest])
 
   const stats = useMemo(() => {
     if (!puzzles) return null
@@ -437,6 +515,14 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
               </div>
               <p>{puzzlePrompt(current)}</p>
               {current.prev && <p className="muted">{t('Last move: {move}', { move: current.prev.name })}</p>}
+              {!done && solPlies > 1 && (
+                <p className="puzzle-steps">
+                  {t('Move {n} of {total}', { n: Math.min(Math.floor(played.length / 2) + 1, (solPlies + 1) / 2), total: (solPlies + 1) / 2 })}
+                  <span className="dots">
+                    {Array.from({ length: (solPlies + 1) / 2 }, (_, i) => (i < Math.ceil(played.length / 2) ? '●' : '○')).join('')}
+                  </span>
+                </p>
+              )}
               {!done && (
                 <p className="muted small">
                   {left > 0 ? tn('{n} more puzzle after this one', '{n} more puzzles after this one', left) : t('Last puzzle for now')}
@@ -463,6 +549,7 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
                 <div className="puzzle-playon">
                   <div className="puzzle-kind">{t('Play on')}</div>
                   <p className="small">{formatLine(current.fen, played, played.length)}</p>
+                  {verdict && <p className={`verdict ${verdict.tone}`}>{verdict.text}</p>}
                   <p className="muted small">
                     {thinking
                       ? t('Opponent is thinking…')
@@ -477,7 +564,7 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
                     <button onClick={() => setShowSuggest((v) => !v)} disabled={!myTurn || !suggest}>
                       💡 {t('Best move')}
                     </button>
-                    <button onClick={undo} disabled={thinking || played.length < 4}>
+                    <button onClick={undo} disabled={thinking || played.length < solPlies + 3}>
                       ↶ {t('Undo')}
                     </button>
                   </div>
@@ -487,11 +574,11 @@ export function PuzzleView({ onOpenGame, onGoToPatterns }: Props) {
                 {!done ? (
                   <>
                     {hint < 2 && (
-                      <button onClick={() => setHint((h) => h + 1)} disabled={phase === 'checking'}>
+                      <button onClick={() => setHint((h) => h + 1)} disabled={phase === 'checking' || phase === 'reply'}>
                         💡 {t('Hint')}
                       </button>
                     )}
-                    <button onClick={reveal} disabled={phase === 'checking'}>
+                    <button onClick={reveal} disabled={phase === 'checking' || phase === 'reply'}>
                       {t('Show solution')}
                     </button>
                     <button onClick={next} disabled={phase === 'checking'} title={t('Skip (→)')}>

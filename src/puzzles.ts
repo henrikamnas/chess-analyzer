@@ -1,6 +1,6 @@
 // Practice puzzles made from the player's own reviewed games, with simple spaced repetition.
 import { Chess, type Square } from 'chess.js'
-import { formatScore, parseGame, uciToSan, winPercent } from './analysis'
+import { formatScore, parseGame, pvToSan, uciToSan, winPercent } from './analysis'
 import type { Score } from './engine'
 import { explainMove, labelWithArticle, moveName } from './explain'
 import { classifyTactic, describeTactic, moveEffects, pieceThe, type Tactic } from './tactics'
@@ -94,6 +94,22 @@ export function buildPuzzles(user: string, stored: StoredGame[], bookPliesOf?: (
     })
   }
   return out
+}
+
+const MAX_SOLUTION_MOVES = 3 // your moves in a multi-move puzzle
+
+/**
+ * How many plies of the engine line make up the solution: your moves and the replies in between, so always odd.
+ * Like Lichess puzzles, it goes on while the combination does: after a capture or check by either side, if your
+ * next move in the line is forcing again (capture, check, mate). A quiet move ends it, as then several moves
+ * are usually fine.
+ */
+export function solutionPlies(p: Puzzle): number {
+  const sans = pvToSan(p.fen, p.line, MAX_SOLUTION_MOVES * 2 - 1)
+  const forcing = (san: string) => /[x+#]/.test(san)
+  let plies = 1
+  while (plies + 1 < sans.length && (forcing(sans[plies - 1]) || forcing(sans[plies])) && forcing(sans[plies + 1])) plies += 2
+  return plies
 }
 
 /** The task shown above the board. */
