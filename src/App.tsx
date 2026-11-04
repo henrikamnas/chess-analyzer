@@ -19,7 +19,7 @@ import { useAiCommentary } from './aiCommentary'
 import { Captured } from './components/Captured'
 import { PlayCard, PlaySetup, humanAvailable, type PlaySettings, type TrainingInfo } from './components/PlayCard'
 import { OpeningPicker, type TrainingStart } from './components/OpeningPicker'
-import { bookReplies, bookStatus, nameAt, pickBookMove } from './openingLines'
+import { bookStatus, nameAt, pickBookMove, trainerReplies } from './openingLines'
 import { BANDS, bandOf, lichessRating, movesAt, pickHumanMove, type MoveStat } from './explorer'
 import { maiaMoves, maiaRating } from './maia'
 import { BOT_LINES, botMove, humanCheckLines, maiaSharpness, pickMaiaMove } from './bot'
@@ -748,8 +748,9 @@ export default function App() {
   // The moves from the start, for checking against the book (practice starts from the starting position)
   const playedFromStart = useMemo(() => [...game.plies.slice(0, ply).map((p) => p.uci), ...plan], [game.plies, ply, plan])
   const training = play?.training
-  // Your moves count as book if any named opening has them (1.d4 d5 2.c4 c6 3.Nc3 Nf6 is filed under other names)
-  const bookNowStatus = useMemo(() => (training ? bookStatus(training.all, playedFromStart) : null), [training, playedFromStart])
+  // Your moves must stay in the chosen opening (another variation of it is leaving the book), but transpositions
+  // count: 1.d4 d5 2.c4 c6 3.Nc3 Nf6 is filed as a Semi-Slav, and 4.Nf3 is back in the Slav
+  const bookNowStatus = useMemo(() => (training ? bookStatus(training.lines, training.all, playedFromStart) : null), [training, playedFromStart])
   // The rating band whose move choices the computer follows (Chess.com level → Lichess band)
   const trainBand = play?.strength == null ? BANDS.length : bandOf(lichessRating(play.strength))
   // What players at that level played in the position before the last move
@@ -785,9 +786,8 @@ export default function App() {
     for (const at of [trainFens.length - 1, trainFens.length - 2, trainFens.length - 3]) {
       if (at < 0 || trainFens[at].split(' ')[1] !== user) continue
       const before = playedFromStart.slice(0, at)
-      if (bookStatus(training.all, before).kind !== 'book') continue
-      const chosen = bookReplies(training.lines, before)
-      const book = [...(chosen.size ? chosen : bookReplies(training.all, before)).keys()]
+      if (bookStatus(training.lines, training.all, before).kind !== 'book') continue
+      const book = [...trainerReplies(training.lines, training.all, before).keys()]
       const fen = trainFens[at]
       void findShare(trainFens.slice(Math.max(0, at - 7), at + 1), book, trainBand, net).then(
         (f) => live && setShares((m) => (m.get(fen) === (f?.p ?? null) ? m : new Map(m).set(fen, f?.p ?? null))),
@@ -836,7 +836,7 @@ export default function App() {
     const san = (uci: string) => new Chess(chess.fen()).move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] }).san
     // Book moves, most played first when the statistics for this position are in
     const share = (m: string) => (bookNowStatus.at === playedFromStart.length - 1 ? stats?.find((s) => s.uci === m)?.share : undefined)
-    const replies = [...bookReplies(training.all, before)]
+    const replies = [...trainerReplies(training.lines, training.all, before)]
       .sort((a, b) => (share(b[0]) ?? 0) - (share(a[0]) ?? 0) || b[1] - a[1])
       .map(([m]) => (share(m) === undefined ? san(m) : `${san(m)} (${Math.max(1, Math.round(100 * share(m)!))}%)`))
     return { opening: nameAt(training.all, before), state: 'left', played: san(playedFromStart[bookNowStatus.at]), book: replies }
@@ -943,10 +943,9 @@ export default function App() {
     // Opening practice: book moves as players at the level choose them, then their popular moves while the
     // statistics have enough games, then the engine
     if (!trainOff && bookNowStatus?.kind === 'left') return // waiting: try again, or play on
-    // Book replies within the chosen opening, or any opening's once it has none (it may have transposed)
+    // Book replies within the chosen opening (back into it after a transposition), or any opening's once it has none
     const inBook = !trainOff && bookNowStatus?.kind === 'book'
-    const chosen = inBook ? bookReplies(play.training.lines, playedFromStart) : null
-    const replies = chosen?.size ? chosen : inBook ? bookReplies(play.training.all, playedFromStart) : null
+    const replies = inBook ? trainerReplies(play.training.lines, play.training.all, playedFromStart) : null
     const tricky = play.training.tricky
     const timer = setTimeout(() => {
       void movesAt(fen, trainBand).then((stats) => {
